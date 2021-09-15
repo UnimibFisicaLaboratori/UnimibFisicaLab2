@@ -1,0 +1,1116 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico &#8212; Laboratorio II</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Esercizi per la lezione 6" href="ESERCIZI.html" />
+    <link rel="prev" title="Esercizi per la lezione 5" href="../Lezione_05/ESERCIZI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio II</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio II - A.A. 2021/22
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lezione_00/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_07/README.html">
+     Lezione 7: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_08/README.html">
+     Lezione 8: programmazione ad oggetti: l’ereditarietà
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_09/README.html">
+     Lezione 9: stima di parametri con il metodo della massima verosimiglianza
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESERCIZI.html">
+       Esercizi per la lezione 9
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_10/README.html">
+     Lezione 10: stima di parametri con il metodo dei minimi quadrati
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_10/ESERCIZI.html">
+       Esercizi per la lezione 10
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_11/README.html">
+     Lezione 11: fit di distribuzioni binnate con
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_11/ESERCIZI.html">
+       Esercizi per la lezione 11
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_12/README.html">
+     Lezione 12: Test di Ipotesi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_12/ESERCIZI.html">
+       Esercizi per la lezione 12
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_06/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-riproduzione-simulata-di-un-esperimento-i-toy-experiment">
+   6.1 la riproduzione simulata di un esperimento: i
+   <em>
+    toy experiment
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-precisione-sulla-media-di-una-misura">
+     6.1.1 la precisione sulla media di una misura
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-visualizzazione-della-distribuzione-delle-medie">
+     6.1.2 la visualizzazione della distribuzione delle medie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-confronto-con-la-deviazione-standard-della-media">
+     6.1.3 il confronto con la deviazione standard della media
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrazione-con-numeri-pseudo-casuali">
+   6.2 integrazione con numeri pseudo-casuali
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisiti">
+     6.2.1 prerequisiti
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-metodo-hit-or-miss">
+     6.2.2 il metodo hit-or-miss
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-precisione-del-metodo">
+     6.2.3 la precisione del metodo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-incertezza-numerica-del-metodo-hit-or-miss">
+     6.2.4 l’incertezza numerica del metodo hit-or-miss
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-implementazione-del-metodo-hit-or-miss">
+     6.2.5 l’implementazione del metodo hit-or-miss
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-metodo-del-crude-monte-carlo">
+     6.2.6 il metodo del
+     <em>
+      crude Monte Carlo
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione">
+   6.3 aree positive o negative: alla ricerca degli zeri di una funzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-metodo-della-bisezione">
+     6.3.1 il metodo della bisezione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#una-implementazione-dell-algoritmo-di-bisezione">
+     6.3.2 una implementazione dell’algoritmo di bisezione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#una-implementazione-dell-algoritmo-di-bisezione-in-modo-ricorsivo">
+     6.3.3 una implementazione dell’algoritmo di bisezione in modo ricorsivo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#informazioni-necessarie-gli-estremi-di-una-funzione">
+   6.4 informazioni necessarie: gli estremi di una funzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-ricerca-di-estremanti-il-metodo-della-sezione-aurea">
+     6.4.1 la ricerca di estremanti: il metodo della sezione aurea
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-criterio-di-restringimento">
+     6.4.2 il criterio di restringimento
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-ottimizzazione-della-scelta-dei-punti">
+     6.4.3 l’ottimizzazione della scelta dei punti
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mettere-tutto-insieme">
+   6.5 mettere tutto insieme
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizi">
+   6.6 ESERCIZI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lezione-6-esempi-di-applicazione-di-sequenze-pseudo-casuali-ed-esempi-di-calcolo-numerico">
+<h1>Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico<a class="headerlink" href="#lezione-6-esempi-di-applicazione-di-sequenze-pseudo-casuali-ed-esempi-di-calcolo-numerico" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#61-la-riproduzione-simulata-di-un-esperimento-i-toy-experiment">6.1 la riproduzione simulata di un esperimento: i <em>toy experiment</em></a></p>
+<ul>
+<li><p><a class="reference external" href="#611-la-precisione-sulla-media-di-una-misura">6.1.1 la precisione sulla media di una misura</a></p></li>
+<li><p><a class="reference external" href="#612-la-visualizzazione-della-distribuzione-delle-medie">6.1.2 la visualizzazione della distribuzione delle medie</a></p></li>
+<li><p><a class="reference external" href="#613-il-confronto-con-la-deviazione-standard-della-media">6.1.3 il confronto con la deviazione standard della media</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#62-integrazione-con-numeri-pseudo-casuali">6.2 integrazione con numeri pseudo-casuali</a></p>
+<ul>
+<li><p><a class="reference external" href="#621-prerequisiti">6.2.1 prerequisiti</a></p></li>
+<li><p><a class="reference external" href="#622-il-metodo-hit-or-miss">6.2.2 il metodo hit-or-miss</a></p></li>
+<li><p><a class="reference external" href="#623-la-precisione-del-metodo">6.2.3 la precisione del metodo</a></p></li>
+<li><p><a class="reference external" href="#624-lincertezza-numerica-del-metodo-hit-or-miss">6.2.4 l’incertezza numerica del metodo hit-or-miss</a></p></li>
+<li><p><a class="reference external" href="#625-limplementazione-del-metodo-hit-or-miss">6.2.5 l’implementazione del metodo hit-or-miss</a></p></li>
+<li><p><a class="reference external" href="#626-il-metodo-del-crude-monte-carlo">6.2.6 il metodo del <em>crude Monte Carlo</em></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#63-aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione">6.3 aree positive o negative: alla ricerca degli zeri di una funzione</a></p>
+<ul>
+<li><p><a class="reference external" href="#631-il-metodo-della-bisezione">6.3.1 il metodo della bisezione</a></p></li>
+<li><p><a class="reference external" href="#632-una-implementazione-dellalgoritmo-di-bisezione">6.3.2 una implementazione dell’algoritmo di bisezione</a></p></li>
+<li><p><a class="reference external" href="#633-una-implementazione-dellalgoritmo-di-bisezione-in-modo-ricorsivo">6.3.3 una implementazione dell’algoritmo di bisezione in modo ricorsivo</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#64-informazioni-necessarie-gli-estremi-di-una-funzione">6.4 informazioni necessarie: gli estremi di una funzione</a></p>
+<ul>
+<li><p><a class="reference external" href="#641-la-ricerca-di-estremanti-il-metodo-della-sezione-aurea">6.4.1 la ricerca di estremanti: il metodo della sezione aurea</a></p></li>
+<li><p><a class="reference external" href="#642-il-criterio-di-restringimento">6.4.2 il criterio di restringimento</a></p></li>
+<li><p><a class="reference external" href="#643-lottimizzazione-della-scelta-dei-punti">6.4.3 l’ottimizzazione della scelta dei punti</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#65-mettere-tutto-insieme">6.5 mettere tutto insieme</a></p></li>
+<li><p><a class="reference external" href="#66-esercizi">6.6 ESERCIZI</a></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-riproduzione-simulata-di-un-esperimento-i-toy-experiment">
+<h2>6.1 la riproduzione simulata di un esperimento: i <em>toy experiment</em><a class="headerlink" href="#la-riproduzione-simulata-di-un-esperimento-i-toy-experiment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Le sequenze di numeri pseudo-casuali
+sono molto spesso utilizzate
+per <strong>simulare il comportamento statistico di un esperimento</strong> di misura,
+o per <strong>eseguire integrazioni numeriche</strong></p></li>
+<li><p>Secondo il paradigma frequentista della statistica,
+le incertezze di una misura si ricavano dalla sua distribuzione di densità di probabilità,
+assumendo che l’esperimento utilizzato per compiere quella misura
+sia <strong>ripetuto un grande numero di volte</strong></p></li>
+<li><p>Operativamente,
+l’esperimento che porta al risultato finale di una misura è unico,
+dunque alcuni comportamenti statistici
+si possono <strong>solamente simulare</strong></p></li>
+<li><p>La simulazione di un esperimento di misura è detta <strong>toy experiment</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-precisione-sulla-media-di-una-misura">
+<h3>6.1.1 la precisione sulla media di una misura<a class="headerlink" href="#la-precisione-sulla-media-di-una-misura" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Per determinare la precisione sulla media di una campione,
+quindi,
+è necessario effettuare la generazione del campione molte volte,
+per vedere la distribuzione dei valori della media:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// loop sui toy experiment</span>
+<span class="n">statistiche</span><span class="w"> </span><span class="n">s_singleToy</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">statistiche</span><span class="w"> </span><span class="n">s_tot</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NToys</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iToy</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// il loop seguente è un singolo toy experiment</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NMAX</span><span class="p">)</span><span class="w"> </span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">addEvent</span><span class="w"> </span><span class="p">(</span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="mf">-3.</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s_tot</span><span class="p">.</span><span class="n">addEvent</span><span class="w"> </span><span class="p">(</span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">getMean</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">reset</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="c1">// loop sui toy experiment</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>NOTA BENE</strong>: l’oggetto <code class="docutils literal notranslate"><span class="pre">s_singleToy</span></code> viene vuotato al termine di ogni toy experiment</p></li>
+</ul>
+</li>
+<li><p>Mentre l’oggetto <code class="docutils literal notranslate"><span class="pre">s_singleToy</span></code> raccoglie le <strong>statistiche di ogni singolo toy experiment</strong>
+e viene utilizzato per calcolarne la media,
+l’oggetto <code class="docutils literal notranslate"><span class="pre">s_tot</span></code> raccoglie il campione dei valori delle medie
+per tutti i toy experiment</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-visualizzazione-della-distribuzione-delle-medie">
+<h3>6.1.2 la visualizzazione della distribuzione delle medie<a class="headerlink" href="#la-visualizzazione-della-distribuzione-delle-medie" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>La media delle misure è una funzione di variabili casuali,
+quindi è una <strong>variabile casuale</strong> a sua volta</p></li>
+<li><p>La sua distribuzione di probabilità si ottiene <strong>per campionamento</strong> con i toy experiment,
+ad esempio riempiendo un istogramma all’interno del ciclo sui toy:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TH1F</span><span class="w"> </span><span class="nf">h_medie</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;distribuzione delle medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="c1">// loop sui toy experiment</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NToys</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iToy</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// il loop seguente è un singolo toy experiment</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NMAX</span><span class="p">)</span><span class="w"> </span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">addEvent</span><span class="w"> </span><span class="p">(</span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="mf">-3.</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">h_medie</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">getMean</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="c1">// loop sui toy experiment</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="medie" src="../_images/medie_toys.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-confronto-con-la-deviazione-standard-della-media">
+<h3>6.1.3 il confronto con la deviazione standard della media<a class="headerlink" href="#il-confronto-con-la-deviazione-standard-della-media" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>La <strong>deviazione standard della media</strong> per singolo toy,
+essendo l’incertezza associata alla media delle misure,
+deve quindi corrispondere
+alla <strong>deviazione standard</strong> del campione delle medie</p></li>
+<li><p>Per controllare questa corrispondenza,
+si può utilizzare la classe <code class="docutils literal notranslate"><span class="pre">statistiche</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">statistiche</span><span class="w"> </span><span class="n">s_singleToy</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">statistiche</span><span class="w"> </span><span class="n">s_tot</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">statistiche</span><span class="w"> </span><span class="n">s_incertezzaMedia</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="c1">// loop sui toy experiment</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NToys</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iToy</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// il loop seguente è un singolo toy experiment</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NMAX</span><span class="p">)</span><span class="w"> </span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">addEvent</span><span class="w"> </span><span class="p">(</span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="mf">-3.</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s_tot</span><span class="p">.</span><span class="n">addEvent</span><span class="w"> </span><span class="p">(</span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">getMean</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s_incertezzaMedia</span><span class="p">.</span><span class="n">addEvent</span><span class="w"> </span><span class="p">(</span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">getSigmaMean</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s_singleToy</span><span class="p">.</span><span class="n">reset</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="c1">// loop sui toy experiment</span>
+</pre></div>
+</div>
+<p>che produce come risultato:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">media</span> <span class="n">delle</span> <span class="n">deviazioni</span> <span class="n">standard</span> <span class="n">della</span> <span class="n">media</span> <span class="n">per</span> <span class="n">i</span> <span class="n">singoli</span> <span class="n">toy</span><span class="p">:</span> <span class="mf">0.0773579</span> 
+<span class="n">deviazione</span> <span class="n">standard</span> <span class="n">della</span> <span class="n">distribuzione</span> <span class="n">delle</span> <span class="n">medie</span> <span class="n">dei</span> <span class="n">singoli</span> <span class="n">toy</span><span class="p">:</span> <span class="mf">0.0774481</span> 
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="integrazione-con-numeri-pseudo-casuali">
+<h2>6.2 integrazione con numeri pseudo-casuali<a class="headerlink" href="#integrazione-con-numeri-pseudo-casuali" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Le sequenze di numeri pseudo-casuali possono essere utilizzate efficacemente
+anche per <strong>calcolare aree</strong> sottese da funzioni</p></li>
+<li><p>I metodi che sfruttano numeri pseudo-casuali prendono il nome di tecniche <strong>Monte Carlo</strong>,
+derivando questa definizione dall’omonimo casinò,
+regno della dea bendata</p></li>
+<li><p>L’utilizzo di queste tecniche in fisica è <strong>molto vasto</strong>,
+ad esempio nel calcolo di integrali in meccanica quantistica e teoria quantistica dei campi,
+per la simulazione di apparati di misura, et cetera</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="prerequisiti">
+<h3>6.2.1 prerequisiti<a class="headerlink" href="#prerequisiti" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Studiamo il caso di integrazione di <strong>funzioni mono-dimensionali positive, continue
+e definite su un intervallo compatto e connesso</strong>
+(quindi finite su tutto l’insieme di definizione)</p></li>
+<li><p>Sia data come esempio la funzione <em>g(x) = sin(x) + 1</em> definita sull’intevallo <em>(0, π)</em></p>
+<ul>
+<li><p>per questa funzione sappiamo calcolare l’integrale in forma analitica,
+pari a <em>2π</em></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="integrale" src="../_images/integrale.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-metodo-hit-or-miss">
+<h3>6.2.2 il metodo hit-or-miss<a class="headerlink" href="#il-metodo-hit-or-miss" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>L’<strong>algoritmo hit-or-miss</strong> si comporta in modo simile alla generazione di numeri pseudo-casuali
+con la tecnica try-and-catch</p></li>
+<li><p>Si generano <em>N</em> coppie numeri pseudo-casuali nel piano che contiene il disegno della funzione
+e si conta il <strong>numero di eventi</strong> <em>n<sub>hit</sub></em> che cascano nell’area sottesa dalla funzione
+<img alt="integrale_RP" src="../_images/integrale_random_points.png" /></p></li>
+<li><p>Di conseguenza, se <em>A</em> è l’area del rettangolo dove sono stati generati gli eventi
+ed <em>m</em> ed <em>M</em> gli estremi di integrazione:
+<img alt="integrale_HOM" src="../_images/integrale_HOM_2.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-precisione-del-metodo">
+<h3>6.2.3 la precisione del metodo<a class="headerlink" href="#la-precisione-del-metodo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Non si possono generare infiniti numeri pseudo-casuali,
+dunque il <strong>risultato sarà approssimato</strong>:
+<img alt="integrale_HOM" src="../_images/integrale_HOM_real_3.png" /></p></li>
+<li><p>La quantità <em>I</em> è il <em>risultato dell’integrale</em> per il metodo hit-or-miss</p></li>
+<li><p>Essendo funzione di numeri pseudo-casuali, è a sua volta un <strong>numero pseudo-casuale</strong></p></li>
+<li><p>Ha un valore atteso ed una varianza</p></li>
+<li><p>Quest’ultima è <strong>l’incetezza numerica</strong> nel calcolo dell’integrale</p>
+<ul>
+<li><p><em>A</em> ed <em>N</em> sono <strong>noti senza incertezza</strong></p></li>
+<li><p><em>n<sub>hit</sub></em> ha invece <strong>distribuzione binomiale</strong>,
+associando al successo il fatto che un punto generato si trovi sotto la funzione da integrare,
+con <strong>probabilità <em>p = n<sub>hit</sub> / N</em></strong></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-incertezza-numerica-del-metodo-hit-or-miss">
+<h3>6.2.4 l’incertezza numerica del metodo hit-or-miss<a class="headerlink" href="#l-incertezza-numerica-del-metodo-hit-or-miss" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Valore di aspettazione e varianza</strong> di <em>I</em> quindi,
+dati <em>N</em> numeri pseudo-casuali geneati,
+sono quindi:
+<img alt="integrale_HOM" src="../_images/integrale_HOM_exp_var.png" /></p></li>
+<li><p>Di conseguenza,
+l’incertezza numerica sul calcolo dell’integrale
+è data dalla <strong>radice della varianza</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-implementazione-del-metodo-hit-or-miss">
+<h3>6.2.5 l’implementazione del metodo hit-or-miss<a class="headerlink" href="#l-implementazione-del-metodo-hit-or-miss" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Anche in questo caso,
+si tratta di <strong>generare numeri pseudo-casuali</strong> sul piano
+entro <em>(0, 2π)</em> sull’asse <em>x</em> e <em>(0, 2)</em> sull’asse <em>y</em>
+e contare quante coppie di punti stiano sotto la funzione da integrare:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nHit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">xMin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">xMax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">M_PI</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="kt">double</span><span class="w"> </span><span class="n">yMin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="kt">double</span><span class="w"> </span><span class="n">yMax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isBelow</span><span class="w"> </span><span class="p">(</span><span class="n">fsin</span><span class="p">,</span><span class="w"> </span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="n">xMax</span><span class="p">,</span><span class="w"> </span><span class="n">yMin</span><span class="p">,</span><span class="w"> </span><span class="n">yMax</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="o">++</span><span class="n">nHit</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>dove:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">isBelow</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">),</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">xMax</span><span class="p">,</span><span class="w"></span>
+<span class="w">              </span><span class="kt">double</span><span class="w"> </span><span class="n">yMin</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">yMax</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="n">xMax</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="n">yMin</span><span class="p">,</span><span class="w"> </span><span class="n">yMax</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>A partire da n<sub>hit</sub>, quindi, si possono calcolare il valore dell’integrale
+e la sua incertezza.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-metodo-del-crude-monte-carlo">
+<h3>6.2.6 il metodo del <em>crude Monte Carlo</em><a class="headerlink" href="#il-metodo-del-crude-monte-carlo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>L’agoritmo <em>crude Monte Carlo</em>
+sfrutta le proprietà del <strong>valore di aspettazione</strong> di una funzione</p></li>
+<li><p>Dato un insieme di numeri pseudo-casuali <em>x<sub>i</sub></em>
+generati secondo una distribuzione di probabilità uniforme <em>f(x)</em> definita fra <em>m</em> ed <em>M</em>,
+il <strong>valore di aspettazione della funzione <em>g(x)</em></strong>
+risulta essere:
+<img alt="integrale_crude" src="../_images/integrale_crude.png" />
+per definizione della distribuzione di probabilità uniforme</p></li>
+<li><p><em>E[g(x)]</em> è stimabile con la <strong>media dei valori <em>g(x<sub>i</sub>)</em></strong>
+e la varianza di <em>g(x)</em> è stimabile con la
+<strong>deviazione standard della media dei valori <em>g(x<sub>i</sub>)</em></strong>,
+che si calcola a partire dalla varianza <em>V[g(x)]</em></p></li>
+<li><p>Dunque si può calcolare una stima dell’integrale di <em>g(x)</em> e della sua incertezza:
+<img alt="integrale_crude_res" src="../_images/integrale_crude_res.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione">
+<h2>6.3 aree positive o negative: alla ricerca degli zeri di una funzione<a class="headerlink" href="#aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Se una funzione ha anche una <strong>parte negativa</strong>,
+gli algoritmi di calcolo dell’integrale devono tenerne conto
+dividendo le regioni da integrare in positiva e negativa</p></li>
+<li><p>Esistono tecniche per <strong>trovare gli zeri</strong> di una funzione</p></li>
+<li><p>Ipotesi sempici:</p>
+<ul>
+<li><p>Funzione <em>g(x)</em> <strong>continua definita su un intervallo compatto e connesso</strong> <em>[x<sub>0</sub>, x<sub>1</sub>]</em></p></li>
+<li><p>La funzione ha <strong>un solo zero</strong> nell’intervallo</p></li>
+<li><p>Agli estremi dell’intervallo, i valori della funzione <strong>hanno segno opposto</strong>
+<img alt="integrale_crude_res" src="../_images/funzione_con_zero.png" /></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="il-metodo-della-bisezione">
+<h3>6.3.1 il metodo della bisezione<a class="headerlink" href="#il-metodo-della-bisezione" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Il programma non vede la funzione nella sua interezza,
+quindi l’unico modo che ha per determinare dove sia lo zero
+è <strong>stimare la funzione in singoli punti</strong></p></li>
+<li><p>Date le ipotesi iniziali,
+lo zero della funzione si trova sicuramente fra due punti tali per cui
+la funzione <strong>assume valore con segno opposto</strong> fra questi due punti</p></li>
+<li><p>La tecnica della bisezione <strong>restringe iterativamente questo intervallo</strong><br />
+fino a che non diventa più piccolo di una risoluzione fissata
+<img alt="integrale_crude_res" src="../_images/bisezione.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="una-implementazione-dell-algoritmo-di-bisezione">
+<h3>6.3.2 una implementazione dell’algoritmo di bisezione<a class="headerlink" href="#una-implementazione-dell-algoritmo-di-bisezione" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Ad ogni iterazione,
+si calcola il <strong>punto medio dell’intervallo</strong> che contiene lo zero
+e si decide se lo zero stia alla sua destra o alla sua sinistra</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">bisezione</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">xMin</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">xMax</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0001</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">xAve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xMin</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">xMax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">xMin</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">precision</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">xAve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">xMax</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xMin</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="n">xAve</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="n">xMin</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.</span><span class="p">)</span><span class="w"> </span><span class="n">xMin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xAve</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">else</span><span class="w">                          </span><span class="n">xMax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xAve</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">xAve</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="una-implementazione-dell-algoritmo-di-bisezione-in-modo-ricorsivo">
+<h3>6.3.3 una implementazione dell’algoritmo di bisezione in modo ricorsivo<a class="headerlink" href="#una-implementazione-dell-algoritmo-di-bisezione-in-modo-ricorsivo" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>L’algoritmo di bisezione effettua ripetutamente la <strong>stessa operazione</strong>
+in maniera ricorsiva</p></li>
+<li><p>Questo comportamento si può anche implementare in <code class="docutils literal notranslate"><span class="pre">C++</span></code>,
+scrivendo una <strong>funzione ricorsiva</strong>,
+cioè che invoca se stessa:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">bisezione_ricorsiva</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">xMin</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">xMax</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0001</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">xAve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">xMax</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xMin</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">xMax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">xMin</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">precision</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">xAve</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="n">xAve</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="n">xMin</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">bisezione_ricorsiva</span><span class="w"> </span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">xAve</span><span class="p">,</span><span class="w"> </span><span class="n">xMax</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w">                          </span><span class="k">return</span><span class="w"> </span><span class="n">bisezione_ricorsiva</span><span class="w"> </span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="n">xAve</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+</li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>attenzione</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>In ogni funzione ricorsiva, devono essere presenti <strong>due elementi</strong>:</p>
+<ul>
+<li><p>L’<strong>invocazione della funzione</strong> stessa</p></li>
+<li><p>La <strong>condizione di uscita</strong> dalla sequenza di auto-invocazioni</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="informazioni-necessarie-gli-estremi-di-una-funzione">
+<h2>6.4 informazioni necessarie: gli estremi di una funzione<a class="headerlink" href="#informazioni-necessarie-gli-estremi-di-una-funzione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Il metodo di hit-or-miss necessita della <strong>conoscenza del valore massimo</strong>
+che assume <em>g(x)</em> sull’intervallo di integrazione,
+altrimenti non vengono generati punti in alcune zone
+e la funzione effettivamente integrata è diversa</p></li>
+<li><p>Conoscere il <strong>valore minimo</strong> assunto dalla funzione permette di
+rendere l’algoritmo più efficiente,
+evitando di generare punti in rettangoli sotto la funzione,
+per i quali l’area si calcola banalmente
+<img alt="integrale_random_points_limits" src="../_images/integrale_random_points_limits.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-ricerca-di-estremanti-il-metodo-della-sezione-aurea">
+<h3>6.4.1 la ricerca di estremanti: il metodo della sezione aurea<a class="headerlink" href="#la-ricerca-di-estremanti-il-metodo-della-sezione-aurea" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Ipotesi sempici:</p>
+<ul>
+<li><p>funzione <em>g(x)</em> <strong>continua definita su un intervallo compatto e connesso</strong> <em>[x<sub>0</sub>, x<sub>1</sub>]</em></p></li>
+<li><p>la funzione ha <strong>un solo estremante</strong> nell’intervallo
+<img alt="funzione_con_minimo" src="../_images/funzione_con_minimo.png" /></p></li>
+</ul>
+</li>
+<li><p>Anche in questo caso si procede per passi,
+<strong>restringendo ad ogni iterazione l’intervallo</strong> che contiene l’estremante
+fino a che diventa più piccolo di una precisione prefissata</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-criterio-di-restringimento">
+<h3>6.4.2 il criterio di restringimento<a class="headerlink" href="#il-criterio-di-restringimento" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Per trovare il minimo di una funzione servono abbastanza punti da <strong>capirne la pendenza</strong>
+in diverse regioni dell’intervallo,
+quindi se ne cercano quattro, che determinano tre intervalli</p></li>
+<li><p>L’intervallo si stringe <strong>eliminando il tratto dove il minimo di sicuro non c’è</strong>.
+<img alt="sezione_aurea_pendenza" src="../_images/sezione_aurea_pendenza.png" /></p></li>
+<li><p>L’iterazione successiva si restringe a
+<em>[x<sub>3</sub>, x<sub>1</sub>]</em> se <em>g(x<sub>3</sub>) &gt; g(x<sub>2</sub>)</em>,
+altrimenti si restringe a <em>[x<sub>o</sub>, x<sub>2</sub>]</em></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-ottimizzazione-della-scelta-dei-punti">
+<h3>6.4.3 l’ottimizzazione della scelta dei punti<a class="headerlink" href="#l-ottimizzazione-della-scelta-dei-punti" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Per ottimizzare il calcolo,
+i punti <em>x<sub>2</sub>, x<sub>3</sub></em> vengono scelti in modo
+che uno dei due possa essere <strong>utilizzato anche nell’iterazione seguente</strong>,
+garantendo la stessa proporzione di suddivisione dell’intervallo
+<img alt="sezione_aurea_r" src="../_images/sezione_aurea_r.png" /></p></li>
+<li><p>Perché questo sia possibile deve valere:
+<img alt="sezione_aurea_r" src="../_images/sezione_aurea_formula.png" /></p></li>
+<li><p>Dunque <strong>il processo iterativo si restringe</strong> intorno all’estremante della funzione:<br />
+<img alt="sezione_aurea_r" src="../_images/sezione_aurea.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="mettere-tutto-insieme">
+<h2>6.5 mettere tutto insieme<a class="headerlink" href="#mettere-tutto-insieme" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Esistono <strong>molte tecniche</strong> di ricerca di zeri ed estremanti di funzioni,
+che sono spesso il nocciolo duro di software di analisi dati</p></li>
+<li><p>Una collezione di algoritmi si trova nel volume <strong><a class="reference external" href="http://numerical.recipes/">numerical recipes</a></strong></p></li>
+<li><p>Oltre al problema locale di compiere operazioni in condizioni di buona regolarità,
+algoritmi generici devono anche trovare il modo di
+<strong>ricondurre un problema generale a casi semplici</strong></p>
+<ul>
+<li><p>Ad esempio, nel caso della ricerca di minimi
+bisogna evitare che gli algoritmi trovino minimi locali
+e non identifichino il <strong>minimo globale</strong> di una funzione</p></li>
+</ul>
+</li>
+<li><p>La funzionalità di un algoritmo dipende criticamente dalla <strong>dimensione
+dello spazio di definizione</strong> delle funzioni</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizi">
+<h2>6.6 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_06"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lezione_05/ESERCIZI.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Esercizi per la lezione 5</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ESERCIZI.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Esercizi per la lezione 6</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Pietro Govoni, Maura Pavan<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

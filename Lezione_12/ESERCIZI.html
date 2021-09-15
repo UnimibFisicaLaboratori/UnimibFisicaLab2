@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esercizi per la lezione 12 &#8212; Laboratorio II</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendice" href="../appendix.html" />
+    <link rel="prev" title="Lezione 12: Test di Ipotesi" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio II</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio II - A.A. 2021/22
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lezione_00/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_06/README.html">
+     Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_07/README.html">
+     Lezione 7: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_08/README.html">
+     Lezione 8: programmazione ad oggetti: l’ereditarietà
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_09/README.html">
+     Lezione 9: stima di parametri con il metodo della massima verosimiglianza
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESERCIZI.html">
+       Esercizi per la lezione 9
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_10/README.html">
+     Lezione 10: stima di parametri con il metodo dei minimi quadrati
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_10/ESERCIZI.html">
+       Esercizi per la lezione 10
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_11/README.html">
+     Lezione 11: fit di distribuzioni binnate con
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_11/ESERCIZI.html">
+       Esercizi per la lezione 11
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Lezione 12: Test di Ipotesi
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Esercizi per la lezione 12
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_12/ESERCIZI.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-1">
+   Esercizio 12.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-2">
+   Esercizio 12.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-3">
+   Esercizio 12.3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-4">
+   Esercizio 12.4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-5">
+   Esercizio 12.5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-6">
+   Esercizio 12.6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-7">
+   Esercizio 12.7
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-8">
+   Esercizio 12.8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-9">
+   Esercizio 12.9
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-10">
+   Esercizio 12.10
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-11">
+   Esercizio 12.11
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-12">
+   Esercizio 12.12
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-13">
+   Esercizio 12.13
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-14">
+   Esercizio 12.14
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-12-15">
+   Esercizio 12.15
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="esercizi-per-la-lezione-12">
+<h1>Esercizi per la lezione 12<a class="headerlink" href="#esercizi-per-la-lezione-12" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="esercizio-12-1">
+<h2>Esercizio 12.1<a class="headerlink" href="#esercizio-12-1" title="Permalink to this headline">¶</a></h2>
+<p>A partire dalla collezione di eventi salvati nel file <span class="xref myst">dati.txt</span>:</p>
+<ul class="simple">
+<li><p>si implementi un programma che trovi un cambio di variabile che decorreli linearmente le variabili <em>x</em> ed <em>y</em>
+a partire dalla matrice di correlazione del campione;</p></li>
+<li><p>si utilizzi la classe <code class="docutils literal notranslate"><span class="pre">TH2F</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> per visualizzare la distribuzione bidimensionale
+dei dati prima e dopo la decorrelazione.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-2">
+<h2>Esercizio 12.2<a class="headerlink" href="#esercizio-12-2" title="Permalink to this headline">¶</a></h2>
+<p>Si utilizzi il programma <span class="xref myst">main_01.cpp</span> per creare due campioni
+di eventi bidimensionali distribuiti come due gaussiane diverse fra loro
+e scriverli ciascuno su un file di testo.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-3">
+<h2>Esercizio 12.3<a class="headerlink" href="#esercizio-12-3" title="Permalink to this headline">¶</a></h2>
+<p>Si scriva un programma che determini il vettore <em><strong>f</strong></em> utilizzato per la costruzione del test statistico
+del discriminante di Fisher e lo si applichi ai campioni generati nell’Esercizio 12.2.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-4">
+<h2>Esercizio 12.4<a class="headerlink" href="#esercizio-12-4" title="Permalink to this headline">¶</a></h2>
+<p>Si riempiano gli istogrammi delle variabili <em>x</em> ed <em>y</em> dei due campioni generati all’Esercizio 12.2 e,
+sfruttando il codice sorgente scritto nell’Esercizio 12.3, si riempia l’istogramma della variabile <em>t</em>.
+Si disegnino i tre istogrammi per poi farne un confronto grafico.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-5">
+<h2>Esercizio 12.5<a class="headerlink" href="#esercizio-12-5" title="Permalink to this headline">¶</a></h2>
+<p>Si costruisca la curva ROC per la separazione delle ipotesi corrispondenti ai due campioni generati all’Esercizio 12.2,
+nei tre casi in cui la separazione sia fatta con la variabile <em>x</em>, <em>y</em> o <em>t</em>.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-6">
+<h2>Esercizio 12.6<a class="headerlink" href="#esercizio-12-6" title="Permalink to this headline">¶</a></h2>
+<p>Si determini l’area sottesa dalle tre curve ROC costruite nell’esercizio 12.5.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-7">
+<h2>Esercizio 12.7<a class="headerlink" href="#esercizio-12-7" title="Permalink to this headline">¶</a></h2>
+<p>Partendo dall’esempio che si trova in <span class="xref myst">main_01.cpp</span>,
+si generino due campionamenti di numeri pseudo casuali
+distribuiti secondo una gaussiana bidimensionale con diverse matrici di covarianza per i due campioni
+e si verifichi come si comporta il discriminante di Fisher nelle varie situazioni.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-8">
+<h2>Esercizio 12.8<a class="headerlink" href="#esercizio-12-8" title="Permalink to this headline">¶</a></h2>
+<p>Si scriva una libreria che definisca due funzioni in modo parametrico:</p>
+<ul class="simple">
+<li><p>la pdf binormale <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">binormal(double</span> <span class="pre">*x,</span> <span class="pre">double</span> <span class="pre">*p)</span></code>
+con correlazione nulla tra le  due variabili <em>x</em> ed <em>y</em> (i parametri sono quattro);</p></li>
+<li><p>il logaritmo del rapporto tra due pdf binormali (è il loglikelihood ratio per un singolo campionamento)
+<code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">loglike(double</span> <span class="pre">*x,</span> <span class="pre">double</span> <span class="pre">*p)</span></code>
+(i parametri sono otto: quattro per la pdf al numeratore e quattro per quella al denominatore).</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-9">
+<h2>Esercizio 12.9<a class="headerlink" href="#esercizio-12-9" title="Permalink to this headline">¶</a></h2>
+<p>Si scriva un programma in cui:</p>
+<ul class="simple">
+<li><p>i parametri delle due binormali (media e sigma per le due variabili <em>x</em> ed <em>y</em>)
+sono passati dalla linea di comando e inseriti in un array di otto elementi.</p></li>
+<li><p>si istanziano tre oggetti di tipo <code class="docutils literal notranslate"><span class="pre">TF2</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TF2</span> <span class="pre">*f0</span> </code> è la binormale relativa all’ipotesi <em>H<sub>0</sub></em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TF2</span> <span class="pre">*f1</span> </code> è la binormale relativa all’ipotesi <em>H<sub>1</sub></em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TF2</span> <span class="pre">*lratio</span> </code> è loglikelihood ratio per un singolo campionamento</p></li>
+</ul>
+</li>
+<li><p>si assegnano i valori dei parametri alle tre funzioni</p></li>
+<li><p>si disegnano le tre funzioni in uno stesso <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code> diviso in tre <code class="docutils literal notranslate"><span class="pre">TPad</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-10">
+<h2>Esercizio 12.10<a class="headerlink" href="#esercizio-12-10" title="Permalink to this headline">¶</a></h2>
+<p>Si scriva un programma in cui si campiona una funzione binormale riempiendo due istogrammi:</p>
+<ul class="simple">
+<li><p>uno generando eventi pseudo-casuali mediante la funzione <code class="docutils literal notranslate"><span class="pre">rand_TAC</span></code> chiamata due volte</p></li>
+<li><p>uno usando il metodo <code class="docutils literal notranslate"><span class="pre">GetRandom(double</span> <span class="pre">x,double</span> <span class="pre">y)</span></code> della classe <code class="docutils literal notranslate"><span class="pre">TF2</span></code></p>
+<ul>
+<li><p>includere una classe per la generazione di numeri casuali, come<code class="docutils literal notranslate"><span class="pre">TRandom3.h</span></code></p></li>
+<li><p>inizializzare nel main il seed del generatore di numeri pseudo-casuali con l’istruzione <code class="docutils literal notranslate"><span class="pre">gRandom-&gt;SetSeed(0);</span></code>
+Si faccia quindi il fit dei due istogrammi con la <code class="docutils literal notranslate"><span class="pre">TF2</span></code> binormale.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-11">
+<h2>Esercizio 12.11<a class="headerlink" href="#esercizio-12-11" title="Permalink to this headline">¶</a></h2>
+<p>Si implementi, nella libreria dell’Esercizio 12.8, una funzione che calcola il size del test:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">sizetest</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">c_alpha</span><span class="p">,</span><span class="w"> </span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">lratio</span><span class="p">,</span><span class="w"> </span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">f0</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">c_alpha</span></code> è un valore passato dal main che definisce la regione critica</p></li>
+<li><p>si campiona la pdf <code class="docutils literal notranslate"><span class="pre">TF2</span> <span class="pre">*f0</span></code> un numero <em>N</em> di volte</p></li>
+<li><p>si calcola quale frazione dei campionamenti ha un loglikelihood ratio inferiore a <code class="docutils literal notranslate"><span class="pre">c_alpha</span></code></p></li>
+<li><p>questo è il size del test ed è il valore restituito dalla funzione</p></li>
+</ul>
+<p>Per provare la funzione si suggerisce di scegliere un valore di <code class="docutils literal notranslate"><span class="pre">c_alpha</span></code>  nel range
+compreso tra il valore massimo e minimo del loglikelihood ratio (ad esempio a metà dell’intervallo) ed
+effettuare un cliclo in cui il size del test è calcolato per valori crescenti di <em>N</em> e stampato a schermo
+(o inserito in un grafico).
+Questo consente di scegliere un valore di <em>N</em> che sia un compromesso tra la precisione della stima del size
+e il tempo di esecuzione del programma.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-12">
+<h2>Esercizio 12.12<a class="headerlink" href="#esercizio-12-12" title="Permalink to this headline">¶</a></h2>
+<p>Implementare nella lireria dell’Esercizio 12.8 la funzione che determina la BCR
+(cioè che calcola il valore di c<sub>α</sub> corrispondente al size desiderato)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">DeterminaBCR</span><span class="p">(</span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">lratio</span><span class="p">,</span><span class="w"> </span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">f0</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">TGraph</span><span class="w"> </span><span class="o">*</span><span class="n">gsize</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>I parametri sono:</p>
+<ul class="simple">
+<li><p>le funzioni di che rappresentano il  logaritmo del rapporto
+di likelihood e la pdf(x,y) nell’ipotesi H<sub>0</sub></p></li>
+<li><p>il size scelto per il test (da aggungersi come parametro passato da linea di comando)</p></li>
+<li><p>il puntatore al grafico che verrà riempito con i valori del size in funzione di c<sub>α</sub></p></li>
+</ul>
+<p>Nella funzione:</p>
+<ul class="simple">
+<li><p>un ciclo fa variare c<sub>α</sub> del valore minimo che può assumere al valore massimo,
+incrementandolo con passo costante (anche qui potete chiedervi come ottimizzare il numero di passi)</p></li>
+<li><p>per ogni valore di c<sub>α</sub> si determina il size del test e si riempie il grafico</p></li>
+<li><p>quando il size del test è prossimo al valore desiderato α
+(che è passato come parametro alla funzione)
+il corrispondente valore di c<sub>α</sub> è il valore di ritorno della funzione.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-13">
+<h2>Esercizio 12.13<a class="headerlink" href="#esercizio-12-13" title="Permalink to this headline">¶</a></h2>
+<p>Completare l’esercizio precedente calcolando il power del test e costruendo il grafico ROC.
+Disegnare su un <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code> la BCR, il grafico size vs. c<sub>α</sub>
+e il grafico ROC.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-14">
+<h2>Esercizio 12.14<a class="headerlink" href="#esercizio-12-14" title="Permalink to this headline">¶</a></h2>
+<p>Modificare l’esercizio precedente sostituendo alla binormale un’altra pdf bidimensionale
+(ad esempio ottenuta come prodotto di due pdf mono-dimensionali).
+Andrà ovviamente modificata anche la
+<code class="docutils literal notranslate"><span class="pre">TF2</span></code> che rappresenta il logaritmo del rapporto di Likelihood.</p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-12-15">
+<h2>Esercizio 12.15<a class="headerlink" href="#esercizio-12-15" title="Permalink to this headline">¶</a></h2>
+<p>Si applichi il metodo del lemma di Neyman-Pearson al caso dell’Esercizio 12.2
+e si confronti il risultato ottenuto, in termini di curve ROC,
+con i risultati ottenuti nell’Esercizio 12.5.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="README.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lezione 12: Test di Ipotesi</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../appendix.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Appendice</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Pietro Govoni, Maura Pavan<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

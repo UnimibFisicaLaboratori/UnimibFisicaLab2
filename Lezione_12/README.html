@@ -1,0 +1,1606 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 12: Test di Ipotesi &#8212; Laboratorio II</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Esercizi per la lezione 12" href="ESERCIZI.html" />
+    <link rel="prev" title="Esercizi per la lezione 11" href="../Lezione_11/ESERCIZI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio II</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio II - A.A. 2021/22
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lezione_00/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_06/README.html">
+     Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_07/README.html">
+     Lezione 7: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_08/README.html">
+     Lezione 8: programmazione ad oggetti: l’ereditarietà
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_09/README.html">
+     Lezione 9: stima di parametri con il metodo della massima verosimiglianza
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESERCIZI.html">
+       Esercizi per la lezione 9
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_10/README.html">
+     Lezione 10: stima di parametri con il metodo dei minimi quadrati
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_10/ESERCIZI.html">
+       Esercizi per la lezione 10
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_11/README.html">
+     Lezione 11: fit di distribuzioni binnate con
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_11/ESERCIZI.html">
+       Esercizi per la lezione 11
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Lezione 12: Test di Ipotesi
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESERCIZI.html">
+       Esercizi per la lezione 12
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_12/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduzione">
+   12.1 Introduzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regione-critica-size-e-power">
+     12.1.1 Regione Critica, Size e Power
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-test-del-chi-quadro">
+     12.1.2 Il test del Chi-Quadro
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-metodo-del-discriminante-di-fischer">
+     12.1.3 Il Metodo del discriminante di Fischer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-metodo-del-rapporto-di-likelihood">
+     12.1.4 Il Metodo del rapporto di Likelihood
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decorrelazione-lineare-di-variabili">
+   12.2 Decorrelazione lineare di variabili
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-cambio-di-coordinate">
+     12.2.1 Un cambio di coordinate
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#una-rotazione-della-matrice-di-covarianza">
+     12.2.2 Una rotazione della matrice di covarianza
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-rotazione-delle-variabili">
+     12.2.3 La rotazione delle variabili
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-esempio-di-implementazione-di-decorrelazione">
+   12.3 Un esempio di implementazione di decorrelazione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-lettura-del-file-di-testo">
+     12.3.1 La lettura del file di testo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-costruzione-della-matrice-delle-covarianze">
+     12.3.2 La costruzione della matrice delle covarianze
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-calcolo-delle-covarianze">
+     12.3.3 Il calcolo delle covarianze
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-angolo-di-rotazione-ed-il-cambio-di-variabili">
+     12.3.4 L’angolo di rotazione ed il cambio di variabili
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#il-discriminante-di-fisher">
+   12.4 Il discriminante di Fisher
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-determinazione-della-direzione-del-discriminante">
+     12.4.1 La determinazione della direzione del discriminante
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#due-modelli-da-confrontare">
+     12.4.2 Due modelli da confrontare
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-calcolo-delle-matrici-di-covarianza">
+     12.4.3 Il calcolo delle matrici di covarianza
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-calcolo-delle-medie">
+     12.4.4 Il calcolo delle medie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-calcolo-della-direzione-del-discriminante-di-fisher">
+     12.4.5 Il calcolo della direzione del discriminante di Fisher
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-utilizzo-della-statistica-di-test">
+   12.5 L’utilizzo della statistica di test
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-calcolo-della-statistica-di-test-per-i-due-campioni">
+     12.5.1 Il calcolo della statistica di test per i due campioni
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-visualizzazione-dell-informazione-disponibile">
+     12.5.2 La visualizzazione dell’informazione disponibile
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-comportamento-del-test-di-ipotesi">
+     12.5.3 Il comportamento del test di ipotesi
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-curva-roc">
+     12.5.4 La curva ROC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-algoritmo-di-costruzione">
+     12.5.5 L’algoritmo di costruzione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-riempimento-della-curva">
+     12.5.6 Il riempimento della curva
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-confronto-con-le-altre-variabili">
+     12.5.7 Il confronto con le altre variabili
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#il-teorema-di-neyman-pearson">
+   12.6 Il Teorema di Neyman-Pearson
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determinazione-della-regione-critica">
+     12.6.1 Determinazione della regione critica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-esempio-di-calcolo-della-bcr">
+   12.7 Un esempio di calcolo della BCR
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funzione-binormale">
+     12.7.1 Funzione binormale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rapporto-di-likelihood">
+     12.7.2 Rapporto di Likelihood
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disegnamo-le-due-pdf-e-il-rapporto-di-likelihood">
+     12.7.3 Disegnamo le due pdf e il rapporto di likelihood
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#best-critical-region-bcr">
+     12.7.4 Best Critical Region (BCR)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funzione-che-calcola-il-size">
+     12.7.5 Funzione che calcola il size
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calcolo-della-size-in-funzione-della-soglia">
+     12.7.6 Calcolo della size in funzione della soglia
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disegno-della-bcr">
+     12.7.7 Disegno della BCR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disegno-curva-roc">
+     12.7.8 Disegno curva ROC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizi">
+   12.8 ESERCIZI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lezione-12-test-di-ipotesi">
+<h1>Lezione 12: Test di Ipotesi<a class="headerlink" href="#lezione-12-test-di-ipotesi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#121-introduzione">12.1 Introduzione</a></p>
+<ul>
+<li><p><a class="reference external" href="#1211-regione-critica-size-e-power">12.1.1 Regione Critica, Size e Power</a></p></li>
+<li><p><a class="reference external" href="#1212-il-test-del-chi-quadro">12.1.2 Il test del Chi-Quadro</a></p></li>
+<li><p><a class="reference external" href="#1213-il-metodo-del-discriminante-di-fischer">12.1.3 Il Metodo del discriminante di Fischer</a></p></li>
+<li><p><a class="reference external" href="#1214-il-metodo-del-rapporto-di-likelihood">12.1.4 Il Metodo del rapporto di Likelihood</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#122-decorrelazione-lineare-di-variabili">12.2 Decorrelazione lineare di variabili</a></p>
+<ul>
+<li><p><a class="reference external" href="#1221-un-cambio-di-coordinate">12.2.1 Un cambio di coordinate</a></p></li>
+<li><p><a class="reference external" href="#1222-una-rotazione-della-matrice-di-covarianza">12.2.2 Una rotazione della matrice di covarianza</a></p></li>
+<li><p><a class="reference external" href="#1223-la-rotazione-delle-variabili">12.2.3 La rotazione delle variabili</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#123-un-esempio-di-implementazione-di-decorrelazione">12.3 Un esempio di implementazione di decorrelazione</a></p>
+<ul>
+<li><p><a class="reference external" href="#1231-la-lettura-del-file-di-testo">12.3.1 La lettura del file di testo</a></p></li>
+<li><p><a class="reference external" href="#1232-la-costruzione-della-matrice-delle-covarianze">12.3.2 La costruzione della matrice delle covarianze</a></p></li>
+<li><p><a class="reference external" href="#1233-il-calcolo-delle-covarianze">12.3.3 Il calcolo delle covarianze</a></p></li>
+<li><p><a class="reference external" href="#1234-langolo-di-rotazione-ed-il-cambio-di-variabili">12.3.4 L’angolo di rotazione ed il cambio di variabili</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#124-il-discriminante-di-fisher">12.4 Il discriminante di Fisher</a></p>
+<ul>
+<li><p><a class="reference external" href="#1241-la-determinazione-della-direzione-del-discriminante">12.4.1 La determinazione della direzione del discriminante</a></p></li>
+<li><p><a class="reference external" href="#1242-due-modelli-da-confrontare">12.4.2 Due modelli da confrontare</a></p></li>
+<li><p><a class="reference external" href="#1243-il-calcolo-delle-matrici-di-covarianza">12.4.3 Il calcolo delle matrici di covarianza</a></p></li>
+<li><p><a class="reference external" href="#1244-il-calcolo-delle-medie">12.4.4 Il calcolo delle medie</a></p></li>
+<li><p><a class="reference external" href="#1245-il-calcolo-della-direzione-del-discriminante-di-fisher">12.4.5 Il calcolo della direzione del discriminante di Fisher</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#125-lutilizzo-della-statistica-di-test">12.5 L’utilizzo della statistica di test</a></p>
+<ul>
+<li><p><a class="reference external" href="#1251-il-calcolo-della-statistica-di-test-per-i-due-campioni">12.5.1 Il calcolo della statistica di test per i due campioni</a></p></li>
+<li><p><a class="reference external" href="#1252-la-visualizzazione-dellinformazione-disponibile">12.5.2 La visualizzazione dell’informazione disponibile</a></p></li>
+<li><p><a class="reference external" href="#1253-il-comportamento-del-test-di-ipotesi">12.5.3 Il comportamento del test di ipotesi</a></p></li>
+<li><p><a class="reference external" href="#1254-la-curva-roc">12.5.4 La curva ROC</a></p></li>
+<li><p><a class="reference external" href="#1255-lalgoritmo-di-costruzione">12.5.5 L’algoritmo di costruzione</a></p></li>
+<li><p><a class="reference external" href="#1256-il-riempimento-della-curva">12.5.6 Il riempimento della curva</a></p></li>
+<li><p><a class="reference external" href="#1257-il-confronto-con-le-altre-variabili">12.5.7 Il confronto con le altre variabili</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#126-il-teorema-di-neyman-pearson">12.6 Il Teorema di Neyman-Pearson</a></p>
+<ul>
+<li><p><a class="reference external" href="#1261-determinazione-della-regione-critica">12.6.1 Determinazione della regione critica</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#127-un-esempio-di-calcolo-della-bcr">12.7 Un esempio di calcolo della BCR</a></p>
+<ul>
+<li><p><a class="reference external" href="#1271-funzione-binormale">12.7.1 Funzione binormale</a></p></li>
+<li><p><a class="reference external" href="#1272-rapporto-di-likelihood">12.7.2 Rapporto di Likelihood</a></p></li>
+<li><p><a class="reference external" href="#1273-disegnamo-le-due-pdf-e-il-rapporto-di-likelihood">12.7.3 Disegnamo le due pdf e il rapporto di likelihood</a></p></li>
+<li><p><a class="reference external" href="#1274-best-critical-region-bcr">12.7.4 Best Critical Region (BCR)</a></p></li>
+<li><p><a class="reference external" href="#1275-funzione-che-calcola-il-size">12.7.5 Funzione che calcola il size</a></p></li>
+<li><p><a class="reference external" href="#1276-calcolo-della-size-in-funzione-della-soglia">12.7.6 Calcolo della size in funzione della soglia</a></p></li>
+<li><p><a class="reference external" href="#1277-disegno-della-bcr">12.7.7 Disegno della BCR</a></p></li>
+<li><p><a class="reference external" href="#1278-disegno-curva-roc">12.7.8 Disegno curva ROC</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#128-esercizi">12.8 ESERCIZI</a></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="introduzione">
+<h2>12.1 Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>si hanno N campionamenti IID di una <em>pdf(x)</em> con <em>x</em> variabile mono o pluri-dimensionale, si vuole:</p>
+<ul>
+<li><p>valutare la validità di un’ipotesi <em>H<sub>0</sub></em> relativa alla <em>pdf(x)</em></p></li>
+<li><p><strong>confrontare l’ipotesi <em>H<sub>0</sub></em> con l’ipotesi alternativa H<sub>1</sub></strong>, entrambe relative alla <em>pdf(x)</em></p></li>
+</ul>
+</li>
+<li><p>le ipotesi si dividono in:</p>
+<ul>
+<li><p><strong>semplici</strong>, che sono caratterizzate da un modello univoco senza parametri indeterminati</p></li>
+<li><p><strong>composte</strong>, che sono caratterizzate da un insieme di modelli,
+come ad esempio un modello con un parametro non determinato
+o vincolato ad assumere un insieme di valori</p></li>
+</ul>
+</li>
+<li><p>in questa lezione consideriamo il caso di <strong>ipotesi semplici</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="regione-critica-size-e-power">
+<h3>12.1.1 Regione Critica, Size e Power<a class="headerlink" href="#regione-critica-size-e-power" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>un test di ipotesi prevede di:</p>
+<ul>
+<li><p>costruire una statistica di test <em>t</em> usando i campionamenti</p></li>
+<li><p>scartare l’ipotesi H<sub>0</sub> quando <em>t</em> cade nella regione del sample space
+che chiamiamo <strong>regione critica</strong></p></li>
+</ul>
+</li>
+<li><p>il test è caratterizzato da due parametri:</p>
+<ul>
+<li><p>α è la probabilità che l’ipotesi H<sub>0</sub> venga scartata quando è vera: è il <strong>size</strong> del test</p></li>
+<li><p>β è la probabilità  che l’ipotesi H<sub>0</sub> viene accettata quando è vera H<sub>1</sub>:
+(1-β) è il <strong>power</strong> del test</p></li>
+</ul>
+</li>
+<li><p>la regione critica non è univocamente determinabile dal size del test</p></li>
+<li><p><strong>la regione critica che massimizza il power del test, una volta fissato il suo size, è la Best Critical Region (BCR)</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-test-del-chi-quadro">
+<h3>12.1.2 Il test del Chi-Quadro<a class="headerlink" href="#il-test-del-chi-quadro" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>il test del chi-quadro analizza una singola ipotesi <em>H<sub>0</sub></em></p>
+<ul>
+<li><p>i parametri sono stimati preventivamente ed il test usa il valore stimato</p></li>
+<li><p>la statistica di test <em>t</em> è una variabile mono-dimensionale che segue la distribuzione del chi-quadro</p></li>
+<li><p>la regione critica è data da <em>t</em> &gt; <em>t</em><sub>cut</sub></p></li>
+<li><p>il size è l’integrale della distribuzione chi-quadro per <em>t</em> &gt; <em>t</em><sub>cut</sub></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-metodo-del-discriminante-di-fischer">
+<h3>12.1.3 Il Metodo del discriminante di Fischer<a class="headerlink" href="#il-metodo-del-discriminante-di-fischer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>sono dati N campionamenti IID di una <em>pdf(x)</em> e si vuole determinare se provengono dalla
+<em>pdf(x| H<sub>0</sub>)</em> o dalla <em>pdf(x| H<sub>1</sub>)</em></p></li>
+<li><p>il metodo del discriminante di Fischer prevede di:</p>
+<ul>
+<li><p>costruire una statistica di test <em>t</em> che sia una funzione lineare dei campionamenti</p></li>
+<li><p>accettare l’ipotesi se t &lt; <em>t</em><sub>cut</sub></p></li>
+<li><p>la selezione basata su <em>t</em><sub>cut</sub> identifica la regione critica
+e si utilizza quindi per calcoare size e power del test</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-metodo-del-rapporto-di-likelihood">
+<h3>12.1.4 Il Metodo del rapporto di Likelihood<a class="headerlink" href="#il-metodo-del-rapporto-di-likelihood" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>sono dati N campionamenti IID di una <em>pdf(x)</em> e si vuole determinare se provengono dalla</p>
+<ul>
+<li><p>pdf(x| H<sub>0</sub>)* o dalla <em>pdf(x| H<sub>1</sub>)</em></p></li>
+</ul>
+</li>
+<li><p>il metodo del rapporto di Likelihood prevede di:</p>
+<ul>
+<li><p>usare come statistica del test il rapporto
+<img alt="formulaLikeRatio" src="../_images/Formula_LikelihoodRatio.png" /></p></li>
+<li><p>accettare l’ipotesi se il rapporto è minore di <em>t</em><sub>cut</sub></p></li>
+<li><p>la selezione basata su <em>t</em><sub>cut</sub> identifica la regione critica
+e si utilizza quindi per calcoare size e power del test</p></li>
+</ul>
+</li>
+<li><p>nel caso di ipotesi semplici questa procedura produce, a parità di size,
+il test con il power più alto</p></li>
+<li><p>la regione critica in questo caso si chiama <strong>Best Critical Region</strong> o  BCR</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="decorrelazione-lineare-di-variabili">
+<h2>12.2 Decorrelazione lineare di variabili<a class="headerlink" href="#decorrelazione-lineare-di-variabili" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Dato un campione di <em>N</em> misure (<em>x</em><sub>i</sub>, <em>y</em><sub>i</sub>) indipendenti ed identicamente distribuite,
+in generale la variabile <em>x</em> può essere <strong>linearmente correlata con la variabile <em>y</em></strong>,
+cioè la covarianza σ<sub>xy</sub> calcolata fra le due variabili può essere diversa da zero.</p></li>
+<li><p>In questo caso,
+la matrice di covarianza associata al modello che descrive la misura, cioè alla popolazione,
+non è diagonale:
+<img alt="covarianza" src="../_images/covarianza.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="un-cambio-di-coordinate">
+<h3>12.2.1 Un cambio di coordinate<a class="headerlink" href="#un-cambio-di-coordinate" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Siccome la covarianza descrive il livello di correlazione lineare che sussiste fra due variabili,
+esiste sempre un cambio di variabili nello spazio delle fasi del campione
+tale per cui <strong>le variabili trasformate siano non correlate fra di loro</strong>
+<img alt="rotazione" src="../_images/rotazione.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="una-rotazione-della-matrice-di-covarianza">
+<h3>12.2.2 Una rotazione della matrice di covarianza<a class="headerlink" href="#una-rotazione-della-matrice-di-covarianza" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Nel nuovo sistema di riferimento,
+la <strong>matrice delle covarianze risulta quindi diagonale</strong></p></li>
+<li><p>Questo non ci stupisce,
+perché essendo simmetrica la matrice delle covarianze è sempre diagonalizzabile</p></li>
+<li><p>Una trasformazione unitaria che diagonalizzi la matrice delle covarianze è <strong>una rotazione di un angolo θ</strong></p></li>
+<li><p>Data una matrice simmetrica 2x2:
+<img alt="matrice2x2" src="../_images/matrice_simmetrica.png" /></p></li>
+<li><p>l’angolo di rotazione si calcola come:
+<img alt="angoloSimm" src="../_images/theta_matrice_simmetrica.png" /></p></li>
+<li><p>che per il caso della matrice delle covarianze diventa:
+<img alt="angoloCov" src="../_images/theta_matrice_covarianze.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-rotazione-delle-variabili">
+<h3>12.2.3 La rotazione delle variabili<a class="headerlink" href="#la-rotazione-delle-variabili" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Noto l’angolo di rotazione θ, la matrice di rotazione associata è:
+<img alt="rotazioneMatrice" src="../_images/rotazione_matrice.png" /></p></li>
+<li><p>Che corrisponde al cambio di variabili:
+<img alt="rotazioneSistema" src="../_images/rotazione_sistema.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="un-esempio-di-implementazione-di-decorrelazione">
+<h2>12.3 Un esempio di implementazione di decorrelazione<a class="headerlink" href="#un-esempio-di-implementazione-di-decorrelazione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Sia dato il campione di <em>N</em> misure (<em>x</em><sub>i</sub>, <em>y</em><sub>i</sub>) sotto forma di un <em>file</em> di testo.</p></li>
+<li><p>Dopo aver trasferito i valori contenuti nel <em>file</em> in due <code class="docutils literal notranslate"><span class="pre">vector</span></code>,
+si può <strong>calcolare la matrice delle covarianze sul campione</strong>
+ed utilizzare i valori ottenuti
+come stimatori della matrice delle covarianze del modello,
+utilizzando la tecnica della sostituzione per il calcolo di stimatori.</p></li>
+<li><p>A partire dalla matrice così ottenuta,
+si può quindi <strong>calcolare l’angolo di rotazione e trasformare le variabili</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-lettura-del-file-di-testo">
+<h3>12.3.1 La lettura del file di testo<a class="headerlink" href="#la-lettura-del-file-di-testo" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Si esegue secondo le istruzioni già studiate durante la <a class="reference internal" href="../Lezione_09/README.html"><span class="doc std std-doc">Lezione 9</span></a>,
+prestando attenzione al fatto che <strong>le coppie di valori (<em>x</em><sub>i</sub>, <em>y</em><sub>i</sub>)
+sono scritte una per riga</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// apertura del file di testo</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">input_x</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">input_y</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">input_file</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">input_x</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">input_file</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">input_y</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="p">.</span><span class="n">eof</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">data_x</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">input_x</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">data_y</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">input_y</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<span class="n">input_file</span><span class="p">.</span><span class="n">close</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-costruzione-della-matrice-delle-covarianze">
+<h3>12.3.2 La costruzione della matrice delle covarianze<a class="headerlink" href="#la-costruzione-della-matrice-delle-covarianze" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>I <strong>termini sulla diagonale</strong> della matrice delle covarianze
+sono la varianza di ciascuna variabile:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../Lezione_09/programmi/statistiche_vector.h&quot;</span><span class="cp"></span>
+<span class="c1">// ...</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">V_xx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="n">data_x</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">V_yy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="n">data_y</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Dove la funzione che calcola la varianza utilizza
+una ben nota formula:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">T</span><span class="w"> </span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">input_v</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="n">somma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="n">sommaSq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">input_v</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">somma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">input_v</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">sommaSq</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">input_v</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">input_v</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">sommaSq</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">input_v</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>
+<span class="w">         </span><span class="p">(</span><span class="n">somma</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">input_v</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">somma</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">input_v</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-calcolo-delle-covarianze">
+<h3>12.3.3 Il calcolo delle covarianze<a class="headerlink" href="#il-calcolo-delle-covarianze" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>La covarianza è definita come:
+<img alt="covarianzaDef" src="../_images/covarianza_definizione.png" /></p></li>
+<li><p>e può essere stimata sul campione come:
+<img alt="covarianzaSti" src="../_images/covarianza_stimatore.png" /></p></li>
+<li><p>Il programma che implementa lo stimatore, dunque,
+esegue i seguenti calcoli:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">M_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">data_x</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">M_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">data_y</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">V_xy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data_x</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">V_xy</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">data_x</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">M_x</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">data_y</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">M_y</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="n">V_xy</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">data_x</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-angolo-di-rotazione-ed-il-cambio-di-variabili">
+<h3>12.3.4 L’angolo di rotazione ed il cambio di variabili<a class="headerlink" href="#l-angolo-di-rotazione-ed-il-cambio-di-variabili" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Nota la matrice di covarianza, si può quindi <strong>calcolare l’angolo di rotazione</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">atan</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">V_xy</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">V_xx</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">V_yy</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">c_theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cos</span><span class="w"> </span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">s_theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sin</span><span class="w"> </span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>E quindi l’effettivo cambio di variabili:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data_x_dec</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data_y_dec</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data_x</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">data_x_dec</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">data_x</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c_theta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">data_y</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s_theta</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">data_y_dec</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">data_y</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c_theta</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">data_x</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s_theta</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="il-discriminante-di-fisher">
+<h2>12.4 Il discriminante di Fisher<a class="headerlink" href="#il-discriminante-di-fisher" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Costruire una <strong>combinazione lineare</strong> delle variabili che caratterizzano gli eventi di interesse
+che serva per separare due ipotesi <em>H<sub>0</sub></em> ed <em>H<sub>1</sub></em></p></li>
+<li><p>Nel caso bidimensionale, dato un campione di eventi (<em>x</em><sub>i</sub>, <em>y</em><sub>i</sub>)</p>
+<ol class="simple">
+<li><p><strong>determinare la statistica di test</strong> <em>t(x,y)</em> da utilizzare per separare le due ipotesi</p></li>
+<li><p><strong>usare la statistica di test</strong> per distinguere le due ipotesi:</p></li>
+</ol>
+</li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>H<sub>0</sub></em></p></td>
+<td><p><em>t(x,y) &lt; t<sub>cut</sub></em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>H<sub>1</sub></em></p></td>
+<td><p><em>t(x,y) &gt;= t<sub>cut</sub></em></p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-determinazione-della-direzione-del-discriminante">
+<h3>12.4.1 La determinazione della direzione del discriminante<a class="headerlink" href="#la-determinazione-della-direzione-del-discriminante" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>La statistica di test è una <em>combinazione lineare</em> delle variabili che caratterizzano ogni evento:
+<img alt="fisher_kD" src="../_images/fisher_kD.png" /></p></li>
+<li><p>che nel caso bidimnesionale diventa:
+<img alt="fisher_2D" src="../_images/fisher_2D.png" /></p></li>
+<li><p>Il discriminante di Fisher è la determinazione dei coefficienti <em>f<sub>x</sub></em> ed <em>f<sub>y</sub></em>,
+cioè del vettore <em><strong>f</strong></em>,
+tramite la seguente equazione:
+<img alt="fisher" src="../_images/fisher.png" /></p></li>
+<li><p>dove:</p>
+<ul>
+<li><p><em><strong>μ<sub>0</sub></strong></em> e <em><strong>μ<sub>1</sub></strong></em> rappresentano la media attesa
+nel caso di ipotesi <em>H<sub>0</sub></em> ed <em>H<sub>1</sub></em> rispettivamente</p></li>
+<li><p><em>W</em> è la somma delle matrici delle covarianze <em>V<sub>0</sub></em> e <em>V<sub>1</sub></em>
+per le ipotesi <em>H<sub>0</sub></em> ed <em>H<sub>1</sub></em> rispettivamente:
+<img alt="Wmtr" src="../_images/Wmtr.png" /></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="due-modelli-da-confrontare">
+<h3>12.4.2 Due modelli da confrontare<a class="headerlink" href="#due-modelli-da-confrontare" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Le medie <em><strong>μ<sub>i</sub></strong></em> e le matrici delle covarianze <em>V<sub>i</sub></em>
+possono essere determinate <strong>a partire da campioni simulati</strong> di eventi
+generati secondo due modelli <em>H<sub>0</sub></em> ed <em>H<sub>1</sub></em>.
+<img alt="confronto" src="../_images/confronto.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-calcolo-delle-matrici-di-covarianza">
+<h3>12.4.3 Il calcolo delle matrici di covarianza<a class="headerlink" href="#il-calcolo-delle-matrici-di-covarianza" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Supponendo che gli eventi simulati siano contenuti in due <code class="docutils literal notranslate"><span class="pre">vector&lt;vector&lt;double&gt;</span> <span class="pre">&gt;</span></code>,
+le <strong>matrici delle covarianze</strong> possono essere calcolate:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../Lezione_10/programmi/algebra_2.h&quot;</span><span class="cp"></span>
+<span class="c1">// ...</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">data_1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="c1">// riempimento del vector</span>
+<span class="n">matrice</span><span class="w"> </span><span class="n">cov_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">determinaCovarianza</span><span class="w"> </span><span class="p">(</span><span class="n">data_1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>dove la funzione <code class="docutils literal notranslate"><span class="pre">determinaCovarianza</span></code> richiama le funzioni
+già definite in precedenza per il calcolo dei singoli elementi
+della matrice delle covarianze</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-calcolo-delle-medie">
+<h3>12.4.4 Il calcolo delle medie<a class="headerlink" href="#il-calcolo-delle-medie" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>La media</strong> lungo la direzione <em>x</em> e <em>y</em> può altrettanto essere calcolata:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../Lezione_09/programmi/statistiche_vector.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../Lezione_10/programmi/algebra_2.h&quot;</span><span class="cp"></span>
+<span class="c1">// ...</span>
+<span class="n">vettore</span><span class="w"> </span><span class="nf">media_1</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">media_1</span><span class="p">.</span><span class="n">setCoord</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">data_1</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">media_1</span><span class="p">.</span><span class="n">setCoord</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">data_1</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="n">vettore</span><span class="w"> </span><span class="nf">media_2</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">media_2</span><span class="p">.</span><span class="n">setCoord</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">data_2</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">media_2</span><span class="p">.</span><span class="n">setCoord</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">data_2</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-calcolo-della-direzione-del-discriminante-di-fisher">
+<h3>12.4.5 Il calcolo della direzione del discriminante di Fisher<a class="headerlink" href="#il-calcolo-della-direzione-del-discriminante-di-fisher" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Con queste informazioni a disposizione,
+si può <strong>determinare il vettore <em>f</em></strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">matrice</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cov_1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cov_2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">vettore</span><span class="w"> </span><span class="n">fisher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">W</span><span class="p">.</span><span class="n">inversa</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">media_2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">media_1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+</pre></div>
+</div>
+</li>
+<li><p>Il vettore <em><strong>f</strong></em> corrisponde alla direzione di proiezione ottimale degli eventi
+lungo la quale separare le due ipotesi:
+<img alt="confronto_fisher" src="../_images/confronto_fisher.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="l-utilizzo-della-statistica-di-test">
+<h2>12.5 L’utilizzo della statistica di test<a class="headerlink" href="#l-utilizzo-della-statistica-di-test" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="il-calcolo-della-statistica-di-test-per-i-due-campioni">
+<h3>12.5.1 Il calcolo della statistica di test per i due campioni<a class="headerlink" href="#il-calcolo-della-statistica-di-test-per-i-due-campioni" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Per ogni evento che compone i due modelli si può quindi <strong>calcolare
+il valore della statistica di test</strong> <em>t<sub>i</sub> = t(x<sub>i</sub>,y<sub>i</sub>)</em>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fisher_1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data_1</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">fisher_1</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="n">data_1</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fisher</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">      </span><span class="n">data_1</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fisher</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>ed analogamente per il secondo campione, generando anche <code class="docutils literal notranslate"><span class="pre">vector&lt;double&gt;</span> <span class="pre">fisher_2</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-visualizzazione-dell-informazione-disponibile">
+<h3>12.5.2 La visualizzazione dell’informazione disponibile<a class="headerlink" href="#la-visualizzazione-dell-informazione-disponibile" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>A questo punto,
+i due campioni sono <strong>descritti da tre variabili</strong>: <em>x</em>, <em>y</em> e <em>t</em>,
+dove la terza è una combinazione lineare delle prime due.</p></li>
+<li><p>La <strong>distribuzione delle tre variabili</strong> mostra ad occhio nudo la separazione
+delle distribuzioni di <em>H<sub>0</sub></em> ed <em>H<sub>1</sub></em>
+in ciascuna delle tre direzioni:
+<img alt="shapes" src="../_images/shapes.png" /></p></li>
+<li><p>dove <strong>gli istogrammi sono stati riempiti</strong> a partire dal <code class="docutils literal notranslate"><span class="pre">vector&lt;double&gt;</span></code>
+corrispondente a ciascuna variabile:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">max_element</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">min_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">min_element</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">sigma_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="w"> </span><span class="p">(</span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">Nbins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">max_x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min_x</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">sigma_x</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">h_vis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">histo_name</span><span class="p">.</span><span class="n">c_str</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;distribuzione 1D&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Nbins</span><span class="p">,</span><span class="w"> </span><span class="n">min_x</span><span class="p">,</span><span class="w"> </span><span class="n">max_x</span><span class="w"></span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">h_vis</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-comportamento-del-test-di-ipotesi">
+<h3>12.5.3 Il comportamento del test di ipotesi<a class="headerlink" href="#il-comportamento-del-test-di-ipotesi" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Per <strong>determinare il comportamento del test di ipotesi</strong> basato sulla statistica di test <em>t(x,y)</em>
+si può valutare l’effetto della selezione con soglia <em>t<sub>cut</sub></em>
+con la frazione di falsi positivi β
+e quella di falsi negativi α:
+<img alt="shape_fisher" src="../_images/shape_fisher.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-curva-roc">
+<h3>12.5.4 La curva ROC<a class="headerlink" href="#la-curva-roc" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>L’andamento di β in funzione di α al variare del valore di <em>t<sub>cut</sub></em>
+è detto <strong>curva ROC</strong>:
+<img alt="ROC_f" src="../_images/ROC_f.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-algoritmo-di-costruzione">
+<h3>12.5.5 L’algoritmo di costruzione<a class="headerlink" href="#l-algoritmo-di-costruzione" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Per calcolarlo,
+bisogna <strong>scorrere i possibli valori di <em>t<sub>cut</sub></em></strong></p></li>
+<li><p>Per semplificare i conteggi,
+come prima cosa si <strong>ordinano</strong> i due <code class="docutils literal notranslate"><span class="pre">vector&lt;double&gt;</span></code> da confrontare
+in maniera crescente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">sort</span><span class="w"> </span><span class="p">(</span><span class="n">fisher_1</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">fisher_1</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">sort</span><span class="w"> </span><span class="p">(</span><span class="n">fisher_2</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">fisher_2</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>questa operazione modifica l’ordinamento nel campione,
+quindi se l’ordinamento va preservato meglio è <strong>fare una copia
+dei <code class="docutils literal notranslate"><span class="pre">vector&lt;double&gt;</span></code></strong> per lavorarci</p></li>
+</ul>
+</li>
+<li><p>Poi si determinano il <strong>minimo ed il massimo valore per <em>t<sub>cut</sub></em></strong>
+in funzione dei valori assunti dagli eventi:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">taglio_min_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">fisher_1</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">fisher_2</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">taglio_min_f</span><span class="p">)</span><span class="w"> </span><span class="n">taglio_min_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">fisher_2</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">taglio_max_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">fisher_1</span><span class="p">.</span><span class="n">rbegin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">fisher_2</span><span class="p">.</span><span class="n">rbegin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">taglio_max_f</span><span class="p">)</span><span class="w"> </span><span class="n">taglio_max_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">fisher_2</span><span class="p">.</span><span class="n">rbegin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>sfruttando il fatto che i due <code class="docutils literal notranslate"><span class="pre">vector&lt;double&gt;</span></code> sono stati ordinati</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-riempimento-della-curva">
+<h3>12.5.6 Il riempimento della curva<a class="headerlink" href="#il-riempimento-della-curva" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Si decide con che <strong>passo</strong> scorrere la variabile <em>t<sub>cut</sub></em></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">risoluzione</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">taglio_max_f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">taglio_min_f</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fisher_1</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Si riempie un <code class="docutils literal notranslate"><span class="pre">TGrraph</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> con la <strong>successione dei punti
+<em>(α<sub>i</sub>, β<sub>i</sub>)</em></strong> calcolati a partire da ciascun <em>t<sub>i</sub></em>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TGraph</span><span class="w"> </span><span class="n">g_ROC_f</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">contatore_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">contatore_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">taglio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">taglio_min_f</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">taglio</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">taglio_max_f</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">taglio</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">risoluzione</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// conta il numero di eventi sotto soglia per ogni campione</span>
+<span class="w">    </span><span class="c1">// (ricordando che i due campioni sono stati ordinati)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">contatore_1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fisher_1</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">contatore_1</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fisher_1</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">contatore_1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">taglio</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">contatore_2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fisher_2</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">contatore_2</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fisher_2</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">contatore_2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">taglio</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">g_ROC_f</span><span class="p">.</span><span class="n">SetPoint</span><span class="w"> </span><span class="p">(</span><span class="n">g_ROC_f</span><span class="p">.</span><span class="n">GetN</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span>
+<span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">contatore_2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fisher_2</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="mf">1.</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">contatore_1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fisher_1</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-confronto-con-le-altre-variabili">
+<h3>12.5.7 Il confronto con le altre variabili<a class="headerlink" href="#il-confronto-con-le-altre-variabili" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Così come si è fatto per la variabile <em>t</em>,
+il criterio di selezione per determinare se rigettare o meno l’ipotesi <em>H<sub>0</sub></em>
+si sarebbe potuto <strong>applicare anche alle variabili <em>x</em> o <em>y</em></strong></p></li>
+<li><p>Per confrontare l’efficacia delle varie selezioni,
+si possono <strong>sovrapporre le curve ROC</strong> nei tre casi:
+<img alt="ROC" src="../_images/ROC.png" /></p></li>
+<li><p>Alternativamente, si può <strong>confrontare l’area sottesa</strong> alle singole curve ROC:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">variabile</span><span class="w"> </span><span class="nl">x</span><span class="p">:</span><span class="w">             </span><span class="mf">0.12</span><span class="w"></span>
+<span class="n">variabile</span><span class="w"> </span><span class="nl">y</span><span class="p">:</span><span class="w">             </span><span class="mf">0.17</span><span class="w"></span>
+<span class="n">discriminante</span><span class="w"> </span><span class="n">di</span><span class="w"> </span><span class="nl">Fisher</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In questo frangente,
+l’area sottesa ad un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> è stata calcolata con il <a class="reference external" href="https://it.wikipedia.org/wiki/Regola_del_trapezio">metodo dei trapezi</a></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="il-teorema-di-neyman-pearson">
+<h2>12.6 Il Teorema di Neyman-Pearson<a class="headerlink" href="#il-teorema-di-neyman-pearson" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>i dati sono <em>N</em> campionamenti IID, <em>x</em><sub><em>1</em></sub> … <em>x</em><sub><em>N</em></sub>
+e si vuole determinare se provengono dalla
+<em>pdf(x| H<sub>0</sub>)</em> o dalla <em>pdf(x| H<sub>1</sub>)</em></p></li>
+<li><p>le due ipotesi sono semplici ed al set di campionamenti si possono quindi associare due Likelihood:</p>
+<ul>
+<li><p><em>L(x<sub>1</sub> … x<sub>N</sub> | H<sub>0</sub>)</em> se vale l’ipotesi <em>H<sub>0</sub></em></p></li>
+<li><p><em>L(x<sub>1</sub> … x<sub>N</sub> | H<sub>1</sub>)</em> se vale l’ipotesi <em>H<sub>1</sub></em></p></li>
+</ul>
+</li>
+<li><p>la Best Critical Region (BCR) per un test di size α
+è quel sottoinsieme del sample space Ω definito dalla condizione:
+<img alt="condizioneBCR" src="../_images/condizioneBCR.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="determinazione-della-regione-critica">
+<h3>12.6.1 Determinazione della regione critica<a class="headerlink" href="#determinazione-della-regione-critica" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>la condizione che determina c<sub>α</sub> è che campionamenti estratti
+dalla <em>pdf(x| H<sub>0</sub>)</em> abbiano probabilità α di appartenere alla regione critica:
+<img alt="c_alpha" src="../_images/c_alpha.png" /></p></li>
+<li><p>un campionamento appartiene alla regione critica se il suo Likelihood Ratio è inferiore a c<sub>α</sub></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="un-esempio-di-calcolo-della-bcr">
+<h2>12.7 Un esempio di calcolo della BCR<a class="headerlink" href="#un-esempio-di-calcolo-della-bcr" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>i dati sono un singolo campionamento di una <em>pdf(x,y)</em> binormale</p></li>
+<li><p>vogliamo distinguere tra due ipotesi semplici che prevedono valori
+differenti per media e sigma della binormale</p></li>
+<li><p>per costruire la BCR serve definire:</p>
+<ul>
+<li><p>una funzione che descriva la <em>pdf(x| H<sub>0</sub>)</em></p></li>
+<li><p>una funzione che descriva la <em>pdf(x| H<sub>1</sub>)</em></p></li>
+<li><p>una funzione che descriva il rapporto di Likelihood</p></li>
+<li><p>una funzione che calcoli il size relativo a un determinato c<sub>α</sub>
+(quindi per una scelta della regione critica)</p></li>
+<li><p>una funzione che costruisca la curva size vs. c<sub>α</sub> in modo numerico</p></li>
+</ul>
+</li>
+<li><p>la BCR sarà la regione definita dal c<sub>α</sub> che ha un size pari a quello desiderato</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="funzione-binormale">
+<h3>12.7.1 Funzione binormale<a class="headerlink" href="#funzione-binormale" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>scriviamo una funzione binormale <em>pdf(x,y)</em> con correlazione nulla
+tra le due variabili <em>x</em> ed <em>y</em>;</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">binormal</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">mux</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">sigmax</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">muy</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">sigmay</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">arg</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">sigmax</span><span class="o">&gt;</span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">sigmay</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="n">arg</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pow</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">mux</span><span class="p">)</span><span class="o">/</span><span class="n">sigmax</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pow</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">muy</span><span class="p">)</span><span class="o">/</span><span class="n">sigmay</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="n">arg</span><span class="o">=</span><span class="mf">1.</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">2.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">acos</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sigmax</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sigmay</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">exp</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="w"> </span><span class="mf">1.</span><span class="o">/</span><span class="mf">2.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"> </span><span class="n">arg</span><span class="o">=</span><span class="mf">1e30</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">return</span><span class="w"> </span><span class="n">arg</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>definiamo due funzioni <code class="docutils literal notranslate"><span class="pre">TF2</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> che descrivono le due ipotesi:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">par</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="n">H0_mu_x</span><span class="p">,</span><span class="w"> </span><span class="n">H0_sigma_x</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">H0_mu_y</span><span class="p">,</span><span class="w"> </span><span class="n">H0_sigma_y</span><span class="p">,</span><span class="w"> </span><span class="n">H1_mu_x</span><span class="p">,</span><span class="w"> </span><span class="n">H1_sigma_x</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">H1_mu_y</span><span class="p">,</span><span class="w"> </span><span class="n">H1_sigma_y</span><span class="p">};</span><span class="w"></span>
+<span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">f0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TF2</span><span class="p">(</span><span class="s">&quot;f0&quot;</span><span class="p">,</span><span class="n">binormal</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">npar</span><span class="p">);</span><span class="w"></span>
+<span class="n">f0</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&quot;P(t|H_0)&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">f0</span><span class="o">-&gt;</span><span class="n">SetParameters</span><span class="p">(</span><span class="n">par</span><span class="p">);</span><span class="w"></span>
+<span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">f1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TF2</span><span class="p">(</span><span class="s">&quot;f1&quot;</span><span class="p">,</span><span class="n">binormal</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">npar</span><span class="p">);</span><span class="w"></span>
+<span class="n">f1</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&quot;P(t|H_1)&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">f1</span><span class="o">-&gt;</span><span class="n">SetParameters</span><span class="p">(</span><span class="n">par</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="rapporto-di-likelihood">
+<h3>12.7.2 Rapporto di Likelihood<a class="headerlink" href="#rapporto-di-likelihood" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>assumiamo di usare un singolo campionamendo della <em>pdf(x,y)</em>,
+il rapporto di Likelihood è il rapporto delle pdf,
+conviene considerare il suo logaritmo e quindi:</p></li>
+</ul>
+<p><img alt="logLikeRatio" src="../_images/logLikeRatio.png" /></p>
+<ul>
+<li><p>scriviamo la funzione logaritmo del rapporto di Likelihood:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">loglike</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">p</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">p</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">1e30</span><span class="p">;</span><span class="w"> </span><span class="c1">//evito divisione per zero</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">arg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">arg</span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">p</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span><span class="o">/</span><span class="n">p</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span><span class="o">/</span><span class="n">p</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">arg</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>costruiamo una <code class="docutils literal notranslate"><span class="pre">TF2</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">lratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TF2</span><span class="p">(</span><span class="s">&quot;lratio&quot;</span><span class="p">,</span><span class="n">loglike</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="mi">8</span><span class="p">);</span><span class="w"> </span>
+<span class="n">lratio</span><span class="o">-&gt;</span><span class="n">SetParameters</span><span class="p">(</span><span class="n">par</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="disegnamo-le-due-pdf-e-il-rapporto-di-likelihood">
+<h3>12.7.3 Disegnamo le due pdf e il rapporto di likelihood<a class="headerlink" href="#disegnamo-le-due-pdf-e-il-rapporto-di-likelihood" title="Permalink to this headline">¶</a></h3>
+<p><img alt="binormali" src="../_images/binormal.png" /></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ROOT</span></code> mette a disposizione molte modalità diverse per disegnare una funzione
+di due variabili, qui usiamo <code class="docutils literal notranslate"><span class="pre">Draw(&quot;cont1z&quot;)</span></code></p></li>
+<li><p>i metodi <code class="docutils literal notranslate"><span class="pre">SetSetNpx(int</span> <span class="pre">npoints)</span></code> e <code class="docutils literal notranslate"><span class="pre">SetSetNpy(int</span> <span class="pre">npoints)</span></code> consentono di cambiare
+il numero di punti su cui la funzione è valutata per essere disegnata
+(se il disegno appare discontinuo provate a cambiare il numero di punti)</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="best-critical-region-bcr">
+<h3>12.7.4 Best Critical Region (BCR)<a class="headerlink" href="#best-critical-region-bcr" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>lo spazio delle fasi coincide con il piano <em>(x,y)</em>, quindi la BCR sarà una regione di questo piano
+definita dalla condizione:
+<img alt="BCR" src="../_images/condizioneBCRloglambda.png" /></p></li>
+<li><p>per determinare il c<sub>α</sub> che corrisponde al size α
+scelto dobbiamo:</p>
+<ul>
+<li><p>costruire la funzione che calcola il size al variare di c<sub>α</sub></p></li>
+<li><p>scorrere i valori di c<sub>α</sub> calcolando il corrispondente size</p></li>
+<li><p>individuare il valore di c<sub>α</sub> che corrisponde al size desiderato</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="funzione-che-calcola-il-size">
+<h3>12.7.5 Funzione che calcola il size<a class="headerlink" href="#funzione-che-calcola-il-size" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>scriviamo una funzione che dato un numero c<sub>α</sub> calcola il corrispondente size del test</p></li>
+<li><p>va campionata la <em>pdf(x,y | H<sub>0</sub>)</em></p>
+<ul>
+<li><p>si può usare la funzione <code class="docutils literal notranslate"><span class="pre">rand_TAC</span></code> chiamandola due volte</p></li>
+<li><p>si può usare il metodo <code class="docutils literal notranslate"><span class="pre">GetRandom(double</span> <span class="pre">x,double</span> <span class="pre">y)</span></code> della <code class="docutils literal notranslate"><span class="pre">TF2</span></code>
+(l’inizializzazione del seed si fa nel main con l’istruzione <code class="docutils literal notranslate"><span class="pre">gRandom-&gt;SetSeed(0);</span> </code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">sizetest</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">c_alpha</span><span class="p">,</span><span class="w"> </span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">lratio</span><span class="p">,</span><span class="w"> </span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">f0</span><span class="p">){</span><span class="w"></span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">nhit</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">Ntoy</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">Ntoy</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w"> 	  </span><span class="n">f0</span><span class="o">-&gt;</span><span class="n">GetRandom2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="w"> 	  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lratio</span><span class="o">-&gt;</span><span class="n">Eval</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">&lt;</span><span class="n">c_alpha</span><span class="p">)</span><span class="w"> </span><span class="n">nhit</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w"> 	  </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">nhit</span><span class="o">*</span><span class="mf">1.</span><span class="p">)</span><span class="o">/</span><span class="n">Ntoy</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="calcolo-della-size-in-funzione-della-soglia">
+<h3>12.7.6 Calcolo della size in funzione della soglia<a class="headerlink" href="#calcolo-della-size-in-funzione-della-soglia" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">DeterminaBCR</span><span class="p">(</span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">lratio</span><span class="p">,</span><span class="w"> </span><span class="n">TF2</span><span class="w"> </span><span class="o">*</span><span class="n">f0</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">TGraph</span><span class="w"> </span><span class="o">*</span><span class="n">gsize</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul>
+<li><p>prende in input:</p>
+<ul class="simple">
+<li><p>il logaritmo del Likelihood Ratio</p></li>
+<li><p>la <em>pdf(x,y|H<sub>0</sub> )</em></p></li>
+<li><p>il puntatore a un grafico da riempire (definito nella funzione <code class="docutils literal notranslate"><span class="pre">main</span></code>)</p></li>
+<li><p>il valore del size desiderato, in corrispondenza del quale restituisce il valore di c<sub>α</sub></p></li>
+</ul>
+</li>
+<li><p>effettua le seguenti operazioni:</p>
+<ul>
+<li><p>trova gli estremi tra cui far variare c<sub>α</sub>,
+sono i valori minimi e massimi del logaritmo del Likelihood Ratio:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">lratio_min</span><span class="o">=</span><span class="n">lratio</span><span class="o">-&gt;</span><span class="n">GetMinimumXY</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">lratio_max</span><span class="o">=</span><span class="n">lratio</span><span class="o">-&gt;</span><span class="n">GetMaximumXY</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>incrementa c<sub>α</sub> con un passo costante,
+partendo dal minimo e arrivando al massimo,  calcola ogni volta il size
+chiamando la funzione <code class="docutils literal notranslate"><span class="pre">sizetest()</span></code></p></li>
+<li><p>riempie il grafico con le coppie (c<sub>α</sub>, α)</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="disegno-della-bcr">
+<h3>12.7.7 Disegno della BCR<a class="headerlink" href="#disegno-della-bcr" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>nella funzione <code class="docutils literal notranslate"><span class="pre">main</span></code> del programma possiamo disegnare la regione BCR
+corrispondente al size scelto e il grafico (c<sub>α</sub>, α)</p></li>
+<li><p>c<sub>α</sub> è il valore restituito dalla funzione <code class="docutils literal notranslate"><span class="pre">DeterminaBCR</span></code></p></li>
+<li><p>l’istruzione <code class="docutils literal notranslate"><span class="pre">lratio-&gt;SetMaximum(c_alpha);</span></code> consente di disegnare la porzione della funzione
+<code class="docutils literal notranslate"><span class="pre">lratio</span></code> minore di c<sub>α</sub></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">lratio</span><span class="o">-&gt;</span><span class="n">SetMaximum</span><span class="p">(</span><span class="n">c_alpha</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">lratio</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&quot;cont3&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">f1</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&quot;cont1z same&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">f0</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&quot;cont1z same &quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>il power del test può essere calcolato con la funzione <code class="docutils literal notranslate"><span class="pre">sizetest</span></code>
+a cui viene passata la forma della pdf prevista dall’ipotesi <em>H<sub>1</sub></em></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;power &quot;</span><span class="o">&lt;&lt;</span><span class="n">sizetest</span><span class="p">(</span><span class="n">c_alpha</span><span class="p">,</span><span class="w"> </span><span class="n">lratio</span><span class="p">,</span><span class="w"> </span><span class="n">f1</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="disegno-curva-roc">
+<h3>12.7.8 Disegno curva ROC<a class="headerlink" href="#disegno-curva-roc" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>il grafico che rappresenta la curva β in funzione di α (detta curva ROC)
+si costruisce con un ciclo che scorre con un determinato passo i possibili valori di c<sub>α</sub>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TGraph</span><span class="w"> </span><span class="o">*</span><span class="n">gba</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">TGraph</span><span class="p">();</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">gsize</span><span class="o">-&gt;</span><span class="n">GetN</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">sizetest</span><span class="p">(</span><span class="n">gsize</span><span class="o">-&gt;</span><span class="n">GetPointX</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">lratio</span><span class="p">,</span><span class="w"> </span><span class="n">f1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">gba</span><span class="o">-&gt;</span><span class="n">SetPoint</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">gsize</span><span class="o">-&gt;</span><span class="n">GetPointY</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">beta</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="n">gba</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&quot;AP*&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">gba</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&quot;#alpha&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">gba</span><span class="o">-&gt;</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&quot;#beta&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="BCRdraw" src="../_images/BCR.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="esercizi">
+<h2>12.8 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lezione_11/ESERCIZI.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Esercizi per la lezione 11</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ESERCIZI.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Esercizi per la lezione 12</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Pietro Govoni, Maura Pavan<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

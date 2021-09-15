@@ -1,0 +1,1122 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 4: la generazione di numeri casuali &#8212; Laboratorio II</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Esercizi per la lezione 4" href="ESERCIZI.html" />
+    <link rel="prev" title="Esercizi per la lezione 3" href="../Lezione_03/ESERCIZI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio II</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio II - A.A. 2021/22
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lezione_00/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Lezione 4: la generazione di numeri casuali
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_06/README.html">
+     Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_07/README.html">
+     Lezione 7: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_08/README.html">
+     Lezione 8: programmazione ad oggetti: l’ereditarietà
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_09/README.html">
+     Lezione 9: stima di parametri con il metodo della massima verosimiglianza
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESERCIZI.html">
+       Esercizi per la lezione 9
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_10/README.html">
+     Lezione 10: stima di parametri con il metodo dei minimi quadrati
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_10/ESERCIZI.html">
+       Esercizi per la lezione 10
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_11/README.html">
+     Lezione 11: fit di distribuzioni binnate con
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_11/ESERCIZI.html">
+       Esercizi per la lezione 11
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_12/README.html">
+     Lezione 12: Test di Ipotesi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_12/ESERCIZI.html">
+       Esercizi per la lezione 12
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_04/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-numeri-pseudo-casuali">
+   4.1 I numeri pseudo-casuali
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sequenze-casuali">
+     4.1.1 sequenze casuali
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sequenze-pseudo-casuali">
+     4.1.2 sequenze pseudo-casuali
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-generatore-lineare-congruenziale">
+     4.1.3 il generatore lineare congruenziale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-problematiche-dei-generatori-di-numeri-pseudo-casuali">
+     4.1.4 le problematiche dei generatori di numeri pseudo-casuali
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-generatore-di-numeri-casuali-in-c">
+     4.1.5 un generatore di numeri casuali in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-caratteristiche-di-rand">
+     4.1.6 le caratteristiche di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       rand
+      </span>
+      <span class="pre">
+       ()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#come-cambiare-il-seed-di-generazione">
+     4.1.7 come cambiare il seed di generazione
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generare-numeri-pseudo-casuali-con-distribuzione-uniforme">
+   4.2 generare numeri pseudo-casuali con distribuzione uniforme
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#una-distribuzione-uniforme-di-numeri-razionali-pseudo-casuali">
+     4.2.1 una distribuzione uniforme di numeri razionali pseudo-casuali
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#altre-distribuzioni-di-probabilita-try-and-catch">
+   4.3 altre distribuzioni di probabilità: try-and-catch
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-algoritmo-try-and-catch-tac">
+     4.3.1 l’algoritmo try-and-catch (TAC)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-implementazione-dell-algoritmo-try-and-catch">
+     4.3.2 l’implementazione dell’algoritmo try-and-catch
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vantaggi-e-svantaggi-dell-algoritmo-try-and-catch">
+     4.3.3 vantaggi e svantaggi dell’algoritmo try-and-catch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#altre-distribuzioni-di-probabilita-la-funzione-inversa">
+   4.4 altre distribuzioni di probabilità: la funzione inversa
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-algoritmo-della-funzione-inversa">
+     4.4.1 l’algoritmo della funzione inversa
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vantaggi-e-svantaggi-dell-algoritmo-della-funzione-inversa">
+     4.4.2 vantaggi e svantaggi dell’algoritmo della funzione inversa
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribuzioni-di-probabilita-gaussiane-il-teorema-centrale-del-limite">
+   4.5 distribuzioni di probabilità Gaussiane: il teorema centrale del limite
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-implementazione-dell-algoritmo">
+     4.5.1 l’implementazione dell’algoritmo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vantaggi-e-svantaggi-dell-algoritmo-per-generazione-di-pdf-con-forma-gaussiana">
+     4.5.2 vantaggi e svantaggi dell’algoritmo per generazione di pdf con forma gaussiana
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizi">
+   4.6 ESERCIZI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lezione-4-la-generazione-di-numeri-casuali">
+<h1>Lezione 4: la generazione di numeri casuali<a class="headerlink" href="#lezione-4-la-generazione-di-numeri-casuali" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#41-i-numeri-pseudo-casuali">4.1 I numeri pseudo-casuali</a></p>
+<ul>
+<li><p><a class="reference external" href="#411-sequenze-casuali">4.1.1 sequenze casuali</a></p></li>
+<li><p><a class="reference external" href="#412-sequenze-pseudo-casuali">4.1.2 sequenze pseudo-casuali</a></p></li>
+<li><p><a class="reference external" href="#413-il-generatore-lineare-congruenziale">4.1.3 il generatore lineare congruenziale</a></p></li>
+<li><p><a class="reference external" href="#414-le-problematiche-dei-generatori-di-numeri-pseudo-casuali">4.1.4 le problematiche dei generatori di numeri pseudo-casuali</a></p></li>
+<li><p><a class="reference external" href="#415-un-generatore-di-numeri-casuali-in-c">4.1.5 un generatore di numeri casuali in <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+<li><p><a class="reference external" href="#416-le-caratteristiche-di-rand-">4.1.6 le caratteristiche di <code class="docutils literal notranslate"><span class="pre">rand</span> <span class="pre">()</span></code></a></p></li>
+<li><p><a class="reference external" href="#417-come-cambiare-il-seed-di-generazione">4.1.7 come cambiare il seed di generazione</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#42-generare-numeri-pseudo-casuali-con-distribuzione-uniforme">4.2 generare numeri pseudo-casuali con distribuzione uniforme</a></p>
+<ul>
+<li><p><a class="reference external" href="#421-una-distribuzione-uniforme-di-numeri-razionali-pseudo-casuali">4.2.1 una distribuzione uniforme di numeri razionali pseudo-casuali</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#43-altre-distribuzioni-di-probabilit%C3%A0-try-and-catch">4.3 altre distribuzioni di probabilità: try-and-catch</a></p>
+<ul>
+<li><p><a class="reference external" href="#431-lalgoritmo-try-and-catch-tac">4.3.1 l’algoritmo try-and-catch (TAC)</a></p></li>
+<li><p><a class="reference external" href="#432-limplementazione-dellalgoritmo-try-and-catch">4.3.2 l’implementazione dell’algoritmo try-and-catch</a></p></li>
+<li><p><a class="reference external" href="#433-vantaggi-e-svantaggi-dellalgoritmo-try-and-catch">4.3.3 vantaggi e svantaggi dell’algoritmo try-and-catch</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#44-altre-distribuzioni-di-probabilit%C3%A0-la-funzione-inversa">4.4 altre distribuzioni di probabilità: la funzione inversa</a></p>
+<ul>
+<li><p><a class="reference external" href="#441-lalgoritmo-della-funzione-inversa">4.4.1 l’algoritmo della funzione inversa</a></p></li>
+<li><p><a class="reference external" href="#442-vantaggi-e-svantaggi-dellalgoritmo-della-funzione-inversa">4.4.2 vantaggi e svantaggi dell’algoritmo della funzione inversa</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#45-distribuzioni-di-probabilit%C3%A0-gaussiane-il-teorema-centrale-del-limite">4.5 distribuzioni di probabilità Gaussiane: il teorema centrale del limite</a></p>
+<ul>
+<li><p><a class="reference external" href="#451-limplementazione-dellalgoritmo">4.5.1 l’implementazione dell’algoritmo</a></p></li>
+<li><p><a class="reference external" href="#452-vantaggi-e-svantaggi-dellalgoritmo-della-funzione-inversa">4.5.2 vantaggi e svantaggi dell’algoritmo della funzione inversa</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#46-esercizi">4.6 ESERCIZI</a></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="i-numeri-pseudo-casuali">
+<h2>4.1 I numeri pseudo-casuali<a class="headerlink" href="#i-numeri-pseudo-casuali" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>quando si effettua una qualunque misura,
+si porta a termine il <strong>confronto fra i dati raccolti e un modello della natura</strong></p>
+<ul>
+<li><p>per <strong>falsificare il modello</strong>, oppure</p></li>
+<li><p>per <strong>determinare il valore (e l’incertezza</strong> associata) di uno dei suoi parametri</p></li>
+</ul>
+</li>
+<li><p>è cruciale saper <strong>calcolare le previsioni</strong> di un modello</p>
+<ul>
+<li><p>spesso <strong>non si conosce</strong> il modello in forma analitica
+e si ricorre a <strong>metodi computazionali alternativi</strong> per ottenere le previsioni
+da confrontare con le misure</p></li>
+</ul>
+</li>
+<li><p>molte tecniche di calcolo si basano sulla <strong>generazione di numeri casuali</strong></p>
+<ul>
+<li><p>per riprodurre la <strong>natura aleatoria</strong> delle misure</p></li>
+<li><p>o per popolare uniformemente spazi fasi definiti entro <strong>confini sofisticati</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="sequenze-casuali">
+<h3>4.1.1 sequenze casuali<a class="headerlink" href="#sequenze-casuali" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>un <strong>processo casuale, o stocastico</strong>,
+produce una successione di numeri distribuiti casualmente
+secondo una distribuzione di probabilità fissata</p></li>
+<li><p>la probabilità che un determinato numero compaia in qualunque punto della successione
+<strong>non dipende dai numeri che lo precedono o che lo seguono</strong></p></li>
+<li><p>ad esempio:</p>
+<ul>
+<li><p>il <strong>tempo di arrivo di raggi cosmici</strong> su un rivelatore di muoni</p></li>
+<li><p>il risultato del <strong>lancio di una moneta</strong> o di un dado</p></li>
+</ul>
+</li>
+<li><p>siccome dipendono dalle tempistiche di processi naturali,
+si tratta tipicamente di sequenze che <strong>richiedono molto tempo</strong> per essere costruite,
+che diventa un fattore limitante nei calcoli</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="sequenze-pseudo-casuali">
+<h3>4.1.2 sequenze pseudo-casuali<a class="headerlink" href="#sequenze-pseudo-casuali" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>esistono programmi e librerie,
+detti in generale <strong>generatori di numeri pseudo-casuali</strong>,
+che producono successioni di numeri tali da <strong>sembrare</strong> numeri casuali</p></li>
+<li><p>la sequenza dei numeri nelle successioni è deterministica,
+e le funzioni utilizzate per la generazione sono costruite per
+<strong>mimare il comportamento di successioni casuali</strong></p></li>
+<li><p>il primo numero di una successione (o sequenza) di numeri pseudo-casuali
+si chiama <em>seed</em>,
+perché noto quel numero e l’algoritmo di generazione
+si può riprodurre l’intera sequenza</p>
+<ul>
+<li><p>chiaramente, da diversi seed iniziano sequenze di numeri pseudo-casuali diverse</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-generatore-lineare-congruenziale">
+<h3>4.1.3 il generatore lineare congruenziale<a class="headerlink" href="#il-generatore-lineare-congruenziale" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>un esempio di formula per <strong>calcolare l’elemento successivo</strong>
+di una sequenza pseudo-casuale dato un qualunque numero è il seguente:
+<img alt="lineare-congruenziale" src="../_images/lineare_congruenziale.png" /></p></li>
+<li><p>con:
+<img alt="lineare-congruenziale_condizioni" src="../_images/lineare_congruenziale_condizioni.png" /></p></li>
+<li><p>il <strong>primo elemento della sequenza</strong>, con indice zero, è il seed</p></li>
+<li><p>questo algoritmo genera per costruzione <strong>numeri compresi fra 0 ed M</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="le-problematiche-dei-generatori-di-numeri-pseudo-casuali">
+<h3>4.1.4 le problematiche dei generatori di numeri pseudo-casuali<a class="headerlink" href="#le-problematiche-dei-generatori-di-numeri-pseudo-casuali" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>la dipendenza funzionale fra due numeri pseudo-casuali consecutivi <strong>non deve essere visibile</strong></p></li>
+<li><p>se in una sequenza di numeri pseudo-casuali ricompare un numero già visto,
+la sequenza inizia a ripetersi da quel punto:
+si tratta della <strong>periodicità del generatore</strong>.</p></li>
+<li><p>il periodo deve essere <strong>molto maggiore</strong> della quantità di numeri pseudo-casuali generati
+e non dipendere dalla scelta del seed</p></li>
+<li><p>tipicamente i generatori di numeri casuali seguono una distribuzione uniforme:
+la <strong>non-uniformità</strong> della distribuzione è un altro difetto tipico
+che si vuole evitare</p></li>
+<li><p>un <strong>esempio</strong> del risultato di un generaore di numeri pseudo-casuali poco performante
+si trova <a class="reference external" href="https://boallen.com/random-numbers.html">qui</a>
+<img alt="pseudo_fail" src="../_images/pseudo_casuale.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="un-generatore-di-numeri-casuali-in-c">
+<h3>4.1.5 un generatore di numeri casuali in <code class="docutils literal notranslate"><span class="pre">C++</span></code><a class="headerlink" href="#un-generatore-di-numeri-casuali-in-c" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>nella libreria <code class="docutils literal notranslate"><span class="pre">cstdlib</span></code> è presente un generatore di numeri pseudo-casuali <code class="docutils literal notranslate"><span class="pre">rand()</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;indice &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; --&gt; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">RAND_MAX: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">RAND_MAX</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>il codice precedente produce come output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">indice</span> <span class="mi">0</span> <span class="o">--&gt;</span> <span class="mi">16807</span>
+<span class="n">indice</span> <span class="mi">1</span> <span class="o">--&gt;</span> <span class="mi">282475249</span>
+<span class="n">indice</span> <span class="mi">2</span> <span class="o">--&gt;</span> <span class="mi">1622650073</span>
+<span class="n">indice</span> <span class="mi">3</span> <span class="o">--&gt;</span> <span class="mi">984943658</span>
+<span class="n">indice</span> <span class="mi">4</span> <span class="o">--&gt;</span> <span class="mi">1144108930</span>
+
+<span class="n">RAND_MAX</span><span class="p">:</span> <span class="mi">2147483647</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="le-caratteristiche-di-rand">
+<h3>4.1.6 le caratteristiche di <code class="docutils literal notranslate"><span class="pre">rand</span> <span class="pre">()</span></code><a class="headerlink" href="#le-caratteristiche-di-rand" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>è un generatore di numeri interi pseudo-casuali distribuiti uniformemente fra <code class="docutils literal notranslate"><span class="pre">0</span></code> e <code class="docutils literal notranslate"><span class="pre">RAND_MAX</span></code>,
+che è una variabile definita all’interno della libreria <code class="docutils literal notranslate"><span class="pre">cstdlib</span></code></p></li>
+<li><p>il generatore <strong>inizia sempre dallo stesso seed</strong> per generare gli eventi,
+quindi se si rigira il programma si ottiene sempre la medesima sequenza numerica</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="come-cambiare-il-seed-di-generazione">
+<h3>4.1.7 come cambiare il seed di generazione<a class="headerlink" href="#come-cambiare-il-seed-di-generazione" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>esiste la funzione <code class="docutils literal notranslate"><span class="pre">srand</span> <span class="pre">(int</span> <span class="pre">seed)</span></code> che imposta il seed di generazione
+dei numeri casuali:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">srand</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;indice &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; --&gt; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>è importante poter riprodurre la stessa sequenza di numeri pseudo-casuali
+<strong>a scopo di test</strong></p></li>
+<li><p>se invece si vuole produrre <strong>ad ogni esecuzione una sequenza differente</strong>,
+si può utilizzare il tempo di esecuzione come seed di generazione,
+utilizzando la funzione <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">()</span></code> della libreria <code class="docutils literal notranslate"><span class="pre">ctime</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+<span class="c1">// resto del codice</span>
+<span class="n">srand</span><span class="w"> </span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="p">(</span><span class="nb">NULL</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;indice &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; --&gt; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>a meno di avere importanti ragioni per fare diversamente,
+il seed <strong>si inizializza una volta sola</strong>
+durante l’esecuzione di un programma</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="generare-numeri-pseudo-casuali-con-distribuzione-uniforme">
+<h2>4.2 generare numeri pseudo-casuali con distribuzione uniforme<a class="headerlink" href="#generare-numeri-pseudo-casuali-con-distribuzione-uniforme" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rand()</span></code>  genera numeri interi compresi fra <code class="docutils literal notranslate"><span class="pre">0</span></code> e <code class="docutils literal notranslate"><span class="pre">RAND_MAX</span></code></p></li>
+<li><p>può però essere usata per produrre sequenze di numeri pseudo-casuali
+che seguano distribuzioni differenti, mediante opportuni algoritmi</p></li>
+<li><p>in generale le densità di probabilità dei numeri pseudo-casuali prodotti con un calcolatore
+avranno sempre <strong>dominio limitato</strong>, per via delle limitazioni intrinseche dei calcolatori</p></li>
+<li><p>la distribuzione uniforme di numeri casuali è un caso particolare infatti è <strong>definita su un insieme limitato</strong>
+per costruzione (altrimenti il suo integrale sarebbe divergente)</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="una-distribuzione-uniforme-di-numeri-razionali-pseudo-casuali">
+<h3>4.2.1 una distribuzione uniforme di numeri razionali pseudo-casuali<a class="headerlink" href="#una-distribuzione-uniforme-di-numeri-razionali-pseudo-casuali" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>l’obiettivo è produrre numeri casuali compresi nell’intervallo <code class="docutils literal notranslate"><span class="pre">min,</span> <span class="pre">max</span></code>,
+<strong>partendo dalle risorse che abbiamo</strong>, cioè <code class="docutils literal notranslate"><span class="pre">rand</span> <span class="pre">()</span></code></p>
+<ol>
+<li><p><strong>distribuzione uniforme fra <code class="docutils literal notranslate"><span class="pre">0</span></code> ed <code class="docutils literal notranslate"><span class="pre">1</span></code></strong> :</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">RAND_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>dilatazione</strong> fra <code class="docutils literal notranslate"><span class="pre">0</span></code> e <code class="docutils literal notranslate"><span class="pre">max-min</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">RAND_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>traslazione</strong> di <code class="docutils literal notranslate"><span class="pre">min</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="nf">rand_range</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">RAND_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="altre-distribuzioni-di-probabilita-try-and-catch">
+<h2>4.3 altre distribuzioni di probabilità: try-and-catch<a class="headerlink" href="#altre-distribuzioni-di-probabilita-try-and-catch" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>nel caso della distribuzione di densità di probabilità (pdf) uniforme,
+la probabilità che eventi pseudo-casuali vengano generati in un dato intervallo
+<strong>non dipende dalla posizione</strong> dell’intervallo</p></li>
+<li><p>per pdf non uniformi questo <strong>non è vero</strong></p></li>
+</ul>
+<p><img alt="distribuzione_non_uniforme" src="../_images/try_and_catch_0_due.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="l-algoritmo-try-and-catch-tac">
+<h3>4.3.1 l’algoritmo try-and-catch (TAC)<a class="headerlink" href="#l-algoritmo-try-and-catch-tac" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>generare eventi pseudo-casuali in modo <strong>proporzionale all’area sottesa dalla pdf</strong></p></li>
+</ul>
+<p><img alt="distribuzione_non_uniforme" src="../_images/try_and_catch_aree.png" /></p>
+<ul class="simple">
+<li><p>popolare il piano con coppie di numeri pseudo-casuali <code class="docutils literal notranslate"><span class="pre">x,y</span></code>,
+ciascuno generato uniformemente con <code class="docutils literal notranslate"><span class="pre">rand_range</span> <span class="pre">()</span></code>
+e utilizzare <code class="docutils literal notranslate"><span class="pre">x</span></code> solo se <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">&lt;</span> <span class="pre">f(x)</span></code></p></li>
+</ul>
+<p><img alt="distribuzione_non_uniforme" src="../_images/try_and_catch_2.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-implementazione-dell-algoritmo-try-and-catch">
+<h3>4.3.2 l’implementazione dell’algoritmo try-and-catch<a class="headerlink" href="#l-implementazione-dell-algoritmo-try-and-catch" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>per ripetere la generazione fino a che la condizione <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">&lt;</span> <span class="pre">f(x)</span></code> non è soddisfatta,
+si utilizza un ciclo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="nf">rand_TAC</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">),</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xMax</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yMax</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="n">xMax</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">yMax</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>la funzione <code class="docutils literal notranslate"><span class="pre">rand_TAC</span></code> ha bisogno di più argomenti rispetto a <code class="docutils literal notranslate"><span class="pre">rand_range</span></code>:</p>
+<ul class="simple">
+<li><p>un <strong>limite superiore per l’asse verticale</strong>: <code class="docutils literal notranslate"><span class="pre">yMax</span></code></p></li>
+<li><p>la <strong>forma funzionale</strong> da usare come pdf:
+come vedete anche una funzione può essere passata come argomento
+ad un’altra funzione, descrivendone il prototipo</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="vantaggi-e-svantaggi-dell-algoritmo-try-and-catch">
+<h3>4.3.3 vantaggi e svantaggi dell’algoritmo try-and-catch<a class="headerlink" href="#vantaggi-e-svantaggi-dell-algoritmo-try-and-catch" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>vantaggi</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>nota la forma funzionale</strong> della pdf, l’algoritmo funziona</p></li>
+<li><p><strong>non è necessario che la pdf sia nota analiticamente</strong>,
+è sufficiente che si possa scrivere come funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code></p></li>
+<li><p>facilmente <strong>generalizzabile a N dimensioni</strong></p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>svantaggi</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>bisogna essere certi di <strong>conoscere il massimo</strong> (<code class="docutils literal notranslate"><span class="pre">yMax</span></code>) della funzione</p></li>
+<li><p>ha <strong>bassa efficienza</strong>:</p>
+<ul>
+<li><p>per ottenere un numero casuale, bisogna generarne di sicuro <strong>almeno due</strong></p></li>
+<li><p>spesso <strong>molti di più</strong>, perché molti punti sul piano vengono scartati</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="altre-distribuzioni-di-probabilita-la-funzione-inversa">
+<h2>4.4 altre distribuzioni di probabilità: la funzione inversa<a class="headerlink" href="#altre-distribuzioni-di-probabilita-la-funzione-inversa" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>sia x una variabile casuale con pdf <em>f(x)</em> continua</p></li>
+<li><p>sia <em>F(x)</em> la distribuzione di probabilità cumulativa (cdf)</p></li>
+<li><p><strong>se <em>F(x)</em> è strettamente crescente allora la variabile <em>y = F(x)</em> ha distribuzione uniforme</strong>
+(si dimostra usando la regola per il cambio di variabile in una pdf)</p></li>
+<li><p>generare eventi pseudo-casuali <strong>con distribuzione uniforme in <em>y</em></strong>
+equivale a generare eventi pseudo-casuali lungo <em>x</em> con distribuzione <em>f(x)</em></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="l-algoritmo-della-funzione-inversa">
+<h3>4.4.1 l’algoritmo della funzione inversa<a class="headerlink" href="#l-algoritmo-della-funzione-inversa" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>si <strong>calcolano analiticamente</strong> <em>F(x)</em> e la sua funzione inversa <em>F <sup>-1</sup>(y)</em></p></li>
+</ul>
+<p><img alt="funzione_inversa" src="../_images/funzione_inversa.png" /></p>
+<ul class="simple">
+<li><p>si <strong>generano numeri pseudo-casuali y<sub>i</sub> con distribuzione uniforme</strong> fra <em>0</em> ed <em>1</em> lungo l’asse <em>y</em></p></li>
+<li><p>per ogni evento generato, si calcola <em>x<sub>i</sub> = F <sup>-1</sup>(y<sub>i</sub>)</em>
+e si utilizza quel valore come numero casuale generato</p></li>
+<li><p>dove <em>f(x)</em> è più alta <em>F(x)</em> è più ripida,
+quindi il numero di numeri pseudo-casuali generati nei due intervalli
+<em>Δy<sub>1<sub></em> e <em>Δy<sub>2<sub></em>
+risulta proporzionale all’area sottesa dalla curva <em>f(x)</em>
+sopra i due intervalli con dimensione <em>Δx</em>, rispettivamente,
+che è l’obiettivo che si vuole ottenere.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="vantaggi-e-svantaggi-dell-algoritmo-della-funzione-inversa">
+<h3>4.4.2 vantaggi e svantaggi dell’algoritmo della funzione inversa<a class="headerlink" href="#vantaggi-e-svantaggi-dell-algoritmo-della-funzione-inversa" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>vantaggi</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>è <strong>efficiente</strong> nella generazione dei numeri pseudo-casuali,
+perché ogni numero viene utilizzato</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>svantaggi</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>bisogna <strong>conoscere la forma analitica</strong> di <em>f(x)</em> ed <em>F(x)</em> e <strong>sapere invertire</strong>
+la funzione comulativa per ottenere <em>F <sup>-1</sup>(y)</em></p></li>
+<li><p>il calcolo di una funzione <strong>aggiunge tempo</strong> nella generazione degli eventi</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="distribuzioni-di-probabilita-gaussiane-il-teorema-centrale-del-limite">
+<h2>4.5 distribuzioni di probabilità Gaussiane: il teorema centrale del limite<a class="headerlink" href="#distribuzioni-di-probabilita-gaussiane-il-teorema-centrale-del-limite" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Il <strong>teorema centrale del limite</strong> può essere utilizzato
+per generare distribuzioni di probabilità con forma Gaussiana</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Siano date <em>N</em> variabili casuali <em>x<sub>i</sub></em> indipendenti ed identicamente distribuite secondo una distribuzione di probabilità <em>f(x)</em> con media μ e varianza σ<sup>2</sup> finite. Allora la variabile <em>y = ⟨x<sub>i</sub>⟩</em> è distribuita, per <em>N</em> grande, come una Gaussiana con media μ e varianza σ<sup>2</sup>.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="l-implementazione-dell-algoritmo">
+<h3>4.5.1 l’implementazione dell’algoritmo<a class="headerlink" href="#l-implementazione-dell-algoritmo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>anche in questo caso,
+si parte da <strong>generatori di numeri pseudo-casuali noti</strong>:
+la distribuzione uniforme</p></li>
+<li><p>per produrre un singolo numero pseudo-casuale distribuito secondo una Gaussiana,
+è necessario <strong>generare <em>N</em> numeri pseudo-casuali</strong> secondo la distribuzione uniforme
+e calcolarne la media</p></li>
+<li><p>al <strong>crescere di <em>N</em></strong> la distribuzione finale si avvicina sempre più al limite Gaussiano:</p></li>
+</ul>
+<p><img alt="funzione_inversa" src="../_images/teorema_centrale_limite.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="vantaggi-e-svantaggi-dell-algoritmo-per-generazione-di-pdf-con-forma-gaussiana">
+<h3>4.5.2 vantaggi e svantaggi dell’algoritmo per generazione di pdf con forma gaussiana<a class="headerlink" href="#vantaggi-e-svantaggi-dell-algoritmo-per-generazione-di-pdf-con-forma-gaussiana" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>vantaggi</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>è basato su un <strong>ben noto teorema</strong> e permette di verificare (entro le approssimazioni numeriche di un calcolatore) che il teorema stesso funzioni</p></li>
+<li><p>non è necessario descrivere analiticamente la forma funzionale della Gaussiana</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>svantaggi</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>per raggiungere una buona precisione,
+bisogna generare molti numeri pseudo-casuali uniformi
+per ottenerne uno distribuito Gaussianamente</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="esercizi">
+<h2>4.6 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lezione_03/ESERCIZI.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Esercizi per la lezione 3</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ESERCIZI.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Esercizi per la lezione 4</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Pietro Govoni, Maura Pavan<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

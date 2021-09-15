@@ -1,0 +1,1427 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 3: programmazione ad oggetti, le classi &#8212; Laboratorio II</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Esercizi per la lezione 3" href="ESERCIZI.html" />
+    <link rel="prev" title="Esercizi per la lezione 2" href="../Lezione_02/ESERCIZI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio II</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio II - A.A. 2021/22
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lezione_00/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Lezione 3: programmazione ad oggetti, le classi
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_06/README.html">
+     Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_07/README.html">
+     Lezione 7: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_08/README.html">
+     Lezione 8: programmazione ad oggetti: l’ereditarietà
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_09/README.html">
+     Lezione 9: stima di parametri con il metodo della massima verosimiglianza
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESERCIZI.html">
+       Esercizi per la lezione 9
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_10/README.html">
+     Lezione 10: stima di parametri con il metodo dei minimi quadrati
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_10/ESERCIZI.html">
+       Esercizi per la lezione 10
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_11/README.html">
+     Lezione 11: fit di distribuzioni binnate con
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_11/ESERCIZI.html">
+       Esercizi per la lezione 11
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_12/README.html">
+     Lezione 12: Test di Ipotesi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_12/ESERCIZI.html">
+       Esercizi per la lezione 12
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_03/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-generalizzazione-del-concetto-di-tipo">
+   3.1 La generalizzazione del concetto di tipo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c">
+     3.1.1 Uno sguardo ravvicinato ai tipi predefiniti in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-esempio-i-numeri-complessi">
+     3.1.2 Un esempio: i numeri complessi
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#se-i-numeri-complessi-fossero-un-tipo-di-c">
+     3.1.3 Se i numeri complessi fossero un tipo di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#si-puo-fare-la-classe-dei-numeri-complessi">
+   3.2 Si può fare! La classe dei numeri complessi
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-definizione-della-classe-il-file-complesso-h">
+     3.2.1 La definizione della classe (il file
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       complesso.h
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-primo-esempio-di-utilizzo">
+     3.2.2 un primo esempio di utilizzo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-membri-di-una-classe">
+     3.2.3 I membri di una classe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-metodi-di-una-classe">
+     3.2.4 I metodi di una classe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-campo-private">
+     3.2.5 Il campo
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       private
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-campo-public">
+     3.2.6 Il campo
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-implementazione-della-classe-il-file-complesso-cc">
+     3.2.7 L’implementazione della classe (il file
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       complesso.cc
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-membro-implicito-di-ogni-classe-l-oggetto-stesso">
+     3.2.8 Un membro implicito di ogni classe: l’oggetto stesso
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funzioni-speciali-di-una-classe">
+   3.3 Funzioni speciali di una classe
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-costruttore">
+     3.3.1 Il costruttore
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-lista-di-inizializzazione">
+     3.3.2 La lista di inizializzazione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overloading-del-costruttore">
+     3.3.3 overloading del costruttore
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-costruttore-di-default">
+     3.3.4 Il costruttore di default
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-costruttore-di-copia-o-copy-constructor">
+     3.3.5 Il costruttore di copia, o copy constructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-distruttore">
+     3.3.6 Il distruttore
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-ridefinizione-di-operatori-overloading">
+   3.4 La ridefinizione di operatori, overloading
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-operatore-di-assegnazione-per-tipi-predefiniti">
+     3.4.1 L’operatore di assegnazione per tipi predefiniti
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-operatore-di-assegnazione-per-una-classe">
+     3.4.2 L’operatore di assegnazione per una classe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-operatore-di-somma">
+     3.4.3 L’operatore di somma
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definizione-al-di-fuori-della-classe">
+     3.4.4 Definizione al di fuori della classe
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-attributo-const">
+   3.5 L’attributo
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     const
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#esempi-di-utilizzo-di-const-con-i-tipi-predefiniti">
+     3.5.1 Esempi di utilizzo di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       const
+      </span>
+     </code>
+     con i tipi predefiniti
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oggetti-definiti-const">
+     3.5.2 Oggetti definiti
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       const
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classi-e-puntatori">
+   3.6 Classi e puntatori
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizi">
+   3.7 ESERCIZI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lezione-3-programmazione-ad-oggetti-le-classi">
+<h1>Lezione 3: programmazione ad oggetti, le classi<a class="headerlink" href="#lezione-3-programmazione-ad-oggetti-le-classi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#31-la-generalizzazione-del-concetto-di-tipo">3.1 La generalizzazione del concetto di tipo</a></p>
+<ul>
+<li><p><a class="reference external" href="#311-uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c">3.1.1 Uno sguardo ravvicinato ai tipi predefiniti in <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+<li><p><a class="reference external" href="#312-un-esempio-i-numeri-complessi">3.1.2 Un esempio: i numeri complessi</a></p></li>
+<li><p><a class="reference external" href="#313-se-i-numeri-complessi-fossero-un-tipo-di-c">3.1.3 Se i numeri complessi fossero un tipo di <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#32-si-pu%C3%B2-fare-la-classe-dei-numeri-complessi">3.2 Si può fare! La classe dei numeri complessi</a></p>
+<ul>
+<li><p><a class="reference external" href="#321-la-definizione-della-classe-il-file-complessoh">3.2.1 La definizione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.h</span></code>)</a></p></li>
+<li><p><a class="reference external" href="#322-un-primo-esempio-di-utilizzo">3.2.2 un primo esempio di utilizzo</a></p></li>
+<li><p><a class="reference external" href="#323-i-membri-di-una-classe">3.2.3 I membri di una classe</a></p></li>
+<li><p><a class="reference external" href="#324-i-metodi-di-una-classe">3.2.4 I metodi di una classe</a></p></li>
+<li><p><a class="reference external" href="#325-il-campo-private">3.2.5 Il campo <code class="docutils literal notranslate"><span class="pre">private</span></code></a></p></li>
+<li><p><a class="reference external" href="#326-il-campo-public">3.2.6 Il campo <code class="docutils literal notranslate"><span class="pre">public</span></code></a></p></li>
+<li><p><a class="reference external" href="#327-limplementazione-della-classe-il-file-complessocc">3.2.7 L’implementazione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.cc</span></code>)</a></p></li>
+<li><p><a class="reference external" href="#328-un-membro-implicito-di-ogni-classe-loggetto-stesso">3.2.8 Un membro implicito di ogni classe: l’oggetto stesso</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#33-funzioni-speciali-di-una-classe">3.3 Funzioni speciali di una classe</a></p>
+<ul>
+<li><p><a class="reference external" href="#331-il-costruttore">3.3.1 Il costruttore</a></p></li>
+<li><p><a class="reference external" href="#332-la-lista-di-inizializzazione">3.3.2 La lista di inizializzazione</a></p></li>
+<li><p><a class="reference external" href="#333-overloading-del-costruttore">3.3.3 overloading del costruttore</a></p></li>
+<li><p><a class="reference external" href="#334-il-costruttore-di-default">3.3.4 Il costruttore di default</a></p></li>
+<li><p><a class="reference external" href="#335-il-costruttore-di-copia-o-copy-constructor">3.3.5 Il costruttore di copia, o copy constructor</a></p></li>
+<li><p><a class="reference external" href="#336-il-distruttore">3.3.6 Il distruttore</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#34-la-ridefinizione-di-operatori-overloading">3.4 La ridefinizione di operatori, overloading</a></p>
+<ul>
+<li><p><a class="reference external" href="#341-loperatore-di-assegnazione-per-tipi-predefiniti">3.4.1 L’operatore di assegnazione per tipi predefiniti</a></p></li>
+<li><p><a class="reference external" href="#342-loperatore-di-assegnazione-per-una-classe">3.4.2 L’operatore di assegnazione per una classe</a></p></li>
+<li><p><a class="reference external" href="#343-loperatore-di-somma">3.4.3 L’operatore di somma</a></p></li>
+<li><p><a class="reference external" href="#344-definizione-al-di-fuori-della-classe">3.4.4 Definizione al di fuori della classe</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#35-lattributo-const">3.5 L’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code></a></p>
+<ul>
+<li><p><a class="reference external" href="#351-esempi-di-utilizzo-di-const-con-i-tipi-predefiniti">3.5.1 Esempi di utilizzo di <code class="docutils literal notranslate"><span class="pre">const</span></code> con i tipi predefiniti</a></p></li>
+<li><p><a class="reference external" href="#352-oggetti-definiti-const">3.5.2 Oggetti definiti <code class="docutils literal notranslate"><span class="pre">const</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#36-classi-e-puntatori">3.6 Classi e puntatori</a></p></li>
+<li><p><a class="reference external" href="#37-esercizi">3.7 ESERCIZI</a></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-generalizzazione-del-concetto-di-tipo">
+<h2>3.1 La generalizzazione del concetto di tipo<a class="headerlink" href="#la-generalizzazione-del-concetto-di-tipo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>secondo la programmazione <strong>object oriented</strong>,
+le funzionalità di un programma vanno associate all’informazione che processano,</p></li>
+<li><p>così come per ogni tipo predefinito (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, et cetera)
+esistono gli operatori che ne gestiscono i comportamenti</p></li>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> questo paradigma è realizzato attraveso
+il concetto di <strong>classe, che è una generalizzazione del tipo</strong>,
+mentre gli <strong>oggetti sono la generalizzazione delle variabili</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c">
+<h3>3.1.1 Uno sguardo ravvicinato ai tipi predefiniti in <code class="docutils literal notranslate"><span class="pre">C++</span></code><a class="headerlink" href="#uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>un qualunque tipo predefinito è caratterizzato da una serie di <strong>proprietà</strong>:</p></li>
+<li><p>funzioni per la <strong>gestione della memoria</strong>:</p>
+<ul>
+<li><p>allocazione dello spazio nella RAM quando una variabile viene definita</p></li>
+<li><p>liberazione dello spazio RAM quando una variabile cessa di esistere</p></li>
+</ul>
+</li>
+<li><p><strong>operatori</strong> per maneggiare le variabili</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="un-esempio-i-numeri-complessi">
+<h3>3.1.2 Un esempio: i numeri complessi<a class="headerlink" href="#un-esempio-i-numeri-complessi" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>costrutti più sofisticati</strong> dei tipi predefiniti non godono di queste proprietà</p></li>
+<li><p>un numero complesso è rappresentato da due numeri reali,
+che un <code class="docutils literal notranslate"><span class="pre">C++</span></code> si possono scrivere come:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">num_parteReale</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">num_parteImmaginaria</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>senza fare uso di classi, le operazioni tipiche dei numeri complessi
+vanno <strong>implementate sotto forma di funzioni</strong>:</p>
+<ul class="simple">
+<li><p>calcolo del modulo e della fase</p></li>
+<li><p>somma di numeri complessi</p></li>
+<li><p>moltiplicazione per un numero reale</p></li>
+</ul>
+</li>
+<li><p>ad esempio:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">modulo</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">imag</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">real</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">imag</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="se-i-numeri-complessi-fossero-un-tipo-di-c">
+<h3>3.1.3 Se i numeri complessi fossero un tipo di <code class="docutils literal notranslate"><span class="pre">C++</span></code><a class="headerlink" href="#se-i-numeri-complessi-fossero-un-tipo-di-c" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>le operazioni per gestire i numeri complessi sono
+praticamente <strong>associate soltanto a loro</strong></p></li>
+<li><p>risulterebbe molto più comodo se fosse possibile
+<strong>definire un numero complesso</strong> e associare ad esso le operazioni che lo riguardano:</p>
+<ul>
+<li><p>migliore <strong>gestione del programma</strong></p></li>
+<li><p><strong>proprietà</strong> simili a quelle dei tipi predefiniti</p></li>
+<li><p>mogliore <strong>solidità del design del codice sorgente</strong>,
+perché migliora la consistenza del codice
+e le possibilità di controllo di errori logici</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="si-puo-fare-la-classe-dei-numeri-complessi">
+<h2>3.2 Si può fare! La classe dei numeri complessi<a class="headerlink" href="#si-puo-fare-la-classe-dei-numeri-complessi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>una classe è di fatto la <strong>definizione di un nuovo tipo</strong>:
+il caso ideale per la costruzione di una libreria,
+con un file header (<code class="docutils literal notranslate"><span class="pre">.h</span></code>) ed uno di implementazione (<code class="docutils literal notranslate"><span class="pre">.cc</span></code>)</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-definizione-della-classe-il-file-complesso-h">
+<h3>3.2.1 La definizione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.h</span></code>)<a class="headerlink" href="#la-definizione-della-classe-il-file-complesso-h" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>ecco come si definisce in <code class="docutils literal notranslate"><span class="pre">C++</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">complesso</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"> </span>
+<span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="o">~</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">modulo</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">      </span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">fase</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">      </span>
+
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>attenzione</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>dopo la chiusura della parentesi graffa <strong>c’è un punto e virgola! <code class="docutils literal notranslate"><span class="pre">}</span> <span class="pre">;</span></code></strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="un-primo-esempio-di-utilizzo">
+<h3>3.2.2 un primo esempio di utilizzo<a class="headerlink" href="#un-primo-esempio-di-utilizzo" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>in un qualunque punto del codice sorgente,
+si può quindi creare un numero complesso:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="nf">numero_complesso_1</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">complesso</span><span class="w"> </span><span class="nf">numero_complesso_2</span><span class="w"> </span><span class="p">(</span><span class="mf">3.</span><span class="p">,</span><span class="w"> </span><span class="mf">4.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>in questo esempio <code class="docutils literal notranslate"><span class="pre">complesso</span></code> è la classe (il nuovo tipo),
+mentre <code class="docutils literal notranslate"><span class="pre">numero_complesso_1</span></code> e <code class="docutils literal notranslate"><span class="pre">numero_complesso_2</span></code>
+sono due <strong>oggetti</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="i-membri-di-una-classe">
+<h3>3.2.3 I membri di una classe<a class="headerlink" href="#i-membri-di-una-classe" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>le variabili definite all’interno della definizione della classe
+sono dette <strong>membri della classe</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>ogni volta che viene creato un oggetto di una classe,
+viene creata una nuova istanza dei membri della classe
+associata a quell’oggetto,
+quindi <strong>ogni oggetto ha le proprie variabili membro</strong> corrispondenti</p></li>
+<li><p>i membri possono essere di tipo predefinito,
+oppure <strong>a loro volta oggetti</strong> di una classe</p></li>
+<li><p>è buona regola di programmazione <strong>identificare i membri in modo simbolico</strong>,
+ad esempio con il prefisso <code class="docutils literal notranslate"><span class="pre">m_</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="i-metodi-di-una-classe">
+<h3>3.2.4 I metodi di una classe<a class="headerlink" href="#i-metodi-di-una-classe" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>le funzioni che sono definite all’interno di una classe sono chiamate <strong>metodi</strong> della classe</p></li>
+<li><p>hanno automaticamente <strong>accesso ai membri</strong> dell’oggetto sul quale operano
+e si invocano su un oggetto utilizzando il nome dell’oggetto
+seguito da un punto e dal nome del metodo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">numero_complesso_1</span><span class="p">.</span><span class="n">modulo</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>i metodi <strong>possono avere argomenti</strong>,
+ad esempio uno di essi potrebbe moltiplicare il numero complesso
+per un numero reale:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">numero_complesso_1</span><span class="p">.</span><span class="n">dilata</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">fattore_di_scala</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-campo-private">
+<h3>3.2.5 Il campo <code class="docutils literal notranslate"><span class="pre">private</span></code><a class="headerlink" href="#il-campo-private" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>i metodi di una classe <strong>fungono da interfaccia</strong> fra i membri di un oggetto
+ed il codice sorgente dove l’oggetto è definito</p></li>
+<li><p>è talvolta auspicabile che i membri possano essere modificati
+<strong>soltanto attraverso i metodi</strong>,
+per evitare che subiscano operazioni
+che compromettano la funzionalità dell’oggetto nel suo insieme</p></li>
+<li><p>tutti i metodi ed i membri definiti <strong>dopo la parola chiave <code class="docutils literal notranslate"><span class="pre">private</span></code></strong>
+sono accessibili solo per i metodi della loro classe</p></li>
+<li><p>se non si indica nulla, tutto il contenuto di una classe è <code class="docutils literal notranslate"><span class="pre">private</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-campo-public">
+<h3>3.2.6 Il campo <code class="docutils literal notranslate"><span class="pre">public</span></code><a class="headerlink" href="#il-campo-public" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>i metodi ed i membri definiti <strong>dopo la parola chiave <code class="docutils literal notranslate"><span class="pre">public</span></code></strong>
+sono accessibili nel codice sorgente al di fuori della classe
+(ad esempio nella funzione <code class="docutils literal notranslate"><span class="pre">main</span></code>)
+tramite la sintassi del <code class="docutils literal notranslate"><span class="pre">.</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">numero_complesso_1</span><span class="p">.</span><span class="n">modulo</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>solitamente, i <strong>membri</strong> di una classe sono <code class="docutils literal notranslate"><span class="pre">private</span></code>,
+mentre i suoi <strong>metodi</strong> sono <code class="docutils literal notranslate"><span class="pre">public</span></code></p></li>
+<li><p>se si definisce una classe con l’identificativo <code class="docutils literal notranslate"><span class="pre">struct</span></code> invece di <code class="docutils literal notranslate"><span class="pre">class</span></code>,
+se non si indica nulla tutto il contenuto della classe è <code class="docutils literal notranslate"><span class="pre">public</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-implementazione-della-classe-il-file-complesso-cc">
+<h3>3.2.7 L’implementazione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.cc</span></code>)<a class="headerlink" href="#l-implementazione-della-classe-il-file-complesso-cc" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>i metodi di una classe possono essere <strong>implementati</strong>
+direttamente nello scope di definizione</p></li>
+<li><p>solitamente, tuttavia, questo succede <strong>in un file separato</strong>,
+dove vanno associati alla classe che li contiene, ad esempio:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;complesso.h&quot;</span><span class="cp"></span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">complesso::modulo</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="w"> </span><span class="p">(</span><span class="n">m_real</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w">    </span>
+</pre></div>
+</div>
+</li>
+<li><p>il nome di ogni metodo è preceduto dal nome della classe,
+separato dall’operatore di scope resolution <code class="docutils literal notranslate"><span class="pre">::</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="un-membro-implicito-di-ogni-classe-l-oggetto-stesso">
+<h3>3.2.8 Un membro implicito di ogni classe: l’oggetto stesso<a class="headerlink" href="#un-membro-implicito-di-ogni-classe-l-oggetto-stesso" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>per ogni classe,
+è sempre definito il <strong>puntatore all’oggetto corrente</strong>,
+rappresentato dal simbolo <strong><code class="docutils literal notranslate"><span class="pre">this</span></code></strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+<span class="nf">complesso::stampami</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_real</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; + &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_imag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;i&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>il <code class="docutils literal notranslate"><span class="pre">.</span></code> che si usa per accedere a membri e metodi di un oggetto
+viene <strong>sostituito da <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> per i puntatori ad oggetti</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="funzioni-speciali-di-una-classe">
+<h2>3.3 Funzioni speciali di una classe<a class="headerlink" href="#funzioni-speciali-di-una-classe" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>oltre a quelle che servono per maneggiare le variabili,
+ogni tipo predefinito possiede funzioni dedicate alla
+<strong>creazione ed alla distruzione delle variabili</strong></p></li>
+<li><p>in una classe,
+queste funzioni <strong>vanno implementate</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="il-costruttore">
+<h3>3.3.1 Il costruttore<a class="headerlink" href="#il-costruttore" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>crea l’oggetto</strong> al momento della sua definizione,
+inizializzando i membri dell’oggetto:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>le variabili di <strong>tipi predefiniti</strong> vengono create dal costruttore corrispondente</p></li>
+<li><p>oggetti di altre classi vengono <strong>creati dal costruttore corrispondente</strong></p></li>
+<li><p>il costruttore <strong>non ha tipo di ritorno</strong></p></li>
+<li><p>nello scope del costruttore si possono eseguire istruzioni
+(in questo esempio c’è una stampa a schermo, che in realtà è scomodo:
+nessuno vuole un programma troppo petulante)</p></li>
+<li><p>questo è un buon posto dove <strong>allocare dinamicamente la memoria</strong>, se necessario</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-lista-di-inizializzazione">
+<h3>3.3.2 La lista di inizializzazione<a class="headerlink" href="#la-lista-di-inizializzazione" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>tutti i membri di una classe vengono creati <strong>prima dell’inizio</strong> dello scope del costruttore</p></li>
+<li><p>la sequenza:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"></span>
+<span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>è detta <strong>lista di inizializzazione</strong></p>
+</li>
+<li><p>ottimizza l’uso della memoria: inizializza ciascun membro al valore fra parentesi
+al momento della creazione del membro</p></li>
+<li><p>l’<strong>ordine delle variabili</strong> deve essere il medesimo della loro definizione
+all’interno della classe</p></li>
+<li><p>se non si mettesse la lista di inizializzazione,
+bisognerebbe inizializzare le variabili nello scope del costruttore,
+spendendo più tempo di esecuzione:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="overloading-del-costruttore">
+<h3>3.3.3 overloading del costruttore<a class="headerlink" href="#overloading-del-costruttore" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>una classe può possedere <strong>più di un costruttore</strong>,
+a patto che ciascuno prenda argomenti diversi</p></li>
+<li><p>ad esempio, si può definire un costruttore che abbia come input soltanto
+un numero reale:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-costruttore-di-default">
+<h3>3.3.4 Il costruttore di default<a class="headerlink" href="#il-costruttore-di-default" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>un costruttore senza argomenti di input è chiamato <strong>costruttore di default</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>se una classe non ha il costruttore,
+il compilaore spesso <strong>definisce un costruttore di default</strong> vuoto</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-costruttore-di-copia-o-copy-constructor">
+<h3>3.3.5 Il costruttore di copia, o copy constructor<a class="headerlink" href="#il-costruttore-di-copia-o-copy-constructor" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>è naturale immaginare di costruire un oggetto nuovo
+copiando il contenuto di uno esistente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="n">orig</span><span class="p">.</span><span class="n">m_imag</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>una classe ha sempre accesso a tutti i membri
+di tutti gli oggetti di quella classe
+se vengono passati come argomenti di una funzione,
+quindi <strong>il copy constructor ha accesso ai membri <code class="docutils literal notranslate"><span class="pre">private</span></code>
+dell’oggetto <code class="docutils literal notranslate"><span class="pre">orig</span></code></strong></p>
+<ul class="simple">
+<li><p>esiste una eccezione a questa regola,
+che vedremo quando parleremo di ereditarietà</p></li>
+</ul>
+</li>
+<li><p>l’oggetto <code class="docutils literal notranslate"><span class="pre">orig</span></code> viene passato:</p>
+<ul class="simple">
+<li><p><strong>per referenza</strong> per ragioni di velocità</p></li>
+<li><p><strong>con l’attributo const</strong> per garantire che non venga modificato</p></li>
+</ul>
+</li>
+<li><p>anche in questo caso, <strong>non c’è tipo di ritorno</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-distruttore">
+<h3>3.3.6 Il distruttore<a class="headerlink" href="#il-distruttore" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>al termine della vita di un oggetto, cioè al momento in cui va out of scope,
+la memoria che occupa va liberata</p></li>
+<li><p>i suoi membri di tipi predefiniti del <code class="docutils literal notranslate"><span class="pre">C++</span></code> allocati automaticamente
+vengono distrutti automaticamente</p></li>
+<li><p>la memoria allocata dinamicamente va ripulita esplicitamente:
+per fare questo, esiste una funzione dedicata, chiamata <strong>distruttore</strong>,
+dove tutti i <strong><code class="docutils literal notranslate"><span class="pre">delete</span></code></strong> necessari possono essere chiamati</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::~</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// qui va ripulita la memoria allocata dinamicamente</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>eventuali <strong>membri che siano oggetti di altre classi</strong> saranno distrutti dal distruttore corrispondente</p></li>
+<li><p>nel distruttore si possono anche implementare comportamenti aggiuntivi,
+come ad esempio il salvataggio automatico dell’informazione</p></li>
+<li><p>anche il distruttore <strong>non ha tipo di ritorno</strong></p></li>
+<li><p>se non viene implementato,
+<strong>il compilatore crea automaticamnete</strong> un distruttore vuoto</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="la-ridefinizione-di-operatori-overloading">
+<h2>3.4 La ridefinizione di operatori, overloading<a class="headerlink" href="#la-ridefinizione-di-operatori-overloading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>per i tipi predefiniti di <code class="docutils literal notranslate"><span class="pre">C++</span></code> le operazioni matematiche fondamentali
+sono effettuate con i simboli algebrici noti: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">=</span></code> ….</p></li>
+<li><p>si può definire il comportamento di queste funzioni anche per gli oggetti
+delle classi
+(come sempre, si distinguono dagli altri per i diversi tipi in ingresso)</p></li>
+<li><p>ecco due esempi notevoli</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="l-operatore-di-assegnazione-per-tipi-predefiniti">
+<h3>3.4.1 L’operatore di assegnazione per tipi predefiniti<a class="headerlink" href="#l-operatore-di-assegnazione-per-tipi-predefiniti" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>una operazione solitamente fattibile con tipi predefiniti è
+l’assegnazione a partire da una altra variabile esistente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>in questo caso, il <code class="docutils literal notranslate"><span class="pre">C++</span></code> prima costruisce la variabile <code class="docutils literal notranslate"><span class="pre">numero</span></code> e le assegna un valore in memoria,
+successivamente le fa assumere il valore di <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-operatore-di-assegnazione-per-una-classe">
+<h3>3.4.2 L’operatore di assegnazione per una classe<a class="headerlink" href="#l-operatore-di-assegnazione-per-una-classe" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>il comportamento dell’operatore di assegnazione <strong>va definito</strong> per una classe</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span>
+<span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+<ul>
+<li><p>la <strong>variabile in ingresso</strong> è una referenza costante per garantire velocità e non modificabilità</p></li>
+<li><p>la <strong>variabile in uscita</strong> è una referenza all’oggetto,
+per permettere la seguente sintassi:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="n">numero_complesso_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>non viene restituita una copia dell’oggetto corrente per <strong>risparmiare tempo</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-operatore-di-somma">
+<h3>3.4.3 L’operatore di somma<a class="headerlink" href="#l-operatore-di-somma" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>vogliamo che l’operazione di somma fra numeri complessi si possa scrivere come:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="n">numero_complesso_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero_complesso_2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> si può ottenere defintendo un metodo della classe complesso
+chiamato <code class="docutils literal notranslate"><span class="pre">operator+</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"></span>
+<span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="nf">somma</span><span class="w"> </span><span class="p">(</span><span class="n">m_real</span><span class="p">,</span><span class="w"> </span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">somma</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">somma</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">addendo</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">somma</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">somma</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">addendo</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">somma</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>la <strong>variabile in ingresso</strong> è una referenza costante per garantire velocità e non modificabilità</p></li>
+<li><p>la <strong>variabile in uscita</strong> è un oggetto nuovo</p></li>
+</ul>
+</li>
+<li><p>l’<code class="docutils literal notranslate"><span class="pre">operator+</span></code> ha in questo caso un solo argomento,
+perché uno dei due addendi è l’oggetto sul quale è chiamato.
+Infatti, le due scritture seguenti sono equivalenti:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="n">numero_complesso_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero_complesso_2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">complesso</span><span class="w"> </span><span class="n">numero_complesso_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_3</span><span class="p">.</span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">numero_complesso_2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="definizione-al-di-fuori-della-classe">
+<h3>3.4.4 Definizione al di fuori della classe<a class="headerlink" href="#definizione-al-di-fuori-della-classe" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>la funzione <code class="docutils literal notranslate"><span class="pre">operator+</span></code> può essere definita anche <strong>al di fuori della classe</strong></p>
+<ul class="simple">
+<li><p>in questo caso ha due argomenti, che sono entrambi gli addendi</p></li>
+</ul>
+</li>
+<li><p>in questo caso, tuttavia, nella funzione i membri privati degli oggetti <strong>non sono accessibili</strong></p>
+<ul>
+<li><p>bisogna definire <strong>metodi pubblici di interfaccia</strong> per accedere al valore dei membri</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span>
+<span class="nf">complesso::parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>può essere comodo per definire operazioni <strong>fra oggetti eterogenei</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">uno</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">due</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uno</span><span class="p">.</span><span class="n">parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">due</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uno</span><span class="p">.</span><span class="n">parte_immaginaria</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="nf">somma</span><span class="w"> </span><span class="p">(</span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="n">imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">somma</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>essendo una funzione <strong>esterna alla classe</strong>,
+in questo caso non è presente la denominazione di scope <code class="docutils literal notranslate"><span class="pre">complesso::</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="l-attributo-const">
+<h2>3.5 L’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#l-attributo-const" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>la parola chiave <code class="docutils literal notranslate"><span class="pre">const</span></code> indica il fatto che <strong>non sia permesso
+cambiare il valore</strong> contenuto in una variabile o in un oggetto</p></li>
+<li><p>const si <strong>applica</strong> al primo attributo alla sua sinistra,
+se non c’è nulla si applica al primo attributo alla sua destra</p>
+<ul>
+<li><p>a seconda della sua posizione, ha effetti differenti</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="esempi-di-utilizzo-di-const-con-i-tipi-predefiniti">
+<h3>3.5.1 Esempi di utilizzo di <code class="docutils literal notranslate"><span class="pre">const</span></code> con i tipi predefiniti<a class="headerlink" href="#esempi-di-utilizzo-di-const-con-i-tipi-predefiniti" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>sintassi</p></th>
+<th class="head"><p>effetto</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">C1</span> <span class="pre">=</span> <span class="pre">10</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C1</span></code> è un intero il cui valore è costante</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">const</span> <span class="pre">C1</span> <span class="pre">=</span> <span class="pre">10</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C1</span></code> è un intero il cui valore è costante</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">*</span> <span class="pre">C2</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C2</span></code> è un puntatore ad un <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span></code>, cioè un puntatore ad un intero costante</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">C2</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C2</span></code> è un puntatore ad un <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span></code>, cioè un puntatore ad un intero costante</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">*</span> <span class="pre">const</span> <span class="pre">C3</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C3</span></code> è un puntatore costante ad un intero variabile</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">const</span> <span class="pre">C4</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C4</span></code> è un puntatore costante ad un intero costante</p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>NOTA BENE: siccome <code class="docutils literal notranslate"><span class="pre">C3</span></code> e <code class="docutils literal notranslate"><span class="pre">C4</span></code> sono puntatori costanti,
+vanno <strong>immediatamente inizializzati</strong>,
+perché i puntatori non sono inizializzati ad alcun valore di default:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">C3</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">C4</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="w"> </span><span class="n">C1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="oggetti-definiti-const">
+<h3>3.5.2 Oggetti definiti <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#oggetti-definiti-const" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>le <strong>stesse regole</strong> si applicano ad oggetti definiti</p></li>
+<li><p>tuttavia, si pone il problema aggiuntivo che, in generale,
+<strong>i metodi di una classe possono modificare i membri</strong> di un oggetto</p></li>
+<li><p>per continuare ad utilizzare metodi preservando la caratteristica <code class="docutils literal notranslate"><span class="pre">const</span></code>
+il <code class="docutils literal notranslate"><span class="pre">C++</span></code> richiede di <strong>indicare quali metodi non modifichino i membri</strong>
+di una classe, aggiungendo l’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code> al termine del loro prototpo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span>
+<span class="nf">complesso::parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>su un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">const</span></code> possono essere invocati
+soltanto i metodi dichiarati <code class="docutils literal notranslate"><span class="pre">const</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="classi-e-puntatori">
+<h2>3.6 Classi e puntatori<a class="headerlink" href="#classi-e-puntatori" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>come abbiamo già visto,
+esistono <strong>puntatori e referenze ad oggetti</strong>,
+con i medesimi comportamenti delle variaibli di tipo predefinito</p></li>
+<li><p>per accedere a metodi e membri di un oggetto
+attraveso un suo puntatore,
+si utilizza <strong>l’operatore <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> invece di <code class="docutils literal notranslate"><span class="pre">.</span></code></strong></p></li>
+<li><p>le classe possono anche <strong>contenere puntatori</strong> a variabili di tipo predefinito
+o ad altri oggetti</p></li>
+<li><p>nel caso in cui si utilizzi <strong>allocazione dinamica</strong> della memoria,
+è prudente invocarla nel costruttore
+ed è <strong>necessario ripulire la memoria nel distruttore</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizi">
+<h2>3.7 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lezione_02/ESERCIZI.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Esercizi per la lezione 2</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ESERCIZI.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Esercizi per la lezione 3</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Pietro Govoni, Maura Pavan<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

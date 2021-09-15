@@ -1,0 +1,1483 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 8: programmazione ad oggetti: l’ereditarietà public &#8212; Laboratorio II</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Esercizi per la lezione 8" href="ESERCIZI.html" />
+    <link rel="prev" title="Esercizi per la lezione 7" href="../Lezione_07/ESERCIZI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio II</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio II - A.A. 2021/22
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lezione_00/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: ripasso di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+     , parte 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_06/README.html">
+     Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_07/README.html">
+     Lezione 7: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Lezione 8: programmazione ad oggetti: l’ereditarietà
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_09/README.html">
+     Lezione 9: stima di parametri con il metodo della massima verosimiglianza
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESERCIZI.html">
+       Esercizi per la lezione 9
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_10/README.html">
+     Lezione 10: stima di parametri con il metodo dei minimi quadrati
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_10/ESERCIZI.html">
+       Esercizi per la lezione 10
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_11/README.html">
+     Lezione 11: fit di distribuzioni binnate con
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_11/ESERCIZI.html">
+       Esercizi per la lezione 11
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_12/README.html">
+     Lezione 12: Test di Ipotesi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_12/ESERCIZI.html">
+       Esercizi per la lezione 12
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_08/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduzione">
+   8.1 Introduzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rappresentazione-grafica">
+     8.1.1 Rappresentazione grafica
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problemi-di-privacy">
+     8.1.2 Problemi di privacy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementazione-dell-esempio-delle-forme-geometriche">
+   8.2 Implementazione dell’esempio delle forme geometriche
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-classe-base-forma">
+     8.2.1 La classe base:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       forma
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#una-classe-derivata-quadrato">
+     8.2.2 Una classe derivata:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       quadrato
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-classe-derivata-nel-programma-principale">
+     8.2.3 La classe derivata nel programma principale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-altra-classe-derivata-il-rettangolo">
+     8.2.4 Un’altra classe derivata: il
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       rettangolo
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-regola-is-a-una-specializzazione">
+     8.2.5 La regola is-a: una specializzazione
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ereditarieta-e-polimorfismo">
+   8.3 ereditarietà e polimorfismo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compatibiita-fra-tipi-ereditariamente-correlati">
+     8.3.1 Compatibiità fra tipi ereditariamente correlati
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-calcolo-dell-area">
+     8.3.2 Il calcolo dell’area
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dynamic-binding">
+     8.3.3
+     <em>
+      Dynamic binding
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementazione-del-metodo-calcola-area">
+     8.3.4 Implementazione del metodo
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       calcola_area
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-ulitizzo-nel-programma">
+     8.3.5 l’ulitizzo nel programma
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-distruttore-di-una-classe-virtuale">
+     8.3.6 Il distruttore di una classe virtuale
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-interfacce-e-le-classi-puramente-virtuali">
+   8.4 Le interfacce e le classi puramente virtuali
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-interfacce">
+     8.4.1 Le interfacce
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#il-polimorfismo-ed-i-contenitori-stl">
+   8.5 Il polimorfismo ed i contenitori STL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algoritmi-nelle-stl">
+   8.6 algoritmi nelle STL
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#std-find">
+     8.6.1
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       std::find
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-risultato-di-std-find">
+     8.6.2 il risultato di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       std::find
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#std-sort">
+     8.6.3
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       std::sort
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#risultato-di-std-sort">
+     8.6.4 risultato di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       std::sort
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-relazione-di-ordine-nell-ordinamento">
+     8.6.5 la relazione di ordine nell’ordinamento
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-esempio-di-utilizzo">
+     8.6.6 un esempio di utilizzo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ereditarieta-e-template">
+   8.7 Ereditarietà e
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     template
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-utile-strumento-la-lettura-di-un-file-di-testo">
+   8.8 Un utile strumento: la lettura di un
+   <em>
+    file
+   </em>
+   di testo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-implementazione-della-lettura">
+     8.8.1 L’implementazione della lettura
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-implementazione-della-scrittura">
+     8.8.2 L’implementazione della scrittura
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-controllo-dell-apertura-di-un-file">
+     8.8.3 Il controllo dell’apertura di un file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizi">
+   8.9 ESERCIZI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lezione-8-programmazione-ad-oggetti-l-ereditarieta-public">
+<h1>Lezione 8: programmazione ad oggetti: l’ereditarietà <code class="docutils literal notranslate"><span class="pre">public</span></code><a class="headerlink" href="#lezione-8-programmazione-ad-oggetti-l-ereditarieta-public" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#81-introduzione">8.1 Introduzione</a></p>
+<ul>
+<li><p><a class="reference external" href="#811-rappresentazione-grafica">8.1.1 Rappresentazione grafica</a></p></li>
+<li><p><a class="reference external" href="#812-problemi-di-privacy">8.1.2 Problemi di privacy</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#82-implementazione-dellesempio-delle-forme-geometriche">8.2 Implementazione dell’esempio delle forme geometriche</a></p>
+<ul>
+<li><p><a class="reference external" href="#821-la-classe-base-forma">8.2.1 La classe base: <code class="docutils literal notranslate"><span class="pre">forma</span></code></a></p></li>
+<li><p><a class="reference external" href="#822-una-classe-derivata-quadrato">8.2.2 Una classe derivata: <code class="docutils literal notranslate"><span class="pre">quadrato</span></code></a></p></li>
+<li><p><a class="reference external" href="#823-la-classe-derivata-nel-programma-principale">8.2.3 La classe derivata nel programma principale</a></p></li>
+<li><p><a class="reference external" href="#824-unaltra-classe-derivata-il-rettangolo">8.2.4 Un’altra classe derivata: il <code class="docutils literal notranslate"><span class="pre">rettangolo</span></code></a></p></li>
+<li><p><a class="reference external" href="#825-la-regola-is-a-una-specializzazione">8.2.5 La regola is-a: una specializzazione</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#83-ereditariet%C3%A0-e-polimorfismo">8.3 ereditarietà e polimorfismo</a></p>
+<ul>
+<li><p><a class="reference external" href="#831-compatibiit%C3%A0-fra-tipi-ereditariamente-correlati">8.3.1 Compatibiità fra tipi ereditariamente correlati</a></p></li>
+<li><p><a class="reference external" href="#832-il-calcolo-dellarea">8.3.2 Il calcolo dell’area</a></p></li>
+<li><p><a class="reference external" href="#833-dynamic-binding">8.3.3 <em>Dynamic binding</em></a></p></li>
+<li><p><a class="reference external" href="#834-implementazione-del-metodo-calcola_area">8.3.4 Implementazione del metodo <code class="docutils literal notranslate"><span class="pre">calcola_area</span></code></a></p></li>
+<li><p><a class="reference external" href="#835-lulitizzo-nel-programma">8.3.5 l’ulitizzo nel programma</a></p></li>
+<li><p><a class="reference external" href="#836-il-distruttore-di-una-classe-virtuale">8.3.6 Il distruttore di una classe virtuale</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#84-le-interfacce-e-le-classi-puramente-virtuali">8.4 Le interfacce e le classi puramente virtuali</a></p>
+<ul>
+<li><p><a class="reference external" href="#841-le-interfacce">8.4.1 Le interfacce</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#85-il-polimorfismo-ed-i-contenitori-stl">8.5 Il polimorfismo ed i contenitori STL</a></p></li>
+<li><p><a class="reference external" href="#86-algoritmi-nelle-stl">8.6 algoritmi nelle STL</a></p>
+<ul>
+<li><p><a class="reference external" href="#861-stdfind">8.6.1 <code class="docutils literal notranslate"><span class="pre">std::find</span></code></a></p></li>
+<li><p><a class="reference external" href="#862-il-risultato-di-stdfind">8.6.2 il risultato di <code class="docutils literal notranslate"><span class="pre">std::find</span></code></a></p></li>
+<li><p><a class="reference external" href="#863-stdsort">8.6.3 <code class="docutils literal notranslate"><span class="pre">std::sort</span></code></a></p></li>
+<li><p><a class="reference external" href="#864-risultato-di-stdsort">8.6.4 risultato di <code class="docutils literal notranslate"><span class="pre">std::sort</span></code></a></p></li>
+<li><p><a class="reference external" href="#865-la-relazione-di-ordine-nellordinamento">8.6.5 la relazione di ordine nell’ordinamento</a></p></li>
+<li><p><a class="reference external" href="#866-un-esempio-di-utilizzo">8.6.6 un esempio di utilizzo</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#87-ereditariet%C3%A0-e-template">8.7 Ereditarietà e <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
+<li><p><a class="reference external" href="#88-un-utile-strumento-la-lettura-di-un-file-di-testo">8.8 Un utile strumento: la lettura di un <em>file</em> di testo</a></p>
+<ul>
+<li><p><a class="reference external" href="#881-limplementazione-della-lettura">8.8.1 L’implementazione della lettura</a></p></li>
+<li><p><a class="reference external" href="#882-limplementazione-della-scrittura">8.8.2 L’implementazione della scrittura</a></p></li>
+<li><p><a class="reference external" href="#883-il-controllo-dell-apertura-di-un-file">8.8.3 Il controllo dell’apertura di un file</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#88-esercizi">8.8 ESERCIZI</a></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="introduzione">
+<h2>8.1 Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>nella programmazione ad oggetti,
+la <strong>traslazione dalle funzioni ai metodi delle funzionalità</strong> dei programmi
+produce necessariamente una proliferazione di classi
+per svolgere i compiti dei programmi</p></li>
+<li><p>spesso succede che classi simili <strong>implentino comportamenti comuni</strong>
+insieme a comportamenti specifici per ciascuna di esse</p></li>
+<li><p>il meccanismo dell’ereditarietà permette di <strong>evitare di reimplementare comportamenti comuni</strong>,
+definendoli soltanto una volta per una <strong>classe base</strong>,
+facendo in modo che vengano ereditati da diverse <strong>classi derivate</strong></p></li>
+<li><p>le classi derivate, dunque, <strong>adattano ed estendono comportamenti generali</strong>
+definiti nella classe base</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="rappresentazione-grafica">
+<h3>8.1.1 Rappresentazione grafica<a class="headerlink" href="#rappresentazione-grafica" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>il meccanismo di ereditarietà <code class="docutils literal notranslate"><span class="pre">public</span></code> introduce una <strong>gerarchia fra classi</strong>:
+ogni classe derivata è un caso particolare della classe base.
+Questo concetto è noto come la <strong>regola is-a</strong>.
+<img alt="gerarchia" src="../_images/gerarchia.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="problemi-di-privacy">
+<h3>8.1.2 Problemi di privacy<a class="headerlink" href="#problemi-di-privacy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>nelle classi,
+i membri ed i metodi sono divisi in parte <code class="docutils literal notranslate"><span class="pre">public</span></code> e parte <code class="docutils literal notranslate"><span class="pre">private</span></code>:
+<strong>come funziona l’accesso</strong> nel caso dell’ereditarietà?</p></li>
+<li><p>i membri e metodi <code class="docutils literal notranslate"><span class="pre">public</span></code> delle classi base <strong>sono accessibili</strong> alle classi derivate</p></li>
+<li><p>i membri e metodi <code class="docutils literal notranslate"><span class="pre">private</span></code> delle classi base <strong>non sono accessibili</strong> alle classi derivate</p></li>
+<li><p>esiste una terza catergoria:
+i membri e metodi <code class="docutils literal notranslate"><span class="pre">protected</span></code> delle classi base <strong>non sono accessibili al di fuori</strong> della classe base,
+<strong>restando accessibili alle classi derivate</strong>.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="implementazione-dell-esempio-delle-forme-geometriche">
+<h2>8.2 Implementazione dell’esempio delle forme geometriche<a class="headerlink" href="#implementazione-dell-esempio-delle-forme-geometriche" title="Permalink to this headline">¶</a></h2>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-classe-base-forma">
+<h3>8.2.1 La classe base: <code class="docutils literal notranslate"><span class="pre">forma</span></code><a class="headerlink" href="#la-classe-base-forma" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>la <strong>classe base</strong> per le forme geometriche ha un contenuto molto semplice:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">forma</span><span class="w"></span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">forma</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-1.</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_area</span><span class="w"> </span><span class="p">(</span><span class="n">area</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">~</span><span class="n">forma</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">area</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_area</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">protected</span><span class="o">:</span><span class="w">  </span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m_area</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>il membro <code class="docutils literal notranslate"><span class="pre">m_area</span></code> è <code class="docutils literal notranslate"><span class="pre">protected</span></code> perché sia accessibile
+anche alle classi derivate</p></li>
+<li><p>in questo caso non ci sono <code class="docutils literal notranslate"><span class="pre">private</span></code>, ma si potrebbero mettere</p></li>
+</ul>
+</li>
+<li><p>un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">forma</span></code> può essere istanziato in un programma <code class="docutils literal notranslate"><span class="pre">C++</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">forma</span><span class="w"> </span><span class="n">forma_base</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">forma_base</span><span class="p">.</span><span class="n">area</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="una-classe-derivata-quadrato">
+<h3>8.2.2 Una classe derivata: <code class="docutils literal notranslate"><span class="pre">quadrato</span></code><a class="headerlink" href="#una-classe-derivata-quadrato" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>La sintassi per definire una <strong>classe derivata pubblicamente</strong> è la seguente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">quadrato</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">forma</span><span class="w"> </span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">quadrato</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">m_lato</span><span class="w"> </span><span class="p">(</span><span class="n">lato</span><span class="p">),</span><span class="w"></span>
+<span class="w">      </span><span class="n">forma</span><span class="w"> </span><span class="p">(</span><span class="n">lato</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">lato</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">lato</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_lato</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">cambia_lato</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lato</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">m_lato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">m_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_lato</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_lato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="o">~</span><span class="n">quadrato</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">private</span><span class="o">:</span><span class="w">  </span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m_lato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>il membro <code class="docutils literal notranslate"><span class="pre">m_lato</span></code> è <strong>dichiarato <code class="docutils literal notranslate"><span class="pre">private</span></code></strong>
+perché nella progettazione della struttura di ereditarietà
+non ci sono classi derivate che debbano accedervi</p></li>
+<li><p>i metodi specifici della classe quadrato<br />
+<strong>si aggiungono</strong> a quelli della classe base</p></li>
+<li><p>il membro <strong><code class="docutils literal notranslate"><span class="pre">m_area</span></code> è accessibile</strong> anche dalla classe <code class="docutils literal notranslate"><span class="pre">quadrato</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-classe-derivata-nel-programma-principale">
+<h3>8.2.3 La classe derivata nel programma principale<a class="headerlink" href="#la-classe-derivata-nel-programma-principale" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>nella funzione <code class="docutils literal notranslate"><span class="pre">main</span></code>,
+o in qualunque altra funzione dove venga utilizzato,
+per un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">quadrato</span></code> si possono chiamare i metodi pubblici
+<strong>sia della classe base che di quella derivata</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">quadrato</span><span class="w"> </span><span class="nf">forma_quadrata</span><span class="w"> </span><span class="p">(</span><span class="mf">3.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;area: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">forma_quadrata</span><span class="p">.</span><span class="n">area</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;lato: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">forma_quadrata</span><span class="p">.</span><span class="n">lato</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">forma_quadrata</span><span class="p">.</span><span class="n">cambia_lato</span><span class="w"> </span><span class="p">(</span><span class="mf">4.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;area: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">forma_quadrata</span><span class="p">.</span><span class="n">area</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>la consistenza delle informazioni (ad esempio, che l’area sia calcolata correttamente)
+dipende dalla <strong>bontà dell’implementazione</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="un-altra-classe-derivata-il-rettangolo">
+<h3>8.2.4 Un’altra classe derivata: il <code class="docutils literal notranslate"><span class="pre">rettangolo</span></code><a class="headerlink" href="#un-altra-classe-derivata-il-rettangolo" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>da una medesima classe base possono ereditare <strong>diverse classi derivate</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">rettangolo</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">forma</span><span class="w"> </span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">rettangolo</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lato_o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">lato_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">m_lato_o</span><span class="w"> </span><span class="p">(</span><span class="n">lato_o</span><span class="p">),</span><span class="w"></span>
+<span class="w">      </span><span class="n">m_lato_v</span><span class="w"> </span><span class="p">(</span><span class="n">lato_v</span><span class="p">),</span><span class="w"></span>
+<span class="w">      </span><span class="n">forma</span><span class="w"> </span><span class="p">(</span><span class="n">lato_o</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">lato_v</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">lato_o</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_lato_o</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">lato_v</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_lato_v</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">cambia_lato_o</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lato</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">m_lato_o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">m_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_lato_o</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_lato_v</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">cambia_lato_v</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lato</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">m_lato_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">m_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_lato_o</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_lato_v</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="o">~</span><span class="n">rettangolo</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">private</span><span class="o">:</span><span class="w">  </span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m_lato_o</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m_lato_v</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>in questo caso, <strong>sono necessari più metodi e più membri</strong>
+per descrivere le proprietà del rettangolo</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-regola-is-a-una-specializzazione">
+<h3>8.2.5 La regola is-a: una specializzazione<a class="headerlink" href="#la-regola-is-a-una-specializzazione" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>L’ereditarietà delle funzionalità delle classi base nelle classi derivate
+è un aspetto importante della progettazione del codice sorgente
+e <strong>riguarda il comportamento</strong> di una classe</p></li>
+<li><p>ad esempio, per il <code class="docutils literal notranslate"><span class="pre">C++</span></code> un quadrato <strong>non</strong> è una specilizzazione di un rettangolo,
+nonostante dal punto di vista geometrico il quadrato sia un rettangolo con lati uguali</p>
+<ul>
+<li><p>ad un rettangolo si può modificare la lunghezza di un lato e rimane un rettangolo,
+mentre se si modifica la lunghezza di un lato di un quadrato,
+la forma geometrica <strong>diventa un rettangolo generico</strong></p></li>
+</ul>
+</li>
+<li><p>quindi la classe <code class="docutils literal notranslate"><span class="pre">quadrato</span></code> <strong>non è una specializzazione</strong> della classe <code class="docutils literal notranslate"><span class="pre">rettangolo</span></code>,
+perché non tutte le funzioni di <code class="docutils literal notranslate"><span class="pre">rettangolo</span></code> possono essere applicate a <code class="docutils literal notranslate"><span class="pre">quadrato</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="ereditarieta-e-polimorfismo">
+<h2>8.3 ereditarietà e polimorfismo<a class="headerlink" href="#ereditarieta-e-polimorfismo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>quando due o più classi
+sono inserite in una gerarchia ereditaria,
+un puntatore alla classe base
+può essere utilizzato per <strong>referenziare anche oggetti
+delle classi derivate</strong></p></li>
+<li><p>questo è possibile dal fatto che la memoria dove sono salvati gli oggetti
+viene utilizzata a fette (<strong>memory slicing</strong>),
+in modo che regioni separate della memoria corrispondano
+a parti differenti dell’oggetto considerato:
+<img alt="memory_slicing" src="../_images/memory_slicing.png" /></p>
+<ul>
+<li><p>nello spazio occupato in memoria dall’oggetto <code class="docutils literal notranslate"><span class="pre">quadrato</span></code>,
+la prima sezione (gialla) <strong>contiene la parte <code class="docutils literal notranslate"><span class="pre">forma</span></code></strong> dell’oggetto,</p></li>
+<li><p>la seconda (arancione) contiene <strong>ciò che serve in più per realizzare il <code class="docutils literal notranslate"><span class="pre">poligono</span> <span class="pre">regolare</span></code></strong>,</p></li>
+<li><p>la terza (rossa) contiene <strong>ciò che serve in più rispetto al <code class="docutils literal notranslate"><span class="pre">poligono</span> <span class="pre">regolare</span></code>
+per realizzare il <code class="docutils literal notranslate"><span class="pre">quadrato</span></code></strong></p></li>
+</ul>
+</li>
+<li><p>in questo modo, noto l’indirizzo della cella iniziale
+a seconda del tipo da considerare il <code class="docutils literal notranslate"><span class="pre">C++</span></code> è in grado di ricostruire
+l’oggetto corrispondente</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="compatibiita-fra-tipi-ereditariamente-correlati">
+<h3>8.3.1 Compatibiità fra tipi ereditariamente correlati<a class="headerlink" href="#compatibiita-fra-tipi-ereditariamente-correlati" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Il <em>memory slicing</em> significa che sia lecito assegnare il puntatore di una classe derivata
+a <strong>quello di una classe base</strong>,
+senza incorrere il problemi di accesso alla memoria:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">quadrato</span><span class="w"> </span><span class="nf">forma_quadrata</span><span class="w"> </span><span class="p">(</span><span class="mf">3.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">forma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">puntatore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">forma_quadrata</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Chiaramente l’opposto non è ammissibile,
+perché l’oggetto <code class="docutils literal notranslate"><span class="pre">quadrato</span></code> occupa più posto in memoria dell’oggetto <code class="docutils literal notranslate"><span class="pre">forma</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-calcolo-dell-area">
+<h3>8.3.2 Il calcolo dell’area<a class="headerlink" href="#il-calcolo-dell-area" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Nell’implementazione delle funzioni <code class="docutils literal notranslate"><span class="pre">rettangolo::cambia_lato_o</span> <span class="pre">(double)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rettangolo::cambia_lato_o</span> <span class="pre">(double)</span></code>, <code class="docutils literal notranslate"><span class="pre">quadrato::cambia_lato</span> <span class="pre">(double)</span></code>
+l’area della forma geometrica <strong>è stata ricalcolata</strong>,
+perché sono state modificate le caratteristiche geometriche della forma</p></li>
+<li><p>E’ naturale <strong>aggiungere un metodo <code class="docutils literal notranslate"><span class="pre">calcola_area</span></code></strong> per tutte le forme geometriche,
+in modo che per ciascuna di esse il calcolo venga fatto sempre allo stesso modo</p></li>
+<li><p>E’ anche naturale immaginare che questo metodo sia parte della classe <code class="docutils literal notranslate"><span class="pre">forma</span></code>,
+perché esiste per ogni classe derivata,
+e venga poi <strong>reimplementato</strong> da ogni classe derivata</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="dynamic-binding">
+<h3>8.3.3 <em>Dynamic binding</em><a class="headerlink" href="#dynamic-binding" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A partire da un puntatore ad una classe base,
+il <code class="docutils literal notranslate"><span class="pre">C++</span></code> è in grado di <strong>comprendere dinamicamente
+di che tipo sia l’oggetto</strong> referenziato dal puntatore
+ed applicare il metodo corretto</p></li>
+<li><p>Per ottenere questo comportamento,
+è necessario definire i metodi da reimplementare
+con la parola chiave <code class="docutils literal notranslate"><span class="pre">virtual</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="implementazione-del-metodo-calcola-area">
+<h3>8.3.4 Implementazione del metodo <code class="docutils literal notranslate"><span class="pre">calcola_area</span></code><a class="headerlink" href="#implementazione-del-metodo-calcola-area" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>Nella classe base</strong>, la funzione <code class="docutils literal notranslate"><span class="pre">calcola_area</span></code> non ha informazioni sufficienti
+per fare alcun conto, quindi è implementata in modo banale in <code class="docutils literal notranslate"><span class="pre">forma</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcola_area</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">-1.</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>La parola chiave <code class="docutils literal notranslate"><span class="pre">virtual</span></code> anticipa al compilatore<br />
+che le classi derivate <strong>potrebbero reimplementare questo metodo</strong>
+e che bisogna scegliere quella giusta in fase di esecuzione,
+a seconda del tipo effettivo di ciascun puntatore</p></li>
+</ul>
+</li>
+<li><p><strong>Nella classe derivata</strong> la funzione viene reimplementata
+con le informazioni necessarie, ad esempio per <code class="docutils literal notranslate"><span class="pre">quadrato</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcola_area</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="n">m_area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_lato</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_lato</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m_area</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-ulitizzo-nel-programma">
+<h3>8.3.5 l’ulitizzo nel programma<a class="headerlink" href="#l-ulitizzo-nel-programma" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Con questo accorgimento, grazie al <em>dynamic binding</em>
+il programma <strong>riconosce durante l’esecuzione</strong>
+il tipo di oggetto da considerare.</p></li>
+<li><p>Le seguenti istruzioni:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">quadrato</span><span class="w"> </span><span class="nf">forma_quadrata</span><span class="w"> </span><span class="p">(</span><span class="mf">3.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">forma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">puntatore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">forma_quadrata</span><span class="w"> </span><span class="p">;</span><span class="w">   </span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">puntatore</span><span class="o">-&gt;</span><span class="n">calcola_area</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>restituiranno a schermo il valore <code class="docutils literal notranslate"><span class="pre">9</span></code>, invece che <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-distruttore-di-una-classe-virtuale">
+<h3>8.3.6 Il distruttore di una classe virtuale<a class="headerlink" href="#il-distruttore-di-una-classe-virtuale" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Il <em>dynamic binding</em> si intreccia con il fatto che un puntatore potrebbe venire <strong>allocato dinamicamente</strong>,
+quindi poi distrutto con l’operatore <code class="docutils literal notranslate"><span class="pre">delete</span></code></p></li>
+<li><p>Se l’operatore <code class="docutils literal notranslate"><span class="pre">delete</span></code> viene chiamato su un puntatore alla classe base,
+per essere certi che venga chiamato anche il distruttore della classe derivata
+è necessario <strong>dichiarare sempre il distruttore di tipo <code class="docutils literal notranslate"><span class="pre">virtual</span></code></strong>
+quando si utilizzi il polimorfismo</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="le-interfacce-e-le-classi-puramente-virtuali">
+<h2>8.4 Le interfacce e le classi puramente virtuali<a class="headerlink" href="#le-interfacce-e-le-classi-puramente-virtuali" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Una classe base in <code class="docutils literal notranslate"><span class="pre">C++</span></code> può essere utilizzata
+soltanto <strong>per definire i comportamenti</strong> di un insieme di classi derivate,
+deputanto l’implementazione alle classi derivate.</p></li>
+<li><p>Chiaramente, una classe senza implementazione <strong>non può essere utilizzata</strong>
+per definire oggetti,
+perché il tipo è incompleto.</p></li>
+<li><p>Una classe di questo genere è detta <code class="docutils literal notranslate"><span class="pre">puramente</span> <span class="pre">virtuale</span></code>.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="le-interfacce">
+<h3>8.4.1 Le interfacce<a class="headerlink" href="#le-interfacce" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>La definizione di una classe puramente virtuale
+che detti i comportamenti delle classi derivate
+viene spesso utilizzata per garantire che oggetti definiti all’esterno di un programma
+o di una libreria
+<strong>abbiano comportamenti compatibili</strong> con il programma o la libreria stessi.</p></li>
+<li><p>Le classi puramente virtuali
+dalle quali si eredita il comportamento desiderato sono dette <strong>interfacce</strong>.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="il-polimorfismo-ed-i-contenitori-stl">
+<h2>8.5 Il polimorfismo ed i contenitori STL<a class="headerlink" href="#il-polimorfismo-ed-i-contenitori-stl" title="Permalink to this headline">¶</a></h2>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<ul>
+<li><p>il comportamento polimorfico di una catena di ereditarietà
+permette di <strong>riempire contenitori STL con un insieme eterogeneo</strong> di oggetti</p></li>
+<li><p>infatti, un contenitore di puntatori ad oggetti di una classe base
+può essere <strong>riempito con i puntatori ad oggetti di diverse classi derivate</strong>
+ed il <code class="docutils literal notranslate"><span class="pre">C++</span></code> capisce <em>run-time</em> quale funzione interpellare</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">forma</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">m_forme</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+
+<span class="n">forma</span><span class="w"> </span><span class="n">forma_base</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">m_forme</span><span class="p">[</span><span class="s">&quot;base&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">forma_base</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="n">quadrato</span><span class="w"> </span><span class="nf">forma_quadrata</span><span class="w"> </span><span class="p">(</span><span class="mf">3.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">m_forme</span><span class="p">[</span><span class="s">&quot;quadrato&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">forma_quadrata</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">rettangolo</span><span class="w"> </span><span class="nf">forma_rettangolare</span><span class="w"> </span><span class="p">(</span><span class="mf">3.</span><span class="p">,</span><span class="w"> </span><span class="mf">2.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">m_forme</span><span class="p">[</span><span class="s">&quot;rettangolo&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">forma_rettangolare</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">forma</span><span class="w"> </span><span class="o">*&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_forme</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">m_forme</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ha area &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">calcola_area</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="algoritmi-nelle-stl">
+<h2>8.6 algoritmi nelle STL<a class="headerlink" href="#algoritmi-nelle-stl" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>insieme a strumenti per contenere informazioni,
+le STL offrono <strong>algoritmi per maneggiarle</strong></p></li>
+<li><p>due operazoni importanti per maneggiare contenitori
+sono la <strong>ricerca di un elemento al suo interno</strong> e
+l’<strong>ordinamento del suo contenuto</strong></p></li>
+<li><p>gli algoritmi diventano disponibili
+** includendo l’<em>header file</em> <code class="docutils literal notranslate"><span class="pre">algorithm</span></code>**</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="std-find">
+<h3>8.6.1 <code class="docutils literal notranslate"><span class="pre">std::find</span></code><a class="headerlink" href="#std-find" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>il prototipo di questo algoritmo è il seguente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">InputIterator</span><span class="p">,</span><span class="w"> </span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">InputIterator</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="p">(</span><span class="n">InputIterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">InputIterator</span><span class="w"> </span><span class="n">last</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>trova il <strong>primo elemento</strong> all’interno di un contenitore uguale a <code class="docutils literal notranslate"><span class="pre">val</span></code>,
+nell’intervallo delimitato da due iteratori <code class="docutils literal notranslate"><span class="pre">[first,</span> <span class="pre">last)</span></code></p>
+<ul class="simple">
+<li><p>per cercare su <strong>tutto un contenitore</strong> si passano come argomenti i suoi <code class="docutils literal notranslate"><span class="pre">begin</span> <span class="pre">()</span></code> ed <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">()</span></code></p></li>
+</ul>
+</li>
+<li><p>utilizza l’<strong><code class="docutils literal notranslate"><span class="pre">operator==</span></code> definito per il tipo <code class="docutils literal notranslate"><span class="pre">T</span></code></strong> per la ricerca</p>
+<ul class="simple">
+<li><p>deve essere definito!</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-risultato-di-std-find">
+<h3>8.6.2 il risultato di <code class="docutils literal notranslate"><span class="pre">std::find</span></code><a class="headerlink" href="#il-risultato-di-std-find" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>restituisce l’<strong>iteratore</strong> al primo elemento trovato uguale a <code class="docutils literal notranslate"><span class="pre">val</span></code></p>
+<ul>
+<li><p>se <strong>non trova nulla</strong>, restituisce l’iteratore alla fine del contenitore</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">  </span><span class="n">find</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="mf">3.5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">risultato</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;trovato &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">risultato</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="std-sort">
+<h3>8.6.3 <code class="docutils literal notranslate"><span class="pre">std::sort</span></code><a class="headerlink" href="#std-sort" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>esistono <strong>due prototipi</strong> per l’algoritmo di ordinamento</p></li>
+<li><p>quello comunemente utilizzato funziona similmente a <code class="docutils literal notranslate"><span class="pre">find</span></code>,
+perché agisce su un contenitore <strong>tramite i suoi iteratori</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="p">(</span><span class="n">RandomAccessIterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">RandomAccessIterator</span><span class="w"> </span><span class="n">last</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>utilizza l’<strong><code class="docutils literal notranslate"><span class="pre">operator&lt;</span></code> definito per il tipo <code class="docutils literal notranslate"><span class="pre">T</span></code></strong>
+per ordinare in modo crescente il contenitore</p>
+<ul class="simple">
+<li><p>deve essere definito!</p></li>
+</ul>
+</li>
+<li><p>per ordinare <strong>tutto un contenitore</strong> si passano
+come argomenti i suoi <code class="docutils literal notranslate"><span class="pre">begin</span> <span class="pre">()</span></code> ed <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">()</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="risultato-di-std-sort">
+<h3>8.6.4 risultato di <code class="docutils literal notranslate"><span class="pre">std::sort</span></code><a class="headerlink" href="#risultato-di-std-sort" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>a partire da un <code class="docutils literal notranslate"><span class="pre">vector</span></code> riempito in questo modo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>la chiamata dell’algoritmo <code class="docutils literal notranslate"><span class="pre">sort</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">sort</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>produce il seguente effetto sul contenuto del <code class="docutils literal notranslate"><span class="pre">vector</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-relazione-di-ordine-nell-ordinamento">
+<h3>8.6.5 la relazione di ordine nell’ordinamento<a class="headerlink" href="#la-relazione-di-ordine-nell-ordinamento" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>esiste un secondo prototipo di <code class="docutils literal notranslate"><span class="pre">sort</span></code>,
+che permette di <strong>indicare la funzione da usare
+per ordinare</strong> il contenitore</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">RandomAccessIterator</span><span class="p">,</span><span class="w"> </span><span class="k">class</span> <span class="nc">Compare</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="p">(</span><span class="n">RandomAccessIterator</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">RandomAccessIterator</span><span class="w"> </span><span class="n">last</span><span class="p">,</span><span class="w"> </span><span class="n">Compare</span><span class="w"> </span><span class="n">comp</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">comp</span></code> può essere una funzione o una classe</p>
+<ul class="simple">
+<li><p>nel caso sia una <strong>funzione</strong>,
+deve prendere in <strong>input</strong> (per copia o referenza) due argomenti del tipo
+contenuto nel contenitore e restituire in <strong>output</strong> un tipo compatibile con un <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p></li>
+<li><p>nel caso sia una <strong>classe</strong>,
+deve contenere un <code class="docutils literal notranslate"><span class="pre">operator()</span></code> che prenda in <strong>input</strong> (per copia o referenza)
+due argomenti del tipo contenuto nel contenitore
+e restituisca in <strong>output</strong> un tipo compatibile con un <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="un-esempio-di-utilizzo">
+<h3>8.6.6 un esempio di utilizzo<a class="headerlink" href="#un-esempio-di-utilizzo" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>supponiamo di voler ordinare il vettore visto in precedenza
+<strong>anteponendo i numeri pari a quelli dispari</strong>.
+La funzione che deve sostituire la relazione di <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> è:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">confronto</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>In questo modo, la seguente chiamata:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">sort</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">confronto</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>restituisce:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="ereditarieta-e-template">
+<h2>8.7 Ereditarietà e <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#ereditarieta-e-template" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>L’ereditarietà e la programmazione <code class="docutils literal notranslate"><span class="pre">template</span></code> sono due tecniche
+che permettono di implementare il polimorfismo nel <code class="docutils literal notranslate"><span class="pre">C++</span></code></p></li>
+<li><p>Entrambe le tecniche permettono infatti di <strong>generalizzare il medesimo comportamento
+per diversi tipi</strong>, senza necessariamente dover scrivere più volte lo stesso codice sorgente</p></li>
+<li><p>oltre al vantaggio pratico legato al tempo di scrittura dei programmi,
+questo comporta che le funzionalità vengono implementate meno volte,
+<strong>rendendo più difficile commettere errori</strong>
+e produrre programmi inconsistenti</p></li>
+<li><p>le due tecniche sono complementari:
+mentre l’ereditarietà comporta polimorfismo <strong>durante l’esecuzione del programma</strong>,
+la programmazione template lo implementa <strong>durante la compilazione</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="un-utile-strumento-la-lettura-di-un-file-di-testo">
+<h2>8.8 Un utile strumento: la lettura di un <em>file</em> di testo<a class="headerlink" href="#un-utile-strumento-la-lettura-di-un-file-di-testo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Può essere comodo <strong>salvare informazioni semplici</strong> su file di testo,
+per poterle rileggere dai programmi di analisi dati</p></li>
+<li><p>La gestione dell’accesso a file di testo in <code class="docutils literal notranslate"><span class="pre">C++</span></code> è <strong>analoga
+alla scrittura a schermo e lettura da tastiera</strong>:
+si utilizzano gli operatori di redirezione <code class="docutils literal notranslate"><span class="pre">operator&gt;&gt;</span></code> (per leggere)
+ed <code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;</span></code> (per scrivere) fra un oggetto che rappresenta il file
+e le variabili</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="l-implementazione-della-lettura">
+<h3>8.8.1 L’implementazione della lettura<a class="headerlink" href="#l-implementazione-della-lettura" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>L’oggetto che rappresenta un file è di tipo <code class="docutils literal notranslate"><span class="pre">fstream</span></code>:
+<code class="docutils literal notranslate"><span class="pre">ifstream</span></code> per lettura (<strong>input file stream</strong>) ed
+<code class="docutils literal notranslate"><span class="pre">ofstream</span></code> per scrittura (<strong>output file stream</strong>):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="c1">// ...</span>
+<span class="n">ifstream</span><span class="w"> </span><span class="n">input_file</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="n">input_file</span><span class="p">.</span><span class="n">open</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="c1">// ...</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">input_val</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">input_file</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">input_val</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="p">.</span><span class="n">eof</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">input_val</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<span class="n">input_file</span><span class="p">.</span><span class="n">close</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In questo modo, una sequenza di numeri scritti nel file <code class="docutils literal notranslate"><span class="pre">file.txt</span></code>
+vengono letti uno ad uno, <strong>trasferendone il valore nella variabile <code class="docutils literal notranslate"><span class="pre">input_val</span></code></strong></p></li>
+<li><p>Il valore della variabile, ad ogni lettura, viene aggiunto al <code class="docutils literal notranslate"><span class="pre">vector</span></code> chiamato <code class="docutils literal notranslate"><span class="pre">data</span></code></p></li>
+<li><p>All’interno del file di testo,
+i valori sono seperati da spazi, tab o accapo.</p></li>
+<li><p>Al termine della lettura, il <em>file</em> viene chiuso.</p></li>
+<li><p>la condizione <code class="docutils literal notranslate"><span class="pre">input_file.eof</span> <span class="pre">()</span> <span class="pre">==</span> <span class="pre">true</span></code> <strong>non può essere controllata direttamente
+dall’istruzione <code class="docutils literal notranslate"><span class="pre">while</span></code></strong>,
+perché l’ultima operazione di lettura riconosce la fine del file,
+senza leggere contenuto utile.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-implementazione-della-scrittura">
+<h3>8.8.2 L’implementazione della scrittura<a class="headerlink" href="#l-implementazione-della-scrittura" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>In questo caso,
+si utilizza la classe <code class="docutils literal notranslate"><span class="pre">ofstream</span></code> per produrre un file che contiene numeri:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="c1">// ...</span>
+<span class="n">ofstream</span><span class="w"> </span><span class="n">output_file</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">output_file</span><span class="p">.</span><span class="n">open</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;example.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">output_file</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w">  </span>
+
+<span class="n">output_file</span><span class="p">.</span><span class="n">close</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>l’<strong>operatore di redirezione</strong> <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> funziona come nel caso di <code class="docutils literal notranslate"><span class="pre">std::cout</span></code>,
+con il file come destilazione della redirezione,
+invece dello schermo</p>
+<ul>
+<li><p>tutto ciò che si può scrivere a schermo può essere scritto in un file</p></li>
+</ul>
+</li>
+<li><p><strong>l’opzione <code class="docutils literal notranslate"><span class="pre">ios::out</span></code></strong> passata al metodo <code class="docutils literal notranslate"><span class="pre">ofstream::open</span></code>
+indica che il file con nome <code class="docutils literal notranslate"><span class="pre">&quot;example.txt&quot;</span></code> viene aperto per scrittura</p>
+<ul>
+<li><p>se il file non esiste, viene creato</p></li>
+<li><p>se il file esiste, viene sovrascritto, perdendo il contenuto del file precendente</p></li>
+</ul>
+</li>
+<li><p>aprendo il file con opzione <code class="docutils literal notranslate"><span class="pre">ios::app</span></code>, invece,
+il file viene aperto e predisposto perché la scrittura avvenga
+<strong>in coda al contenuto già presente nel file</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-controllo-dell-apertura-di-un-file">
+<h3>8.8.3 Il controllo dell’apertura di un file<a class="headerlink" href="#il-controllo-dell-apertura-di-un-file" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Per controllare se un file sia effettivamente stato aperto,
+si può utilizzare il metodo <code class="docutils literal notranslate"><span class="pre">is_open</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">myfile</span><span class="p">.</span><span class="n">is_open</span><span class="w"> </span><span class="p">())</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="cm">/* istruzioni da eseguire */</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="esercizi">
+<h2>8.9 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lezione_07/ESERCIZI.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Esercizi per la lezione 7</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ESERCIZI.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Esercizi per la lezione 8</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Pietro Govoni, Maura Pavan<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
