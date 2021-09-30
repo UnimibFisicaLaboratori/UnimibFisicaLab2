@@ -1,16 +1,18 @@
 /*
-c++ -o main_01 main_01.cpp
+c++ -o main_01 complesso.cc main_01.cpp
 */
 
-#include<iostream> 
+#include <iostream>
 
-int main  (int argc, char ** argv)
-  {
+int main (int argc, char ** argv)
+{
+  const int C1 = 10 ;
+  int const C1_1 = 10 ;
+  const int * C2 ;
+  int const * C2_2 ;
+  int numero = 3 ;
+  int * const C3 (& numero) ;
+  int const * const C4 (& C1) ;
 
-    int numero_intero = 5 ;
-
-    std::cout << "valore:    " << numero_intero << std::endl ;
-    std::cout << "indirizzo: " << & numero_intero << std::endl ;
-      
-    return 0 ; 
+  return 0 ;
 }

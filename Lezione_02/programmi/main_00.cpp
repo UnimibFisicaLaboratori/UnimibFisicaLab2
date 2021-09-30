@@ -1,30 +1,35 @@
 /*
-c++ -o main_00 main_00.cpp
+c++ -o main_00 complesso.cc main_00.cpp
 */
 
-#include<iostream> 
+#include <iostream>
+#include <cmath>
+#include "complesso.h"
 
-int main  (int argc, char ** argv)
-  {
+int main (int argc, char ** argv)
+{
+  // test del constructor
+  complesso numero_complesso_1 (0., 0.) ;
+  complesso numero_complesso_2 (3., 4.) ;
 
-    std::cout << "Dimensione di un char : " << sizeof (char)  
-             << " byte" << std::endl ; 
-    std::cout << "Dimensione di un int : " << sizeof (int) 
-             << " bytes" << std::endl ; 
-    std::cout << "Dimensione di un short int : " << sizeof (short int)  
-             << " bytes" << std::endl ; 
-    std::cout << "Dimensione di un long int : " << sizeof (long int)  
-              << " bytes" << std::endl ; 
-    std::cout << "Dimensione di un signed long int : " << sizeof (signed long int) 
-              << " bytes" << std::endl ; 
-    std::cout << "Dimensione di un unsigned long int : " << sizeof (unsigned long int)  
-              << " bytes" << std::endl ; 
-    std::cout << "Dimensione di un float : " << sizeof (float)  
-              << " bytes" <<std::endl ; 
-    std::cout << "Dimensione di un double : " << sizeof (double)  
-              << " bytes" << std::endl ; 
-    std::cout << "Dimensione di un wchar_t : " << sizeof (wchar_t)  
-              << " bytes" <<std::endl ; 
-      
-    return 0 ; 
+  std::cout << numero_complesso_1.modulo () << std::endl ;
+  std::cout << numero_complesso_2.modulo () << std::endl ;
+
+  // test del copy constructor
+  complesso numero_complesso_3 (numero_complesso_2) ;
+
+  // test dell'operator+
+  complesso numero_complesso_4 = numero_complesso_3 + numero_complesso_2 ;
+//  complesso numero_complesso_4 = numero_complesso_3.operator+ (numero_complesso_2) ;
+  numero_complesso_4.stampami () ;
+
+  // test dell'operator=
+  complesso numero_complesso_5 = numero_complesso_4 + 5. ;
+  numero_complesso_5.stampami () ;
+
+  complesso numero_complesso_6 = numero_complesso_5 = numero_complesso_2 ;
+  numero_complesso_5.stampami () ;
+  numero_complesso_6.stampami () ;
+
+  return 0 ;
 }
