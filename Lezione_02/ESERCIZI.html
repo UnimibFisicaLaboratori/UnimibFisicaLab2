@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lezione 3: programmazione ad oggetti, le classi" href="../Lezione_03/README.html" />
-    <link rel="prev" title="Lezione 2: ripasso di C ed introduzione al C++, parte 2" href="README.html" />
+    <link rel="next" title="Lezione 4: la generazione di numeri casuali" href="../Lezione_04/README.html" />
+    <link rel="prev" title="Lezione 2: programmazione ad oggetti, le classi" href="README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -104,24 +104,34 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="README.html">
-     Lezione 2: ripasso di
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       C
-      </span>
-     </code>
-     ed introduzione al
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: strutturazione di un programma ed introduzione al
      <code class="docutils literal notranslate">
       <span class="pre">
        C++
       </span>
      </code>
-     , parte 2
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Lezione 2: programmazione ad oggetti, le classi
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -129,23 +139,6 @@
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        Esercizi per la lezione 2
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../Lezione_03/README.html">
-     Lezione 3: programmazione ad oggetti, le classi
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
-       Esercizi per la lezione 3
       </a>
      </li>
     </ul>
@@ -417,21 +410,6 @@
    Esercizio 2.4
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#esercizio-2-5">
-   Esercizio 2.5
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#esercizio-2-6">
-   Esercizio 2.6
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#esercizio-2-7">
-   Esercizio 2.7
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -447,66 +425,53 @@
 <h1>Esercizi per la lezione 2<a class="headerlink" href="#esercizi-per-la-lezione-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="esercizio-2-1">
 <h2>Esercizio 2.1<a class="headerlink" href="#esercizio-2-1" title="Permalink to this headline">¶</a></h2>
-<p>Scrivere un programma che assegni il valore di una variabile ad un’altra utilizzando un puntatore.
-Stampare inoltre a terminale i valori e gli indirizzi di ogni variabile prima e dopo l’assegnazione.</p>
+<p>Implementate la classe <code class="docutils literal notranslate"><span class="pre">complesso</span></code> come descritta nella lezione al paragrafo <code class="docutils literal notranslate"><span class="pre">2.2.1</span></code>,
+includendo anche un programma di test delle sue funzionalita’.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-2-2">
 <h2>Esercizio 2.2<a class="headerlink" href="#esercizio-2-2" title="Permalink to this headline">¶</a></h2>
-<p>Dichiarare un puntatore e poi cercare di assegnargli direttamente un valore numerico. Cosa succede? Perché?</p>
+<p>Aggiungete alla classe <code class="docutils literal notranslate"><span class="pre">complesso</span></code> i vari tipi di costruttore
+discussi nella sezione <code class="docutils literal notranslate"><span class="pre">2.3</span></code> della lezione.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-2-3">
 <h2>Esercizio 2.3<a class="headerlink" href="#esercizio-2-3" title="Permalink to this headline">¶</a></h2>
-<p>Utilizzare new e delete per creare e distruggere una variabile double ed un array di double.</p>
+<p>Aggiungete alla classe <code class="docutils literal notranslate"><span class="pre">complesso</span></code> le seguenti operazioni:</p>
+<ul class="simple">
+<li><p>somma di due numeri complessi</p></li>
+<li><p>differenza fra due numeri complessi</p></li>
+<li><p>moltiplicazione per un numero reale</p></li>
+<li><p>prodotto fra due numeri complessi</p></li>
+<li><p>operatore <code class="docutils literal notranslate"><span class="pre">+=</span></code> con come argomento un numero complesso</p></li>
+<li><p>operatore <code class="docutils literal notranslate"><span class="pre">+=</span></code> con come argomento un numero reale</p></li>
+<li><p>operatore <code class="docutils literal notranslate"><span class="pre">-=</span></code> con come argomento un numero complesso</p></li>
+<li><p>operatore <code class="docutils literal notranslate"><span class="pre">-=</span></code> con come argomento un numero reale</p></li>
+<li><p>operatore <code class="docutils literal notranslate"><span class="pre">*=</span></code> con come argomento un numero complesso</p></li>
+<li><p>operatore <code class="docutils literal notranslate"><span class="pre">*=</span></code> con come argomento un numero reale</p></li>
+<li><p>operatore <code class="docutils literal notranslate"><span class="pre">/=</span></code> con come argomento un numero complesso</p></li>
+<li><p>operatore <code class="docutils literal notranslate"><span class="pre">/=</span></code> con come argomento un numero reale</p></li>
+<li><p>in quali casi vanno effettuati controlli sul valore dei numeri complessi in input alle funzioni?</p></li>
+</ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-2-4">
 <h2>Esercizio 2.4<a class="headerlink" href="#esercizio-2-4" title="Permalink to this headline">¶</a></h2>
-<p>Realizzare una funzione che risolva un’equazione di secondo grado: ax2 + bx + c = 0.
-La funzione deve rendere disponibile il risultato al programma che la chiama.</p>
-<ul>
-<li><p>Il prototipo della funzione deve essere:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">solve2ndDegree</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">par</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>La funzione deve restituire una variabile <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">(true/false)</span></code> a
-seconda che esistano o meno soluzioni reali dell’equazione</p></li>
-<li><p>La funzione riceve in input due puntatori a double:</p>
+<p>Scrivete una classe chiamata <code class="docutils literal notranslate"><span class="pre">mioArray</span></code>
+che implementi un array di numeri <code class="docutils literal notranslate"><span class="pre">double</span></code> con dimensione impostata dall’utente
+al momento della creazione degli oggetti,
+utilizzando l’allocazione dinamica della memoria
+e ripulisca la memoria nel distruttore.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">*</span> <span class="pre">par</span></code> serve per passare l’array dei coefficienti</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">*</span> <span class="pre">x</span></code>  è l’indirizzo di un array in cui salvare le soluzioni dell’equazione</p></li>
+<li><p>Scrivete inoltre un programma di test che verifichi le funzionalita’ della classe.</p></li>
+<li><p>La classe <code class="docutils literal notranslate"><span class="pre">mioArray</span></code> deve contenere un metodo per accedere ai suoi elementi
+che operi un controllo sul valore dell’indice,
+che avverta con un messaggio a schermo nel caso in cui si cerchi di accedere
+ad un indice che non sta nell’array</p></li>
+<li><p>Si faccia in modo che sia possibile utilizzare questa funzione
+sia nel caso in cui si voglia modificare il contenuto delle celle dell’array,
+sia nel caso in cui l’oggetto di tipo <code class="docutils literal notranslate"><span class="pre">mioArray</span></code> sia <code class="docutils literal notranslate"><span class="pre">const</span></code></p></li>
 </ul>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="esercizio-2-5">
-<h2>Esercizio 2.5<a class="headerlink" href="#esercizio-2-5" title="Permalink to this headline">¶</a></h2>
-<p>Rifare l’esercizio su media/varianza realizzando un’unica funzione che le calcoli entrambe,
-facendo opportuno uso puntatori o referenze.</p>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="esercizio-2-6">
-<h2>Esercizio 2.6<a class="headerlink" href="#esercizio-2-6" title="Permalink to this headline">¶</a></h2>
-<p>Scrivere una funzione che, dato un array di N interi,
-lo ordini dal più piccolo al più grande
-(suggerimento: creare un array inserendo alcuni numeri a caso per testare che l’ordinamento funzioni).</p>
-<ul>
-<li><p>Il prototipo della funzione deve essere:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">SortArray</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dim</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="esercizio-2-7">
-<h2>Esercizio 2.7<a class="headerlink" href="#esercizio-2-7" title="Permalink to this headline">¶</a></h2>
-<p>Scrivere una funzione <code class="docutils literal notranslate"><span class="pre">creaArray</span> <span class="pre">(...)</span> </code> che prenda in input un numero intero,
-crei un array di tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> lungo quando il numero intero di input
-e restituisca il puntatore al primo elemento dell’array.</p>
 </div>
 </div>
 
@@ -544,15 +509,15 @@ e restituisca il puntatore al primo elemento dell’array.</p>
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lezione 2: ripasso di <code class="docutils literal notranslate"><span class="pre">C</span></code> ed introduzione al <code class="docutils literal notranslate"><span class="pre">C++</span></code>, parte 2</p>
+                <p class="prevnext-title">Lezione 2: programmazione ad oggetti, le classi</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../Lezione_03/README.html" title="next page">
+        <a class="right-next" href="../Lezione_04/README.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lezione 3: programmazione ad oggetti, le classi</p>
+                <p class="prevnext-title">Lezione 4: la generazione di numeri casuali</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

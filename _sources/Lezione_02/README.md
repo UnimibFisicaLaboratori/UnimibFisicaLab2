@@ -1,774 +1,565 @@
-# Lezione 2: ripasso di ```C``` ed introduzione al ```C++```, parte 2
+# Lezione 2: programmazione ad oggetti, le classi
 
 ## Indice
 
-  * [2.1 Variabili e puntatori](#21-variabili-e-puntatori)
-    * [2.1.1 La gestione delle variabili nel calcolatore](#211-la-gestione-delle-variabili-nel-calcolatore)
-    * [2.1.2 Lo spazio occupato dalle variabili](#212-lo-spazio-occupato-dalle-variabili)
-    * [2.1.3 Le dimensioni tipiche di alcuni tipi](#213-le-dimensioni-tipiche-di-alcuni-tipi)
-    * [2.1.4 L'indirizzo di memoria di una variabile](#214-lindirizzo-di-memoria-di-una-variabile)
-    * [2.1.5 Salvare l'indirizzo di memoria: i puntatori](#215-salvare-lindirizzo-di-memoria-i-puntatori)
-    * [2.1.6 Dalla variabile al puntatore e viceversa](#216-dalla-variabile-al-puntatore-e-viceversa)
-    * [2.1.7 Puntatori non inizializzati](#217-puntatori-non-inizializzati)
-    * [2.1.8 I puntatori sono variabili](#218-i-puntatori-sono-variabili)
-    * [2.1.9 Inizializzare una variabile a partire da un puntatore](#219-inizializzare-una-variabile-a-partire-da-un-puntatore)
-    * [2.1.10 Puntatori di puntatori](#2110-puntatori-di-puntatori)
-    * [2.1.11 risalire la caterna di indirizzi](#2111-risalire-la-caterna-di-indirizzi)
-    * [2.1.12 Puntatori ed array](#2112-puntatori-ed-array)
-    * [2.1.13 Gli elementi di un array](#2113-gli-elementi-di-un-array)
-    * [2.1.14 L'algebra dei puntatori](#2114-lalgebra-dei-puntatori)
-    * [2.1.15 Le referenze](#2115-le-referenze)
-    * [2.1.16 Riepilogo sui puntatori](#2116-riepilogo-sui-puntatori)
-  * [2.2 Il passaggio di parametri alle funzioni](#22-il-passaggio-di-parametri-alle-funzioni)
-    * [2.2.1 Passaggio per valore](#221-passaggio-per-valore)
-    * [2.2.2 Passaggio per puntatore](#222-passaggio-per-puntatore)
-    * [2.2.3 Passaggio per referenza](#223-passaggio-per-referenza)
-    * [2.2.4 L'output di una funzione](#224-loutput-di-una-funzione)
-    * [2.2.5 Come reagisce il compilatore nel caso di una referenza](#225-come-reagisce-il-compilatore-nel-caso-di-una-referenza)
-    * [2.2.6 Come reagisce il compilatore nel caso di un puntatore](#226-come-reagisce-il-compilatore-nel-caso-di-un-puntatore)
-  * [2.3 La gestione dinamica della memoria](#23-la-gestione-dinamica-della-memoria)
-    * [2.3.1 Heap and Stack](#231-heap-and-stack)
-    * [2.3.2 Allocazione di una variabile nella Stack](#232-allocazione-di-una-variabile-nella-stack)
-    * [2.3.3 Allocazione di una variabile nella Heap](#233-allocazione-di-una-variabile-nella-heap)
-    * [2.3.4 Esempio di allocazione dinamica: utilizzo in una funzione](#234-esempio-di-allocazione-dinamica-utilizzo-in-una-funzione)
-    * [2.3.5 Un errore pernicioso](#235-un-errore-pernicioso)
-    * [2.3.5 Allocazione dinamica ed array](#235-allocazione-dinamica-ed-array)
-    * [2.3.6 Non bisogna perdere il puntatore!](#236-non-bisogna-perdere-il-puntatore)
-    * [2.3.7 Trova l'errore, 1](#237-trova-lerrore-1)
-    * [2.3.8 Trova l'errore, 2](#238-trova-lerrore-2)
-    * [2.3.9 Trova l'errore, 3](#239-trova-lerrore-3)
-    * [2.3.10 Trova l'errore, 4](#2310-trova-lerrore-4)
-    * [2.3.11 Trova l'errore, 5](#2311-trova-lerrore-5)
-  * [2.4 ESERCIZI](#24-esercizi)
+  * [2.1 La generalizzazione del concetto di tipo](#31-la-generalizzazione-del-concetto-di-tipo)
+    * [2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in ```C++```](#311-uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c)
+    * [2.1.2 Un esempio: i numeri complessi](#312-un-esempio-i-numeri-complessi)
+    * [2.1.3 Se i numeri complessi fossero un tipo di ```C++```](#313-se-i-numeri-complessi-fossero-un-tipo-di-c)
+  * [2.2 Si può fare! La classe dei numeri complessi](#32-si-può-fare-la-classe-dei-numeri-complessi)
+    * [2.2.1 La definizione della classe (il file ```complesso.h```)](#321-la-definizione-della-classe-il-file-complessoh)
+    * [2.2.2 un primo esempio di utilizzo](#322-un-primo-esempio-di-utilizzo)
+    * [2.2.3 I membri di una classe](#323-i-membri-di-una-classe)
+    * [2.2.4 I metodi di una classe](#324-i-metodi-di-una-classe)
+    * [2.2.5 Il campo ```private```](#325-il-campo-private)
+    * [2.2.6 Il campo ```public```](#326-il-campo-public)
+    * [2.2.7 L'implementazione della classe (il file ```complesso.cc```)](#327-limplementazione-della-classe-il-file-complessocc)
+    * [2.2.8 Un membro implicito di ogni classe: l'oggetto stesso](#328-un-membro-implicito-di-ogni-classe-loggetto-stesso)
+  * [2.3 Funzioni speciali di una classe](#33-funzioni-speciali-di-una-classe)
+    * [2.2.1 Il costruttore](#331-il-costruttore)
+    * [2.2.2 La lista di inizializzazione](#332-la-lista-di-inizializzazione)
+    * [2.2.3 overloading del costruttore](#333-overloading-del-costruttore)
+    * [2.2.4 Il costruttore di default](#334-il-costruttore-di-default)
+    * [2.2.5 Il costruttore di copia, o copy constructor](#335-il-costruttore-di-copia-o-copy-constructor)
+    * [2.2.6 Il distruttore](#336-il-distruttore)
+  * [2.4 La ridefinizione di operatori, overloading](#34-la-ridefinizione-di-operatori-overloading)
+    * [2.4.1 L'operatore di assegnazione per tipi predefiniti](#341-loperatore-di-assegnazione-per-tipi-predefiniti)
+    * [2.4.2 L'operatore di assegnazione per una classe](#342-loperatore-di-assegnazione-per-una-classe)
+    * [2.4.3 L'operatore di somma](#343-loperatore-di-somma)
+    * [2.4.4 Definizione al di fuori della classe](#344-definizione-al-di-fuori-della-classe)
+  * [2.5 L'attributo ```const```](#35-lattributo-const)
+    * [2.5.1 Esempi di utilizzo di ```const``` con i tipi predefiniti](#351-esempi-di-utilizzo-di-const-con-i-tipi-predefiniti)
+    * [2.5.2 Oggetti definiti ```const```](#352-oggetti-definiti-const)
+  * [2.6 Classi e puntatori](#36-classi-e-puntatori)
+  * [2.7 ESERCIZI](#37-esercizi)
 
 ![linea](../immagini/linea.png)
 
-## 2.1 Variabili e puntatori
+## 2.1 La generalizzazione del concetto di tipo
+
+  * secondo la programmazione **object oriented**,
+    le funzionalità di un programma vanno associate all'informazione che processano,
+  * così come per ogni tipo predefinito (```int```, ```float```, et cetera)
+    esistono gli operatori che ne gestiscono i comportamenti
+  * in ```C++``` questo paradigma è realizzato attraveso 
+    il concetto di **classe, che è una generalizzazione del tipo**,
+    mentre gli **oggetti sono la generalizzazione delle variabili**
 
 ![linea](../immagini/linea.png)
 
-### 2.1.1 La gestione delle variabili nel calcolatore
+### 2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in ```C++```
 
-  * In un computer tutto è rappresentato mediante **numeri**
-  * I numeri sono salvati in **zone di memoria** (Random Access Memory = RAM)
-  * Le celle della memoria sono individuate mediante **indirizzi**
-  * Le **variabili di diversi tipi occupano una o più celle** di memoria (una zona),
-    a seconda del tipo
-    * Il calcolatore è in grado di **interpretare correttamente il contenuto** di una zona di memoria, 
-      se conosce l'indirizzo della prima cella ed il tipo salvato
-
-![cella](immagini/celle.png)
+  * un qualunque tipo predefinito è caratterizzato da una serie di **proprietà**:
+  * funzioni per la **gestione della memoria**:
+    * allocazione dello spazio nella RAM quando una variabile viene definita
+    * liberazione dello spazio RAM quando una variabile cessa di esistere
+  * **operatori** per maneggiare le variabili
 
 ![linea](../immagini/linea.png)
 
-### 2.1.2 Lo spazio occupato dalle variabili 
+### 2.1.2 Un esempio: i numeri complessi
 
-  * ogni tipo ha una **dimensione assegnata** nella RAM
-  * per i tipi numerici interi, una dimensione assegnata significa che **i valori che la variabile può assumere
-    sono limitati**
-  * i tipi in virgola mobile (```float```, ```double```) non hanno limitazioni in valore, ma in precisione,
-    quindi il tipo ```double```, occupando più celle di memoria, è più preciso del tipo ```float``` 
-  * per conoscere la dimensione occupata da un tipo, si può utilizzare la funzone ```sizeof ()```:
+  * **costrutti più sofisticati** dei tipi predefiniti non godono di queste proprietà
+  * un numero complesso è rappresentato da due numeri reali,
+    che un ```C++``` si possono scrivere come:
     ```cpp
-    std::cout << "Dimensione di un char : " << sizeof (char)  
-             << " byte" << std::endl ; 
-
+    double num_parteReale ;
+    double num_parteImmaginaria ;
     ```
-
-![linea](../immagini/linea.png)
-
-### 2.1.3 Le dimensioni tipiche di alcuni tipi 
-
-  * a seconda dell'architettura del calcolatore che si sta utilizzando, 
-    le **dimensioni di un tipo possono cambiare**
-  * nella tabella che segue,
-    sono indicati **valori tipici** per le dimensioni dei tipi comunemente utilizzati
-  * esistono **type modifier** che cambiano le caratteristiche di un tipo 
-    (```signed```, ```unsigned```, ```short```, ```long```)
-    che ne modificano la dimensione o l'intervallo di copertura
-
- | tipo | dimensione (in Byte) | intervallo |
- | --- | :---: | :---: |
- | short int              | 2      | -32,768 to 32,767               |   
- | unsigned short int     | 2      | 0 to 65,535                     |               
- | unsigned int           | 4      | 0 to 4,294,967,295              |                      
- | int                    | 4      | -2,147,483,648 to 2,147,483,647 |                 
- | long int               | 4      | -2,147,483,648 to 2,147,483,647 |                 
- | unsigned long int      | 4      | 0 to 4,294,967,295              |    
- | long long int          | 8      | -(2^63) to (2^63)-1             |     
- | unsigned long long int | 8      | 0 to 18,446,744,073,709,551,615 |                 
- | signed char            | 1      | -128 to 127                     |               
- | unsigned char          | 1      | 0 to 255                        |            
- | float                  | 4      |                                 |                      
- | double                 | 8      |                                 |                      
- | long double            | 12     |                                 |                        
- | wchar_t                | 2 or 4 | 1 wide character                |                    
-
-
-![linea](../immagini/linea.png)
-
-### 2.1.4 L'indirizzo di memoria di una variabile
-
-  * per ogni variabile, in ```C++``` si conosce il suo **valore** tramite il suo nome
-  * si può anche conoscere il suo indirizzo di memoria,
-    tramite l'operatore ```&```:
+  * senza fare uso di classi, le operazioni tipiche dei numeri complessi
+    vanno **implementate sotto forma di funzioni**:
+    * calcolo del modulo e della fase
+    * somma di numeri complessi
+    * moltiplicazione per un numero reale
+  * ad esempio:
     ```cpp
-    int numero_intero = 5 ;
-    std::cout << "valore:    " << numero_intero << std::endl ;
-    std::cout << "indirizzo: " << & numero_intero << std::endl ;
+    double modulo (double real, double imag)
+      {
+        return sqrt(real * real + imag * imag) ;
+      }
     ```
+      
+![linea](../immagini/linea.png)
+
+### 2.1.3 Se i numeri complessi fossero un tipo di ```C++```
+
+  * le operazioni per gestire i numeri complessi sono
+    praticamente **associate soltanto a loro**
+  * risulterebbe molto più comodo se fosse possibile 
+    **definire un numero complesso** e associare ad esso le operazioni che lo riguardano:
+    * migliore **gestione del programma**
+    * **proprietà** simili a quelle dei tipi predefiniti
+    * mogliore **solidità del design del codice sorgente**, 
+      perché migliora la consistenza del codice
+      e le possibilità di controllo di errori logici
 
 ![linea](../immagini/linea.png)
 
-### 2.1.5 Salvare l'indirizzo di memoria: i puntatori
+## 2.2 Si può fare! La classe dei numeri complessi
 
-  * l'indirizzo di una cella di memoria è un numero, 
-    quindi può essere a sua volta **salvato in una variabile**
-  * variabili che contengono indirizzi alla prima cella di memoria di altre variabili 
-    sono chiamate **puntatori**
-  * siccome rivestono un ruolo fondamentale nella programmazione,
-    si **dichiarano in modo specifico**, con la sintassi ```type * var```:
+  * una classe è di fatto la **definizione di un nuovo tipo**:
+    il caso ideale per la costruzione di una libreria, 
+    con un file header (```.h```) ed uno di implementazione (```.cc```)
+
+![linea](../immagini/linea.png)
+
+### 2.2.1 La definizione della classe (il file ```complesso.h```)
+
+  * ecco come si definisce in ```C++```
     ```cpp
-    int * puntatore_ad_intero ;
-    ```
-  * questa dichiarazione fa sì che **il programma sappia come accedere al contenuto**
-    della cella di memoria che sta all'indirizzo salvato in ```puntatore_ad_intero```,
-    perché sa di che tipo si tratta
-
-![cella](immagini/puntatore.png)
-
-![linea](../immagini/linea.png)
-
-### 2.1.6 Dalla variabile al puntatore e viceversa
-
-  * il simbolo ```*```, oltre a comparire nella dichiarazione di un puntatore,
-    rappresenta anche l'opertore che estrae il valore della variabile contenuta
-    nell'indirizzo di memoria puntato:
-    ```cpp
-    int * puntatore_ad_intero = & numero_intero ;
-    std::cout << "valore   : " << numero_intero << std::endl ;
-    std::cout << "indirizzo: " << & numero_intero << std::endl ;
-    std::cout << "puntatore: " << puntatore_ad_intero << std::endl ;
-    std::cout << "valore   : " << * puntatore_ad_intero << std::endl ;
-    ```
-    produce come output:
-    ```
-    valore   : 5
-    indirizzo: 0x7ffeeedfa44c
-    puntatore: 0x7ffeeedfa44c
-    valore   : 5
-    ```
-![linea](../immagini/linea.png)
-
-### 2.1.7 Puntatori non inizializzati
-
-  * un puntatore definito e non inizializzato non punta ad alcun indirizzo di memoria:
-    ```cpp
-    int * puntatore_ad_intero ;
-    std::cout << "puntatore: " << puntatore_ad_intero << std::endl ;
-    ```
-    produce come ouptut:
-    ```
-    0x0
-    ```
-
-![linea](../immagini/linea.png)
-
-### 2.1.8 I puntatori sono variabili
-
-  * un puntatore è una variabile,
-    dunque può **cambiare valore** anche dopo essere stato inizializzato:  
-    ```cpp
-    ptr = & var ;
-    std::cout << "Ora ptr punta a var: " << ptr
-              << " ed il valore a cui punta vale: " << *ptr << std::endl ; 
-    ```
-    produce come output:
-    ```
-    Ora ptr punta a var: 0x7ffeee47f43c ed il valore a cui punta vale: 137
-    ```
-  * se un puntatore viene inizializzato all'indirizzo di una variabile,
-    si può **accedere alla variabile tramite il puntatore**;
-    in questo caso viene modificato ```*ptr``` e visualizzato il valore di ```var```:
-    ```cpp
-    *ptr = 100 ;
-    std::cout << "var ora vale: " << var << std::endl ;
-    ```
-
-![linea](../immagini/linea.png)
-
-### 2.1.9 Inizializzare una variabile a partire da un puntatore
-
-  * una variabile può essere inizializzata con il valore presente
-    all'indirizzo contenuto in un puntatore: 
-    ```cpp
-    int pippo = * ptr ;
-    std::cout << "La variabile pippo vale: " << pippo << std::endl; 
-    ```
-    produce come output:
-    ```
-    La variabile pippo vale: 100
-    ```
-    * a questo punto, le modifiche a ```*ptr``` effettuate dopo l'inzializzazione
-      **non hanno effetto su ```pippo```**, perché quest'ultimo è un'altra variabile
-      (quindi con il contenuto salvato in un'altra zona di memoria):
-      ```cpp
-      (*ptr)++;
-      std::cout << "var ora vale: " << var << " e pippo vale: " << pippo << std::endl; 
-      ```
-      produce come output:
-      ```
-      var ora vale: 101 e pippo vale: 100
-      ```
-
-![linea](../immagini/linea.png)
-
-### 2.1.10 Puntatori di puntatori
-
-  * se un puntatore è una variabile, 
-    ha un **contenuto ed un indirizzo di memoria**
-  * quindi, si può costruire un puntatore al suo indirizzo, 
-    cioè un puntatore a puntatore
-
-![ptrptr](immagini/puntatore_a_puntatore.png)
-
-![linea](../immagini/linea.png)
-
-### 2.1.11 risalire la caterna di indirizzi
-
-  * tramite l'operatore ```*``` si può arrivare fino al valore della variabile iniziale:
-    ```cpp
-    int var = 137 ; 
-    int * ptr = & var ;
-    int ** ptrAptr = & ptr ;
-
-    std::cout << "var    : " << var << std::endl ;
-    std::cout << "ptr    : " << ptr << std::endl ;
-    std::cout << " `--> *ptr: " << *ptr << std::endl ;
-    std::cout << "ptrAptr: " << ptrAptr << std::endl ;
-    std::cout << " `--> *ptrAptr: " << *ptrAptr << std::endl ;
-    std::cout << "        `-->**ptrAptr: " << **ptrAptr << std::endl ;
-    ```
-    produce come output:
-    ```
-    var    : 137
-    ptr    : 0x7ffee7f0e43c
-     `--> *ptr: 137
-    ptrAptr: 0x7ffee7f0e430
-     `--> *ptrAptr: 0x7ffee7f0e43c
-            `-->**ptrAptr: 137
-    ```
-
-![linea](../immagini/linea.png)
-
-### 2.1.12 Puntatori ed array
-
-  * Quando si definisce un array, suo nome (senza parentesi graffe) 
-    contiene **l’indirizzo di memoria del primo elemento** dell’array:  
-    ```cpp
-    int vec[] = {2, 20} ;
-    std::cout << vec << std::endl ;
-    ```
-    produce come output:
-    ```
-    0x7ffeef024440
-    ```
-
-![linea](../immagini/linea.png)
-
-### 2.1.13 Gli elementi di un array
-
-  * se ```vec``` è il puntatore al primo elemento dell'array,
-    **```*vec``` è il suo contenuto**:
-    ```cpp
-    std::cout << vec[0] << " == " << *vec << std::endl ;
-    ```
-  * si può accedere agli **elementi successivi dell'array** tramite l'operatore ```*```  
-    ```cpp
-    std::cout << vec[1] << " == " << *(vec+1) << std::endl ;
-    ```
-
-![cella](immagini/array.png)
-
-![linea](../immagini/linea.png)
-
-### 2.1.14 L'algebra dei puntatori
-
-  * l'**algebra dei puntatori** con gli operatori ```+``` e ```-``` funziona
-    perché il puntatore è di un tipo definito,
-    quindi il programma sa di quante celle di memoria muoversi per raggiungere
-    la zona di memoria successiva
-    * ```*(vec+1)``` non è la cella di memoria successiva a quella
-      indicizzata da ```vec```,
-      ma quella che dista da ```vec``` la dimensione di un intero
-  * le due sintassi ```vec[i]``` e ```*(vec+i)``` significano la stessa cosa,
-    cioè sono due rappresentazioni della medesima operazione fatta dal calcolatore
-
-![linea](../immagini/linea.png)
-
-### 2.1.15 Le referenze
-
-  * Le referenze sono **alias per i nomi delle variabili**. 
-    In termini di contenuti, la variabile o la sua referenza sono la stessa cosa:
-    ```cpp
-    double pi_greco = 3.1415 ;
-    double & ref = pi_greco ;
-    std::cout << "ref fornisce un alias di pi_greco: "
-              << ref << std::endl ;
-
-    pi_greco = 3.141592 ;
-    std::cout << "ref fornisce un alias di pi_greco: "
-              << ref << std::endl ;
-    ```
-  * di conseguenza, una referenza si crea **soltanto a partire da una variabile esistente**
-  * allo stesso tempo, si **comporta come un puntatore**, 
-    cioè dà accesso alle variabili direttamente tramite l'indirizzo di memoria,
-    piuttosto che il suo contenuto
-
-![linea](../immagini/linea.png)
-
-### 2.1.16 Riepilogo sui puntatori
-
-  * ```C++``` permette di accedere alla memoria in due modi:
-    * tramite le **variabili**, che rappresentano il valore contenuto nella memoria
-    * tramite i **puntatori**, che rappresentano l'indirizzo fisico dove i valori sono salvati
-  * fornisce inoltre il modo di passare da una rappresentazione all'altra:
-    * l'**operatore \*** permette di passare da puntatore a variabile
-    * l'**operatore &** permette di passare da variabile a puntatore
-  * le **referenze** sono un alias delle variabili, 
-    che in realtà maneggiano l'indirizzo di memoria invece del valore della variabile
-
-|  azione | effetto |
-| --- | --- |                                    
-| ```int var = 137 ;```       | Creazione variabile int              |                              
-| ```int* ptr ;```            | Creazione variabile puntatore a int  |                         
-| ```ptr = &var ;```          | Indirizzo di memoria di var          |                           
-| ```int new_var = * ptr ;``` | Contenuto della cella puntata da ptr |                                     
-| ```int& ref = var ;```      | Creazione di un alias di var         |                                   
-
-
-![linea](../immagini/linea.png)
-
-## 2.2 Il passaggio di parametri alle funzioni
-
-  * tutti i tre tipi di accesso alla memoria (valore di una variabile, puntatore o referenza)
-    possono essere usati per **passare argomenti ad una funzione**
-
-![linea](../immagini/linea.png)
-
-### 2.2.1 Passaggio per valore
-
-  * nel passaggio per valore, 
-    nel prototipo della funzione fra parentesi è indidcato il **nome della variabile**
-    ```cpp
-    int raddoppia (int valore)
+    class complesso
     {
-      valore *= 2 ; 
-      return valore ;
+    public: 
+      complesso (double r, double i) ;
+      ~complesso () ;
+    
+      double modulo () ;      
+      double fase () ;      
+
+    private:
+      double m_real ;
+      double m_imag ;
+    } ;
+    ```   
+  | attenzione |
+  | ---------- |
+
+  * dopo la chiusura della parentesi graffa **c'è un punto e virgola! ```} ;```**
+
+![linea](../immagini/linea.png)
+
+### 2.2.2 un primo esempio di utilizzo
+
+  * in un qualunque punto del codice sorgente,
+    si può quindi creare un numero complesso:
+    ```cpp
+    complesso numero_complesso_1 (0., 0.) ;
+    complesso numero_complesso_2 (2., 4.) ;
+    ```
+  * in questo esempio ```complesso``` è la classe (il nuovo tipo),
+    mentre ```numero_complesso_1``` e ```numero_complesso_2```
+    sono due **oggetti**
+
+![linea](../immagini/linea.png)
+
+### 2.2.3 I membri di una classe
+
+  * le variabili definite all'interno della definizione della classe
+    sono dette **membri della classe**:
+    ```cpp
+    double m_real ;
+    double m_imag ;
+    ```
+  * ogni volta che viene creato un oggetto di una classe,
+    viene creata una nuova istanza dei membri della classe
+    associata a quell'oggetto,
+    quindi **ogni oggetto ha le proprie variabili membro** corrispondenti
+  * i membri possono essere di tipo predefinito, 
+    oppure **a loro volta oggetti** di una classe
+  * è buona regola di programmazione **identificare i membri in modo simbolico**,
+    ad esempio con il prefisso ```m_```  
+
+![linea](../immagini/linea.png)
+
+### 2.2.4 I metodi di una classe
+
+  * le funzioni che sono definite all'interno di una classe sono chiamate **metodi** della classe
+  * hanno automaticamente **accesso ai membri** dell'oggetto sul quale operano
+    e si invocano su un oggetto utilizzando il nome dell'oggetto
+    seguito da un punto e dal nome del metodo:
+    ```cpp
+    numero_complesso_1.modulo ()
+    ```
+  * i metodi **possono avere argomenti**, 
+    ad esempio uno di essi potrebbe moltiplicare il numero complesso 
+    per un numero reale:
+    ```cpp
+    numero_complesso_1.dilata (double fattore_di_scala)
+    ```
+
+![linea](../immagini/linea.png)
+
+### 2.2.5 Il campo ```private```
+
+  * i metodi di una classe **fungono da interfaccia** fra i membri di un oggetto
+    ed il codice sorgente dove l'oggetto è definito
+  * è talvolta auspicabile che i membri possano essere modificati 
+    **soltanto attraverso i metodi**, 
+    per evitare che subiscano operazioni
+    che compromettano la funzionalità dell'oggetto nel suo insieme
+  * tutti i metodi ed i membri definiti **dopo la parola chiave ```private```**
+    sono accessibili solo per i metodi della loro classe
+  * se non si indica nulla, tutto il contenuto di una classe è ```private```
+
+![linea](../immagini/linea.png)
+
+### 2.2.6 Il campo ```public```
+
+  * i metodi ed i membri definiti **dopo la parola chiave ```public```**
+    sono accessibili nel codice sorgente al di fuori della classe
+    (ad esempio nella funzione ```main```)
+    tramite la sintassi del ```.```:
+    ```cpp
+    numero_complesso_1.modulo ()
+    ```
+  * solitamente, i **membri** di una classe sono ```private```, 
+    mentre i suoi **metodi** sono ```public```
+  * se si definisce una classe con l'identificativo ```struct``` invece di ```class```,
+    se non si indica nulla tutto il contenuto della classe è ```public```
+
+![linea](../immagini/linea.png)
+
+### 2.2.7 L'implementazione della classe (il file ```complesso.cc```)
+
+  * i metodi di una classe possono essere **implementati** 
+    direttamente nello scope di definizione 
+  * solitamente, tuttavia, questo succede **in un file separato**,
+    dove vanno associati alla classe che li contiene, ad esempio:
+    ```cpp
+    #include "complesso.h"
+    double complesso::modulo ()
+      {
+        return sqrt (m_real * m_real + m_imag * m_imag) ;
+      }    
+    ```
+  * il nome di ogni metodo è preceduto dal nome della classe, 
+    separato dall'operatore di scope resolution ```::``` 
+
+![linea](../immagini/linea.png)
+
+### 2.2.8 Un membro implicito di ogni classe: l'oggetto stesso
+
+  * per ogni classe, 
+    è sempre definito il **puntatore all'oggetto corrente**,
+    rappresentato dal simbolo **```this```**
+    ```cpp
+    void
+    complesso::stampami ()
+    {
+      std::cout << this->m_real << " + " << this->m_imag << "i" << std::endl ;
+      return ;
     }
     ```
-  * il calcolatore **crea una copia** della variabile di input
-    e passa la copia alla funzione
-  * questo significa che **il passaggio di informazione è lento** 
-    e la variabile passata alla funzione
-    **non risente delle azioni che subisce all'interno della funzione**:
+  * il ```.``` che si usa per accedere a membri e metodi di un oggetto
+    viene **sostituito da ```->``` per i puntatori ad oggetti**
+
+![linea](../immagini/linea.png)
+
+## 2.3 Funzioni speciali di una classe
+
+  * oltre a quelle che servono per maneggiare le variabili, 
+    ogni tipo predefinito possiede funzioni dedicate alla 
+    **creazione ed alla distruzione delle variabili**
+  * in una classe,
+    queste funzioni **vanno implementate**  
+
+![linea](../immagini/linea.png)
+
+### 2.2.1 Il costruttore
+
+  * **crea l'oggetto** al momento della sua definizione,
+    inizializzando i membri dell'oggetto:
     ```cpp
-    int numero = 5 ;
-    std::cout << "raddoppio (valore)    " << raddoppia (numero) << "\n" ;
-    std::cout << "numero: " << numero << "\n" ;
+    complesso::complesso (double r, double i):
+      m_real (r),
+      m_imag (i)
+      {
+        std::cout << "costruzione di un numero complesso" << std::endl ;
+      }
     ```
-    restituisce come risultato (numero rimane uguale a 5):
+  * le variabili di **tipi predefiniti** vengono create dal costruttore corrispondente
+  * oggetti di altre classi vengono **creati dal costruttore corrispondente**   
+  * il costruttore **non ha tipo di ritorno**
+  * nello scope del costruttore si possono eseguire istruzioni
+    (in questo esempio c'è una stampa a schermo, che in realtà è scomodo:
+     nessuno vuole un programma troppo petulante)
+  * questo è un buon posto dove **allocare dinamicamente la memoria**, se necessario   
+
+![linea](../immagini/linea.png)
+
+### 2.2.2 La lista di inizializzazione
+
+  * tutti i membri di una classe vengono creati **prima dell'inizio** dello scope del costruttore
+  * la sequenza:
+    ```cpp
+    m_real (r),
+    m_imag (i)
     ```
-    raddoppio (valore)    10
-    numero: 5
+    è detta **lista di inizializzazione**
+  * ottimizza l'uso della memoria: inizializza ciascun membro al valore fra parentesi
+    al momento della creazione del membro
+  * l'**ordine delle variabili** deve essere il medesimo della loro definizione
+    all'interno della classe  
+  * se non si mettesse la lista di inizializzazione,
+    bisognerebbe inizializzare le variabili nello scope del costruttore,
+    spendendo più tempo di esecuzione:
+    ```cpp
+    complesso::complesso (double r, double i):
+      {
+        m_real = r ;
+        m_imag = i ;
+        std::cout << "costruzione di un numero complesso" << std::endl ;
+      }
     ```
 
 ![linea](../immagini/linea.png)
 
-### 2.2.2 Passaggio per puntatore
+### 2.2.3 overloading del costruttore
 
-  * nel passaggio per valore, 
-    nel prototipo della funzione fra parentesi è indidcato il **puntatore alla variabile**
-    da passare
+  * una classe può possedere **più di un costruttore**,
+    a patto che ciascuno prenda argomenti diversi
+  * ad esempio, si può definire un costruttore che abbia come input soltanto 
+    un numero reale:  
     ```cpp
-    int raddoppia (int * valore)
-    {
-      *valore *= 2 ; 
-      return *valore ;
-    }
-    ```
-  * il calcolatore pasa alla funzione la variabile puntatore, 
-    quindi **il passaggio di informazione è veloce**
-    ed ogni modifica fatta alla zona di memoria indicizzata dal puntatore all'interno della funzione
-    **ha effetto anche al di fuori dello scope della funzione**:
-    ```cpp
-    std::cout << "raddoppio (puntatore) " << raddoppia (& numero) << "\n" ;
-    std::cout << "numero: " << numero << "\n" ;
-    ```
-    restituisce come risultato (numero diventa uguale a 10):
-    ```
-    raddoppio (puntatore) 10
-    numero: 10
+    complesso::complesso (double r):
+      m_real (r),
+      m_imag (0.)
+      {
+        std::cout << "costruzione di un numero complesso" << std::endl ;
+      }
     ```
 
 ![linea](../immagini/linea.png)
 
-### 2.2.3 Passaggio per referenza
+### 2.2.4 Il costruttore di default
 
-  * nel passaggio per valore, 
-    nel prototipo della funzione fra parentesi è indidcata la **referenza alla variabile**
-    da passare
+  * un costruttore senza argomenti di input è chiamato **costruttore di default**:
     ```cpp
-    int raddoppiaRef (int & valore)
-    {
-      valore *= 2 ; 
-      return valore ;
-    }
+    complesso::complesso ():
+      m_real (0.),
+      m_imag (0.)
+      {
+        std::cout << "costruzione di un numero complesso" << std::endl ;
+      }
     ```
-  * il calcolatore pasa alla funzione l'alias alla variabile, che si comporta come un puntatore 
-  * quindi **il passaggio di informazione è veloce**
-    ed ogni modifica fatta alla referenza all'interno della funzione 
-    **ha effetto anche al di fuori dello scope della funzione**:
-    ```cpp
-    std::cout << "raddoppio (referenza) " << raddoppiaRef (numero) << "\n" ;
-    std::cout << "numero: " << numero << "\n" ;
-    ```
-    restituisce come risultato (numero diventa uguale a 10):
-    ```
-    raddoppio (referenza) 10
-    numero: 10
-    ```
+  * se una classe non ha il costruttore, 
+    il compilaore spesso **definisce un costruttore di default** vuoto
 
 ![linea](../immagini/linea.png)
 
-### 2.2.4 L'output di una funzione
+### 2.2.5 Il costruttore di copia, o copy constructor
 
-  * nelle funzoni viste finora, l'oggetto restituito dalla funzione è il valore di variabile
-  * questo valore viene scritto nella zona di memoria della variabile alla quale
-    viene assegnato il valore (```risultato``` nell'esempio che segue):
+  * è naturale immaginare di costruire un oggetto nuovo
+    copiando il contenuto di uno esistente:
     ```cpp
-    int risultato = raddoppia (numero) ;
+    complesso::complesso (const complesso & orig):
+      m_real (orig.m_real),
+      m_imag (orig.m_imag)
+      {}
     ```
-  * ritornare il puntatore o la referenza ad una variabile è **un'operazione rischiosa 
-    e non sempre permessa**
-  * infatti, ogni volta che una variabile viene definita all'interno della funzione,
-    al termine della funzione viene **elimiata dal calcolatore** (va out of scope)  
+  * una classe ha sempre accesso a tutti i membri 
+    di tutti gli oggetti di quella classe 
+    se vengono passati come argomenti di una funzione,
+    quindi **il copy constructor ha accesso ai membri ```private```
+    dell'oggetto ```orig```**
+    * esiste una eccezione a questa regola,
+      che vedremo quando parleremo di ereditarietà
+  * l'oggetto ```orig``` viene passato:
+    * **per referenza** per ragioni di velocità
+    * **con l'attributo const** per garantire che non venga modificato  
+  * anche in questo caso, **non c'è tipo di ritorno**
 
 ![linea](../immagini/linea.png)
 
-### 2.2.5 Come reagisce il compilatore nel caso di una referenza
+### 2.2.6 Il distruttore
 
-  * fuori dalla funzione 
-    la variabile ```risultato``` non esiste più,
-    quindi la referenza, che è il suo alias,
-    **non ha significato**:
+  * al termine della vita di un oggetto, cioè al momento in cui va out of scope, 
+    la memoria che occupa va liberata
+  * i suoi membri di tipi predefiniti del ```C++``` allocati automaticamente
+    vengono distrutti automaticamente
+  * la memoria allocata dinamicamente va ripulita esplicitamente:
+    per fare questo, esiste una funzione dedicata, chiamata **distruttore**,
+    dove tutti i **```delete```** necessari possono essere chiamati
     ```cpp
-    int & raddoppiaReturnReferenza (int valore)
-    {
-      int risultato = valore * 2 ; 
-      return risultato ;
-    }
-    ```
-    in fase di compilazione produce un **Warning**:
-    ```
-    main_08.cpp:23:10: warning: reference to stack memory associated with local variable 'risultatò returned [-Wreturn-stack-address]
-      return risultato ;
-             ^~~~~~~~~
-    ```
- 
-![linea](../immagini/linea.png)
+    complesso::~complesso () 
+      {
+        // qui va ripulita la memoria allocata dinamicamente
+      }
 
-### 2.2.6 Come reagisce il compilatore nel caso di un puntatore
-
-  * fuori dalla funzione 
-    il puntatore a questa variabile indicizza una **zona di memoria non più occupata**
-    ```cpp
-    int * raddoppiaReturnPuntatore (int valore)
-    {
-      int risultato = valore * 2 ; 
-      return & risultato ;
-    }
-    ```
-    anche in questo caso, in fase di compilazione produce un **Warning**:
-    ```
-    main_08.cpp:17:12: warning: address of stack memory associated with local variable 'risultatò returned [-Wreturn-stack-address]
-      return & risultato ;
-               ^~~~~~~~~
-    ```
-  * il passaggio di valori per puntatore è **veloce**:
-    per approfittare appieno di questa proprietà,
-    dobbiamo **acquisire un controllo più stretto della memoria**
-
-![linea](../immagini/linea.png)
-
-## 2.3 La gestione dinamica della memoria
-
-  * in generale,
-    quando una nuova variabile viene creata
-    il calcolatore compie **due operazioni**:
-    * riservare la memoria per la variabile, chiamata **allocazione di memoria**
-    * **inizializzazione della variabile** in quello spazio di memoria
-
-![linea](../immagini/linea.png)
-
-### 2.3.1 Heap and Stack
-
-  * il programma (quindi il programmatore) ha a disposizione due tipi di gestione della RAM:
-
-  | **stack** |
-  | --------- |
-
-  * le variabili vengono salvate in **zone contigue** di memoria (da cui il nome)
-  * il calcolatore si occupa della manutenzione della stack:
-    la memoria viene **automaticamente allocata e cancellata** a fine scope
-
-  | **heap** |
-  | -------- |
-
-  * le variabili vengono salvate in **una zona meno ordinata** di memoria
-  * il calcolatore **non** si occupa della manutenzione della stack:
-    il programma (quindi il programmatore) deve **ricordarsi di svuotare la memoria**
-
-![linea](../immagini/linea.png)
-
-### 2.3.2 Allocazione di una variabile nella Stack
-
-  * una qualunque definizione di variabili vista finora 
-    è un esempio di uso della stack:
-    ```cpp
-    int numero = 5 ;
-    float array[3] ;
-    array[0] = 4.3 ;
-    // etc
-    ```
-  * utilizzare la stack è detto anche **allocazione automatica della memoria**
-
-  | **vantaggi** |
-  | --------- |
-
-  * il programmatore non si preoccupa della gestione della memoria
-
-  | **svantaggi** |
-  | --------- |
-
-  * la zona di RAM riservata alla stack è **piccola**
-  * la dimensione delle variabili deve essere **nota al momento della compilazione**
-
-![linea](../immagini/linea.png)
-
-### 2.3.3 Allocazione di una variabile nella Heap
-
-  * per allocare una variabile nella heap si usa l'istruzione **```new```**:
-    ```cpp
-    int * numero = new int (5) ;
-    std::cout << * numero << std::endl ;
-    ```
-    * new **ritorna un puntatore** alla zona di memoria allocata,
-      da assegnare ad una variabile
-    * se si perde il valore del puntatore, 
-      diventa **impossibile rintracciare la zona di memoria** allocata da ```new``` 
-  * la zona di memoria non viene deallocata automaticamente,
-    nel codice sorgente **è necessario utilizzare l'istruzione ```delete```** per farlo:
-    ```cpp
-    delete numero ;
-    ```
-  * utilizzare la stack è detto anche **allocazione dinamica della memoria**
-
-  | **vantaggi** |
-  | --------- |
-
-  * la memoria heap è **molto più grande** della stack
-  * il programmatore può decidere la dimensione della variabile durante l'esecuzione del programma
-  * la memoria non viene cancellata automaticamente a fine scope
-
-  | **svantaggi** |
-  | --------- |
-
-  * se non si libera la memoria con ```delete```,
-    in particolare nei cicli,
-    questa si intasa e l'esecuzione rischia di **interrompersi ad un punto casuale**
-    (cioè quando la memoria è piena)
-    ed è molto difficile identificare il problema nel programma
-
-![linea](../immagini/linea.png)
-
-### 2.3.4 Esempio di allocazione dinamica: utilizzo in una funzione
-
-  * la funzione seguente sfrutta il fatto che la memoria allocata dinamicamente
-    **non viene cancellata quando finisce lo scope**:
-    ```cpp
-    int * creaInteroDoppio (int valore)
-    {
-      int * risultato = new int (valore * 2) ; 
-      return risultato ;
-    }
-    ```
-  * infatti, il valore del risultato **rimane accessibile** anche 
-    dopo che la funzione è stata eseguita:
-    ```cpp
-    int numero = 5 ;
-    int * doppio = creaInteroDoppio (numero) ;
-    std::cout << "Valore iniziale: " << numero  << std::endl ;
-    std::cout << "Valore doppio  : " << *doppio << std::endl ;
-    ```
-  * **non bisogna dimenticare** di svuotare la memoria quando la variabile non serve più:
-    ```cpp
-    delete doppio ;
     ```    
+  * eventuali **membri che siano oggetti di altre classi** saranno distrutti dal distruttore corrispondente
+  * nel distruttore si possono anche implementare comportamenti aggiuntivi,
+    come ad esempio il salvataggio automatico dell'informazione
+  * anche il distruttore **non ha tipo di ritorno**
+  * se non viene implementato,
+    **il compilatore crea automaticamnete** un distruttore vuoto
 
 ![linea](../immagini/linea.png)
 
-### 2.3.5 Un errore pernicioso
+## 2.4 La ridefinizione di operatori, overloading
 
-  * nell'utilizzo della funzione ```creaInteroDoppio```
-    non bisogna dimenticare di assegnare ad una variabile il valore del puntatore
-  * la linea seguente non dà errore, 
-    tuttavia **perde il valore del puntatore** 
-    alla memoria allocata dinamicamente      
+  * per i tipi predefiniti di ```C++``` le operazioni matematiche fondamentali
+    sono effettuate con i simboli algebrici noti: ```+```, ```-```, ```*```, ```/```, ```=``` ....
+  * si può definire il comportamento di queste funzioni anche per gli oggetti
+    delle classi
+    (come sempre, si distinguono dagli altri per i diversi tipi in ingresso)
+  * ecco due esempi notevoli  
+
+![linea](../immagini/linea.png)
+
+### 2.4.1 L'operatore di assegnazione per tipi predefiniti
+
+  * una operazione solitamente fattibile con tipi predefiniti è 
+    l'assegnazione a partire da una altra variabile esistente:
     ```cpp
-    std::cout << "Valore doppio  : " << *creaInteroDoppio (numero) << std::endl ;
+    int numero = 5 ;
     ```
-  * di conseguenza, **non è possibile utilizzare il comando ```delete```**
-    e la zona di memoria rimane inutilizzabile fino al termine 
-    dell'esecuzione del programma
+    * in questo caso, il ```C++``` prima costruisce la variabile ```numero``` e le assegna un valore in memoria,
+      successivamente le fa assumere il valore di ```5```
 
 ![linea](../immagini/linea.png)
 
-### 2.3.5 Allocazione dinamica ed array
+### 2.4.2 L'operatore di assegnazione per una classe
 
-  * siccome l'allocazione statica richiede che la dimensione delle variabili sia nota in fase di compilazione,
-    la lunghezza di un array deve essere scritta nel codice sorgente:
-    ```cpp    
-    float array[3] ;  // QUESTO VA BENE
-    int N = 5 ;
-    float array[N] ;  // QUESTO __NON__ VA BENE
-    ```
-    * la linea ```float array[N]``` non è corretta in ```C++```, 
-      la dimensione dell'array non sarà ```5```, ma un numero che a priori non conosciamo,
-      creando problemi in esecuzione difficili da identificare
-  * si può utilizzare allocazione dinamica della memoria
-    per creare array che abbiano dimensione scelta durante l'esecuzione     
-    ```cpp    
-    int N = 5 ;
-    float * dynamic_array = new float [N] ;
-    ```
-    * invece delle parentesi tonde, dopo il tipo della variabile bisogna utilizzare **parentesi quadre**
-  * avendo usato l'operatore ```new```, la memoria va liberata quando l'array non serve più:
-  ```cpp
-  delete [] dynamic_array ;
-  ```
-  * non bisogna dimenticare le **parentesi quadre** dopo ```delete```
-  * fintanto che siste, questo array si utilizza come uno allocato staticamente
-
-![linea](../immagini/linea.png)
-
-### 2.3.6 Non bisogna perdere il puntatore!
-
-  * anche in questo caso, il puntatore restituito da ```new```
-    è l'unico accesso alla memoria allocata dinamicamente,
-    quindi **non va persa quell'informazione**,
-    altrimenti non si riesce più a liberare la memoria
-
-![arrrayeptr](immagini/arrayeptr.png)
-
-![linea](../immagini/linea.png)
-
-### 2.3.7 Trova l'errore, 1
-
-  * cosa c'è di sbagliato nella sequenza di istruzioni seguente?
+  * il comportamento dell'operatore di assegnazione **va definito** per una classe
     ```cpp
-    int anArray[10];
-    int* num;
-    int* vec = new int[10]; num = anArray;
-    vec = num;
-    delete[] vec;
+    complesso & 
+    complesso::operator= (const complesso & orig)
+    {
+      m_real = orig.m_real ;
+      m_imag = orig.m_imag ;
+      return *this ;
+    }  
+    ```
+    * la **variabile in ingresso** è una referenza costante per garantire velocità e non modificabilità
+    * la **variabile in uscita** è una referenza all'oggetto,
+      per permettere la seguente sintassi:
+      ```cpp
+      complesso numero_complesso_6 = numero_complesso_5 = numero_complesso_2 ;
+      ```
+    * non viene restituita una copia dell'oggetto corrente per **risparmiare tempo**
+
+![linea](../immagini/linea.png)
+
+### 2.4.3 L'operatore di somma
+
+  * vogliamo che l'operazione di somma fra numeri complessi si possa scrivere come:
+    ```cpp
+    complesso numero_complesso_4 = numero_complesso_3 + numero_complesso_2 ;
+    ```
+  * in ```C++``` si può ottenere defintendo un metodo della classe complesso 
+    chiamato ```operator+```:
+    ```cpp
+    complesso
+    complesso::operator+ (const complesso & addendo)
+    {
+      complesso somma (m_real, m_imag) ;
+      somma.m_real = somma.m_real + addendo.m_real ;
+      somma.m_imag = somma.m_imag + addendo.m_imag ;
+      return somma ;
+    }
+    ```
+    * la **variabile in ingresso** è una referenza costante per garantire velocità e non modificabilità
+    * la **variabile in uscita** è un oggetto nuovo
+  * l'```operator+``` ha in questo caso un solo argomento,
+    perché uno dei due addendi è l'oggetto sul quale è chiamato.
+    Infatti, le due scritture seguenti sono equivalenti:
+    ```cpp
+    complesso numero_complesso_4 = numero_complesso_3 + numero_complesso_2 ;
+    complesso numero_complesso_4 = numero_complesso_2.operator+ (numero_complesso_2) ;
     ```
 
 ![linea](../immagini/linea.png)
 
-### 2.3.8 Trova l'errore, 2
+### 2.4.4 Definizione al di fuori della classe
 
-  * cosa c'è di sbagliato nella sequenza di istruzioni seguente?
-    ```cpp
-    int nElem ;
-    // ...
-    double * myArray ; 
-    if (nElem > 0)
-      myArray = new double[nElem] ; 
-    // ...
-    delete[] myArray ;
-    ```
-
-![linea](../immagini/linea.png)
-
-### 2.3.9 Trova l'errore, 3
-
-  * cosa c'è di sbagliato nella sequenza di istruzioni seguente?
-    ```cpp
-    int nElem ;
-    double * myArray = new double[10] ; 
-    // ...
-    if (nElem > 0)
-      myArray = new double[nElem] ; 
-    // ...
-    delete[] myArray ;
-    ```
-
-![linea](../immagini/linea.png)
-
-### 2.3.10 Trova l'errore, 4
-
-  * cosa c'è di sbagliato nella sequenza di istruzioni seguente?
-    ```cpp
-    int myFunction (int * inArray, int dim)
+  * la funzione ```operator+``` può essere definita anche **al di fuori della classe**
+    * in questo caso ha due argomenti, che sono entrambi gli addendi
+  * in questo caso, tuttavia, nella funzione i membri privati degli oggetti **non sono accessibili**
+    * bisogna definire **metodi pubblici di interfaccia** per accedere al valore dei membri
+      ```cpp
+      double 
+      complesso::parte_reale () const
       {
-        int sumEven = 0 ;
-        int myArray[dim] ;
-        unsigned int indx = 0;
-        for (unsigned int i = 0 ; i < 10 ; ++i) 
-          {
-            if (inArray[i]%2 == 0) 
-              {
-                myArray[indx] = inArray[i] ;
-                ++indx ; 
-              }
-          }
-        for (unsigned int i = 0 ; i < indx ; ++i)
-          sumEven += myArray[i]; 
-        return sumEven;
+        return m_real ;
       }
-
-    ```
-
-![linea](../immagini/linea.png)
-
-### 2.3.11 Trova l'errore, 5
-
-  * cosa c'è di sbagliato nella sequenza di istruzioni seguente?
+      ```
+  * può essere comodo per definire operazioni **fra oggetti eterogenei**
     ```cpp
-    int myFunction (int * inArray, int dim)
+    complesso operator+ (const complesso & uno, const double & due)
       {
-        int sumEven = 0 ;
-        int * myArray = new int[dim] ;
-        unsigned int indx = 0 ;
-        for (unsigned int i = 0 ; i < 10 ; ++i) 
-          {
-            if (inArray[i]%2 == 0) 
-              {
-                myArray[indx] = inArray[i] ;
-                ++indx ; 
-              }
-          }
-        for (unsigned int i = 0 ; i < indx ; ++i)
-          sumEven += myArray[i] ; 
-        return sumEven ;
+        double real = uno.parte_reale () + due ;
+        double imag = uno.parte_immaginaria () ;
+        complesso somma (real, imag) ;
+        return somma ;
       }
+    ```  
+    * essendo una funzione **esterna alla classe**,
+      in questo caso non è presente la denominazione di scope ```complesso::```
+
+![linea](../immagini/linea.png)
+
+## 2.5 L'attributo ```const```
+
+  * la parola chiave ```const``` indica il fatto che **non sia permesso
+    cambiare il valore** contenuto in una variabile o in un oggetto
+  * const si **applica** al primo attributo alla sua sinistra, 
+    se non c'è nulla si applica al primo attributo alla sua destra
+    * a seconda della sua posizione, ha effetti differenti
+
+![linea](../immagini/linea.png)
+
+### 2.5.1 Esempi di utilizzo di ```const``` con i tipi predefiniti
+
+  | sintassi  | effetto |
+  | --- | --- |
+  | ```const int C1 = 10 ;```    | ```C1``` è un intero il cui valore è costante |
+  | ```int const C1 = 10 ;```    | ```C1``` è un intero il cui valore è costante |
+  | ```const int * C2 ;```       | ```C2``` è un puntatore ad un ```const int```, cioè un puntatore ad un intero costante |
+  | ```int const * C2 ;```       | ```C2``` è un puntatore ad un ```const int```, cioè un puntatore ad un intero costante |
+  | ```int * const C3 ;```       | ```C3``` è un puntatore costante ad un intero variabile |
+  | ```int const * const C4 ;``` | ```C4``` è un puntatore costante ad un intero costante |
+
+  * NOTA BENE: siccome ```C3``` e ```C4``` sono puntatori costanti,
+    vanno **immediatamente inizializzati**,
+    perché i puntatori non sono inizializzati ad alcun valore di default:
+    ```cpp
+    int * const C3 (& numero) ;
+    int const * const C4 (& C1) ;
     ```
 
 ![linea](../immagini/linea.png)
 
-## 2.4 ESERCIZI
+### 2.5.2 Oggetti definiti ```const```
+
+  * le **stesse regole** si applicano ad oggetti definiti
+  * tuttavia, si pone il problema aggiuntivo che, in generale,
+    **i metodi di una classe possono modificare i membri** di un oggetto
+  * per continuare ad utilizzare metodi preservando la caratteristica ```const```
+    il ```C++``` richiede di **indicare quali metodi non modifichino i membri** 
+    di una classe, aggiungendo l'attributo ```const``` al termine del loro prototpo:
+    ```cpp
+    double 
+    complesso::parte_reale () const
+    {
+      return m_real ;
+    }
+    ```
+  * su un oggetto di tipo ```const``` possono essere invocati 
+    soltanto i metodi dichiarati ```const```
+    
+![linea](../immagini/linea.png)
+
+## 2.6 Classi e puntatori
+
+  * come abbiamo già visto, 
+    esistono **puntatori e referenze ad oggetti**,
+    con i medesimi comportamenti delle variaibli di tipo predefinito
+  * per accedere a metodi e membri di un oggetto 
+    attraveso un suo puntatore,
+    si utilizza **l'operatore ```->``` invece di ```.```**
+  * le classe possono anche **contenere puntatori** a variabili di tipo predefinito
+    o ad altri oggetti
+  * nel caso in cui si utilizzi **allocazione dinamica** della memoria,
+    è prudente invocarla nel costruttore
+    ed è **necessario ripulire la memoria nel distruttore**  
+
+![linea](../immagini/linea.png)
+
+## 2.7 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
+
+
 
 

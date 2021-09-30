@@ -2,59 +2,49 @@
 
 ## Esercizio 2.1 
 
-Scrivere un programma che assegni il valore di una variabile ad un'altra utilizzando un puntatore. 
-Stampare inoltre a terminale i valori e gli indirizzi di ogni variabile prima e dopo l'assegnazione.
+Implementate la classe ```complesso``` come descritta nella lezione al paragrafo ```2.2.1```,
+includendo anche un programma di test delle sue funzionalita'.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 2.2 
+## Esercizio 2.2
 
-Dichiarare un puntatore e poi cercare di assegnargli direttamente un valore numerico. Cosa succede? Perché?
+Aggiungete alla classe ```complesso``` i vari tipi di costruttore 
+discussi nella sezione ```2.3``` della lezione.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 2.3
 
-Utilizzare new e delete per creare e distruggere una variabile double ed un array di double.
-    
+Aggiungete alla classe ```complesso``` le seguenti operazioni:
+  * somma di due numeri complessi
+  * differenza fra due numeri complessi
+  * moltiplicazione per un numero reale
+  * prodotto fra due numeri complessi
+  * operatore ```+=``` con come argomento un numero complesso
+  * operatore ```+=``` con come argomento un numero reale
+  * operatore ```-=``` con come argomento un numero complesso
+  * operatore ```-=``` con come argomento un numero reale
+  * operatore ```*=``` con come argomento un numero complesso
+  * operatore ```*=``` con come argomento un numero reale
+  * operatore ```/=``` con come argomento un numero complesso
+  * operatore ```/=``` con come argomento un numero reale
+  * in quali casi vanno effettuati controlli sul valore dei numeri complessi in input alle funzioni?
+
 ![linea](../immagini/linea.png)
 
-## Esercizio 2.4
+## Esercizio 2.4 
 
-Realizzare una funzione che risolva un’equazione di secondo grado: ax2 + bx + c = 0. 
-La funzione deve rendere disponibile il risultato al programma che la chiama. 
-  * Il prototipo della funzione deve essere:
-    ```cpp
-    bool solve2ndDegree (double * par, double * x) ;
-    ```
-  * La funzione deve restituire una variabile ```bool (true/false)``` a
-    seconda che esistano o meno soluzioni reali dell’equazione
-  * La funzione riceve in input due puntatori a double:
-    * ```double * par``` serve per passare l’array dei coefficienti
-    * ```double * x```  è l’indirizzo di un array in cui salvare le soluzioni dell’equazione
-    
-![linea](../immagini/linea.png)
-
-## Esercizio 2.5
-
-Rifare l’esercizio su media/varianza realizzando un’unica funzione che le calcoli entrambe,
-facendo opportuno uso puntatori o referenze.
-    
-![linea](../immagini/linea.png)
-
-## Esercizio 2.6
-
-Scrivere una funzione che, dato un array di N interi, 
-lo ordini dal più piccolo al più grande 
-(suggerimento: creare un array inserendo alcuni numeri a caso per testare che l'ordinamento funzioni). 
-  * Il prototipo della funzione deve essere:
-    ```cpp
-    void SortArray (double * myArray, int dim) ;
-    ```
-![linea](../immagini/linea.png)
-
-## Esercizio 2.7
-
-Scrivere una funzione ```creaArray (...) ``` che prenda in input un numero intero,
-crei un array di tipo ```float``` lungo quando il numero intero di input
-e restituisca il puntatore al primo elemento dell'array.
+Scrivete una classe chiamata ```mioArray```
+che implementi un array di numeri ```double``` con dimensione impostata dall'utente
+al momento della creazione degli oggetti,
+utilizzando l'allocazione dinamica della memoria
+e ripulisca la memoria nel distruttore.
+  * Scrivete inoltre un programma di test che verifichi le funzionalita' della classe.
+  * La classe ```mioArray``` deve contenere un metodo per accedere ai suoi elementi
+    che operi un controllo sul valore dell'indice, 
+    che avverta con un messaggio a schermo nel caso in cui si cerchi di accedere
+    ad un indice che non sta nell'array
+  * Si faccia in modo che sia possibile utilizzare questa funzione
+    sia nel caso in cui si voglia modificare il contenuto delle celle dell'array,
+    sia nel caso in cui l'oggetto di tipo ```mioArray``` sia ```const```

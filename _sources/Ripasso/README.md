@@ -1,4 +1,4 @@
-# Lezione 1: ripasso di ```C``` ed introduzione al ```C++```, parte 1
+# Ripasso di ```C```
 
 ## Indice
 

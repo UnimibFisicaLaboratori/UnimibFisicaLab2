@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lezione 2: ripasso di C ed introduzione al C++, parte 2 &#8212; Laboratorio 2</title>
+    <title>Lezione 2: programmazione ad oggetti, le classi &#8212; Laboratorio 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Esercizi per la lezione 2" href="ESERCIZI.html" />
-    <link rel="prev" title="Indice delle Lezioni" href="../content.html" />
+    <link rel="prev" title="Esercizi per la lezione 1" href="../Lezione_01/ESERCIZI.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -104,24 +104,34 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
-     Lezione 2: ripasso di
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       C
-      </span>
-     </code>
-     ed introduzione al
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: strutturazione di un programma ed introduzione al
      <code class="docutils literal notranslate">
       <span class="pre">
        C++
       </span>
      </code>
-     , parte 2
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Lezione 2: programmazione ad oggetti, le classi
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -129,23 +139,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="ESERCIZI.html">
        Esercizi per la lezione 2
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../Lezione_03/README.html">
-     Lezione 3: programmazione ad oggetti, le classi
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
-       Esercizi per la lezione 3
       </a>
      </li>
     </ul>
@@ -403,199 +396,211 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variabili-e-puntatori">
-   2.1 Variabili e puntatori
+  <a class="reference internal nav-link" href="#la-generalizzazione-del-concetto-di-tipo">
+   2.1 La generalizzazione del concetto di tipo
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-gestione-delle-variabili-nel-calcolatore">
-     2.1.1 La gestione delle variabili nel calcolatore
+    <a class="reference internal nav-link" href="#uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c">
+     2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lo-spazio-occupato-dalle-variabili">
-     2.1.2 Lo spazio occupato dalle variabili
+    <a class="reference internal nav-link" href="#un-esempio-i-numeri-complessi">
+     2.1.2 Un esempio: i numeri complessi
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#le-dimensioni-tipiche-di-alcuni-tipi">
-     2.1.3 Le dimensioni tipiche di alcuni tipi
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#l-indirizzo-di-memoria-di-una-variabile">
-     2.1.4 L’indirizzo di memoria di una variabile
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#salvare-l-indirizzo-di-memoria-i-puntatori">
-     2.1.5 Salvare l’indirizzo di memoria: i puntatori
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dalla-variabile-al-puntatore-e-viceversa">
-     2.1.6 Dalla variabile al puntatore e viceversa
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#puntatori-non-inizializzati">
-     2.1.7 Puntatori non inizializzati
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-puntatori-sono-variabili">
-     2.1.8 I puntatori sono variabili
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inizializzare-una-variabile-a-partire-da-un-puntatore">
-     2.1.9 Inizializzare una variabile a partire da un puntatore
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#puntatori-di-puntatori">
-     2.1.10 Puntatori di puntatori
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#risalire-la-caterna-di-indirizzi">
-     2.1.11 risalire la caterna di indirizzi
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#puntatori-ed-array">
-     2.1.12 Puntatori ed array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gli-elementi-di-un-array">
-     2.1.13 Gli elementi di un array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#l-algebra-dei-puntatori">
-     2.1.14 L’algebra dei puntatori
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#le-referenze">
-     2.1.15 Le referenze
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#riepilogo-sui-puntatori">
-     2.1.16 Riepilogo sui puntatori
+    <a class="reference internal nav-link" href="#se-i-numeri-complessi-fossero-un-tipo-di-c">
+     2.1.3 Se i numeri complessi fossero un tipo di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#il-passaggio-di-parametri-alle-funzioni">
-   2.2 Il passaggio di parametri alle funzioni
+  <a class="reference internal nav-link" href="#si-puo-fare-la-classe-dei-numeri-complessi">
+   2.2 Si può fare! La classe dei numeri complessi
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#passaggio-per-valore">
-     2.2.1 Passaggio per valore
+    <a class="reference internal nav-link" href="#la-definizione-della-classe-il-file-complesso-h">
+     2.2.1 La definizione della classe (il file
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       complesso.h
+      </span>
+     </code>
+     )
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#passaggio-per-puntatore">
-     2.2.2 Passaggio per puntatore
+    <a class="reference internal nav-link" href="#un-primo-esempio-di-utilizzo">
+     2.2.2 un primo esempio di utilizzo
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#passaggio-per-referenza">
-     2.2.3 Passaggio per referenza
+    <a class="reference internal nav-link" href="#i-membri-di-una-classe">
+     2.2.3 I membri di una classe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#l-output-di-una-funzione">
-     2.2.4 L’output di una funzione
+    <a class="reference internal nav-link" href="#i-metodi-di-una-classe">
+     2.2.4 I metodi di una classe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#come-reagisce-il-compilatore-nel-caso-di-una-referenza">
-     2.2.5 Come reagisce il compilatore nel caso di una referenza
+    <a class="reference internal nav-link" href="#il-campo-private">
+     2.2.5 Il campo
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       private
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#come-reagisce-il-compilatore-nel-caso-di-un-puntatore">
-     2.2.6 Come reagisce il compilatore nel caso di un puntatore
+    <a class="reference internal nav-link" href="#il-campo-public">
+     2.2.6 Il campo
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-implementazione-della-classe-il-file-complesso-cc">
+     2.2.7 L’implementazione della classe (il file
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       complesso.cc
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-membro-implicito-di-ogni-classe-l-oggetto-stesso">
+     2.2.8 Un membro implicito di ogni classe: l’oggetto stesso
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#la-gestione-dinamica-della-memoria">
-   2.3 La gestione dinamica della memoria
+  <a class="reference internal nav-link" href="#funzioni-speciali-di-una-classe">
+   2.3 Funzioni speciali di una classe
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heap-and-stack">
-     2.3.1 Heap and Stack
+    <a class="reference internal nav-link" href="#il-costruttore">
+     2.2.1 Il costruttore
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#allocazione-di-una-variabile-nella-stack">
-     2.3.2 Allocazione di una variabile nella Stack
+    <a class="reference internal nav-link" href="#la-lista-di-inizializzazione">
+     2.2.2 La lista di inizializzazione
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#allocazione-di-una-variabile-nella-heap">
-     2.3.3 Allocazione di una variabile nella Heap
+    <a class="reference internal nav-link" href="#overloading-del-costruttore">
+     2.2.3 overloading del costruttore
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#esempio-di-allocazione-dinamica-utilizzo-in-una-funzione">
-     2.3.4 Esempio di allocazione dinamica: utilizzo in una funzione
+    <a class="reference internal nav-link" href="#il-costruttore-di-default">
+     2.2.4 Il costruttore di default
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#un-errore-pernicioso">
-     2.3.5 Un errore pernicioso
+    <a class="reference internal nav-link" href="#il-costruttore-di-copia-o-copy-constructor">
+     2.2.5 Il costruttore di copia, o copy constructor
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#allocazione-dinamica-ed-array">
-     2.3.5 Allocazione dinamica ed array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#non-bisogna-perdere-il-puntatore">
-     2.3.6 Non bisogna perdere il puntatore!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trova-l-errore-1">
-     2.3.7 Trova l’errore, 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trova-l-errore-2">
-     2.3.8 Trova l’errore, 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trova-l-errore-3">
-     2.3.9 Trova l’errore, 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trova-l-errore-4">
-     2.3.10 Trova l’errore, 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trova-l-errore-5">
-     2.3.11 Trova l’errore, 5
+    <a class="reference internal nav-link" href="#il-distruttore">
+     2.2.6 Il distruttore
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-ridefinizione-di-operatori-overloading">
+   2.4 La ridefinizione di operatori, overloading
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-operatore-di-assegnazione-per-tipi-predefiniti">
+     2.4.1 L’operatore di assegnazione per tipi predefiniti
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-operatore-di-assegnazione-per-una-classe">
+     2.4.2 L’operatore di assegnazione per una classe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-operatore-di-somma">
+     2.4.3 L’operatore di somma
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definizione-al-di-fuori-della-classe">
+     2.4.4 Definizione al di fuori della classe
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-attributo-const">
+   2.5 L’attributo
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     const
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#esempi-di-utilizzo-di-const-con-i-tipi-predefiniti">
+     2.5.1 Esempi di utilizzo di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       const
+      </span>
+     </code>
+     con i tipi predefiniti
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oggetti-definiti-const">
+     2.5.2 Oggetti definiti
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       const
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classi-e-puntatori">
+   2.6 Classi e puntatori
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   2.4 ESERCIZI
+   2.7 ESERCIZI
   </a>
  </li>
 </ul>
@@ -609,978 +614,694 @@
         
               <div>
                 
-  <div class="section" id="lezione-2-ripasso-di-c-ed-introduzione-al-c-parte-2">
-<h1>Lezione 2: ripasso di <code class="docutils literal notranslate"><span class="pre">C</span></code> ed introduzione al <code class="docutils literal notranslate"><span class="pre">C++</span></code>, parte 2<a class="headerlink" href="#lezione-2-ripasso-di-c-ed-introduzione-al-c-parte-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lezione-2-programmazione-ad-oggetti-le-classi">
+<h1>Lezione 2: programmazione ad oggetti, le classi<a class="headerlink" href="#lezione-2-programmazione-ad-oggetti-le-classi" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#21-variabili-e-puntatori">2.1 Variabili e puntatori</a></p>
+<li><p><a class="reference external" href="#31-la-generalizzazione-del-concetto-di-tipo">2.1 La generalizzazione del concetto di tipo</a></p>
 <ul>
-<li><p><a class="reference external" href="#211-la-gestione-delle-variabili-nel-calcolatore">2.1.1 La gestione delle variabili nel calcolatore</a></p></li>
-<li><p><a class="reference external" href="#212-lo-spazio-occupato-dalle-variabili">2.1.2 Lo spazio occupato dalle variabili</a></p></li>
-<li><p><a class="reference external" href="#213-le-dimensioni-tipiche-di-alcuni-tipi">2.1.3 Le dimensioni tipiche di alcuni tipi</a></p></li>
-<li><p><a class="reference external" href="#214-lindirizzo-di-memoria-di-una-variabile">2.1.4 L’indirizzo di memoria di una variabile</a></p></li>
-<li><p><a class="reference external" href="#215-salvare-lindirizzo-di-memoria-i-puntatori">2.1.5 Salvare l’indirizzo di memoria: i puntatori</a></p></li>
-<li><p><a class="reference external" href="#216-dalla-variabile-al-puntatore-e-viceversa">2.1.6 Dalla variabile al puntatore e viceversa</a></p></li>
-<li><p><a class="reference external" href="#217-puntatori-non-inizializzati">2.1.7 Puntatori non inizializzati</a></p></li>
-<li><p><a class="reference external" href="#218-i-puntatori-sono-variabili">2.1.8 I puntatori sono variabili</a></p></li>
-<li><p><a class="reference external" href="#219-inizializzare-una-variabile-a-partire-da-un-puntatore">2.1.9 Inizializzare una variabile a partire da un puntatore</a></p></li>
-<li><p><a class="reference external" href="#2110-puntatori-di-puntatori">2.1.10 Puntatori di puntatori</a></p></li>
-<li><p><a class="reference external" href="#2111-risalire-la-caterna-di-indirizzi">2.1.11 risalire la caterna di indirizzi</a></p></li>
-<li><p><a class="reference external" href="#2112-puntatori-ed-array">2.1.12 Puntatori ed array</a></p></li>
-<li><p><a class="reference external" href="#2113-gli-elementi-di-un-array">2.1.13 Gli elementi di un array</a></p></li>
-<li><p><a class="reference external" href="#2114-lalgebra-dei-puntatori">2.1.14 L’algebra dei puntatori</a></p></li>
-<li><p><a class="reference external" href="#2115-le-referenze">2.1.15 Le referenze</a></p></li>
-<li><p><a class="reference external" href="#2116-riepilogo-sui-puntatori">2.1.16 Riepilogo sui puntatori</a></p></li>
+<li><p><a class="reference external" href="#311-uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c">2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+<li><p><a class="reference external" href="#312-un-esempio-i-numeri-complessi">2.1.2 Un esempio: i numeri complessi</a></p></li>
+<li><p><a class="reference external" href="#313-se-i-numeri-complessi-fossero-un-tipo-di-c">2.1.3 Se i numeri complessi fossero un tipo di <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#22-il-passaggio-di-parametri-alle-funzioni">2.2 Il passaggio di parametri alle funzioni</a></p>
+<li><p><a class="reference external" href="#32-si-pu%C3%B2-fare-la-classe-dei-numeri-complessi">2.2 Si può fare! La classe dei numeri complessi</a></p>
 <ul>
-<li><p><a class="reference external" href="#221-passaggio-per-valore">2.2.1 Passaggio per valore</a></p></li>
-<li><p><a class="reference external" href="#222-passaggio-per-puntatore">2.2.2 Passaggio per puntatore</a></p></li>
-<li><p><a class="reference external" href="#223-passaggio-per-referenza">2.2.3 Passaggio per referenza</a></p></li>
-<li><p><a class="reference external" href="#224-loutput-di-una-funzione">2.2.4 L’output di una funzione</a></p></li>
-<li><p><a class="reference external" href="#225-come-reagisce-il-compilatore-nel-caso-di-una-referenza">2.2.5 Come reagisce il compilatore nel caso di una referenza</a></p></li>
-<li><p><a class="reference external" href="#226-come-reagisce-il-compilatore-nel-caso-di-un-puntatore">2.2.6 Come reagisce il compilatore nel caso di un puntatore</a></p></li>
+<li><p><a class="reference external" href="#321-la-definizione-della-classe-il-file-complessoh">2.2.1 La definizione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.h</span></code>)</a></p></li>
+<li><p><a class="reference external" href="#322-un-primo-esempio-di-utilizzo">2.2.2 un primo esempio di utilizzo</a></p></li>
+<li><p><a class="reference external" href="#323-i-membri-di-una-classe">2.2.3 I membri di una classe</a></p></li>
+<li><p><a class="reference external" href="#324-i-metodi-di-una-classe">2.2.4 I metodi di una classe</a></p></li>
+<li><p><a class="reference external" href="#325-il-campo-private">2.2.5 Il campo <code class="docutils literal notranslate"><span class="pre">private</span></code></a></p></li>
+<li><p><a class="reference external" href="#326-il-campo-public">2.2.6 Il campo <code class="docutils literal notranslate"><span class="pre">public</span></code></a></p></li>
+<li><p><a class="reference external" href="#327-limplementazione-della-classe-il-file-complessocc">2.2.7 L’implementazione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.cc</span></code>)</a></p></li>
+<li><p><a class="reference external" href="#328-un-membro-implicito-di-ogni-classe-loggetto-stesso">2.2.8 Un membro implicito di ogni classe: l’oggetto stesso</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#23-la-gestione-dinamica-della-memoria">2.3 La gestione dinamica della memoria</a></p>
+<li><p><a class="reference external" href="#33-funzioni-speciali-di-una-classe">2.3 Funzioni speciali di una classe</a></p>
 <ul>
-<li><p><a class="reference external" href="#231-heap-and-stack">2.3.1 Heap and Stack</a></p></li>
-<li><p><a class="reference external" href="#232-allocazione-di-una-variabile-nella-stack">2.3.2 Allocazione di una variabile nella Stack</a></p></li>
-<li><p><a class="reference external" href="#233-allocazione-di-una-variabile-nella-heap">2.3.3 Allocazione di una variabile nella Heap</a></p></li>
-<li><p><a class="reference external" href="#234-esempio-di-allocazione-dinamica-utilizzo-in-una-funzione">2.3.4 Esempio di allocazione dinamica: utilizzo in una funzione</a></p></li>
-<li><p><a class="reference external" href="#235-un-errore-pernicioso">2.3.5 Un errore pernicioso</a></p></li>
-<li><p><a class="reference external" href="#235-allocazione-dinamica-ed-array">2.3.5 Allocazione dinamica ed array</a></p></li>
-<li><p><a class="reference external" href="#236-non-bisogna-perdere-il-puntatore">2.3.6 Non bisogna perdere il puntatore!</a></p></li>
-<li><p><a class="reference external" href="#237-trova-lerrore-1">2.3.7 Trova l’errore, 1</a></p></li>
-<li><p><a class="reference external" href="#238-trova-lerrore-2">2.3.8 Trova l’errore, 2</a></p></li>
-<li><p><a class="reference external" href="#239-trova-lerrore-3">2.3.9 Trova l’errore, 3</a></p></li>
-<li><p><a class="reference external" href="#2310-trova-lerrore-4">2.3.10 Trova l’errore, 4</a></p></li>
-<li><p><a class="reference external" href="#2311-trova-lerrore-5">2.3.11 Trova l’errore, 5</a></p></li>
+<li><p><a class="reference external" href="#331-il-costruttore">2.2.1 Il costruttore</a></p></li>
+<li><p><a class="reference external" href="#332-la-lista-di-inizializzazione">2.2.2 La lista di inizializzazione</a></p></li>
+<li><p><a class="reference external" href="#333-overloading-del-costruttore">2.2.3 overloading del costruttore</a></p></li>
+<li><p><a class="reference external" href="#334-il-costruttore-di-default">2.2.4 Il costruttore di default</a></p></li>
+<li><p><a class="reference external" href="#335-il-costruttore-di-copia-o-copy-constructor">2.2.5 Il costruttore di copia, o copy constructor</a></p></li>
+<li><p><a class="reference external" href="#336-il-distruttore">2.2.6 Il distruttore</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#24-esercizi">2.4 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#34-la-ridefinizione-di-operatori-overloading">2.4 La ridefinizione di operatori, overloading</a></p>
+<ul>
+<li><p><a class="reference external" href="#341-loperatore-di-assegnazione-per-tipi-predefiniti">2.4.1 L’operatore di assegnazione per tipi predefiniti</a></p></li>
+<li><p><a class="reference external" href="#342-loperatore-di-assegnazione-per-una-classe">2.4.2 L’operatore di assegnazione per una classe</a></p></li>
+<li><p><a class="reference external" href="#343-loperatore-di-somma">2.4.3 L’operatore di somma</a></p></li>
+<li><p><a class="reference external" href="#344-definizione-al-di-fuori-della-classe">2.4.4 Definizione al di fuori della classe</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#35-lattributo-const">2.5 L’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code></a></p>
+<ul>
+<li><p><a class="reference external" href="#351-esempi-di-utilizzo-di-const-con-i-tipi-predefiniti">2.5.1 Esempi di utilizzo di <code class="docutils literal notranslate"><span class="pre">const</span></code> con i tipi predefiniti</a></p></li>
+<li><p><a class="reference external" href="#352-oggetti-definiti-const">2.5.2 Oggetti definiti <code class="docutils literal notranslate"><span class="pre">const</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#36-classi-e-puntatori">2.6 Classi e puntatori</a></p></li>
+<li><p><a class="reference external" href="#37-esercizi">2.7 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="variabili-e-puntatori">
-<h2>2.1 Variabili e puntatori<a class="headerlink" href="#variabili-e-puntatori" title="Permalink to this headline">¶</a></h2>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-<div class="section" id="la-gestione-delle-variabili-nel-calcolatore">
-<h3>2.1.1 La gestione delle variabili nel calcolatore<a class="headerlink" href="#la-gestione-delle-variabili-nel-calcolatore" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="la-generalizzazione-del-concetto-di-tipo">
+<h2>2.1 La generalizzazione del concetto di tipo<a class="headerlink" href="#la-generalizzazione-del-concetto-di-tipo" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>In un computer tutto è rappresentato mediante <strong>numeri</strong></p></li>
-<li><p>I numeri sono salvati in <strong>zone di memoria</strong> (Random Access Memory = RAM)</p></li>
-<li><p>Le celle della memoria sono individuate mediante <strong>indirizzi</strong></p></li>
-<li><p>Le <strong>variabili di diversi tipi occupano una o più celle</strong> di memoria (una zona),
-a seconda del tipo</p>
+<li><p>secondo la programmazione <strong>object oriented</strong>,
+le funzionalità di un programma vanno associate all’informazione che processano,</p></li>
+<li><p>così come per ogni tipo predefinito (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, et cetera)
+esistono gli operatori che ne gestiscono i comportamenti</p></li>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> questo paradigma è realizzato attraveso
+il concetto di <strong>classe, che è una generalizzazione del tipo</strong>,
+mentre gli <strong>oggetti sono la generalizzazione delle variabili</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c">
+<h3>2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in <code class="docutils literal notranslate"><span class="pre">C++</span></code><a class="headerlink" href="#uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>un qualunque tipo predefinito è caratterizzato da una serie di <strong>proprietà</strong>:</p></li>
+<li><p>funzioni per la <strong>gestione della memoria</strong>:</p>
 <ul>
-<li><p>Il calcolatore è in grado di <strong>interpretare correttamente il contenuto</strong> di una zona di memoria,
-se conosce l’indirizzo della prima cella ed il tipo salvato</p></li>
+<li><p>allocazione dello spazio nella RAM quando una variabile viene definita</p></li>
+<li><p>liberazione dello spazio RAM quando una variabile cessa di esistere</p></li>
 </ul>
 </li>
+<li><p><strong>operatori</strong> per maneggiare le variabili</p></li>
 </ul>
-<p><img alt="cella" src="../_images/celle.png" /></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="lo-spazio-occupato-dalle-variabili">
-<h3>2.1.2 Lo spazio occupato dalle variabili<a class="headerlink" href="#lo-spazio-occupato-dalle-variabili" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="un-esempio-i-numeri-complessi">
+<h3>2.1.2 Un esempio: i numeri complessi<a class="headerlink" href="#un-esempio-i-numeri-complessi" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>ogni tipo ha una <strong>dimensione assegnata</strong> nella RAM</p></li>
-<li><p>per i tipi numerici interi, una dimensione assegnata significa che <strong>i valori che la variabile può assumere
-sono limitati</strong></p></li>
-<li><p>i tipi in virgola mobile (<code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>) non hanno limitazioni in valore, ma in precisione,
-quindi il tipo <code class="docutils literal notranslate"><span class="pre">double</span></code>, occupando più celle di memoria, è più preciso del tipo <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
-<li><p>per conoscere la dimensione occupata da un tipo, si può utilizzare la funzone <code class="docutils literal notranslate"><span class="pre">sizeof</span> <span class="pre">()</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Dimensione di un char : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w">  </span>
-<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; byte&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<li><p><strong>costrutti più sofisticati</strong> dei tipi predefiniti non godono di queste proprietà</p></li>
+<li><p>un numero complesso è rappresentato da due numeri reali,
+che un <code class="docutils literal notranslate"><span class="pre">C++</span></code> si possono scrivere come:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">num_parteReale</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">num_parteImmaginaria</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>senza fare uso di classi, le operazioni tipiche dei numeri complessi
+vanno <strong>implementate sotto forma di funzioni</strong>:</p>
+<ul class="simple">
+<li><p>calcolo del modulo e della fase</p></li>
+<li><p>somma di numeri complessi</p></li>
+<li><p>moltiplicazione per un numero reale</p></li>
+</ul>
+</li>
+<li><p>ad esempio:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">modulo</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">imag</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">real</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">imag</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="le-dimensioni-tipiche-di-alcuni-tipi">
-<h3>2.1.3 Le dimensioni tipiche di alcuni tipi<a class="headerlink" href="#le-dimensioni-tipiche-di-alcuni-tipi" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="se-i-numeri-complessi-fossero-un-tipo-di-c">
+<h3>2.1.3 Se i numeri complessi fossero un tipo di <code class="docutils literal notranslate"><span class="pre">C++</span></code><a class="headerlink" href="#se-i-numeri-complessi-fossero-un-tipo-di-c" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>a seconda dell’architettura del calcolatore che si sta utilizzando,
-le <strong>dimensioni di un tipo possono cambiare</strong></p></li>
-<li><p>nella tabella che segue,
-sono indicati <strong>valori tipici</strong> per le dimensioni dei tipi comunemente utilizzati</p></li>
-<li><p>esistono <strong>type modifier</strong> che cambiano le caratteristiche di un tipo
-(<code class="docutils literal notranslate"><span class="pre">signed</span></code>, <code class="docutils literal notranslate"><span class="pre">unsigned</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>)
-che ne modificano la dimensione o l’intervallo di copertura</p></li>
+<li><p>le operazioni per gestire i numeri complessi sono
+praticamente <strong>associate soltanto a loro</strong></p></li>
+<li><p>risulterebbe molto più comodo se fosse possibile
+<strong>definire un numero complesso</strong> e associare ad esso le operazioni che lo riguardano:</p>
+<ul>
+<li><p>migliore <strong>gestione del programma</strong></p></li>
+<li><p><strong>proprietà</strong> simili a quelle dei tipi predefiniti</p></li>
+<li><p>mogliore <strong>solidità del design del codice sorgente</strong>,
+perché migliora la consistenza del codice
+e le possibilità di controllo di errori logici</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="si-puo-fare-la-classe-dei-numeri-complessi">
+<h2>2.2 Si può fare! La classe dei numeri complessi<a class="headerlink" href="#si-puo-fare-la-classe-dei-numeri-complessi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>una classe è di fatto la <strong>definizione di un nuovo tipo</strong>:
+il caso ideale per la costruzione di una libreria,
+con un file header (<code class="docutils literal notranslate"><span class="pre">.h</span></code>) ed uno di implementazione (<code class="docutils literal notranslate"><span class="pre">.cc</span></code>)</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-definizione-della-classe-il-file-complesso-h">
+<h3>2.2.1 La definizione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.h</span></code>)<a class="headerlink" href="#la-definizione-della-classe-il-file-complesso-h" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>ecco come si definisce in <code class="docutils literal notranslate"><span class="pre">C++</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">complesso</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"> </span>
+<span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="o">~</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">modulo</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">      </span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">fase</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">      </span>
+
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
 </ul>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>tipo</p></th>
-<th class="text-align:center head"><p>dimensione (in Byte)</p></th>
-<th class="text-align:center head"><p>intervallo</p></th>
+<tr class="row-odd"><th class="head"><p>attenzione</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>short int</p></td>
-<td class="text-align:center"><p>2</p></td>
-<td class="text-align:center"><p>-32,768 to 32,767</p></td>
-</tr>
-<tr class="row-odd"><td><p>unsigned short int</p></td>
-<td class="text-align:center"><p>2</p></td>
-<td class="text-align:center"><p>0 to 65,535</p></td>
-</tr>
-<tr class="row-even"><td><p>unsigned int</p></td>
-<td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>0 to 4,294,967,295</p></td>
-</tr>
-<tr class="row-odd"><td><p>int</p></td>
-<td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>-2,147,483,648 to 2,147,483,647</p></td>
-</tr>
-<tr class="row-even"><td><p>long int</p></td>
-<td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>-2,147,483,648 to 2,147,483,647</p></td>
-</tr>
-<tr class="row-odd"><td><p>unsigned long int</p></td>
-<td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>0 to 4,294,967,295</p></td>
-</tr>
-<tr class="row-even"><td><p>long long int</p></td>
-<td class="text-align:center"><p>8</p></td>
-<td class="text-align:center"><p>-(2^63) to (2^63)-1</p></td>
-</tr>
-<tr class="row-odd"><td><p>unsigned long long int</p></td>
-<td class="text-align:center"><p>8</p></td>
-<td class="text-align:center"><p>0 to 18,446,744,073,709,551,615</p></td>
-</tr>
-<tr class="row-even"><td><p>signed char</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-128 to 127</p></td>
-</tr>
-<tr class="row-odd"><td><p>unsigned char</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>0 to 255</p></td>
-</tr>
-<tr class="row-even"><td><p>float</p></td>
-<td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>double</p></td>
-<td class="text-align:center"><p>8</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-even"><td><p>long double</p></td>
-<td class="text-align:center"><p>12</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>wchar_t</p></td>
-<td class="text-align:center"><p>2 or 4</p></td>
-<td class="text-align:center"><p>1 wide character</p></td>
-</tr>
 </tbody>
 </table>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="l-indirizzo-di-memoria-di-una-variabile">
-<h3>2.1.4 L’indirizzo di memoria di una variabile<a class="headerlink" href="#l-indirizzo-di-memoria-di-una-variabile" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>per ogni variabile, in <code class="docutils literal notranslate"><span class="pre">C++</span></code> si conosce il suo <strong>valore</strong> tramite il suo nome</p></li>
-<li><p>si può anche conoscere il suo indirizzo di memoria,
-tramite l’operatore <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;valore:    &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;indirizzo: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="salvare-l-indirizzo-di-memoria-i-puntatori">
-<h3>2.1.5 Salvare l’indirizzo di memoria: i puntatori<a class="headerlink" href="#salvare-l-indirizzo-di-memoria-i-puntatori" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>l’indirizzo di una cella di memoria è un numero,
-quindi può essere a sua volta <strong>salvato in una variabile</strong></p></li>
-<li><p>variabili che contengono indirizzi alla prima cella di memoria di altre variabili
-sono chiamate <strong>puntatori</strong></p></li>
-<li><p>siccome rivestono un ruolo fondamentale nella programmazione,
-si <strong>dichiarano in modo specifico</strong>, con la sintassi <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">*</span> <span class="pre">var</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">puntatore_ad_intero</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>questa dichiarazione fa sì che <strong>il programma sappia come accedere al contenuto</strong>
-della cella di memoria che sta all’indirizzo salvato in <code class="docutils literal notranslate"><span class="pre">puntatore_ad_intero</span></code>,
-perché sa di che tipo si tratta</p></li>
-</ul>
-<p><img alt="cella" src="../_images/puntatore.png" /></p>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="dalla-variabile-al-puntatore-e-viceversa">
-<h3>2.1.6 Dalla variabile al puntatore e viceversa<a class="headerlink" href="#dalla-variabile-al-puntatore-e-viceversa" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>il simbolo <code class="docutils literal notranslate"><span class="pre">*</span></code>, oltre a comparire nella dichiarazione di un puntatore,
-rappresenta anche l’opertore che estrae il valore della variabile contenuta
-nell’indirizzo di memoria puntato:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">puntatore_ad_intero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;valore   : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;indirizzo: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;puntatore: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">puntatore_ad_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;valore   : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">puntatore_ad_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>produce come output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">valore</span>   <span class="p">:</span> <span class="mi">5</span>
-<span class="n">indirizzo</span><span class="p">:</span> <span class="mh">0x7ffeeedfa44c</span>
-<span class="n">puntatore</span><span class="p">:</span> <span class="mh">0x7ffeeedfa44c</span>
-<span class="n">valore</span>   <span class="p">:</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="puntatori-non-inizializzati">
-<h3>2.1.7 Puntatori non inizializzati<a class="headerlink" href="#puntatori-non-inizializzati" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>un puntatore definito e non inizializzato non punta ad alcun indirizzo di memoria:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">puntatore_ad_intero</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;puntatore: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">puntatore_ad_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>produce come ouptut:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mh">0x0</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="i-puntatori-sono-variabili">
-<h3>2.1.8 I puntatori sono variabili<a class="headerlink" href="#i-puntatori-sono-variabili" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>un puntatore è una variabile,
-dunque può <strong>cambiare valore</strong> anche dopo essere stato inizializzato:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Ora ptr punta a var: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ptr</span><span class="w"></span>
-<span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ed il valore a cui punta vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-</pre></div>
-</div>
-<p>produce come output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ora</span> <span class="n">ptr</span> <span class="n">punta</span> <span class="n">a</span> <span class="n">var</span><span class="p">:</span> <span class="mh">0x7ffeee47f43c</span> <span class="n">ed</span> <span class="n">il</span> <span class="n">valore</span> <span class="n">a</span> <span class="n">cui</span> <span class="n">punta</span> <span class="n">vale</span><span class="p">:</span> <span class="mi">137</span>
-</pre></div>
-</div>
-</li>
-<li><p>se un puntatore viene inizializzato all’indirizzo di una variabile,
-si può <strong>accedere alla variabile tramite il puntatore</strong>;
-in questo caso viene modificato <code class="docutils literal notranslate"><span class="pre">*ptr</span></code> e visualizzato il valore di <code class="docutils literal notranslate"><span class="pre">var</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;var ora vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="inizializzare-una-variabile-a-partire-da-un-puntatore">
-<h3>2.1.9 Inizializzare una variabile a partire da un puntatore<a class="headerlink" href="#inizializzare-una-variabile-a-partire-da-un-puntatore" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>una variabile può essere inizializzata con il valore presente
-all’indirizzo contenuto in un puntatore:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">pippo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;La variabile pippo vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pippo</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
-</pre></div>
-</div>
-<p>produce come output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">La</span> <span class="n">variabile</span> <span class="n">pippo</span> <span class="n">vale</span><span class="p">:</span> <span class="mi">100</span>
-</pre></div>
-</div>
-<ul>
-<li><p>a questo punto, le modifiche a <code class="docutils literal notranslate"><span class="pre">*ptr</span></code> effettuate dopo l’inzializzazione
-<strong>non hanno effetto su <code class="docutils literal notranslate"><span class="pre">pippo</span></code></strong>, perché quest’ultimo è un’altra variabile
-(quindi con il contenuto salvato in un’altra zona di memoria):</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">)</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;var ora vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; e pippo vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pippo</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
-</pre></div>
-</div>
-<p>produce come output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">ora</span> <span class="n">vale</span><span class="p">:</span> <span class="mi">101</span> <span class="n">e</span> <span class="n">pippo</span> <span class="n">vale</span><span class="p">:</span> <span class="mi">100</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="puntatori-di-puntatori">
-<h3>2.1.10 Puntatori di puntatori<a class="headerlink" href="#puntatori-di-puntatori" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>se un puntatore è una variabile,
-ha un <strong>contenuto ed un indirizzo di memoria</strong></p></li>
-<li><p>quindi, si può costruire un puntatore al suo indirizzo,
-cioè un puntatore a puntatore</p></li>
+<li><p>dopo la chiusura della parentesi graffa <strong>c’è un punto e virgola! <code class="docutils literal notranslate"><span class="pre">}</span> <span class="pre">;</span></code></strong></p></li>
 </ul>
-<p><img alt="ptrptr" src="../_images/puntatore_a_puntatore.png" /></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="risalire-la-caterna-di-indirizzi">
-<h3>2.1.11 risalire la caterna di indirizzi<a class="headerlink" href="#risalire-la-caterna-di-indirizzi" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="un-primo-esempio-di-utilizzo">
+<h3>2.2.2 un primo esempio di utilizzo<a class="headerlink" href="#un-primo-esempio-di-utilizzo" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>tramite l’operatore <code class="docutils literal notranslate"><span class="pre">*</span></code> si può arrivare fino al valore della variabile iniziale:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">137</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">ptrAptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;var    : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ptr    : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; `--&gt; *ptr: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ptrAptr: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ptrAptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; `--&gt; *ptrAptr: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">ptrAptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;        `--&gt;**ptrAptr: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">**</span><span class="n">ptrAptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>produce come output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>var    : 137
-ptr    : 0x7ffee7f0e43c
- `--&gt; *ptr: 137
-ptrAptr: 0x7ffee7f0e430
- `--&gt; *ptrAptr: 0x7ffee7f0e43c
-        `--&gt;**ptrAptr: 137
+<li><p>in un qualunque punto del codice sorgente,
+si può quindi creare un numero complesso:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="nf">numero_complesso_1</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">complesso</span><span class="w"> </span><span class="nf">numero_complesso_2</span><span class="w"> </span><span class="p">(</span><span class="mf">2.</span><span class="p">,</span><span class="w"> </span><span class="mf">4.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
+<li><p>in questo esempio <code class="docutils literal notranslate"><span class="pre">complesso</span></code> è la classe (il nuovo tipo),
+mentre <code class="docutils literal notranslate"><span class="pre">numero_complesso_1</span></code> e <code class="docutils literal notranslate"><span class="pre">numero_complesso_2</span></code>
+sono due <strong>oggetti</strong></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="puntatori-ed-array">
-<h3>2.1.12 Puntatori ed array<a class="headerlink" href="#puntatori-ed-array" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="i-membri-di-una-classe">
+<h3>2.2.3 I membri di una classe<a class="headerlink" href="#i-membri-di-una-classe" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Quando si definisce un array, suo nome (senza parentesi graffe)
-contiene <strong>l’indirizzo di memoria del primo elemento</strong> dell’array:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">vec</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>produce come output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mh">0x7ffeef024440</span>
+<li><p>le variabili definite all’interno della definizione della classe
+sono dette <strong>membri della classe</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
+<li><p>ogni volta che viene creato un oggetto di una classe,
+viene creata una nuova istanza dei membri della classe
+associata a quell’oggetto,
+quindi <strong>ogni oggetto ha le proprie variabili membro</strong> corrispondenti</p></li>
+<li><p>i membri possono essere di tipo predefinito,
+oppure <strong>a loro volta oggetti</strong> di una classe</p></li>
+<li><p>è buona regola di programmazione <strong>identificare i membri in modo simbolico</strong>,
+ad esempio con il prefisso <code class="docutils literal notranslate"><span class="pre">m_</span></code></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="gli-elementi-di-un-array">
-<h3>2.1.13 Gli elementi di un array<a class="headerlink" href="#gli-elementi-di-un-array" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="i-metodi-di-una-classe">
+<h3>2.2.4 I metodi di una classe<a class="headerlink" href="#i-metodi-di-una-classe" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>se <code class="docutils literal notranslate"><span class="pre">vec</span></code> è il puntatore al primo elemento dell’array,
-<strong><code class="docutils literal notranslate"><span class="pre">*vec</span></code> è il suo contenuto</strong>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; == &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">vec</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<li><p>le funzioni che sono definite all’interno di una classe sono chiamate <strong>metodi</strong> della classe</p></li>
+<li><p>hanno automaticamente <strong>accesso ai membri</strong> dell’oggetto sul quale operano
+e si invocano su un oggetto utilizzando il nome dell’oggetto
+seguito da un punto e dal nome del metodo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">numero_complesso_1</span><span class="p">.</span><span class="n">modulo</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
-<li><p>si può accedere agli <strong>elementi successivi dell’array</strong> tramite l’operatore <code class="docutils literal notranslate"><span class="pre">*</span></code></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; == &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">vec</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<li><p>i metodi <strong>possono avere argomenti</strong>,
+ad esempio uno di essi potrebbe moltiplicare il numero complesso
+per un numero reale:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">numero_complesso_1</span><span class="p">.</span><span class="n">dilata</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">fattore_di_scala</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 </ul>
-<p><img alt="cella" src="../_images/array.png" /></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="l-algebra-dei-puntatori">
-<h3>2.1.14 L’algebra dei puntatori<a class="headerlink" href="#l-algebra-dei-puntatori" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="il-campo-private">
+<h3>2.2.5 Il campo <code class="docutils literal notranslate"><span class="pre">private</span></code><a class="headerlink" href="#il-campo-private" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>l’<strong>algebra dei puntatori</strong> con gli operatori <code class="docutils literal notranslate"><span class="pre">+</span></code> e <code class="docutils literal notranslate"><span class="pre">-</span></code> funziona
-perché il puntatore è di un tipo definito,
-quindi il programma sa di quante celle di memoria muoversi per raggiungere
-la zona di memoria successiva</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">*(vec+1)</span></code> non è la cella di memoria successiva a quella
-indicizzata da <code class="docutils literal notranslate"><span class="pre">vec</span></code>,
-ma quella che dista da <code class="docutils literal notranslate"><span class="pre">vec</span></code> la dimensione di un intero</p></li>
-</ul>
-</li>
-<li><p>le due sintassi <code class="docutils literal notranslate"><span class="pre">vec[i]</span></code> e <code class="docutils literal notranslate"><span class="pre">*(vec+i)</span></code> significano la stessa cosa,
-cioè sono due rappresentazioni della medesima operazione fatta dal calcolatore</p></li>
+<li><p>i metodi di una classe <strong>fungono da interfaccia</strong> fra i membri di un oggetto
+ed il codice sorgente dove l’oggetto è definito</p></li>
+<li><p>è talvolta auspicabile che i membri possano essere modificati
+<strong>soltanto attraverso i metodi</strong>,
+per evitare che subiscano operazioni
+che compromettano la funzionalità dell’oggetto nel suo insieme</p></li>
+<li><p>tutti i metodi ed i membri definiti <strong>dopo la parola chiave <code class="docutils literal notranslate"><span class="pre">private</span></code></strong>
+sono accessibili solo per i metodi della loro classe</p></li>
+<li><p>se non si indica nulla, tutto il contenuto di una classe è <code class="docutils literal notranslate"><span class="pre">private</span></code></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="le-referenze">
-<h3>2.1.15 Le referenze<a class="headerlink" href="#le-referenze" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="il-campo-public">
+<h3>2.2.6 Il campo <code class="docutils literal notranslate"><span class="pre">public</span></code><a class="headerlink" href="#il-campo-public" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Le referenze sono <strong>alias per i nomi delle variabili</strong>.
-In termini di contenuti, la variabile o la sua referenza sono la stessa cosa:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">pi_greco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.1415</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi_greco</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ref fornisce un alias di pi_greco: &quot;</span><span class="w"></span>
-<span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-
-<span class="n">pi_greco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.141592</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ref fornisce un alias di pi_greco: &quot;</span><span class="w"></span>
-<span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<li><p>i metodi ed i membri definiti <strong>dopo la parola chiave <code class="docutils literal notranslate"><span class="pre">public</span></code></strong>
+sono accessibili nel codice sorgente al di fuori della classe
+(ad esempio nella funzione <code class="docutils literal notranslate"><span class="pre">main</span></code>)
+tramite la sintassi del <code class="docutils literal notranslate"><span class="pre">.</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">numero_complesso_1</span><span class="p">.</span><span class="n">modulo</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
-<li><p>di conseguenza, una referenza si crea <strong>soltanto a partire da una variabile esistente</strong></p></li>
-<li><p>allo stesso tempo, si <strong>comporta come un puntatore</strong>,
-cioè dà accesso alle variabili direttamente tramite l’indirizzo di memoria,
-piuttosto che il suo contenuto</p></li>
+<li><p>solitamente, i <strong>membri</strong> di una classe sono <code class="docutils literal notranslate"><span class="pre">private</span></code>,
+mentre i suoi <strong>metodi</strong> sono <code class="docutils literal notranslate"><span class="pre">public</span></code></p></li>
+<li><p>se si definisce una classe con l’identificativo <code class="docutils literal notranslate"><span class="pre">struct</span></code> invece di <code class="docutils literal notranslate"><span class="pre">class</span></code>,
+se non si indica nulla tutto il contenuto della classe è <code class="docutils literal notranslate"><span class="pre">public</span></code></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="riepilogo-sui-puntatori">
-<h3>2.1.16 Riepilogo sui puntatori<a class="headerlink" href="#riepilogo-sui-puntatori" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="l-implementazione-della-classe-il-file-complesso-cc">
+<h3>2.2.7 L’implementazione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.cc</span></code>)<a class="headerlink" href="#l-implementazione-della-classe-il-file-complesso-cc" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>i metodi di una classe possono essere <strong>implementati</strong>
+direttamente nello scope di definizione</p></li>
+<li><p>solitamente, tuttavia, questo succede <strong>in un file separato</strong>,
+dove vanno associati alla classe che li contiene, ad esempio:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;complesso.h&quot;</span><span class="cp"></span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">complesso::modulo</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="w"> </span><span class="p">(</span><span class="n">m_real</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w">    </span>
+</pre></div>
+</div>
+</li>
+<li><p>il nome di ogni metodo è preceduto dal nome della classe,
+separato dall’operatore di scope resolution <code class="docutils literal notranslate"><span class="pre">::</span></code></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="un-membro-implicito-di-ogni-classe-l-oggetto-stesso">
+<h3>2.2.8 Un membro implicito di ogni classe: l’oggetto stesso<a class="headerlink" href="#un-membro-implicito-di-ogni-classe-l-oggetto-stesso" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>per ogni classe,
+è sempre definito il <strong>puntatore all’oggetto corrente</strong>,
+rappresentato dal simbolo <strong><code class="docutils literal notranslate"><span class="pre">this</span></code></strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+<span class="nf">complesso::stampami</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_real</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; + &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_imag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;i&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>il <code class="docutils literal notranslate"><span class="pre">.</span></code> che si usa per accedere a membri e metodi di un oggetto
+viene <strong>sostituito da <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> per i puntatori ad oggetti</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="funzioni-speciali-di-una-classe">
+<h2>2.3 Funzioni speciali di una classe<a class="headerlink" href="#funzioni-speciali-di-una-classe" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">C++</span></code> permette di accedere alla memoria in due modi:</p>
+<li><p>oltre a quelle che servono per maneggiare le variabili,
+ogni tipo predefinito possiede funzioni dedicate alla
+<strong>creazione ed alla distruzione delle variabili</strong></p></li>
+<li><p>in una classe,
+queste funzioni <strong>vanno implementate</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="il-costruttore">
+<h3>2.2.1 Il costruttore<a class="headerlink" href="#il-costruttore" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>tramite le <strong>variabili</strong>, che rappresentano il valore contenuto nella memoria</p></li>
-<li><p>tramite i <strong>puntatori</strong>, che rappresentano l’indirizzo fisico dove i valori sono salvati</p></li>
+<li><p><strong>crea l’oggetto</strong> al momento della sua definizione,
+inizializzando i membri dell’oggetto:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>le variabili di <strong>tipi predefiniti</strong> vengono create dal costruttore corrispondente</p></li>
+<li><p>oggetti di altre classi vengono <strong>creati dal costruttore corrispondente</strong></p></li>
+<li><p>il costruttore <strong>non ha tipo di ritorno</strong></p></li>
+<li><p>nello scope del costruttore si possono eseguire istruzioni
+(in questo esempio c’è una stampa a schermo, che in realtà è scomodo:
+nessuno vuole un programma troppo petulante)</p></li>
+<li><p>questo è un buon posto dove <strong>allocare dinamicamente la memoria</strong>, se necessario</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-lista-di-inizializzazione">
+<h3>2.2.2 La lista di inizializzazione<a class="headerlink" href="#la-lista-di-inizializzazione" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>tutti i membri di una classe vengono creati <strong>prima dell’inizio</strong> dello scope del costruttore</p></li>
+<li><p>la sequenza:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"></span>
+<span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>è detta <strong>lista di inizializzazione</strong></p>
+</li>
+<li><p>ottimizza l’uso della memoria: inizializza ciascun membro al valore fra parentesi
+al momento della creazione del membro</p></li>
+<li><p>l’<strong>ordine delle variabili</strong> deve essere il medesimo della loro definizione
+all’interno della classe</p></li>
+<li><p>se non si mettesse la lista di inizializzazione,
+bisognerebbe inizializzare le variabili nello scope del costruttore,
+spendendo più tempo di esecuzione:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="overloading-del-costruttore">
+<h3>2.2.3 overloading del costruttore<a class="headerlink" href="#overloading-del-costruttore" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>una classe può possedere <strong>più di un costruttore</strong>,
+a patto che ciascuno prenda argomenti diversi</p></li>
+<li><p>ad esempio, si può definire un costruttore che abbia come input soltanto
+un numero reale:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-costruttore-di-default">
+<h3>2.2.4 Il costruttore di default<a class="headerlink" href="#il-costruttore-di-default" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>un costruttore senza argomenti di input è chiamato <strong>costruttore di default</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>se una classe non ha il costruttore,
+il compilaore spesso <strong>definisce un costruttore di default</strong> vuoto</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-costruttore-di-copia-o-copy-constructor">
+<h3>2.2.5 Il costruttore di copia, o copy constructor<a class="headerlink" href="#il-costruttore-di-copia-o-copy-constructor" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>è naturale immaginare di costruire un oggetto nuovo
+copiando il contenuto di uno esistente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="n">orig</span><span class="p">.</span><span class="n">m_imag</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>una classe ha sempre accesso a tutti i membri
+di tutti gli oggetti di quella classe
+se vengono passati come argomenti di una funzione,
+quindi <strong>il copy constructor ha accesso ai membri <code class="docutils literal notranslate"><span class="pre">private</span></code>
+dell’oggetto <code class="docutils literal notranslate"><span class="pre">orig</span></code></strong></p>
+<ul class="simple">
+<li><p>esiste una eccezione a questa regola,
+che vedremo quando parleremo di ereditarietà</p></li>
 </ul>
 </li>
-<li><p>fornisce inoltre il modo di passare da una rappresentazione all’altra:</p>
-<ul>
-<li><p>l’<strong>operatore *</strong> permette di passare da puntatore a variabile</p></li>
-<li><p>l’<strong>operatore &amp;</strong> permette di passare da variabile a puntatore</p></li>
+<li><p>l’oggetto <code class="docutils literal notranslate"><span class="pre">orig</span></code> viene passato:</p>
+<ul class="simple">
+<li><p><strong>per referenza</strong> per ragioni di velocità</p></li>
+<li><p><strong>con l’attributo const</strong> per garantire che non venga modificato</p></li>
 </ul>
 </li>
-<li><p>le <strong>referenze</strong> sono un alias delle variabili,
-che in realtà maneggiano l’indirizzo di memoria invece del valore della variabile</p></li>
+<li><p>anche in questo caso, <strong>non c’è tipo di ritorno</strong></p></li>
 </ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-distruttore">
+<h3>2.2.6 Il distruttore<a class="headerlink" href="#il-distruttore" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>al termine della vita di un oggetto, cioè al momento in cui va out of scope,
+la memoria che occupa va liberata</p></li>
+<li><p>i suoi membri di tipi predefiniti del <code class="docutils literal notranslate"><span class="pre">C++</span></code> allocati automaticamente
+vengono distrutti automaticamente</p></li>
+<li><p>la memoria allocata dinamicamente va ripulita esplicitamente:
+per fare questo, esiste una funzione dedicata, chiamata <strong>distruttore</strong>,
+dove tutti i <strong><code class="docutils literal notranslate"><span class="pre">delete</span></code></strong> necessari possono essere chiamati</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::~</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// qui va ripulita la memoria allocata dinamicamente</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>eventuali <strong>membri che siano oggetti di altre classi</strong> saranno distrutti dal distruttore corrispondente</p></li>
+<li><p>nel distruttore si possono anche implementare comportamenti aggiuntivi,
+come ad esempio il salvataggio automatico dell’informazione</p></li>
+<li><p>anche il distruttore <strong>non ha tipo di ritorno</strong></p></li>
+<li><p>se non viene implementato,
+<strong>il compilatore crea automaticamnete</strong> un distruttore vuoto</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="la-ridefinizione-di-operatori-overloading">
+<h2>2.4 La ridefinizione di operatori, overloading<a class="headerlink" href="#la-ridefinizione-di-operatori-overloading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>per i tipi predefiniti di <code class="docutils literal notranslate"><span class="pre">C++</span></code> le operazioni matematiche fondamentali
+sono effettuate con i simboli algebrici noti: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">=</span></code> ….</p></li>
+<li><p>si può definire il comportamento di queste funzioni anche per gli oggetti
+delle classi
+(come sempre, si distinguono dagli altri per i diversi tipi in ingresso)</p></li>
+<li><p>ecco due esempi notevoli</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="l-operatore-di-assegnazione-per-tipi-predefiniti">
+<h3>2.4.1 L’operatore di assegnazione per tipi predefiniti<a class="headerlink" href="#l-operatore-di-assegnazione-per-tipi-predefiniti" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>una operazione solitamente fattibile con tipi predefiniti è
+l’assegnazione a partire da una altra variabile esistente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>in questo caso, il <code class="docutils literal notranslate"><span class="pre">C++</span></code> prima costruisce la variabile <code class="docutils literal notranslate"><span class="pre">numero</span></code> e le assegna un valore in memoria,
+successivamente le fa assumere il valore di <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-operatore-di-assegnazione-per-una-classe">
+<h3>2.4.2 L’operatore di assegnazione per una classe<a class="headerlink" href="#l-operatore-di-assegnazione-per-una-classe" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>il comportamento dell’operatore di assegnazione <strong>va definito</strong> per una classe</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span>
+<span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+<ul>
+<li><p>la <strong>variabile in ingresso</strong> è una referenza costante per garantire velocità e non modificabilità</p></li>
+<li><p>la <strong>variabile in uscita</strong> è una referenza all’oggetto,
+per permettere la seguente sintassi:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="n">numero_complesso_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>non viene restituita una copia dell’oggetto corrente per <strong>risparmiare tempo</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="l-operatore-di-somma">
+<h3>2.4.3 L’operatore di somma<a class="headerlink" href="#l-operatore-di-somma" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>vogliamo che l’operazione di somma fra numeri complessi si possa scrivere come:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="n">numero_complesso_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero_complesso_2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> si può ottenere defintendo un metodo della classe complesso
+chiamato <code class="docutils literal notranslate"><span class="pre">operator+</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"></span>
+<span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="nf">somma</span><span class="w"> </span><span class="p">(</span><span class="n">m_real</span><span class="p">,</span><span class="w"> </span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">somma</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">somma</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">addendo</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">somma</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">somma</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">addendo</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">somma</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>la <strong>variabile in ingresso</strong> è una referenza costante per garantire velocità e non modificabilità</p></li>
+<li><p>la <strong>variabile in uscita</strong> è un oggetto nuovo</p></li>
+</ul>
+</li>
+<li><p>l’<code class="docutils literal notranslate"><span class="pre">operator+</span></code> ha in questo caso un solo argomento,
+perché uno dei due addendi è l’oggetto sul quale è chiamato.
+Infatti, le due scritture seguenti sono equivalenti:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="n">numero_complesso_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero_complesso_2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">complesso</span><span class="w"> </span><span class="n">numero_complesso_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero_complesso_2</span><span class="p">.</span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">numero_complesso_2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="definizione-al-di-fuori-della-classe">
+<h3>2.4.4 Definizione al di fuori della classe<a class="headerlink" href="#definizione-al-di-fuori-della-classe" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>la funzione <code class="docutils literal notranslate"><span class="pre">operator+</span></code> può essere definita anche <strong>al di fuori della classe</strong></p>
+<ul class="simple">
+<li><p>in questo caso ha due argomenti, che sono entrambi gli addendi</p></li>
+</ul>
+</li>
+<li><p>in questo caso, tuttavia, nella funzione i membri privati degli oggetti <strong>non sono accessibili</strong></p>
+<ul>
+<li><p>bisogna definire <strong>metodi pubblici di interfaccia</strong> per accedere al valore dei membri</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span>
+<span class="nf">complesso::parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>può essere comodo per definire operazioni <strong>fra oggetti eterogenei</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">uno</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">due</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uno</span><span class="p">.</span><span class="n">parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">due</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uno</span><span class="p">.</span><span class="n">parte_immaginaria</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="nf">somma</span><span class="w"> </span><span class="p">(</span><span class="n">real</span><span class="p">,</span><span class="w"> </span><span class="n">imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">somma</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>essendo una funzione <strong>esterna alla classe</strong>,
+in questo caso non è presente la denominazione di scope <code class="docutils literal notranslate"><span class="pre">complesso::</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="l-attributo-const">
+<h2>2.5 L’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#l-attributo-const" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>la parola chiave <code class="docutils literal notranslate"><span class="pre">const</span></code> indica il fatto che <strong>non sia permesso
+cambiare il valore</strong> contenuto in una variabile o in un oggetto</p></li>
+<li><p>const si <strong>applica</strong> al primo attributo alla sua sinistra,
+se non c’è nulla si applica al primo attributo alla sua destra</p>
+<ul>
+<li><p>a seconda della sua posizione, ha effetti differenti</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="esempi-di-utilizzo-di-const-con-i-tipi-predefiniti">
+<h3>2.5.1 Esempi di utilizzo di <code class="docutils literal notranslate"><span class="pre">const</span></code> con i tipi predefiniti<a class="headerlink" href="#esempi-di-utilizzo-di-const-con-i-tipi-predefiniti" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>azione</p></th>
+<tr class="row-odd"><th class="head"><p>sintassi</p></th>
 <th class="head"><p>effetto</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">var</span> <span class="pre">=</span> <span class="pre">137</span> <span class="pre">;</span></code></p></td>
-<td><p>Creazione variabile int</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">C1</span> <span class="pre">=</span> <span class="pre">10</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C1</span></code> è un intero il cui valore è costante</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int*</span> <span class="pre">ptr</span> <span class="pre">;</span></code></p></td>
-<td><p>Creazione variabile puntatore a int</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">const</span> <span class="pre">C1</span> <span class="pre">=</span> <span class="pre">10</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C1</span></code> è un intero il cui valore è costante</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ptr</span> <span class="pre">=</span> <span class="pre">&amp;var</span> <span class="pre">;</span></code></p></td>
-<td><p>Indirizzo di memoria di var</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">*</span> <span class="pre">C2</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C2</span></code> è un puntatore ad un <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span></code>, cioè un puntatore ad un intero costante</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">new_var</span> <span class="pre">=</span> <span class="pre">*</span> <span class="pre">ptr</span> <span class="pre">;</span></code></p></td>
-<td><p>Contenuto della cella puntata da ptr</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">C2</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C2</span></code> è un puntatore ad un <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span></code>, cioè un puntatore ad un intero costante</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int&amp;</span> <span class="pre">ref</span> <span class="pre">=</span> <span class="pre">var</span> <span class="pre">;</span></code></p></td>
-<td><p>Creazione di un alias di var</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">*</span> <span class="pre">const</span> <span class="pre">C3</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C3</span></code> è un puntatore costante ad un intero variabile</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">const</span> <span class="pre">*</span> <span class="pre">const</span> <span class="pre">C4</span> <span class="pre">;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C4</span></code> è un puntatore costante ad un intero costante</p></td>
 </tr>
 </tbody>
 </table>
-<p><img alt="linea" src="../_images/linea.png" /></p>
+<ul>
+<li><p>NOTA BENE: siccome <code class="docutils literal notranslate"><span class="pre">C3</span></code> e <code class="docutils literal notranslate"><span class="pre">C4</span></code> sono puntatori costanti,
+vanno <strong>immediatamente inizializzati</strong>,
+perché i puntatori non sono inizializzati ad alcun valore di default:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">C3</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">C4</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="w"> </span><span class="n">C1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
 </div>
-</div>
-<div class="section" id="il-passaggio-di-parametri-alle-funzioni">
-<h2>2.2 Il passaggio di parametri alle funzioni<a class="headerlink" href="#il-passaggio-di-parametri-alle-funzioni" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>tutti i tre tipi di accesso alla memoria (valore di una variabile, puntatore o referenza)
-possono essere usati per <strong>passare argomenti ad una funzione</strong></p></li>
+</li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
-<div class="section" id="passaggio-per-valore">
-<h3>2.2.1 Passaggio per valore<a class="headerlink" href="#passaggio-per-valore" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="oggetti-definiti-const">
+<h3>2.5.2 Oggetti definiti <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#oggetti-definiti-const" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>nel passaggio per valore,
-nel prototipo della funzione fra parentesi è indidcato il <strong>nome della variabile</strong></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">raddoppia</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
+<li><p>le <strong>stesse regole</strong> si applicano ad oggetti definiti</p></li>
+<li><p>tuttavia, si pone il problema aggiuntivo che, in generale,
+<strong>i metodi di una classe possono modificare i membri</strong> di un oggetto</p></li>
+<li><p>per continuare ad utilizzare metodi preservando la caratteristica <code class="docutils literal notranslate"><span class="pre">const</span></code>
+il <code class="docutils literal notranslate"><span class="pre">C++</span></code> richiede di <strong>indicare quali metodi non modifichino i membri</strong>
+di una classe, aggiungendo l’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code> al termine del loro prototpo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span>
+<span class="nf">complesso::parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
-<li><p>il calcolatore <strong>crea una copia</strong> della variabile di input
-e passa la copia alla funzione</p></li>
-<li><p>questo significa che <strong>il passaggio di informazione è lento</strong>
-e la variabile passata alla funzione
-<strong>non risente delle azioni che subisce all’interno della funzione</strong>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;raddoppio (valore)    &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">raddoppia</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;numero: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>restituisce come risultato (numero rimane uguale a 5):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raddoppio</span> <span class="p">(</span><span class="n">valore</span><span class="p">)</span>    <span class="mi">10</span>
-<span class="n">numero</span><span class="p">:</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="passaggio-per-puntatore">
-<h3>2.2.2 Passaggio per puntatore<a class="headerlink" href="#passaggio-per-puntatore" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>nel passaggio per valore,
-nel prototipo della funzione fra parentesi è indidcato il <strong>puntatore alla variabile</strong>
-da passare</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">raddoppia</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="o">*</span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">valore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>il calcolatore pasa alla funzione la variabile puntatore,
-quindi <strong>il passaggio di informazione è veloce</strong>
-ed ogni modifica fatta alla zona di memoria indicizzata dal puntatore all’interno della funzione
-<strong>ha effetto anche al di fuori dello scope della funzione</strong>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;raddoppio (puntatore) &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">raddoppia</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;numero: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>restituisce come risultato (numero diventa uguale a 10):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raddoppio</span> <span class="p">(</span><span class="n">puntatore</span><span class="p">)</span> <span class="mi">10</span>
-<span class="n">numero</span><span class="p">:</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="passaggio-per-referenza">
-<h3>2.2.3 Passaggio per referenza<a class="headerlink" href="#passaggio-per-referenza" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>nel passaggio per valore,
-nel prototipo della funzione fra parentesi è indidcata la <strong>referenza alla variabile</strong>
-da passare</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">raddoppiaRef</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>il calcolatore pasa alla funzione l’alias alla variabile, che si comporta come un puntatore</p></li>
-<li><p>quindi <strong>il passaggio di informazione è veloce</strong>
-ed ogni modifica fatta alla referenza all’interno della funzione
-<strong>ha effetto anche al di fuori dello scope della funzione</strong>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;raddoppio (referenza) &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">raddoppiaRef</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;numero: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>restituisce come risultato (numero diventa uguale a 10):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raddoppio</span> <span class="p">(</span><span class="n">referenza</span><span class="p">)</span> <span class="mi">10</span>
-<span class="n">numero</span><span class="p">:</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="l-output-di-una-funzione">
-<h3>2.2.4 L’output di una funzione<a class="headerlink" href="#l-output-di-una-funzione" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>nelle funzoni viste finora, l’oggetto restituito dalla funzione è il valore di variabile</p></li>
-<li><p>questo valore viene scritto nella zona di memoria della variabile alla quale
-viene assegnato il valore (<code class="docutils literal notranslate"><span class="pre">risultato</span></code> nell’esempio che segue):</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raddoppia</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>ritornare il puntatore o la referenza ad una variabile è <strong>un’operazione rischiosa
-e non sempre permessa</strong></p></li>
-<li><p>infatti, ogni volta che una variabile viene definita all’interno della funzione,
-al termine della funzione viene <strong>elimiata dal calcolatore</strong> (va out of scope)</p></li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="come-reagisce-il-compilatore-nel-caso-di-una-referenza">
-<h3>2.2.5 Come reagisce il compilatore nel caso di una referenza<a class="headerlink" href="#come-reagisce-il-compilatore-nel-caso-di-una-referenza" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>fuori dalla funzione
-la variabile <code class="docutils literal notranslate"><span class="pre">risultato</span></code> non esiste più,
-quindi la referenza, che è il suo alias,
-<strong>non ha significato</strong>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nf">raddoppiaReturnReferenza</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>in fase di compilazione produce un <strong>Warning</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main_08</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span> <span class="n">warning</span><span class="p">:</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">stack</span> <span class="n">memory</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;risultatò returned [-Wreturn-stack-address]</span>
-  <span class="k">return</span> <span class="n">risultato</span> <span class="p">;</span>
-         <span class="o">^~~~~~~~~</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="come-reagisce-il-compilatore-nel-caso-di-un-puntatore">
-<h3>2.2.6 Come reagisce il compilatore nel caso di un puntatore<a class="headerlink" href="#come-reagisce-il-compilatore-nel-caso-di-un-puntatore" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>fuori dalla funzione
-il puntatore a questa variabile indicizza una <strong>zona di memoria non più occupata</strong></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">raddoppiaReturnPuntatore</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>anche in questo caso, in fase di compilazione produce un <strong>Warning</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main_08</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span> <span class="n">warning</span><span class="p">:</span> <span class="n">address</span> <span class="n">of</span> <span class="n">stack</span> <span class="n">memory</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;risultatò returned [-Wreturn-stack-address]</span>
-  <span class="k">return</span> <span class="o">&amp;</span> <span class="n">risultato</span> <span class="p">;</span>
-           <span class="o">^~~~~~~~~</span>
-</pre></div>
-</div>
-</li>
-<li><p>il passaggio di valori per puntatore è <strong>veloce</strong>:
-per approfittare appieno di questa proprietà,
-dobbiamo <strong>acquisire un controllo più stretto della memoria</strong></p></li>
+<li><p>su un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">const</span></code> possono essere invocati
+soltanto i metodi dichiarati <code class="docutils literal notranslate"><span class="pre">const</span></code></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
-<div class="section" id="la-gestione-dinamica-della-memoria">
-<h2>2.3 La gestione dinamica della memoria<a class="headerlink" href="#la-gestione-dinamica-della-memoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="classi-e-puntatori">
+<h2>2.6 Classi e puntatori<a class="headerlink" href="#classi-e-puntatori" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>in generale,
-quando una nuova variabile viene creata
-il calcolatore compie <strong>due operazioni</strong>:</p>
-<ul>
-<li><p>riservare la memoria per la variabile, chiamata <strong>allocazione di memoria</strong></p></li>
-<li><p><strong>inizializzazione della variabile</strong> in quello spazio di memoria</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-<div class="section" id="heap-and-stack">
-<h3>2.3.1 Heap and Stack<a class="headerlink" href="#heap-and-stack" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>il programma (quindi il programmatore) ha a disposizione due tipi di gestione della RAM:</p></li>
-</ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>stack</strong></p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>le variabili vengono salvate in <strong>zone contigue</strong> di memoria (da cui il nome)</p></li>
-<li><p>il calcolatore si occupa della manutenzione della stack:
-la memoria viene <strong>automaticamente allocata e cancellata</strong> a fine scope</p></li>
-</ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>heap</strong></p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>le variabili vengono salvate in <strong>una zona meno ordinata</strong> di memoria</p></li>
-<li><p>il calcolatore <strong>non</strong> si occupa della manutenzione della stack:
-il programma (quindi il programmatore) deve <strong>ricordarsi di svuotare la memoria</strong></p></li>
+<li><p>come abbiamo già visto,
+esistono <strong>puntatori e referenze ad oggetti</strong>,
+con i medesimi comportamenti delle variaibli di tipo predefinito</p></li>
+<li><p>per accedere a metodi e membri di un oggetto
+attraveso un suo puntatore,
+si utilizza <strong>l’operatore <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> invece di <code class="docutils literal notranslate"><span class="pre">.</span></code></strong></p></li>
+<li><p>le classe possono anche <strong>contenere puntatori</strong> a variabili di tipo predefinito
+o ad altri oggetti</p></li>
+<li><p>nel caso in cui si utilizzi <strong>allocazione dinamica</strong> della memoria,
+è prudente invocarla nel costruttore
+ed è <strong>necessario ripulire la memoria nel distruttore</strong></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="allocazione-di-una-variabile-nella-stack">
-<h3>2.3.2 Allocazione di una variabile nella Stack<a class="headerlink" href="#allocazione-di-una-variabile-nella-stack" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>una qualunque definizione di variabili vista finora
-è un esempio di uso della stack:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">float</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.3</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="c1">// etc</span>
-</pre></div>
-</div>
-</li>
-<li><p>utilizzare la stack è detto anche <strong>allocazione automatica della memoria</strong></p></li>
-</ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>vantaggi</strong></p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>il programmatore non si preoccupa della gestione della memoria</p></li>
-</ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>svantaggi</strong></p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>la zona di RAM riservata alla stack è <strong>piccola</strong></p></li>
-<li><p>la dimensione delle variabili deve essere <strong>nota al momento della compilazione</strong></p></li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="allocazione-di-una-variabile-nella-heap">
-<h3>2.3.3 Allocazione di una variabile nella Heap<a class="headerlink" href="#allocazione-di-una-variabile-nella-heap" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>per allocare una variabile nella heap si usa l’istruzione <strong><code class="docutils literal notranslate"><span class="pre">new</span></code></strong>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>new <strong>ritorna un puntatore</strong> alla zona di memoria allocata,
-da assegnare ad una variabile</p></li>
-<li><p>se si perde il valore del puntatore,
-diventa <strong>impossibile rintracciare la zona di memoria</strong> allocata da <code class="docutils literal notranslate"><span class="pre">new</span></code></p></li>
-</ul>
-</li>
-<li><p>la zona di memoria non viene deallocata automaticamente,
-nel codice sorgente <strong>è necessario utilizzare l’istruzione <code class="docutils literal notranslate"><span class="pre">delete</span></code></strong> per farlo:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>utilizzare la stack è detto anche <strong>allocazione dinamica della memoria</strong></p></li>
-</ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>vantaggi</strong></p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>la memoria heap è <strong>molto più grande</strong> della stack</p></li>
-<li><p>il programmatore può decidere la dimensione della variabile durante l’esecuzione del programma</p></li>
-<li><p>la memoria non viene cancellata automaticamente a fine scope</p></li>
-</ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>svantaggi</strong></p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>se non si libera la memoria con <code class="docutils literal notranslate"><span class="pre">delete</span></code>,
-in particolare nei cicli,
-questa si intasa e l’esecuzione rischia di <strong>interrompersi ad un punto casuale</strong>
-(cioè quando la memoria è piena)
-ed è molto difficile identificare il problema nel programma</p></li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="esempio-di-allocazione-dinamica-utilizzo-in-una-funzione">
-<h3>2.3.4 Esempio di allocazione dinamica: utilizzo in una funzione<a class="headerlink" href="#esempio-di-allocazione-dinamica-utilizzo-in-una-funzione" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>la funzione seguente sfrutta il fatto che la memoria allocata dinamicamente
-<strong>non viene cancellata quando finisce lo scope</strong>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">creaInteroDoppio</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>infatti, il valore del risultato <strong>rimane accessibile</strong> anche
-dopo che la funzione è stata eseguita:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">doppio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">creaInteroDoppio</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Valore iniziale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero</span><span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Valore doppio  : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">doppio</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>non bisogna dimenticare</strong> di svuotare la memoria quando la variabile non serve più:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="n">doppio</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="un-errore-pernicioso">
-<h3>2.3.5 Un errore pernicioso<a class="headerlink" href="#un-errore-pernicioso" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>nell’utilizzo della funzione <code class="docutils literal notranslate"><span class="pre">creaInteroDoppio</span></code>
-non bisogna dimenticare di assegnare ad una variabile il valore del puntatore</p></li>
-<li><p>la linea seguente non dà errore,
-tuttavia <strong>perde il valore del puntatore</strong>
-alla memoria allocata dinamicamente</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Valore doppio  : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">creaInteroDoppio</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-<li><p>di conseguenza, <strong>non è possibile utilizzare il comando <code class="docutils literal notranslate"><span class="pre">delete</span></code></strong>
-e la zona di memoria rimane inutilizzabile fino al termine
-dell’esecuzione del programma</p></li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="allocazione-dinamica-ed-array">
-<h3>2.3.5 Allocazione dinamica ed array<a class="headerlink" href="#allocazione-dinamica-ed-array" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>siccome l’allocazione statica richiede che la dimensione delle variabili sia nota in fase di compilazione,
-la lunghezza di un array deve essere scritta nel codice sorgente:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1">// QUESTO VA BENE</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">float</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1">// QUESTO __NON__ VA BENE</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>la linea <code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">array[N]</span></code> non è corretta in <code class="docutils literal notranslate"><span class="pre">C++</span></code>,
-la dimensione dell’array non sarà <code class="docutils literal notranslate"><span class="pre">5</span></code>, ma un numero che a priori non conosciamo,
-creando problemi in esecuzione difficili da identificare</p></li>
-</ul>
-</li>
-<li><p>si può utilizzare allocazione dinamica della memoria
-per creare array che abbiano dimensione scelta durante l’esecuzione</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dynamic_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>invece delle parentesi tonde, dopo il tipo della variabile bisogna utilizzare <strong>parentesi quadre</strong></p></li>
-</ul>
-</li>
-<li><p>avendo usato l’operatore <code class="docutils literal notranslate"><span class="pre">new</span></code>, la memoria va liberata quando l’array non serve più:</p></li>
-</ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">dynamic_array</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>non bisogna dimenticare le <strong>parentesi quadre</strong> dopo <code class="docutils literal notranslate"><span class="pre">delete</span></code></p></li>
-<li><p>fintanto che siste, questo array si utilizza come uno allocato staticamente</p></li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="non-bisogna-perdere-il-puntatore">
-<h3>2.3.6 Non bisogna perdere il puntatore!<a class="headerlink" href="#non-bisogna-perdere-il-puntatore" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>anche in questo caso, il puntatore restituito da <code class="docutils literal notranslate"><span class="pre">new</span></code>
-è l’unico accesso alla memoria allocata dinamicamente,
-quindi <strong>non va persa quell’informazione</strong>,
-altrimenti non si riesce più a liberare la memoria</p></li>
-</ul>
-<p><img alt="arrrayeptr" src="../_images/arrayeptr.png" /></p>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="trova-l-errore-1">
-<h3>2.3.7 Trova l’errore, 1<a class="headerlink" href="#trova-l-errore-1" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>cosa c’è di sbagliato nella sequenza di istruzioni seguente?</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">anArray</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"></span>
-<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">anArray</span><span class="p">;</span><span class="w"></span>
-<span class="n">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
-<span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="trova-l-errore-2">
-<h3>2.3.8 Trova l’errore, 2<a class="headerlink" href="#trova-l-errore-2" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>cosa c’è di sbagliato nella sequenza di istruzioni seguente?</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">nElem</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="c1">// ...</span>
-<span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nElem</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">nElem</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="c1">// ...</span>
-<span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="trova-l-errore-3">
-<h3>2.3.9 Trova l’errore, 3<a class="headerlink" href="#trova-l-errore-3" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>cosa c’è di sbagliato nella sequenza di istruzioni seguente?</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">nElem</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="c1">// ...</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nElem</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">nElem</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="c1">// ...</span>
-<span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="trova-l-errore-4">
-<h3>2.3.10 Trova l’errore, 4<a class="headerlink" href="#trova-l-errore-4" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>cosa c’è di sbagliato nella sequenza di istruzioni seguente?</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">myFunction</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">inArray</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dim</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sumEven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">myArray</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="o">++</span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">sumEven</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sumEven</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
-<div class="section" id="trova-l-errore-5">
-<h3>2.3.11 Trova l’errore, 5<a class="headerlink" href="#trova-l-errore-5" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>cosa c’è di sbagliato nella sequenza di istruzioni seguente?</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">myFunction</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">inArray</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dim</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sumEven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">myArray</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="o">++</span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">sumEven</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sumEven</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
-</div>
 </div>
 <div class="section" id="esercizi">
-<h2>2.4 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>2.7 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
@@ -1619,11 +1340,11 @@ altrimenti non si riesce più a liberare la memoria</p></li>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../content.html" title="previous page">
+        <a class="left-prev" href="../Lezione_01/ESERCIZI.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Indice delle Lezioni</p>
+                <p class="prevnext-title">Esercizi per la lezione 1</p>
             </div>
         </a>
     </div>
