@@ -22,7 +22,7 @@
 ## Lezioni del corso
 
   * [Prerequisiti](Prerequisiti/README.md): breve riassunto di prerequisiti che non saranno coperti durante il corso
-  * [Lezione 1](Ripasso/README.md) : ripasso di ```C```
-  * [Lezione 2](Lezione_01/README.md) : strutturazione di un programma ed introduzione al ```C++```
-  * [Lezione 3](Lezione_02/README.md) : programmazione ad oggetti: le classi
+  * [Ripasso](Ripasso/README.md) : ripasso di ```C```
+  * [Lezione 1](Lezione_01/README.md) : strutturazione di un programma ed introduzione al ```C++```
+  * [Lezione 2](Lezione_02/README.md) : programmazione ad oggetti: le classi
 
