@@ -2,6 +2,11 @@
 
 ## Indice
 
+  * [1.0 Qualcosa in più del C++ rispetto al C](#10-qualcosa-in-più-del-c-rispetto-al-c)
+    * [1.0.1 ```C``` e ```C++```](#101-c-e-c)
+    * [1.0.2 Le prime differenze](#102-le-prime-differenze)
+    * [1.0.3 parametri chiesti all'utente del programma](#103-parametri-chiesti-allutente-del-programma)
+    * [1.0.4 il casting in ```C++```](#104-il-casting-in-c)
   * [1.1 Variabili e puntatori](#21-variabili-e-puntatori)
     * [1.1.1 La gestione delle variabili nel calcolatore](#211-la-gestione-delle-variabili-nel-calcolatore)
     * [1.1.2 Lo spazio occupato dalle variabili](#212-lo-spazio-occupato-dalle-variabili)
@@ -20,12 +25,12 @@
     * [1.1.15 Le referenze](#2115-le-referenze)
     * [1.1.16 Riepilogo sui puntatori](#2116-riepilogo-sui-puntatori)
   * [1.2 Il passaggio di parametri alle funzioni](#22-il-passaggio-di-parametri-alle-funzioni)
-    * [1.1.1 Passaggio per valore](#221-passaggio-per-valore)
-    * [1.1.2 Passaggio per puntatore](#222-passaggio-per-puntatore)
-    * [1.1.3 Passaggio per referenza](#223-passaggio-per-referenza)
-    * [1.1.4 L'output di una funzione](#224-loutput-di-una-funzione)
-    * [1.1.5 Come reagisce il compilatore nel caso di una referenza](#225-come-reagisce-il-compilatore-nel-caso-di-una-referenza)
-    * [1.1.6 Come reagisce il compilatore nel caso di un puntatore](#226-come-reagisce-il-compilatore-nel-caso-di-un-puntatore)
+    * [1.2.1 Passaggio per valore](#221-passaggio-per-valore)
+    * [1.2.2 Passaggio per puntatore](#222-passaggio-per-puntatore)
+    * [1.2.3 Passaggio per referenza](#223-passaggio-per-referenza)
+    * [1.2.4 L'output di una funzione](#224-loutput-di-una-funzione)
+    * [1.2.5 Come reagisce il compilatore nel caso di una referenza](#225-come-reagisce-il-compilatore-nel-caso-di-una-referenza)
+    * [1.2.6 Come reagisce il compilatore nel caso di un puntatore](#226-come-reagisce-il-compilatore-nel-caso-di-un-puntatore)
   * [1.3 La gestione dinamica della memoria](#23-la-gestione-dinamica-della-memoria)
     * [1.3.1 Heap and Stack](#231-heap-and-stack)
     * [1.3.2 Allocazione di una variabile nella Stack](#232-allocazione-di-una-variabile-nella-stack)
@@ -40,6 +45,88 @@
     * [1.3.10 Trova l'errore, 4](#2310-trova-lerrore-4)
     * [1.3.11 Trova l'errore, 5](#2311-trova-lerrore-5)
   * [1.4 ESERCIZI](#24-esercizi)
+
+![linea](../immagini/linea.png)
+
+## 1.0 Qualcosa in più del C++ rispetto al C
+
+### 1.0.1 ```C``` e ```C++```
+
+  * ```C``` è un linguaggio di programmazione:
+    * **imperativo**, cioè che impartisce sequenze di istruzioni al calolatore
+    * **procedurale**, cioè che permette di raggruppare istruzioni in procedure
+  * ```C++``` è un linguaggio di programmazione:
+    * che **estende il ```C```**:
+      * un programma ```C``` compila anche in ```C++```
+      * la sintassi del ```C``` è valida anche in ```C++```
+      * esistono concetti nuovi nel ```C++```
+      * esiste più libertà nel ```C++```
+    * **object oriented**, cioè che permette di definire nuovi tipi di variabili
+      all'interno dei programmi
+      * vedremo che si tratta di un cambio di paradigma fondamentale
+    * permette la **programmazione template**,
+      che è una forma di generalizzazione delle istruzioni impartite al calcolatore
+      * vedremo che porta alla creazione di molte librerie di utilità generale
+  * esistono diverse versioni del linguaggio ```C++```:
+    **C++98** (che useremo noi), C++03, C++11 (che accenneremo), C++14, C++17
+
+### 1.0.2 Le prime differenze
+
+  * in ```C++``` i commenti possono anche iniziare con ```//``` e terminano automaticamente a fine riga:
+     ```cpp
+     // questo è un commento
+    ```
+  * per scrivere a schermo,
+    si utilizza la libreria ```iostream``` che gestisce il flusso (stream) di informazione in input (i) ed output (o)
+    durante l'esecuzione del programma:
+    ```cpp
+    #include <iostream>
+
+    int main (int argc, char ** argv)
+      {
+        std::cout << "42" << std::endl ;
+        return 0 ;
+      }
+    ```
+
+![linea](../immagini/linea.png)
+
+### 1.0.3 parametri chiesti all'utente del programma
+
+  * la liberia ```<iostream>``` può essere anche utilizzata per **leggere informazioni dalla tastiera**
+    ```cpp
+    #include <iostream>
+
+    int main (int argc, char ** argv)
+      {
+        int numero = 0 ;
+        std::cout << "inserisci un numero\n" ;
+        std::cin >> numero ;
+        std::cout << "hai inserito: " << numero << "\n" ;
+        return 0 ;
+      }
+    ```
+    * la tastiera è identificata da ```std::cin```
+    * l'operatore ```>>``` trasferisce l'informazione dall'esterno verso il programma:
+    ```
+    > ./main_03
+    inserisci un numero
+    4
+    hai inserito: 4
+    ```
+
+![linea](../immagini/linea.png)
+
+### 1.0.4 il casting in ```C++```
+
+  * in ```C++``` l'operazione di casting ha portata più ampia
+    e può essere realizzato con operatori dedicati.
+    Quello con la funzionalità equivalente al type cast del```C``` è:
+    ```cpp
+    float secondo_razionale = static_cast<float> (numero_intero) ;
+    ```
+  * NOTA BENE uno dei vantaggi di usare l'espressione ```C++``` del cast
+    è che questo è facilmente rintracciabile nel codice sorgente!
 
 ![linea](../immagini/linea.png)
 
@@ -356,7 +443,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.1.1 Passaggio per valore
+### 1.2.1 Passaggio per valore
 
   * nel passaggio per valore, 
     nel prototipo della funzione fra parentesi è indidcato il **nome della variabile**
@@ -385,7 +472,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.1.2 Passaggio per puntatore
+### 1.2.2 Passaggio per puntatore
 
   * nel passaggio per valore, 
     nel prototipo della funzione fra parentesi è indidcato il **puntatore alla variabile**
@@ -413,7 +500,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.1.3 Passaggio per referenza
+### 1.2.3 Passaggio per referenza
 
   * nel passaggio per valore, 
     nel prototipo della funzione fra parentesi è indidcata la **referenza alla variabile**
@@ -441,7 +528,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.1.4 L'output di una funzione
+### 1.2.4 L'output di una funzione
 
   * nelle funzoni viste finora, l'oggetto restituito dalla funzione è il valore di variabile
   * questo valore viene scritto nella zona di memoria della variabile alla quale
@@ -456,7 +543,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.1.5 Come reagisce il compilatore nel caso di una referenza
+### 1.2.5 Come reagisce il compilatore nel caso di una referenza
 
   * fuori dalla funzione 
     la variabile ```risultato``` non esiste più,
@@ -478,7 +565,7 @@
  
 ![linea](../immagini/linea.png)
 
-### 1.1.6 Come reagisce il compilatore nel caso di un puntatore
+### 1.2.6 Come reagisce il compilatore nel caso di un puntatore
 
   * fuori dalla funzione 
     il puntatore a questa variabile indicizza una **zona di memoria non più occupata**
