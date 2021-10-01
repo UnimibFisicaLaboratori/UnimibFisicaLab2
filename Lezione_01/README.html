@@ -242,6 +242,49 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qualcosa-in-piu-del-c-rispetto-al-c">
+   1.0 Qualcosa in più del C++ rispetto al C
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-e-c">
+     1.0.1
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C
+      </span>
+     </code>
+     e
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-prime-differenze">
+     1.0.2 Le prime differenze
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametri-chiesti-all-utente-del-programma">
+     1.0.3 parametri chiesti all’utente del programma
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-casting-in-c">
+     1.0.4 il casting in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variabili-e-puntatori">
    1.1 Variabili e puntatori
   </a>
@@ -335,32 +378,32 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#passaggio-per-valore">
-     1.1.1 Passaggio per valore
+     1.2.1 Passaggio per valore
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#passaggio-per-puntatore">
-     1.1.2 Passaggio per puntatore
+     1.2.2 Passaggio per puntatore
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#passaggio-per-referenza">
-     1.1.3 Passaggio per referenza
+     1.2.3 Passaggio per referenza
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#l-output-di-una-funzione">
-     1.1.4 L’output di una funzione
+     1.2.4 L’output di una funzione
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#come-reagisce-il-compilatore-nel-caso-di-una-referenza">
-     1.1.5 Come reagisce il compilatore nel caso di una referenza
+     1.2.5 Come reagisce il compilatore nel caso di una referenza
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#come-reagisce-il-compilatore-nel-caso-di-un-puntatore">
-     1.1.6 Come reagisce il compilatore nel caso di un puntatore
+     1.2.6 Come reagisce il compilatore nel caso di un puntatore
     </a>
    </li>
   </ul>
@@ -453,6 +496,14 @@
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><p><a class="reference external" href="#10-qualcosa-in-pi%C3%B9-del-c-rispetto-al-c">1.0 Qualcosa in più del C++ rispetto al C</a></p>
+<ul>
+<li><p><a class="reference external" href="#101-c-e-c">1.0.1 <code class="docutils literal notranslate"><span class="pre">C</span></code> e <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+<li><p><a class="reference external" href="#102-le-prime-differenze">1.0.2 Le prime differenze</a></p></li>
+<li><p><a class="reference external" href="#103-parametri-chiesti-allutente-del-programma">1.0.3 parametri chiesti all’utente del programma</a></p></li>
+<li><p><a class="reference external" href="#104-il-casting-in-c">1.0.4 il casting in <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="#21-variabili-e-puntatori">1.1 Variabili e puntatori</a></p>
 <ul>
 <li><p><a class="reference external" href="#211-la-gestione-delle-variabili-nel-calcolatore">1.1.1 La gestione delle variabili nel calcolatore</a></p></li>
@@ -475,12 +526,12 @@
 </li>
 <li><p><a class="reference external" href="#22-il-passaggio-di-parametri-alle-funzioni">1.2 Il passaggio di parametri alle funzioni</a></p>
 <ul>
-<li><p><a class="reference external" href="#221-passaggio-per-valore">1.1.1 Passaggio per valore</a></p></li>
-<li><p><a class="reference external" href="#222-passaggio-per-puntatore">1.1.2 Passaggio per puntatore</a></p></li>
-<li><p><a class="reference external" href="#223-passaggio-per-referenza">1.1.3 Passaggio per referenza</a></p></li>
-<li><p><a class="reference external" href="#224-loutput-di-una-funzione">1.1.4 L’output di una funzione</a></p></li>
-<li><p><a class="reference external" href="#225-come-reagisce-il-compilatore-nel-caso-di-una-referenza">1.1.5 Come reagisce il compilatore nel caso di una referenza</a></p></li>
-<li><p><a class="reference external" href="#226-come-reagisce-il-compilatore-nel-caso-di-un-puntatore">1.1.6 Come reagisce il compilatore nel caso di un puntatore</a></p></li>
+<li><p><a class="reference external" href="#221-passaggio-per-valore">1.2.1 Passaggio per valore</a></p></li>
+<li><p><a class="reference external" href="#222-passaggio-per-puntatore">1.2.2 Passaggio per puntatore</a></p></li>
+<li><p><a class="reference external" href="#223-passaggio-per-referenza">1.2.3 Passaggio per referenza</a></p></li>
+<li><p><a class="reference external" href="#224-loutput-di-una-funzione">1.2.4 L’output di una funzione</a></p></li>
+<li><p><a class="reference external" href="#225-come-reagisce-il-compilatore-nel-caso-di-una-referenza">1.2.5 Come reagisce il compilatore nel caso di una referenza</a></p></li>
+<li><p><a class="reference external" href="#226-come-reagisce-il-compilatore-nel-caso-di-un-puntatore">1.2.6 Come reagisce il compilatore nel caso di un puntatore</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="#23-la-gestione-dinamica-della-memoria">1.3 La gestione dinamica della memoria</a></p>
@@ -502,6 +553,115 @@
 <li><p><a class="reference external" href="#24-esercizi">1.4 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="qualcosa-in-piu-del-c-rispetto-al-c">
+<h2>1.0 Qualcosa in più del C++ rispetto al C<a class="headerlink" href="#qualcosa-in-piu-del-c-rispetto-al-c" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="c-e-c">
+<h3>1.0.1 <code class="docutils literal notranslate"><span class="pre">C</span></code> e <code class="docutils literal notranslate"><span class="pre">C++</span></code><a class="headerlink" href="#c-e-c" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C</span></code> è un linguaggio di programmazione:</p>
+<ul>
+<li><p><strong>imperativo</strong>, cioè che impartisce sequenze di istruzioni al calolatore</p></li>
+<li><p><strong>procedurale</strong>, cioè che permette di raggruppare istruzioni in procedure</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C++</span></code> è un linguaggio di programmazione:</p>
+<ul>
+<li><p>che <strong>estende il <code class="docutils literal notranslate"><span class="pre">C</span></code></strong>:</p>
+<ul>
+<li><p>un programma <code class="docutils literal notranslate"><span class="pre">C</span></code> compila anche in <code class="docutils literal notranslate"><span class="pre">C++</span></code></p></li>
+<li><p>la sintassi del <code class="docutils literal notranslate"><span class="pre">C</span></code> è valida anche in <code class="docutils literal notranslate"><span class="pre">C++</span></code></p></li>
+<li><p>esistono concetti nuovi nel <code class="docutils literal notranslate"><span class="pre">C++</span></code></p></li>
+<li><p>esiste più libertà nel <code class="docutils literal notranslate"><span class="pre">C++</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>object oriented</strong>, cioè che permette di definire nuovi tipi di variabili
+all’interno dei programmi</p>
+<ul>
+<li><p>vedremo che si tratta di un cambio di paradigma fondamentale</p></li>
+</ul>
+</li>
+<li><p>permette la <strong>programmazione template</strong>,
+che è una forma di generalizzazione delle istruzioni impartite al calcolatore</p>
+<ul>
+<li><p>vedremo che porta alla creazione di molte librerie di utilità generale</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>esistono diverse versioni del linguaggio <code class="docutils literal notranslate"><span class="pre">C++</span></code>:
+<strong>C++98</strong> (che useremo noi), C++03, C++11 (che accenneremo), C++14, C++17</p></li>
+</ul>
+</div>
+<div class="section" id="le-prime-differenze">
+<h3>1.0.2 Le prime differenze<a class="headerlink" href="#le-prime-differenze" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> i commenti possono anche iniziare con <code class="docutils literal notranslate"><span class="pre">//</span></code> e terminano automaticamente a fine riga:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// questo è un commento</span>
+</pre></div>
+</div>
+</li>
+<li><p>per scrivere a schermo,
+si utilizza la libreria <code class="docutils literal notranslate"><span class="pre">iostream</span></code> che gestisce il flusso (stream) di informazione in input (i) ed output (o)
+durante l’esecuzione del programma:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;42&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="parametri-chiesti-all-utente-del-programma">
+<h3>1.0.3 parametri chiesti all’utente del programma<a class="headerlink" href="#parametri-chiesti-all-utente-del-programma" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>la liberia <code class="docutils literal notranslate"><span class="pre">&lt;iostream&gt;</span></code> può essere anche utilizzata per <strong>leggere informazioni dalla tastiera</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;inserisci un numero</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hai inserito: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>la tastiera è identificata da <code class="docutils literal notranslate"><span class="pre">std::cin</span></code></p></li>
+<li><p>l’operatore <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> trasferisce l’informazione dall’esterno verso il programma:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">main_03</span>
+<span class="n">inserisci</span> <span class="n">un</span> <span class="n">numero</span>
+<span class="mi">4</span>
+<span class="n">hai</span> <span class="n">inserito</span><span class="p">:</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-casting-in-c">
+<h3>1.0.4 il casting in <code class="docutils literal notranslate"><span class="pre">C++</span></code><a class="headerlink" href="#il-casting-in-c" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> l’operazione di casting ha portata più ampia
+e può essere realizzato con operatori dedicati.
+Quello con la funzionalità equivalente al type cast del<code class="docutils literal notranslate"><span class="pre">C</span></code> è:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="n">secondo_razionale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">numero_intero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>NOTA BENE uno dei vantaggi di usare l’espressione <code class="docutils literal notranslate"><span class="pre">C++</span></code> del cast
+è che questo è facilmente rintracciabile nel codice sorgente!</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
 </div>
 <div class="section" id="variabili-e-puntatori">
 <h2>1.1 Variabili e puntatori<a class="headerlink" href="#variabili-e-puntatori" title="Permalink to this headline">¶</a></h2>
@@ -920,7 +1080,7 @@ possono essere usati per <strong>passare argomenti ad una funzione</strong></p><
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="passaggio-per-valore">
-<h3>1.1.1 Passaggio per valore<a class="headerlink" href="#passaggio-per-valore" title="Permalink to this headline">¶</a></h3>
+<h3>1.2.1 Passaggio per valore<a class="headerlink" href="#passaggio-per-valore" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>nel passaggio per valore,
 nel prototipo della funzione fra parentesi è indidcato il <strong>nome della variabile</strong></p>
@@ -952,7 +1112,7 @@ e la variabile passata alla funzione
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="passaggio-per-puntatore">
-<h3>1.1.2 Passaggio per puntatore<a class="headerlink" href="#passaggio-per-puntatore" title="Permalink to this headline">¶</a></h3>
+<h3>1.2.2 Passaggio per puntatore<a class="headerlink" href="#passaggio-per-puntatore" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>nel passaggio per valore,
 nel prototipo della funzione fra parentesi è indidcato il <strong>puntatore alla variabile</strong>
@@ -983,7 +1143,7 @@ ed ogni modifica fatta alla zona di memoria indicizzata dal puntatore all’inte
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="passaggio-per-referenza">
-<h3>1.1.3 Passaggio per referenza<a class="headerlink" href="#passaggio-per-referenza" title="Permalink to this headline">¶</a></h3>
+<h3>1.2.3 Passaggio per referenza<a class="headerlink" href="#passaggio-per-referenza" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>nel passaggio per valore,
 nel prototipo della funzione fra parentesi è indidcata la <strong>referenza alla variabile</strong>
@@ -1014,7 +1174,7 @@ ed ogni modifica fatta alla referenza all’interno della funzione
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="l-output-di-una-funzione">
-<h3>1.1.4 L’output di una funzione<a class="headerlink" href="#l-output-di-una-funzione" title="Permalink to this headline">¶</a></h3>
+<h3>1.2.4 L’output di una funzione<a class="headerlink" href="#l-output-di-una-funzione" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>nelle funzoni viste finora, l’oggetto restituito dalla funzione è il valore di variabile</p></li>
 <li><p>questo valore viene scritto nella zona di memoria della variabile alla quale
@@ -1031,7 +1191,7 @@ al termine della funzione viene <strong>elimiata dal calcolatore</strong> (va ou
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="come-reagisce-il-compilatore-nel-caso-di-una-referenza">
-<h3>1.1.5 Come reagisce il compilatore nel caso di una referenza<a class="headerlink" href="#come-reagisce-il-compilatore-nel-caso-di-una-referenza" title="Permalink to this headline">¶</a></h3>
+<h3>1.2.5 Come reagisce il compilatore nel caso di una referenza<a class="headerlink" href="#come-reagisce-il-compilatore-nel-caso-di-una-referenza" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>fuori dalla funzione
 la variabile <code class="docutils literal notranslate"><span class="pre">risultato</span></code> non esiste più,
@@ -1055,7 +1215,7 @@ quindi la referenza, che è il suo alias,
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="come-reagisce-il-compilatore-nel-caso-di-un-puntatore">
-<h3>1.1.6 Come reagisce il compilatore nel caso di un puntatore<a class="headerlink" href="#come-reagisce-il-compilatore-nel-caso-di-un-puntatore" title="Permalink to this headline">¶</a></h3>
+<h3>1.2.6 Come reagisce il compilatore nel caso di un puntatore<a class="headerlink" href="#come-reagisce-il-compilatore-nel-caso-di-un-puntatore" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>fuori dalla funzione
 il puntatore a questa variabile indicizza una <strong>zona di memoria non più occupata</strong></p>
