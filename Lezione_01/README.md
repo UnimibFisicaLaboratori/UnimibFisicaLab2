@@ -2,49 +2,50 @@
 
 ## Indice
 
-  * [1.0 Qualcosa in più del C++ rispetto al C](#10-qualcosa-in-più-del-c-rispetto-al-c)
-    * [1.0.1 ```C``` e ```C++```](#101-c-e-c)
-    * [1.0.2 Le prime differenze](#102-le-prime-differenze)
-    * [1.0.3 parametri chiesti all'utente del programma](#103-parametri-chiesti-allutente-del-programma)
-    * [1.0.4 il casting in ```C++```](#104-il-casting-in-c)
-  * [1.1 Variabili e puntatori](#21-variabili-e-puntatori)
-    * [1.1.1 La gestione delle variabili nel calcolatore](#211-la-gestione-delle-variabili-nel-calcolatore)
-    * [1.1.2 Lo spazio occupato dalle variabili](#212-lo-spazio-occupato-dalle-variabili)
-    * [1.1.3 Le dimensioni tipiche di alcuni tipi](#213-le-dimensioni-tipiche-di-alcuni-tipi)
-    * [1.1.4 L'indirizzo di memoria di una variabile](#214-lindirizzo-di-memoria-di-una-variabile)
-    * [1.1.5 Salvare l'indirizzo di memoria: i puntatori](#215-salvare-lindirizzo-di-memoria-i-puntatori)
-    * [1.1.6 Dalla variabile al puntatore e viceversa](#216-dalla-variabile-al-puntatore-e-viceversa)
-    * [1.1.7 Puntatori non inizializzati](#217-puntatori-non-inizializzati)
-    * [1.1.8 I puntatori sono variabili](#218-i-puntatori-sono-variabili)
-    * [1.1.9 Inizializzare una variabile a partire da un puntatore](#219-inizializzare-una-variabile-a-partire-da-un-puntatore)
-    * [1.1.10 Puntatori di puntatori](#2110-puntatori-di-puntatori)
-    * [1.1.11 risalire la caterna di indirizzi](#2111-risalire-la-caterna-di-indirizzi)
-    * [1.1.12 Puntatori ed array](#2112-puntatori-ed-array)
-    * [1.1.13 Gli elementi di un array](#2113-gli-elementi-di-un-array)
-    * [1.1.14 L'algebra dei puntatori](#2114-lalgebra-dei-puntatori)
-    * [1.1.15 Le referenze](#2115-le-referenze)
-    * [1.1.16 Riepilogo sui puntatori](#2116-riepilogo-sui-puntatori)
-  * [1.2 Il passaggio di parametri alle funzioni](#22-il-passaggio-di-parametri-alle-funzioni)
-    * [1.2.1 Passaggio per valore](#221-passaggio-per-valore)
-    * [1.2.2 Passaggio per puntatore](#222-passaggio-per-puntatore)
-    * [1.2.3 Passaggio per referenza](#223-passaggio-per-referenza)
-    * [1.2.4 L'output di una funzione](#224-loutput-di-una-funzione)
-    * [1.2.5 Come reagisce il compilatore nel caso di una referenza](#225-come-reagisce-il-compilatore-nel-caso-di-una-referenza)
-    * [1.2.6 Come reagisce il compilatore nel caso di un puntatore](#226-come-reagisce-il-compilatore-nel-caso-di-un-puntatore)
-  * [1.3 La gestione dinamica della memoria](#23-la-gestione-dinamica-della-memoria)
-    * [1.3.1 Heap and Stack](#231-heap-and-stack)
-    * [1.3.2 Allocazione di una variabile nella Stack](#232-allocazione-di-una-variabile-nella-stack)
-    * [1.3.3 Allocazione di una variabile nella Heap](#233-allocazione-di-una-variabile-nella-heap)
-    * [1.3.4 Esempio di allocazione dinamica: utilizzo in una funzione](#234-esempio-di-allocazione-dinamica-utilizzo-in-una-funzione)
-    * [1.3.5 Un errore pernicioso](#235-un-errore-pernicioso)
-    * [1.3.5 Allocazione dinamica ed array](#235-allocazione-dinamica-ed-array)
-    * [1.3.6 Non bisogna perdere il puntatore!](#236-non-bisogna-perdere-il-puntatore)
-    * [1.3.7 Trova l'errore, 1](#237-trova-lerrore-1)
-    * [1.3.8 Trova l'errore, 2](#238-trova-lerrore-2)
-    * [1.3.9 Trova l'errore, 3](#239-trova-lerrore-3)
-    * [1.3.10 Trova l'errore, 4](#2310-trova-lerrore-4)
-    * [1.3.11 Trova l'errore, 5](#2311-trova-lerrore-5)
-  * [1.4 ESERCIZI](#24-esercizi)
+  * [1.0 Qualcosa in più del C++ rispetto al C](#qualcosa-in-piu-del-c-rispetto-al-c)
+    * [1.0.1 ```C``` e ```C++```](#c-e-c)
+    * [1.0.2 Le prime differenze](#le-prime-differenze)
+    * [1.0.3 parametri chiesti all'utente del programma](#parametri-chiesti-allutente-del-programma)
+    * [1.0.4 il casting in ```C++```](#il-casting-in-c)
+  * [1.1 Variabili e puntatori](#variabili-e-puntatori)
+    * [1.1.1 La gestione delle variabili nel calcolatore](#la-gestione-delle-variabili-nel-calcolatore)
+    * [1.1.2 Lo spazio occupato dalle variabili](#lo-spazio-occupato-dalle-variabili)
+    * [1.1.3 Le dimensioni tipiche di alcuni tipi](#le-dimensioni-tipiche-di-alcuni-tipi)
+    * [1.1.4 L'indirizzo di memoria di una variabile](#l-indirizzo-di-memoria-di-una-variabile)
+    * [1.1.5 Salvare l'indirizzo di memoria: i puntatori](#salvare-l-indirizzo-di-memoria-i-puntatori)
+    * [1.1.6 Dalla variabile al puntatore e viceversa](#dalla-variabile-al-puntatore-e-viceversa)
+    * [1.1.7 Puntatori non inizializzati](#puntatori-non-inizializzati)
+    * [1.1.8 I puntatori sono variabili](#i-puntatori-sono-variabili)
+    * [1.1.9 Inizializzare una variabile a partire da un puntatore](#inizializzare-una-variabile-a-partire-da-un-puntatore)
+    * [1.1.10 Puntatori di puntatori](#puntatori-di-puntatori)
+    * [1.1.11 risalire la caterna di indirizzi](#risalire-la-caterna-di-indirizzi)
+    * [1.1.12 Puntatori ed array](#puntatori-ed-array)
+    * [1.1.13 Gli elementi di un array](#gli-elementi-di-un-array)
+    * [1.1.14 L'algebra dei puntatori](#l-algebra-dei-puntatori)
+    * [1.1.15 Le referenze](#le-referenze)
+    * [1.1.16 Riepilogo sui puntatori](#riepilogo-sui-puntatori)
+  * [1.2 Il passaggio di parametri alle funzioni](#il-passaggio-di-parametri-alle-funzioni)
+    * [1.2.1 Passaggio per valore](#passaggio-per-valore)
+    * [1.2.2 Passaggio per puntatore](#passaggio-per-puntatore)
+    * [1.2.3 Passaggio per referenza](#passaggio-per-referenza)
+    * [1.2.4 L'output di una funzione](#loutput-di-una-funzione)
+    * [1.2.5 Come reagisce il compilatore nel caso di una referenza](#come-reagisce-il-compilatore-nel-caso-di-una-referenza)
+    * [1.2.6 Come reagisce il compilatore nel caso di un puntatore](#come-reagisce-il-compilatore-nel-caso-di-un-puntatore)
+  * [1.3 La gestione dinamica della memoria](#la-gestione-dinamica-della-memoria)
+    * [1.3.1 Heap and Stack](#heap-and-stack)
+    * [1.3.2 Allocazione di una variabile nella Stack](#allocazione-di-una-variabile-nella-stack)
+    * [1.3.3 Allocazione di una variabile nella Heap](#allocazione-di-una-variabile-nella-heap)
+    * [1.3.4 Esempio di allocazione dinamica: utilizzo in una funzione](#esempio-di-allocazione-dinamica-utilizzo-in-una-funzione)
+    * [1.3.5 Un errore pernicioso](#un-errore-pernicioso)
+    * [1.3.5 Allocazione dinamica ed array](#allocazione-dinamica-ed-array)
+    * [1.3.6 Non bisogna perdere il puntatore!](#non-bisogna-perdere-il-puntatore)
+    * [1.3.7 Trova l'errore, 1](#trova-l-errore-1)
+    * [1.3.8 Trova l'errore, 2](#trova-l-errore-2)
+    * [1.3.9 Trova l'errore, 3](#trova-l-errore-3)
+    * [1.3.10 Trova l'errore, 4](#trova-l-errore-4)
+    * [1.3.11 Trova l'errore, 5](#trova-l-errore-5)
+  * [1.4 ESEMPI](#esempi)
+  * [1.5 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -141,36 +142,37 @@
   * Le celle della memoria sono individuate mediante **indirizzi**
   * Le **variabili di diversi tipi occupano una o più celle** di memoria (una zona),
     a seconda del tipo
-    * Il calcolatore è in grado di **interpretare correttamente il contenuto** di una zona di memoria, 
+    * Il calcolatore è in grado di **interpretare correttamente il contenuto** di una zona di memoria,
       se conosce l'indirizzo della prima cella ed il tipo salvato
 
 ![cella](immagini/celle.png)
 
 ![linea](../immagini/linea.png)
 
-### 1.1.2 Lo spazio occupato dalle variabili 
+### 1.1.2 Lo spazio occupato dalle variabili
 
   * ogni tipo ha una **dimensione assegnata** nella RAM
   * per i tipi numerici interi, una dimensione assegnata significa che **i valori che la variabile può assumere
     sono limitati**
   * i tipi in virgola mobile (```float```, ```double```) non hanno limitazioni in valore, ma in precisione,
-    quindi il tipo ```double```, occupando più celle di memoria, è più preciso del tipo ```float``` 
-  * per conoscere la dimensione occupata da un tipo, si può utilizzare la funzone ```sizeof ()```:
+    quindi il tipo ```double```, occupando più celle di memoria, è più preciso del tipo ```float```
+  * per conoscere la dimensione occupata da un tipo, si può utilizzare la funzione ```sizeof ()```:
     ```cpp
     std::cout << "Dimensione di un char : " << sizeof (char)  
-             << " byte" << std::endl ; 
+             << " byte" << std::endl ;
 
     ```
+    Si veda l'[esempio 1.0](ESEMPI.html#utilizzo-di-sizeof) per maggiori dettagli.
 
 ![linea](../immagini/linea.png)
 
-### 1.1.3 Le dimensioni tipiche di alcuni tipi 
+### 1.1.3 Le dimensioni tipiche di alcuni tipi
 
-  * a seconda dell'architettura del calcolatore che si sta utilizzando, 
+  * a seconda dell'architettura del calcolatore che si sta utilizzando,
     le **dimensioni di un tipo possono cambiare**
   * nella tabella che segue,
     sono indicati **valori tipici** per le dimensioni dei tipi comunemente utilizzati
-  * esistono **type modifier** che cambiano le caratteristiche di un tipo 
+  * esistono **type modifier** che cambiano le caratteristiche di un tipo
     (```signed```, ```unsigned```, ```short```, ```long```)
     che ne modificano la dimensione o l'intervallo di copertura
 
@@ -198,7 +200,7 @@
 
   * per ogni variabile, in ```C++``` si conosce il suo **valore** tramite il suo nome
   * si può anche conoscere il suo indirizzo di memoria,
-    tramite l'operatore ```&```:
+    tramite l'operatore ```&``` ([esempio 1.1](ESEMPI.html#stampa-dell-indirizzo-di-memoria-di-una-variabile)):
     ```cpp
     int numero_intero = 5 ;
     std::cout << "valore:    " << numero_intero << std::endl ;
@@ -209,9 +211,9 @@
 
 ### 1.1.5 Salvare l'indirizzo di memoria: i puntatori
 
-  * l'indirizzo di una cella di memoria è un numero, 
+  * l'indirizzo di una cella di memoria è un numero,
     quindi può essere a sua volta **salvato in una variabile**
-  * variabili che contengono indirizzi alla prima cella di memoria di altre variabili 
+  * variabili che contengono indirizzi alla prima cella di memoria di altre variabili
     sono chiamate **puntatori**
   * siccome rivestono un ruolo fondamentale nella programmazione,
     si **dichiarano in modo specifico**, con la sintassi ```type * var```:
@@ -230,7 +232,7 @@
 
   * il simbolo ```*```, oltre a comparire nella dichiarazione di un puntatore,
     rappresenta anche l'opertore che estrae il valore della variabile contenuta
-    nell'indirizzo di memoria puntato:
+    nell'indirizzo di memoria puntato  ([esempio 1.2](ESEMPI.html#puntatori)):
     ```cpp
     int * puntatore_ad_intero = & numero_intero ;
     std::cout << "valore   : " << numero_intero << std::endl ;
@@ -268,7 +270,7 @@
     ```cpp
     ptr = & var ;
     std::cout << "Ora ptr punta a var: " << ptr
-              << " ed il valore a cui punta vale: " << *ptr << std::endl ; 
+              << " ed il valore a cui punta vale: " << *ptr << std::endl ;
     ```
     produce come output:
     ```
@@ -287,45 +289,46 @@
 ### 1.1.9 Inizializzare una variabile a partire da un puntatore
 
   * una variabile può essere inizializzata con il valore presente
-    all'indirizzo contenuto in un puntatore: 
+    all'indirizzo contenuto in un puntatore:
     ```cpp
     int pippo = * ptr ;
-    std::cout << "La variabile pippo vale: " << pippo << std::endl; 
+    std::cout << "La variabile pippo vale: " << pippo << std::endl;
     ```
     produce come output:
     ```
     La variabile pippo vale: 100
     ```
-    * a questo punto, le modifiche a ```*ptr``` effettuate dopo l'inzializzazione
-      **non hanno effetto su ```pippo```**, perché quest'ultimo è un'altra variabile
-      (quindi con il contenuto salvato in un'altra zona di memoria):
-      ```cpp
-      (*ptr)++;
-      std::cout << "var ora vale: " << var << " e pippo vale: " << pippo << std::endl; 
-      ```
-      produce come output:
-      ```
-      var ora vale: 101 e pippo vale: 100
-      ```
+  * a questo punto, le modifiche a ```*ptr``` effettuate dopo l'inzializzazione
+    **non hanno effetto su ```pippo```**, perché quest'ultimo è un'altra variabile
+    (quindi con il contenuto salvato in un'altra zona di memoria):
+    ```cpp
+    (*ptr)++;
+    std::cout << "var ora vale: " << var << " e pippo vale: " << pippo << std::endl;
+    ```
+    produce come output:
+    ```
+    var ora vale: 101 e pippo vale: 100
+    ```
+Si veda l'[esempio 1.3](ESEMPI.html#uso-di-puntatori) per un'implementazione del codice.
 
 ![linea](../immagini/linea.png)
 
 ### 1.1.10 Puntatori di puntatori
 
-  * se un puntatore è una variabile, 
+  * se un puntatore è una variabile,
     ha un **contenuto ed un indirizzo di memoria**
-  * quindi, si può costruire un puntatore al suo indirizzo, 
+  * quindi, si può costruire un puntatore al suo indirizzo,
     cioè un puntatore a puntatore
 
 ![ptrptr](immagini/puntatore_a_puntatore.png)
 
 ![linea](../immagini/linea.png)
 
-### 1.1.11 risalire la caterna di indirizzi
+### 1.1.11 risalire la catena di indirizzi
 
-  * tramite l'operatore ```*``` si può arrivare fino al valore della variabile iniziale:
+  * tramite l'operatore ```*``` si può arrivare fino al valore della variabile iniziale ([esempio 1.4](ESEMPI.html#puntatore-a-puntatore)):
     ```cpp
-    int var = 137 ; 
+    int var = 137 ;
     int * ptr = & var ;
     int ** ptrAptr = & ptr ;
 
@@ -350,7 +353,7 @@
 
 ### 1.1.12 Puntatori ed array
 
-  * Quando si definisce un array, suo nome (senza parentesi graffe) 
+  * Quando si definisce un array, suo nome (senza parentesi graffe)
     contiene **l’indirizzo di memoria del primo elemento** dell’array:  
     ```cpp
     int vec[] = {2, 20} ;
@@ -377,6 +380,8 @@
 
 ![cella](immagini/array.png)
 
+Si veda l'[esempio 1.5](ESEMPI.html#array-e-puntatori) per un'implementazione del codice.
+
 ![linea](../immagini/linea.png)
 
 ### 1.1.14 L'algebra dei puntatori
@@ -395,8 +400,8 @@
 
 ### 1.1.15 Le referenze
 
-  * Le referenze sono **alias per i nomi delle variabili**. 
-    In termini di contenuti, la variabile o la sua referenza sono la stessa cosa:
+  * Le referenze sono **alias per i nomi delle variabili**.
+    In termini di contenuti, la variabile o la sua referenza sono la stessa cosa ([esempio 1.6](ESEMPI.html#referenze)):
     ```cpp
     double pi_greco = 3.1415 ;
     double & ref = pi_greco ;
@@ -408,7 +413,7 @@
               << ref << std::endl ;
     ```
   * di conseguenza, una referenza si crea **soltanto a partire da una variabile esistente**
-  * allo stesso tempo, si **comporta come un puntatore**, 
+  * allo stesso tempo, si **comporta come un puntatore**,
     cioè dà accesso alle variabili direttamente tramite l'indirizzo di memoria,
     piuttosto che il suo contenuto
 
@@ -422,7 +427,7 @@
   * fornisce inoltre il modo di passare da una rappresentazione all'altra:
     * l'**operatore \*** permette di passare da puntatore a variabile
     * l'**operatore &** permette di passare da variabile a puntatore
-  * le **referenze** sono un alias delle variabili, 
+  * le **referenze** sono un alias delle variabili,
     che in realtà maneggiano l'indirizzo di memoria invece del valore della variabile
 
 |  azione | effetto |
@@ -445,18 +450,18 @@
 
 ### 1.2.1 Passaggio per valore
 
-  * nel passaggio per valore, 
+  * nel passaggio per valore,
     nel prototipo della funzione fra parentesi è indidcato il **nome della variabile**
     ```cpp
     int raddoppia (int valore)
     {
-      valore *= 2 ; 
+      valore *= 2 ;
       return valore ;
     }
     ```
   * il calcolatore **crea una copia** della variabile di input
     e passa la copia alla funzione
-  * questo significa che **il passaggio di informazione è lento** 
+  * questo significa che **il passaggio di informazione è lento**
     e la variabile passata alla funzione
     **non risente delle azioni che subisce all'interno della funzione**:
     ```cpp
@@ -474,17 +479,17 @@
 
 ### 1.2.2 Passaggio per puntatore
 
-  * nel passaggio per valore, 
+  * nel passaggio per valore,
     nel prototipo della funzione fra parentesi è indidcato il **puntatore alla variabile**
     da passare
     ```cpp
     int raddoppia (int * valore)
     {
-      *valore *= 2 ; 
+      *valore *= 2 ;
       return *valore ;
     }
     ```
-  * il calcolatore pasa alla funzione la variabile puntatore, 
+  * il calcolatore pasa alla funzione la variabile puntatore,
     quindi **il passaggio di informazione è veloce**
     ed ogni modifica fatta alla zona di memoria indicizzata dal puntatore all'interno della funzione
     **ha effetto anche al di fuori dello scope della funzione**:
@@ -502,19 +507,19 @@
 
 ### 1.2.3 Passaggio per referenza
 
-  * nel passaggio per valore, 
+  * nel passaggio per valore,
     nel prototipo della funzione fra parentesi è indidcata la **referenza alla variabile**
     da passare
     ```cpp
     int raddoppiaRef (int & valore)
     {
-      valore *= 2 ; 
+      valore *= 2 ;
       return valore ;
     }
     ```
-  * il calcolatore pasa alla funzione l'alias alla variabile, che si comporta come un puntatore 
+  * il calcolatore pasa alla funzione l'alias alla variabile, che si comporta come un puntatore
   * quindi **il passaggio di informazione è veloce**
-    ed ogni modifica fatta alla referenza all'interno della funzione 
+    ed ogni modifica fatta alla referenza all'interno della funzione
     **ha effetto anche al di fuori dello scope della funzione**:
     ```cpp
     std::cout << "raddoppio (referenza) " << raddoppiaRef (numero) << "\n" ;
@@ -536,23 +541,25 @@
     ```cpp
     int risultato = raddoppia (numero) ;
     ```
-  * ritornare il puntatore o la referenza ad una variabile è **un'operazione rischiosa 
+  * ritornare il puntatore o la referenza ad una variabile è **un'operazione rischiosa
     e non sempre permessa**
   * infatti, ogni volta che una variabile viene definita all'interno della funzione,
-    al termine della funzione viene **elimiata dal calcolatore** (va out of scope)  
+    al termine della funzione viene **elimiata dal calcolatore** (va out of scope)
+
+Si veda l'[esempio 1.7](ESEMPI.html#passaggio-di-argomenti-ad-una-funzione) per un'implementazione del codice.
 
 ![linea](../immagini/linea.png)
 
 ### 1.2.5 Come reagisce il compilatore nel caso di una referenza
 
-  * fuori dalla funzione 
+  * fuori dalla funzione
     la variabile ```risultato``` non esiste più,
     quindi la referenza, che è il suo alias,
     **non ha significato**:
     ```cpp
     int & raddoppiaReturnReferenza (int valore)
     {
-      int risultato = valore * 2 ; 
+      int risultato = valore * 2 ;
       return risultato ;
     }
     ```
@@ -562,17 +569,17 @@
       return risultato ;
              ^~~~~~~~~
     ```
- 
+
 ![linea](../immagini/linea.png)
 
 ### 1.2.6 Come reagisce il compilatore nel caso di un puntatore
 
-  * fuori dalla funzione 
+  * fuori dalla funzione
     il puntatore a questa variabile indicizza una **zona di memoria non più occupata**
     ```cpp
     int * raddoppiaReturnPuntatore (int valore)
     {
-      int risultato = valore * 2 ; 
+      int risultato = valore * 2 ;
       return & risultato ;
     }
     ```
@@ -585,6 +592,8 @@
   * il passaggio di valori per puntatore è **veloce**:
     per approfittare appieno di questa proprietà,
     dobbiamo **acquisire un controllo più stretto della memoria**
+
+Si veda l'[esempio 1.8](ESEMPI.html#variabili-in-output-da-una-funzione) per un'implementazione del codice.
 
 ![linea](../immagini/linea.png)
 
@@ -620,7 +629,7 @@
 
 ### 1.3.2 Allocazione di una variabile nella Stack
 
-  * una qualunque definizione di variabili vista finora 
+  * una qualunque definizione di variabili vista finora
     è un esempio di uso della stack:
     ```cpp
     int numero = 5 ;
@@ -645,15 +654,15 @@
 
 ### 1.3.3 Allocazione di una variabile nella Heap
 
-  * per allocare una variabile nella heap si usa l'istruzione **```new```**:
+  * per allocare una variabile nella heap si usa l'istruzione **```new```** ([esempio 1.9](ESEMPI.html#allocazione-dinamica-della-memoria)):
     ```cpp
     int * numero = new int (5) ;
     std::cout << * numero << std::endl ;
     ```
     * new **ritorna un puntatore** alla zona di memoria allocata,
       da assegnare ad una variabile
-    * se si perde il valore del puntatore, 
-      diventa **impossibile rintracciare la zona di memoria** allocata da ```new``` 
+    * se si perde il valore del puntatore,
+      diventa **impossibile rintracciare la zona di memoria** allocata da ```new```
   * la zona di memoria non viene deallocata automaticamente,
     nel codice sorgente **è necessario utilizzare l'istruzione ```delete```** per farlo:
     ```cpp
@@ -682,15 +691,15 @@
 ### 1.3.4 Esempio di allocazione dinamica: utilizzo in una funzione
 
   * la funzione seguente sfrutta il fatto che la memoria allocata dinamicamente
-    **non viene cancellata quando finisce lo scope**:
+    **non viene cancellata quando finisce lo scope** ([esempio 1.10](ESEMPI.html#allocazione-dinamica-in-una-funzione)):
     ```cpp
     int * creaInteroDoppio (int valore)
     {
-      int * risultato = new int (valore * 2) ; 
+      int * risultato = new int (valore * 2) ;
       return risultato ;
     }
     ```
-  * infatti, il valore del risultato **rimane accessibile** anche 
+  * infatti, il valore del risultato **rimane accessibile** anche
     dopo che la funzione è stata eseguita:
     ```cpp
     int numero = 5 ;
@@ -709,14 +718,14 @@
 
   * nell'utilizzo della funzione ```creaInteroDoppio```
     non bisogna dimenticare di assegnare ad una variabile il valore del puntatore
-  * la linea seguente non dà errore, 
-    tuttavia **perde il valore del puntatore** 
+  * la linea seguente non dà errore,
+    tuttavia **perde il valore del puntatore**
     alla memoria allocata dinamicamente      
     ```cpp
     std::cout << "Valore doppio  : " << *creaInteroDoppio (numero) << std::endl ;
     ```
   * di conseguenza, **non è possibile utilizzare il comando ```delete```**
-    e la zona di memoria rimane inutilizzabile fino al termine 
+    e la zona di memoria rimane inutilizzabile fino al termine
     dell'esecuzione del programma
 
 ![linea](../immagini/linea.png)
@@ -730,7 +739,7 @@
     int N = 5 ;
     float array[N] ;  // QUESTO __NON__ VA BENE
     ```
-    * la linea ```float array[N]``` non è corretta in ```C++```, 
+    * la linea ```float array[N]``` non è corretta in ```C++```,
       la dimensione dell'array non sarà ```5```, ma un numero che a priori non conosciamo,
       creando problemi in esecuzione difficili da identificare
   * si può utilizzare allocazione dinamica della memoria
@@ -741,11 +750,13 @@
     ```
     * invece delle parentesi tonde, dopo il tipo della variabile bisogna utilizzare **parentesi quadre**
   * avendo usato l'operatore ```new```, la memoria va liberata quando l'array non serve più:
-  ```cpp
-  delete [] dynamic_array ;
-  ```
+    ```cpp
+    delete [] dynamic_array ;
+    ```
   * non bisogna dimenticare le **parentesi quadre** dopo ```delete```
-  * fintanto che siste, questo array si utilizza come uno allocato staticamente
+  * fintanto che esiste, questo array si utilizza come uno allocato staticamente
+
+Si veda l'[esempio 1.11](ESEMPI.html#allocazione-dinamica-di-un-array) per un'implementazione del codice.
 
 ![linea](../immagini/linea.png)
 
@@ -779,9 +790,9 @@
     ```cpp
     int nElem ;
     // ...
-    double * myArray ; 
+    double * myArray ;
     if (nElem > 0)
-      myArray = new double[nElem] ; 
+      myArray = new double[nElem] ;
     // ...
     delete[] myArray ;
     ```
@@ -793,10 +804,10 @@
   * cosa c'è di sbagliato nella sequenza di istruzioni seguente?
     ```cpp
     int nElem ;
-    double * myArray = new double[10] ; 
+    double * myArray = new double[10] ;
     // ...
     if (nElem > 0)
-      myArray = new double[nElem] ; 
+      myArray = new double[nElem] ;
     // ...
     delete[] myArray ;
     ```
@@ -812,16 +823,16 @@
         int sumEven = 0 ;
         int myArray[dim] ;
         unsigned int indx = 0;
-        for (unsigned int i = 0 ; i < 10 ; ++i) 
+        for (unsigned int i = 0 ; i < 10 ; ++i)
           {
-            if (inArray[i]%2 == 0) 
+            if (inArray[i]%2 == 0)
               {
                 myArray[indx] = inArray[i] ;
-                ++indx ; 
+                ++indx ;
               }
           }
         for (unsigned int i = 0 ; i < indx ; ++i)
-          sumEven += myArray[i]; 
+          sumEven += myArray[i];
         return sumEven;
       }
 
@@ -838,24 +849,26 @@
         int sumEven = 0 ;
         int * myArray = new int[dim] ;
         unsigned int indx = 0 ;
-        for (unsigned int i = 0 ; i < 10 ; ++i) 
+        for (unsigned int i = 0 ; i < 10 ; ++i)
           {
-            if (inArray[i]%2 == 0) 
+            if (inArray[i]%2 == 0)
               {
                 myArray[indx] = inArray[i] ;
-                ++indx ; 
+                ++indx ;
               }
           }
         for (unsigned int i = 0 ; i < indx ; ++i)
-          sumEven += myArray[i] ; 
+          sumEven += myArray[i] ;
         return sumEven ;
       }
     ```
 
 ![linea](../immagini/linea.png)
 
-## 1.4 ESERCIZI
+## 1.4 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+## 1.5 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
-
-

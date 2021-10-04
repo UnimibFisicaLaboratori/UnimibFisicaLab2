@@ -7,6 +7,7 @@ sections:
   sections:
   - file: Lezione_01/README.md
     sections:
+    - file: Lezione_01/ESEMPI.rst
     - file: Lezione_01/ESERCIZI.md
   - file: Lezione_02/README.md
     sections:
