@@ -2,83 +2,84 @@
 
 ## Indice
 
-  * [1.1 Introduzione](#11-introduzione)
-    * [1.1.1 linguaggio di programmazione e linguaggio macchina](#111-linguaggio-di-programmazione-e-linguaggio-macchina)
-    * [1.1.2 linguaggi intepretati o compilati](#112-linguaggi-intepretati-o-compilati)
-    * [1.1.3 ```C``` e ```C++```](#113-c-e-c)
-  * [1.2 Un primo programma](#12-un-primo-programma)
-    * [1.2.1 il codice sorgente](#121-il-codice-sorgente)
-    * [1.2.2 uno scheletro vuoto](#122-uno-scheletro-vuoto)
-    * [1.2.3 la prima compilazione](#123-la-prima-compilazione)
-    * [1.2.4 scrivere a schermo](#124-scrivere-a-schermo)
-    * [1.2.5 il lavoro del compilatore](#125-il-lavoro-del-compilatore)
-    * [1.2.6 parametri passati a linea di comando](#126-parametri-passati-a-linea-di-comando)
-    * [1.2.7 parametri chiesti all'utente del programma](#127-parametri-chiesti-allutente-del-programma)
-  * [1.3 Le variabili](#13-le-variabili)
-    * [1.3.1 la loro inizializzazione](#131-la-loro-inizializzazione)
-    * [1.3.2 l'attributo ```const```](#132-lattributo-const)
-    * [1.3.3 gli array di variabili](#133-gli-array-di-variabili)
-    * [1.3.4 gli indici degli array](#134-gli-indici-degli-array)
-    * [1.3.5 la definizione di un array mediante il suo contenuto](#135-la-definizione-di-un-array-mediante-il-suo-contenuto)
-    * [1.3.6 il casting fra diversi tipi in  ```C```](#136-il-casting-fra-diversi-tipi-in--c)
-    * [1.3.7 il casting in ```C++```](#137-il-casting-in-c)
-  * [1.4 Gli operatori](#14-gli-operatori)
-    * [1.4.1 l'operatore di assegnazione](#141-loperatore-di-assegnazione)
-    * [1.4.2 operatori aritmetici](#142-operatori-aritmetici)
-    * [1.4.3 operatori aritmetici composti con assegnazione](#143-operatori-aritmetici-composti-con-assegnazione)
-    * [1.4.4 operatori di incremento](#144-operatori-di-incremento)
-    * [1.4.5 pre-incremento e post-incremento](#145-pre-incremento-e-post-incremento)
-    * [1.4.6 operatori relazionali](#146-operatori-relazionali)
-    * [1.4.7 operatori logici](#147-operatori-logici)
-    * [1.4.8 le precedenze fra operatori](#148-le-precedenze-fra-operatori)
-  * [1.5 Le strutture di controllo](#15-le-strutture-di-controllo)
-    * [1.5.1 gli scope](#151-gli-scope)
-    * [1.5.2 ```if ... else```](#152-if--else)
-    * [1.5.3 ```switch ```](#153-switch-)
-    * [1.5.4 il ciclo ```for```](#154-il-ciclo-for)
-    * [1.5.5 il ciclo ```while```](#155-il-ciclo-while)
-    * [1.5.6 il ciclo ```do ... while```](#156-il-ciclo-do--while)
-    * [1.5.7 l'interruzione di un ciclo](#157-linterruzione-di-un-ciclo)
-  * [1.6 Le funzioni](#16-le-funzioni)
-    * [1.6.1 un primo esempio](#161-un-primo-esempio)
-    * [1.6.2 funzioni senza tipo di ritorno](#162-funzioni-senza-tipo-di-ritorno)
-    * [1.6.3 funzioni ed omonimia](#163-funzioni-ed-omonimia)
-    * [1.6.4 il prototipo di una funzione e la sua implementazione](#164-il-prototipo-di-una-funzione-e-la-sua-implementazione)
-    * [1.6.5 valori di default degli argomenti di una funzione](#165-valori-di-default-degli-argomenti-di-una-funzione)
-    * [1.6.6 l'esportazione delle funzioni in librerie](#166-lesportazione-delle-funzioni-in-librerie)
-    * [1.6.7 il file ```libreria.h```](#167-il-file-libreriah)
-    * [1.6.8 il file ```libreria.cc```](#168-il-file-libreriacc)
-    * [1.6.9 il file ```main.cpp```](#169-il-file-maincpp)
-    * [1.6.10 librerie in ```C++```](#1610-librerie-in-c)
-    * [1.6.11 le funzioni ```inline```](#1611-le-funzioni-inline)
-    * [1.6.12 funzioni matematiche](#1612-funzioni-matematiche)
-    * [1.6.13 un esempio: radice quadrata ed elevamento a potenza](#1613-un-esempio-radice-quadrata-ed-elevamento-a-potenza)
-    * [1.6.14 accesso all'orologio del computer](#1614-accesso-allorologio-del-computer)
-    * [1.6.15 un test di performance](#1615-un-test-di-performance)
-  * [1.7 Direttive al preprocessore](#17-direttive-al-preprocessore)
-    * [1.7.1 la direttiva ```#include```](#171-la-direttiva-include)
-    * [1.7.2 variabili del preprocessore](#172-variabili-del-preprocessore)
-    * [1.7.3 le macro del preprocessore](#173-le-macro-del-preprocessore)
-  * [1.8 La scrittura del proprio programma](#18-la-scrittura-del-proprio-programma)
-    * [1.8.1 la nomenclatura di variabili e funzioni](#181-la-nomenclatura-di-variabili-e-funzioni)
-    * [1.8.2 la dimensione degli scope](#182-la-dimensione-degli-scope)
-    * [1.8.3 l'utilizzo dei commenti nel codice sorgente](#183-lutilizzo-dei-commenti-nel-codice-sorgente)
-    * [1.8.4 l'indentazione del codice sorgente](#184-lindentazione-del-codice-sorgente)
-    * [1.8.5 la fattorizzazione di un programma](#185-la-fattorizzazione-di-un-programma)
-    * [1.8.6 dettagli](#186-dettagli)
-    * [1.8.7 unit testing](#187-unit-testing)
-  * [1.9 Le opzioni di compilazione](#19-le-opzioni-di-compilazione)
-    * [1.9.1 il caso di librerie non di default](#191-il-caso-di-librerie-non-di-default)
-  * [1.10 Gli errori di compilazione](#110-gli-errori-di-compilazione)
-  * [1.11 ESERCIZI](#111-esercizi)
+  * [0.1 Introduzione](#introduzione)
+    * [0.1.1 linguaggio di programmazione e linguaggio macchina](#linguaggio-di-programmazione-e-linguaggio-macchina)
+    * [0.1.2 linguaggi intepretati o compilati](#linguaggi-intepretati-o-compilati)
+    * [0.1.3 ```C``` e ```C++```](#c-e-c)
+  * [0.2 Un primo programma](#un-primo-programma)
+    * [0.2.1 il codice sorgente](#il-codice-sorgente)
+    * [0.2.2 uno scheletro vuoto](#uno-scheletro-vuoto)
+    * [0.2.3 la prima compilazione](#la-prima-compilazione)
+    * [0.2.4 scrivere a schermo](#scrivere-a-schermo)
+    * [0.2.5 il lavoro del compilatore](#il-lavoro-del-compilatore)
+    * [0.2.6 parametri passati a linea di comando](#parametri-passati-a-linea-di-comando)
+    * [0.2.7 parametri chiesti all'utente del programma](#parametri-chiesti-allutente-del-programma)
+  * [0.3 Le variabili](#le-variabili)
+    * [0.3.1 la loro inizializzazione](#la-loro-inizializzazione)
+    * [0.3.2 l'attributo ```const```](#l-attributo-const)
+    * [0.3.3 gli array di variabili](#gli-array-di-variabili)
+    * [0.3.4 gli indici degli array](#gli-indici-degli-array)
+    * [0.3.5 la definizione di un array mediante il suo contenuto](#la-definizione-di-un-array-mediante-il-suo-contenuto)
+    * [0.3.6 il casting fra diversi tipi in  ```C```](#il-casting-fra-diversi-tipi-in--c)
+    * [0.3.7 il casting in ```C++```](#il-casting-in-c)
+  * [0.4 Gli operatori](#gli-operatori)
+    * [0.4.1 l'operatore di assegnazione](#l-operatore-di-assegnazione)
+    * [0.4.2 operatori aritmetici](#operatori-aritmetici)
+    * [0.4.3 operatori aritmetici composti con assegnazione](#operatori-aritmetici-composti-con-assegnazione)
+    * [0.4.4 operatori di incremento](#operatori-di-incremento)
+    * [0.4.5 pre-incremento e post-incremento](#pre-incremento-e-post-incremento)
+    * [0.4.6 operatori relazionali](#operatori-relazionali)
+    * [0.4.7 operatori logici](#operatori-logici)
+    * [0.4.8 le precedenze fra operatori](#le-precedenze-fra-operatori)
+  * [0.5 Le strutture di controllo](#le-strutture-di-controllo)
+    * [0.5.1 gli scope](#gli-scope)
+    * [0.5.2 ```if ... else```](#if-else)
+    * [0.5.3 ```switch ```](#switch)
+    * [0.5.4 il ciclo ```for```](#il-ciclo-for)
+    * [0.5.5 il ciclo ```while```](#il-ciclo-while)
+    * [0.5.6 il ciclo ```do ... while```](#il-ciclo-do-while)
+    * [0.5.7 l'interruzione di un ciclo](#l-interruzione-di-un-ciclo)
+  * [0.6 Le funzioni](#le-funzioni)
+    * [0.6.1 un primo esempio](#un-primo-esempio)
+    * [0.6.2 funzioni senza tipo di ritorno](#funzioni-senza-tipo-di-ritorno)
+    * [0.6.3 funzioni ed omonimia](#funzioni-ed-omonimia)
+    * [0.6.4 il prototipo di una funzione e la sua implementazione](#il-prototipo-di-una-funzione-e-la-sua-implementazione)
+    * [0.6.5 valori di default degli argomenti di una funzione](#valori-di-default-degli-argomenti-di-una-funzione)
+    * [0.6.6 l'esportazione delle funzioni in librerie](#l-esportazione-delle-funzioni-in-librerie)
+    * [0.6.7 il file ```libreria.h```](#il-file-libreria-h)
+    * [0.6.8 il file ```libreria.cc```](#il-file-libreria-cc)
+    * [0.6.9 il file ```main.cpp```](#il-file-main-cpp)
+    * [0.6.10 librerie in ```C++```](#librerie-in-c)
+    * [0.6.11 le funzioni ```inline```](#le-funzioni-inline)
+    * [0.6.12 funzioni matematiche](#funzioni-matematiche)
+    * [0.6.13 un esempio: radice quadrata ed elevamento a potenza](#un-esempio-radice-quadrata-ed-elevamento-a-potenza)
+    * [0.6.14 accesso all'orologio del computer](#accesso-all-orologio-del-computer)
+    * [0.6.15 un test di performance](#un-test-di-performance)
+  * [0.7 Direttive al preprocessore](#direttive-al-preprocessore)
+    * [0.7.1 la direttiva ```#include```](#la-direttiva-include)
+    * [0.7.2 variabili del preprocessore](#variabili-del-preprocessore)
+    * [0.7.3 le macro del preprocessore](#le-macro-del-preprocessore)
+  * [0.8 La scrittura del proprio programma](#la-scrittura-del-proprio-programma)
+    * [0.8.1 la nomenclatura di variabili e funzioni](#la-nomenclatura-di-variabili-e-funzioni)
+    * [0.8.2 la dimensione degli scope](#la-dimensione-degli-scope)
+    * [0.8.3 l'utilizzo dei commenti nel codice sorgente](#l-utilizzo-dei-commenti-nel-codice-sorgente)
+    * [0.8.4 l'indentazione del codice sorgente](#l-indentazione-del-codice-sorgente)
+    * [0.8.5 la fattorizzazione di un programma](#la-fattorizzazione-di-un-programma)
+    * [0.8.6 dettagli](#dettagli)
+    * [0.8.7 unit testing](#unit-testing)
+  * [0.9 Le opzioni di compilazione](#le-opzioni-di-compilazione)
+    * [0.9.1 il caso di librerie non di default](#il-caso-di-librerie-non-di-default)
+  * [0.10 Gli errori di compilazione](#gli-errori-di-compilazione)
+  * [0.11 ESEMPI](#esempi)
+  * [0.12 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
-## 1.1 Introduzione
+## 0.1 Introduzione
 
 ![linea](../immagini/linea.png)
 
-### 1.1.1 linguaggio di programmazione e linguaggio macchina
+### 0.1.1 linguaggio di programmazione e linguaggio macchina
 
   * le istruzioni che un calcolatore segue per eserguire i compiti assegnati
     sono scritte in **linguaggio macchina**,
@@ -92,7 +93,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.1.2 linguaggi intepretati o compilati
+### 0.1.2 linguaggi intepretati o compilati
 
   * esistono **due grandi categorie** di linguaggi di programmazione:  
 
@@ -119,7 +120,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.1.3 ```C``` e ```C++```
+### 0.1.3 ```C``` e ```C++```
 
   * ```C``` è un linguaggio di programmazione:
     * **imperativo**, cioè che impartisce sequenze di istruzioni al calolatore
@@ -141,9 +142,9 @@
 
 ![linea](../immagini/linea.png)
 
-## 1.2 Un primo programma
+## 0.2 Un primo programma
 
-### 1.2.1 il codice sorgente
+### 0.2.1 il codice sorgente
 
   * la sequenza di istruzioni scritte nel linguaggio di programmazione
     sono salvate in un file di testo,
@@ -167,7 +168,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.2.2 uno scheletro vuoto
+### 0.2.2 uno scheletro vuoto
 
   * il programma più semplice e autoconsistente è costituito dalla sequenza di istruzioni relative alla funzione ```main```
   * ogni programma deve contenere una ed una sola **funzione chiamata ```main```**,
@@ -219,7 +220,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.2.3 la prima compilazione
+### 0.2.3 la prima compilazione
 
   * create un codice sorgente ```main.cpp``` con lo scheletro vuoto descritto al paragrafo precedente
   * il sorgente va **compilato** perché possa essere eseguito dal calcolatore
@@ -246,7 +247,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.2.4 scrivere a schermo
+### 0.2.4 scrivere a schermo
 
   * oltre ai comandi fondamentali disponibili di default, il ```C++``` offre
     insiemi di istruzioni dedicate allo svolgimento di specifici compiti, questi
@@ -283,7 +284,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.2.5 il lavoro del compilatore
+### 0.2.5 il lavoro del compilatore
 
   * la compilazione di un programma di divide in tre fasi
 
@@ -317,7 +318,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.2.6 parametri passati a linea di comando
+### 0.2.6 parametri passati a linea di comando
 
   * si possono passare informazioni al programma aggiungendo **parametri a linea di comando**
   * la SHELL passa alla funzione ```main``` la frase scritta dall'utente,
@@ -337,7 +338,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.2.7 parametri chiesti all'utente del programma
+### 0.2.7 parametri chiesti all'utente del programma
 
   * la liberia ```<iostream>``` può essere anche utilizzata per **leggere informazioni dalla tastiera**
     ```cpp
@@ -363,7 +364,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 1.3 Le variabili
+## 0.3 Le variabili
 
   * le informazioni sono manipolate dal programma sotto forma di **variabili**,
     che indicano zone di memoria del calcolatore riservate dal programma
@@ -385,7 +386,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.3.1 la loro inizializzazione
+### 0.3.1 la loro inizializzazione
 
   * le variabili si definiscono ed inizializzano utilizzando le keyword indicate in tabella precedente:
     ```cpp
@@ -420,7 +421,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.3.2 l'attributo ```const```
+### 0.3.2 l'attributo ```const```
 
   * l'attributo ```const``` premesso ad una variabile indica che essa **non può cambiare di valore**
     durante l'esecuzione del programma.
@@ -440,7 +441,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.3.3 gli array di variabili
+### 0.3.3 gli array di variabili
 
   * ad una variabile è associata una **zona di memoria** nella RAM,
     che è dove il calcolatore scrive la variabile durante le operazioni
@@ -470,7 +471,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.3.4 gli indici degli array
+### 0.3.4 gli indici degli array
 
   * gli indici delle celle di memoria di un array lungo N **partono a 0 e finiscono ad N-1**
   * il compilatore **non sempre si accorge** che gli indici siano in questo intervallo
@@ -487,7 +488,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.3.5 la definizione di un array mediante il suo contenuto
+### 0.3.5 la definizione di un array mediante il suo contenuto
 
   * un array può essere anche definito indicandone esplicitamente la lista degli elementi
     fra parentesi graffe:
@@ -499,7 +500,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.3.6 il casting fra diversi tipi in  ```C```
+### 0.3.6 il casting fra diversi tipi in  ```C```
 
   * il casting in ```C``` è la **conversione fra diversi tipi di variabili numeriche**
   * siccome le medesime operazioni fra tipi diversi possono dare risultati differenti
@@ -515,7 +516,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.3.7 il casting in ```C++```
+### 0.3.7 il casting in ```C++```
 
   * in ```C++``` l'operazione di casting ha portata più ampia
     e può essere realizzato con operatori dedicati.
@@ -527,7 +528,7 @@
     è che questo è facilmente rintracciabile nel codice sorgente!
 ![linea](../immagini/linea.png)
 
-## 1.4 Gli operatori
+## 0.4 Gli operatori
 
   * Gli operatori predefiniti in ```C++``` permettono di compiere **operazioni fra variabili**
   * **Per ogni tipo di variabile**, esistono operatori corrispondenti alle operazioni
@@ -540,7 +541,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.4.1 l'operatore di assegnazione
+### 0.4.1 l'operatore di assegnazione
 
   * attribuiscono il **valore iniziale** ad una variabile:
     ```cpp
@@ -567,7 +568,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.4.2 operatori aritmetici
+### 0.4.2 operatori aritmetici
 
   * corrispondono alle **tipiche operazioni matematiche** fra numeri interi o razionali
     ```cpp
@@ -581,7 +582,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.4.3 operatori aritmetici composti con assegnazione
+### 0.4.3 operatori aritmetici composti con assegnazione
 
   * gli operatori aritmetici esistono anche **composti con l'operatore di assegnazione**
     ```cpp
@@ -603,7 +604,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.4.4 operatori di incremento
+### 0.4.4 operatori di incremento
 
   * **L'incremento o decremento unitario** di una variabile si può ottenere
     anche con operaori dedicati:
@@ -625,7 +626,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.4.5 pre-incremento e post-incremento
+### 0.4.5 pre-incremento e post-incremento
 
   * ciascun operatore esiste in due versioni:
     * **pre-incremento** o **pre-decremento**: la variabile a cui viene applicato
@@ -653,7 +654,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.4.6 operatori relazionali
+### 0.4.6 operatori relazionali
 
   * gli operatori relazionali **confrontano tra loro** i valori di due variabili
   * prendono in ingresso due variabili e **restituiscono un valore booleano**
@@ -674,7 +675,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.4.7 operatori logici
+### 0.4.7 operatori logici
 
   * gli operatori logici codificano le **relazioni fra variabili booleane**:
     | operatore | operazione |
@@ -688,7 +689,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.4.8 le precedenze fra operatori
+### 0.4.8 le precedenze fra operatori
 
   * se in una singola linea di un codice sorgente vengono effettuate diverse operazioni,
     il calcolatore le esegue **da destra verso sinistra**,
@@ -714,7 +715,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 1.5 Le strutture di controllo
+## 0.5 Le strutture di controllo
 
   * Le strutture di controllo sono il metodo che si utilizza nei linguaggi di programmazione procedurali
     per **gestire il flusso di istruzioni** che il calcolatore deve eseguire.
@@ -730,7 +731,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.5.1 gli scope
+### 0.5.1 gli scope
 
   * nel codice sorgente diverse istruzioni vengono raggruppate in insiemi chiamati **scope**,
     delimitati da parentesi graffe
@@ -742,7 +743,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.5.2 ```if ... else```
+### 0.5.2 ```if ... else```
 
   * la sequenza ```if (condizione) {scope} else {scope alternativo}``` realizza una selezione binaria,
     nella quale una istruzione o uno scope di istruzioni vengono eseguiti
@@ -765,7 +766,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.5.3 ```switch ```
+### 0.5.3 ```switch ```
 
   * la sequenza ```switch ... case ... default``` realizza una selezione fra molte opzioni,
     basata sul valore di una variabile:
@@ -809,7 +810,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.5.4 il ciclo ```for```
+### 0.5.4 il ciclo ```for```
 
   * la struttura di controllo ```for ()```
     è un modo di implementare la struttura di controllo a ciclo,
@@ -842,7 +843,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.5.5 il ciclo ```while```
+### 0.5.5 il ciclo ```while```
 
   * la struttura di controllo ```while ()```
     consente di implementare un ciclo
@@ -864,7 +865,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.5.6 il ciclo ```do ... while```
+### 0.5.6 il ciclo ```do ... while```
 
   * talvolta conviene che la condizione di proseguimento del ciclo
     venga verificata **dopo l'esecuzione dello scope**
@@ -883,7 +884,7 @@
 
  ![linea](../immagini/linea.png)
 
-### 1.5.7 l'interruzione di un ciclo
+### 0.5.7 l'interruzione di un ciclo
 
   * oltre a terminare quando la condizione di controllo diventa falsa,
     **l'esecuzione di un ciclo può essere interrotta** con due comandi:
@@ -902,7 +903,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 1.6 Le funzioni
+## 0.6 Le funzioni
 
   * insiemi di istruzioni che svolgono un **compito preciso e spesso ripetuto**
     all'interno di uno o più programmi
@@ -914,7 +915,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.1 un primo esempio
+### 0.6.1 un primo esempio
 
   * le funzioni vanno **definite prima di essere chiamate** e **possono** essere simultaneamente definite e implementate (come nel caso sottostante)
     ```cpp
@@ -936,7 +937,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.2 funzioni senza tipo di ritorno
+### 0.6.2 funzioni senza tipo di ritorno
 
   * una funzione che **non restituisce alcun valore** si definisce
     con la parola chiave ```void``` (indicatore del tipo di ritorno invece di ```int``` , ```float```  ...)
@@ -966,7 +967,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.3 funzioni ed omonimia
+### 0.6.3 funzioni ed omonimia
 
   * il nome di una funzione, insieme ai suoi tipi in ingresso,
     la **identifica univocamente**
@@ -988,7 +989,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.4 il prototipo di una funzione e la sua implementazione
+### 0.6.4 il prototipo di una funzione e la sua implementazione
 
   * definire una funzione prima di essere chiamata
     è necessario per **permettere il controllo grammaticale** del codice sorgente
@@ -1022,7 +1023,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.5 valori di default degli argomenti di una funzione
+### 0.6.5 valori di default degli argomenti di una funzione
 
   * nel prototipo, oppure nell'implementazione, si possono assegnare **valori di default** alle variabili,
     questi saranno i  valori utilizzati dalla funzione per quella variabile
@@ -1041,7 +1042,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.6 l'esportazione delle funzioni in librerie
+### 0.6.6 l'esportazione delle funzioni in librerie
 
   * funzioni che vengono utilizzate in più di un programma ```main```
     possono essere **scritte in un file diverso**,
@@ -1056,7 +1057,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.7 il file ```libreria.h```
+### 0.6.7 il file ```libreria.h```
 
   * ```libreria.h```: è il file che contiene il codice sorgente dei **prototipi** delle altre funzioni
     ```cpp
@@ -1077,7 +1078,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.8 il file ```libreria.cc```
+### 0.6.8 il file ```libreria.cc```
 
   * ```libreria.cc```: è il file che contiene il **codice sorgente delle funzioni secondarie**
     ```cpp
@@ -1094,7 +1095,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.9 il file ```main.cpp```
+### 0.6.9 il file ```main.cpp```
 
   * ```main.cpp```: è il file che contiene il **codice sorgente della funzione ```main```**
     ```cpp
@@ -1127,7 +1128,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.10 librerie in ```C++```
+### 0.6.10 librerie in ```C++```
 
   * si possono creare ed includere **più di una libreria** in un programma
   * le librerie di ```C++``` funzionano in questo modo,
@@ -1148,7 +1149,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.11 le funzioni ```inline```
+### 0.6.11 le funzioni ```inline```
 
 
   * si può utilizzare la parola chiave ```inline```,
@@ -1175,7 +1176,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.12 funzioni matematiche
+### 0.6.12 funzioni matematiche
 
   * la libreria ```cmath``` offre un'utile **estensione delle operazioni matematiche**
   * per poterla utilizzare, bisogna includerne il file ```.h``` corrispondente:
@@ -1186,7 +1187,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.13 un esempio: radice quadrata ed elevamento a potenza
+### 0.6.13 un esempio: radice quadrata ed elevamento a potenza
 
   * un esempio di utilizzo delle funzioni presenti in ```cmath```
     riguarda **l'elevamento a potenza e la radice quadrata**:
@@ -1204,7 +1205,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.14 accesso all'orologio del computer
+### 0.6.14 accesso all'orologio del computer
 
   * un'altra libreria di uso frequente
     ```ctime```
@@ -1216,7 +1217,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.6.15 un test di performance
+### 0.6.15 un test di performance
 
   * se volessimo **confrontare la velocità di esecuzione** della funzione ```pow (x, 2)```
     rispetto all'operazione ```x * x``` potremmo ripetere entrambe le operazioni molte (```N```) volte
@@ -1246,7 +1247,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-## 1.7 Direttive al preprocessore
+## 0.7 Direttive al preprocessore
 
   * l'insieme di istruzioni che iniziano con il simbolo ```#``` si chiamano
     **direttive al preprocessore** perché vengono lette ed interpretate
@@ -1257,7 +1258,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.7.1 la direttiva ```#include```
+### 0.7.1 la direttiva ```#include```
 
   * come abbiamo già visto,
     questa istruzione viene utilizzata quando si scrivono **librerie di funzioni**
@@ -1267,7 +1268,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.7.2 variabili del preprocessore
+### 0.7.2 variabili del preprocessore
 
   * la direttiva ```#define``` **definisce variabili** del preprocessore
   * viene estensivamente utilizzata, unitamente al controllo booleano ```#ifndef``` (se non è definita),
@@ -1298,7 +1299,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.7.3 le macro del preprocessore
+### 0.7.3 le macro del preprocessore
 
   * si possono anche definire **macro del preprocessore**,
     che sono espressioni che richiamano in forma il comportamento delle funzioni del ```C++```
@@ -1329,7 +1330,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-## 1.8 La scrittura del proprio programma
+## 0.8 La scrittura del proprio programma
 
   * perché un codice sorgente **compili**,
     bisogna rispettare sintassi e grammatica del ```C++```
@@ -1341,7 +1342,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.8.1 la nomenclatura di variabili e funzioni
+### 0.8.1 la nomenclatura di variabili e funzioni
 
   * scegliete nomi di funzioni e variabili **lunghi ed autoesplicativi**
   * scegliete nomi che riguardino il ruolo effettivo di variabili e funzioni:
@@ -1356,7 +1357,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.8.2 la dimensione degli scope
+### 0.8.2 la dimensione degli scope
 
   * scegliete di scrivere **scope piccoli**:
     se il numero di istruzioni in uno scope è molto alto,
@@ -1366,7 +1367,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.8.3 l'utilizzo dei commenti nel codice sorgente
+### 0.8.3 l'utilizzo dei commenti nel codice sorgente
 
   * molti commenti nel codice sorgente aiutano a **capire cosa facciano** funzioni e variabili,
     descrivendo il loro contenuto o la loro funzionalità
@@ -1391,7 +1392,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.8.4 l'indentazione del codice sorgente
+### 0.8.4 l'indentazione del codice sorgente
 
   * indentare il codice sorgente coerentemente aiuta enormemente la lettura del codice sorgente
   * **tutte le istruzioni di uno stesso scope** devono inizare alla medesima colonna
@@ -1407,7 +1408,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.8.5 la fattorizzazione di un programma
+### 0.8.5 la fattorizzazione di un programma
 
   * molto spesso **pezzi di codice sorgente vengono riciclati** copiandoli da programmi vecchi
     ed incollandoli in programmi nuovi
@@ -1420,7 +1421,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.8.6 dettagli
+### 0.8.6 dettagli
 
   * il ```C++``` **distingue maiuscole da minuscole**,
     quindi ```num``` e ```Num``` sono due variabili diverse
@@ -1432,7 +1433,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.8.7 unit testing
+### 0.8.7 unit testing
 
   * quando si scrive un nuovo programma,
     è utile **compilare il codice sorgente** molto spesso
@@ -1455,7 +1456,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-## 1.9 Le opzioni di compilazione
+## 0.9 Le opzioni di compilazione
 
   * durante la compilazione di un codice sorgente,
     il compilatore (```c++```) prende in ingresso **diversi parametri**.
@@ -1475,7 +1476,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-### 1.9.1 il caso di librerie non di default
+### 0.9.1 il caso di librerie non di default
 
   * nel caso si utilizzino **librerie non di default**,
     si può istruire il compilatore riguardo alla loro posizione nel computer:
@@ -1490,7 +1491,7 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-## 1.10 Gli errori di compilazione
+## 0.10 Gli errori di compilazione
 
   * in caso di errore di compilazione,
     il compilatore mostra a schemo la **descrizione degli errori** che ha riscontrato
@@ -1514,6 +1515,10 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
 ![linea](../immagini/linea.png)
 
-## 1.11 ESERCIZI
+## 0.11 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+## 0.11 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)

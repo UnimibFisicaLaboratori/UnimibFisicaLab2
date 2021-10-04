@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Esercizi per la lezione 1" href="ESERCIZI.html" />
+    <link rel="next" title="Esempi: Lezione 1" href="ESEMPI.html" />
     <link rel="prev" title="Indice delle Lezioni" href="../content.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -134,6 +134,11 @@
      </i>
     </label>
     <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESEMPI.html">
+       Esempi: Lezione 1
+      </a>
+     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="ESERCIZI.html">
        Esercizi per la lezione 1
@@ -340,8 +345,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#risalire-la-caterna-di-indirizzi">
-     1.1.11 risalire la caterna di indirizzi
+    <a class="reference internal nav-link" href="#risalire-la-catena-di-indirizzi">
+     1.1.11 risalire la catena di indirizzi
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -476,8 +481,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esempi">
+   1.4 ESEMPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   1.4 ESERCIZI
+   1.5 ESERCIZI
   </a>
  </li>
 </ul>
@@ -496,61 +506,62 @@
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#10-qualcosa-in-pi%C3%B9-del-c-rispetto-al-c">1.0 Qualcosa in più del C++ rispetto al C</a></p>
+<li><p><a class="reference external" href="#qualcosa-in-piu-del-c-rispetto-al-c">1.0 Qualcosa in più del C++ rispetto al C</a></p>
 <ul>
-<li><p><a class="reference external" href="#101-c-e-c">1.0.1 <code class="docutils literal notranslate"><span class="pre">C</span></code> e <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
-<li><p><a class="reference external" href="#102-le-prime-differenze">1.0.2 Le prime differenze</a></p></li>
-<li><p><a class="reference external" href="#103-parametri-chiesti-allutente-del-programma">1.0.3 parametri chiesti all’utente del programma</a></p></li>
-<li><p><a class="reference external" href="#104-il-casting-in-c">1.0.4 il casting in <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+<li><p><a class="reference external" href="#c-e-c">1.0.1 <code class="docutils literal notranslate"><span class="pre">C</span></code> e <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+<li><p><a class="reference external" href="#le-prime-differenze">1.0.2 Le prime differenze</a></p></li>
+<li><p><a class="reference external" href="#parametri-chiesti-allutente-del-programma">1.0.3 parametri chiesti all’utente del programma</a></p></li>
+<li><p><a class="reference external" href="#il-casting-in-c">1.0.4 il casting in <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#21-variabili-e-puntatori">1.1 Variabili e puntatori</a></p>
+<li><p><a class="reference external" href="#variabili-e-puntatori">1.1 Variabili e puntatori</a></p>
 <ul>
-<li><p><a class="reference external" href="#211-la-gestione-delle-variabili-nel-calcolatore">1.1.1 La gestione delle variabili nel calcolatore</a></p></li>
-<li><p><a class="reference external" href="#212-lo-spazio-occupato-dalle-variabili">1.1.2 Lo spazio occupato dalle variabili</a></p></li>
-<li><p><a class="reference external" href="#213-le-dimensioni-tipiche-di-alcuni-tipi">1.1.3 Le dimensioni tipiche di alcuni tipi</a></p></li>
-<li><p><a class="reference external" href="#214-lindirizzo-di-memoria-di-una-variabile">1.1.4 L’indirizzo di memoria di una variabile</a></p></li>
-<li><p><a class="reference external" href="#215-salvare-lindirizzo-di-memoria-i-puntatori">1.1.5 Salvare l’indirizzo di memoria: i puntatori</a></p></li>
-<li><p><a class="reference external" href="#216-dalla-variabile-al-puntatore-e-viceversa">1.1.6 Dalla variabile al puntatore e viceversa</a></p></li>
-<li><p><a class="reference external" href="#217-puntatori-non-inizializzati">1.1.7 Puntatori non inizializzati</a></p></li>
-<li><p><a class="reference external" href="#218-i-puntatori-sono-variabili">1.1.8 I puntatori sono variabili</a></p></li>
-<li><p><a class="reference external" href="#219-inizializzare-una-variabile-a-partire-da-un-puntatore">1.1.9 Inizializzare una variabile a partire da un puntatore</a></p></li>
-<li><p><a class="reference external" href="#2110-puntatori-di-puntatori">1.1.10 Puntatori di puntatori</a></p></li>
-<li><p><a class="reference external" href="#2111-risalire-la-caterna-di-indirizzi">1.1.11 risalire la caterna di indirizzi</a></p></li>
-<li><p><a class="reference external" href="#2112-puntatori-ed-array">1.1.12 Puntatori ed array</a></p></li>
-<li><p><a class="reference external" href="#2113-gli-elementi-di-un-array">1.1.13 Gli elementi di un array</a></p></li>
-<li><p><a class="reference external" href="#2114-lalgebra-dei-puntatori">1.1.14 L’algebra dei puntatori</a></p></li>
-<li><p><a class="reference external" href="#2115-le-referenze">1.1.15 Le referenze</a></p></li>
-<li><p><a class="reference external" href="#2116-riepilogo-sui-puntatori">1.1.16 Riepilogo sui puntatori</a></p></li>
+<li><p><a class="reference external" href="#la-gestione-delle-variabili-nel-calcolatore">1.1.1 La gestione delle variabili nel calcolatore</a></p></li>
+<li><p><a class="reference external" href="#lo-spazio-occupato-dalle-variabili">1.1.2 Lo spazio occupato dalle variabili</a></p></li>
+<li><p><a class="reference external" href="#le-dimensioni-tipiche-di-alcuni-tipi">1.1.3 Le dimensioni tipiche di alcuni tipi</a></p></li>
+<li><p><a class="reference external" href="#l-indirizzo-di-memoria-di-una-variabile">1.1.4 L’indirizzo di memoria di una variabile</a></p></li>
+<li><p><a class="reference external" href="#salvare-l-indirizzo-di-memoria-i-puntatori">1.1.5 Salvare l’indirizzo di memoria: i puntatori</a></p></li>
+<li><p><a class="reference external" href="#dalla-variabile-al-puntatore-e-viceversa">1.1.6 Dalla variabile al puntatore e viceversa</a></p></li>
+<li><p><a class="reference external" href="#puntatori-non-inizializzati">1.1.7 Puntatori non inizializzati</a></p></li>
+<li><p><a class="reference external" href="#i-puntatori-sono-variabili">1.1.8 I puntatori sono variabili</a></p></li>
+<li><p><a class="reference external" href="#inizializzare-una-variabile-a-partire-da-un-puntatore">1.1.9 Inizializzare una variabile a partire da un puntatore</a></p></li>
+<li><p><a class="reference external" href="#puntatori-di-puntatori">1.1.10 Puntatori di puntatori</a></p></li>
+<li><p><a class="reference external" href="#risalire-la-caterna-di-indirizzi">1.1.11 risalire la caterna di indirizzi</a></p></li>
+<li><p><a class="reference external" href="#puntatori-ed-array">1.1.12 Puntatori ed array</a></p></li>
+<li><p><a class="reference external" href="#gli-elementi-di-un-array">1.1.13 Gli elementi di un array</a></p></li>
+<li><p><a class="reference external" href="#l-algebra-dei-puntatori">1.1.14 L’algebra dei puntatori</a></p></li>
+<li><p><a class="reference external" href="#le-referenze">1.1.15 Le referenze</a></p></li>
+<li><p><a class="reference external" href="#riepilogo-sui-puntatori">1.1.16 Riepilogo sui puntatori</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#22-il-passaggio-di-parametri-alle-funzioni">1.2 Il passaggio di parametri alle funzioni</a></p>
+<li><p><a class="reference external" href="#il-passaggio-di-parametri-alle-funzioni">1.2 Il passaggio di parametri alle funzioni</a></p>
 <ul>
-<li><p><a class="reference external" href="#221-passaggio-per-valore">1.2.1 Passaggio per valore</a></p></li>
-<li><p><a class="reference external" href="#222-passaggio-per-puntatore">1.2.2 Passaggio per puntatore</a></p></li>
-<li><p><a class="reference external" href="#223-passaggio-per-referenza">1.2.3 Passaggio per referenza</a></p></li>
-<li><p><a class="reference external" href="#224-loutput-di-una-funzione">1.2.4 L’output di una funzione</a></p></li>
-<li><p><a class="reference external" href="#225-come-reagisce-il-compilatore-nel-caso-di-una-referenza">1.2.5 Come reagisce il compilatore nel caso di una referenza</a></p></li>
-<li><p><a class="reference external" href="#226-come-reagisce-il-compilatore-nel-caso-di-un-puntatore">1.2.6 Come reagisce il compilatore nel caso di un puntatore</a></p></li>
+<li><p><a class="reference external" href="#passaggio-per-valore">1.2.1 Passaggio per valore</a></p></li>
+<li><p><a class="reference external" href="#passaggio-per-puntatore">1.2.2 Passaggio per puntatore</a></p></li>
+<li><p><a class="reference external" href="#passaggio-per-referenza">1.2.3 Passaggio per referenza</a></p></li>
+<li><p><a class="reference external" href="#loutput-di-una-funzione">1.2.4 L’output di una funzione</a></p></li>
+<li><p><a class="reference external" href="#come-reagisce-il-compilatore-nel-caso-di-una-referenza">1.2.5 Come reagisce il compilatore nel caso di una referenza</a></p></li>
+<li><p><a class="reference external" href="#come-reagisce-il-compilatore-nel-caso-di-un-puntatore">1.2.6 Come reagisce il compilatore nel caso di un puntatore</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#23-la-gestione-dinamica-della-memoria">1.3 La gestione dinamica della memoria</a></p>
+<li><p><a class="reference external" href="#la-gestione-dinamica-della-memoria">1.3 La gestione dinamica della memoria</a></p>
 <ul>
-<li><p><a class="reference external" href="#231-heap-and-stack">1.3.1 Heap and Stack</a></p></li>
-<li><p><a class="reference external" href="#232-allocazione-di-una-variabile-nella-stack">1.3.2 Allocazione di una variabile nella Stack</a></p></li>
-<li><p><a class="reference external" href="#233-allocazione-di-una-variabile-nella-heap">1.3.3 Allocazione di una variabile nella Heap</a></p></li>
-<li><p><a class="reference external" href="#234-esempio-di-allocazione-dinamica-utilizzo-in-una-funzione">1.3.4 Esempio di allocazione dinamica: utilizzo in una funzione</a></p></li>
-<li><p><a class="reference external" href="#235-un-errore-pernicioso">1.3.5 Un errore pernicioso</a></p></li>
-<li><p><a class="reference external" href="#235-allocazione-dinamica-ed-array">1.3.5 Allocazione dinamica ed array</a></p></li>
-<li><p><a class="reference external" href="#236-non-bisogna-perdere-il-puntatore">1.3.6 Non bisogna perdere il puntatore!</a></p></li>
-<li><p><a class="reference external" href="#237-trova-lerrore-1">1.3.7 Trova l’errore, 1</a></p></li>
-<li><p><a class="reference external" href="#238-trova-lerrore-2">1.3.8 Trova l’errore, 2</a></p></li>
-<li><p><a class="reference external" href="#239-trova-lerrore-3">1.3.9 Trova l’errore, 3</a></p></li>
-<li><p><a class="reference external" href="#2310-trova-lerrore-4">1.3.10 Trova l’errore, 4</a></p></li>
-<li><p><a class="reference external" href="#2311-trova-lerrore-5">1.3.11 Trova l’errore, 5</a></p></li>
+<li><p><a class="reference external" href="#heap-and-stack">1.3.1 Heap and Stack</a></p></li>
+<li><p><a class="reference external" href="#allocazione-di-una-variabile-nella-stack">1.3.2 Allocazione di una variabile nella Stack</a></p></li>
+<li><p><a class="reference external" href="#allocazione-di-una-variabile-nella-heap">1.3.3 Allocazione di una variabile nella Heap</a></p></li>
+<li><p><a class="reference external" href="#esempio-di-allocazione-dinamica-utilizzo-in-una-funzione">1.3.4 Esempio di allocazione dinamica: utilizzo in una funzione</a></p></li>
+<li><p><a class="reference external" href="#un-errore-pernicioso">1.3.5 Un errore pernicioso</a></p></li>
+<li><p><a class="reference external" href="#allocazione-dinamica-ed-array">1.3.5 Allocazione dinamica ed array</a></p></li>
+<li><p><a class="reference external" href="#non-bisogna-perdere-il-puntatore">1.3.6 Non bisogna perdere il puntatore!</a></p></li>
+<li><p><a class="reference external" href="#trova-l-errore-1">1.3.7 Trova l’errore, 1</a></p></li>
+<li><p><a class="reference external" href="#trova-l-errore-2">1.3.8 Trova l’errore, 2</a></p></li>
+<li><p><a class="reference external" href="#trova-l-errore-3">1.3.9 Trova l’errore, 3</a></p></li>
+<li><p><a class="reference external" href="#trova-l-errore-4">1.3.10 Trova l’errore, 4</a></p></li>
+<li><p><a class="reference external" href="#trova-l-errore-5">1.3.11 Trova l’errore, 5</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#24-esercizi">1.4 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#esempi">1.4 ESEMPI</a></p></li>
+<li><p><a class="reference external" href="#esercizi">1.5 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -691,11 +702,12 @@ se conosce l’indirizzo della prima cella ed il tipo salvato</p></li>
 sono limitati</strong></p></li>
 <li><p>i tipi in virgola mobile (<code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>) non hanno limitazioni in valore, ma in precisione,
 quindi il tipo <code class="docutils literal notranslate"><span class="pre">double</span></code>, occupando più celle di memoria, è più preciso del tipo <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
-<li><p>per conoscere la dimensione occupata da un tipo, si può utilizzare la funzone <code class="docutils literal notranslate"><span class="pre">sizeof</span> <span class="pre">()</span></code>:</p>
+<li><p>per conoscere la dimensione occupata da un tipo, si può utilizzare la funzione <code class="docutils literal notranslate"><span class="pre">sizeof</span> <span class="pre">()</span></code>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Dimensione di un char : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w">  </span>
-<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; byte&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; byte&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
+<p>Si veda l’<a class="reference external" href="ESEMPI.html#utilizzo-di-sizeof">esempio 1.0</a> per maggiori dettagli.</p>
 </li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
@@ -784,7 +796,7 @@ che ne modificano la dimensione o l’intervallo di copertura</p></li>
 <ul>
 <li><p>per ogni variabile, in <code class="docutils literal notranslate"><span class="pre">C++</span></code> si conosce il suo <strong>valore</strong> tramite il suo nome</p></li>
 <li><p>si può anche conoscere il suo indirizzo di memoria,
-tramite l’operatore <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>:</p>
+tramite l’operatore <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (<a class="reference external" href="ESEMPI.html#stampa-dell-indirizzo-di-memoria-di-una-variabile">esempio 1.1</a>):</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;valore:    &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;indirizzo: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -819,7 +831,7 @@ perché sa di che tipo si tratta</p></li>
 <ul>
 <li><p>il simbolo <code class="docutils literal notranslate"><span class="pre">*</span></code>, oltre a comparire nella dichiarazione di un puntatore,
 rappresenta anche l’opertore che estrae il valore della variabile contenuta
-nell’indirizzo di memoria puntato:</p>
+nell’indirizzo di memoria puntato  (<a class="reference external" href="ESEMPI.html#puntatori">esempio 1.2</a>):</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">puntatore_ad_intero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;valore   : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;indirizzo: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">numero_intero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -861,7 +873,7 @@ nell’indirizzo di memoria puntato:</p>
 dunque può <strong>cambiare valore</strong> anche dopo essere stato inizializzato:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Ora ptr punta a var: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ptr</span><span class="w"></span>
-<span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ed il valore a cui punta vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ed il valore a cui punta vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>produce come output:</p>
@@ -886,19 +898,19 @@ in questo caso viene modificato <code class="docutils literal notranslate"><span
 <li><p>una variabile può essere inizializzata con il valore presente
 all’indirizzo contenuto in un puntatore:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">pippo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;La variabile pippo vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pippo</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;La variabile pippo vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pippo</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>produce come output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">La</span> <span class="n">variabile</span> <span class="n">pippo</span> <span class="n">vale</span><span class="p">:</span> <span class="mi">100</span>
 </pre></div>
 </div>
-<ul>
+</li>
 <li><p>a questo punto, le modifiche a <code class="docutils literal notranslate"><span class="pre">*ptr</span></code> effettuate dopo l’inzializzazione
 <strong>non hanno effetto su <code class="docutils literal notranslate"><span class="pre">pippo</span></code></strong>, perché quest’ultimo è un’altra variabile
 (quindi con il contenuto salvato in un’altra zona di memoria):</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">)</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;var ora vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; e pippo vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pippo</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;var ora vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; e pippo vale: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pippo</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>produce come output:</p>
@@ -907,8 +919,7 @@ all’indirizzo contenuto in un puntatore:</p>
 </div>
 </li>
 </ul>
-</li>
-</ul>
+<p>Si veda l’<a class="reference external" href="ESEMPI.html#uso-di-puntatori">esempio 1.3</a> per un’implementazione del codice.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="puntatori-di-puntatori">
@@ -922,11 +933,11 @@ cioè un puntatore a puntatore</p></li>
 <p><img alt="ptrptr" src="../_images/puntatore_a_puntatore.png" /></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="risalire-la-caterna-di-indirizzi">
-<h3>1.1.11 risalire la caterna di indirizzi<a class="headerlink" href="#risalire-la-caterna-di-indirizzi" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="risalire-la-catena-di-indirizzi">
+<h3>1.1.11 risalire la catena di indirizzi<a class="headerlink" href="#risalire-la-catena-di-indirizzi" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>tramite l’operatore <code class="docutils literal notranslate"><span class="pre">*</span></code> si può arrivare fino al valore della variabile iniziale:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">137</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<li><p>tramite l’operatore <code class="docutils literal notranslate"><span class="pre">*</span></code> si può arrivare fino al valore della variabile iniziale (<a class="reference external" href="ESEMPI.html#puntatore-a-puntatore">esempio 1.4</a>):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">137</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">ptrAptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
@@ -984,6 +995,7 @@ contiene <strong>l’indirizzo di memoria del primo elemento</strong> dell’arr
 </li>
 </ul>
 <p><img alt="cella" src="../_images/array.png" /></p>
+<p>Si veda l’<a class="reference external" href="ESEMPI.html#array-e-puntatori">esempio 1.5</a> per un’implementazione del codice.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="l-algebra-dei-puntatori">
@@ -1008,7 +1020,7 @@ cioè sono due rappresentazioni della medesima operazione fatta dal calcolatore<
 <h3>1.1.15 Le referenze<a class="headerlink" href="#le-referenze" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Le referenze sono <strong>alias per i nomi delle variabili</strong>.
-In termini di contenuti, la variabile o la sua referenza sono la stessa cosa:</p>
+In termini di contenuti, la variabile o la sua referenza sono la stessa cosa (<a class="reference external" href="ESEMPI.html#referenze">esempio 1.6</a>):</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">pi_greco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.1415</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi_greco</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ref fornisce un alias di pi_greco: &quot;</span><span class="w"></span>
@@ -1086,7 +1098,7 @@ possono essere usati per <strong>passare argomenti ad una funzione</strong></p><
 nel prototipo della funzione fra parentesi è indidcato il <strong>nome della variabile</strong></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">raddoppia</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -1119,7 +1131,7 @@ nel prototipo della funzione fra parentesi è indidcato il <strong>puntatore all
 da passare</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">raddoppia</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="o">*</span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="o">*</span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">valore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -1150,7 +1162,7 @@ nel prototipo della funzione fra parentesi è indidcata la <strong>referenza all
 da passare</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">raddoppiaRef</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">valore</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -1188,6 +1200,7 @@ e non sempre permessa</strong></p></li>
 <li><p>infatti, ogni volta che una variabile viene definita all’interno della funzione,
 al termine della funzione viene <strong>elimiata dal calcolatore</strong> (va out of scope)</p></li>
 </ul>
+<p>Si veda l’<a class="reference external" href="ESEMPI.html#passaggio-di-argomenti-ad-una-funzione">esempio 1.7</a> per un’implementazione del codice.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="come-reagisce-il-compilatore-nel-caso-di-una-referenza">
@@ -1199,7 +1212,7 @@ quindi la referenza, che è il suo alias,
 <strong>non ha significato</strong>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nf">raddoppiaReturnReferenza</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -1221,7 +1234,7 @@ quindi la referenza, che è il suo alias,
 il puntatore a questa variabile indicizza una <strong>zona di memoria non più occupata</strong></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">raddoppiaReturnPuntatore</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -1237,6 +1250,7 @@ il puntatore a questa variabile indicizza una <strong>zona di memoria non più o
 per approfittare appieno di questa proprietà,
 dobbiamo <strong>acquisire un controllo più stretto della memoria</strong></p></li>
 </ul>
+<p>Si veda l’<a class="reference external" href="ESEMPI.html#variabili-in-output-da-una-funzione">esempio 1.8</a> per un’implementazione del codice.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
@@ -1328,7 +1342,7 @@ il programma (quindi il programmatore) deve <strong>ricordarsi di svuotare la me
 <div class="section" id="allocazione-di-una-variabile-nella-heap">
 <h3>1.3.3 Allocazione di una variabile nella Heap<a class="headerlink" href="#allocazione-di-una-variabile-nella-heap" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>per allocare una variabile nella heap si usa l’istruzione <strong><code class="docutils literal notranslate"><span class="pre">new</span></code></strong>:</p>
+<li><p>per allocare una variabile nella heap si usa l’istruzione <strong><code class="docutils literal notranslate"><span class="pre">new</span></code></strong> (<a class="reference external" href="ESEMPI.html#allocazione-dinamica-della-memoria">esempio 1.9</a>):</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
@@ -1382,10 +1396,10 @@ ed è molto difficile identificare il problema nel programma</p></li>
 <h3>1.3.4 Esempio di allocazione dinamica: utilizzo in una funzione<a class="headerlink" href="#esempio-di-allocazione-dinamica-utilizzo-in-una-funzione" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>la funzione seguente sfrutta il fatto che la memoria allocata dinamicamente
-<strong>non viene cancellata quando finisce lo scope</strong>:</p>
+<strong>non viene cancellata quando finisce lo scope</strong> (<a class="reference external" href="ESEMPI.html#allocazione-dinamica-in-una-funzione">esempio 1.10</a>):</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">creaInteroDoppio</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="n">valore</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -1452,15 +1466,15 @@ per creare array che abbiano dimensione scelta durante l’esecuzione</p>
 <li><p>invece delle parentesi tonde, dopo il tipo della variabile bisogna utilizzare <strong>parentesi quadre</strong></p></li>
 </ul>
 </li>
-<li><p>avendo usato l’operatore <code class="docutils literal notranslate"><span class="pre">new</span></code>, la memoria va liberata quando l’array non serve più:</p></li>
-</ul>
+<li><p>avendo usato l’operatore <code class="docutils literal notranslate"><span class="pre">new</span></code>, la memoria va liberata quando l’array non serve più:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">dynamic_array</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-<ul class="simple">
+</li>
 <li><p>non bisogna dimenticare le <strong>parentesi quadre</strong> dopo <code class="docutils literal notranslate"><span class="pre">delete</span></code></p></li>
-<li><p>fintanto che siste, questo array si utilizza come uno allocato staticamente</p></li>
+<li><p>fintanto che esiste, questo array si utilizza come uno allocato staticamente</p></li>
 </ul>
+<p>Si veda l’<a class="reference external" href="ESEMPI.html#allocazione-dinamica-di-un-array">esempio 1.11</a> per un’implementazione del codice.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="non-bisogna-perdere-il-puntatore">
@@ -1495,9 +1509,9 @@ altrimenti non si riesce più a liberare la memoria</p></li>
 <li><p>cosa c’è di sbagliato nella sequenza di istruzioni seguente?</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">nElem</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="c1">// ...</span>
-<span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nElem</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">nElem</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">nElem</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="c1">// ...</span>
 <span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
@@ -1511,10 +1525,10 @@ altrimenti non si riesce più a liberare la memoria</p></li>
 <ul>
 <li><p>cosa c’è di sbagliato nella sequenza di istruzioni seguente?</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">nElem</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="c1">// ...</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nElem</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">nElem</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">nElem</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="c1">// ...</span>
 <span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
@@ -1532,16 +1546,16 @@ altrimenti non si riesce più a liberare la memoria</p></li>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sumEven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
 <span class="w">          </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">myArray</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="o">++</span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="o">++</span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">          </span><span class="p">}</span><span class="w"></span>
 <span class="w">      </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">sumEven</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span>
+<span class="w">      </span><span class="n">sumEven</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sumEven</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -1559,16 +1573,16 @@ altrimenti non si riesce più a liberare la memoria</p></li>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sumEven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
 <span class="w">          </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">myArray</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="o">++</span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="o">++</span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">          </span><span class="p">}</span><span class="w"></span>
 <span class="w">      </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">sumEven</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">      </span><span class="n">sumEven</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">myArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sumEven</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -1578,8 +1592,14 @@ altrimenti non si riesce più a liberare la memoria</p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
+<div class="section" id="esempi">
+<h2>1.4 ESEMPI<a class="headerlink" href="#esempi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esempi relativi alla lezione si trovano <a class="reference internal" href="ESEMPI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
 <div class="section" id="esercizi">
-<h2>1.4 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>1.5 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
@@ -1627,10 +1647,10 @@ altrimenti non si riesce più a liberare la memoria</p></li>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="ESERCIZI.html" title="next page">
+        <a class="right-next" href="ESEMPI.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Esercizi per la lezione 1</p>
+                <p class="prevnext-title">Esempi: Lezione 1</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -1644,7 +1664,7 @@ altrimenti non si riesce più a liberare la memoria</p></li>
     <div class="container">
       <p>
         
-          By Pietro Govoni, Maura Pavan<br/>
+          By Docenti del Corso di Laboratorio 2<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
