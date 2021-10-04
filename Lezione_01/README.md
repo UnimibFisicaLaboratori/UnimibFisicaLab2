@@ -44,7 +44,8 @@
     * [1.3.9 Trova l'errore, 3](#trova-l-errore-3)
     * [1.3.10 Trova l'errore, 4](#trova-l-errore-4)
     * [1.3.11 Trova l'errore, 5](#trova-l-errore-5)
-  * [1.4 ESERCIZI](#esercizi)
+  * [1.4 ESEMPI](#esempi)
+  * [1.5 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -155,12 +156,13 @@
     sono limitati**
   * i tipi in virgola mobile (```float```, ```double```) non hanno limitazioni in valore, ma in precisione,
     quindi il tipo ```double```, occupando più celle di memoria, è più preciso del tipo ```float```
-  * per conoscere la dimensione occupata da un tipo, si può utilizzare la funzone ```sizeof ()```:
+  * per conoscere la dimensione occupata da un tipo, si può utilizzare la funzione ```sizeof ()```:
     ```cpp
     std::cout << "Dimensione di un char : " << sizeof (char)  
              << " byte" << std::endl ;
 
     ```
+    Si veda l'[esempio 1.0](ESEMPI.html#utilizzo-di-sizeof) per maggiori dettagli.
 
 ![linea](../immagini/linea.png)
 
@@ -198,7 +200,7 @@
 
   * per ogni variabile, in ```C++``` si conosce il suo **valore** tramite il suo nome
   * si può anche conoscere il suo indirizzo di memoria,
-    tramite l'operatore ```&```:
+    tramite l'operatore ```&``` ([esempio 1.1](ESEMPI.html#stampa-dell-indirizzo-di-memoria-di-una-variabile)):
     ```cpp
     int numero_intero = 5 ;
     std::cout << "valore:    " << numero_intero << std::endl ;
@@ -230,7 +232,7 @@
 
   * il simbolo ```*```, oltre a comparire nella dichiarazione di un puntatore,
     rappresenta anche l'opertore che estrae il valore della variabile contenuta
-    nell'indirizzo di memoria puntato:
+    nell'indirizzo di memoria puntato  ([esempio 1.2](ESEMPI.html#puntatori)):
     ```cpp
     int * puntatore_ad_intero = & numero_intero ;
     std::cout << "valore   : " << numero_intero << std::endl ;
@@ -296,17 +298,18 @@
     ```
     La variabile pippo vale: 100
     ```
-    * a questo punto, le modifiche a ```*ptr``` effettuate dopo l'inzializzazione
-      **non hanno effetto su ```pippo```**, perché quest'ultimo è un'altra variabile
-      (quindi con il contenuto salvato in un'altra zona di memoria):
-      ```cpp
-      (*ptr)++;
-      std::cout << "var ora vale: " << var << " e pippo vale: " << pippo << std::endl;
-      ```
-      produce come output:
-      ```
-      var ora vale: 101 e pippo vale: 100
-      ```
+  * a questo punto, le modifiche a ```*ptr``` effettuate dopo l'inzializzazione
+    **non hanno effetto su ```pippo```**, perché quest'ultimo è un'altra variabile
+    (quindi con il contenuto salvato in un'altra zona di memoria):
+    ```cpp
+    (*ptr)++;
+    std::cout << "var ora vale: " << var << " e pippo vale: " << pippo << std::endl;
+    ```
+    produce come output:
+    ```
+    var ora vale: 101 e pippo vale: 100
+    ```
+Si veda l'[esempio 1.3](ESEMPI.html#uso-di-puntatori) per un'implementazione del codice.
 
 ![linea](../immagini/linea.png)
 
@@ -321,9 +324,9 @@
 
 ![linea](../immagini/linea.png)
 
-### 1.1.11 risalire la caterna di indirizzi
+### 1.1.11 risalire la catena di indirizzi
 
-  * tramite l'operatore ```*``` si può arrivare fino al valore della variabile iniziale:
+  * tramite l'operatore ```*``` si può arrivare fino al valore della variabile iniziale ([esempio 1.4](ESEMPI.html#puntatore-a-puntatore)):
     ```cpp
     int var = 137 ;
     int * ptr = & var ;
@@ -377,6 +380,8 @@
 
 ![cella](immagini/array.png)
 
+Si veda l'[esempio 1.5](ESEMPI.html#array-e-puntatori) per un'implementazione del codice.
+
 ![linea](../immagini/linea.png)
 
 ### 1.1.14 L'algebra dei puntatori
@@ -396,7 +401,7 @@
 ### 1.1.15 Le referenze
 
   * Le referenze sono **alias per i nomi delle variabili**.
-    In termini di contenuti, la variabile o la sua referenza sono la stessa cosa:
+    In termini di contenuti, la variabile o la sua referenza sono la stessa cosa ([esempio 1.6](ESEMPI.html#referenze)):
     ```cpp
     double pi_greco = 3.1415 ;
     double & ref = pi_greco ;
@@ -539,7 +544,9 @@
   * ritornare il puntatore o la referenza ad una variabile è **un'operazione rischiosa
     e non sempre permessa**
   * infatti, ogni volta che una variabile viene definita all'interno della funzione,
-    al termine della funzione viene **elimiata dal calcolatore** (va out of scope)  
+    al termine della funzione viene **elimiata dal calcolatore** (va out of scope)
+
+Si veda l'[esempio 1.7](ESEMPI.html#passaggio-di-argomenti-ad-una-funzione) per un'implementazione del codice.
 
 ![linea](../immagini/linea.png)
 
@@ -585,6 +592,8 @@
   * il passaggio di valori per puntatore è **veloce**:
     per approfittare appieno di questa proprietà,
     dobbiamo **acquisire un controllo più stretto della memoria**
+
+Si veda l'[esempio 1.8](ESEMPI.html#variabili-in-output-da-una-funzione) per un'implementazione del codice.
 
 ![linea](../immagini/linea.png)
 
@@ -645,7 +654,7 @@
 
 ### 1.3.3 Allocazione di una variabile nella Heap
 
-  * per allocare una variabile nella heap si usa l'istruzione **```new```**:
+  * per allocare una variabile nella heap si usa l'istruzione **```new```** ([esempio 1.9](ESEMPI.html#allocazione-dinamica-della-memoria)):
     ```cpp
     int * numero = new int (5) ;
     std::cout << * numero << std::endl ;
@@ -682,7 +691,7 @@
 ### 1.3.4 Esempio di allocazione dinamica: utilizzo in una funzione
 
   * la funzione seguente sfrutta il fatto che la memoria allocata dinamicamente
-    **non viene cancellata quando finisce lo scope**:
+    **non viene cancellata quando finisce lo scope** ([esempio 1.10](ESEMPI.html#allocazione-dinamica-in-una-funzione)):
     ```cpp
     int * creaInteroDoppio (int valore)
     {
@@ -741,11 +750,13 @@
     ```
     * invece delle parentesi tonde, dopo il tipo della variabile bisogna utilizzare **parentesi quadre**
   * avendo usato l'operatore ```new```, la memoria va liberata quando l'array non serve più:
-  ```cpp
-  delete [] dynamic_array ;
-  ```
+    ```cpp
+    delete [] dynamic_array ;
+    ```
   * non bisogna dimenticare le **parentesi quadre** dopo ```delete```
-  * fintanto che siste, questo array si utilizza come uno allocato staticamente
+  * fintanto che esiste, questo array si utilizza come uno allocato staticamente
+
+Si veda l'[esempio 1.11](ESEMPI.html#allocazione-dinamica-di-un-array) per un'implementazione del codice.
 
 ![linea](../immagini/linea.png)
 
@@ -854,6 +865,10 @@
 
 ![linea](../immagini/linea.png)
 
-## 1.4 ESERCIZI
+## 1.4 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+## 1.5 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
