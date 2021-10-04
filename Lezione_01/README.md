@@ -869,6 +869,8 @@ Si veda l'[esempio 1.11](ESEMPI.html#allocazione-dinamica-di-un-array) per un'im
 
   * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
 
+![linea](../immagini/linea.png)
+
 ## 1.5 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
