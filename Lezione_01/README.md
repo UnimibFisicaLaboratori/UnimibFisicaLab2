@@ -44,7 +44,7 @@
     * [1.3.9 Trova l'errore, 3](#trova-l-errore-3)
     * [1.3.10 Trova l'errore, 4](#trova-l-errore-4)
     * [1.3.11 Trova l'errore, 5](#trova-l-errore-5)
-  * [1.4 ESERCIZI](#24-esercizi)
+  * [1.4 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
