@@ -1519,6 +1519,8 @@ tempo di esecuzione per i*i: 3.91943 secondi
 
   * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
 
+![linea](../immagini/linea.png)
+
 ## 0.11 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)

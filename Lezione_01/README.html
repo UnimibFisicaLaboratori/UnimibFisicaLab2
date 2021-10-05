@@ -663,7 +663,7 @@ durante l’esecuzione del programma:</p>
 <ul>
 <li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> l’operazione di casting ha portata più ampia
 e può essere realizzato con operatori dedicati.
-Quello con la funzionalità equivalente al type cast del<code class="docutils literal notranslate"><span class="pre">C</span></code> è:</p>
+Quello con la funzionalità equivalente al type cast del <code class="docutils literal notranslate"><span class="pre">C</span></code> è:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="n">secondo_razionale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">numero_intero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
@@ -965,7 +965,7 @@ ptrAptr: 0x7ffee7f0e430
 <div class="section" id="puntatori-ed-array">
 <h3>1.1.12 Puntatori ed array<a class="headerlink" href="#puntatori-ed-array" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Quando si definisce un array, suo nome (senza parentesi graffe)
+<li><p>Quando si definisce un array, il suo nome (senza parentesi quadre)
 contiene <strong>l’indirizzo di memoria del primo elemento</strong> dell’array:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">vec</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1198,7 +1198,7 @@ viene assegnato il valore (<code class="docutils literal notranslate"><span clas
 <li><p>ritornare il puntatore o la referenza ad una variabile è <strong>un’operazione rischiosa
 e non sempre permessa</strong></p></li>
 <li><p>infatti, ogni volta che una variabile viene definita all’interno della funzione,
-al termine della funzione viene <strong>elimiata dal calcolatore</strong> (va out of scope)</p></li>
+al termine della funzione viene <strong>eliminata dal calcolatore</strong> (va out of scope)</p></li>
 </ul>
 <p>Si veda l’<a class="reference external" href="ESEMPI.html#passaggio-di-argomenti-ad-una-funzione">esempio 1.7</a> per un’implementazione del codice.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
@@ -1218,7 +1218,7 @@ quindi la referenza, che è il suo alias,
 </pre></div>
 </div>
 <p>in fase di compilazione produce un <strong>Warning</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main_08</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span> <span class="n">warning</span><span class="p">:</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">stack</span> <span class="n">memory</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;risultatò returned [-Wreturn-stack-address]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main_08</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span> <span class="n">warning</span><span class="p">:</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">stack</span> <span class="n">memory</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;risultato returned [-Wreturn-stack-address]</span>
   <span class="k">return</span> <span class="n">risultato</span> <span class="p">;</span>
          <span class="o">^~~~~~~~~</span>
 </pre></div>
@@ -1240,7 +1240,7 @@ il puntatore a questa variabile indicizza una <strong>zona di memoria non più o
 </pre></div>
 </div>
 <p>anche in questo caso, in fase di compilazione produce un <strong>Warning</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main_08</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span> <span class="n">warning</span><span class="p">:</span> <span class="n">address</span> <span class="n">of</span> <span class="n">stack</span> <span class="n">memory</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;risultatò returned [-Wreturn-stack-address]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main_08</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span> <span class="n">warning</span><span class="p">:</span> <span class="n">address</span> <span class="n">of</span> <span class="n">stack</span> <span class="n">memory</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;risultato returned [-Wreturn-stack-address]</span>
   <span class="k">return</span> <span class="o">&amp;</span> <span class="n">risultato</span> <span class="p">;</span>
            <span class="o">^~~~~~~~~</span>
 </pre></div>
@@ -1597,6 +1597,7 @@ altrimenti non si riesce più a liberare la memoria</p></li>
 <ul class="simple">
 <li><p>Gli esempi relativi alla lezione si trovano <a class="reference internal" href="ESEMPI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizi">
 <h2>1.5 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
