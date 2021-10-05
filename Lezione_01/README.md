@@ -122,7 +122,7 @@
 
   * in ```C++``` l'operazione di casting ha portata più ampia
     e può essere realizzato con operatori dedicati.
-    Quello con la funzionalità equivalente al type cast del```C``` è:
+    Quello con la funzionalità equivalente al type cast del ```C``` è:
     ```cpp
     float secondo_razionale = static_cast<float> (numero_intero) ;
     ```
@@ -353,7 +353,7 @@ Si veda l'[esempio 1.3](ESEMPI.html#uso-di-puntatori) per un'implementazione del
 
 ### 1.1.12 Puntatori ed array
 
-  * Quando si definisce un array, suo nome (senza parentesi graffe)
+  * Quando si definisce un array, il suo nome (senza parentesi quadre)
     contiene **l’indirizzo di memoria del primo elemento** dell’array:  
     ```cpp
     int vec[] = {2, 20} ;
@@ -544,7 +544,7 @@ Si veda l'[esempio 1.5](ESEMPI.html#array-e-puntatori) per un'implementazione de
   * ritornare il puntatore o la referenza ad una variabile è **un'operazione rischiosa
     e non sempre permessa**
   * infatti, ogni volta che una variabile viene definita all'interno della funzione,
-    al termine della funzione viene **elimiata dal calcolatore** (va out of scope)
+    al termine della funzione viene **eliminata dal calcolatore** (va out of scope)
 
 Si veda l'[esempio 1.7](ESEMPI.html#passaggio-di-argomenti-ad-una-funzione) per un'implementazione del codice.
 
@@ -565,7 +565,7 @@ Si veda l'[esempio 1.7](ESEMPI.html#passaggio-di-argomenti-ad-una-funzione) per 
     ```
     in fase di compilazione produce un **Warning**:
     ```
-    main_08.cpp:23:10: warning: reference to stack memory associated with local variable 'risultatò returned [-Wreturn-stack-address]
+    main_08.cpp:23:10: warning: reference to stack memory associated with local variable 'risultato returned [-Wreturn-stack-address]
       return risultato ;
              ^~~~~~~~~
     ```
@@ -585,7 +585,7 @@ Si veda l'[esempio 1.7](ESEMPI.html#passaggio-di-argomenti-ad-una-funzione) per 
     ```
     anche in questo caso, in fase di compilazione produce un **Warning**:
     ```
-    main_08.cpp:17:12: warning: address of stack memory associated with local variable 'risultatò returned [-Wreturn-stack-address]
+    main_08.cpp:17:12: warning: address of stack memory associated with local variable 'risultato returned [-Wreturn-stack-address]
       return & risultato ;
                ^~~~~~~~~
     ```
@@ -868,6 +868,8 @@ Si veda l'[esempio 1.11](ESEMPI.html#allocazione-dinamica-di-un-array) per un'im
 ## 1.4 ESEMPI
 
   * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+![linea](../immagini/linea.png)
 
 ## 1.5 ESERCIZI
 
