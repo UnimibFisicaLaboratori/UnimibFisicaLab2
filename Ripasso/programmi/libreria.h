@@ -1,4 +1,4 @@
-
+/* libreria.h */
 #ifndef libreria_h
 #define libreria_h
 
