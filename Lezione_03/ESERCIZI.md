@@ -11,7 +11,15 @@
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 3.2 
+## Esercizio 3.2
+
+  Si svolga l'esercizio precedente utlizzando l'allocazione dinamica della memoria
+  per creare l'oggetto di tipo ```TH1F```, senza dimenticare di pulire la memoria
+  con l'istruzione ```delete``` prima del termine del programma.
+
+![linea](../immagini/linea.png)
+
+## Esercizio 3.3 
 
 Si legga il file di testo [```eventi_unif.txt```](./programmi/eventi_unif.txt):
 
@@ -23,7 +31,7 @@ Si legga il file di testo [```eventi_unif.txt```](./programmi/eventi_unif.txt):
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 3.3
+## Esercizio 3.4
 
 Si legga il file di testo [```eventi_gauss.txt```](./programmi/eventi_gauss.txt):
   * si riempia un istogramma di tipo ```TH1F``` con i primi N numeri contenuti nel file,
@@ -33,7 +41,7 @@ Si legga il file di testo [```eventi_gauss.txt```](./programmi/eventi_gauss.txt)
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 3.4
+## Esercizio 3.5
 
 Si legga il file di testo [```eventi_unif.txt```](../programmi/eventi_unif.txt):
   * si riempia un istogramma di tipo ```TH1F``` con i primi N numeri contenuti nel file,
@@ -46,7 +54,7 @@ Si legga il file di testo [```eventi_unif.txt```](../programmi/eventi_unif.txt):
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 3.5
+## Esercizio 3.6
 
 Si legga il file di testo [```eventi_unif.txt```](../programmi/eventi_unif.txt):
   * si calcoli la media dei numeri contenuti nel file di testo;
@@ -56,7 +64,7 @@ Si legga il file di testo [```eventi_unif.txt```](../programmi/eventi_unif.txt):
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 3.6
+## Esercizio 3.7
 
 Si scriva una nuova classe, sotto forma di libreria, 
 che dato in input il nome di un file di testo contenente un campione di eventi,
