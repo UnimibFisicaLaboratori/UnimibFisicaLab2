@@ -63,6 +63,8 @@
     ```
   * la **visualizzazione** degli strumenti statistici è un aspetto fondamentale del programma,
     quindi molte opzioni grafiche sono integrate negli oggetti statistici
+  * Il software e la documentazione di ```ROOT``` si trovano a
+    [questo](https://root.cern.ch/) indirizzo web.  
 
 ![linea](../immagini/linea.png)
 
