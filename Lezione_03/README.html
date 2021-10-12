@@ -768,7 +768,6 @@ e le variabili</p></li>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">input_file</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">input_val</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="p">.</span><span class="n">eof</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">input_val</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"> </span>
 <span class="n">input_file</span><span class="p">.</span><span class="n">close</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
@@ -776,7 +775,6 @@ e le variabili</p></li>
 <ul class="simple">
 <li><p>In questo modo, una sequenza di numeri scritti nel file <code class="docutils literal notranslate"><span class="pre">file.txt</span></code>
 vengono letti uno ad uno, <strong>trasferendone il valore nella variabile <code class="docutils literal notranslate"><span class="pre">input_val</span></code></strong></p></li>
-<li><p>Il valore della variabile, ad ogni lettura, viene aggiunto al <code class="docutils literal notranslate"><span class="pre">vector</span></code> chiamato <code class="docutils literal notranslate"><span class="pre">data</span></code></p></li>
 <li><p>All’interno del file di testo,
 i valori sono seperati da spazi, tab o accapo.</p></li>
 <li><p>Al termine della lettura, il <em>file</em> viene chiuso.</p></li>

@@ -270,13 +270,11 @@
       {
         input_file >> input_val ;
         if (input_file.eof () == true) break ;
-        data.push_back (input_val) ;
       } 
     input_file.close () ;
     ```
     * In questo modo, una sequenza di numeri scritti nel file ```file.txt```
       vengono letti uno ad uno, **trasferendone il valore nella variabile ```input_val```**
-    * Il valore della variabile, ad ogni lettura, viene aggiunto al ```vector``` chiamato ```data```
     * All'interno del file di testo,
       i valori sono seperati da spazi, tab o accapo.  
     * Al termine della lettura, il *file* viene chiuso.
