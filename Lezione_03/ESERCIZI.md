@@ -13,7 +13,7 @@
 
 ## Esercizio 3.2 
 
-Si legga il file di testo [```eventi_unif.txt```](../programmi/eventi_unif.txt):
+Si legga il file di testo [```eventi_unif.txt```](./programmi/eventi_unif.txt):
 
   * si scrivano a schermo i suoi primi 10 elementi pari;
   * si conti il numero di eventi contenuti nel file;
@@ -25,7 +25,7 @@ Si legga il file di testo [```eventi_unif.txt```](../programmi/eventi_unif.txt):
 
 ## Esercizio 3.3
 
-Si legga il file di testo [```eventi_gauss.txt```](../programmi/eventi_gauss.txt):
+Si legga il file di testo [```eventi_gauss.txt```](./programmi/eventi_gauss.txt):
   * si riempia un istogramma di tipo ```TH1F``` con i primi N numeri contenuti nel file,
     dove N è un parametro passato a linea di comando in fase di esecuzione del programma;
   * si scelga l'intervallo di definizione dell'istogramma ed il suo numero di bin
