@@ -536,7 +536,7 @@
 le funzionalità di un programma vanno associate all’informazione che processano,</p></li>
 <li><p>così come per ogni tipo predefinito (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, et cetera)
 esistono gli operatori che ne gestiscono i comportamenti</p></li>
-<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> questo paradigma è realizzato attraveso
+<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> questo paradigma è realizzato attraverso
 il concetto di <strong>classe, che è una generalizzazione del tipo</strong>,
 mentre gli <strong>oggetti sono la generalizzazione delle variabili</strong></p></li>
 </ul>
@@ -595,7 +595,7 @@ praticamente <strong>associate soltanto a loro</strong></p></li>
 <ul>
 <li><p>migliore <strong>gestione del programma</strong></p></li>
 <li><p><strong>proprietà</strong> simili a quelle dei tipi predefiniti</p></li>
-<li><p>mogliore <strong>solidità del design del codice sorgente</strong>,
+<li><p>migliore <strong>solidità del design del codice sorgente</strong>,
 perché migliora la consistenza del codice
 e le possibilità di controllo di errori logici</p></li>
 </ul>
@@ -875,7 +875,7 @@ un numero reale:</p>
 </div>
 </li>
 <li><p>se una classe non ha il costruttore,
-il compilaore spesso <strong>definisce un costruttore di default</strong> vuoto</p></li>
+il compilatore spesso <strong>definisce un costruttore di default</strong> vuoto</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -933,7 +933,7 @@ dove tutti i <strong><code class="docutils literal notranslate"><span class="pre
 come ad esempio il salvataggio automatico dell’informazione</p></li>
 <li><p>anche il distruttore <strong>non ha tipo di ritorno</strong></p></li>
 <li><p>se non viene implementato,
-<strong>il compilatore crea automaticamnete</strong> un distruttore vuoto</p></li>
+<strong>il compilatore crea automaticamente</strong> un distruttore vuoto</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -1000,7 +1000,7 @@ per permettere la seguente sintassi:</p>
 </pre></div>
 </div>
 </li>
-<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> si può ottenere defintendo un metodo della classe complesso
+<li><p>in <code class="docutils literal notranslate"><span class="pre">C++</span></code> si può ottenere definendo un metodo della classe complesso
 chiamato <code class="docutils literal notranslate"><span class="pre">operator+</span></code>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"></span>
 <span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">)</span><span class="w"></span>
@@ -1132,7 +1132,7 @@ perché i puntatori non sono inizializzati ad alcun valore di default:</p>
 <strong>i metodi di una classe possono modificare i membri</strong> di un oggetto</p></li>
 <li><p>per continuare ad utilizzare metodi preservando la caratteristica <code class="docutils literal notranslate"><span class="pre">const</span></code>
 il <code class="docutils literal notranslate"><span class="pre">C++</span></code> richiede di <strong>indicare quali metodi non modifichino i membri</strong>
-di una classe, aggiungendo l’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code> al termine del loro prototpo:</p>
+di una classe, aggiungendo l’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code> al termine del loro prototipo:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"></span>
 <span class="nf">complesso::parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -1152,9 +1152,9 @@ soltanto i metodi dichiarati <code class="docutils literal notranslate"><span cl
 <ul class="simple">
 <li><p>come abbiamo già visto,
 esistono <strong>puntatori e referenze ad oggetti</strong>,
-con i medesimi comportamenti delle variaibli di tipo predefinito</p></li>
+con i medesimi comportamenti delle variabili di tipo predefinito</p></li>
 <li><p>per accedere a metodi e membri di un oggetto
-attraveso un suo puntatore,
+attraverso un suo puntatore,
 si utilizza <strong>l’operatore <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> invece di <code class="docutils literal notranslate"><span class="pre">.</span></code></strong></p></li>
 <li><p>le classe possono anche <strong>contenere puntatori</strong> a variabili di tipo predefinito
 o ad altri oggetti</p></li>
