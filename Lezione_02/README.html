@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Esercizi per la lezione 2" href="ESERCIZI.html" />
+    <link rel="next" title="Esempi: Lezione 2" href="ESEMPI.html" />
     <link rel="prev" title="Esercizi per la lezione 1" href="../Lezione_01/ESERCIZI.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -156,6 +156,11 @@
      </i>
     </label>
     <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESEMPI.html">
+       Esempi: Lezione 2
+      </a>
+     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="ESERCIZI.html">
        Esercizi per la lezione 2
@@ -450,8 +455,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esempi">
+   2.7 ESEMPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   2.7 ESERCIZI
+   2.8 ESERCIZI
   </a>
  </li>
 </ul>
@@ -470,51 +480,52 @@
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#31-la-generalizzazione-del-concetto-di-tipo">2.1 La generalizzazione del concetto di tipo</a></p>
+<li><p><a class="reference external" href="#la-generalizzazione-del-concetto-di-tipo">2.1 La generalizzazione del concetto di tipo</a></p>
 <ul>
-<li><p><a class="reference external" href="#311-uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c">2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
-<li><p><a class="reference external" href="#312-un-esempio-i-numeri-complessi">2.1.2 Un esempio: i numeri complessi</a></p></li>
-<li><p><a class="reference external" href="#313-se-i-numeri-complessi-fossero-un-tipo-di-c">2.1.3 Se i numeri complessi fossero un tipo di <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+<li><p><a class="reference external" href="#uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c">2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
+<li><p><a class="reference external" href="#un-esempio-i-numeri-complessi">2.1.2 Un esempio: i numeri complessi</a></p></li>
+<li><p><a class="reference external" href="#se-i-numeri-complessi-fossero-un-tipo-di-c">2.1.3 Se i numeri complessi fossero un tipo di <code class="docutils literal notranslate"><span class="pre">C++</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#32-si-pu%C3%B2-fare-la-classe-dei-numeri-complessi">2.2 Si può fare! La classe dei numeri complessi</a></p>
+<li><p><a class="reference external" href="#si-puo-fare-la-classe-dei-numeri-complessi">2.2 Si può fare! La classe dei numeri complessi</a></p>
 <ul>
-<li><p><a class="reference external" href="#321-la-definizione-della-classe-il-file-complessoh">2.2.1 La definizione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.h</span></code>)</a></p></li>
-<li><p><a class="reference external" href="#322-un-primo-esempio-di-utilizzo">2.2.2 un primo esempio di utilizzo</a></p></li>
-<li><p><a class="reference external" href="#323-i-membri-di-una-classe">2.2.3 I membri di una classe</a></p></li>
-<li><p><a class="reference external" href="#324-i-metodi-di-una-classe">2.2.4 I metodi di una classe</a></p></li>
-<li><p><a class="reference external" href="#325-il-campo-private">2.2.5 Il campo <code class="docutils literal notranslate"><span class="pre">private</span></code></a></p></li>
-<li><p><a class="reference external" href="#326-il-campo-public">2.2.6 Il campo <code class="docutils literal notranslate"><span class="pre">public</span></code></a></p></li>
-<li><p><a class="reference external" href="#327-limplementazione-della-classe-il-file-complessocc">2.2.7 L’implementazione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.cc</span></code>)</a></p></li>
-<li><p><a class="reference external" href="#328-un-membro-implicito-di-ogni-classe-loggetto-stesso">2.2.8 Un membro implicito di ogni classe: l’oggetto stesso</a></p></li>
+<li><p><a class="reference external" href="#la-definizione-della-classe-il-file-complesso-h">2.2.1 La definizione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.h</span></code>)</a></p></li>
+<li><p><a class="reference external" href="#un-primo-esempio-di-utilizzo">2.2.2 un primo esempio di utilizzo</a></p></li>
+<li><p><a class="reference external" href="#i-membri-di-una-classe">2.2.3 I membri di una classe</a></p></li>
+<li><p><a class="reference external" href="#i-metodi-di-una-classe">2.2.4 I metodi di una classe</a></p></li>
+<li><p><a class="reference external" href="#il-campo-private">2.2.5 Il campo <code class="docutils literal notranslate"><span class="pre">private</span></code></a></p></li>
+<li><p><a class="reference external" href="#il-campo-public">2.2.6 Il campo <code class="docutils literal notranslate"><span class="pre">public</span></code></a></p></li>
+<li><p><a class="reference external" href="#l-implementazione-della-classe-il-file-complesso-cc">2.2.7 L’implementazione della classe (il file <code class="docutils literal notranslate"><span class="pre">complesso.cc</span></code>)</a></p></li>
+<li><p><a class="reference external" href="#un-membro-implicito-di-ogni-classe-l-oggetto-stesso">2.2.8 Un membro implicito di ogni classe: l’oggetto stesso</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#33-funzioni-speciali-di-una-classe">2.3 Funzioni speciali di una classe</a></p>
+<li><p><a class="reference external" href="#funzioni-speciali-di-una-classe">2.3 Funzioni speciali di una classe</a></p>
 <ul>
-<li><p><a class="reference external" href="#331-il-costruttore">2.2.1 Il costruttore</a></p></li>
-<li><p><a class="reference external" href="#332-la-lista-di-inizializzazione">2.2.2 La lista di inizializzazione</a></p></li>
-<li><p><a class="reference external" href="#333-overloading-del-costruttore">2.2.3 overloading del costruttore</a></p></li>
-<li><p><a class="reference external" href="#334-il-costruttore-di-default">2.2.4 Il costruttore di default</a></p></li>
-<li><p><a class="reference external" href="#335-il-costruttore-di-copia-o-copy-constructor">2.2.5 Il costruttore di copia, o copy constructor</a></p></li>
-<li><p><a class="reference external" href="#336-il-distruttore">2.2.6 Il distruttore</a></p></li>
+<li><p><a class="reference external" href="#il-costruttore">2.2.1 Il costruttore</a></p></li>
+<li><p><a class="reference external" href="#la-lista-di-inizializzazione">2.2.2 La lista di inizializzazione</a></p></li>
+<li><p><a class="reference external" href="#overloading-del-costruttore">2.2.3 overloading del costruttore</a></p></li>
+<li><p><a class="reference external" href="#il-costruttore-di-default">2.2.4 Il costruttore di default</a></p></li>
+<li><p><a class="reference external" href="#il-costruttore-di-copia-o-copy-constructor">2.2.5 Il costruttore di copia, o copy constructor</a></p></li>
+<li><p><a class="reference external" href="#il-distruttore">2.2.6 Il distruttore</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#34-la-ridefinizione-di-operatori-overloading">2.4 La ridefinizione di operatori, overloading</a></p>
+<li><p><a class="reference external" href="#la-ridefinizione-di-operatori-overloading">2.4 La ridefinizione di operatori, overloading</a></p>
 <ul>
-<li><p><a class="reference external" href="#341-loperatore-di-assegnazione-per-tipi-predefiniti">2.4.1 L’operatore di assegnazione per tipi predefiniti</a></p></li>
-<li><p><a class="reference external" href="#342-loperatore-di-assegnazione-per-una-classe">2.4.2 L’operatore di assegnazione per una classe</a></p></li>
-<li><p><a class="reference external" href="#343-loperatore-di-somma">2.4.3 L’operatore di somma</a></p></li>
-<li><p><a class="reference external" href="#344-definizione-al-di-fuori-della-classe">2.4.4 Definizione al di fuori della classe</a></p></li>
+<li><p><a class="reference external" href="#l-operatore-di-assegnazione-per-tipi-predefiniti">2.4.1 L’operatore di assegnazione per tipi predefiniti</a></p></li>
+<li><p><a class="reference external" href="#l-operatore-di-assegnazione-per-una-classe">2.4.2 L’operatore di assegnazione per una classe</a></p></li>
+<li><p><a class="reference external" href="#l-operatore-di-somma">2.4.3 L’operatore di somma</a></p></li>
+<li><p><a class="reference external" href="#definizione-al-di-fuori-della-classe">2.4.4 Definizione al di fuori della classe</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#35-lattributo-const">2.5 L’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code></a></p>
+<li><p><a class="reference external" href="#l-attributo-const">2.5 L’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code></a></p>
 <ul>
-<li><p><a class="reference external" href="#351-esempi-di-utilizzo-di-const-con-i-tipi-predefiniti">2.5.1 Esempi di utilizzo di <code class="docutils literal notranslate"><span class="pre">const</span></code> con i tipi predefiniti</a></p></li>
-<li><p><a class="reference external" href="#352-oggetti-definiti-const">2.5.2 Oggetti definiti <code class="docutils literal notranslate"><span class="pre">const</span></code></a></p></li>
+<li><p><a class="reference external" href="#esempi-di-utilizzo-di-const-con-i-tipi-predefiniti">2.5.1 Esempi di utilizzo di <code class="docutils literal notranslate"><span class="pre">const</span></code> con i tipi predefiniti</a></p></li>
+<li><p><a class="reference external" href="#oggetti-definiti-const">2.5.2 Oggetti definiti <code class="docutils literal notranslate"><span class="pre">const</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#36-classi-e-puntatori">2.6 Classi e puntatori</a></p></li>
-<li><p><a class="reference external" href="#37-esercizi">2.7 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#classi-e-puntatori">2.6 Classi e puntatori</a></p></li>
+<li><p><a class="reference external" href="#esempi">2.7 ESEMPI</a></p></li>
+<li><p><a class="reference external" href="#esercizi">2.8 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -607,7 +618,7 @@ con un file header (<code class="docutils literal notranslate"><span class="pre"
 <li><p>ecco come si definisce in <code class="docutils literal notranslate"><span class="pre">C++</span></code></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">complesso</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="k">public</span><span class="o">:</span><span class="w"> </span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="o">~</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
@@ -910,7 +921,7 @@ vengono distrutti automaticamente</p></li>
 <li><p>la memoria allocata dinamicamente va ripulita esplicitamente:
 per fare questo, esiste una funzione dedicata, chiamata <strong>distruttore</strong>,
 dove tutti i <strong><code class="docutils literal notranslate"><span class="pre">delete</span></code></strong> necessari possono essere chiamati</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::~</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="o">::~</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// qui va ripulita la memoria allocata dinamicamente</span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
@@ -958,7 +969,7 @@ successivamente le fa assumere il valore di <code class="docutils literal notran
 <h3>2.4.2 L’operatore di assegnazione per una classe<a class="headerlink" href="#l-operatore-di-assegnazione-per-una-classe" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>il comportamento dell’operatore di assegnazione <strong>va definito</strong> per una classe</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
 <span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1028,7 +1039,7 @@ Infatti, le due scritture seguenti sono equivalenti:</p>
 <li><p>in questo caso, tuttavia, nella funzione i membri privati degli oggetti <strong>non sono accessibili</strong></p>
 <ul>
 <li><p>bisogna definire <strong>metodi pubblici di interfaccia</strong> per accedere al valore dei membri</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"></span>
 <span class="nf">complesso::parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1054,6 +1065,7 @@ in questo caso non è presente la denominazione di scope <code class="docutils l
 </ul>
 </li>
 </ul>
+<p>L’esempio completo di definizione della classe è <a class="reference external" href="ESEMPI.html#definizione-della-classe-complesso">qui</a>.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
@@ -1109,6 +1121,7 @@ perché i puntatori non sono inizializzati ad alcun valore di default:</p>
 </div>
 </li>
 </ul>
+<p>Si veda l’esempio <a class="reference external" href="ESEMPI.html#uso-di-const-con-tipi-predefiniti">2.3</a></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="oggetti-definiti-const">
@@ -1120,7 +1133,7 @@ perché i puntatori non sono inizializzati ad alcun valore di default:</p>
 <li><p>per continuare ad utilizzare metodi preservando la caratteristica <code class="docutils literal notranslate"><span class="pre">const</span></code>
 il <code class="docutils literal notranslate"><span class="pre">C++</span></code> richiede di <strong>indicare quali metodi non modifichino i membri</strong>
 di una classe, aggiungendo l’attributo <code class="docutils literal notranslate"><span class="pre">const</span></code> al termine del loro prototpo:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"></span>
 <span class="nf">complesso::parte_reale</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1151,8 +1164,14 @@ ed è <strong>necessario ripulire la memoria nel distruttore</strong></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
+<div class="section" id="esempi">
+<h2>2.7 ESEMPI<a class="headerlink" href="#esempi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esempi relativi alla lezione si trovano <a class="reference internal" href="ESEMPI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
 <div class="section" id="esercizi">
-<h2>2.7 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>2.8 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
@@ -1200,10 +1219,10 @@ ed è <strong>necessario ripulire la memoria nel distruttore</strong></p></li>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="ESERCIZI.html" title="next page">
+        <a class="right-next" href="ESEMPI.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Esercizi per la lezione 2</p>
+                <p class="prevnext-title">Esempi: Lezione 2</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
