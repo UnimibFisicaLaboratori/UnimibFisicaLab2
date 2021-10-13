@@ -37,7 +37,7 @@ La funzione deve rendere disponibile il risultato al programma che la chiama.
 
 ## Esercizio 1.5
 
-Rifare l’esercizio su media/varianza realizzando un’unica funzione che le calcoli entrambe,
+Rifare l’esercizio su media/varianza della lezione di ripasso realizzando un’unica funzione che le calcoli entrambe,
 facendo opportuno uso puntatori o referenze.
     
 ![linea](../immagini/linea.png)
