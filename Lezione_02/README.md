@@ -2,36 +2,37 @@
 
 ## Indice
 
-  * [2.1 La generalizzazione del concetto di tipo](#31-la-generalizzazione-del-concetto-di-tipo)
-    * [2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in ```C++```](#311-uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c)
-    * [2.1.2 Un esempio: i numeri complessi](#312-un-esempio-i-numeri-complessi)
-    * [2.1.3 Se i numeri complessi fossero un tipo di ```C++```](#313-se-i-numeri-complessi-fossero-un-tipo-di-c)
-  * [2.2 Si può fare! La classe dei numeri complessi](#32-si-può-fare-la-classe-dei-numeri-complessi)
-    * [2.2.1 La definizione della classe (il file ```complesso.h```)](#321-la-definizione-della-classe-il-file-complessoh)
-    * [2.2.2 un primo esempio di utilizzo](#322-un-primo-esempio-di-utilizzo)
-    * [2.2.3 I membri di una classe](#323-i-membri-di-una-classe)
-    * [2.2.4 I metodi di una classe](#324-i-metodi-di-una-classe)
-    * [2.2.5 Il campo ```private```](#325-il-campo-private)
-    * [2.2.6 Il campo ```public```](#326-il-campo-public)
-    * [2.2.7 L'implementazione della classe (il file ```complesso.cc```)](#327-limplementazione-della-classe-il-file-complessocc)
-    * [2.2.8 Un membro implicito di ogni classe: l'oggetto stesso](#328-un-membro-implicito-di-ogni-classe-loggetto-stesso)
-  * [2.3 Funzioni speciali di una classe](#33-funzioni-speciali-di-una-classe)
-    * [2.2.1 Il costruttore](#331-il-costruttore)
-    * [2.2.2 La lista di inizializzazione](#332-la-lista-di-inizializzazione)
-    * [2.2.3 overloading del costruttore](#333-overloading-del-costruttore)
-    * [2.2.4 Il costruttore di default](#334-il-costruttore-di-default)
-    * [2.2.5 Il costruttore di copia, o copy constructor](#335-il-costruttore-di-copia-o-copy-constructor)
-    * [2.2.6 Il distruttore](#336-il-distruttore)
-  * [2.4 La ridefinizione di operatori, overloading](#34-la-ridefinizione-di-operatori-overloading)
-    * [2.4.1 L'operatore di assegnazione per tipi predefiniti](#341-loperatore-di-assegnazione-per-tipi-predefiniti)
-    * [2.4.2 L'operatore di assegnazione per una classe](#342-loperatore-di-assegnazione-per-una-classe)
-    * [2.4.3 L'operatore di somma](#343-loperatore-di-somma)
-    * [2.4.4 Definizione al di fuori della classe](#344-definizione-al-di-fuori-della-classe)
-  * [2.5 L'attributo ```const```](#35-lattributo-const)
-    * [2.5.1 Esempi di utilizzo di ```const``` con i tipi predefiniti](#351-esempi-di-utilizzo-di-const-con-i-tipi-predefiniti)
-    * [2.5.2 Oggetti definiti ```const```](#352-oggetti-definiti-const)
-  * [2.6 Classi e puntatori](#36-classi-e-puntatori)
-  * [2.7 ESERCIZI](#37-esercizi)
+  * [2.1 La generalizzazione del concetto di tipo](#la-generalizzazione-del-concetto-di-tipo)
+    * [2.1.1 Uno sguardo ravvicinato ai tipi predefiniti in ```C++```](#uno-sguardo-ravvicinato-ai-tipi-predefiniti-in-c)
+    * [2.1.2 Un esempio: i numeri complessi](#un-esempio-i-numeri-complessi)
+    * [2.1.3 Se i numeri complessi fossero un tipo di ```C++```](#se-i-numeri-complessi-fossero-un-tipo-di-c)
+  * [2.2 Si può fare! La classe dei numeri complessi](#si-puo-fare-la-classe-dei-numeri-complessi)
+    * [2.2.1 La definizione della classe (il file ```complesso.h```)](#la-definizione-della-classe-il-file-complesso-h)
+    * [2.2.2 un primo esempio di utilizzo](#un-primo-esempio-di-utilizzo)
+    * [2.2.3 I membri di una classe](#i-membri-di-una-classe)
+    * [2.2.4 I metodi di una classe](#i-metodi-di-una-classe)
+    * [2.2.5 Il campo ```private```](#il-campo-private)
+    * [2.2.6 Il campo ```public```](#il-campo-public)
+    * [2.2.7 L'implementazione della classe (il file ```complesso.cc```)](#l-implementazione-della-classe-il-file-complesso-cc)
+    * [2.2.8 Un membro implicito di ogni classe: l'oggetto stesso](#un-membro-implicito-di-ogni-classe-l-oggetto-stesso)
+  * [2.3 Funzioni speciali di una classe](#funzioni-speciali-di-una-classe)
+    * [2.2.1 Il costruttore](#il-costruttore)
+    * [2.2.2 La lista di inizializzazione](#la-lista-di-inizializzazione)
+    * [2.2.3 overloading del costruttore](#overloading-del-costruttore)
+    * [2.2.4 Il costruttore di default](#il-costruttore-di-default)
+    * [2.2.5 Il costruttore di copia, o copy constructor](#il-costruttore-di-copia-o-copy-constructor)
+    * [2.2.6 Il distruttore](#il-distruttore)
+  * [2.4 La ridefinizione di operatori, overloading](#la-ridefinizione-di-operatori-overloading)
+    * [2.4.1 L'operatore di assegnazione per tipi predefiniti](#l-operatore-di-assegnazione-per-tipi-predefiniti)
+    * [2.4.2 L'operatore di assegnazione per una classe](#l-operatore-di-assegnazione-per-una-classe)
+    * [2.4.3 L'operatore di somma](#l-operatore-di-somma)
+    * [2.4.4 Definizione al di fuori della classe](#definizione-al-di-fuori-della-classe)
+  * [2.5 L'attributo ```const```](#l-attributo-const)
+    * [2.5.1 Esempi di utilizzo di ```const``` con i tipi predefiniti](#esempi-di-utilizzo-di-const-con-i-tipi-predefiniti)
+    * [2.5.2 Oggetti definiti ```const```](#oggetti-definiti-const)
+  * [2.6 Classi e puntatori](#classi-e-puntatori)
+  * [2.7 ESEMPI](#esempi)
+  * [2.8 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -41,7 +42,7 @@
     le funzionalità di un programma vanno associate all'informazione che processano,
   * così come per ogni tipo predefinito (```int```, ```float```, et cetera)
     esistono gli operatori che ne gestiscono i comportamenti
-  * in ```C++``` questo paradigma è realizzato attraveso 
+  * in ```C++``` questo paradigma è realizzato attraveso
     il concetto di **classe, che è una generalizzazione del tipo**,
     mentre gli **oggetti sono la generalizzazione delle variabili**
 
@@ -78,18 +79,18 @@
         return sqrt(real * real + imag * imag) ;
       }
     ```
-      
+
 ![linea](../immagini/linea.png)
 
 ### 2.1.3 Se i numeri complessi fossero un tipo di ```C++```
 
   * le operazioni per gestire i numeri complessi sono
     praticamente **associate soltanto a loro**
-  * risulterebbe molto più comodo se fosse possibile 
+  * risulterebbe molto più comodo se fosse possibile
     **definire un numero complesso** e associare ad esso le operazioni che lo riguardano:
     * migliore **gestione del programma**
     * **proprietà** simili a quelle dei tipi predefiniti
-    * mogliore **solidità del design del codice sorgente**, 
+    * mogliore **solidità del design del codice sorgente**,
       perché migliora la consistenza del codice
       e le possibilità di controllo di errori logici
 
@@ -98,7 +99,7 @@
 ## 2.2 Si può fare! La classe dei numeri complessi
 
   * una classe è di fatto la **definizione di un nuovo tipo**:
-    il caso ideale per la costruzione di una libreria, 
+    il caso ideale per la costruzione di una libreria,
     con un file header (```.h```) ed uno di implementazione (```.cc```)
 
 ![linea](../immagini/linea.png)
@@ -109,10 +110,10 @@
     ```cpp
     class complesso
     {
-    public: 
+    public:
       complesso (double r, double i) ;
       ~complesso () ;
-    
+
       double modulo () ;      
       double fase () ;      
 
@@ -154,7 +155,7 @@
     viene creata una nuova istanza dei membri della classe
     associata a quell'oggetto,
     quindi **ogni oggetto ha le proprie variabili membro** corrispondenti
-  * i membri possono essere di tipo predefinito, 
+  * i membri possono essere di tipo predefinito,
     oppure **a loro volta oggetti** di una classe
   * è buona regola di programmazione **identificare i membri in modo simbolico**,
     ad esempio con il prefisso ```m_```  
@@ -170,8 +171,8 @@
     ```cpp
     numero_complesso_1.modulo ()
     ```
-  * i metodi **possono avere argomenti**, 
-    ad esempio uno di essi potrebbe moltiplicare il numero complesso 
+  * i metodi **possono avere argomenti**,
+    ad esempio uno di essi potrebbe moltiplicare il numero complesso
     per un numero reale:
     ```cpp
     numero_complesso_1.dilata (double fattore_di_scala)
@@ -183,8 +184,8 @@
 
   * i metodi di una classe **fungono da interfaccia** fra i membri di un oggetto
     ed il codice sorgente dove l'oggetto è definito
-  * è talvolta auspicabile che i membri possano essere modificati 
-    **soltanto attraverso i metodi**, 
+  * è talvolta auspicabile che i membri possano essere modificati
+    **soltanto attraverso i metodi**,
     per evitare che subiscano operazioni
     che compromettano la funzionalità dell'oggetto nel suo insieme
   * tutti i metodi ed i membri definiti **dopo la parola chiave ```private```**
@@ -202,7 +203,7 @@
     ```cpp
     numero_complesso_1.modulo ()
     ```
-  * solitamente, i **membri** di una classe sono ```private```, 
+  * solitamente, i **membri** di una classe sono ```private```,
     mentre i suoi **metodi** sono ```public```
   * se si definisce una classe con l'identificativo ```struct``` invece di ```class```,
     se non si indica nulla tutto il contenuto della classe è ```public```
@@ -211,8 +212,8 @@
 
 ### 2.2.7 L'implementazione della classe (il file ```complesso.cc```)
 
-  * i metodi di una classe possono essere **implementati** 
-    direttamente nello scope di definizione 
+  * i metodi di una classe possono essere **implementati**
+    direttamente nello scope di definizione
   * solitamente, tuttavia, questo succede **in un file separato**,
     dove vanno associati alla classe che li contiene, ad esempio:
     ```cpp
@@ -222,14 +223,14 @@
         return sqrt (m_real * m_real + m_imag * m_imag) ;
       }    
     ```
-  * il nome di ogni metodo è preceduto dal nome della classe, 
-    separato dall'operatore di scope resolution ```::``` 
+  * il nome di ogni metodo è preceduto dal nome della classe,
+    separato dall'operatore di scope resolution ```::```
 
 ![linea](../immagini/linea.png)
 
 ### 2.2.8 Un membro implicito di ogni classe: l'oggetto stesso
 
-  * per ogni classe, 
+  * per ogni classe,
     è sempre definito il **puntatore all'oggetto corrente**,
     rappresentato dal simbolo **```this```**
     ```cpp
@@ -247,8 +248,8 @@
 
 ## 2.3 Funzioni speciali di una classe
 
-  * oltre a quelle che servono per maneggiare le variabili, 
-    ogni tipo predefinito possiede funzioni dedicate alla 
+  * oltre a quelle che servono per maneggiare le variabili,
+    ogni tipo predefinito possiede funzioni dedicate alla
     **creazione ed alla distruzione delle variabili**
   * in una classe,
     queste funzioni **vanno implementate**  
@@ -308,7 +309,7 @@
 
   * una classe può possedere **più di un costruttore**,
     a patto che ciascuno prenda argomenti diversi
-  * ad esempio, si può definire un costruttore che abbia come input soltanto 
+  * ad esempio, si può definire un costruttore che abbia come input soltanto
     un numero reale:  
     ```cpp
     complesso::complesso (double r):
@@ -332,7 +333,7 @@
         std::cout << "costruzione di un numero complesso" << std::endl ;
       }
     ```
-  * se una classe non ha il costruttore, 
+  * se una classe non ha il costruttore,
     il compilaore spesso **definisce un costruttore di default** vuoto
 
 ![linea](../immagini/linea.png)
@@ -347,8 +348,8 @@
       m_imag (orig.m_imag)
       {}
     ```
-  * una classe ha sempre accesso a tutti i membri 
-    di tutti gli oggetti di quella classe 
+  * una classe ha sempre accesso a tutti i membri
+    di tutti gli oggetti di quella classe
     se vengono passati come argomenti di una funzione,
     quindi **il copy constructor ha accesso ai membri ```private```
     dell'oggetto ```orig```**
@@ -363,7 +364,7 @@
 
 ### 2.2.6 Il distruttore
 
-  * al termine della vita di un oggetto, cioè al momento in cui va out of scope, 
+  * al termine della vita di un oggetto, cioè al momento in cui va out of scope,
     la memoria che occupa va liberata
   * i suoi membri di tipi predefiniti del ```C++``` allocati automaticamente
     vengono distrutti automaticamente
@@ -371,7 +372,7 @@
     per fare questo, esiste una funzione dedicata, chiamata **distruttore**,
     dove tutti i **```delete```** necessari possono essere chiamati
     ```cpp
-    complesso::~complesso () 
+    complesso::~complesso ()
       {
         // qui va ripulita la memoria allocata dinamicamente
       }
@@ -399,7 +400,7 @@
 
 ### 2.4.1 L'operatore di assegnazione per tipi predefiniti
 
-  * una operazione solitamente fattibile con tipi predefiniti è 
+  * una operazione solitamente fattibile con tipi predefiniti è
     l'assegnazione a partire da una altra variabile esistente:
     ```cpp
     int numero = 5 ;
@@ -413,7 +414,7 @@
 
   * il comportamento dell'operatore di assegnazione **va definito** per una classe
     ```cpp
-    complesso & 
+    complesso &
     complesso::operator= (const complesso & orig)
     {
       m_real = orig.m_real ;
@@ -437,7 +438,7 @@
     ```cpp
     complesso numero_complesso_4 = numero_complesso_3 + numero_complesso_2 ;
     ```
-  * in ```C++``` si può ottenere defintendo un metodo della classe complesso 
+  * in ```C++``` si può ottenere defintendo un metodo della classe complesso
     chiamato ```operator+```:
     ```cpp
     complesso
@@ -468,7 +469,7 @@
   * in questo caso, tuttavia, nella funzione i membri privati degli oggetti **non sono accessibili**
     * bisogna definire **metodi pubblici di interfaccia** per accedere al valore dei membri
       ```cpp
-      double 
+      double
       complesso::parte_reale () const
       {
         return m_real ;
@@ -487,13 +488,15 @@
     * essendo una funzione **esterna alla classe**,
       in questo caso non è presente la denominazione di scope ```complesso::```
 
+  L'esempio completo di definizione della classe è [qui](ESEMPI.html#definizione-della-classe-complesso).
+
 ![linea](../immagini/linea.png)
 
 ## 2.5 L'attributo ```const```
 
   * la parola chiave ```const``` indica il fatto che **non sia permesso
     cambiare il valore** contenuto in una variabile o in un oggetto
-  * const si **applica** al primo attributo alla sua sinistra, 
+  * const si **applica** al primo attributo alla sua sinistra,
     se non c'è nulla si applica al primo attributo alla sua destra
     * a seconda della sua posizione, ha effetti differenti
 
@@ -518,6 +521,8 @@
     int const * const C4 (& C1) ;
     ```
 
+  Si veda l'esempio [2.3](ESEMPI.html#uso-di-const-con-tipi-predefiniti)
+
 ![linea](../immagini/linea.png)
 
 ### 2.5.2 Oggetti definiti ```const```
@@ -526,26 +531,26 @@
   * tuttavia, si pone il problema aggiuntivo che, in generale,
     **i metodi di una classe possono modificare i membri** di un oggetto
   * per continuare ad utilizzare metodi preservando la caratteristica ```const```
-    il ```C++``` richiede di **indicare quali metodi non modifichino i membri** 
+    il ```C++``` richiede di **indicare quali metodi non modifichino i membri**
     di una classe, aggiungendo l'attributo ```const``` al termine del loro prototpo:
     ```cpp
-    double 
+    double
     complesso::parte_reale () const
     {
       return m_real ;
     }
     ```
-  * su un oggetto di tipo ```const``` possono essere invocati 
+  * su un oggetto di tipo ```const``` possono essere invocati
     soltanto i metodi dichiarati ```const```
-    
+
 ![linea](../immagini/linea.png)
 
 ## 2.6 Classi e puntatori
 
-  * come abbiamo già visto, 
+  * come abbiamo già visto,
     esistono **puntatori e referenze ad oggetti**,
     con i medesimi comportamenti delle variaibli di tipo predefinito
-  * per accedere a metodi e membri di un oggetto 
+  * per accedere a metodi e membri di un oggetto
     attraveso un suo puntatore,
     si utilizza **l'operatore ```->``` invece di ```.```**
   * le classe possono anche **contenere puntatori** a variabili di tipo predefinito
@@ -556,10 +561,10 @@
 
 ![linea](../immagini/linea.png)
 
-## 2.7 ESERCIZI
+## 2.7 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+## 2.8 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
-
-
-
-

@@ -11,5 +11,6 @@ sections:
     - file: Lezione_01/ESERCIZI.md
   - file: Lezione_02/README.md
     sections:
+    - file: Lezione_02/ESEMPI.rst
     - file: Lezione_02/ESERCIZI.md
 - file: appendix
