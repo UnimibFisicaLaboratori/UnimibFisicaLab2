@@ -2,29 +2,30 @@
 
 ## Indice
 
-  * [3.1 Introduzione](#31-introduzione)
-    * [3.1.1 l'organizzazione delle librerie di ```ROOT```](#311-lorganizzazione-delle-librerie-di-root)
-    * [3.1.2 prerquisiti per utilizzare ```ROOT```](#312-prerquisiti-per-utilizzare-root)
-    * [3.1.3 come compilare un programma che include classi di ```ROOT```](#313-come-compilare-un-programma-che-include-classi-di-root)
-  * [3.2 ```TH1F```: istogrammi monodimensionali](#32-th1f-istogrammi-monodimensionali)
-    * [3.2.1 i bin di un istogramma](#321-i-bin-di-un-istogramma)
-    * [3.2.2 istogrammi monodimensionali e distribuzioni di densità di probabilità](#322-istogrammi-monodimensionali-e-distribuzioni-di-densità-di-probabilità)
-    * [3.2.3 istogrammi monodimensionali in ```ROOT```](#323-istogrammi-monodimensionali-in-root)
-    * [3.2.4 riempimento di un ```TH1F```](#324-riempimento-di-un-th1f)
-    * [3.2.5 visualizzazione di un ```TH1F```](#325-visualizzazione-di-un-th1f)
-    * [3.2.6 opzioni grafiche](#326-opzioni-grafiche)
-    * [3.2.7 scale logaritmiche](#327-scale-logaritmiche)
-    * [3.2.8 le statistiche di un istogramma](#328-le-statistiche-di-un-istogramma)
-  * [3.3 Un utile intermezzo: la lettura di un *file* di testo](#33-un-utile-intermezzo-la-lettura-di-un-file-di-testo)
-    * [3.3.1 L'implementazione della lettura](#331-limplementazione-della-lettura)
-  * [3.4 una piccola digressione: la varianza di una distribuzione](#34-una-piccola-digressione-la-varianza-di-una-distribuzione)
-    * [3.4.1 la varianza e la dimensione del campione](#341-la-varianza-e-la-dimensione-del-campione)
-    * [3.4.2 varianza e misure (o numeri pseudo-casuali)](#342-varianza-e-misure-o-numeri-pseudo-casuali)
-    * [3.4.3 incertezza sulla media](#343-incertezza-sulla-media)
-  * [3.5 TH2F: istogrammi bidimnesionali](#35-th2f-istogrammi-bidimnesionali)
-  * [3.6 L'interfaccia interattiva di ```ROOT```: la classe ```TApplication```](#36-linterfaccia-interattiva-di-root-la-classe-tapplication)
-  * [3.7 Una gestione furba del testo: ```TString```](#37-una-gestione-furba-del-testo-tstring)
-  * [3.8 ESERCIZI](#38-esercizi)
+  * [3.1 Introduzione](#introduzione)
+    * [3.1.1 l'organizzazione delle librerie di ```ROOT```](#l-organizzazione-delle-librerie-di-root)
+    * [3.1.2 prerquisiti per utilizzare ```ROOT```](#prerquisiti-per-utilizzare-root)
+    * [3.1.3 come compilare un programma che include classi di ```ROOT```](#come-compilare-un-programma-che-include-classi-di-root)
+  * [3.2 ```TH1F```: istogrammi monodimensionali](#th1f-istogrammi-monodimensionali)
+    * [3.2.1 i bin di un istogramma](#i-bin-di-un-istogramma)
+    * [3.2.2 istogrammi monodimensionali e distribuzioni di densità di probabilità](#istogrammi-monodimensionali-e-distribuzioni-di-densità-di-probabilità)
+    * [3.2.3 istogrammi monodimensionali in ```ROOT```](#istogrammi-monodimensionali-in-root)
+    * [3.2.4 riempimento di un ```TH1F```](#riempimento-di-un-th1f)
+    * [3.2.5 visualizzazione di un ```TH1F```](#visualizzazione-di-un-th1f)
+    * [3.2.6 opzioni grafiche](#opzioni-grafiche)
+    * [3.2.7 scale logaritmiche](#scale-logaritmiche)
+    * [3.2.8 le statistiche di un istogramma](#le-statistiche-di-un-istogramma)
+  * [3.3 Un utile intermezzo: la lettura di un *file* di testo](#un-utile-intermezzo-la-lettura-di-un-file-di-testo)
+    * [3.3.1 L'implementazione della lettura](#l-implementazione-della-lettura)
+  * [3.4 una piccola digressione: la varianza di una distribuzione](#una-piccola-digressione-la-varianza-di-una-distribuzione)
+    * [3.4.1 la varianza e la dimensione del campione](#la-varianza-e-la-dimensione-del-campione)
+    * [3.4.2 varianza e misure (o numeri pseudo-casuali)](#varianza-e-misure-o-numeri-pseudo-casuali)
+    * [3.4.3 incertezza sulla media](#incertezza-sulla-media)
+  * [3.5 TH2F: istogrammi bidimnesionali](#th2f-istogrammi-bidimnesionali)
+  * [3.6 L'interfaccia interattiva di ```ROOT```: la classe ```TApplication```](#l-interfaccia-interattiva-di-root-la-classe-tapplication)
+  * [3.7 Una gestione furba del testo: ```TString```](#una-gestione-furba-del-testo-tstring)
+  * [3.8 ESEMPI](#esempi)
+  * [3.9 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -103,6 +104,8 @@
     > c++ -o main_00 `root-config --glibs --cflags` main_00.cpp
     ```
 
+    <div style="text-align: right"> (<a href="ESEMPI.html#inclusione-di-una-classe-di-root">esempio 3.0</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ## 3.2 ```TH1F```: istogrammi monodimensionali
@@ -164,7 +167,7 @@
     cioè  i conteggi di ogni singolo bin sono nulli
   * per riempire l'istogramma
     si utilizza il suo metodo ```Fill```,
-    che viene chiamato per ogni evento:  
+    che viene chiamato per ogni evento ([esempio 3.1](ESEMPI.html#riempimento-di-un-th1f)):
     ```cpp
     istogramma.Fill (2.2) ;
     istogramma.Fill (2.1) ;
@@ -192,6 +195,8 @@
     riporta **statistiche associate alla collezione di eventi**
 ![istogramma_graph](immagini/primo_TH1F.png)
 
+<div style="text-align: right"> (<a href="ESEMPI.html#disegno-di-un-th1f">esempio 3.2</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ### 3.2.6 opzioni grafiche
@@ -212,6 +217,8 @@
     ed opzioni di disegno degli istogrammi
     è **documentata nella relativa [guida per l'utente](https://root.cern.ch/root/htmldoc/guides/users-guide/Histograms.html)**
 
+<div style="text-align: right"> (<a href="ESEMPI.html#disegno-di-un-th1f-con-opzioni-grafiche">esempio 3.3</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ### 3.2.7 scale logaritmiche
@@ -229,6 +236,8 @@
     * chiaramente, lo zero dell'asse in scala logaritmica non può comparire nelle immagini
 ![gaussiana](immagini/Gaussian_TH1F_log.png)
 
+<div style="text-align: right"> (esempi <a href="ESEMPI.html#riempimento-di-un-istogramma-con-numeri-casuali">3.4</a> e <a href="ESEMPI.html#visualizzazione-in-scala-logaritmica">3.5</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ### 3.2.8 le statistiche di un istogramma
@@ -240,6 +249,7 @@
     std::cout << "media:               " << h.GetMean ()    << std::endl ;
     std::cout << "deviazione standard: " << h.GetRMS ()     << std::endl ;
     ```
+<div style="text-align: right"> (<a href="ESEMPI.html#stampa-delle-statistiche-di-un-istogramma">esempio 3.6</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -257,22 +267,22 @@
 
 ### 3.3.1 L'implementazione della lettura
 
-  * L'oggetto che rappresenta un file è di tipo ```fstream```: 
+  * L'oggetto che rappresenta un file è di tipo ```fstream```:
     ```ifstream``` per lettura (**input file stream**) ed
     ```ofstream``` per scrittura (**output file stream**):
     ```cpp
     #include <fstream>
     // ...
-    ifstream input_file ; 
+    ifstream input_file ;
     input_file.open ("file.txt", ios::in) ;
     // ...
     vector<double> data ;
     double input_val ;
-    while (true) 
+    while (true)
       {
         input_file >> input_val ;
         if (input_file.eof () == true) break ;
-      } 
+      }
     input_file.close () ;
     ```
     * In questo modo, una sequenza di numeri scritti nel file ```file.txt```
@@ -294,6 +304,8 @@
   * la radice della varianza è detta **sigma, o deviazione standard**
     ed è una stima della dispersione del campione attorno alla sua media
 
+  <div style="text-align: right"> (<a href="ESEMPI.html#test-di-una-classe-per-il-calcolo-delle-statistiche">esempio 3.7</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ### 3.4.1 la varianza e la dimensione del campione
@@ -306,6 +318,8 @@
     ma ci si aspetta che siano **compatibili fra loro**
   * di conseguenza,
     anche la **deviazione standard non dipende dal numero di eventi nel campione**
+
+  <div style="text-align: right"> (esempi <a href="ESEMPI.html#calcolo-della-varianza-all-aumentare-del-numero-di-punti">3.8</a> e <a href="ESEMPI.html#disegno-della-varianza-all-aumentare-del-numero-di-punti-con-tgraph">3.9</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -330,7 +344,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 3.5 TH2F: istogrammi bidimnesionali
+## 3.5 TH2F: istogrammi bidimensionali
 
   * il concetto di istogramma monodimensionale si applica facilmente anche al **caso bidimensionale**
   * l'oggetto di ```ROOT``` associato a questo concetto si chiama ```TH2F```
@@ -343,6 +357,8 @@
     h2.Fill (rand_TCL (-1., 1., 10), rand_TCL (-1., 1., 10)) ;
     ```
 ![gaussiana2D](immagini/Gaussian_TH2F.png)
+
+<div style="text-align: right"> (<a href="ESEMPI.html#riempimento-e-disegno-di-un-th2f-con-numeri-casuali">esempio 3.10</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -372,6 +388,8 @@
     * per terminare l'esecuzione del programma,
       da un qualunque ```TCanvas``` bisogna utilizzare il menu ```File->Quit ROOT```
 
+<div style="text-align: right"> (<a href="ESEMPI.html#l-interfaccia-interattiva-di-root-la-classe-tapplication">esempio 3.11</a>) </div>      
+
 ![linea](../immagini/linea.png)
 
 ## 3.7 Una gestione furba del testo: ```TString```
@@ -388,8 +406,14 @@
     TH1F istogramma ("istogramma", titolo, 10, -3., 3.) ;
     ```
 
+<div style="text-align: right"> (<a href="ESEMPI.html#una-gestione-furba-del-testo-tstring">esempio 3.12</a>) </div>
+
 ![linea](../immagini/linea.png)
 
-## 3.8 ESERCIZI
+## 3.8 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+## 3.9 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)

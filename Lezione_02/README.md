@@ -42,7 +42,7 @@
     le funzionalità di un programma vanno associate all'informazione che processano,
   * così come per ogni tipo predefinito (```int```, ```float```, et cetera)
     esistono gli operatori che ne gestiscono i comportamenti
-  * in ```C++``` questo paradigma è realizzato attraverso
+  * in ```C++``` questo paradigma è realizzato attraveso
     il concetto di **classe, che è una generalizzazione del tipo**,
     mentre gli **oggetti sono la generalizzazione delle variabili**
 
@@ -90,7 +90,7 @@
     **definire un numero complesso** e associare ad esso le operazioni che lo riguardano:
     * migliore **gestione del programma**
     * **proprietà** simili a quelle dei tipi predefiniti
-    * migliore **solidità del design del codice sorgente**,
+    * mogliore **solidità del design del codice sorgente**,
       perché migliora la consistenza del codice
       e le possibilità di controllo di errori logici
 
@@ -334,7 +334,7 @@
       }
     ```
   * se una classe non ha il costruttore,
-    il compilatore spesso **definisce un costruttore di default** vuoto
+    il compilaore spesso **definisce un costruttore di default** vuoto
 
 ![linea](../immagini/linea.png)
 
@@ -383,7 +383,7 @@
     come ad esempio il salvataggio automatico dell'informazione
   * anche il distruttore **non ha tipo di ritorno**
   * se non viene implementato,
-    **il compilatore crea automaticamente** un distruttore vuoto
+    **il compilatore crea automaticamnete** un distruttore vuoto
 
 ![linea](../immagini/linea.png)
 
@@ -438,7 +438,7 @@
     ```cpp
     complesso numero_complesso_4 = numero_complesso_3 + numero_complesso_2 ;
     ```
-  * in ```C++``` si può ottenere definendo un metodo della classe complesso
+  * in ```C++``` si può ottenere defintendo un metodo della classe complesso
     chiamato ```operator+```:
     ```cpp
     complesso
@@ -457,7 +457,7 @@
     Infatti, le due scritture seguenti sono equivalenti:
     ```cpp
     complesso numero_complesso_4 = numero_complesso_3 + numero_complesso_2 ;
-    complesso numero_complesso_4 = numero_complesso_2.operator+ (numero_complesso_2) ;
+    complesso numero_complesso_4 = numero_complesso_3.operator+ (numero_complesso_2) ;
     ```
 
 ![linea](../immagini/linea.png)
@@ -532,7 +532,7 @@
     **i metodi di una classe possono modificare i membri** di un oggetto
   * per continuare ad utilizzare metodi preservando la caratteristica ```const```
     il ```C++``` richiede di **indicare quali metodi non modifichino i membri**
-    di una classe, aggiungendo l'attributo ```const``` al termine del loro prototipo:
+    di una classe, aggiungendo l'attributo ```const``` al termine del loro prototpo:
     ```cpp
     double
     complesso::parte_reale () const
@@ -549,9 +549,9 @@
 
   * come abbiamo già visto,
     esistono **puntatori e referenze ad oggetti**,
-    con i medesimi comportamenti delle variabili di tipo predefinito
+    con i medesimi comportamenti delle variaibli di tipo predefinito
   * per accedere a metodi e membri di un oggetto
-    attraverso un suo puntatore,
+    attraveso un suo puntatore,
     si utilizza **l'operatore ```->``` invece di ```.```**
   * le classe possono anche **contenere puntatori** a variabili di tipo predefinito
     o ad altri oggetti
