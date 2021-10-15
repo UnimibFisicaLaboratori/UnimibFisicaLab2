@@ -1,15 +1,15 @@
 # Esercizi per la lezione 2
 
-## Esercizio 2.1 
+## Esercizio 2.1
 
 Implementate la classe ```complesso``` come descritta nella lezione al paragrafo ```2.2.1```,
-includendo anche un programma di test delle sue funzionalita'.
+includendo anche un programma di test delle sue funzionalità.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 2.2
 
-Aggiungete alla classe ```complesso``` i vari tipi di costruttore 
+Aggiungete alla classe ```complesso``` i vari tipi di costruttore
 discussi nella sezione ```2.3``` della lezione.
 
 ![linea](../immagini/linea.png)
@@ -33,16 +33,16 @@ Aggiungete alla classe ```complesso``` le seguenti operazioni:
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 2.4 
+## Esercizio 2.4
 
 Scrivete una classe chiamata ```mioArray```
 che implementi un array di numeri ```double``` con dimensione impostata dall'utente
 al momento della creazione degli oggetti,
 utilizzando l'allocazione dinamica della memoria
 e ripulisca la memoria nel distruttore.
-  * Scrivete inoltre un programma di test che verifichi le funzionalita' della classe.
+  * Scrivete inoltre un programma di test che verifichi le funzionalità della classe.
   * La classe ```mioArray``` deve contenere un metodo per accedere ai suoi elementi
-    che operi un controllo sul valore dell'indice, 
+    che operi un controllo sul valore dell'indice,
     che avverta con un messaggio a schermo nel caso in cui si cerchi di accedere
     ad un indice che non sta nell'array
   * Si faccia in modo che sia possibile utilizzare questa funzione

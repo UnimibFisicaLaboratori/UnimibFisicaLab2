@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendice" href="../appendix.html" />
+    <link rel="prev" title="Esempi: Lezione 3" href="ESEMPI.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -91,7 +93,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Prerequisiti/README.html">
    I prerequisiti del corso
@@ -107,16 +109,16 @@
    </code>
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../content.html">
    Indice delle Lezioni
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Lezione_01/README.html">
      Lezione 1: strutturazione di un programma ed introduzione al
@@ -142,6 +144,11 @@
        Esercizi per la lezione 1
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/SOLUZIONI.html">
+       Soluzioni: Lezione 1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -162,6 +169,33 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
        Esercizi per la lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/SOLUZIONI.html">
+       Soluzioni: Lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Lezione 3: visualizzazione di dati con ROOT
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESEMPI.html">
+       Esempi: Lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Esercizi per la lezione 3
       </a>
      </li>
     </ul>
@@ -313,7 +347,7 @@ con l’istruzione <code class="docutils literal notranslate"><span class="pre">
 </div>
 <div class="section" id="esercizio-3-3">
 <h2>Esercizio 3.3<a class="headerlink" href="#esercizio-3-3" title="Permalink to this headline">¶</a></h2>
-<p>Si legga il file di testo <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">eventi_unif.txt</span></code></span>:</p>
+<p>Si legga il file di testo <a class="reference external" href="https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_unif.txt"><code class="docutils literal notranslate"><span class="pre">eventi_unif.txt</span></code></a>:</p>
 <ul class="simple">
 <li><p>si scrivano a schermo i suoi primi 10 elementi pari;</p></li>
 <li><p>si conti il numero di eventi contenuti nel file;</p></li>
@@ -321,11 +355,19 @@ con l’istruzione <code class="docutils literal notranslate"><span class="pre">
 e se ne scrivano a schermo i primi 10 elementi;</p></li>
 <li><p>si determinino il minimo ed il massimo valore fra i numeri salvati nel file.</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Istruzioni per scaricare il file</p>
+<p>Si possono utilizzare due metodi:</p>
+<ol class="simple">
+<li><p>aprire il link e fare <code class="docutils literal notranslate"><span class="pre">Salva</span> <span class="pre">come</span></code> (o <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">as</span></code>) dal browser</p></li>
+<li><p>utilizzare il comando <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">&lt;link&gt;</span></code> nella directory dove si desidera salvarlo (e.g.: <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_unif.txt</span></code>)</p></li>
+</ol>
+</div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-3-4">
 <h2>Esercizio 3.4<a class="headerlink" href="#esercizio-3-4" title="Permalink to this headline">¶</a></h2>
-<p>Si legga il file di testo <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">eventi_gauss.txt</span></code></span>:</p>
+<p>Si legga il file di testo <a class="reference external" href="https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/blob/master/Lezione_03/programmi/eventi_gauss.txt"><code class="docutils literal notranslate"><span class="pre">eventi_gauss.txt</span></code></a>:</p>
 <ul class="simple">
 <li><p>si riempia un istogramma di tipo <code class="docutils literal notranslate"><span class="pre">TH1F</span></code> con i primi N numeri contenuti nel file,
 dove N è un parametro passato a linea di comando in fase di esecuzione del programma;</p></li>
@@ -336,7 +378,7 @@ in funzione dei numeri da rappresentare.</p></li>
 </div>
 <div class="section" id="esercizio-3-5">
 <h2>Esercizio 3.5<a class="headerlink" href="#esercizio-3-5" title="Permalink to this headline">¶</a></h2>
-<p>Si legga il file di testo <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">eventi_unif.txt</span></code></span>:</p>
+<p>Si legga il file di testo <a class="reference external" href="https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_unif.txt"><code class="docutils literal notranslate"><span class="pre">eventi_unif.txt</span></code></a>:</p>
 <ul class="simple">
 <li><p>si riempia un istogramma di tipo <code class="docutils literal notranslate"><span class="pre">TH1F</span></code> con i primi N numeri contenuti nel file,
 dove N è un parametro passato a linea di comando in fase di esecuzione del programma;</p></li>
@@ -350,7 +392,7 @@ un confronto visivo fra i due istogrammi.</p></li>
 </div>
 <div class="section" id="esercizio-3-6">
 <h2>Esercizio 3.6<a class="headerlink" href="#esercizio-3-6" title="Permalink to this headline">¶</a></h2>
-<p>Si legga il file di testo <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">eventi_unif.txt</span></code></span>:</p>
+<p>Si legga il file di testo <a class="reference external" href="https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_unif.txt"><code class="docutils literal notranslate"><span class="pre">eventi_unif.txt</span></code></a>:</p>
 <ul class="simple">
 <li><p>si calcoli la media dei numeri contenuti nel file di testo;</p></li>
 <li><p>si calcoli la varianza dei numeri contenuti nel file di testo;</p></li>
@@ -400,6 +442,24 @@ Si scriva un programma di test della classe creata.</p>
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="ESEMPI.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Esempi: Lezione 3</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../appendix.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Appendice</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

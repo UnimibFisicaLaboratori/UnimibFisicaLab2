@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluzioni: Lezione 2 &#8212; Laboratorio 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lezione 3: visualizzazione di dati con ROOT" href="../Lezione_03/README.html" />
+    <link rel="prev" title="Esercizi per la lezione 2" href="ESERCIZI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Prerequisiti/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ripasso/README.html">
+   Ripasso di
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     C
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: strutturazione di un programma ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESEMPI.html">
+       Esempi: Lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/SOLUZIONI.html">
+       Soluzioni: Lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Lezione 2: programmazione ad oggetti, le classi
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESEMPI.html">
+       Esempi: Lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Soluzioni: Lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESEMPI.html">
+       Esempi: Lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_02/SOLUZIONI.rst"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementazione-di-funzionalita-aggiuntive-nella-classe-complesso">
+   2.1+2.2+2.3 Implementazione di funzionalità aggiuntive nella classe
+   <cite>
+    complesso
+   </cite>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classe-mioarray">
+   2.4 Classe
+   <cite>
+    mioArray
+   </cite>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="soluzioni-lezione-2">
+<h1>Soluzioni: Lezione 2<a class="headerlink" href="#soluzioni-lezione-2" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
+<div class="section" id="implementazione-di-funzionalita-aggiuntive-nella-classe-complesso">
+<h2>2.1+2.2+2.3 Implementazione di funzionalità aggiuntive nella classe <cite>complesso</cite><a class="headerlink" href="#implementazione-di-funzionalita-aggiuntive-nella-classe-complesso" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>complesso.h</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="cp">#ifndef COMPLESSO_H</span>
+<span class="cp">#define COMPLESSO_H</span>
+
+<span class="k">class</span> <span class="nc">complesso</span><span class="p">{</span><span class="w"></span>
+
+<span class="k">public</span><span class="o">:</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">// Constructors</span>
+<span class="w">    </span><span class="n">complesso</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">complesso</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Destructor</span>
+<span class="w">    </span><span class="o">~</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Public class methods</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">modulo</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">      </span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">fase</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">stampami</span><span class="p">();</span><span class="w">  </span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">get_real</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_real</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">get_imag</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_imag</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="nf">somma</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="nf">differenza</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="nf">moltiplicazione</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="nf">moltiplicazione</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Operators overloading</span>
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w">  </span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">-=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">-=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">*=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">*=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">/=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">/=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span>
+
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Private members</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="cp">#endif </span><span class="c1">// COMPLESSO_H</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>complesso.cc</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;complesso.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+
+
+<span class="c1">//--------------Constructors------------------</span>
+
+<span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">()</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">){</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">){</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;costruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">complesso</span><span class="o">::</span><span class="n">complesso</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">)</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="p">(</span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="p">),</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="p">(</span><span class="n">orig</span><span class="p">.</span><span class="n">m_imag</span><span class="p">){</span><span class="w"></span>
+<span class="w">      </span><span class="c1">//empty</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">//--------------Destructor------------------</span>
+
+<span class="n">complesso</span><span class="o">::~</span><span class="n">complesso</span><span class="w"> </span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ~ deletes the &quot;complesso&quot; object and stack allocated memory.</span>
+<span class="w">    </span><span class="c1">// This is the place to clean the dinamically allocated memory.</span>
+<span class="w">    </span><span class="c1">// In this example we do not have dinamically allocated memory so the destructor is empty.</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;distruzione di un numero complesso&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">//--------------Public methods---------------</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="n">modulo</span><span class="w"> </span><span class="p">(){</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">m_real</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="n">fase</span><span class="p">(){</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modulo</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mod</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="s">&quot;Parte reale e immaginaria = 0. La fase non è definita&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">acos</span><span class="p">(</span><span class="n">m_real</span><span class="o">/</span><span class="n">mod</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="n">stampami</span><span class="w"> </span><span class="p">(){</span><span class="w"></span>
+
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_real</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; + &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_imag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;i&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+
+
+<span class="n">complesso</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="n">somma</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="nf">ret</span><span class="p">(</span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="p">,</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_imag</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+
+<span class="n">complesso</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="n">differenza</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="nf">ret</span><span class="p">(</span><span class="n">m_real</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="p">,</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_imag</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">complesso</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="n">moltiplicazione</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">m_real_copy</span><span class="p">(</span><span class="n">m_real</span><span class="p">),</span><span class="w"> </span><span class="n">m_imag_copy</span><span class="p">(</span><span class="n">m_imag</span><span class="p">);</span><span class="w"> </span><span class="c1">//definisco copie da usare nelle operazioni</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">new_m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_real_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">m_imag_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">new_m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_real_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">m_imag_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="nf">ret</span><span class="p">(</span><span class="n">new_m_real</span><span class="p">,</span><span class="w"> </span><span class="n">new_m_imag</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">complesso</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="n">moltiplicazione</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">complesso</span><span class="w"> </span><span class="nf">ret</span><span class="p">(</span><span class="n">fattore</span><span class="o">*</span><span class="n">m_real</span><span class="p">,</span><span class="w"> </span><span class="n">fattore</span><span class="o">*</span><span class="n">m_imag</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+
+<span class="c1">//--------------Overloading---------------</span>
+
+<span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w">  </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">orig</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">addendo</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">addendo</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">addendo</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">-=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">addendo</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_imag</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">addendo</span><span class="p">.</span><span class="n">m_imag</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">-=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">addendo</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_real</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">addendo</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">*=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">m_real_copy</span><span class="p">(</span><span class="n">m_real</span><span class="p">),</span><span class="w"> </span><span class="n">m_imag_copy</span><span class="p">(</span><span class="n">m_imag</span><span class="p">);</span><span class="w"> </span><span class="c1">//definisco copie da usare nelle operazioni</span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_real_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">m_imag_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_real_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_imag</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">m_imag_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">*=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_real</span><span class="o">*</span><span class="n">fattore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_imag</span><span class="o">*</span><span class="n">fattore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">/=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">complesso</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">){</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">denom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_imag</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_imag</span><span class="p">);</span><span class="w"> </span><span class="c1">// c^2 + d^2</span>
+
+<span class="w">  </span><span class="c1">//Controlli</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">denom</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="w"> </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="p">){</span><span class="w"></span>
+<span class="w">      </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_real</span><span class="o">/</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Divisione per 0, ricontrolla inputs&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">m_real_copy</span><span class="p">(</span><span class="n">m_real</span><span class="p">),</span><span class="w"> </span><span class="n">m_imag_copy</span><span class="p">(</span><span class="n">m_imag</span><span class="p">);</span><span class="w"> </span><span class="c1">//definisco copie da usare nelle operazioni</span>
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_real_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m_imag_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_imag</span><span class="p">)</span><span class="o">/</span><span class="n">denom</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m_imag_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_real</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">m_real_copy</span><span class="o">*</span><span class="n">fattore</span><span class="p">.</span><span class="n">m_imag</span><span class="p">)</span><span class="o">/</span><span class="n">denom</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">complesso</span><span class="o">::</span><span class="k">operator</span><span class="o">/=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">fattore</span><span class="p">){</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">fattore</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Errore: Divisione per 0&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">m_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_real</span><span class="o">/</span><span class="n">fattore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">m_imag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_imag</span><span class="o">/</span><span class="n">fattore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>main.cpp</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//c++ -o main main.cpp complesso.cc</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;complesso.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//-----------  Testing constructors  -----------</span>
+
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="n">c_num1</span><span class="p">;</span><span class="w"> </span><span class="c1">//default</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="n">c_num2</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">//real</span>
+<span class="w">    </span><span class="n">c_num2</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="n">c_num3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">//real + i*imag</span>
+<span class="w">    </span><span class="n">c_num3</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">complesso</span><span class="w"> </span><span class="n">c_num_copy</span><span class="p">(</span><span class="n">c_num2</span><span class="p">);</span><span class="w"> </span><span class="c1">//copying, only real</span>
+<span class="w">    </span><span class="n">c_num_copy</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//-----------  Testing destructor in a new scope ({})  -----------</span>
+
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">complesso</span><span class="w"> </span><span class="n">in_new_scope</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// here &quot;in_new_scope&quot; goes out of scope and destructor is called.</span>
+
+<span class="w">    </span><span class="c1">//-----------  Testing class methods  -----------</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Il modulo di 3 +i5 è: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c_num3</span><span class="p">.</span><span class="n">modulo</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; la fase è: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c_num3</span><span class="p">.</span><span class="n">fase</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+
+<span class="w">    </span><span class="c1">// Trying to compute the phase of 0 + i0 (0/0). Catching the exception to continue</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">fase_impossibile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c_num1</span><span class="p">.</span><span class="n">fase</span><span class="p">();</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//-----------  Testing overloading =, +, *  -----------</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Test overloading operatori&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c_num3</span><span class="p">;</span><span class="w">    </span><span class="c1">// = overloading</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">        </span><span class="c1">// += numero reale</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">c_num3</span><span class="p">;</span><span class="w">   </span><span class="c1">// += numero complesso</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">        </span><span class="c1">// -= numero reale</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">c_num3</span><span class="p">;</span><span class="w">   </span><span class="c1">// -= numero complesso</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">        </span><span class="c1">// *= numero reale</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">c_num3</span><span class="p">;</span><span class="w">   </span><span class="c1">// *= numero complesso</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">        </span><span class="c1">// /= numero reale</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">c_num1</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">c_num3</span><span class="p">;</span><span class="w">   </span><span class="c1">// /= numero complesso</span>
+<span class="w">    </span><span class="n">c_num1</span><span class="p">.</span><span class="n">stampami</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//----------- End -----------</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Al termine dell&#39;esecuzione della funzione main&quot;</span><span class="w"> </span>\
+<span class="w">                    </span><span class="s">&quot; verrà distrutto tutto ciò creato al suo interno: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
+</div>
+<div class="section" id="classe-mioarray">
+<h2>2.4 Classe <cite>mioArray</cite><a class="headerlink" href="#classe-mioarray" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>myarray.h</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MY_ARRAY_H</span>
+<span class="cp">#define MY_ARRAY_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1"> </span><span class="cp"></span>
+
+<span class="k">class</span> <span class="nc">mioArray</span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">//Il costruttore prende in input la dimensione e inizializza il membro ( dim(d) ).</span>
+<span class="w">        </span><span class="c1">//Successivamente crea dinamicamente l&#39;array mioarr(). Nell&#39;espressione logica tra parentesi</span>
+<span class="w">        </span><span class="c1">//si chiede (simbolo ?) se dim &gt; 0 (interi diversi da 0 sono true). Se è vero allora viene</span>
+<span class="w">        </span><span class="c1">//inizializzato l&#39;array (new double[dim]) altrimenti (:) viene inizializzato l&#39;oggetto a nullptr.</span>
+<span class="w">        </span><span class="n">mioArray</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">dim</span><span class="p">(</span><span class="n">d</span><span class="p">),</span><span class="w"> </span><span class="n">mioarr</span><span class="p">(</span><span class="n">dim</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"> </span>
+<span class="w">        </span><span class="n">mioArray</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">mioArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">copy</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="o">~</span><span class="n">mioArray</span><span class="p">(){</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">mioarr</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nf">check_idx</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">get1</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">get2</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">fill</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"> </span><span class="c1">//opzionale, solo per comodità</span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">dim</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">mioarr</span><span class="p">;</span><span class="w"></span>
+
+
+<span class="p">};</span><span class="w"></span>
+
+<span class="cp">#endif </span><span class="c1">//MY_ARRAY_H</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>myarray.cc</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myarray.h&quot;</span><span class="cp"></span>
+
+<span class="n">mioArray</span><span class="o">::</span><span class="n">mioArray</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">mioArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">copy</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">mioarr</span><span class="p">(</span><span class="n">copy</span><span class="p">.</span><span class="n">dim</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">copy</span><span class="p">.</span><span class="n">dim</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">dim</span><span class="p">(</span><span class="n">copy</span><span class="p">.</span><span class="n">dim</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="cm">/*</span>
+<span class="cm">            Copy constructor.</span>
+<span class="cm">            Viene copiato il contenuto solo se mioarr non punta a null.</span>
+<span class="cm">        */</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mioarr</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dim</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="n">mioarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">copy</span><span class="p">.</span><span class="n">mioarr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">mioArray</span><span class="o">::</span><span class="n">check_idx</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">        Semplice check tra l&#39;indice (idx) inserito e la dimensione</span>
+<span class="cm">        dell&#39;array (attributo della classe).</span>
+<span class="cm">    */</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dim</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">mioArray</span><span class="o">::</span><span class="n">get1</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">        Prima funzione per richiedere un valore dall&#39;array. </span>
+<span class="cm">        Viene svolto un check sull&#39;indice e, se più grande della dimensione</span>
+<span class="cm">        dell&#39;array, viene stampato un messaggio a schermo.</span>
+<span class="cm">        In ogni caso viene restituito il valore nella cella di memoria</span>
+<span class="cm">        a cui punta mioarr[idx] = *(mioarr + idx)...Qualunque essa sia!</span>
+
+<span class="cm">        --&gt;Questo vuol dire che se, per sbaglio, sbagliamo l&#39;indexing dell&#39;array</span>
+<span class="cm">        C++ non ci avvertirà ma restituirà un valore &quot;a caso&quot;. C++</span>
+<span class="cm">        non implementa check sui limiti degli oggetti (per mantenere alte performances).</span>
+<span class="cm">    */</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">check_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">)){</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;L&#39;indice inserito è più grande della dimensione dell&#39;array&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">      </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mioarr</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span><span class="w"> </span><span class="c1">//questo non da mai errore</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">mioArray</span><span class="o">::</span><span class="n">get2</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">        Seconda funzione per richiedere un valore dall&#39;array. </span>
+<span class="cm">        Viene svolto un check sull&#39;indice e, se più grande della dimensione</span>
+<span class="cm">        dell&#39;array, viene lanciato un errore del tipo out_of_range con un messaggio a </span>
+<span class="cm">        piacere all&#39;interno delle parentesi (). Se la richiesta è valida viene restituito il valore.</span>
+<span class="cm">    */</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">check_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">)){</span><span class="w"></span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;L&#39;indice inserito è più grande della dimensione dell&#39;array</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">      </span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mioarr</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+
+
+<span class="kt">void</span><span class="w"> </span><span class="n">mioArray</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">num</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">        Metodo per riempire l&#39;array. Richiesto in input l&#39;indice (idx) e il valore</span>
+<span class="cm">        da assegnare alla cella di memoria puntata da (mioarr+idx) -&gt; mioarr[idx] = num.</span>
+<span class="cm">        Se l&#39;indice supera la dimensione dell&#39;array viene visualizzato a terminale un messaggio </span>
+<span class="cm">        e non viene riempita la cella di memoria. </span>
+<span class="cm">        L&#39;operazione mioarr[idx] = num funzionerebbe anche se idx &gt; dim.</span>
+<span class="cm">    */</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">check_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">)){</span><span class="w"></span>
+<span class="w">        </span><span class="n">mioarr</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;L&#39;indice inserito è più grande della dimensione dell&#39;array&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">mioArray</span><span class="o">::</span><span class="n">print</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Mio array:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dim</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mioarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>main.cpp</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// c++ -o main main.cpp myarray.cc</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myarray.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">mioArray</span><span class="w"> </span><span class="n">arr</span><span class="p">(</span><span class="n">dim</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//Riempio l&#39;array con dummy values</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dim</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">arr</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="c1">//Mostra contenuto</span>
+<span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">print</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//modifico valore di una cella</span>
+<span class="w">    </span><span class="n">arr</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">10.5</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//Mostra contenuto ma usando la funzione get</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Mio array: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dim</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">get1</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//Proviamo a chiedere il valore dell&#39;array per un indice &gt; dimensione</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">get1</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;La prima funzione get1 restituisce un valore &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; anche se l&#39;indice richiesto 11 &quot;</span>\
+<span class="w">                    </span><span class="s">&quot;supera la dimensione dell</span><span class="se">\&#39;</span><span class="s">array &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//Proviamo a fare lo stesso con la seconda funzione. </span>
+<span class="w">    </span><span class="c1">//La sintassi try-catch viene usata per continuare nell&#39;esecuzione del programma.</span>
+<span class="w">    </span><span class="c1">//Senza di essa il programma si bloccherebbe con messaggio di errore come output da terminale (e.what()).</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">get2</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;La seconda funzione restituisce un errore se l&#39;indice richiesto supera &quot;</span>\
+<span class="w">                        </span><span class="s">&quot;la dimensione dell</span><span class="se">\&#39;</span><span class="s">array.</span><span class="se">\n</span><span class="s">Errore: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+
+<span class="w">    </span><span class="c1">//Test con un oggetto di tipo const</span>
+<span class="w">    </span><span class="c1">//Copiamo il contenuto di arr in un nuovo oggetto const new_arr</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">mioArray</span><span class="w"> </span><span class="n">new_arr</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">//stampiamo</span>
+<span class="w">    </span><span class="n">new_arr</span><span class="p">.</span><span class="n">print</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Possiamo ricevere informazioni dall&#39;oggetto di tipo const ad esempio &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">new_arr</span><span class="p">.</span><span class="n">get2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="ESERCIZI.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Esercizi per la lezione 2</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lezione_03/README.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lezione 3: visualizzazione di dati con ROOT</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Docenti del Corso di Laboratorio 2<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
