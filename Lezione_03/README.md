@@ -4,7 +4,7 @@
 
   * [3.1 Introduzione](#introduzione)
     * [3.1.1 l'organizzazione delle librerie di ```ROOT```](#l-organizzazione-delle-librerie-di-root)
-    * [3.1.2 prerquisiti per utilizzare ```ROOT```](#prerquisiti-per-utilizzare-root)
+    * [3.1.2 prerequisiti per utilizzare ```ROOT```](#prerequisiti-per-utilizzare-root)
     * [3.1.3 come compilare un programma che include classi di ```ROOT```](#come-compilare-un-programma-che-include-classi-di-root)
   * [3.2 ```TH1F```: istogrammi monodimensionali](#th1f-istogrammi-monodimensionali)
     * [3.2.1 i bin di un istogramma](#i-bin-di-un-istogramma)
@@ -69,7 +69,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 3.1.2 prerquisiti per utilizzare ```ROOT```
+### 3.1.2 prerequisiti per utilizzare ```ROOT```
 
   * dopo l'installazione, le librerie di ```ROOT``` sono salvate nel disco fisso
     solitamente in una cartella dedicata
@@ -224,7 +224,7 @@
 ### 3.2.7 scale logaritmiche
 
   * quando i valori in diversi bin cambiano considerevolmente,
-    può essere comodo **visuallizzare gli istogrammi in scala logaritmica**
+    può essere comodo **visualizzare gli istogrammi in scala logaritmica**
     (lungo l'asse orizzontale o verticale),
     per migliorare la leggibilità del risultato
   * essendo una diversa visualizzazione dello stesso contenuto,
