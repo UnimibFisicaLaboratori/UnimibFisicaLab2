@@ -23,7 +23,7 @@
 
 Si legga il file di testo [```eventi_unif.txt```](https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_unif.txt):
 
-  * si scrivano a schermo i suoi primi 10 elementi pari;
+  * si scrivano a schermo i suoi primi 10 elementi positivi;
   * si conti il numero di eventi contenuti nel file;
   * si trascriva il contenuto del file in un array opportunamente dimensionato
     e se ne scrivano a schermo i primi 10 elementi;
@@ -33,14 +33,14 @@ Si legga il file di testo [```eventi_unif.txt```](https://raw.githubusercontent.
 :class: tip
   Si possono utilizzare due metodi:
   1. aprire il link e fare `Salva come` (o `Save as`) dal browser
-  2. utilizzare il comando `curl <link>` nella directory dove si desidera salvarlo (e.g.: `$ curl https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_unif.txt`)
+  2. utilizzare il comando `wget <link>` nella directory dove si desidera salvarlo (e.g.: `$ wget https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_unif.txt`)
 ```
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 3.4
 
-Si legga il file di testo [```eventi_gauss.txt```](https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/blob/master/Lezione_03/programmi/eventi_gauss.txt):
+Si legga il file di testo [```eventi_gauss.txt```](https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_gauss.txt):
   * si riempia un istogramma di tipo ```TH1F``` con i primi N numeri contenuti nel file,
     dove N è un parametro passato a linea di comando in fase di esecuzione del programma;
   * si scelga l'intervallo di definizione dell'istogramma ed il suo numero di bin
