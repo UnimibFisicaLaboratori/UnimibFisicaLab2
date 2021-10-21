@@ -281,6 +281,7 @@
     while (true)
       {
         input_file >> input_val ;
+        data.push_back(input_val);
         if (input_file.eof () == true) break ;
       }
     input_file.close () ;
