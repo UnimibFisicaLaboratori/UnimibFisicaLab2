@@ -23,7 +23,7 @@
 
 Si legga il file di testo [```eventi_unif.txt```](https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_unif.txt):
 
-  * si scrivano a schermo i suoi primi 10 elementi pari;
+  * si scrivano a schermo i suoi primi 10 elementi positivi;
   * si conti il numero di eventi contenuti nel file;
   * si trascriva il contenuto del file in un array opportunamente dimensionato
     e se ne scrivano a schermo i primi 10 elementi;
