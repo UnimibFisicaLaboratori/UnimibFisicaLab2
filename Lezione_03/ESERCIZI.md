@@ -40,7 +40,7 @@ Si legga il file di testo [```eventi_unif.txt```](https://raw.githubusercontent.
 
 ## Esercizio 3.4
 
-Si legga il file di testo [```eventi_gauss.txt```](https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/blob/master/Lezione_03/programmi/eventi_gauss.txt):
+Si legga il file di testo [```eventi_gauss.txt```](https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_03/programmi/eventi_gauss.txt):
   * si riempia un istogramma di tipo ```TH1F``` con i primi N numeri contenuti nel file,
     dove N è un parametro passato a linea di comando in fase di esecuzione del programma;
   * si scelga l'intervallo di definizione dell'istogramma ed il suo numero di bin

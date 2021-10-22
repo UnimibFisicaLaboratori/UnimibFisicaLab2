@@ -276,7 +276,6 @@
     ifstream input_file ;
     input_file.open ("file.txt", ios::in) ;
     // ...
-    vector<double> data ;
     double input_val ;
     while (true)
       {
