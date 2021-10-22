@@ -1,4 +1,4 @@
-Soluzioni: Lezione 2
+Soluzioni: Lezione 3
 ====================
 
 .. image:: ../immagini/linea.png
@@ -71,4 +71,3 @@ Soluzioni: Lezione 2
 * `statistiche.cc`
 .. literalinclude:: Esercizi/statistiche.cc
   :language: cpp
-
