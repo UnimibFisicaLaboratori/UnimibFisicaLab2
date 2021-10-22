@@ -26,3 +26,4 @@
   * [Lezione 1](Lezione_01/README.md) : strutturazione di un programma ed introduzione al ```C++```
   * [Lezione 2](Lezione_02/README.md) : programmazione ad oggetti: le classi
   * [Lezione 3](Lezione_03/README.md) : visualizzazione dei dati con ROOT
+  * [Lezione 4](Lezione_04/README.md) : generazione di numeri pseudo-casuali
