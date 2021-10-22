@@ -37,6 +37,8 @@ ad un qualunque punto.
 
 Si implementi un generatore di numeri pseudo-casuali secondo una distribuzione uniforme
 fra due estremi arbitrari.
+Si utilizzi un oggetto di tipo ```TH1F``` di ```ROOT``` per visualizzare la distribuzione
+dei numeri generati.
 
 ![linea](../immagini/linea.png)
 
@@ -45,6 +47,8 @@ fra due estremi arbitrari.
 Si implementi un generatore di numeri pseudo-casuali che utilizzi il metodo
 try-and-catch per generare numeri casuali secondo un distribuzione di probabilita' arbitraria
   * si prenda come parametro di ingresso la pdf da utilizzare per la generazione di numeri casuali
+  * si utilizzi un oggetto di tipo ```TH1F``` di ```ROOT``` per visualizzare la distribuzione
+dei numeri generati.
 
 ![linea](../immagini/linea.png)
 
@@ -52,23 +56,29 @@ try-and-catch per generare numeri casuali secondo un distribuzione di probabilit
 
 Si implementi un generatore di numeri pseduo-casuali che utilizzi il metodo della funzione inversa
 per generare eventi distribuiti secondo distribuzione di probabilita' esponenziale.
+  * Si utilizzi un oggetto di tipo ```TH1F``` di ```ROOT``` per visualizzare la distribuzione
+dei numeri generati.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 4.7
 
 Si implementi un generatore di numeri pseudo-casuali che utilizzi il metodo del teorema centrale del limite
-per generare eventi distribuiti secondo una distribuzione di probabilita' Gaussiana.
+per generare eventi distribuiti secondo una distribuzione di probabilità Gaussiana.
   * Come si fa ad ottenere una distribuzione si probabilita' Normale, 
-    cioe' Gaussiana centrata in zero con varianza unitaria?
+    cioè Gaussiana centrata in zero con varianza unitaria?
   * Si verifichi visivamente che al crescere del numero di eventi
-    aumenta la somiglianza fra la distribuzione ottenuta e la forma funzionale Gaussiana  
+    aumenta la somiglianza fra la distribuzione ottenuta e la forma funzionale Gaussiana,
+    sia graficamente che utilizzando i momenti delle distribuzioni 
+    calcolati sul campione di eventi generati.
+
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 4.8
 
-Si implementi la classe seguente, 
+Partendo dal lavoro svolto durante la Lezione 3,
+si implementi la classe seguente, 
 che calcola le statistiche associate ad un campione di numeri.
 ```cpp
 class statistiche
@@ -104,7 +114,7 @@ class statistiche
 } ;
 
 ```
-  * che membri privati e' necessario aggiungere alla classe per garantirne la funzionalita'?
+  * che membri privati è necessario aggiungere alla classe per garantirne la funzionalità?
   * che valore devono avere i membri privati in fase di inizilizzazione?
   * potrebbero essere utili anche metodi privati, da aggiungere alla classe?
 
@@ -116,7 +126,6 @@ class statistiche
 Si collaudi la classe ```statistiche``` con ciascuono degli agoritmi di generazione implementati.
 In particolare, poi:
   * si verifichi che il valore della varianza della distribuzione uniforme corrisponde alle attese
-    (quale e' l'incertezza associata al numero ottenuto?)
+    (quale è l'incertezza associata al numero ottenuto?)
   * si verifichi che il valore della varianza ottenuta con la tecnica del teorema centrale del limite
-    corrisponda a quello atteso  
-
+    corrisponda a quello atteso

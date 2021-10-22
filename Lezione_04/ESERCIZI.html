@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendice" href="../appendix.html" />
+    <link rel="prev" title="Lezione 4: la generazione di numeri casuali" href="README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -91,7 +93,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Prerequisiti/README.html">
    I prerequisiti del corso
@@ -107,16 +109,16 @@
    </code>
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../content.html">
    Indice delle Lezioni
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Lezione_01/README.html">
      Lezione 1: strutturazione di un programma ed introduzione al
@@ -194,6 +196,28 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
        Esercizi per la lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/SOLUZIONI.html">
+       Soluzioni: Lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
+     Lezione 4: la generazione di numeri casuali
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Esercizi per la lezione 4
       </a>
      </li>
     </ul>
@@ -368,7 +392,9 @@ ad un qualunque punto.</p>
 <div class="section" id="esercizio-4-4">
 <h2>Esercizio 4.4<a class="headerlink" href="#esercizio-4-4" title="Permalink to this headline">¶</a></h2>
 <p>Si implementi un generatore di numeri pseudo-casuali secondo una distribuzione uniforme
-fra due estremi arbitrari.</p>
+fra due estremi arbitrari.
+Si utilizzi un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TH1F</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> per visualizzare la distribuzione
+dei numeri generati.</p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-4-5">
@@ -377,6 +403,8 @@ fra due estremi arbitrari.</p>
 try-and-catch per generare numeri casuali secondo un distribuzione di probabilita’ arbitraria</p>
 <ul class="simple">
 <li><p>si prenda come parametro di ingresso la pdf da utilizzare per la generazione di numeri casuali</p></li>
+<li><p>si utilizzi un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TH1F</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> per visualizzare la distribuzione
+dei numeri generati.</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -384,23 +412,30 @@ try-and-catch per generare numeri casuali secondo un distribuzione di probabilit
 <h2>Esercizio 4.6<a class="headerlink" href="#esercizio-4-6" title="Permalink to this headline">¶</a></h2>
 <p>Si implementi un generatore di numeri pseduo-casuali che utilizzi il metodo della funzione inversa
 per generare eventi distribuiti secondo distribuzione di probabilita’ esponenziale.</p>
+<ul class="simple">
+<li><p>Si utilizzi un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TH1F</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> per visualizzare la distribuzione
+dei numeri generati.</p></li>
+</ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-4-7">
 <h2>Esercizio 4.7<a class="headerlink" href="#esercizio-4-7" title="Permalink to this headline">¶</a></h2>
 <p>Si implementi un generatore di numeri pseudo-casuali che utilizzi il metodo del teorema centrale del limite
-per generare eventi distribuiti secondo una distribuzione di probabilita’ Gaussiana.</p>
+per generare eventi distribuiti secondo una distribuzione di probabilità Gaussiana.</p>
 <ul class="simple">
 <li><p>Come si fa ad ottenere una distribuzione si probabilita’ Normale,
-cioe’ Gaussiana centrata in zero con varianza unitaria?</p></li>
+cioè Gaussiana centrata in zero con varianza unitaria?</p></li>
 <li><p>Si verifichi visivamente che al crescere del numero di eventi
-aumenta la somiglianza fra la distribuzione ottenuta e la forma funzionale Gaussiana</p></li>
+aumenta la somiglianza fra la distribuzione ottenuta e la forma funzionale Gaussiana,
+sia graficamente che utilizzando i momenti delle distribuzioni
+calcolati sul campione di eventi generati.</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-4-8">
 <h2>Esercizio 4.8<a class="headerlink" href="#esercizio-4-8" title="Permalink to this headline">¶</a></h2>
-<p>Si implementi la classe seguente,
+<p>Partendo dal lavoro svolto durante la Lezione 3,
+si implementi la classe seguente,
 che calcola le statistiche associate ad un campione di numeri.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">statistiche</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -436,7 +471,7 @@ che calcola le statistiche associate ad un campione di numeri.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>che membri privati e’ necessario aggiungere alla classe per garantirne la funzionalita’?</p></li>
+<li><p>che membri privati è necessario aggiungere alla classe per garantirne la funzionalità?</p></li>
 <li><p>che valore devono avere i membri privati in fase di inizilizzazione?</p></li>
 <li><p>potrebbero essere utili anche metodi privati, da aggiungere alla classe?</p></li>
 </ul>
@@ -448,7 +483,7 @@ che calcola le statistiche associate ad un campione di numeri.</p>
 In particolare, poi:</p>
 <ul class="simple">
 <li><p>si verifichi che il valore della varianza della distribuzione uniforme corrisponde alle attese
-(quale e’ l’incertezza associata al numero ottenuto?)</p></li>
+(quale è l’incertezza associata al numero ottenuto?)</p></li>
 <li><p>si verifichi che il valore della varianza ottenuta con la tecnica del teorema centrale del limite
 corrisponda a quello atteso</p></li>
 </ul>
@@ -484,6 +519,24 @@ corrisponda a quello atteso</p></li>
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="README.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lezione 4: la generazione di numeri casuali</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../appendix.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Appendice</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
