@@ -1,4 +1,4 @@
-Esempi: Lezione 3
+Esempi: Lezione 4
 =================
 
 .. image:: ../immagini/linea.png
