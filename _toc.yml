@@ -19,5 +19,10 @@ sections:
     sections:
     - file: Lezione_03/ESEMPI.rst
     - file: Lezione_03/ESERCIZI.md
-    #- file: Lezione_02/SOLUZIONI.rst
+    - file: Lezione_03/SOLUZIONI.rst
+  - file: Lezione_04/README.md
+    sections:
+    - file: Lezione_04/ESEMPI.rst
+    - file: Lezione_04/ESERCIZI.md
+    #- file: Lezione_04/SOLUZIONI.rst
 - file: appendix
