@@ -1,0 +1,1193 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 5: visualizzazione di dati con ROOT &#8212; Laboratorio 2</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Prerequisiti/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Ripasso/README.html">
+   Ripasso di
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     C
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../content.html">
+   Indice delle Lezioni
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../Lezione_01/README.html">
+     Lezione 1: strutturazione di un programma ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_01/ESEMPI.html">
+       Esempi: Lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_01/SOLUZIONI.html">
+       Soluzioni: Lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../Lezione_02/README.html">
+     Lezione 2: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_02/ESEMPI.html">
+       Esempi: Lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_02/SOLUZIONI.html">
+       Soluzioni: Lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../Lezione_03/README.html">
+     Lezione 3: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_03/ESEMPI.html">
+       Esempi: Lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_03/SOLUZIONI.html">
+       Soluzioni: Lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri pseudo-casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_04/ESEMPI.html">
+       Esempi: Lezione 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tempo/Lezione_05/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduzione">
+   5.1 Introduzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-organizzazione-delle-librerie-di-root">
+     5.1.1 l’organizzazione delle librerie di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerquisiti-per-utilizzare-root">
+     5.1.2 prerquisiti per utilizzare
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#come-compilare-un-programma-che-include-classi-di-root">
+     5.1.3 come compilare un programma che include classi di
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#th1f-istogrammi-monodimensionali">
+   5.2
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TH1F
+    </span>
+   </code>
+   : istogrammi monodimensionali
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#i-bin-di-un-istogramma">
+     5.2.1 i bin di un istogramma
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#istogrammi-monodimensionali-e-distribuzioni-di-densita-di-probabilita">
+     5.2.2 istogrammi monodimensionali e distribuzioni di densità di probabilità
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#istogrammi-monodimensionali-in-root">
+     5.2.3 istogrammi monodimensionali in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#riempimento-di-un-th1f">
+     5.2.4 riempimento di un
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TH1F
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizzazione-di-un-th1f">
+     5.2.5 visualizzazione di un
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TH1F
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opzioni-grafiche">
+     5.2.6 opzioni grafiche
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-esempio-la-forma-funzionale-gaussiana">
+     5.2.7 un esempio: la forma funzionale Gaussiana
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scale-logaritmiche">
+     5.2.8 scale logaritmiche
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-statistiche-di-un-istogramma">
+     5.2.9 le statistiche di un istogramma
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#una-piccola-digressione-la-varianza-di-una-distribuzione">
+   5.3 una piccola digressione: la varianza di una distribuzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-varianza-e-la-dimensione-del-campione">
+     5.3.1 la varianza e la dimensione del campione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#varianza-e-misure-o-numeri-pseudo-casuali">
+     5.3.2 varianza e misure (o numeri pseudo-casuali)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incertezza-sulla-media">
+     5.3.3 incertezza sulla media
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph">
+   5.4 rappresentazione di andamenti
+   <em>
+    y
+   </em>
+   vs
+   <em>
+    x
+   </em>
+   : i
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TGraph
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definizione-di-un-tgraph">
+     5.4.1 definizione di un
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TGraph
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#riempimento-di-un-tgraph">
+     5.4.2 riempimento di un
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TGraph
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disegno-di-un-tgraph">
+     5.4.3 disegno di un
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TGraph
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qualche-opzione-grafica">
+     5.4.4 qualche opzione grafica
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-risultato-del-disegno">
+     5.4.5 il risultato del disegno
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#th2f-istogrammi-bidimnesionali">
+   5.5 TH2F: istogrammi bidimnesionali
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-interfaccia-interattiva-di-root-la-classe-tapplication">
+   5.6 L’interfaccia interattiva di
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ROOT
+    </span>
+   </code>
+   : la classe
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TApplication
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#una-gestione-furba-del-testo-tstring">
+   5.7 Una gestione furba del testo:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TString
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizi">
+   5.8 ESERCIZI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lezione-5-visualizzazione-di-dati-con-root">
+<h1>Lezione 5: visualizzazione di dati con ROOT<a class="headerlink" href="#lezione-5-visualizzazione-di-dati-con-root" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#51-introduzione">5.1 Introduzione</a></p>
+<ul>
+<li><p><a class="reference external" href="#511-lorganizzazione-delle-librerie-di-root">5.1.1 l’organizzazione delle librerie di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a></p></li>
+<li><p><a class="reference external" href="#512-prerquisiti-per-utilizzare-root">5.1.2 prerquisiti per utilizzare <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a></p></li>
+<li><p><a class="reference external" href="#513-come-compilare-un-programma-che-include-classi-di-root">5.1.3 come compilare un programma che include classi di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#52-th1f-istogrammi-monodimensionali">5.2 <code class="docutils literal notranslate"><span class="pre">TH1F</span></code>: istogrammi monodimensionali</a></p>
+<ul>
+<li><p><a class="reference external" href="#521-i-bin-di-un-istogramma">5.2.1 i bin di un istogramma</a></p></li>
+<li><p><a class="reference external" href="#522-istogrammi-monodimensionali-e-distribuzioni-di-densit%C3%A0-di-probabilit%C3%A0">5.2.2 istogrammi monodimensionali e distribuzioni di densità di probabilità</a></p></li>
+<li><p><a class="reference external" href="#523-istogrammi-monodimensionali-in-root">5.2.3 istogrammi monodimensionali in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a></p></li>
+<li><p><a class="reference external" href="#524-riempimento-di-un-th1f">5.2.4 riempimento di un <code class="docutils literal notranslate"><span class="pre">TH1F</span></code></a></p></li>
+<li><p><a class="reference external" href="#525-visualizzazione-di-un-th1f">5.2.5 visualizzazione di un <code class="docutils literal notranslate"><span class="pre">TH1F</span></code></a></p></li>
+<li><p><a class="reference external" href="#526-opzioni-grafiche">5.2.6 opzioni grafiche</a></p></li>
+<li><p><a class="reference external" href="#527-un-esempio-la-forma-funzionale-gaussiana">5.2.7 un esempio: la forma funzionale Gaussiana</a></p></li>
+<li><p><a class="reference external" href="#528-scale-logaritmiche">5.2.8 scale logaritmiche</a></p></li>
+<li><p><a class="reference external" href="#529-le-statistiche-di-un-istogramma">5.2.9 le statistiche di un istogramma</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#53-una-piccola-digressione-la-varianza-di-una-distribuzione">5.3 una piccola digressione: la varianza di una distribuzione</a></p>
+<ul>
+<li><p><a class="reference external" href="#531-la-varianza-e-la-dimensione-del-campione">5.3.1 la varianza e la dimensione del campione</a></p></li>
+<li><p><a class="reference external" href="#532-varianza-e-misure-o-numeri-pseudo-casuali">5.3.2 varianza e misure (o numeri pseudo-casuali)</a></p></li>
+<li><p><a class="reference external" href="#533-incertezza-sulla-media">5.3.3 incertezza sulla media</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#54-rappresentazione-di-andamenti-y-vs-x-i-tgraph">5.4 rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p>
+<ul>
+<li><p><a class="reference external" href="#541-definizione-di-un-tgraph">5.4.1 definizione di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#542-riempimento-di-un-tgraph">5.4.2 riempimento di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#543-disegno-di-un-tgraph">5.4.3 disegno di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#544-qualche-opzione-grafica">5.4.4 qualche opzione grafica</a></p></li>
+<li><p><a class="reference external" href="#545-il-risultato-del-disegno">5.4.5 il risultato del disegno</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#55-th2f-istogrammi-bidimnesionali">5.5 TH2F: istogrammi bidimnesionali</a></p></li>
+<li><p><a class="reference external" href="#56-linterfaccia-interattiva-di-root-la-classe-tapplication">5.6 L’interfaccia interattiva di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>: la classe <code class="docutils literal notranslate"><span class="pre">TApplication</span></code></a></p></li>
+<li><p><a class="reference external" href="#57-una-gestione-furba-del-testo-tstring">5.7 Una gestione furba del testo: <code class="docutils literal notranslate"><span class="pre">TString</span></code></a></p></li>
+<li><p><a class="reference external" href="#58-esercizi">5.8 ESERCIZI</a></p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="introduzione">
+<h2>5.1 Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://root.cern.ch"><code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a> offre un insieme di strumenti
+di <strong>visualizzazione, analisi e salvataggio dati</strong>
+sviluppati nell’ambito della fisica delle particelle elementari</p></li>
+<li><p>gli strumenti sono <strong>scritti in <code class="docutils literal notranslate"><span class="pre">C++</span></code></strong> ed esiste l’interfaccia <code class="docutils literal notranslate"><span class="pre">Python</span></code> per utilizzarli,
+con adattamenti al formato dei dati alla sintassi tipica di quell’ambiente</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROOT</span></code> offre anche un <strong>ambiente interattivo</strong>
+che si presenta nella forma di una linea di comando,
+dove istruzioni scritte in <code class="docutils literal notranslate"><span class="pre">C++</span></code> vengono interpretate
+da un parser dedicato</p></li>
+<li><p>In questo corso vi mostriamo alcune funzionalità di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>,
+la descrizione completa di quello che può fare
+si trova nella documentazione on-line</p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<div class="section" id="l-organizzazione-delle-librerie-di-root">
+<h3>5.1.1 l’organizzazione delle librerie di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#l-organizzazione-delle-librerie-di-root" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>in un programma scritto in <code class="docutils literal notranslate"><span class="pre">C++</span></code>,
+ogni oggetto di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> viene reso disponibile nel codice sorgente
+con il corrispondente comando <code class="docutils literal notranslate"><span class="pre">#include</span></code></p></li>
+<li><p>la maggior parte degli strumenti disponibili sono implementati
+<strong>sotto forma di classi</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TH1F.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="n">istogramma</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;istogramma&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;istogramma&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">-5.</span><span class="p">,</span><span class="w"> </span><span class="mf">5.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>la <strong>visualizzazione</strong> degli strumenti statistici è un aspetto fondamentale del programma,
+quindi molte opzioni grafiche sono integrate negli oggetti statistici</p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="prerquisiti-per-utilizzare-root">
+<h3>5.1.2 prerquisiti per utilizzare <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#prerquisiti-per-utilizzare-root" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>dopo l’installazione, le librerie di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> sono salvate nel disco fisso
+solitamente in una cartella dedicata</p></li>
+<li><p>per avviare l’interfaccia interattiva e per conoscere dove stiano le librerie,
+<strong>è necessario che:</strong></p>
+<ul class="simple">
+<li><p>la cartella che contiene l’eseguibile <code class="docutils literal notranslate"><span class="pre">root</span></code>
+faccia parte della lista di indirizzi salvati nella variabile d’ambiente della SHELL
+<code class="docutils literal notranslate"><span class="pre">$PATH</span></code></p></li>
+<li><p>la cartella che contiene le librerie precompilate
+faccia parte della lista di indirizzi salvati nella variabile d’ambiente della SHELL
+<code class="docutils literal notranslate"><span class="pre">$LD_LIBRARY_PATH</span></code></p></li>
+</ul>
+</li>
+<li><p>esiste lo script <code class="docutils literal notranslate"><span class="pre">thisroot.sh</span></code> nelle cartelle di installazione che va richiamato
+per effettuare tali impostazioni:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">source</span> <span class="n">thisroot</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="come-compilare-un-programma-che-include-classi-di-root">
+<h3>5.1.3 come compilare un programma che include classi di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#come-compilare-un-programma-che-include-classi-di-root" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>è necessario <strong>fornire al compilatore opzioni aggiuntive</strong> perché sia in grado di trovare
+tutti i file da includere e tutte le librerie da compilare</p></li>
+<li><p>la lista di opzioni aggiuntive si <strong>visualizza</strong> con il seguente comando di SHELL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">root</span><span class="o">-</span><span class="n">config</span> <span class="o">--</span><span class="n">cflags</span> <span class="o">--</span><span class="n">glibs</span>  
+</pre></div>
+</div>
+</li>
+<li><p>per evitare di copiare ed incollare il suo output nel comando di compilazione,
+si può <strong>includere la sua chiamata direttamente nel programma di compilazione</strong>,
+utilizzando gli apici inversi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; c++ -o main_00 `root-config --glibs --cflags` main_00.cpp
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="th1f-istogrammi-monodimensionali">
+<h2>5.2 <code class="docutils literal notranslate"><span class="pre">TH1F</span></code>: istogrammi monodimensionali<a class="headerlink" href="#th1f-istogrammi-monodimensionali" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>gli <strong>istogrammi</strong> sono una rappresentazione di distribuzioni differenziali,
+costruita a partire da un campione di numeri,
+che chiamiamo <strong>eventi</strong></p></li>
+<li><p>si parte quindi da <strong>un campione di eventi <em>{x<sub>i</sub>}<sub>i=1,..,N</sub></em></strong></p>
+<ul>
+<li><p>un esempio di un campione di eventi
+è <strong>l’insieme delle misure raccolte durante un esperimento</strong>,
+oppure una <strong>sequenza di numeri pseudo-casuali</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<div class="section" id="i-bin-di-un-istogramma">
+<h3>5.2.1 i bin di un istogramma<a class="headerlink" href="#i-bin-di-un-istogramma" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>per una variabile casuale di interesse <em>x</em>, si suddivide il suo intervallo di definizione
+in <strong>sotto-intervalli adiacenti e disgiunti</strong> delimitati da <em>{x<sub>k</sub>}</em></p>
+<ul>
+<li><p>l’intervallo <em>k</em>-esimo è limitato fra x<sub>k</sub> ed x<sub>k+1</sub></p></li>
+<li><p>solitamente gli intervalli sono chiamati <strong>bin</strong></p></li>
+</ul>
+</li>
+<li><p>un istogramma è l’<strong>insieme dei conteggi degli eventi che cascano in ogni intervallo</strong>
+<img alt="istogramma" src="../../_images/istogramma_solo1.png" /></p></li>
+<li><p>la visualizzazione di un istogramma mono-dimensionale mostra tipicamente:</p>
+<ul>
+<li><p>sull’<strong>asse orizzontale</strong> l’intervallo di definizione della variabile <em>x</em></p></li>
+<li><p>sull’<strong>asse verticale</strong> i conteggi corrispondenti a ciascun bin</p></li>
+<li><p>sopra ad ogni bin, <strong>una barra verticale</strong> alta quanto i conteggi</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="istogrammi-monodimensionali-e-distribuzioni-di-densita-di-probabilita">
+<h3>5.2.2 istogrammi monodimensionali e distribuzioni di densità di probabilità<a class="headerlink" href="#istogrammi-monodimensionali-e-distribuzioni-di-densita-di-probabilita" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>al <strong>limite per la dimensione dei bin che diventa infinitesima</strong>,
+un istogramma diventa una funzione continua
+<img alt="istogramma_pdf" src="../../_images/istogramma_e_pdf1.png" /></p></li>
+<li><p>se si dividesse il contenuto di ogni bin per il numero totale di eventi <em>N</em>,
+questa funzione è normalizzata,
+quindi un istogramma diventa l’approssimazione di una
+distribuzione di densità di probabilità</p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="istogrammi-monodimensionali-in-root">
+<h3>5.2.3 istogrammi monodimensionali in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#istogrammi-monodimensionali-in-root" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>istogrammi mono-dimensionali in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> sono realizzati con la classe <code class="docutils literal notranslate"><span class="pre">TH1F</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TH1F</span><span class="w"> </span><span class="nf">istogramma</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;istogramma&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;titolo&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">-5.</span><span class="p">,</span><span class="w"> </span><span class="mf">5.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>il costruttore di <code class="docutils literal notranslate"><span class="pre">TH1F</span></code> prende come input:</p>
+<ul class="simple">
+<li><p>un <strong>nome</strong>: è saggio usare il medesimo della variabile (ogni oggetto deve avere un nome unico!)</p></li>
+<li><p>un <strong>titolo</strong>, che viene scritto sopra l’istogramma</p></li>
+<li><p>il <strong>numero di bin</strong> (<code class="docutils literal notranslate"><span class="pre">10</span></code> in questo caso) in cui dividere l’intervallo di definizione della variabile</p></li>
+<li><p>l’<strong>intervallo di definizione</strong> della variabile (<code class="docutils literal notranslate"><span class="pre">-5.,</span> <span class="pre">5.</span></code> in questo caso)</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="riempimento-di-un-th1f">
+<h3>5.2.4 riempimento di un <code class="docutils literal notranslate"><span class="pre">TH1F</span></code><a class="headerlink" href="#riempimento-di-un-th1f" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>un oggetto della classe <code class="docutils literal notranslate"><span class="pre">TH1F</span></code> quando viene creato <strong>è vuoto</strong>,
+cioè  i conteggi di ogni singolo bin sono nulli</p></li>
+<li><p>per riempire l’istogramma
+si utilizza il suo metodo <code class="docutils literal notranslate"><span class="pre">Fill</span></code>,
+che viene chiamato per ogni evento:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">istogramma</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="mf">2.2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">istogramma</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="mf">2.1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">istogramma</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="mf">-1.4</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>aggiorna i <strong>conteggi</strong> del bin in cui casca il valore passato (in questo caso <code class="docutils literal notranslate"><span class="pre">2.2</span></code>, <code class="docutils literal notranslate"><span class="pre">2.1</span></code>, <code class="docutils literal notranslate"><span class="pre">-1.4</span></code>)</p></li>
+<li><p>aggiorna i <strong>contatori</strong> per il calcolo delle statistiche
+(numero di eventi, somma degli eventi, somma del quadrato degli eventi)</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="visualizzazione-di-un-th1f">
+<h3>5.2.5 visualizzazione di un <code class="docutils literal notranslate"><span class="pre">TH1F</span></code><a class="headerlink" href="#visualizzazione-di-un-th1f" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>per visualizzare un istogramma, serve istanziare un oggetto grafico
+della classe <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code>,
+che è la tela dove l’istogramma viene disegnato</p>
+<ul class="simple">
+<li><p>è necessario includere <code class="docutils literal notranslate"><span class="pre">TCanvas.h</span></code> perché il programma compili</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TCanvas</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">istogramma</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;esempio.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;png&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>l’oggetto <code class="docutils literal notranslate"><span class="pre">c1</span></code> si occupa di produrre l’immagine che contiene l’istogramma</p></li>
+</ul>
+</li>
+<li><p>il box in alto a sinistra nell’immagine dell’istogramma
+riporta <strong>statistiche associate alla collezione di eventi</strong>
+<img alt="istogramma_graph" src="../../_images/primo_TH1F1.png" /></p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="opzioni-grafiche">
+<h3>5.2.6 opzioni grafiche<a class="headerlink" href="#opzioni-grafiche" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>perché l’informazione sull’istogramma sia completa,
+è necessario aggiungere informazioni riguardo il <strong>significato degli assi</strong>,
+prima di invocare il metodo <code class="docutils literal notranslate"><span class="pre">Draw</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">istogramma</span><span class="p">.</span><span class="n">GetXaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;asse x&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">istogramma</span><span class="p">.</span><span class="n">GetYaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;conteggi per bin&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>inoltre, è possibile cambiare il colore di riempimento di un istogramma:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">istogramma</span><span class="p">.</span><span class="n">SetFillColor</span><span class="w"> </span><span class="p">(</span><span class="n">kOrange</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="istogramma" src="../../_images/primo_TH1F_col1.png" /></p>
+<ul class="simple">
+<li><p>la descrizione dettagliata di tutte le funzionalità
+ed opzioni di disegno degli istogrammi
+è <strong>documentata nella relativa <a class="reference external" href="https://root.cern.ch/root/htmldoc/guides/users-guide/Histograms.html">guida per l’utente</a></strong></p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="un-esempio-la-forma-funzionale-gaussiana">
+<h3>5.2.7 un esempio: la forma funzionale Gaussiana<a class="headerlink" href="#un-esempio-la-forma-funzionale-gaussiana" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>si può utilizzare un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TH1F</span></code>
+per <strong>visualizzare la distribuzione di eventi pseudo-casuali</strong> generati
+con gli algoritmi scritti nella lezione precedente</p></li>
+<li><p>assumendo che la <strong>funzione che genera numeri casuali</strong>
+con il metodo del teorema centrale del limite
+abbia il seguente prototipo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="n">rand_TCL</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xMax</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>si può rimepire un istograma di test dell’algoritmo in questo modo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TH1F</span><span class="w"> </span><span class="nf">h</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;eventi pseudo-casuali Gaussiani&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">h</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="n">rand_TCL</span><span class="w"> </span><span class="p">(</span><span class="mf">-1.</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>con <code class="docutils literal notranslate"><span class="pre">1000000</span></code> eventi, ottenendo poi:
+<img alt="gaussiana" src="../../_images/Gaussian_TH1F.png" /></p>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="scale-logaritmiche">
+<h3>5.2.8 scale logaritmiche<a class="headerlink" href="#scale-logaritmiche" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>quando i valori in diversi bin cambiano considerevolmente,
+può essere comodo <strong>visuallizzare gli istogrammi in scala logaritmica</strong>
+(lungo l’asse orizzontale o verticale),
+per migliorare la leggibilità del risultato</p></li>
+<li><p>essendo una diversa visualizzazione dello stesso contenuto,
+è un’operazione che si fa con un metodo della classe <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="p">.</span><span class="n">SetLogy</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Gaussian.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;png&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>chiaramente, lo zero dell’asse in scala logaritmica non può comparire nelle immagini
+<img alt="gaussiana" src="../../_images/Gaussian_TH1F_log1.png" /></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="le-statistiche-di-un-istogramma">
+<h3>5.2.9 le statistiche di un istogramma<a class="headerlink" href="#le-statistiche-di-un-istogramma" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>è possibile estrarre i valori della <strong>media e della deviazione standard</strong>
+degli eventi salvati in un istogramma:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;numero di eventi:    &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">GetEntries</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;media:               &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">GetMean</span><span class="w"> </span><span class="p">()</span><span class="w">    </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;deviazione standard: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">GetRMS</span><span class="w"> </span><span class="p">()</span><span class="w">     </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="una-piccola-digressione-la-varianza-di-una-distribuzione">
+<h2>5.3 una piccola digressione: la varianza di una distribuzione<a class="headerlink" href="#una-piccola-digressione-la-varianza-di-una-distribuzione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>dato un campione di variabili casuali <em>{x<sub>i</sub>}<sub>i=1,..,N</sub></em>
+indipendenti identicamente distribuite,
+<strong>la varianza della distribuzione è la media degli scarti quadratici dalla media</strong></p></li>
+<li><p>si dimostra che la varianza di un campione è uguale alla <strong>media dei quadrati meno il quadrato della media</strong>:
+<em>V = E[x<sup>2</sup>]-E[x]<sup>2</sup></em>
+(<em>E[f]</em> è il valore di aspettazione di f sul campione in esame)</p></li>
+<li><p>la radice della varianza è detta <strong>sigma, o deviazione standard</strong>
+ed è una stima della dispersione del campione attorno alla sua media</p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<div class="section" id="la-varianza-e-la-dimensione-del-campione">
+<h3>5.3.1 la varianza e la dimensione del campione<a class="headerlink" href="#la-varianza-e-la-dimensione-del-campione" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>all’aumentare del numero di eventi nel campione,
+la dispersone degli eventi non cambia, quindi <strong>la varianza rimane costante</strong>
+per variabili identicamente distribuite</p></li>
+<li><p>chiaramente, siccome ogni campione è finito,
+i valori della varianza ottenuti con campioni diversi non sono identici,
+ma ci si aspetta che siano <strong>compatibili fra loro</strong></p></li>
+<li><p>di conseguenza,
+anche la <strong>deviazione standard non dipende dal numero di eventi nel campione</strong></p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="varianza-e-misure-o-numeri-pseudo-casuali">
+<h3>5.3.2 varianza e misure (o numeri pseudo-casuali)<a class="headerlink" href="#varianza-e-misure-o-numeri-pseudo-casuali" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>se si conosce media e varianza di un campione,
+si ha un’idea di <strong>dove ci si aspetta di trovare l’evento successivo</strong> di quel campione</p></li>
+<li><p>se il campione è un insieme di misure,
+la deviazione standard dice quanto distante ci si aspetta di trovare la <strong>prossima misura</strong>
+dalla media delle misure raccolte</p></li>
+<li><p>dunque, la deviazione standard è associata all’<strong>incertezza sulla singola misura</strong></p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="incertezza-sulla-media">
+<h3>5.3.3 incertezza sulla media<a class="headerlink" href="#incertezza-sulla-media" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>all’aumentare del numero di misure, invece, aumenta la <strong>precisione
+con la quale si conosce la media</strong> del campione</p></li>
+<li><p>la <strong>deviazione standard della media</strong>,
+definita come la deviazione standard divisa per la radice del numero di eventi nel campione,
+è una stima dell’<strong>incertezza sulla media</strong></p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="rappresentazione-di-andamenti-y-vs-x-i-tgraph">
+<h2>5.4 rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>gli istogrammi mostrano una <strong>singola variabile fisica</strong></p></li>
+<li><p>talvolta è utile visualizzare <strong>coppie di misure</strong> <em>(x,y)</em></p></li>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> la classe che si utilizza per farlo è il <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<div class="section" id="definizione-di-un-tgraph">
+<h3>5.4.1 definizione di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#definizione-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>come sempre, bisogna includere la <strong>libreria</strong> corrispondente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TGraph.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+</li>
+<li><p>ricordando di aggiungere le opzioni di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> al comando di compilazione:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; c++ -o programma `root-config --cflags --glibs` programma.cpp
+</pre></div>
+</div>
+</li>
+<li><p>un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> si definisce semplicemente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TGraph</span><span class="w"> </span><span class="n">g_sigma</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>l’oggetto è <strong>vuoto</strong>: non contiene alcuna variabile</p></li>
+<li><p>esistono <strong>altri costruttori</strong> oltre a quello di default,
+che permettono di inizializzare un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> con un insieme di coppie di punti nulli
+oppure a partire da array già riempiti</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="riempimento-di-un-tgraph">
+<h3>5.4.2 riempimento di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#riempimento-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> viene <strong>riempito</strong> con il metodo <code class="docutils literal notranslate"><span class="pre">TGraph::SetPoint</span> <span class="pre">(Int_t</span> <span class="pre">i,</span> <span class="pre">Double_t</span> <span class="pre">x,</span> <span class="pre">Double_t</span> <span class="pre">y)</span></code>,
+che prende in input:</p>
+<ul class="simple">
+<li><p>l’<strong>indice del punto da riempire</strong>, che per il primo punto è <em>0</em></p></li>
+<li><p>il <strong>valore della variabile <em>x</em></strong></p></li>
+<li><p>il <strong>valore della variabile <em>y</em></strong></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">g_sigma</span><span class="p">.</span><span class="n">SetPoint</span><span class="w"> </span><span class="p">(</span><span class="n">g_sigma</span><span class="p">.</span><span class="n">GetN</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">7.4</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>in questo caso, come primo argomento si utilizza il metodo stesso <code class="docutils literal notranslate"><span class="pre">TGraph::GetN</span> <span class="pre">()</span></code>,
+perché per un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> che contiene <code class="docutils literal notranslate"><span class="pre">N</span></code> elementi
+l’indice dell’ultimo elemento salvato è <code class="docutils literal notranslate"><span class="pre">N-1</span></code></p></li>
+</ul>
+</li>
+<li><p>si noti che <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> ridefinisce le variabili numeriche del <code class="docutils literal notranslate"><span class="pre">C++</span></code>
+(sostituendo <code class="docutils literal notranslate"><span class="pre">int</span></code> con <code class="docutils literal notranslate"><span class="pre">Int_t</span></code> e <code class="docutils literal notranslate"><span class="pre">double</span></code> con <code class="docutils literal notranslate"><span class="pre">Double_t</span></code> in questo caso),
+perché le variaibli definite internamente da <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> hanno una dimensione in byte convenzionale</p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="disegno-di-un-tgraph">
+<h3>5.4.3 disegno di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#disegno-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>come nel caso di <code class="docutils literal notranslate"><span class="pre">TH1F</span></code>, un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> si <strong>disegna su un <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code></strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TCanvas</span><span class="w"> </span><span class="nf">c1</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">c1</span><span class="p">.</span><span class="n">SetLogx</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">g_sigma</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ALP&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;sigmaTrend.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;png&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>le opzioni passate al metodo <code class="docutils literal notranslate"><span class="pre">Draw</span></code> richiedono di</p>
+<ul>
+<li><p>tracciare gli <strong>assi</strong> (<code class="docutils literal notranslate"><span class="pre">A</span></code>)</p></li>
+<li><p>congiungere i punti con una <strong>linea</strong> (<code class="docutils literal notranslate"><span class="pre">L</span></code>)</p></li>
+<li><p>disegnare i <strong>marker</strong> ad ogni punto (<code class="docutils literal notranslate"><span class="pre">P</span></code>).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="qualche-opzione-grafica">
+<h3>5.4.4 qualche opzione grafica<a class="headerlink" href="#qualche-opzione-grafica" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>anche per un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code>,
+si possono impostare diversi parametri grafici:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">g_sigma</span><span class="p">.</span><span class="n">SetMarkerStyle</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">g_sigma</span><span class="p">.</span><span class="n">SetMarkerColor</span><span class="w"> </span><span class="p">(</span><span class="n">kAzure</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">g_sigma</span><span class="p">.</span><span class="n">SetLineColor</span><span class="w"> </span><span class="p">(</span><span class="n">kGray</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">g_sigma</span><span class="p">.</span><span class="n">SetMarkerSize</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">g_sigma</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;numero di eventi nel campione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">g_sigma</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetYaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;deviazione standard&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>il metodo <code class="docutils literal notranslate"><span class="pre">TGraph::GetHistogram</span> <span class="pre">()</span></code> restituisce il puntatore
+all’istogramma di servizio creato da <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>
+per comporre graficamente il disegno</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="il-risultato-del-disegno">
+<h3>5.4.5 il risultato del disegno<a class="headerlink" href="#il-risultato-del-disegno" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>nel caso dell’andamento della <strong>deviazione standard</strong>
+e della <strong>deviazione standard della media</strong>,
+dal disegno dei <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> nel caso di una distribuzione uniforme
+si nota chiaramente che una delle due rimane costante,
+mentre l’altra diminuisce all’aumentare del numero di eventi
+presenti nel campione
+<img alt="deviazione_standard" src="../../_images/sigma_trends.png" /></p></li>
+<li><p>il campionamento di punti sull’asse <em>x</em> è fatto
+<strong>con ragione logaritmica</strong>,
+perché l’andamento atteso è lento
+(proporzionale a radice di <em>N</em>)</p></li>
+<li><p>la <strong>scala logaritmica sull’asse <em>x</em></strong>
+aiuta a visualizzare in modo più efficace queste variazioni</p></li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="th2f-istogrammi-bidimnesionali">
+<h2>5.5 TH2F: istogrammi bidimnesionali<a class="headerlink" href="#th2f-istogrammi-bidimnesionali" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>il concetto di istogramma monodimensionale si applica facilmente anche al <strong>caso bidimensionale</strong></p></li>
+<li><p>l’oggetto di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> associato a questo concetto si chiama <code class="docutils literal notranslate"><span class="pre">TH2F</span></code></p></li>
+<li><p>nel costruttore, è necessario inserire numero di bin ed estremi per due direzioni</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TH2F</span><span class="w"> </span><span class="nf">h2</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;eventi pseudo-casuali Gaussiani&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>nel riempimento, il metodo <code class="docutils literal notranslate"><span class="pre">TH2F::Fill</span> <span class="pre">(Double_t</span> <span class="pre">x,</span> <span class="pre">Double_t</span> <span class="pre">y)</span></code> prende in ingresso due valori</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">h2</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="n">rand_TCL</span><span class="w"> </span><span class="p">(</span><span class="mf">-1.</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">rand_TCL</span><span class="w"> </span><span class="p">(</span><span class="mf">-1.</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="gaussiana2D" src="../../_images/Gaussian_TH2F1.png" /></p>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="l-interfaccia-interattiva-di-root-la-classe-tapplication">
+<h2>5.6 L’interfaccia interattiva di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>: la classe <code class="docutils literal notranslate"><span class="pre">TApplication</span></code><a class="headerlink" href="#l-interfaccia-interattiva-di-root-la-classe-tapplication" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>i <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> sono dotati di diverse <strong>funzionalità interattive</strong>
+alle quali si accede con menu a tendina o contestuali
+(accessibili con il pulsante destro del mouse)</p></li>
+<li><p>per <strong>abilitare queste funzionalità</strong> in un programma compilato,
+è necessario utilizzare un oggetto della classe <strong>TApplication</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TApplication</span><span class="w"> </span><span class="nf">theApp</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;theApp&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">TCanvas</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">istogramma</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;hist&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">theApp</span><span class="p">.</span><span class="n">Run</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul>
+<li><p>fra la linea</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TApplication</span><span class="w"> </span><span class="nf">theApp</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;theApp&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>e la linea</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">theApp</span><span class="p">.</span><span class="n">Run</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>va incluso tutto il codice che si vuole interattivo</p>
+</li>
+<li><p>può esistere un solo oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TApplication</span></code> in ogni programma</p></li>
+<li><p>per terminare l’esecuzione del programma,
+da un qualunque <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code> bisogna utilizzare il menu <code class="docutils literal notranslate"><span class="pre">File-&gt;Quit</span> <span class="pre">ROOT</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="una-gestione-furba-del-testo-tstring">
+<h2>5.7 Una gestione furba del testo: <code class="docutils literal notranslate"><span class="pre">TString</span></code><a class="headerlink" href="#una-gestione-furba-del-testo-tstring" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROOT</span></code> fornisce un oggetto che serve per <strong>maneggiare stringhe</strong>
+che può essere utilizzato come argomento nei metodi delle sue classi</p></li>
+<li><p>le <code class="docutils literal notranslate"><span class="pre">TString</span></code> hanno definite una serie di operazioni
+che permettono di <strong>combinare velocemente testo con altre variabili</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atoi</span><span class="w"> </span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">TString</span><span class="w"> </span><span class="n">titolo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ci sono &quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">titolo</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">titolo</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot; eventi&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">TH1F</span><span class="w"> </span><span class="nf">istogramma</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;istogramma&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">titolo</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">-5.</span><span class="p">,</span><span class="w"> </span><span class="mf">5.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+</div>
+<div class="section" id="esercizi">
+<h2>5.8 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tempo/Lezione_05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Docenti del Corso di Laboratorio 2<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
