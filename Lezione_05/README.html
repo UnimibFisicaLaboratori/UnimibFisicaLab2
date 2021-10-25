@@ -7,50 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lezione 7: programmazione template e Standard Template Library &#8212; Laboratorio 2</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -67,38 +67,38 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../../_static/logo_unimib.png" class="logo" alt="logo">
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Laboratorio 2</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
+  <a class="reference internal" href="../intro.html">
    Laboratorio 2 - I Modulo
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../Prerequisiti/README.html">
+  <a class="reference internal" href="../Prerequisiti/README.html">
    I prerequisiti del corso
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../Ripasso/README.html">
+  <a class="reference internal" href="../Ripasso/README.html">
    Ripasso di
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -108,7 +108,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../content.html">
+  <a class="reference internal" href="../content.html">
    Indice delle Lezioni
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -118,7 +118,7 @@
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../Lezione_01/README.html">
+    <a class="reference internal" href="../Lezione_01/README.html">
      Lezione 1: strutturazione di un programma ed introduzione al
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -133,24 +133,24 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_01/ESEMPI.html">
+      <a class="reference internal" href="../Lezione_01/ESEMPI.html">
        Esempi: Lezione 1
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_01/ESERCIZI.html">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
        Esercizi per la lezione 1
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_01/SOLUZIONI.html">
+      <a class="reference internal" href="../Lezione_01/SOLUZIONI.html">
        Soluzioni: Lezione 1
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../Lezione_02/README.html">
+    <a class="reference internal" href="../Lezione_02/README.html">
      Lezione 2: programmazione ad oggetti, le classi
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -160,24 +160,24 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_02/ESEMPI.html">
+      <a class="reference internal" href="../Lezione_02/ESEMPI.html">
        Esempi: Lezione 2
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_02/ESERCIZI.html">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
        Esercizi per la lezione 2
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_02/SOLUZIONI.html">
+      <a class="reference internal" href="../Lezione_02/SOLUZIONI.html">
        Soluzioni: Lezione 2
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../Lezione_03/README.html">
+    <a class="reference internal" href="../Lezione_03/README.html">
      Lezione 3: visualizzazione di dati con ROOT
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -187,24 +187,24 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_03/ESEMPI.html">
+      <a class="reference internal" href="../Lezione_03/ESEMPI.html">
        Esempi: Lezione 3
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_03/ESERCIZI.html">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
        Esercizi per la lezione 3
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_03/SOLUZIONI.html">
+      <a class="reference internal" href="../Lezione_03/SOLUZIONI.html">
        Soluzioni: Lezione 3
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../Lezione_04/README.html">
+    <a class="reference internal" href="../Lezione_04/README.html">
      Lezione 4: la generazione di numeri pseudo-casuali
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -214,12 +214,12 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_04/ESEMPI.html">
+      <a class="reference internal" href="../Lezione_04/ESEMPI.html">
        Esempi: Lezione 4
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../Lezione_04/ESERCIZI.html">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
        Esercizi per la lezione 4
       </a>
      </li>
@@ -228,7 +228,7 @@
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix.html">
+  <a class="reference internal" href="../appendix.html">
    Appendice
   </a>
  </li>
@@ -273,7 +273,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/tempo/Lezione_07/README.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Lezione_05/README.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -705,11 +705,11 @@
 </li>
 <li><p><a class="reference external" href="#711-esercizi">7.11 ESERCIZI</a></p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="introduzione">
 <h2>7.1 introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="ripasso-l-overloading-delle-funzioni">
 <h3>7.1.1 ripasso: l’<em>overloading</em> delle funzioni<a class="headerlink" href="#ripasso-l-overloading-delle-funzioni" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -732,7 +732,7 @@ con tipi in ingresso differenti:</p>
 <li><p>durante l’esecuzione di un programma, il <code class="docutils literal notranslate"><span class="pre">C++</span></code> è in grado di <strong>scegliere
 la funzione corretta</strong> da utilizzare</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="se-potessimo-lavorare-meno">
 <h3>7.1.2 se potessimo lavorare meno…<a class="headerlink" href="#se-potessimo-lavorare-meno" title="Permalink to this headline">¶</a></h3>
@@ -742,12 +742,12 @@ la funzione corretta</strong> da utilizzare</p></li>
 <li><p>la programmazione <code class="docutils literal notranslate"><span class="pre">template</span></code> mira ad <strong>evitare di riscrivere per tipi diversi</strong>
 funzioni che hanno identica implementazione</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
 <div class="section" id="funzioni-template">
 <h2>7.2 funzioni <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#funzioni-template" title="Permalink to this headline">¶</a></h2>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="definizione-di-una-funzione-template">
 <h3>7.2.1 definizione di una funzione <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#definizione-di-una-funzione-template" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -770,7 +770,7 @@ e restituisce una variabile di tipo <code class="docutils literal notranslate"><
 </ul>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="utilizzo-di-una-fuzione-template">
 <h3>7.2.2 utilizzo di una fuzione <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#utilizzo-di-una-fuzione-template" title="Permalink to this headline">¶</a></h3>
@@ -792,7 +792,7 @@ implementata (templata) sul tipo <code class="docutils literal notranslate"><spa
 </ul>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="attenzione-ai-dettagli">
 <h3>7.2.3 attenzione ai dettagli<a class="headerlink" href="#attenzione-ai-dettagli" title="Permalink to this headline">¶</a></h3>
@@ -809,7 +809,7 @@ come nei casi seguenti:</p>
 </div>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="template-e-compilazione">
 <h3>7.2.4 <code class="docutils literal notranslate"><span class="pre">template</span></code> e compilazione<a class="headerlink" href="#template-e-compilazione" title="Permalink to this headline">¶</a></h3>
@@ -842,7 +842,7 @@ porta a termine un <strong>controllo sintattico accurato</strong></p></li>
 </ul>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
 <div class="section" id="classi-template">
@@ -854,14 +854,14 @@ anche le <strong>classi</strong> possono essere <code class="docutils literal no
 ad esempio un array che abbia il numero degli elementi definito a runtime
 e che possa contenere qualunque tipo di oggetto</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="definizione-di-una-classe-template">
 <h3>7.3.1 definizione di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#definizione-di-una-classe-template" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>esempio dell’array a dimensione impostata a runtime</p></li>
 <li><p>come si potrebbe fargli aumentare dimensione, se serve?</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="implementazione-di-una-classe-template">
 <h3>7.3.2 implementazione di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#implementazione-di-una-classe-template" title="Permalink to this headline">¶</a></h3>
@@ -890,7 +890,7 @@ da utilizzare nella scrittura della classe</p>
 </div>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="utilizzo-di-una-classe-template">
 <h3>7.3.3 utilizzo di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#utilizzo-di-una-classe-template" title="Permalink to this headline">¶</a></h3>
@@ -905,7 +905,7 @@ bisogna <strong>indicare esplicitamente il tipo</strong> sul quale
 </div>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
 <div class="section" id="template-multipli">
@@ -923,7 +923,7 @@ su due tipi differenti:</p>
 </div>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-specializzazione-dei-template">
 <h2>7.5 la specializzazione dei <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#la-specializzazione-dei-template" title="Permalink to this headline">¶</a></h2>
@@ -947,7 +947,7 @@ si chiama <strong>specializzazione</strong> di un <code class="docutils literal 
 <li><p>il preambolo <code class="docutils literal notranslate"><span class="pre">template&lt;&gt;</span></code> segnala al <code class="docutils literal notranslate"><span class="pre">C++</span></code> che questa implementazione
 è una specializzazione della funzione templata <code class="docutils literal notranslate"><span class="pre">somma</span></code></p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="template-su-valori-di-variabili-intere">
 <h2>7.6 <code class="docutils literal notranslate"><span class="pre">template</span></code> su valori di variabili intere<a class="headerlink" href="#template-su-valori-di-variabili-intere" title="Permalink to this headline">¶</a></h2>
@@ -985,7 +985,7 @@ il valore di <em>N</em> è noto al <strong>momento della compilazione</strong>,
 quindi è lecito utilizzare l’allocazione automatica della memoria
 per definire l’array <code class="docutils literal notranslate"><span class="pre">elementi</span></code></p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="ordine-nelle-librerie-i-namespace">
 <h2>7.7 ordine nelle librerie: i <code class="docutils literal notranslate"><span class="pre">namespace</span></code><a class="headerlink" href="#ordine-nelle-librerie-i-namespace" title="Permalink to this headline">¶</a></h2>
@@ -1019,7 +1019,7 @@ bisogna utilizzare l’operatore di risoluzione di <em>scope</em>: <code class="
 </div>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="un-namespace-familiare-std">
 <h3>7.7.1 un <code class="docutils literal notranslate"><span class="pre">namespace</span></code> familiare: <code class="docutils literal notranslate"><span class="pre">std</span></code><a class="headerlink" href="#un-namespace-familiare-std" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -1040,7 +1040,7 @@ evitando così di indicarlo esplicitamente:</p>
 <li><p>è buona norma <strong>non</strong> invocare <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">std</span> <span class="pre">;</span></code> all’interno di <strong>header file</strong>,
 perché avrebbe effetto in tutti i programmi che includono quell’header</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
 <div class="section" id="le-standard-template-library">
@@ -1057,7 +1057,7 @@ per utilizzare uno strumento STL bisogna <strong>includerne l’header</strong>.
 questa libreria è già inclusa nel <code class="docutils literal notranslate"><span class="pre">C++</span></code> standard,
 quindi <strong>non è necessario aggiungere opzioni</strong> al comando di compilazione</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="programmazione-a-diversi-livelli">
 <h3>7.8.1 Programmazione a diversi livelli<a class="headerlink" href="#programmazione-a-diversi-livelli" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -1076,7 +1076,7 @@ si assume solitamente che l’interazione con l’hardware sia ben gestita dalle
 mentre è necessario comprendere la loro logica ed il loro comportamento,
 per utilizzarle al meglio.</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
 <div class="section" id="contenitori-stl">
@@ -1091,7 +1091,7 @@ a titolo esempificativo</p></li>
 <li><p>documentazione più esaustiva si trova in internet,
 ad esempio <a class="reference external" href="https://justinmeiners.github.io/sgi-stl-docs">qui</a></p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="una-sequenza-di-elementi-std-vector">
 <h3>7.9.1 Una sequenza di elementi: <code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#una-sequenza-di-elementi-std-vector" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -1107,7 +1107,7 @@ oppure a partire da un altro <code class="docutils literal notranslate"><span cl
 </div>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-lettura-di-un-std-vector">
 <h3>7.9.2 La lettura di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#la-lettura-di-un-std-vector" title="Permalink to this headline">¶</a></h3>
@@ -1132,7 +1132,7 @@ nel caso in cui l’indice non indichi un elemento del <code class="docutils lit
 </ul>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="il-riempimento-di-un-std-vector">
 <h3>7.9.3 Il riempimento di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#il-riempimento-di-un-std-vector" title="Permalink to this headline">¶</a></h3>
@@ -1156,7 +1156,7 @@ con il metodo <code class="docutils literal notranslate"><span class="pre">vecto
 </div>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="std-vector-ed-array">
 <h3>7.9.4 <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> ed array<a class="headerlink" href="#std-vector-ed-array" title="Permalink to this headline">¶</a></h3>
@@ -1170,7 +1170,7 @@ e modifica</p></li>
 </div>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="l-iterazione-sugli-elementi-di-un-std-vector">
 <h3>7.9.5 l’iterazione sugli elementi di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#l-iterazione-sugli-elementi-di-un-std-vector" title="Permalink to this headline">¶</a></h3>
@@ -1205,7 +1205,7 @@ indica il numero di elementi che intercorrono fra loro</p></li>
 </ul>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="std-vector-di-oggetti">
 <h3>7.9.6 <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> di oggetti<a class="headerlink" href="#std-vector-di-oggetti" title="Permalink to this headline">¶</a></h3>
@@ -1217,7 +1217,7 @@ garantisca il buon funzionamento delle librerie STL</p></li>
 <li><p>in particolare, è necessario che siano definiti il <em>copy constructor</em> e l’operatore di assegnazione
 per il tipo <code class="docutils literal notranslate"><span class="pre">T</span></code></p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="un-contenitore-associativo-di-elementi-std-map">
 <h3>7.9.7 Un contenitore associativo di elementi: <code class="docutils literal notranslate"><span class="pre">std::map</span></code><a class="headerlink" href="#un-contenitore-associativo-di-elementi-std-map" title="Permalink to this headline">¶</a></h3>
@@ -1238,7 +1238,7 @@ cioè deve esistere l’<code class="docutils literal notranslate"><span class="
 cioè gli elementi al suo interno su susseguono
 secondo la relazione d’ordine che esiste per le chiavi</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="il-riempimento-di-una-std-map">
 <h3>7.9.8 Il riempimento di una <code class="docutils literal notranslate"><span class="pre">std::map</span></code><a class="headerlink" href="#il-riempimento-di-una-std-map" title="Permalink to this headline">¶</a></h3>
@@ -1263,7 +1263,7 @@ mentre la terza <strong>sovrascrive</strong> l’elemento associato alla chiave 
 <li><p>Per gli oggetti sui quali si templa una <code class="docutils literal notranslate"><span class="pre">map</span></code> devono aver definti
 un operatore di assgnazione ed un <em>copy constructor</em></p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-lettura-di-una-std-map">
 <h3>7.9.9 La lettura di una <code class="docutils literal notranslate"><span class="pre">std::map</span></code><a class="headerlink" href="#la-lettura-di-una-std-map" title="Permalink to this headline">¶</a></h3>
@@ -1291,7 +1291,7 @@ come un puntatore al <code class="docutils literal notranslate"><span class="pre
 </ul>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
 <div class="section" id="std-string">
@@ -1313,7 +1313,7 @@ con il tipo <a class="reference external" href="https://www.cplusplus.com/refere
 </ul>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="operazioni-con-stringhe">
 <h3>7.10.1 operazioni con stringhe<a class="headerlink" href="#operazioni-con-stringhe" title="Permalink to this headline">¶</a></h3>
 <ul>
@@ -1329,7 +1329,7 @@ con il tipo <a class="reference external" href="https://www.cplusplus.com/refere
 sul quale viene invocato</p></li>
 <li><p>L’uguaglianza fra due <code class="docutils literal notranslate"><span class="pre">string</span></code> si può verificare con l’<code class="docutils literal notranslate"><span class="pre">operator==()</span></code>.</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="ricerca-di-sotto-elementi-in-una-string">
 <h3>7.10.2 ricerca di sotto-elementi in una <code class="docutils literal notranslate"><span class="pre">string</span></code><a class="headerlink" href="#ricerca-di-sotto-elementi-in-una-string" title="Permalink to this headline">¶</a></h3>
@@ -1352,7 +1352,7 @@ per non confondere il simbolo con la fine della stringa stessa</p></li>
 </ul>
 </li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="string-e-caratteri">
 <h3>7.10.3 <code class="docutils literal notranslate"><span class="pre">string</span></code> e caratteri<a class="headerlink" href="#string-e-caratteri" title="Permalink to this headline">¶</a></h3>
@@ -1384,7 +1384,7 @@ per via della migliore gestione della memoria,
 oltre che per i diversi strumenti di manipolazione delle stringhe
 disponibili per la classe <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></li>
 </ul>
-<p><img alt="linea" src="tempo/immagini/linea.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
 <div class="section" id="esercizi">
@@ -1408,7 +1408,7 @@ disponibili per la classe <code class="docutils literal notranslate"><span class
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./tempo/Lezione_07"
+            path: "./Lezione_05"
         },
         predefinedOutput: true
     }
@@ -1445,7 +1445,7 @@ disponibili per la classe <code class="docutils literal notranslate"><span class
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>
