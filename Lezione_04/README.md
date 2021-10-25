@@ -1,4 +1,4 @@
-# Lezione 4: la generazione di numeri casuali
+# Lezione 4: la generazione di numeri pseudo-casuali
 
 ## Indice
 
