@@ -1,6 +1,6 @@
-# Esercizi per la lezione 7
+# Esercizi per la lezione 5
 
-## Esercizio 7.1
+## Esercizio 5.1
 
 Si scriva una funzione ```somma``` che,
 utilizzando la tecnologia ```template```,
@@ -8,7 +8,7 @@ sia applicabile a qualunque tipo numerico del ```C++```.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.2 
+## Esercizio 5.2 
 
 Si testi la funzione ```somma``` sviluppata nell'esercizio precedente
 sulla classe dei numeri complessi sviluppata durante la Lezione 3,
@@ -16,7 +16,7 @@ aggiungendo anche una specializzazione per un tipo a piacere.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.3
+## Esercizio 5.3
 
 Si costruisca la classe ```SimpleArray```, templata sul tipo degli oggetti che contiene, 
 implementando le funzioni definite nel prototipo presentato a lezione.
@@ -31,7 +31,7 @@ implementando le funzioni definite nel prototipo presentato a lezione.
     
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.4
+## Esercizio 5.4
 
 Si implementi una classe templata dal nome ```DynamicArray``` che inizialmente
 non contenga alcun elemento ed abbia un metodo ```push_back ()``` che permetta di aggiungere 
@@ -42,7 +42,7 @@ un elemento in fondo all'array degli elementi già esistenti.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.5
+## Esercizio 5.5
 
 Si implementi la classe templata ```vettore``` definita nella lezione.
   * Si ricordi di controllare che gli indici passati ai metodi della classe siano entro i limiti 
@@ -51,7 +51,7 @@ Si implementi la classe templata ```vettore``` definita nella lezione.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.6
+## Esercizio 5.6
 
 Si implementi la classe templata ```matrice``` delle matrici quadrate di dimensione *N*, 
 templata sulla dimensione delle matrici, 
@@ -85,7 +85,7 @@ definendo anche le operazioni fra matrici.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.7
+## Esercizio 5.7
 
 Si crei un ```std::vector``` vuoto e, tramite un ciclo ```for```, 
 lo si riempia con i primi 10 numeri della successione di Fibonacci.
@@ -96,7 +96,7 @@ lo si riempia con i primi 10 numeri della successione di Fibonacci.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.8
+## Esercizio 5.8
 
 Si crei un ```std::vector``` vuoto e lo si riempia con cinque oggetti
 del tipo della classe ```complesso``` sviluppato durante la Lezione 3.
@@ -107,7 +107,7 @@ del tipo della classe ```complesso``` sviluppato durante la Lezione 3.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.9
+## Esercizio 5.9
 
 Si crei una ```std::map``` vuota e la si riempia con una sequenza di numeri complessi,
 utilizzando la norma dei numeri stessi come chiave di ordinamento della mappa.
@@ -115,7 +115,7 @@ utilizzando la norma dei numeri stessi come chiave di ordinamento della mappa.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 7.10
+## Esercizio 5.10
 
 Si crei una ```std::string``` riempita con un periodo scelto a piacere.
   * Si contino il numero di parole ed il numero di lettere (spazi esclusi)
