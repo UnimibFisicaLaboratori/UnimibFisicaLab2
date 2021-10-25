@@ -1,49 +1,49 @@
-# Lezione 7: programmazione ```template``` e Standard Template Library
+# Lezione 5: programmazione ```template``` e Standard Template Library
 
 ## Indice
 
-  * [7.1 introduzione](#71-introduzione)
-    * [7.1.1 ripasso: l'*overloading* delle funzioni](#711-ripasso-loverloading-delle-funzioni)
-    * [7.1.2 se potessimo lavorare meno...](#712-se-potessimo-lavorare-meno)
-  * [7.2 funzioni ```template```](#72-funzioni-template)
-    * [7.2.1 definizione di una funzione ```template```](#721-definizione-di-una-funzione-template)
-    * [7.2.2 utilizzo di una fuzione ```template```](#722-utilizzo-di-una-fuzione-template)
-    * [7.2.3 attenzione ai dettagli](#723-attenzione-ai-dettagli)
-    * [7.2.4 ```template``` e compilazione](#724-template-e-compilazione)
-  * [7.3 classi ```template```](#73-classi-template)
-    * [7.3.1 definizione di una classe ```template```](#731-definizione-di-una-classe-template)
-    * [7.3.2 implementazione di una classe ```template```](#732-implementazione-di-una-classe-template)
-    * [7.3.3 utilizzo di una classe ```template```](#733-utilizzo-di-una-classe-template)
-  * [7.4 ```template``` multipli](#74-template-multipli)
-  * [7.5 la specializzazione dei ```template```](#75-la-specializzazione-dei-template)
-  * [7.6 ```template``` su valori di variabili intere](#76-template-su-valori-di-variabili-intere)
-  * [7.7 ordine nelle librerie: i ```namespace```](#77-ordine-nelle-librerie-i-namespace)
-    * [7.7.1 un ```namespace``` familiare: ```std```](#771-un-namespace-familiare-std)
-  * [7.8 Le Standard Template Library](#78-le-standard-template-library)
-    * [7.8.1 Programmazione a diversi livelli](#781-programmazione-a-diversi-livelli)
-  * [7.9 Contenitori STL](#79-contenitori-stl)
-    * [7.9.1 Una sequenza di elementi: ```std::vector```](#791-una-sequenza-di-elementi-stdvector)
-    * [7.9.2 La lettura di un ```std::vector```](#792-la-lettura-di-un-stdvector)
-    * [7.9.3 Il riempimento di un ```std::vector```](#793-il-riempimento-di-un-stdvector)
-    * [7.9.4 ```std::vector``` ed array](#794-stdvector-ed-array)
-    * [7.9.5 l'iterazione sugli elementi di un ```std::vector```](#795-literazione-sugli-elementi-di-un-stdvector)
-    * [7.9.6 ```std::vector``` di oggetti](#796-stdvector-di-oggetti)
-    * [7.9.7 Un contenitore associativo di elementi: ```std::map```](#797-un-contenitore-associativo-di-elementi-stdmap)
-    * [7.9.8 Il riempimento di una ```std::map```](#798-il-riempimento-di-una-stdmap)
-    * [7.9.9 La lettura di una ```std::map```](#799-la-lettura-di-una-stdmap)
-  * [7.10 ```std::string```](#710-stdstring)
-    * [7.10.1 operazioni con stringhe](#7101-operazioni-con-stringhe)
-    * [7.10.2 ricerca di sotto-elementi in una ```string```](#7102-ricerca-di-sotto-elementi-in-una-string)
-    * [7.10.3 ```string``` e caratteri](#7103-string-e-caratteri)
-  * [7.11 ESERCIZI](#711-esercizi)
+  * [5.1 introduzione](#51-introduzione)
+    * [5.1.1 ripasso: l'*overloading* delle funzioni](#511-ripasso-loverloading-delle-funzioni)
+    * [5.1.2 se potessimo lavorare meno...](#512-se-potessimo-lavorare-meno)
+  * [5.2 funzioni ```template```](#52-funzioni-template)
+    * [5.2.1 definizione di una funzione ```template```](#521-definizione-di-una-funzione-template)
+    * [5.2.2 utilizzo di una fuzione ```template```](#522-utilizzo-di-una-fuzione-template)
+    * [5.2.3 attenzione ai dettagli](#523-attenzione-ai-dettagli)
+    * [5.2.4 ```template``` e compilazione](#524-template-e-compilazione)
+  * [5.3 classi ```template```](#53-classi-template)
+    * [5.3.1 definizione di una classe ```template```](#531-definizione-di-una-classe-template)
+    * [5.3.2 implementazione di una classe ```template```](#532-implementazione-di-una-classe-template)
+    * [5.3.3 utilizzo di una classe ```template```](#533-utilizzo-di-una-classe-template)
+  * [5.4 ```template``` multipli](#54-template-multipli)
+  * [5.5 la specializzazione dei ```template```](#55-la-specializzazione-dei-template)
+  * [5.6 ```template``` su valori di variabili intere](#56-template-su-valori-di-variabili-intere)
+  * [5.7 ordine nelle librerie: i ```namespace```](#57-ordine-nelle-librerie-i-namespace)
+    * [5.5.1 un ```namespace``` familiare: ```std```](#571-un-namespace-familiare-std)
+  * [5.8 Le Standard Template Library](#58-le-standard-template-library)
+    * [5.8.1 Programmazione a diversi livelli](#581-programmazione-a-diversi-livelli)
+  * [5.9 Contenitori STL](#59-contenitori-stl)
+    * [5.9.1 Una sequenza di elementi: ```std::vector```](#591-una-sequenza-di-elementi-stdvector)
+    * [5.9.2 La lettura di un ```std::vector```](#592-la-lettura-di-un-stdvector)
+    * [5.9.3 Il riempimento di un ```std::vector```](#593-il-riempimento-di-un-stdvector)
+    * [5.9.4 ```std::vector``` ed array](#594-stdvector-ed-array)
+    * [5.9.5 l'iterazione sugli elementi di un ```std::vector```](#595-literazione-sugli-elementi-di-un-stdvector)
+    * [5.9.6 ```std::vector``` di oggetti](#596-stdvector-di-oggetti)
+    * [5.9.7 Un contenitore associativo di elementi: ```std::map```](#597-un-contenitore-associativo-di-elementi-stdmap)
+    * [5.9.8 Il riempimento di una ```std::map```](#598-il-riempimento-di-una-stdmap)
+    * [5.9.9 La lettura di una ```std::map```](#599-la-lettura-di-una-stdmap)
+  * [5.10 ```std::string```](#510-stdstring)
+    * [5.10.1 operazioni con stringhe](#5101-operazioni-con-stringhe)
+    * [5.10.2 ricerca di sotto-elementi in una ```string```](#5102-ricerca-di-sotto-elementi-in-una-string)
+    * [5.10.3 ```string``` e caratteri](#5103-string-e-caratteri)
+  * [5.11 ESERCIZI](#511-esercizi)
 
 ![linea](../immagini/linea.png)
 
-## 7.1 introduzione
+## 5.1 introduzione
 
 ![linea](../immagini/linea.png)
 
-### 7.1.1 ripasso: l'*overloading* delle funzioni
+### 5.1.1 ripasso: l'*overloading* delle funzioni
 
   * in ```C++```, una funzione o un operatore vengono identificati univocamente
     dall'insieme di **nome e tipi in ingresso**,
@@ -65,7 +65,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.1.2 se potessimo lavorare meno...
+### 5.1.2 se potessimo lavorare meno...
 
   * nonostante le due funzioni abbiano la medesima implementazione,
     è stato necessario **scriverle entrambe**
@@ -74,11 +74,11 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.2 funzioni ```template```
+## 5.2 funzioni ```template```
 
 ![linea](../immagini/linea.png)
 
-### 7.2.1 definizione di una funzione ```template```
+### 5.2.1 definizione di una funzione ```template```
 
   * la parola chiave ```template```, traducibile in italiano come modello,
     introduce il concetto di tipo generico
@@ -98,7 +98,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.2.2 utilizzo di una fuzione ```template```
+### 5.2.2 utilizzo di una fuzione ```template```
 
   * in fase di compilazione,
     il ```C++``` **implementa e compila tutti i prototipi necessari**,
@@ -116,7 +116,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.2.3 attenzione ai dettagli
+### 5.2.3 attenzione ai dettagli
 
   * l'implementazione della funzione ```somma``` **deve essere corretta**
     per tutti i tipi sui quali viene templata
@@ -131,7 +131,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.2.4 ```template``` e compilazione
+### 5.2.4 ```template``` e compilazione
 
   * la risoluzione dei template avviene **in fase di compilazione** del programma
   * questo significa che non si può separare la compilazione del ```main``` program
@@ -159,7 +159,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.3 classi ```template```
+## 5.3 classi ```template```
 
   * come le funzioni,
     anche le **classi** possono essere ```template```
@@ -169,14 +169,14 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.3.1 definizione di una classe ```template```
+### 5.3.1 definizione di una classe ```template```
 
   * esempio dell'array a dimensione impostata a runtime
   * come si potrebbe fargli aumentare dimensione, se serve?
 
 ![linea](../immagini/linea.png)
 
-### 7.3.2 implementazione di una classe ```template```
+### 5.3.2 implementazione di una classe ```template```
 
   * anche in questo caso si utilizza la **parola chiave ```template```**
     per indicare che la classe è ```template```
@@ -203,7 +203,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.3.3 utilizzo di una classe ```template```
+### 5.3.3 utilizzo di una classe ```template```
 
   * quando la classe ```SimpleArray``` viene utilizzata,
     bisogna **indicare esplicitamente il tipo** sul quale
@@ -216,7 +216,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.4 ```template``` multipli
+## 5.4 ```template``` multipli
 
   * E' possibile templare una funzione o una classe su **più di un tipo**
   * Ad esempio, si potrebbe templare la funzione ```somma```
@@ -231,7 +231,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.5 la specializzazione dei ```template```
+## 5.5 la specializzazione dei ```template```
 
   * talvolta può succedere che,
     per taluni tipi particolari,
@@ -253,7 +253,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.6 ```template``` su valori di variabili intere
+## 5.6 ```template``` su valori di variabili intere
 
   * oltre che su tipi di variabili,
     si può templare una funzione o una classe
@@ -290,7 +290,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.7 ordine nelle librerie: i ```namespace```
+## 5.7 ordine nelle librerie: i ```namespace```
 
   * Al crescere delle dimensioni di una libreria,
     può essere comodo incorporarne gli strumenti (siano essi classi o funzioni)
@@ -321,7 +321,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.7.1 un ```namespace``` familiare: ```std```
+### 5.5.1 un ```namespace``` familiare: ```std```
 
   * gli **strumenti standard** di ```C++``` sono definiti all'interno del ```namespace``` ```std```
     (ad esempio ```std::cout```)
@@ -342,7 +342,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.8 Le Standard Template Library
+## 5.8 Le Standard Template Library
 
   * La generalità di strumenti garantita dalla programmazione ```template```
     viene grandemente utilizzata per creare **librerie di utilizzo generale**,
@@ -357,7 +357,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.8.1 Programmazione a diversi livelli
+### 5.8.1 Programmazione a diversi livelli
 
   * Si intende solitamente come **livello della programmazione**    
     la distanza concettuale fra il codice sorgente ed il linguaggio macchina:
@@ -376,7 +376,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.9 Contenitori STL
+## 5.9 Contenitori STL
 
   * I diversi contenitori delle STL
     sono **dedicati a diversi utilizzi**,
@@ -389,7 +389,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.1 Una sequenza di elementi: ```std::vector```
+### 5.9.1 Una sequenza di elementi: ```std::vector```
 
   * La classe [```vector```](https://www.cplusplus.com/reference/vector/vector/), che appartiene al namespace ```std```,
     è templata sul tipo di oggetto che contiene.
@@ -404,7 +404,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.2 La lettura di un ```std::vector```
+### 5.9.2 La lettura di un ```std::vector```
 
   * Gli **elementi esistenti di un ```vector```** sono accessibli con l'```operator[]```,
     oppure con il metodo ```vector::at (int)```:
@@ -424,7 +424,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.3 Il riempimento di un ```std::vector```
+### 5.9.3 Il riempimento di un ```std::vector```
 
   * Ad un ```vector``` possono essere **aggiunti elementi alla fine** del suo contenuto,
     con il metodo ```vector::push_back (T element)```:
@@ -444,7 +444,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.4 ```std::vector``` ed array
+### 5.9.4 ```std::vector``` ed array
 
   * un ```vector``` **contiene un array** di elementi e fornisce l'interfaccia di accesso
     e modifica
@@ -456,7 +456,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.5 l'iterazione sugli elementi di un ```std::vector```
+### 5.9.5 l'iterazione sugli elementi di un ```std::vector```
 
   * per **iterare sugli elementi di un ```vector```**,
     si può utilizzare una sintassi analoga a quella che si userebbe per un array:
@@ -486,7 +486,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.6 ```std::vector``` di oggetti
+### 5.9.6 ```std::vector``` di oggetti
 
   * il comportamento dei tipi di default dei ```C++``` è sempre ben regolato
   * gli strumenti ```template``` possono essere utilizzati **con un qualunque tipo**,
@@ -497,7 +497,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.7 Un contenitore associativo di elementi: ```std::map```
+### 5.9.7 Un contenitore associativo di elementi: ```std::map```
 
   * Una [```map```](http://www.cplusplus.com/reference/map/map/)
     delle STL funziona **come un elenco telefonico**:
@@ -516,7 +516,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.8 Il riempimento di una ```std::map```
+### 5.9.8 Il riempimento di una ```std::map```
 
   * Il modo più semplice per riempire una ```map```
     è utilizzare l'```operator[]```,
@@ -527,7 +527,7 @@
     mappa_di_esempio[5] = 5.5 ;
     mappa_di_esempio[3] = 3.3 ;
     mappa_di_esempio[5] = 4.1 ;
-    mappa_di_esempio[12] = 7.8 ;
+    mappa_di_esempio[12] = 5.8 ;
     ```
     * In questo caso,
       le prime due righe definiscono due nuovi elementi,
@@ -537,7 +537,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.9.9 La lettura di una ```std::map```
+### 5.9.9 La lettura di una ```std::map```
 
   * per accedere ad un **singolo elemento esistente** in una ```map```
     si utilizza l'```operator[]```
@@ -562,7 +562,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.10 ```std::string```
+## 5.10 ```std::string```
 
   * il ```C++``` offre uno strumento **dedicato alla gestione delle stringhe di caratteri**,
     con il tipo [```string```](https://www.cplusplus.com/reference/string/string/)
@@ -579,7 +579,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.10.1 operazioni con stringhe
+### 5.10.1 operazioni con stringhe
 
   * La **somma** di due ```string``` restituisce la concatenazione del contenuto dei due oggetti sommati:
     ```cpp
@@ -594,7 +594,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.10.2 ricerca di sotto-elementi in una ```string```
+### 5.10.2 ricerca di sotto-elementi in una ```string```
 
   * In una ```string``` si possono **cercare sotto-```string```**:
     ```cpp
@@ -613,7 +613,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.10.3 ```string``` e caratteri
+### 5.10.3 ```string``` e caratteri
 
   * Una ```string``` contiene anche il **carattere che ne determina la fine**,
     dunque ```'A'``` è diverso da ```"A"```:
@@ -640,6 +640,6 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.11 ESERCIZI
+## 5.11 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
