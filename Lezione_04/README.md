@@ -1,4 +1,4 @@
-# Lezione 4: la generazione di numeri casuali
+# Lezione 4: la generazione di numeri pseudo-casuali
 
 ## Indice
 
@@ -129,7 +129,7 @@
 
     RAND_MAX: 2147483647
     ```
-    <div style="text-align: right"> (esempio <a href="ESEMPI.html#utilizzo-di-rand">4.1</a>) </div>
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#utilizzo-di-rand">4.0</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -167,7 +167,7 @@
     il seed **si inizializza una volta sola**
     durante l'esecuzione di un programma
 
-    <div style="text-align: right"> (esempio <a href="ESEMPI.html#utilizzo-di-srand">4.2</a>) </div>
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#utilizzo-di-srand">4.1</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -204,7 +204,7 @@
          }  
        ```  
 
-    <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-uniforme">4.3</a>) </div>
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-uniforme">4.2</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -255,7 +255,7 @@
       come vedete anche una funzione può essere passata come argomento
       ad un'altra funzione, descrivendone il prototipo
 
-  <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-con-il-metodo-try-and-catch">4.4</a>) </div>
+  <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-con-il-metodo-try-and-catch">4.3</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -348,7 +348,7 @@
 ![funzione_inversa](immagini/teorema_centrale_limite.png)
 
 
-  <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-con-il-metodo-del-teorema-centrale-del-limite">4.5</a>) </div>
+  <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-con-il-metodo-del-teorema-centrale-del-limite">4.4</a>) </div>
 
 ![linea](../immagini/linea.png)
 

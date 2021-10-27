@@ -1,48 +1,29 @@
 /*
-c++ -o main_05 `root-config --cflags --glibs` main_05.cpp
+c++ -o main_05 main_05.cpp
 */
 
-#include <cstdlib>
 #include <iostream>
-#include <cmath>
+#include "somma.h"
 
-#include "TH1F.h"
-#include "TCanvas.h"
-
-float fgaus (float x) 
+template<>
+float somma (float a, float b)
   {
-    return exp (-0.5 * x * x) ; 
-  }
-
-float rand_range (float min, float max)
-  {
-    return min + (max - min) * rand () / static_cast<float> (RAND_MAX) ;
-  } 
-
-float rand_TCL (float xMin, float xMax, int N = 10)
-  {
-    double y = 0. ; 
-    for (int i = 0 ; i < N ; ++i)
-      y += rand_range (xMin, xMax) ;
-    y /= N ;
-    return y ;
+    std::cout << "SOMMA DI FLOAT" << std::endl ;
+    return a + b ;
   }
 
 int main (int argc, char ** argv)
   {
-    TCanvas c1 ("c1", "c1", 100, 100, 1000, 1000) ;
+    int i_a = 1 ;
+    int i_b = 2 ;
+    double d_a = 1 ;
+    double d_b = 2 ;
+    float f_a = 1 ;
+    float f_b = 2 ;
 
-    TH1F h ("h", "eventi pseudo-casuali Gaussiani", 200, -1.5, 1.5) ;
-
-    for (int j = 0 ; j < 1000000 ; ++j)
-      h.Fill (rand_TCL (-1., 1., 10)) ;
-
-    h.GetXaxis ()->SetTitle ("numeri generati") ;
-    h.SetFillColor (kOrange + 1) ;
-    h.Draw () ;
-
-    c1.SetLogy () ;
-    c1.Print ("Gaussian.png", "png") ;
+    std::cout << "somma di interi " << somma (i_a, i_b) << std::endl ;
+    std::cout << "somma di double " << somma (d_a, d_b) << std::endl ;
+    std::cout << "somma di float "  << somma (f_a, f_b) << std::endl ;
 
     return 0 ;
   }

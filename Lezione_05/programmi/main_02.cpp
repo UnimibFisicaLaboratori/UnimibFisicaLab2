@@ -1,22 +1,16 @@
 /*
-c++ -o main_02 `root-config --glibs --cflags` main_02.cpp
+c++ -o main_02 main_02.cpp
 */
 
-#include "TH1F.h"
-#include "TCanvas.h"
+#include <iostream>
+#include "somma.h"
 
 int main (int argc, char ** argv)
   {
-    TH1F istogramma ("istogramma", "titolo", 10, -5., 5.) ;
+    int i_a = 1 ;
+    int i_b = 2 ;
 
-    istogramma.Fill (2.2) ;
-    istogramma.Fill (2.1) ;
-    istogramma.Fill (-1.4) ;
-
-    TCanvas c1 ;
-//    istogramma.SetFillColor (kOrange + 1) ;
-    istogramma.Draw () ;
-    c1.Print ("esempio.png", "png") ;
+    std::cout << "somma di interi " << somma (i_a, i_b) << std::endl ;
 
     return 0 ;
   }

@@ -1,45 +1,42 @@
 /*
-c++ -o main_06 `root-config --cflags --glibs` main_06.cpp
+c++ -o main_06 main_06.cpp
 */
 
-#include <cstdlib>
 #include <iostream>
 #include <cmath>
+#include "somma.h"
 
-#include "TH1F.h"
-#include "TCanvas.h"
+template <int N> 
+class vettore 
+{
+  public:
+    vettore ()
+      {
+        for (int i = 0 ; i < N ; ++i) elementi[i] = 0. ;
+      }
+    void setCoord (int i, double val)
+      {
+        if (i < 0 || i > N-1) return ;
+        elementi[i] = val ;
+        return ;
+      }
+    double norm ()
+      {
+        double sum = elementi[0] * elementi[0] ; 
+        for (int i = 1 ; i < N ; ++i) sum += elementi[i] * elementi[i] ;
+        return sqrt (sum) ;
+      }
 
-float fgaus (float x) 
-  {
-    return exp (-0.5 * x * x) ; 
-  }
+  private:
+    float elementi[N] ;
+} ;
 
-float rand_range (float min, float max)
-  {
-    return min + (max - min) * rand () / static_cast<float> (RAND_MAX) ;
-  } 
-
-float rand_TCL (float xMin, float xMax, int N = 10)
-  {
-    double y = 0. ; 
-    for (int i = 0 ; i < N ; ++i)
-      y += rand_range (xMin, xMax) ;
-    y /= N ;
-    return y ;
-  }
 
 int main (int argc, char ** argv)
   {
-    TCanvas c1 ("c1", "c1", 100, 100, 1000, 1000) ;
-
-    TH1F h ("h", "eventi pseudo-casuali Gaussiani", 200, -1.5, 1.5) ;
-
-    for (int j = 0 ; j < 1000000 ; ++j)
-      h.Fill (rand_TCL (-1., 1., 10)) ;
-
-    std::cout << "numero di eventi:    " << h.GetEntries () << std::endl ;
-    std::cout << "media:               " << h.GetMean ()    << std::endl ;
-    std::cout << "deviazione standard: " << h.GetRMS ()     << std::endl ;
-
+    vettore<2> v1 ;
+    v1.setCoord (0, 3.) ;
+    v1.setCoord (1, 4.) ;
+    std::cout << v1.norm () << std::endl ;
     return 0 ;
   }

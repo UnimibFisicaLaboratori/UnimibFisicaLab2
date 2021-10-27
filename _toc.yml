@@ -25,4 +25,9 @@ sections:
     - file: Lezione_04/ESEMPI.rst
     - file: Lezione_04/ESERCIZI.md
     #- file: Lezione_04/SOLUZIONI.rst
+  - file: Lezione_05/README.md
+    sections:
+    - file: Lezione_05/ESEMPI.rst
+    - file: Lezione_05/ESERCIZI.md
+    #- file: Lezione_04/SOLUZIONI.rst
 - file: appendix

@@ -1,47 +1,52 @@
 /*
-c++ -o main_10 `root-config --cflags --glibs` main_10.cpp
+c++ -o main_10 main_10.cpp
 */
 
-#include <cstdlib>
+
 #include <iostream>
-#include <cmath>
+#include <string>
 
-#include "TH2F.h"
-#include "TCanvas.h"
+using namespace std ;
 
-float fgaus (float x) 
+int main (int argc, char ** argv) 
   {
-    return exp (-0.5 * x * x) ; 
-  }
+    string s_1 ;
+    cout << s_1.length () << endl ;
+    s_1 = "nel mezzo del cammin" ;
+    cout << s_1 << endl ;
+    cout << s_1.length () << endl ;
+    string s_2 = " di nostra vita" ;
+    string s_3 = s_1 + s_2 ;
+    cout << s_3 << endl ;
 
-float rand_range (float min, float max)
-  {
-    return min + (max - min) * rand () / static_cast<float> (RAND_MAX) ;
-  } 
+    string s_4 = "nostra" ;
 
-float rand_TCL (float xMin, float xMax, int N = 10)
-  {
-    double y = 0. ; 
-    for (int i = 0 ; i < N ; ++i)
-      y += rand_range (xMin, xMax) ;
-    y /= N ;
-    return y ;
-  }
+    int posizione = s_3.find (s_4) ;
+    cout << "La parola \"" << s_4 
+         << "\" inizia al carattere " << posizione 
+         << " della frase: \"" << s_3 
+         << "\"\n" ;
 
-int main (int argc, char ** argv)
-  {
-    TCanvas c1 ("c1", "c1", 100, 100, 1000, 1000) ;
+    string s_5 = "caronte" ;
+    posizione = s_3.find (s_5) ;
+    cout << "La parola \"" << s_5 
+         << "\" inizia al carattere " << posizione 
+         << " della frase: \"" << s_3 
+         << "\"\n" ;
 
-    TH2F h2 ("h2", "eventi pseudo-casuali Gaussiani", 200, -1.5, 1.5, 200, -1.5, 1.5) ;
+    string s_6 = "caronte" ;
 
-    for (int j = 0 ; j < 1000000 ; ++j)
-      h2.Fill (rand_TCL (-1., 1., 10), rand_TCL (-1., 1., 10)) ;
+    cout << (s_5 == s_3) << endl ;
 
-    h2.GetXaxis ()->SetTitle ("numeri generati") ;
-    h2.GetYaxis ()->SetTitle ("numeri generati") ;
-    h2.Draw ("LEGO") ;
+    char A = 'A' ; 
+    cout << sizeof (A) << endl ;
 
-    c1.Print ("Gaussian2D.png", "png") ;
+    string S = "A" ;
+    cout << sizeof (S) << endl ;   
+    cout << sizeof (S.c_str ()) << endl ;   
+
+    char * S_c = "A" ;
+    cout << sizeof (S_c) << endl ;
 
     return 0 ;
   }

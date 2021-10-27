@@ -2,37 +2,37 @@
 c++ -o main_08 main_08.cpp
 */
 
-#include <cstdlib>
 #include <iostream>
-#include "statistiche.h"
+#include <vector>
 
-float rand_range (float min, float max)
-  {
-    return min + (max - min) * rand () / static_cast<float> (RAND_MAX) ;
-  } 
-
+using namespace std ;
 
 int main (int argc, char ** argv)
   {
-    if (argc < 2) 
-      {
-        std::cerr << "uso del programma: " << argv[0] << " NMAX" << std::endl ;
-        return 1 ;
-      }
+    vector<double> v_1 ;
+    vector<double> v_2 (5, 1.1) ;
+    vector<double> v_3 (v_2) ;
 
-    int NMAX = atoi (argv[1]) ;
-    statistiche s_eventi ;
+    cout << "elemento 1 di v_2 " << v_2[1] << endl ;
+    cout << "elemento 1 di v_2 " << v_2.at (1) << endl ;
 
-    for (int N = 1 ; N < NMAX ; N = N * 2)
-      {
-        int i = 0 ;
-        while (i++ < N) s_eventi.addEvent (rand_range (-3., 3.)) ;
-        std::cout << N 
-                  << "\t" << s_eventi.getMean () 
-                  << "\t" << s_eventi.getSigma ()
-                  << "\t" << s_eventi.getSigmaMean () << "\n" ;
-        s_eventi.reset () ;
-      }
+    cout << v_1.size () << endl ;
+    v_1.push_back (3.) ; 
+    v_1.push_back (4.) ; 
+    cout << v_1.size () << endl ;
+    v_1.pop_back () ; 
+    cout << v_1.size () << endl ;
+
+    double * array_3 = & v_3.at (0) ;
+    cout << "elemento 2 di v_3 " << array_3[2] << endl ;
+
+    for (int i = 0 ; i < v_3.size () ; ++i)
+      cout << "elemento " << i << ": " << v_3.at (i) << "\n" ;
+
+    for (vector<double>::const_iterator it = v_3.begin () ;
+         it != v_3.end () ;
+         ++it)
+      cout << "elemento " << it - v_3.begin () << ": " << *it << "\n" ;
 
     return 0 ;
   }

@@ -2,28 +2,40 @@
 c++ -o main_07 main_07.cpp
 */
 
-#include <cstdlib>
 #include <iostream>
-#include "statistiche.h"
 
-float rand_range (float min, float max)
-  {
-    return min + (max - min) * rand () / static_cast<float> (RAND_MAX) ;
-  } 
-
+// insieme di operazioni
+namespace ops
+{
+  template <typename T>
+  T somma (T a, T b)
+    {
+      return a + b ;
+    }
+    
+  template<>
+  float somma (float a, float b)
+    {
+      std::cout << "SOMMA DI FLOAT" << std::endl ;
+      return a + b ;
+    }
+  
+  template <typename T1, typename T2>
+  T2 somma (T1 a, T2 b)
+    {
+      return a + b ;
+    }
+}
 
 int main (int argc, char ** argv)
   {
-    statistiche s_eventi ;
+    int i_a = 1 ;
+    int i_b = 2 ;
+    double d_a = 5. ;
+    double d_b = 7. ;
 
-    int i = 0 ;
-    while (i++ < 1000) s_eventi.addEvent (rand_range (-3., 3.)) ;
-
-    std::cout << "media               : " << s_eventi.getMean () << std::endl ;
-    std::cout << "sigma               : " << s_eventi.getSigma () << std::endl ;
-    std::cout << "sigma (corr)        : " << s_eventi.getSigma (true) << std::endl ;
-    std::cout << "dev st. mean        : " << s_eventi.getSigmaMean () << std::endl ;
-    std::cout << "dev st. mean (corr) : " << s_eventi.getSigmaMean (true) << std::endl ;
+    std::cout << "somma di interi    " << ops::somma (i_a, i_b) << std::endl ;
+    std::cout << "somma di razionali " << ops::somma (d_a, d_b) << std::endl ;
 
     return 0 ;
   }

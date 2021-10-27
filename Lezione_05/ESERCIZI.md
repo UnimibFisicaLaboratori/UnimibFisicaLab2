@@ -2,87 +2,125 @@
 
 ## Esercizio 5.1
 
-Si riempia un istogramma con gli eventi generati con il generatore di numeri pseudo-casuali
-lineare congruenziale, verificando che tipo di distribuzione segua.
+Si scriva una funzione ```somma``` che,
+utilizzando la tecnologia ```template```,
+sia applicabile a qualunque tipo numerico del ```C++```.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 5.2 
 
-Riempire un istogramma con eventi eventi pseudo-casuali
-distribuiti uniformemente fra due numeri passati da linea di comando al programma.
-  * Si utilizzi la funzione ```rand ()``` come punto di partenza 
-    per l'implementazione del generatore uniforme
+Si testi la funzione ```somma``` sviluppata nell'esercizio precedente
+sulla classe dei numeri complessi sviluppata durante la Lezione 3,
+aggiungendo anche una specializzazione per un tipo a piacere.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 5.3
 
-Si riempia un istogramma con eventi pseudo-casuali con distribuzione 
-*f(x) = |sin(x)|* con *x* definito fra *0* e *2&pi;*
-generati con la tecnica di try-and-catch
-  * si utilizzi la funzione ```rand ()``` come punto di partenza 
-    per l'implementazione del generatore uniforme
+Si costruisca la classe ```SimpleArray```, templata sul tipo degli oggetti che contiene, 
+implementando le funzioni definite nel prototipo presentato a lezione.
+  * Si ricordi di utilizzare correttamente l'allocazione dinamica della memoria.
+  * Si aggiungano alla classe anche metodi che permettano di accedere agli elementi della classe
+    in caso vengano chiamati su un oggetto ```const```.
+  * Si faccia in modo che i metodi di accesso al contenuto del ```SimpleArray``` 
+    controllino il valore dell'indice
+    prima di accedere all'array salvato in memoria.
+  * Si verifichi che la classe ```SimpleArray``` può essere templata sulla classe dei numeri complessi
+    sviluppata durante la Lezione 3.
     
 ![linea](../immagini/linea.png)
 
 ## Esercizio 5.4
 
-Si riempia un istogramma con eventi pseudo-casuali con forma Gaussiana
-generati con la tecnica del teorema centrale del limite,
-sommando distribuzioni uniformi.
-  * Si utilizzi la funzione ```rand ()``` come punto di partenza 
-    per l'implementazione del generatore uniforme.
-  * Si disegni la distribuzione ottenuta riempiendo diversi istogrammi,
-    ciascuno corrispondente ad un numero diverso di distribuzioni uniformi sommate,
-    partendo da *1* fino a *20*.
+Si implementi una classe templata dal nome ```DynamicArray``` che inizialmente
+non contenga alcun elemento ed abbia un metodo ```push_back ()``` che permetta di aggiungere 
+un elemento in fondo all'array degli elementi già esistenti.
+  * Si progetti un meccanismo che rimpiazzi l'array che contiene gli elementi quando è pieno,
+    sostituendolo con uno più capiente.
+  * Si aggiunga un metodo che permetta anche di svuotare l'oggetto di tipo ```DynamicArray```.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 5.5
 
-Si calcolino la deviazione standard e la deviazione standard della media
-per una distribuzione di eventi uniforme
-sfruttando il generatore di eventi pseudo-casuali sviluppato nella Lezione 4
-al variare del numero di eventi generato, con andamento logaritmico.
-Effettuando i calcoli delle statistiche 
-con la classe ```statistiche``` sviluppata durante la Lezione 4:
-  * Si mostri con un ```TGraph``` l'andamento della deviazione standard verso il numero di eventi.
-  * Si mostri con un ```TGraph``` l'andamento della deviazione standard della media verso il numero di eventi.
-  * Si confronti il valore ottenuto della deviazione standard con il valore atteso 
-    noti gli estremi della distribuzione uniforme.  
+Si implementi la classe templata ```vettore``` definita nella lezione.
+  * Si ricordi di controllare che gli indici passati ai metodi della classe siano entro i limiti 
+    della memoria occupata dagli oggetti di tipo ```vettore```
+  * Si aggiungano gli **operatori algebrici** necessari per la definizione di uno spazio vettoriale
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 5.6
 
-Si generalizzi l'esercizio precedente scrivendo una funzione
-che produca questo risultato a partire da una qualunque classe 
-scritta per generare numeri casuali.
-
+Si implementi la classe templata ```matrice``` delle matrici quadrate di dimensione *N*, 
+templata sulla dimensione delle matrici, 
+definendo anche le operazioni fra matrici.
+  * Si definiscano gli operatori di moltiplicazione fra matrici e vettori,
+    utilizzando anche la classe ```vettore```.
+  * Si verifichi il funzionamento dell'algoritmo creato costruendo un esempio
+    basato sulle rotazioni nel piano. 
+  * Si scriva un metodo per il calcolo del determinante di una matrice nel caso sia quadrata,
+    sfruttando la formula di Laplace ed una funzione ricorsiva.
+  * Si ricordi che, 
+    in ogni caso di ricorsività,
+    oltre alla formula iterativa va aggiunto anche il metodo che restituisce il determinate
+    nel caso della matrice più piccola possibile, cioè quella composta da un unico numero.
+    Quindi, oltre al metodo:
+    ```cpp
+    double determinante () 
+      {
+        // implementazione
+      }
+    ```  
+    è necessario anche aggiungere, al di fuori della definizione della classe ```matrice```,
+    la specializzazione al caso di dimensione ```1```:
+    ```cpp
+    template<>
+    double matrice<1,1>::determinante () { return elementi[0][0] ; }
+    ```
+  * Si scriva un metodo che calcola la matrice inversa, nel caso di una matrice quadrata
+    e che ritorna una matrice nulla se la matrice orginale non è quadrata
+    o ha determinante nullo.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 5.7
 
-Si crei e riempia un ```TH2F``` che contenga una Gaussiana bidimensionale nel piano *(x,y)* 
-centrata in (0., 0.) con *&sigma;<sub>x</sub> = &sigma;<sub>y</sub> = 2.*,
-generata con la tecnica del teorema centrale del limite,
-ricordando che una distribuzione di probabilita' Gaussiana bi-dimnesionale 
-si ottiene facendo il prodotto di due distribuzioni di probabilita' Gaussiane mono-dimensionali.
+Si crei un ```std::vector``` vuoto e, tramite un ciclo ```for```, 
+lo si riempia con i primi 10 numeri della successione di Fibonacci.
+  * E' conveniente, dal punto di vista dell'esecuzione di questo esercizio,
+    utilizzare una funzione esterna al ciclo per il calcolo dei numeri di Fibonacci?
+  * Si stampi a schermo il suo contenuto utilizzando un ciclo su un numero intero,
+    oppure utilizzando un iteratore.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 5.8
 
-Si crei e riempia un ```TH2F``` che contenga una distribuzione uniforme 
-bidimensionale, con *x* definito fra *0.* ed *1.* 
-ed *y* definito fra *-1.* e *3.*.
+Si crei un ```std::vector``` vuoto e lo si riempia con cinque oggetti
+del tipo della classe ```complesso``` sviluppato durante la Lezione 3.
+  * Tramiti opportuni messaggi a schermo, 
+    si verifichi quando vengono chiamati costruttore,
+    *copy constructor*, operatore di assegnazione e distruttore
+    della classe ```complesso```
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 5.9
 
-Si renda interattivo l'output del programma precedente tramite un oggetto di tipo ```TApplication```
-e si provino le varie funzionalita' di interfaccia.
+Si crei una ```std::map``` vuota e la si riempia con una sequenza di numeri complessi,
+utilizzando la norma dei numeri stessi come chiave di ordinamento della mappa.
+  * Si stampino quindi a schermo i numeri, ordinati per norma.
+
+![linea](../immagini/linea.png)
+
+## Esercizio 5.10
+
+Si crei una ```std::string``` riempita con un periodo scelto a piacere.
+  * Si contino il numero di parole ed il numero di lettere (spazi esclusi)
+    che compongono il periodo.
+  * Si divida la stringa in singole parole,
+    ciascuna salvata con una stringa all'interno di un ```std::vector```.  
+
 

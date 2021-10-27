@@ -1,480 +1,645 @@
-# Lezione 5: visualizzazione di dati con ROOT
+# Lezione 5: programmazione ```template``` e Standard Template Library
 
 ## Indice
 
-  * [5.1 Introduzione](#51-introduzione)
-    * [5.1.1 l'organizzazione delle librerie di ```ROOT```](#511-lorganizzazione-delle-librerie-di-root)
-    * [5.1.2 prerquisiti per utilizzare ```ROOT```](#512-prerquisiti-per-utilizzare-root)
-    * [5.1.3 come compilare un programma che include classi di ```ROOT```](#513-come-compilare-un-programma-che-include-classi-di-root)
-  * [5.2 ```TH1F```: istogrammi monodimensionali](#52-th1f-istogrammi-monodimensionali)
-    * [5.2.1 i bin di un istogramma](#521-i-bin-di-un-istogramma)
-    * [5.2.2 istogrammi monodimensionali e distribuzioni di densità di probabilità](#522-istogrammi-monodimensionali-e-distribuzioni-di-densità-di-probabilità)
-    * [5.2.3 istogrammi monodimensionali in ```ROOT```](#523-istogrammi-monodimensionali-in-root)
-    * [5.2.4 riempimento di un ```TH1F```](#524-riempimento-di-un-th1f)
-    * [5.2.5 visualizzazione di un ```TH1F```](#525-visualizzazione-di-un-th1f)
-    * [5.2.6 opzioni grafiche](#526-opzioni-grafiche)
-    * [5.2.7 un esempio: la forma funzionale Gaussiana](#527-un-esempio-la-forma-funzionale-gaussiana)
-    * [5.2.8 scale logaritmiche](#528-scale-logaritmiche)
-    * [5.2.9 le statistiche di un istogramma](#529-le-statistiche-di-un-istogramma)
-  * [5.3 una piccola digressione: la varianza di una distribuzione](#53-una-piccola-digressione-la-varianza-di-una-distribuzione)
-    * [5.3.1 la varianza e la dimensione del campione](#531-la-varianza-e-la-dimensione-del-campione)
-    * [5.3.2 varianza e misure (o numeri pseudo-casuali)](#532-varianza-e-misure-o-numeri-pseudo-casuali)
-    * [5.3.3 incertezza sulla media](#533-incertezza-sulla-media)
-  * [5.4 rappresentazione di andamenti *y* vs *x*: i ```TGraph```](#54-rappresentazione-di-andamenti-y-vs-x-i-tgraph)
-    * [5.4.1 definizione di un ```TGraph```](#541-definizione-di-un-tgraph)
-    * [5.4.2 riempimento di un ```TGraph```](#542-riempimento-di-un-tgraph)
-    * [5.4.3 disegno di un ```TGraph```](#543-disegno-di-un-tgraph)
-    * [5.4.4 qualche opzione grafica](#544-qualche-opzione-grafica)
-    * [5.4.5 il risultato del disegno](#545-il-risultato-del-disegno)
-  * [5.5 TH2F: istogrammi bidimnesionali](#55-th2f-istogrammi-bidimnesionali)
-  * [5.6 L'interfaccia interattiva di ```ROOT```: la classe ```TApplication```](#56-linterfaccia-interattiva-di-root-la-classe-tapplication)
-  * [5.7 Una gestione furba del testo: ```TString```](#57-una-gestione-furba-del-testo-tstring)
-  * [5.8 ESERCIZI](#58-esercizi)
+  * [5.1 introduzione](#51-introduzione)
+    * [5.1.1 ripasso: l'*overloading* delle funzioni](#511-ripasso-loverloading-delle-funzioni)
+    * [5.1.2 se potessimo lavorare meno...](#512-se-potessimo-lavorare-meno)
+  * [5.2 funzioni ```template```](#52-funzioni-template)
+    * [5.2.1 definizione di una funzione ```template```](#521-definizione-di-una-funzione-template)
+    * [5.2.2 utilizzo di una fuzione ```template```](#522-utilizzo-di-una-fuzione-template)
+    * [5.2.3 attenzione ai dettagli](#523-attenzione-ai-dettagli)
+    * [5.2.4 ```template``` e compilazione](#524-template-e-compilazione)
+  * [5.3 classi ```template```](#53-classi-template)
+    * [5.3.1 definizione di una classe ```template```](#531-definizione-di-una-classe-template)
+    * [5.3.2 implementazione di una classe ```template```](#532-implementazione-di-una-classe-template)
+    * [5.3.3 utilizzo di una classe ```template```](#533-utilizzo-di-una-classe-template)
+  * [5.4 ```template``` multipli](#54-template-multipli)
+  * [5.5 la specializzazione dei ```template```](#55-la-specializzazione-dei-template)
+  * [5.6 ```template``` su valori di variabili intere](#56-template-su-valori-di-variabili-intere)
+  * [5.7 ordine nelle librerie: i ```namespace```](#57-ordine-nelle-librerie-i-namespace)
+    * [5.5.1 un ```namespace``` familiare: ```std```](#571-un-namespace-familiare-std)
+  * [5.8 Le Standard Template Library](#58-le-standard-template-library)
+    * [5.8.1 Programmazione a diversi livelli](#581-programmazione-a-diversi-livelli)
+  * [5.9 Contenitori STL](#59-contenitori-stl)
+    * [5.9.1 Una sequenza di elementi: ```std::vector```](#591-una-sequenza-di-elementi-stdvector)
+    * [5.9.2 La lettura di un ```std::vector```](#592-la-lettura-di-un-stdvector)
+    * [5.9.3 Il riempimento di un ```std::vector```](#593-il-riempimento-di-un-stdvector)
+    * [5.9.4 ```std::vector``` ed array](#594-stdvector-ed-array)
+    * [5.9.5 l'iterazione sugli elementi di un ```std::vector```](#595-literazione-sugli-elementi-di-un-stdvector)
+    * [5.9.6 ```std::vector``` di oggetti](#596-stdvector-di-oggetti)
+    * [5.9.7 Un contenitore associativo di elementi: ```std::map```](#597-un-contenitore-associativo-di-elementi-stdmap)
+    * [5.9.8 Il riempimento di una ```std::map```](#598-il-riempimento-di-una-stdmap)
+    * [5.9.9 La lettura di una ```std::map```](#599-la-lettura-di-una-stdmap)
+  * [5.10 ```std::string```](#510-stdstring)
+    * [5.10.1 operazioni con stringhe](#5101-operazioni-con-stringhe)
+    * [5.10.2 ricerca di sotto-elementi in una ```string```](#5102-ricerca-di-sotto-elementi-in-una-string)
+    * [5.10.3 ```string``` e caratteri](#5103-string-e-caratteri)
+  * [5.11 ESERCIZI](#511-esercizi)
 
 ![linea](../immagini/linea.png)
 
-## 5.1 Introduzione
-
-  * [```ROOT```](https://root.cern.ch) offre un insieme di strumenti
-    di **visualizzazione, analisi e salvataggio dati**
-    sviluppati nell'ambito della fisica delle particelle elementari
-  * gli strumenti sono **scritti in ```C++```** ed esiste l'interfaccia ```Python``` per utilizzarli,
-    con adattamenti al formato dei dati alla sintassi tipica di quell'ambiente
-  * ```ROOT``` offre anche un **ambiente interattivo**
-    che si presenta nella forma di una linea di comando,
-    dove istruzioni scritte in ```C++``` vengono interpretate
-    da un parser dedicato
-  * In questo corso vi mostriamo alcune funzionalità di ```ROOT```,
-    la descrizione completa di quello che può fare
-    si trova nella documentazione on-line
+## 5.1 introduzione
 
 ![linea](../immagini/linea.png)
 
-### 5.1.1 l'organizzazione delle librerie di ```ROOT```
+### 5.1.1 ripasso: l'*overloading* delle funzioni
 
-  * in un programma scritto in ```C++```,
-    ogni oggetto di ```ROOT``` viene reso disponibile nel codice sorgente
-    con il corrispondente comando ```#include```
-  * la maggior parte degli strumenti disponibili sono implementati
-    **sotto forma di classi**  
+  * in ```C++```, una funzione o un operatore vengono identificati univocamente
+    dall'insieme di **nome e tipi in ingresso**,
+  * quindi è possibile **utilizzare lo stesso nome** per operatori o funzioni
+    con tipi in ingresso differenti:  
     ```cpp
-    #include "TH1F.h"
-
-    int main (int argc, char ** argv)
+    int somma (int a, int b)
       {
-        TH1F istogramma ("istogramma", "istogramma", 10, -5., 5.) ;
-        return 0 ;
+        return a + b ;
+      }
+
+    double somma (double a, double b)
+      {
+        return a + b ;
       }
     ```
-  * la **visualizzazione** degli strumenti statistici è un aspetto fondamentale del programma,
-    quindi molte opzioni grafiche sono integrate negli oggetti statistici
+  * durante l'esecuzione di un programma, il ```C++``` è in grado di **scegliere
+    la funzione corretta** da utilizzare
 
 ![linea](../immagini/linea.png)
 
-### 5.1.2 prerquisiti per utilizzare ```ROOT```
+### 5.1.2 se potessimo lavorare meno...
 
-  * dopo l'installazione, le librerie di ```ROOT``` sono salvate nel disco fisso
-    solitamente in una cartella dedicata
-  * per avviare l'interfaccia interattiva e per conoscere dove stiano le librerie,
-    **è necessario che:**
-      * la cartella che contiene l'eseguibile ```root```
-        faccia parte della lista di indirizzi salvati nella variabile d'ambiente della SHELL
-        ```$PATH```
-      * la cartella che contiene le librerie precompilate
-        faccia parte della lista di indirizzi salvati nella variabile d'ambiente della SHELL
-        ```$LD_LIBRARY_PATH```
-  * esiste lo script ```thisroot.sh``` nelle cartelle di installazione che va richiamato
-    per effettuare tali impostazioni:
-    ```
-    > source thisroot.sh
-    ```      
+  * nonostante le due funzioni abbiano la medesima implementazione,
+    è stato necessario **scriverle entrambe**
+  * la programmazione ```template``` mira ad **evitare di riscrivere per tipi diversi**
+    funzioni che hanno identica implementazione
 
 ![linea](../immagini/linea.png)
 
-### 5.1.3 come compilare un programma che include classi di ```ROOT```
-
-  * è necessario **fornire al compilatore opzioni aggiuntive** perché sia in grado di trovare
-    tutti i file da includere e tutte le librerie da compilare
-  * la lista di opzioni aggiuntive si **visualizza** con il seguente comando di SHELL:
-    ```
-    > root-config --cflags --glibs  
-    ```
-  * per evitare di copiare ed incollare il suo output nel comando di compilazione,
-    si può **includere la sua chiamata direttamente nel programma di compilazione**,
-    utilizzando gli apici inversi:
-    ```
-    > c++ -o main_00 `root-config --glibs --cflags` main_00.cpp
-    ```
+## 5.2 funzioni ```template```
 
 ![linea](../immagini/linea.png)
 
-## 5.2 ```TH1F```: istogrammi monodimensionali
+### 5.2.1 definizione di una funzione ```template```
 
-  * gli **istogrammi** sono una rappresentazione di distribuzioni differenziali,
-    costruita a partire da un campione di numeri,
-    che chiamiamo **eventi**
-  * si parte quindi da **un campione di eventi *{x<sub>i</sub>}<sub>i=1,..,N</sub>***
-    * un esempio di un campione di eventi
-      è **l'insieme delle misure raccolte durante un esperimento**,
-      oppure una **sequenza di numeri pseudo-casuali**
-
-![linea](../immagini/linea.png)
-
-### 5.2.1 i bin di un istogramma
-
-  * per una variabile casuale di interesse *x*, si suddivide il suo intervallo di definizione
-    in **sotto-intervalli adiacenti e disgiunti** delimitati da *{x<sub>k</sub>}*
-    * l'intervallo *k*-esimo è limitato fra x<sub>k</sub> ed x<sub>k+1</sub>
-    * solitamente gli intervalli sono chiamati **bin**
-  * un istogramma è l'**insieme dei conteggi degli eventi che cascano in ogni intervallo**
-![istogramma](immagini/istogramma_solo.png)
-  * la visualizzazione di un istogramma mono-dimensionale mostra tipicamente:
-    * sull'**asse orizzontale** l'intervallo di definizione della variabile *x*
-    * sull'**asse verticale** i conteggi corrispondenti a ciascun bin
-    * sopra ad ogni bin, **una barra verticale** alta quanto i conteggi
-
-![linea](../immagini/linea.png)
-
-### 5.2.2 istogrammi monodimensionali e distribuzioni di densità di probabilità
-
-  * al **limite per la dimensione dei bin che diventa infinitesima**,
-    un istogramma diventa una funzione continua
-![istogramma_pdf](immagini/istogramma_e_pdf.png)
-  * se si dividesse il contenuto di ogni bin per il numero totale di eventi *N*,
-    questa funzione è normalizzata,
-    quindi un istogramma diventa l'approssimazione di una
-    distribuzione di densità di probabilità
-
-![linea](../immagini/linea.png)
-
-### 5.2.3 istogrammi monodimensionali in ```ROOT```
-
-  * istogrammi mono-dimensionali in ```ROOT``` sono realizzati con la classe ```TH1F```
+  * la parola chiave ```template```, traducibile in italiano come modello,
+    introduce il concetto di tipo generico
+  * dunque, per definire una funzione ```somma``` che valga per un tipo qualunue
+    si scrive
     ```cpp
-    TH1F istogramma ("istogramma", "titolo", 10, -5., 5.) ;
+    template <typename T>
+    T somma (T a, T b)
+      {
+        return a + b ;
+      }
     ```
-  * il costruttore di ```TH1F``` prende come input:
-    * un **nome**: è saggio usare il medesimo della variabile (ogni oggetto deve avere un nome unico!)
-    * un **titolo**, che viene scritto sopra l'istogramma
-    * il **numero di bin** (```10``` in questo caso) in cui dividere l'intervallo di definizione della variabile
-    * l'**intervallo di definizione** della variabile (```-5., 5.``` in questo caso)
+    * ```<typename T>``` **definisce il nome** scelto in questo caso per indicare il tipo generico  
+    * ```T somma (T a, T b)``` indica il **prototipo**: la funzione legge due variabili di tipo ```T```
+      e restituisce una variabile di tipo ```T```
+    * la parola chiave ```typename``` può essere sempre sostituita dalla parola chiave ```class```
 
 ![linea](../immagini/linea.png)
 
-### 5.2.4 riempimento di un ```TH1F```
+### 5.2.2 utilizzo di una fuzione ```template```
 
-  * un oggetto della classe ```TH1F``` quando viene creato **è vuoto**,
-    cioè  i conteggi di ogni singolo bin sono nulli
-  * per riempire l'istogramma
-    si utilizza il suo metodo ```Fill```,
-    che viene chiamato per ogni evento:  
+  * in fase di compilazione,
+    il ```C++``` **implementa e compila tutti i prototipi necessari**,
+    in funzione di come viene chiamata la funzione
+  * i **due casi seguenti** inducono la creazione e compilazione della funzione ```somma```
+    per tipi ```int```
     ```cpp
-    istogramma.Fill (2.2) ;
-    istogramma.Fill (2.1) ;
-    istogramma.Fill (-1.4) ;
-    ```
-    * aggiorna i **conteggi** del bin in cui casca il valore passato (in questo caso ```2.2```, ```2.1```, ```-1.4```)
-    * aggiorna i **contatori** per il calcolo delle statistiche
-      (numero di eventi, somma degli eventi, somma del quadrato degli eventi)
+    std::cout << "somma di interi    " << somma (i_a, i_b) << std::endl ;
+    std::cout << "somma di interi    " << somma<int> (i_a, i_b) << std::endl ;
+    std::cout << "somma di razionali " << somma (d_a, d_b) << std::endl ;
+    ```  
+    * nel primo caso, il ```C++``` **capisce implicitamente** che tipo utilizzare
+    * nel secondo caso, il termine ```<int>``` **forza** il ```C++``` ad utilizzare la funzione ```somma```
+      implementata (templata) sul tipo ```int```
 
 ![linea](../immagini/linea.png)
 
-### 5.2.5 visualizzazione di un ```TH1F```
+### 5.2.3 attenzione ai dettagli
 
-  * per visualizzare un istogramma, serve istanziare un oggetto grafico
-    della classe ```TCanvas```,
-    che è la tela dove l'istogramma viene disegnato
-      * è necessario includere ```TCanvas.h``` perché il programma compili
+  * l'implementazione della funzione ```somma``` **deve essere corretta**
+    per tutti i tipi sui quali viene templata
+  * la funzione viene implementata **esattamente per i tipi indicati**,
+    quindi comportamenti ibridi, se hanno successo,
+    sono dovuti a casting impliciti effettuati dal ```C++```,
+    come nei casi seguenti:
     ```cpp
-    TCanvas c1 ;
-    istogramma.Draw () ;
-    c1.Print ("esempio.png", "png") ;
-    ```
-    * l'oggetto ```c1``` si occupa di produrre l'immagine che contiene l'istogramma
-  * il box in alto a sinistra nell'immagine dell'istogramma
-    riporta **statistiche associate alla collezione di eventi**
-![istogramma_graph](immagini/primo_TH1F.png)
+    std::cout << "somma di razionali " << somma<double> (i_a, i_b) << std::endl ;
+    std::cout << "somma ibrida       " << somma<double> (i_a, d_b) << std::endl ;
+    ```    
 
 ![linea](../immagini/linea.png)
 
-### 5.2.6 opzioni grafiche
+### 5.2.4 ```template``` e compilazione
 
-  * perché l'informazione sull'istogramma sia completa,
-    è necessario aggiungere informazioni riguardo il **significato degli assi**,
-    prima di invocare il metodo ```Draw```:
+  * la risoluzione dei template avviene **in fase di compilazione** del programma
+  * questo significa che non si può separare la compilazione del ```main``` program
+    da quella delle funzioni
+  * quindi tutti gli strumenti ```template```,
+    se vengono scritti in un file separato,
+    vanno implementati all'interno dell'```header```
     ```cpp
-    istogramma.GetXaxis ()->SetTitle ("asse x") ;
-    istogramma.GetYaxis ()->SetTitle ("conteggi per bin") ;
+    #ifndef somma_h
+    #define somma_h
+
+    template <typename T>
+    T somma (T a, T b)
+      {
+        return a + b ;
+      }
+
+    #endif
     ```
-  * inoltre, è possibile cambiare il colore di riempimento di un istogramma:
+  * durante la compilazione di strumenti ```template``` il ```C++```
+    porta a termine un **controllo sintattico accurato**
+  * la compilazione è solitamente **lunga**
+  * **pochi errori** di scrittura possono tradursi in lunghe lamntele del compilatore
+    * cercate sempre **il primo errore** di compilazione!
+
+![linea](../immagini/linea.png)
+
+## 5.3 classi ```template```
+
+  * come le funzioni,
+    anche le **classi** possono essere ```template```
+  * classi ```template``` sono un ottimo modo per **sviluppare strumenti generici**,
+    ad esempio un array che abbia il numero degli elementi definito a runtime
+    e che possa contenere qualunque tipo di oggetto
+
+![linea](../immagini/linea.png)
+
+### 5.3.1 definizione di una classe ```template```
+
+  * esempio dell'array a dimensione impostata a runtime
+  * come si potrebbe fargli aumentare dimensione, se serve?
+
+![linea](../immagini/linea.png)
+
+### 5.3.2 implementazione di una classe ```template```
+
+  * anche in questo caso si utilizza la **parola chiave ```template```**
+    per indicare che la classe è ```template```
+  * e la **parola chiave ```typename```** per definire il nome del tipo generico
+    da utilizzare nella scrittura della classe
     ```cpp
-    istogramma.SetFillColor (kOrange + 1) ;
+    template <typename T>
+    class SimpleArray {
+    public:
+      // Costruttore
+      SimpleArray (const int & elementsNum) { /* implementazione */ }
+      // Distruttore
+      ~SimpleArray () { /* implementazione */ }
+      T & element (const int& i)  { /* implementazione */ }
+      // Overloading di operator[]
+      T & operator[] (const int& i) { /* implementazione */ }
+
+    private:
+
+      int elementsNum_p;
+      T * elements_p;
+    } ;
     ```
-![istogramma](immagini/primo_TH1F_col.png)
-  * la descrizione dettagliata di tutte le funzionalità
-    ed opzioni di disegno degli istogrammi
-    è **documentata nella relativa [guida per l'utente](https://root.cern.ch/root/htmldoc/guides/users-guide/Histograms.html)**
 
 ![linea](../immagini/linea.png)
 
-### 5.2.7 un esempio: la forma funzionale Gaussiana
+### 5.3.3 utilizzo di una classe ```template```
 
-  * si può utilizzare un oggetto di tipo ```TH1F```
-    per **visualizzare la distribuzione di eventi pseudo-casuali** generati
-    con gli algoritmi scritti nella lezione precedente
-  * assumendo che la **funzione che genera numeri casuali**
-    con il metodo del teorema centrale del limite
-    abbia il seguente prototipo:
+  * quando la classe ```SimpleArray``` viene utilizzata,
+    bisogna **indicare esplicitamente il tipo** sul quale
+    è templata al momento della definizione di ogni oggetto:
     ```cpp
-    float rand_TCL (float xMin, float xMax, int N = 10)
+    SimpleArray<int> contenitore (10) ;
+    for (int i = 0 ; i < 10 ; ++i)
+      contenitore[i] = 2 * i ;
     ```
-  * si può rimepire un istograma di test dell'algoritmo in questo modo:
+
+![linea](../immagini/linea.png)
+
+## 5.4 ```template``` multipli
+
+  * E' possibile templare una funzione o una classe su **più di un tipo**
+  * Ad esempio, si potrebbe templare la funzione ```somma```
+    su due tipi differenti:
     ```cpp
-    TH1F h ("h", "eventi pseudo-casuali Gaussiani", 200, -1.5, 1.5) ;
-    for (int j = 0 ; j < 1000000 ; ++j)
-      h.Fill (rand_TCL (-1., 1., 10)) ;
+    template <typename T1, typename T2>
+    T2 somma (T1 a, T2 b)
+      {
+        return a + b ;
+      }
     ```
-    con ```1000000``` eventi, ottenendo poi:
-![gaussiana](immagini/Gaussian_TH1F.png)
 
 ![linea](../immagini/linea.png)
 
-### 5.2.8 scale logaritmiche
+## 5.5 la specializzazione dei ```template```
 
-  * quando i valori in diversi bin cambiano considerevolmente,
-    può essere comodo **visuallizzare gli istogrammi in scala logaritmica**
-    (lungo l'asse orizzontale o verticale),
-    per migliorare la leggibilità del risultato
-  * essendo una diversa visualizzazione dello stesso contenuto,
-    è un'operazione che si fa con un metodo della classe ```TCanvas```
+  * talvolta può succedere che,
+    per taluni tipi particolari,
+    l'**implementazione di una funzione templata
+    debba essere diversa**
+    da quella prevista per la maggioranza dei tipi
+  * costruire una implementazione specifica per un determinato tipo
+    si chiama **specializzazione** di un ```template```:
     ```cpp
-    c1.SetLogy () ;
-    c1.Print ("Gaussian.png", "png") ;
-    ```
-    * chiaramente, lo zero dell'asse in scala logaritmica non può comparire nelle immagini
-![gaussiana](immagini/Gaussian_TH1F_log.png)
+    template<>
+    float somma (float a, float b)
+      {
+        std::cout << "SOMMA DI FLOAT" << std::endl ;
+        return a + b ;
+      }
+    ```  
+  * il preambolo ```template<>``` segnala al ```C++``` che questa implementazione
+    è una specializzazione della funzione templata ```somma```
 
 ![linea](../immagini/linea.png)
 
-### 5.2.9 le statistiche di un istogramma
+## 5.6 ```template``` su valori di variabili intere
 
-  * è possibile estrarre i valori della **media e della deviazione standard**
-    degli eventi salvati in un istogramma:
+  * oltre che su tipi di variabili,
+    si può templare una funzione o una classe
+    anche **sul valore di una variabile intera**
+  * ad esempio,
+    se si volessero definire elementi di uno spazio vettoriale
+    con dimensione finita,
+    la **dimensione dei vettori** potrebbe essere templata:
     ```cpp
-    std::cout << "numero di eventi:    " << h.GetEntries () << std::endl ;
-    std::cout << "media:               " << h.GetMean ()    << std::endl ;
-    std::cout << "deviazione standard: " << h.GetRMS ()     << std::endl ;
+    template <int N>
+    class vettore
+    {
+      public:
+        vettore () { /* implementazione */ }
+        void setCoord (int i, double val) { /* implementazione */ }
+        double norm () { /* implementazione */ }
+
+      private:
+        float elementi[N] ;
+    } ;
+
     ```
-
-![linea](../immagini/linea.png)
-
-## 5.3 una piccola digressione: la varianza di una distribuzione
-
-  * dato un campione di variabili casuali *{x<sub>i</sub>}<sub>i=1,..,N</sub>*
-    indipendenti identicamente distribuite,
-    **la varianza della distribuzione è la media degli scarti quadratici dalla media**
-  * si dimostra che la varianza di un campione è uguale alla **media dei quadrati meno il quadrato della media**:
-    *V = E[x<sup>2</sup>]-E[x]<sup>2</sup>*
-    (*E[f]* è il valore di aspettazione di f sul campione in esame)
-  * la radice della varianza è detta **sigma, o deviazione standard**
-    ed è una stima della dispersione del campione attorno alla sua media
-
-![linea](../immagini/linea.png)
-
-### 5.3.1 la varianza e la dimensione del campione
-
-  * all'aumentare del numero di eventi nel campione,
-    la dispersone degli eventi non cambia, quindi **la varianza rimane costante**
-    per variabili identicamente distribuite
-  * chiaramente, siccome ogni campione è finito,
-    i valori della varianza ottenuti con campioni diversi non sono identici,
-    ma ci si aspetta che siano **compatibili fra loro**
-  * di conseguenza,
-    anche la **deviazione standard non dipende dal numero di eventi nel campione**
-
-![linea](../immagini/linea.png)
-
-### 5.3.2 varianza e misure (o numeri pseudo-casuali)
-
-  * se si conosce media e varianza di un campione,
-    si ha un'idea di **dove ci si aspetta di trovare l'evento successivo** di quel campione
-  * se il campione è un insieme di misure,
-    la deviazione standard dice quanto distante ci si aspetta di trovare la **prossima misura**
-    dalla media delle misure raccolte
-  * dunque, la deviazione standard è associata all'**incertezza sulla singola misura**  
-
-![linea](../immagini/linea.png)
-
-### 5.3.3 incertezza sulla media
-
-  * all'aumentare del numero di misure, invece, aumenta la **precisione
-    con la quale si conosce la media** del campione
-  * la **deviazione standard della media**,
-    definita come la deviazione standard divisa per la radice del numero di eventi nel campione,
-    è una stima dell'**incertezza sulla media**
-
-![linea](../immagini/linea.png)
-
-## 5.4 rappresentazione di andamenti *y* vs *x*: i ```TGraph```
-
-  * gli istogrammi mostrano una **singola variabile fisica**
-  * talvolta è utile visualizzare **coppie di misure** *(x,y)*
-  * in ```ROOT``` la classe che si utilizza per farlo è il ```TGraph```
-
-![linea](../immagini/linea.png)
-
-### 5.4.1 definizione di un ```TGraph```  
-
-  * come sempre, bisogna includere la **libreria** corrispondente:
+    e questo ```vettore``` si potrebbe utilizzare così:
     ```cpp
-    #include "TGraph.h"
+    vettore<2> v1 ;
+    v1.setCoord (0, 3.) ;
+    v1.setCoord (1, 4.) ;
+    std::cout << v1.norm () << std::endl ;
     ```
-  * ricordando di aggiungere le opzioni di ```ROOT``` al comando di compilazione:
-    ```
-    > c++ -o programma `root-config --cflags --glibs` programma.cpp
-    ```
-  * un oggetto di tipo ```TGraph``` si definisce semplicemente:
-    ```cpp
-    TGraph g_sigma ;
-    ```
-    * l'oggetto è **vuoto**: non contiene alcuna variabile
-    * esistono **altri costruttori** oltre a quello di default,
-      che permettono di inizializzare un ```TGraph``` con un insieme di coppie di punti nulli
-      oppure a partire da array già riempiti
+  * essendo la classe templata,
+    il valore di *N* è noto al **momento della compilazione**,
+    quindi è lecito utilizzare l'allocazione automatica della memoria
+    per definire l'array ```elementi```
 
 ![linea](../immagini/linea.png)
 
-### 5.4.2 riempimento di un ```TGraph```
+## 5.7 ordine nelle librerie: i ```namespace```
 
-  * un ```TGraph``` viene **riempito** con il metodo ```TGraph::SetPoint (Int_t i, Double_t x, Double_t y)```,
-    che prende in input:
-    * l'**indice del punto da riempire**, che per il primo punto è *0*
-    * il **valore della variabile *x***
-    * il **valore della variabile *y***
+  * Al crescere delle dimensioni di una libreria,
+    può essere comodo incorporarne gli strumenti (siano essi classi o funzioni)
+    all'interno di un **contenitore**,
+    che permetta di identificarne la provenienza
+  * Un ```namespace``` fornisce questa possibilità
+  * si potrebbe ad esempio raggruppare le varie funzioni ```somma```
+    nel modo seguente:
     ```cpp
-    g_sigma.SetPoint (g_sigma.GetN (), 11.5, 7.4) ;
+    namespace ops
+    {
+      template <typename T>
+      T somma (T a, T b) { /* implementazione */ }
+
+      template<>
+      float somma (float a, float b) { /* implementazione */ }
+
+      template <typename T1, typename T2>
+      T2 somma (T1 a, T2 b) { /* implementazione */ }
+    }
     ```
-    * in questo caso, come primo argomento si utilizza il metodo stesso ```TGraph::GetN ()```,
-      perché per un ```TGraph``` che contiene ```N``` elementi
-      l'indice dell'ultimo elemento salvato è ```N-1```
-  * si noti che ```ROOT``` ridefinisce le variabili numeriche del ```C++```
-    (sostituendo ```int``` con ```Int_t``` e ```double``` con ```Double_t``` in questo caso),
-    perché le variaibli definite internamente da ```ROOT``` hanno una dimensione in byte convenzionale
+  * per poter usare le funzioni definite all'interno di un ```namespace```,
+    bisogna utilizzare l'operatore di risoluzione di *scope*: ```operator::```:
+    ```cpp
+    std::cout << "somma di interi    " << ops::somma (i_a, i_b) << std::endl ;
+    std::cout << "somma di razionali " << ops::somma (d_a, d_b) << std::endl ;
+    ```
 
 ![linea](../immagini/linea.png)
 
-### 5.4.3 disegno di un ```TGraph```
+### 5.5.1 un ```namespace``` familiare: ```std```
 
-  * come nel caso di ```TH1F```, un ```TGraph``` si **disegna su un ```TCanvas```**:
+  * gli **strumenti standard** di ```C++``` sono definiti all'interno del ```namespace``` ```std```
+    (ad esempio ```std::cout```)
+  * si può istruire il compilatore a **cercare automaticamente** uno strumento
+    all'interno di un determinato ```namespace```,
+    evitando così di indicarlo esplicitamente:
     ```cpp
-    TCanvas c1 ("c1", "c1", 100, 100, 1000, 1000) ;
-    c1.SetLogx () ;
-    g_sigma.Draw ("ALP") ;
-    c1.Print ("sigmaTrend.png", "png") ;
+    using namespace std ;
+    int main (int argc, char ** argv)
+      {
+        //...
+        cout << "per scrivere questo messaggio non ho bisogno di std::" << endl ;
+      }
+
     ```
-    * le opzioni passate al metodo ```Draw``` richiedono di
-      * tracciare gli **assi** (```A```)
-      * congiungere i punti con una **linea** (```L```)
-      * disegnare i **marker** ad ogni punto (```P```).
+  * è buona norma **non** invocare ```using namespace std ;``` all'interno di **header file**,
+    perché avrebbe effetto in tutti i programmi che includono quell'header
 
 ![linea](../immagini/linea.png)
 
-### 5.4.4 qualche opzione grafica
+## 5.8 Le Standard Template Library
 
-  * anche per un ```TGraph```,
-    si possono impostare diversi parametri grafici:
-    ```cpp
-    g_sigma.SetMarkerStyle (20) ;
-    g_sigma.SetMarkerColor (kAzure - 1) ;
-    g_sigma.SetLineColor (kGray + 1) ;
-    g_sigma.SetMarkerSize (2) ;
-    g_sigma.GetHistogram ()->GetXaxis ()->SetTitle ("numero di eventi nel campione") ;
-    g_sigma.GetHistogram ()->GetYaxis ()->SetTitle ("deviazione standard") ;
-    ```
-      * il metodo ```TGraph::GetHistogram ()``` restituisce il puntatore
-        all'istogramma di servizio creato da ```ROOT```
-        per comporre graficamente il disegno
+  * La generalità di strumenti garantita dalla programmazione ```template```
+    viene grandemente utilizzata per creare **librerie di utilizzo generale**,
+    scritte da esperti e che non è quindi necessario reimplementare
+  * Le **Standard Template Library (STL)** offrono diversi tipi di strumenti:
+    algoritmi, contenitori, funzioni, iteratori.
+  * come nel caso di ```ROOT```,
+    per utilizzare uno strumento STL bisogna **includerne l'header**.
+  * A differenza di ```ROOT```,
+    questa libreria è già inclusa nel ```C++``` standard,
+    quindi **non è necessario aggiungere opzioni** al comando di compilazione
 
 ![linea](../immagini/linea.png)
 
-### 5.4.5 il risultato del disegno
+### 5.8.1 Programmazione a diversi livelli
 
-  * nel caso dell'andamento della **deviazione standard**
-    e della **deviazione standard della media**,
-    dal disegno dei ```TGraph``` nel caso di una distribuzione uniforme
-    si nota chiaramente che una delle due rimane costante,
-    mentre l'altra diminuisce all'aumentare del numero di eventi
-    presenti nel campione
-![deviazione_standard](immagini/sigma_trends.png)
-  * il campionamento di punti sull'asse *x* è fatto
-    **con ragione logaritmica**,
-    perché l'andamento atteso è lento
-    (proporzionale a radice di *N*)
-  * la **scala logaritmica sull'asse *x***
-    aiuta a visualizzare in modo più efficace queste variazioni
-
-![linea](../immagini/linea.png)
-
-## 5.5 TH2F: istogrammi bidimnesionali
-
-  * il concetto di istogramma monodimensionale si applica facilmente anche al **caso bidimensionale**
-  * l'oggetto di ```ROOT``` associato a questo concetto si chiama ```TH2F```
-  * nel costruttore, è necessario inserire numero di bin ed estremi per due direzioni
-    ```cpp
-    TH2F h2 ("h2", "eventi pseudo-casuali Gaussiani", 200, -1.5, 1.5, 200, -1.5, 1.5) ;
-    ```
-  * nel riempimento, il metodo ```TH2F::Fill (Double_t x, Double_t y)``` prende in ingresso due valori
-    ```cpp
-    h2.Fill (rand_TCL (-1., 1., 10), rand_TCL (-1., 1., 10)) ;
-    ```
-![gaussiana2D](immagini/Gaussian_TH2F.png)
+  * Si intende solitamente come **livello della programmazione**    
+    la distanza concettuale fra il codice sorgente ed il linguaggio macchina:
+    più le istruzioni scritte in un programma fanno uso di librerie esistenti,
+    più è alto il livello di programmazione.
+  * Diversi livelli di programmazione richiedono una diversa comprensione
+    degli strumenti utilizzati.
+  * Tipicamente, **a basso livello** è necessario prevedere quali problemi potrebbero sorgere
+    nell'utilizzo dell'hardware del calcolatore.  
+    Ad esempio, bisogna controllare che l'accesso ad un array avvenga
+    tramite un indice con valore positivo minore della dimensione dell'array.
+  * Ad **alto livello**, invece,
+    si assume solitamente che l'interazione con l'hardware sia ben gestita dalle librerie,
+    mentre è necessario comprendere la loro logica ed il loro comportamento,
+    per utilizzarle al meglio.
 
 ![linea](../immagini/linea.png)
 
-## 5.6 L'interfaccia interattiva di ```ROOT```: la classe ```TApplication```
+## 5.9 Contenitori STL
 
-  * i ```TCanvas``` di ```ROOT``` sono dotati di diverse **funzionalità interattive**
-    alle quali si accede con menu a tendina o contestuali
-    (accessibili con il pulsante destro del mouse)
-  * per **abilitare queste funzionalità** in un programma compilato,
-    è necessario utilizzare un oggetto della classe **TApplication**
+  * I diversi contenitori delle STL
+    sono **dedicati a diversi utilizzi**,
+    in funzione del tipo di salvataggio necessario
+    e della frequenza di accesso ad ogni oggetto
+  * noi ne studiamo due molto utilizzati,
+    a titolo esempificativo
+  * documentazione più esaustiva si trova in internet,
+    ad esempio [qui](https://justinmeiners.github.io/sgi-stl-docs)  
+
+![linea](../immagini/linea.png)
+
+### 5.9.1 Una sequenza di elementi: ```std::vector```
+
+  * La classe [```vector```](https://www.cplusplus.com/reference/vector/vector/), che appartiene al namespace ```std```,
+    è templata sul tipo di oggetto che contiene.
+  * Un **```vector``` viene creato** vuoto (```v_1```),
+    oppure composto da *N* elementi con il medesimo valore (```v_2```),
+    oppure a partire da un altro ```vector``` (```v_3```):
     ```cpp
-    TApplication theApp ("theApp", &argc, argv) ;
-    TCanvas c1 ;
-    istogramma.Draw ("hist") ;
-    theApp.Run () ;
+    vector<double> v_1 ;
+    vector<double> v_2 (5, 0.) ;
+    vector<double> v_3 (v_2) ;
     ```
-    * fra la linea
-      ```cpp
-      TApplication theApp ("theApp", &argc, argv) ;
+
+![linea](../immagini/linea.png)
+
+### 5.9.2 La lettura di un ```std::vector```
+
+  * Gli **elementi esistenti di un ```vector```** sono accessibli con l'```operator[]```,
+    oppure con il metodo ```vector::at (int)```:
+    ```cpp
+    cout << "elemento 1 di v_2 " << v_2[1] << endl ;
+    cout << "elemento 1 di v_2 " << v_2.at (1) << endl ;
+    ```
+    * il primo metodo funziona esattamente come per un array,
+      quindi può creare **problemi di gestione della memoria**
+    * il secondo metodo controlla la validità dell'indice rispetto alla dimensione del ```vector```
+      e **produce un errore di esecuzione**
+      nel caso in cui l'indice non indichi un elemento del ```vector```:
       ```
-      e la linea
-      ```cpp
-      theApp.Run () ;
+      libc++abi.dylib: terminating with uncaught exception of type std::out_of_range: vector
+      Abort trap: 6
       ```
-      va incluso tutto il codice che si vuole interattivo
-    * può esistere un solo oggetto di tipo ```TApplication``` in ogni programma
-    * per terminare l'esecuzione del programma,
-      da un qualunque ```TCanvas``` bisogna utilizzare il menu ```File->Quit ROOT```
 
 ![linea](../immagini/linea.png)
 
-## 5.7 Una gestione furba del testo: ```TString```
+### 5.9.3 Il riempimento di un ```std::vector```
 
-  * ```ROOT``` fornisce un oggetto che serve per **maneggiare stringhe**
-    che può essere utilizzato come argomento nei metodi delle sue classi
-  * le ```TString``` hanno definite una serie di operazioni
-    che permettono di **combinare velocemente testo con altre variabili**
+  * Ad un ```vector``` possono essere **aggiunti elementi alla fine** del suo contenuto,
+    con il metodo ```vector::push_back (T element)```:
     ```cpp
-    int num = atoi (argv[1]) ;
-    TString titolo = "ci sono " ;
-    titolo += num ;
-    titolo += " eventi" ;
-    TH1F istogramma ("istogramma", titolo, 10, -5., 5.) ;
+    cout << v_1.size () << endl ;
+    v_1.push_back (3.) ;
+    cout << v_1.size () << endl ;
+    ```
+    * il metodo ```vector::size ()``` restituisce il **numero di elementi** contenuti nel vector
+    * similmente,
+      si può **eliminare l'ultimo elemento** di un ```vector```
+      con il metodo ```vector::pop_back ()```:
+    ```cpp
+    v_1.pop_back () ;
+    cout << v_1.size () << endl ;
     ```
 
 ![linea](../immagini/linea.png)
 
-## 5.8 ESERCIZI
+### 5.9.4 ```std::vector``` ed array
+
+  * un ```vector``` **contiene un array** di elementi e fornisce l'interfaccia di accesso
+    e modifica
+  * per accedere direttamente all'array, è sufficiente **dereferenziare il primo elemento** del ```vector```:
+    ```cpp
+    double * array_3 = & v_3.at (0) ;
+    cout << "elemento 2 di v_3 " << array_3[2] << endl ;
+    ```
+
+![linea](../immagini/linea.png)
+
+### 5.9.5 l'iterazione sugli elementi di un ```std::vector```
+
+  * per **iterare sugli elementi di un ```vector```**,
+    si può utilizzare una sintassi analoga a quella che si userebbe per un array:
+    ```cpp
+    for (int i = 0 ; i < v_3.size () ; ++i)
+      cout << "elemento " << i << ": " << v_3.at (i) << "\n" ;
+    ```
+  * alternativamente, si possono utilizzare altri strumenti STL,
+    gli iteratori:
+    ```cpp
+    for (vector<double>::const_iterator it = v_3.begin () ;
+         it != v_3.end () ;
+         ++it)
+      cout << "elemento " << it - v_3.begin () << ": " << *it << "\n" ;
+    ```
+    * un **iteratore** si comporta come puntatore ad un elemento di un contenitore
+      con in aggiunta metodi per spostarsi ad elementi contigui del contenitore
+    * di conseguenza, ```*it``` è l'elemento contenuto in quell'elemento del ```vector```  
+    * il metodo **vector::begin ()**
+      restituisce l'iteratore al **primo elemento** del ```vector```
+    * il metodo **vector::end ()** restituisce l'interatore alla locazione di memoria
+      **successiva all'ultimo elemento** del ```vector```,
+      dunque il ciclo non avviene se ```it``` è uguale a ```v_3.end ()```
+    * gli iteratori **hanno una propria algebra**,
+      per cui la differenza fra iteratori dello stesso contenitore  
+      indica il numero di elementi che intercorrono fra loro  
+
+![linea](../immagini/linea.png)
+
+### 5.9.6 ```std::vector``` di oggetti
+
+  * il comportamento dei tipi di default dei ```C++``` è sempre ben regolato
+  * gli strumenti ```template``` possono essere utilizzati **con un qualunque tipo**,
+    dunque è necessario che l'implementazione degli oggetti
+    garantisca il buon funzionamento delle librerie STL
+  * in particolare, è necessario che siano definiti il *copy constructor* e l'operatore di assegnazione
+    per il tipo ```T```
+
+![linea](../immagini/linea.png)
+
+### 5.9.7 Un contenitore associativo di elementi: ```std::map```
+
+  * Una [```map```](http://www.cplusplus.com/reference/map/map/)
+    delle STL funziona **come un elenco telefonico**:
+    contiene una lista di valori (i numeri di telefono)
+    associati ad una chiave per ordinarli (cognomi e nomi),
+    dunque è templata su due argomenti:
+    ```cpp
+    map <int, double> mappa_di_esempio ;
+    ```
+  * Per ogni chiave esiste **un solo valore** contenuto nella ```map```
+  * Il primo argomento (la chiave) **deve essere ordinabile**,
+    cioè deve esistere l'```operator<``` per quel tipo o classe
+  * La ```map``` è un **contenitore ordinato**,
+    cioè gli elementi al suo interno su susseguono
+    secondo la relazione d'ordine che esiste per le chiavi
+
+![linea](../immagini/linea.png)
+
+### 5.9.8 Il riempimento di una ```std::map```
+
+  * Il modo più semplice per riempire una ```map```
+    è utilizzare l'```operator[]```,
+    che ha un comportamento duplice:
+    se l'elemento corripondente ad una data chiave non esiste,
+    viene creato, altrimenti viene restituito l'elemento esistente:
+    ```cpp
+    mappa_di_esempio[5] = 5.5 ;
+    mappa_di_esempio[3] = 3.3 ;
+    mappa_di_esempio[5] = 4.1 ;
+    mappa_di_esempio[12] = 5.8 ;
+    ```
+    * In questo caso,
+      le prime due righe definiscono due nuovi elementi,
+      mentre la terza **sovrascrive** l'elemento associato alla chiave ```5```
+  * Per gli oggetti sui quali si templa una ```map``` devono aver definti
+    un operatore di assgnazione ed un *copy constructor*
+
+![linea](../immagini/linea.png)
+
+### 5.9.9 La lettura di una ```std::map```
+
+  * per accedere ad un **singolo elemento esistente** in una ```map```
+    si utilizza l'```operator[]```
+  * ogni elemento della ```map``` è tecnicamente una **coppia di oggetti**,
+    definita nelle STL come ```std::pair```,
+    che è templata sui due stessi tipi della ```map```
+  * la classe ```pair``` ha due membri pubblici, chiamati **```first``` e ```second```**,
+    che corrispodono al primo e secondo elemento della coppia rispettivamente    
+  * per **iterare su una ```map```** si utilizza l'iteratore STL corrispondente:
+    ```cpp
+    for (map<int, double>::const_iterator it = mappa_di_esempio.begin () ;
+         it != mappa_di_esempio.end () ;
+         ++it)
+      {
+        cout << "elemento " << it->first
+             << "\t-> "     << it->second << endl ;
+      }    
+
+    ```
+    * l'iteratore ```it``` si comporta, all'interno del ciclo,
+      come un puntatore al ```pair``` corrispondente ad ogni elemento della ```map```
+
+![linea](../immagini/linea.png)
+
+## 5.10 ```std::string```
+
+  * il ```C++``` offre uno strumento **dedicato alla gestione delle stringhe di caratteri**,
+    con il tipo [```string```](https://www.cplusplus.com/reference/string/string/)
+    ```cpp
+    #include <string>
+    using namespace std ;
+    int main (int argc, char ** argv)
+      {
+        string s_1 ;
+        return 0 ;
+      }    
+    ```
+    * anche in questo caso, non sono necessarie opzioni di compilazione per usare la libreria ```string```
+
+![linea](../immagini/linea.png)
+
+### 5.10.1 operazioni con stringhe
+
+  * La **somma** di due ```string``` restituisce la concatenazione del contenuto dei due oggetti sommati:
+    ```cpp
+    s_1 = "nel mezzo del cammin" ;
+    string s_2 = " di nostra vita" ;
+    string s_3 = s_1 + s_2 ;
+    cout << s_3 << endl ;
+    ```
+  * Il metodo ```string::length ()``` resituisce il **numero di caratteri** che compongono la ```string```
+    sul quale viene invocato
+  * L'uguaglianza fra due ```string``` si può verificare con l'```operator==()```.  
+
+![linea](../immagini/linea.png)
+
+### 5.10.2 ricerca di sotto-elementi in una ```string```
+
+  * In una ```string``` si possono **cercare sotto-```string```**:
+    ```cpp
+    int posizione = s_3.find (s_4) ;
+    cout << "La parola \"" << s_4
+         << "\" inizia al carattere " << posizione
+         << " della frase: \"" << s_3
+         << "\"\n" ;
+    ```
+    * In caso la sotto-```string``` non venga trovata,
+      il metodo ```string::find``` ritorna *-1*.
+    * Per **scrivere a schermo le virgolette**,
+      devono essere precedute dal carattere ```\```
+      quando poste all'interno di una stringa,
+      per non confondere il simbolo con la fine della stringa stessa  
+
+![linea](../immagini/linea.png)
+
+### 5.10.3 ```string``` e caratteri
+
+  * Una ```string``` contiene anche il **carattere che ne determina la fine**,
+    dunque ```'A'``` è diverso da ```"A"```:
+    * ```'A'``` è un **singolo carattere**, salvato il memoria come tale, occupa 1 byte in memoria.
+    * ```"A"``` è una **stringa** composta da un carattere,
+      occupa 8 byte in memoria in formato ```C```
+      e di più in formato ```string```,
+      per via della struttura interna della classe ```string```
+      ```cpp
+      char A = 'A' ;
+      cout << sizeof (A) << endl ;
+
+      string S = "A" ;
+      cout << sizeof (S.c_str ()) << endl ;
+      cout << sizeof (S) << endl ;   
+      ```
+    * Per compatibilità con funzioni implementate con lo stile ```C```,
+      il metodo ```string::c_str ()``` restituisce il **vettore di caratteri**
+      con il contenuto della variabile di tipo ```string```
+  * In generale è preferibile **utilizzare ```string``` invece di ```char []```** nonappena possibile,
+    per via della migliore gestione della memoria,
+    oltre che per i diversi strumenti di manipolazione delle stringhe
+    disponibili per la classe ```string```.
+
+![linea](../immagini/linea.png)
+
+## 5.11 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
