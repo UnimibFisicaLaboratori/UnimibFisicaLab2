@@ -2,27 +2,28 @@
 
 ## Indice
 
-  * [4.1 I numeri pseudo-casuali](#41-i-numeri-pseudo-casuali)
-    * [4.1.1 sequenze casuali](#411-sequenze-casuali)
-    * [4.1.2 sequenze pseudo-casuali](#412-sequenze-pseudo-casuali)
-    * [4.1.3 il generatore lineare congruenziale](#413-il-generatore-lineare-congruenziale)
-    * [4.1.4 le problematiche dei generatori di numeri pseudo-casuali](#414-le-problematiche-dei-generatori-di-numeri-pseudo-casuali)
-    * [4.1.5 un generatore di numeri casuali in ```C++```](#415-un-generatore-di-numeri-casuali-in-c)
-    * [4.1.6 le caratteristiche di ```rand ()```](#416-le-caratteristiche-di-rand-)
-    * [4.1.7 come cambiare il seed di generazione](#417-come-cambiare-il-seed-di-generazione)
-  * [4.2 generare numeri pseudo-casuali con distribuzione uniforme](#42-generare-numeri-pseudo-casuali-con-distribuzione-uniforme)
-    * [4.2.1 una distribuzione uniforme di numeri razionali pseudo-casuali](#421-una-distribuzione-uniforme-di-numeri-razionali-pseudo-casuali)
-  * [4.3 altre distribuzioni di probabilità: try-and-catch](#43-altre-distribuzioni-di-probabilità-try-and-catch)
-    * [4.3.1 l'algoritmo try-and-catch (TAC)](#431-lalgoritmo-try-and-catch-tac)
-    * [4.3.2 l'implementazione dell'algoritmo try-and-catch](#432-limplementazione-dellalgoritmo-try-and-catch)
-    * [4.3.3 vantaggi e svantaggi dell'algoritmo try-and-catch](#433-vantaggi-e-svantaggi-dellalgoritmo-try-and-catch)
-  * [4.4 altre distribuzioni di probabilità: la funzione inversa](#44-altre-distribuzioni-di-probabilità-la-funzione-inversa)
-    * [4.4.1 l'algoritmo della funzione inversa](#441-lalgoritmo-della-funzione-inversa)
-    * [4.4.2 vantaggi e svantaggi dell'algoritmo della funzione inversa](#442-vantaggi-e-svantaggi-dellalgoritmo-della-funzione-inversa)
-  * [4.5 distribuzioni di probabilità Gaussiane: il teorema centrale del limite](#45-distribuzioni-di-probabilità-gaussiane-il-teorema-centrale-del-limite)
-    * [4.5.1 l'implementazione dell'algoritmo](#451-limplementazione-dellalgoritmo)
-    * [4.5.2 vantaggi e svantaggi dell'algoritmo della funzione inversa](#452-vantaggi-e-svantaggi-dellalgoritmo-della-funzione-inversa)
-  * [4.6 ESERCIZI](#46-esercizi)
+  * [4.1 I numeri pseudo-casuali](#i-numeri-pseudo-casuali)
+    * [4.1.1 sequenze casuali](#sequenze-casuali)
+    * [4.1.2 sequenze pseudo-casuali](#sequenze-pseudo-casuali)
+    * [4.1.3 il generatore lineare congruenziale](#il-generatore-lineare-congruenziale)
+    * [4.1.4 le problematiche dei generatori di numeri pseudo-casuali](#le-problematiche-dei-generatori-di-numeri-pseudo-casuali)
+    * [4.1.5 un generatore di numeri casuali in ```C++```](#un-generatore-di-numeri-casuali-in-c)
+    * [4.1.6 le caratteristiche di ```rand ()```](#le-caratteristiche-di-rand)
+    * [4.1.7 come cambiare il seed di generazione](#come-cambiare-il-seed-di-generazione)
+  * [4.2 generare numeri pseudo-casuali con distribuzione uniforme](#generare-numeri-pseudo-casuali-con-distribuzione-uniforme)
+    * [4.2.1 una distribuzione uniforme di numeri razionali pseudo-casuali](#una-distribuzione-uniforme-di-numeri-razionali-pseudo-casuali)
+  * [4.3 altre distribuzioni di probabilità: try-and-catch](#altre-distribuzioni-di-probabilita-try-and-catch)
+    * [4.3.1 l'algoritmo try-and-catch (TAC)](#l-algoritmo-try-and-catch-tac)
+    * [4.3.2 l'implementazione dell'algoritmo try-and-catch](#l-implementazione-dell-algoritmo-try-and-catch)
+    * [4.3.3 vantaggi e svantaggi dell'algoritmo try-and-catch](#vantaggi-e-svantaggi-dellalgoritmo-try-and-catch)
+  * [4.4 altre distribuzioni di probabilità: la funzione inversa](#altre-distribuzioni-di-probabilita-la-funzione-inversa)
+    * [4.4.1 l'algoritmo della funzione inversa](#l-algoritmo-della-funzione-inversa)
+    * [4.4.2 vantaggi e svantaggi dell'algoritmo della funzione inversa](#vantaggi-e-svantaggi-dellalgoritmo-della-funzione-inversa)
+  * [4.5 distribuzioni di probabilità Gaussiane: il teorema centrale del limite](#distribuzioni-di-probabilita-gaussiane-il-teorema-centrale-del-limite)
+    * [4.5.1 l'implementazione dell'algoritmo](#l-implementazione-dell-algoritmo)
+    * [4.5.2 vantaggi e svantaggi dell'algoritmo della funzione inversa](#vantaggi-e-svantaggi-dell-algoritmo-della-funzione-inversa)
+  * [4.6 ESEMPI](#esempi)
+  * [4.7 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -97,7 +98,7 @@
   * tipicamente i generatori di numeri casuali seguono una distribuzione uniforme:
     la **non-uniformità** della distribuzione è un altro difetto tipico
     che si vuole evitare
-  * un **esempio** del risultato di un generaore di numeri pseudo-casuali poco performante
+  * un **esempio** del risultato di un generatore di numeri pseudo-casuali poco performante
     si trova [qui](https://boallen.com/random-numbers.html)
 ![pseudo_fail](immagini/pseudo_casuale.png)
 
@@ -128,6 +129,7 @@
 
     RAND_MAX: 2147483647
     ```
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#utilizzo-di-rand">4.0</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -165,6 +167,8 @@
     il seed **si inizializza una volta sola**
     durante l'esecuzione di un programma
 
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#utilizzo-di-srand">4.1</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ## 4.2 generare numeri pseudo-casuali con distribuzione uniforme
@@ -199,6 +203,8 @@
            min + (max - min) * rand () / static_cast<float> (RAND_MAX) ;
          }  
        ```  
+
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-uniforme">4.2</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -248,6 +254,8 @@
     * la **forma funzionale** da usare come pdf:
       come vedete anche una funzione può essere passata come argomento
       ad un'altra funzione, descrivendone il prototipo
+
+  <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-con-il-metodo-try-and-catch">4.3</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -339,6 +347,9 @@
 
 ![funzione_inversa](immagini/teorema_centrale_limite.png)
 
+
+  <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-pdf-con-il-metodo-del-teorema-centrale-del-limite">4.4</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ### 4.5.2 vantaggi e svantaggi dell'algoritmo per generazione di pdf con forma gaussiana
@@ -354,10 +365,14 @@
 
   * per raggiungere una buona precisione,
     bisogna generare molti numeri pseudo-casuali uniformi
-    per ottenerne uno distribuito Gaussianamente
+    per ottenerne uno distribuito secondo una distribuzione di Gauss
 
 ![linea](../immagini/linea.png)
 
-## 4.6 ESERCIZI
+## 4.6 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.md)
+
+## 4.7 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
