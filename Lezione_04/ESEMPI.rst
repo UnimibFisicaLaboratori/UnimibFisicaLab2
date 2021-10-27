@@ -36,7 +36,7 @@ Esempi: Lezione 4
 .. image:: ../immagini/linea.png
   :width: 1100
 
-3.4 generazione di pdf con il metodo del teorema centrale del limite 
+4.5 generazione di pdf con il metodo del teorema centrale del limite 
 ---------------------------------------------------
 .. literalinclude:: programmi/main_04.cpp
   :language: cpp
