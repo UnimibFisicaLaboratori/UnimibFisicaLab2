@@ -81,7 +81,7 @@
     di una sequenza pseudo-casuale dato un qualunque numero è il seguente:
 ![lineare-congruenziale](immagini/lineare_congruenziale.png)
   * con:
-![lineare-congruenziale_condizioni](immagini/lineare_congruenziale_condizioni_3.png)
+![lineare-congruenziale_condizioni](immagini/lineare_congruenziale_condizioni_4.png)
   * il **primo elemento della sequenza**, con indice zero, è il seed
   * questo algoritmo genera per costruzione **numeri compresi fra 0 ed M**
 
