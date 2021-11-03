@@ -25,9 +25,9 @@
     * [5.9.1 Una sequenza di elementi: ```std::vector```](#una-sequenza-di-elementi-std-vector)
     * [5.9.2 La lettura di un ```std::vector```](#la-lettura-di-un-std-vector)
     * [5.9.3 Il riempimento di un ```std::vector```](#il-riempimento-di-un-std-vector)
-    * [5.9.4 ```std::vector``` ed array](#stdvector-ed-array)
+    * [5.9.4 ```std::vector``` ed array](#std-vector-ed-array)
     * [5.9.5 l'iterazione sugli elementi di un ```std::vector```](#l-iterazione-sugli-elementi-di-un-std-vector)
-    * [5.9.6 ```std::vector``` di oggetti](#stdvector-di-oggetti)
+    * [5.9.6 ```std::vector``` di oggetti](#std-vector-di-oggetti)
     * [5.9.7 Un contenitore associativo di elementi: ```std::map```](#un-contenitore-associativo-di-elementi-std-map)
     * [5.9.8 Il riempimento di una ```std::map```](#il-riempimento-di-una-std-map)
     * [5.9.9 La lettura di una ```std::map```](#la-lettura-di-una-std-map)
@@ -63,6 +63,8 @@
     ```
   * durante l'esecuzione di un programma, il ```C++``` è in grado di **scegliere
     la funzione corretta** da utilizzare
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-overloading">5.0</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -115,6 +117,8 @@
     * nel secondo caso, il termine ```<int>``` **forza** il ```C++``` ad utilizzare la funzione ```somma```
       implementata (templata) sul tipo ```int```
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#primo-esempio-di-template">5.1</a>) </div>      
+
 ![linea](../immagini/linea.png)
 
 ### 5.2.3 attenzione ai dettagli
@@ -139,7 +143,7 @@
     da quella delle funzioni
   * quindi tutti gli strumenti ```template```,
     se vengono scritti in un file separato,
-    vanno implementati all'interno dell'```header```
+    vanno implementati all'interno dell'```header``` ([approfondimento](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl))
     ```cpp
     #ifndef somma_h
     #define somma_h
@@ -157,6 +161,8 @@
   * la compilazione è solitamente **lunga**
   * **pochi errori** di scrittura possono tradursi in lunghe lamentele del compilatore
     * cercate sempre **il primo errore** di compilazione!
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-funzione-template-scritta-in-un-file-h">5.2</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -215,6 +221,8 @@
       contenitore[i] = 2 * i ;
     ```
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-classe-template">5.3</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ## 5.4 ```template``` multipli
@@ -229,6 +237,8 @@
         return a + b ;
       }
     ```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-template-multipli">5.4</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -251,6 +261,8 @@
     ```  
   * il preambolo ```template<>``` segnala al ```C++``` che questa implementazione
     è una specializzazione della funzione templata ```somma```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-specializzazione-di-un-template">5.5</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -289,6 +301,8 @@
     quindi è lecito utilizzare l'allocazione automatica della memoria
     per definire l'array ```elementi```
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-una-classe-templata-sul-valore-di-una-variabile">5.6</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ## 5.7 ordine nelle librerie: i ```namespace```
@@ -319,6 +333,8 @@
     std::cout << "somma di interi    " << ops::somma (i_a, i_b) << std::endl ;
     std::cout << "somma di razionali " << ops::somma (d_a, d_b) << std::endl ;
     ```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-un-namespace">5.7</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -485,6 +501,8 @@
       per cui la differenza fra iteratori dello stesso contenitore  
       indica il numero di elementi che intercorrono fra loro  
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-un-vector">5.8</a>) </div>      
+
 ![linea](../immagini/linea.png)
 
 ### 5.9.6 ```std::vector``` di oggetti
@@ -560,6 +578,8 @@
     ```
     * l'iteratore ```it``` si comporta, all'interno del ciclo,
       come un puntatore al ```pair``` corrispondente ad ogni elemento della ```map```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-una-map">5.9</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -638,6 +658,8 @@
     per via della migliore gestione della memoria,
     oltre che per i diversi strumenti di manipolazione delle stringhe
     disponibili per la classe ```string```.
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-oggetti-string">5.10</a>) </div>
 
 ![linea](../immagini/linea.png)
 

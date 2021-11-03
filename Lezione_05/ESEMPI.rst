@@ -34,8 +34,8 @@ Esempi: Lezione 5
   :width: 1100
 
 
-5.3 esempio d classe ```template```
------------------------------------
+5.3 esempio di classe ```template```
+------------------------------------
 .. literalinclude:: programmi/main_03.cpp
   :language: cpp
 
