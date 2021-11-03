@@ -83,7 +83,7 @@
 
   * la parola chiave ```template```, traducibile in italiano come modello,
     introduce il concetto di tipo generico
-  * dunque, per definire una funzione ```somma``` che valga per un tipo qualunue
+  * dunque, per definire una funzione ```somma``` che valga per un tipo qualunque
     si scrive
     ```cpp
     template <typename T>
@@ -99,7 +99,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 5.2.2 utilizzo di una fuzione ```template```
+### 5.2.2 utilizzo di una funzione ```template```
 
   * in fase di compilazione,
     il ```C++``` **implementa e compila tutti i prototipi necessari**,
@@ -155,7 +155,7 @@
   * durante la compilazione di strumenti ```template``` il ```C++```
     porta a termine un **controllo sintattico accurato**
   * la compilazione è solitamente **lunga**
-  * **pochi errori** di scrittura possono tradursi in lunghe lamntele del compilatore
+  * **pochi errori** di scrittura possono tradursi in lunghe lamentele del compilatore
     * cercate sempre **il primo errore** di compilazione!
 
 ![linea](../immagini/linea.png)
@@ -384,7 +384,7 @@
     in funzione del tipo di salvataggio necessario
     e della frequenza di accesso ad ogni oggetto
   * noi ne studiamo due molto utilizzati,
-    a titolo esempificativo
+    a titolo esemplificativo
   * documentazione più esaustiva si trova in internet,
     ad esempio [qui](https://justinmeiners.github.io/sgi-stl-docs)  
 
@@ -407,7 +407,7 @@
 
 ### 5.9.2 La lettura di un ```std::vector```
 
-  * Gli **elementi esistenti di un ```vector```** sono accessibli con l'```operator[]```,
+  * Gli **elementi esistenti di un ```vector```** sono accessibili con l'```operator[]```,
     oppure con il metodo ```vector::at (int)```:
     ```cpp
     cout << "elemento 1 di v_2 " << v_2[1] << endl ;
@@ -478,7 +478,7 @@
     * di conseguenza, ```*it``` è l'elemento contenuto in quell'elemento del ```vector```  
     * il metodo **vector::begin ()**
       restituisce l'iteratore al **primo elemento** del ```vector```
-    * il metodo **vector::end ()** restituisce l'interatore alla locazione di memoria
+    * il metodo **vector::end ()** restituisce l'iteratore alla locazione di memoria
       **successiva all'ultimo elemento** del ```vector```,
       dunque il ciclo non avviene se ```it``` è uguale a ```v_3.end ()```
     * gli iteratori **hanno una propria algebra**,
@@ -522,7 +522,7 @@
   * Il modo più semplice per riempire una ```map```
     è utilizzare l'```operator[]```,
     che ha un comportamento duplice:
-    se l'elemento corripondente ad una data chiave non esiste,
+    se l'elemento corrispondente ad una data chiave non esiste,
     viene creato, altrimenti viene restituito l'elemento esistente:
     ```cpp
     mappa_di_esempio[5] = 5.5 ;
@@ -533,8 +533,8 @@
     * In questo caso,
       le prime due righe definiscono due nuovi elementi,
       mentre la terza **sovrascrive** l'elemento associato alla chiave ```5```
-  * Per gli oggetti sui quali si templa una ```map``` devono aver definti
-    un operatore di assgnazione ed un *copy constructor*
+  * Per gli oggetti sui quali si templa una ```map``` devono aver definiti
+    un operatore di assegnazione ed un *copy constructor*
 
 ![linea](../immagini/linea.png)
 
@@ -589,7 +589,7 @@
     string s_3 = s_1 + s_2 ;
     cout << s_3 << endl ;
     ```
-  * Il metodo ```string::length ()``` resituisce il **numero di caratteri** che compongono la ```string```
+  * Il metodo ```string::length ()``` restituisce il **numero di caratteri** che compongono la ```string```
     sul quale viene invocato
   * L'uguaglianza fra due ```string``` si può verificare con l'```operator==()```.  
 
@@ -634,7 +634,7 @@
     * Per compatibilità con funzioni implementate con lo stile ```C```,
       il metodo ```string::c_str ()``` restituisce il **vettore di caratteri**
       con il contenuto della variabile di tipo ```string```
-  * In generale è preferibile **utilizzare ```string``` invece di ```char []```** nonappena possibile,
+  * In generale è preferibile **utilizzare ```string``` invece di ```char []```** non appena possibile,
     per via della migliore gestione della memoria,
     oltre che per i diversi strumenti di manipolazione delle stringhe
     disponibili per la classe ```string```.
