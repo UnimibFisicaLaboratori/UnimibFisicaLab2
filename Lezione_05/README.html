@@ -380,8 +380,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#utilizzo-di-una-fuzione-template">
-     5.2.2 utilizzo di una fuzione
+    <a class="reference internal nav-link" href="#utilizzo-di-una-funzione-template">
+     5.2.2 utilizzo di una funzione
      <code class="docutils literal notranslate">
       <span class="pre">
        template
@@ -659,8 +659,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esempi">
+   5.11 ESEMPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   5.11 ESERCIZI
+   5.12 ESERCIZI
   </a>
  </li>
 </ul>
@@ -679,61 +684,62 @@
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#51-introduzione">5.1 introduzione</a></p>
+<li><p><a class="reference external" href="#introduzione">5.1 introduzione</a></p>
 <ul>
-<li><p><a class="reference external" href="#511-ripasso-loverloading-delle-funzioni">5.1.1 ripasso: l’<em>overloading</em> delle funzioni</a></p></li>
-<li><p><a class="reference external" href="#512-se-potessimo-lavorare-meno">5.1.2 se potessimo lavorare meno…</a></p></li>
+<li><p><a class="reference external" href="#ripasso-l-overloading-delle-funzioni">5.1.1 ripasso: l’<em>overloading</em> delle funzioni</a></p></li>
+<li><p><a class="reference external" href="#se-potessimo-lavorare-meno">5.1.2 se potessimo lavorare meno…</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#52-funzioni-template">5.2 funzioni <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p>
+<li><p><a class="reference external" href="#funzioni-template">5.2 funzioni <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p>
 <ul>
-<li><p><a class="reference external" href="#521-definizione-di-una-funzione-template">5.2.1 definizione di una funzione <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
-<li><p><a class="reference external" href="#522-utilizzo-di-una-fuzione-template">5.2.2 utilizzo di una fuzione <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
-<li><p><a class="reference external" href="#523-attenzione-ai-dettagli">5.2.3 attenzione ai dettagli</a></p></li>
-<li><p><a class="reference external" href="#524-template-e-compilazione">5.2.4 <code class="docutils literal notranslate"><span class="pre">template</span></code> e compilazione</a></p></li>
+<li><p><a class="reference external" href="#definizione-di-una-funzione-template">5.2.1 definizione di una funzione <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
+<li><p><a class="reference external" href="#utilizzo-di-una-fuzione-template">5.2.2 utilizzo di una fuzione <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
+<li><p><a class="reference external" href="#attenzione-ai-dettagli">5.2.3 attenzione ai dettagli</a></p></li>
+<li><p><a class="reference external" href="#template-e-compilazione">5.2.4 <code class="docutils literal notranslate"><span class="pre">template</span></code> e compilazione</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#53-classi-template">5.3 classi <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p>
+<li><p><a class="reference external" href="#classi-template">5.3 classi <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p>
 <ul>
-<li><p><a class="reference external" href="#531-definizione-di-una-classe-template">5.3.1 definizione di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
-<li><p><a class="reference external" href="#532-implementazione-di-una-classe-template">5.3.2 implementazione di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
-<li><p><a class="reference external" href="#533-utilizzo-di-una-classe-template">5.3.3 utilizzo di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
+<li><p><a class="reference external" href="#definizione-di-una-classe-template">5.3.1 definizione di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
+<li><p><a class="reference external" href="#implementazione-di-una-classe-template">5.3.2 implementazione di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
+<li><p><a class="reference external" href="#utilizzo-di-una-classe-template">5.3.3 utilizzo di una classe <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#54-template-multipli">5.4 <code class="docutils literal notranslate"><span class="pre">template</span></code> multipli</a></p></li>
-<li><p><a class="reference external" href="#55-la-specializzazione-dei-template">5.5 la specializzazione dei <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
-<li><p><a class="reference external" href="#56-template-su-valori-di-variabili-intere">5.6 <code class="docutils literal notranslate"><span class="pre">template</span></code> su valori di variabili intere</a></p></li>
-<li><p><a class="reference external" href="#57-ordine-nelle-librerie-i-namespace">5.7 ordine nelle librerie: i <code class="docutils literal notranslate"><span class="pre">namespace</span></code></a></p>
+<li><p><a class="reference external" href="#template-multipli">5.4 <code class="docutils literal notranslate"><span class="pre">template</span></code> multipli</a></p></li>
+<li><p><a class="reference external" href="#la-specializzazione-dei-template">5.5 la specializzazione dei <code class="docutils literal notranslate"><span class="pre">template</span></code></a></p></li>
+<li><p><a class="reference external" href="#template-su-valori-di-variabili-intere">5.6 <code class="docutils literal notranslate"><span class="pre">template</span></code> su valori di variabili intere</a></p></li>
+<li><p><a class="reference external" href="#ordine-nelle-librerie-i-namespace">5.7 ordine nelle librerie: i <code class="docutils literal notranslate"><span class="pre">namespace</span></code></a></p>
 <ul>
-<li><p><a class="reference external" href="#571-un-namespace-familiare-std">5.5.1 un <code class="docutils literal notranslate"><span class="pre">namespace</span></code> familiare: <code class="docutils literal notranslate"><span class="pre">std</span></code></a></p></li>
+<li><p><a class="reference external" href="#un-namespace-familiare-std">5.5.1 un <code class="docutils literal notranslate"><span class="pre">namespace</span></code> familiare: <code class="docutils literal notranslate"><span class="pre">std</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#58-le-standard-template-library">5.8 Le Standard Template Library</a></p>
+<li><p><a class="reference external" href="#le-standard-template-library">5.8 Le Standard Template Library</a></p>
 <ul>
-<li><p><a class="reference external" href="#581-programmazione-a-diversi-livelli">5.8.1 Programmazione a diversi livelli</a></p></li>
+<li><p><a class="reference external" href="#programmazione-a-diversi-livelli">5.8.1 Programmazione a diversi livelli</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#59-contenitori-stl">5.9 Contenitori STL</a></p>
+<li><p><a class="reference external" href="#contenitori-stl">5.9 Contenitori STL</a></p>
 <ul>
-<li><p><a class="reference external" href="#591-una-sequenza-di-elementi-stdvector">5.9.1 Una sequenza di elementi: <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></p></li>
-<li><p><a class="reference external" href="#592-la-lettura-di-un-stdvector">5.9.2 La lettura di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></p></li>
-<li><p><a class="reference external" href="#593-il-riempimento-di-un-stdvector">5.9.3 Il riempimento di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></p></li>
-<li><p><a class="reference external" href="#594-stdvector-ed-array">5.9.4 <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> ed array</a></p></li>
-<li><p><a class="reference external" href="#595-literazione-sugli-elementi-di-un-stdvector">5.9.5 l’iterazione sugli elementi di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></p></li>
-<li><p><a class="reference external" href="#596-stdvector-di-oggetti">5.9.6 <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> di oggetti</a></p></li>
-<li><p><a class="reference external" href="#597-un-contenitore-associativo-di-elementi-stdmap">5.9.7 Un contenitore associativo di elementi: <code class="docutils literal notranslate"><span class="pre">std::map</span></code></a></p></li>
-<li><p><a class="reference external" href="#598-il-riempimento-di-una-stdmap">5.9.8 Il riempimento di una <code class="docutils literal notranslate"><span class="pre">std::map</span></code></a></p></li>
-<li><p><a class="reference external" href="#599-la-lettura-di-una-stdmap">5.9.9 La lettura di una <code class="docutils literal notranslate"><span class="pre">std::map</span></code></a></p></li>
+<li><p><a class="reference external" href="#una-sequenza-di-elementi-std-vector">5.9.1 Una sequenza di elementi: <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></p></li>
+<li><p><a class="reference external" href="#la-lettura-di-un-std-vector">5.9.2 La lettura di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></p></li>
+<li><p><a class="reference external" href="#il-riempimento-di-un-std-vector">5.9.3 Il riempimento di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></p></li>
+<li><p><a class="reference external" href="#std-vector-ed-array">5.9.4 <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> ed array</a></p></li>
+<li><p><a class="reference external" href="#l-iterazione-sugli-elementi-di-un-std-vector">5.9.5 l’iterazione sugli elementi di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></p></li>
+<li><p><a class="reference external" href="#std-vector-di-oggetti">5.9.6 <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> di oggetti</a></p></li>
+<li><p><a class="reference external" href="#un-contenitore-associativo-di-elementi-std-map">5.9.7 Un contenitore associativo di elementi: <code class="docutils literal notranslate"><span class="pre">std::map</span></code></a></p></li>
+<li><p><a class="reference external" href="#il-riempimento-di-una-std-map">5.9.8 Il riempimento di una <code class="docutils literal notranslate"><span class="pre">std::map</span></code></a></p></li>
+<li><p><a class="reference external" href="#la-lettura-di-una-std-map">5.9.9 La lettura di una <code class="docutils literal notranslate"><span class="pre">std::map</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#510-stdstring">5.10 <code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></p>
+<li><p><a class="reference external" href="#std-string">5.10 <code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></p>
 <ul>
-<li><p><a class="reference external" href="#5101-operazioni-con-stringhe">5.10.1 operazioni con stringhe</a></p></li>
-<li><p><a class="reference external" href="#5102-ricerca-di-sotto-elementi-in-una-string">5.10.2 ricerca di sotto-elementi in una <code class="docutils literal notranslate"><span class="pre">string</span></code></a></p></li>
-<li><p><a class="reference external" href="#5103-string-e-caratteri">5.10.3 <code class="docutils literal notranslate"><span class="pre">string</span></code> e caratteri</a></p></li>
+<li><p><a class="reference external" href="#operazioni-con-stringhe">5.10.1 operazioni con stringhe</a></p></li>
+<li><p><a class="reference external" href="#ricerca-di-sotto-elementi-in-una-string">5.10.2 ricerca di sotto-elementi in una <code class="docutils literal notranslate"><span class="pre">string</span></code></a></p></li>
+<li><p><a class="reference external" href="#string-e-caratteri">5.10.3 <code class="docutils literal notranslate"><span class="pre">string</span></code> e caratteri</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#511-esercizi">5.11 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#esempi">5.11 ESEMPI</a></p></li>
+<li><p><a class="reference external" href="#esercizi">5.12 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -762,6 +768,7 @@ con tipi in ingresso differenti:</p>
 <li><p>durante l’esecuzione di un programma, il <code class="docutils literal notranslate"><span class="pre">C++</span></code> è in grado di <strong>scegliere
 la funzione corretta</strong> da utilizzare</p></li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-overloading">5.0</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="se-potessimo-lavorare-meno">
@@ -783,7 +790,7 @@ funzioni che hanno identica implementazione</p></li>
 <ul>
 <li><p>la parola chiave <code class="docutils literal notranslate"><span class="pre">template</span></code>, traducibile in italiano come modello,
 introduce il concetto di tipo generico</p></li>
-<li><p>dunque, per definire una funzione <code class="docutils literal notranslate"><span class="pre">somma</span></code> che valga per un tipo qualunue
+<li><p>dunque, per definire una funzione <code class="docutils literal notranslate"><span class="pre">somma</span></code> che valga per un tipo qualunque
 si scrive</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="n">T</span><span class="w"> </span><span class="n">somma</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"></span>
@@ -802,8 +809,8 @@ e restituisce una variabile di tipo <code class="docutils literal notranslate"><
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="utilizzo-di-una-fuzione-template">
-<h3>5.2.2 utilizzo di una fuzione <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#utilizzo-di-una-fuzione-template" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="utilizzo-di-una-funzione-template">
+<h3>5.2.2 utilizzo di una funzione <code class="docutils literal notranslate"><span class="pre">template</span></code><a class="headerlink" href="#utilizzo-di-una-funzione-template" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>in fase di compilazione,
 il <code class="docutils literal notranslate"><span class="pre">C++</span></code> <strong>implementa e compila tutti i prototipi necessari</strong>,
@@ -822,6 +829,7 @@ implementata (templata) sul tipo <code class="docutils literal notranslate"><spa
 </ul>
 </li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#primo-esempio-di-template">5.1</a>) </div>      
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="attenzione-ai-dettagli">
@@ -849,7 +857,7 @@ come nei casi seguenti:</p>
 da quella delle funzioni</p></li>
 <li><p>quindi tutti gli strumenti <code class="docutils literal notranslate"><span class="pre">template</span></code>,
 se vengono scritti in un file separato,
-vanno implementati all’interno dell’<code class="docutils literal notranslate"><span class="pre">header</span></code></p>
+vanno implementati all’interno dell’<code class="docutils literal notranslate"><span class="pre">header</span></code> (<a class="reference external" href="https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl">approfondimento</a>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef somma_h</span>
 <span class="cp">#define somma_h</span>
 
@@ -866,12 +874,13 @@ vanno implementati all’interno dell’<code class="docutils literal notranslat
 <li><p>durante la compilazione di strumenti <code class="docutils literal notranslate"><span class="pre">template</span></code> il <code class="docutils literal notranslate"><span class="pre">C++</span></code>
 porta a termine un <strong>controllo sintattico accurato</strong></p></li>
 <li><p>la compilazione è solitamente <strong>lunga</strong></p></li>
-<li><p><strong>pochi errori</strong> di scrittura possono tradursi in lunghe lamntele del compilatore</p>
+<li><p><strong>pochi errori</strong> di scrittura possono tradursi in lunghe lamentele del compilatore</p>
 <ul class="simple">
 <li><p>cercate sempre <strong>il primo errore</strong> di compilazione!</p></li>
 </ul>
 </li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-funzione-template-scritta-in-un-file-h">5.2</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
@@ -935,6 +944,7 @@ bisogna <strong>indicare esplicitamente il tipo</strong> sul quale
 </div>
 </li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-classe-template">5.3</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
@@ -953,6 +963,7 @@ su due tipi differenti:</p>
 </div>
 </li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-template-multipli">5.4</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-specializzazione-dei-template">
@@ -977,6 +988,7 @@ si chiama <strong>specializzazione</strong> di un <code class="docutils literal 
 <li><p>il preambolo <code class="docutils literal notranslate"><span class="pre">template&lt;&gt;</span></code> segnala al <code class="docutils literal notranslate"><span class="pre">C++</span></code> che questa implementazione
 è una specializzazione della funzione templata <code class="docutils literal notranslate"><span class="pre">somma</span></code></p></li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-specializzazione-di-un-template">5.5</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="template-su-valori-di-variabili-intere">
@@ -1015,6 +1027,7 @@ il valore di <em>N</em> è noto al <strong>momento della compilazione</strong>,
 quindi è lecito utilizzare l’allocazione automatica della memoria
 per definire l’array <code class="docutils literal notranslate"><span class="pre">elementi</span></code></p></li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-una-classe-templata-sul-valore-di-una-variabile">5.6</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="ordine-nelle-librerie-i-namespace">
@@ -1049,6 +1062,7 @@ bisogna utilizzare l’operatore di risoluzione di <em>scope</em>: <code class="
 </div>
 </li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-un-namespace">5.7</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="un-namespace-familiare-std">
 <h3>5.5.1 un <code class="docutils literal notranslate"><span class="pre">namespace</span></code> familiare: <code class="docutils literal notranslate"><span class="pre">std</span></code><a class="headerlink" href="#un-namespace-familiare-std" title="Permalink to this headline">¶</a></h3>
@@ -1117,7 +1131,7 @@ sono <strong>dedicati a diversi utilizzi</strong>,
 in funzione del tipo di salvataggio necessario
 e della frequenza di accesso ad ogni oggetto</p></li>
 <li><p>noi ne studiamo due molto utilizzati,
-a titolo esempificativo</p></li>
+a titolo esemplificativo</p></li>
 <li><p>documentazione più esaustiva si trova in internet,
 ad esempio <a class="reference external" href="https://justinmeiners.github.io/sgi-stl-docs">qui</a></p></li>
 </ul>
@@ -1142,7 +1156,7 @@ oppure a partire da un altro <code class="docutils literal notranslate"><span cl
 <div class="section" id="la-lettura-di-un-std-vector">
 <h3>5.9.2 La lettura di un <code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#la-lettura-di-un-std-vector" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Gli <strong>elementi esistenti di un <code class="docutils literal notranslate"><span class="pre">vector</span></code></strong> sono accessibli con l’<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>,
+<li><p>Gli <strong>elementi esistenti di un <code class="docutils literal notranslate"><span class="pre">vector</span></code></strong> sono accessibili con l’<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>,
 oppure con il metodo <code class="docutils literal notranslate"><span class="pre">vector::at</span> <span class="pre">(int)</span></code>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;elemento 1 di v_2 &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;elemento 1 di v_2 &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v_2</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1226,7 +1240,7 @@ con in aggiunta metodi per spostarsi ad elementi contigui del contenitore</p></l
 <li><p>di conseguenza, <code class="docutils literal notranslate"><span class="pre">*it</span></code> è l’elemento contenuto in quell’elemento del <code class="docutils literal notranslate"><span class="pre">vector</span></code></p></li>
 <li><p>il metodo <strong>vector::begin ()</strong>
 restituisce l’iteratore al <strong>primo elemento</strong> del <code class="docutils literal notranslate"><span class="pre">vector</span></code></p></li>
-<li><p>il metodo <strong>vector::end ()</strong> restituisce l’interatore alla locazione di memoria
+<li><p>il metodo <strong>vector::end ()</strong> restituisce l’iteratore alla locazione di memoria
 <strong>successiva all’ultimo elemento</strong> del <code class="docutils literal notranslate"><span class="pre">vector</span></code>,
 dunque il ciclo non avviene se <code class="docutils literal notranslate"><span class="pre">it</span></code> è uguale a <code class="docutils literal notranslate"><span class="pre">v_3.end</span> <span class="pre">()</span></code></p></li>
 <li><p>gli iteratori <strong>hanno una propria algebra</strong>,
@@ -1235,6 +1249,7 @@ indica il numero di elementi che intercorrono fra loro</p></li>
 </ul>
 </li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-un-vector">5.8</a>) </div>      
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="std-vector-di-oggetti">
@@ -1276,7 +1291,7 @@ secondo la relazione d’ordine che esiste per le chiavi</p></li>
 <li><p>Il modo più semplice per riempire una <code class="docutils literal notranslate"><span class="pre">map</span></code>
 è utilizzare l’<code class="docutils literal notranslate"><span class="pre">operator[]</span></code>,
 che ha un comportamento duplice:
-se l’elemento corripondente ad una data chiave non esiste,
+se l’elemento corrispondente ad una data chiave non esiste,
 viene creato, altrimenti viene restituito l’elemento esistente:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">mappa_di_esempio</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.5</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">mappa_di_esempio</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.3</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1290,8 +1305,8 @@ le prime due righe definiscono due nuovi elementi,
 mentre la terza <strong>sovrascrive</strong> l’elemento associato alla chiave <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
 </ul>
 </li>
-<li><p>Per gli oggetti sui quali si templa una <code class="docutils literal notranslate"><span class="pre">map</span></code> devono aver definti
-un operatore di assgnazione ed un <em>copy constructor</em></p></li>
+<li><p>Per gli oggetti sui quali si templa una <code class="docutils literal notranslate"><span class="pre">map</span></code> devono aver definiti
+un operatore di assegnazione ed un <em>copy constructor</em></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -1321,6 +1336,7 @@ come un puntatore al <code class="docutils literal notranslate"><span class="pre
 </ul>
 </li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-una-map">5.9</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
@@ -1355,7 +1371,7 @@ con il tipo <a class="reference external" href="https://www.cplusplus.com/refere
 </pre></div>
 </div>
 </li>
-<li><p>Il metodo <code class="docutils literal notranslate"><span class="pre">string::length</span> <span class="pre">()</span></code> resituisce il <strong>numero di caratteri</strong> che compongono la <code class="docutils literal notranslate"><span class="pre">string</span></code>
+<li><p>Il metodo <code class="docutils literal notranslate"><span class="pre">string::length</span> <span class="pre">()</span></code> restituisce il <strong>numero di caratteri</strong> che compongono la <code class="docutils literal notranslate"><span class="pre">string</span></code>
 sul quale viene invocato</p></li>
 <li><p>L’uguaglianza fra due <code class="docutils literal notranslate"><span class="pre">string</span></code> si può verificare con l’<code class="docutils literal notranslate"><span class="pre">operator==()</span></code>.</p></li>
 </ul>
@@ -1409,16 +1425,23 @@ il metodo <code class="docutils literal notranslate"><span class="pre">string::c
 con il contenuto della variabile di tipo <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
 </ul>
 </li>
-<li><p>In generale è preferibile <strong>utilizzare <code class="docutils literal notranslate"><span class="pre">string</span></code> invece di <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">[]</span></code></strong> nonappena possibile,
+<li><p>In generale è preferibile <strong>utilizzare <code class="docutils literal notranslate"><span class="pre">string</span></code> invece di <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">[]</span></code></strong> non appena possibile,
 per via della migliore gestione della memoria,
 oltre che per i diversi strumenti di manipolazione delle stringhe
 disponibili per la classe <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-oggetti-string">5.10</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
+<div class="section" id="esempi">
+<h2>5.11 ESEMPI<a class="headerlink" href="#esempi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esempi relativi alla lezione si trovano <a class="reference internal" href="ESEMPI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
 <div class="section" id="esercizi">
-<h2>5.11 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>5.12 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>

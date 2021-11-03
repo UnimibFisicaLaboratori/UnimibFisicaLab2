@@ -525,6 +525,61 @@
 <ul class="simple">
 <li><p><cite>dynarray.h</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef dynarray_h</span>
+<span class="cp">#define dynarray_h</span>
+
+<span class="k">class</span> <span class="nc">dynarray</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">dynarray</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="c1">// valore di default 100, nel caso nessun valore venga passato</span>
+<span class="w">      </span><span class="n">m_size</span><span class="w"> </span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="w"></span>
+<span class="w">      </span><span class="n">m_dim</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">m_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="p">[</span><span class="n">m_size</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="o">~</span><span class="n">dynarray</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">m_ptr</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">aggiungi</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">valore</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">m_ptr</span><span class="p">[</span><span class="n">m_dim</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="o">++</span><span class="n">m_dim</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_dim</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_size</span><span class="p">)</span><span class="w"></span>
+<span class="w">          </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tempo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_ptr</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">m_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="p">[</span><span class="n">m_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_size</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">m_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">m_size</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">tempo</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">m_dim</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">     </span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">m_dim</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">leggi</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">indice</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">indice</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">0</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_dim</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_ptr</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_ptr</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// puntatore al primo elemento dell&#39;array</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_size</span><span class="w"> </span><span class="p">;</span><span class="w">     </span><span class="c1">// dimensione dello spazion disponibile nell&#39;array</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_dim</span><span class="w"> </span><span class="p">;</span><span class="w">      </span><span class="c1">// numero di elementi effettivamente salvati nell&#39;array  </span>
+
+<span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
 <a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
 </div>
 <div class="section" id="lettura-di-un-file-di-testo-e-visualizzazione-del-contenuto">
