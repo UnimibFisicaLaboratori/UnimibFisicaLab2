@@ -98,11 +98,20 @@ complesso complesso::moltiplicazione(const double & fattore){
 
 //--------------Overloading---------------
 
+complesso
+complesso::operator+ (const complesso & addendo)
+{
+ complesso somma (m_real, m_imag) ;
+ somma.m_real = somma.m_real + addendo.m_real ;
+ somma.m_imag = somma.m_imag + addendo.m_imag ;
+ return somma ;
+}
+
 complesso &  complesso::operator= (const complesso & orig){
   m_real = orig.m_real ;
   m_imag = orig.m_imag ;
   return *this ;
-}  
+}
 
 void complesso::operator+= (const complesso & addendo){
   m_real = m_real + addendo.m_real ;
@@ -144,7 +153,7 @@ void complesso::operator/= (const complesso & fattore){
   double denom = (fattore.m_real*fattore.m_real) + (fattore.m_imag*fattore.m_imag); // c^2 + d^2
 
   //Controlli
-  if (denom==0){ 
+  if (denom==0){
     if (fattore.m_real){
       m_real = m_real/fattore.m_real;
       return;
