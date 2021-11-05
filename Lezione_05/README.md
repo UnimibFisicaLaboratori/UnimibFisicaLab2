@@ -2,40 +2,41 @@
 
 ## Indice
 
-  * [5.1 introduzione](#51-introduzione)
-    * [5.1.1 ripasso: l'*overloading* delle funzioni](#511-ripasso-loverloading-delle-funzioni)
-    * [5.1.2 se potessimo lavorare meno...](#512-se-potessimo-lavorare-meno)
-  * [5.2 funzioni ```template```](#52-funzioni-template)
-    * [5.2.1 definizione di una funzione ```template```](#521-definizione-di-una-funzione-template)
-    * [5.2.2 utilizzo di una fuzione ```template```](#522-utilizzo-di-una-fuzione-template)
-    * [5.2.3 attenzione ai dettagli](#523-attenzione-ai-dettagli)
-    * [5.2.4 ```template``` e compilazione](#524-template-e-compilazione)
-  * [5.3 classi ```template```](#53-classi-template)
-    * [5.3.1 definizione di una classe ```template```](#531-definizione-di-una-classe-template)
-    * [5.3.2 implementazione di una classe ```template```](#532-implementazione-di-una-classe-template)
-    * [5.3.3 utilizzo di una classe ```template```](#533-utilizzo-di-una-classe-template)
-  * [5.4 ```template``` multipli](#54-template-multipli)
-  * [5.5 la specializzazione dei ```template```](#55-la-specializzazione-dei-template)
-  * [5.6 ```template``` su valori di variabili intere](#56-template-su-valori-di-variabili-intere)
-  * [5.7 ordine nelle librerie: i ```namespace```](#57-ordine-nelle-librerie-i-namespace)
-    * [5.5.1 un ```namespace``` familiare: ```std```](#571-un-namespace-familiare-std)
-  * [5.8 Le Standard Template Library](#58-le-standard-template-library)
-    * [5.8.1 Programmazione a diversi livelli](#581-programmazione-a-diversi-livelli)
-  * [5.9 Contenitori STL](#59-contenitori-stl)
-    * [5.9.1 Una sequenza di elementi: ```std::vector```](#591-una-sequenza-di-elementi-stdvector)
-    * [5.9.2 La lettura di un ```std::vector```](#592-la-lettura-di-un-stdvector)
-    * [5.9.3 Il riempimento di un ```std::vector```](#593-il-riempimento-di-un-stdvector)
-    * [5.9.4 ```std::vector``` ed array](#594-stdvector-ed-array)
-    * [5.9.5 l'iterazione sugli elementi di un ```std::vector```](#595-literazione-sugli-elementi-di-un-stdvector)
-    * [5.9.6 ```std::vector``` di oggetti](#596-stdvector-di-oggetti)
-    * [5.9.7 Un contenitore associativo di elementi: ```std::map```](#597-un-contenitore-associativo-di-elementi-stdmap)
-    * [5.9.8 Il riempimento di una ```std::map```](#598-il-riempimento-di-una-stdmap)
-    * [5.9.9 La lettura di una ```std::map```](#599-la-lettura-di-una-stdmap)
-  * [5.10 ```std::string```](#510-stdstring)
-    * [5.10.1 operazioni con stringhe](#5101-operazioni-con-stringhe)
-    * [5.10.2 ricerca di sotto-elementi in una ```string```](#5102-ricerca-di-sotto-elementi-in-una-string)
-    * [5.10.3 ```string``` e caratteri](#5103-string-e-caratteri)
-  * [5.11 ESERCIZI](#511-esercizi)
+  * [5.1 introduzione](#introduzione)
+    * [5.1.1 ripasso: l'*overloading* delle funzioni](#ripasso-l-overloading-delle-funzioni)
+    * [5.1.2 se potessimo lavorare meno...](#se-potessimo-lavorare-meno)
+  * [5.2 funzioni ```template```](#funzioni-template)
+    * [5.2.1 definizione di una funzione ```template```](#definizione-di-una-funzione-template)
+    * [5.2.2 utilizzo di una fuzione ```template```](#utilizzo-di-una-fuzione-template)
+    * [5.2.3 attenzione ai dettagli](#attenzione-ai-dettagli)
+    * [5.2.4 ```template``` e compilazione](#template-e-compilazione)
+  * [5.3 classi ```template```](#classi-template)
+    * [5.3.1 definizione di una classe ```template```](#definizione-di-una-classe-template)
+    * [5.3.2 implementazione di una classe ```template```](#implementazione-di-una-classe-template)
+    * [5.3.3 utilizzo di una classe ```template```](#utilizzo-di-una-classe-template)
+  * [5.4 ```template``` multipli](#template-multipli)
+  * [5.5 la specializzazione dei ```template```](#la-specializzazione-dei-template)
+  * [5.6 ```template``` su valori di variabili intere](#template-su-valori-di-variabili-intere)
+  * [5.7 ordine nelle librerie: i ```namespace```](#ordine-nelle-librerie-i-namespace)
+    * [5.5.1 un ```namespace``` familiare: ```std```](#un-namespace-familiare-std)
+  * [5.8 Le Standard Template Library](#le-standard-template-library)
+    * [5.8.1 Programmazione a diversi livelli](#programmazione-a-diversi-livelli)
+  * [5.9 Contenitori STL](#contenitori-stl)
+    * [5.9.1 Una sequenza di elementi: ```std::vector```](#una-sequenza-di-elementi-std-vector)
+    * [5.9.2 La lettura di un ```std::vector```](#la-lettura-di-un-std-vector)
+    * [5.9.3 Il riempimento di un ```std::vector```](#il-riempimento-di-un-std-vector)
+    * [5.9.4 ```std::vector``` ed array](#std-vector-ed-array)
+    * [5.9.5 l'iterazione sugli elementi di un ```std::vector```](#l-iterazione-sugli-elementi-di-un-std-vector)
+    * [5.9.6 ```std::vector``` di oggetti](#std-vector-di-oggetti)
+    * [5.9.7 Un contenitore associativo di elementi: ```std::map```](#un-contenitore-associativo-di-elementi-std-map)
+    * [5.9.8 Il riempimento di una ```std::map```](#il-riempimento-di-una-std-map)
+    * [5.9.9 La lettura di una ```std::map```](#la-lettura-di-una-std-map)
+  * [5.10 ```std::string```](#std-string)
+    * [5.10.1 operazioni con stringhe](#operazioni-con-stringhe)
+    * [5.10.2 ricerca di sotto-elementi in una ```string```](#ricerca-di-sotto-elementi-in-una-string)
+    * [5.10.3 ```string``` e caratteri](#string-e-caratteri)
+  * [5.11 ESEMPI](#esempi)
+  * [5.12 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -63,6 +64,8 @@
   * durante l'esecuzione di un programma, il ```C++``` è in grado di **scegliere
     la funzione corretta** da utilizzare
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-overloading">5.0</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ### 5.1.2 se potessimo lavorare meno...
@@ -82,7 +85,7 @@
 
   * la parola chiave ```template```, traducibile in italiano come modello,
     introduce il concetto di tipo generico
-  * dunque, per definire una funzione ```somma``` che valga per un tipo qualunue
+  * dunque, per definire una funzione ```somma``` che valga per un tipo qualunque
     si scrive
     ```cpp
     template <typename T>
@@ -98,7 +101,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 5.2.2 utilizzo di una fuzione ```template```
+### 5.2.2 utilizzo di una funzione ```template```
 
   * in fase di compilazione,
     il ```C++``` **implementa e compila tutti i prototipi necessari**,
@@ -113,6 +116,8 @@
     * nel primo caso, il ```C++``` **capisce implicitamente** che tipo utilizzare
     * nel secondo caso, il termine ```<int>``` **forza** il ```C++``` ad utilizzare la funzione ```somma```
       implementata (templata) sul tipo ```int```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#primo-esempio-di-template">5.1</a>) </div>      
 
 ![linea](../immagini/linea.png)
 
@@ -138,7 +143,7 @@
     da quella delle funzioni
   * quindi tutti gli strumenti ```template```,
     se vengono scritti in un file separato,
-    vanno implementati all'interno dell'```header```
+    vanno implementati all'interno dell'```header``` ([approfondimento](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl))
     ```cpp
     #ifndef somma_h
     #define somma_h
@@ -154,8 +159,10 @@
   * durante la compilazione di strumenti ```template``` il ```C++```
     porta a termine un **controllo sintattico accurato**
   * la compilazione è solitamente **lunga**
-  * **pochi errori** di scrittura possono tradursi in lunghe lamntele del compilatore
+  * **pochi errori** di scrittura possono tradursi in lunghe lamentele del compilatore
     * cercate sempre **il primo errore** di compilazione!
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-funzione-template-scritta-in-un-file-h">5.2</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -214,6 +221,8 @@
       contenitore[i] = 2 * i ;
     ```
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-classe-template">5.3</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ## 5.4 ```template``` multipli
@@ -228,6 +237,8 @@
         return a + b ;
       }
     ```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-template-multipli">5.4</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -250,6 +261,8 @@
     ```  
   * il preambolo ```template<>``` segnala al ```C++``` che questa implementazione
     è una specializzazione della funzione templata ```somma```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-specializzazione-di-un-template">5.5</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -288,6 +301,8 @@
     quindi è lecito utilizzare l'allocazione automatica della memoria
     per definire l'array ```elementi```
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-una-classe-templata-sul-valore-di-una-variabile">5.6</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ## 5.7 ordine nelle librerie: i ```namespace```
@@ -318,6 +333,8 @@
     std::cout << "somma di interi    " << ops::somma (i_a, i_b) << std::endl ;
     std::cout << "somma di razionali " << ops::somma (d_a, d_b) << std::endl ;
     ```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-un-namespace">5.7</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -383,7 +400,7 @@
     in funzione del tipo di salvataggio necessario
     e della frequenza di accesso ad ogni oggetto
   * noi ne studiamo due molto utilizzati,
-    a titolo esempificativo
+    a titolo esemplificativo
   * documentazione più esaustiva si trova in internet,
     ad esempio [qui](https://justinmeiners.github.io/sgi-stl-docs)  
 
@@ -406,7 +423,7 @@
 
 ### 5.9.2 La lettura di un ```std::vector```
 
-  * Gli **elementi esistenti di un ```vector```** sono accessibli con l'```operator[]```,
+  * Gli **elementi esistenti di un ```vector```** sono accessibili con l'```operator[]```,
     oppure con il metodo ```vector::at (int)```:
     ```cpp
     cout << "elemento 1 di v_2 " << v_2[1] << endl ;
@@ -477,12 +494,14 @@
     * di conseguenza, ```*it``` è l'elemento contenuto in quell'elemento del ```vector```  
     * il metodo **vector::begin ()**
       restituisce l'iteratore al **primo elemento** del ```vector```
-    * il metodo **vector::end ()** restituisce l'interatore alla locazione di memoria
+    * il metodo **vector::end ()** restituisce l'iteratore alla locazione di memoria
       **successiva all'ultimo elemento** del ```vector```,
       dunque il ciclo non avviene se ```it``` è uguale a ```v_3.end ()```
     * gli iteratori **hanno una propria algebra**,
       per cui la differenza fra iteratori dello stesso contenitore  
       indica il numero di elementi che intercorrono fra loro  
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-un-vector">5.8</a>) </div>      
 
 ![linea](../immagini/linea.png)
 
@@ -521,7 +540,7 @@
   * Il modo più semplice per riempire una ```map```
     è utilizzare l'```operator[]```,
     che ha un comportamento duplice:
-    se l'elemento corripondente ad una data chiave non esiste,
+    se l'elemento corrispondente ad una data chiave non esiste,
     viene creato, altrimenti viene restituito l'elemento esistente:
     ```cpp
     mappa_di_esempio[5] = 5.5 ;
@@ -532,8 +551,8 @@
     * In questo caso,
       le prime due righe definiscono due nuovi elementi,
       mentre la terza **sovrascrive** l'elemento associato alla chiave ```5```
-  * Per gli oggetti sui quali si templa una ```map``` devono aver definti
-    un operatore di assgnazione ed un *copy constructor*
+  * Per gli oggetti sui quali si templa una ```map``` devono aver definiti
+    un operatore di assegnazione ed un *copy constructor*
 
 ![linea](../immagini/linea.png)
 
@@ -559,6 +578,8 @@
     ```
     * l'iteratore ```it``` si comporta, all'interno del ciclo,
       come un puntatore al ```pair``` corrispondente ad ogni elemento della ```map```
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-una-map">5.9</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -588,7 +609,7 @@
     string s_3 = s_1 + s_2 ;
     cout << s_3 << endl ;
     ```
-  * Il metodo ```string::length ()``` resituisce il **numero di caratteri** che compongono la ```string```
+  * Il metodo ```string::length ()``` restituisce il **numero di caratteri** che compongono la ```string```
     sul quale viene invocato
   * L'uguaglianza fra due ```string``` si può verificare con l'```operator==()```.  
 
@@ -633,13 +654,19 @@
     * Per compatibilità con funzioni implementate con lo stile ```C```,
       il metodo ```string::c_str ()``` restituisce il **vettore di caratteri**
       con il contenuto della variabile di tipo ```string```
-  * In generale è preferibile **utilizzare ```string``` invece di ```char []```** nonappena possibile,
+  * In generale è preferibile **utilizzare ```string``` invece di ```char []```** non appena possibile,
     per via della migliore gestione della memoria,
     oltre che per i diversi strumenti di manipolazione delle stringhe
     disponibili per la classe ```string```.
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-uso-di-oggetti-string">5.10</a>) </div>
+
 ![linea](../immagini/linea.png)
 
-## 5.11 ESERCIZI
+## 5.11 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+## 5.12 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)

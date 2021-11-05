@@ -5,19 +5,19 @@
 
 class complesso{
 
-public: 
+public:
     // Constructors
     complesso();
-    complesso(double r); 
-    complesso (double r, double i) ; 
+    complesso(double r);
+    complesso (double r, double i) ;
     complesso (const complesso & orig);
     // Destructor
     ~complesso () ;
 
     // Public class methods
-    double modulo () ;      
-    double fase () ;  
-    void stampami();  
+    double modulo () ;
+    double fase () ;
+    void stampami();
     double get_real() { return m_real; };
     double get_imag() { return m_imag; };
     complesso somma(const complesso & orig);
@@ -26,6 +26,7 @@ public:
     complesso moltiplicazione(const complesso & fattore);
 
     // Operators overloading
+    complesso operator+ (const complesso & addendo);  
     complesso &  operator= (const complesso & orig);
     void operator+= (const complesso & addendo);
     void operator+= (const double & addendo);
@@ -35,7 +36,7 @@ public:
     void operator*= (const double & fattore);
     void operator/= (const complesso & fattore);
     void operator/= (const double & fattore);
-    
+
 
 private:
     // Private members
