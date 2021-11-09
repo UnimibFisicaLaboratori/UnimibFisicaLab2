@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lezione 7: la distribuzione di Poisson &#8212; Laboratorio 2</title>
+    <title>Lezione 7: La distribuzione di Poisson &#8212; Laboratorio 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -355,7 +355,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph">
-   7.1 rappresentazione di andamenti
+   7.1 Rappresentazione di andamenti
    <em>
     y
    </em>
@@ -373,7 +373,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#definizione-di-un-tgraph">
-     7.1.1 definizione di un
+     7.1.1 Definizione di un
      <code class="docutils literal notranslate">
       <span class="pre">
        TGraph
@@ -383,7 +383,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#riempimento-di-un-tgraph">
-     7.1.2 riempimento di un
+     7.1.2 Riempimento di un
      <code class="docutils literal notranslate">
       <span class="pre">
        TGraph
@@ -393,7 +393,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#disegno-di-un-tgraph">
-     7.1.3 disegno di un
+     7.1.3 Disegno di un
      <code class="docutils literal notranslate">
       <span class="pre">
        TGraph
@@ -403,24 +403,24 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#qualche-opzione-grafica">
-     7.1.4 qualche opzione grafica
+     7.1.4 Qualche opzione grafica
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#i-processi-poissoniani">
-   7.2 i processi poissoniani
+   7.2 I processi poissoniani
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#la-generazione-di-eventi-secondo-una-distribuzione-di-poisson">
-   7.2.1 la generazione di eventi secondo una distribuzione di Poisson
+   7.2.1 La generazione di eventi secondo una distribuzione di Poisson
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ripasso-la-generazione-di-eventi-secondo-un-distribuzione-f-x-con-la-tecnica-della-funzione-inversa">
-   7.3 ripasso: la generazione di eventi secondo un distribuzione
+   7.3 Ripasso: la generazione di eventi secondo un distribuzione
    <em>
     f(x)
    </em>
@@ -429,14 +429,19 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#l-algoritmo-della-funzione-inversa">
-     7.3.1 l’algoritmo della funzione inversa
+     7.3.1 L’algoritmo della funzione inversa
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#il-caso-esponenziale">
-   7.3.2 il caso esponenziale
+   7.3.2 Il caso esponenziale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-caratteristiche-della-distribuzione-di-poisson">
+   7.4 Le caratteristiche della distribuzione di Poisson
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -456,10 +461,10 @@
               <div>
                 
   <div class="section" id="lezione-7-la-distribuzione-di-poisson">
-<h1>Lezione 7: la distribuzione di Poisson<a class="headerlink" href="#lezione-7-la-distribuzione-di-poisson" title="Permalink to this headline">¶</a></h1>
+<h1>Lezione 7: La distribuzione di Poisson<a class="headerlink" href="#lezione-7-la-distribuzione-di-poisson" title="Permalink to this headline">¶</a></h1>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="rappresentazione-di-andamenti-y-vs-x-i-tgraph">
-<h2>7.1 rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph" title="Permalink to this headline">¶</a></h2>
+<h2>7.1 Rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>gli istogrammi mostrano una <strong>singola variabile fisica</strong></p></li>
 <li><p>talvolta è utile visualizzare <strong>coppie di misure</strong> <em>(x,y)</em></p></li>
@@ -467,7 +472,7 @@
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="definizione-di-un-tgraph">
-<h3>7.1.1 definizione di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#definizione-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.1 Definizione di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#definizione-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>come sempre, bisogna includere la <strong>libreria</strong> corrispondente:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TGraph.h&quot;</span><span class="cp"></span>
@@ -494,7 +499,7 @@ oppure a partire da array già riempiti</p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="riempimento-di-un-tgraph">
-<h3>7.1.2 riempimento di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#riempimento-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.2 Riempimento di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#riempimento-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> viene <strong>riempito</strong> con il metodo <code class="docutils literal notranslate"><span class="pre">TGraph::SetPoint</span> <span class="pre">(Int_t</span> <span class="pre">i,</span> <span class="pre">Double_t</span> <span class="pre">x,</span> <span class="pre">Double_t</span> <span class="pre">y)</span></code>,
 che prende in input:</p>
@@ -519,7 +524,7 @@ perché le variaibli definite internamente da <code class="docutils literal notr
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="disegno-di-un-tgraph">
-<h3>7.1.3 disegno di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#disegno-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.3 Disegno di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#disegno-di-un-tgraph" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>come nel caso di <code class="docutils literal notranslate"><span class="pre">TH1F</span></code>, un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> si <strong>disegna su un <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code></strong>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TCanvas</span><span class="w"> </span><span class="nf">c1</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -542,7 +547,7 @@ perché le variaibli definite internamente da <code class="docutils literal notr
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="qualche-opzione-grafica">
-<h3>7.1.4 qualche opzione grafica<a class="headerlink" href="#qualche-opzione-grafica" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.4 Qualche opzione grafica<a class="headerlink" href="#qualche-opzione-grafica" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>anche per un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code>,
 si possono impostare diversi parametri grafici:</p>
@@ -565,7 +570,7 @@ per comporre graficamente il disegno</p></li>
 </div>
 </div>
 <div class="section" id="i-processi-poissoniani">
-<h2>7.2 i processi poissoniani<a class="headerlink" href="#i-processi-poissoniani" title="Permalink to this headline">¶</a></h2>
+<h2>7.2 I processi poissoniani<a class="headerlink" href="#i-processi-poissoniani" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Un evento fisico che produce eventi casuali distribuiti nel tempo
 è di carattere Poissoniano se:</p>
@@ -590,7 +595,7 @@ di densità di probabilità esponenziale
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-generazione-di-eventi-secondo-una-distribuzione-di-poisson">
-<h2>7.2.1 la generazione di eventi secondo una distribuzione di Poisson<a class="headerlink" href="#la-generazione-di-eventi-secondo-una-distribuzione-di-poisson" title="Permalink to this headline">¶</a></h2>
+<h2>7.2.1 La generazione di eventi secondo una distribuzione di Poisson<a class="headerlink" href="#la-generazione-di-eventi-secondo-una-distribuzione-di-poisson" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>per ottenere eventi pseudo-casuali distribuiti secondo una <strong>distribuzione di probabilità Poisson</strong>
 si può:</p>
@@ -606,7 +611,7 @@ se <em>λ</em> è la media di eventi attesa dalla distribuzione di Poisson</p></
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="ripasso-la-generazione-di-eventi-secondo-un-distribuzione-f-x-con-la-tecnica-della-funzione-inversa">
-<h2>7.3 ripasso: la generazione di eventi secondo un distribuzione <em>f(x)</em> con la tecnica della funzione inversa<a class="headerlink" href="#ripasso-la-generazione-di-eventi-secondo-un-distribuzione-f-x-con-la-tecnica-della-funzione-inversa" title="Permalink to this headline">¶</a></h2>
+<h2>7.3 Ripasso: la generazione di eventi secondo un distribuzione <em>f(x)</em> con la tecnica della funzione inversa<a class="headerlink" href="#ripasso-la-generazione-di-eventi-secondo-un-distribuzione-f-x-con-la-tecnica-della-funzione-inversa" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>sia x una variabile casuale con pdf <em>f(x)</em> continua</p></li>
 <li><p>sia <em>F(x)</em> la distribuzione di probabilità cumulativa (cdf)</p></li>
@@ -617,7 +622,7 @@ equivale a generare eventi pseudo-casuali lungo <em>x</em> con distribuzione <em
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="l-algoritmo-della-funzione-inversa">
-<h3>7.3.1 l’algoritmo della funzione inversa<a class="headerlink" href="#l-algoritmo-della-funzione-inversa" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.1 L’algoritmo della funzione inversa<a class="headerlink" href="#l-algoritmo-della-funzione-inversa" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>si <strong>calcolano analiticamente</strong> <em>F(x)</em> e la sua funzione inversa <em>F <sup>-1</sup>(y)</em></p></li>
 </ul>
@@ -637,12 +642,23 @@ che è l’obiettivo che si vuole ottenere.</p></li>
 </div>
 </div>
 <div class="section" id="il-caso-esponenziale">
-<h2>7.3.2 il caso esponenziale<a class="headerlink" href="#il-caso-esponenziale" title="Permalink to this headline">¶</a></h2>
+<h2>7.3.2 Il caso esponenziale<a class="headerlink" href="#il-caso-esponenziale" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>nel caso della distribuzione esponenziale, le <strong>richieste necessarie per l’applicazione del metodo</strong> sono soddisfatte,
 perché se ne conosce la primitiva e si può invertire:</p></li>
 </ul>
 <p><img alt="funzione_inversa_exp" src="../_images/funzione_inversa_exp.png" /></p>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="le-caratteristiche-della-distribuzione-di-poisson">
+<h2>7.4 Le caratteristiche della distribuzione di Poisson<a class="headerlink" href="#le-caratteristiche-della-distribuzione-di-poisson" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>con gli strumenti descritti, si possono <strong>generare campioni di numeri pseudo-casuali</strong>
+di tipo Poissoniano e verificare le caratteristiche della loro distribuzione,
+attraverso lo <strong>studio dei momenti dei campioni generati</strong>,
+disegnati con <code class="docutils literal notranslate"><span class="pre">TGraph</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>:</p></li>
+</ul>
+<p><img alt="grafici" src="../_images/grafici.png" /></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="x-esercizi">

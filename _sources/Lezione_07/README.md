@@ -1,9 +1,9 @@
-# Lezione 7: la distribuzione di Poisson 
+# Lezione 7: La distribuzione di Poisson 
 
 
 ![linea](../immagini/linea.png)
 
-## 7.1 rappresentazione di andamenti *y* vs *x*: i ```TGraph```
+## 7.1 Rappresentazione di andamenti *y* vs *x*: i ```TGraph```
 
   * gli istogrammi mostrano una **singola variabile fisica**
   * talvolta è utile visualizzare **coppie di misure** *(x,y)*
@@ -11,7 +11,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.1.1 definizione di un ```TGraph```  
+### 7.1.1 Definizione di un ```TGraph```  
 
   * come sempre, bisogna includere la **libreria** corrispondente:
     ```cpp
@@ -32,7 +32,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.1.2 riempimento di un ```TGraph```
+### 7.1.2 Riempimento di un ```TGraph```
 
   * un ```TGraph``` viene **riempito** con il metodo ```TGraph::SetPoint (Int_t i, Double_t x, Double_t y)```,
     che prende in input:
@@ -51,7 +51,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.1.3 disegno di un ```TGraph```
+### 7.1.3 Disegno di un ```TGraph```
 
   * come nel caso di ```TH1F```, un ```TGraph``` si **disegna su un ```TCanvas```**:
     ```cpp
@@ -67,7 +67,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.1.4 qualche opzione grafica
+### 7.1.4 Qualche opzione grafica
 
   * anche per un ```TGraph```,
     si possono impostare diversi parametri grafici:
@@ -85,7 +85,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.2 i processi poissoniani
+## 7.2 I processi poissoniani
 
   * Un evento fisico che produce eventi casuali distribuiti nel tempo 
     è di carattere Poissoniano se:
@@ -103,7 +103,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.2.1 la generazione di eventi secondo una distribuzione di Poisson
+## 7.2.1 La generazione di eventi secondo una distribuzione di Poisson
 
   * per ottenere eventi pseudo-casuali distribuiti secondo una **distribuzione di probabilità Poisson**
     si può:
@@ -115,7 +115,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.3 ripasso: la generazione di eventi secondo un distribuzione *f(x)* con la tecnica della funzione inversa
+## 7.3 Ripasso: la generazione di eventi secondo un distribuzione *f(x)* con la tecnica della funzione inversa
 
   * sia x una variabile casuale con pdf *f(x)* continua
   * sia *F(x)* la distribuzione di probabilità cumulativa (cdf)
@@ -126,7 +126,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 7.3.1 l'algoritmo della funzione inversa
+### 7.3.1 L'algoritmo della funzione inversa
 
   * si **calcolano analiticamente** *F(x)* e la sua funzione inversa *F <sup>-1</sup>(y)*
 
@@ -144,12 +144,23 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.3.2 il caso esponenziale
+## 7.3.2 Il caso esponenziale
 
   * nel caso della distribuzione esponenziale, le **richieste necessarie per l'applicazione del metodo** sono soddisfatte,
     perché se ne conosce la primitiva e si può invertire:
 
 ![funzione_inversa_exp](immagini/funzione_inversa_exp.png)
+
+![linea](../immagini/linea.png)
+
+## 7.4 Le caratteristiche della distribuzione di Poisson
+
+  * con gli strumenti descritti, si possono **generare campioni di numeri pseudo-casuali** 
+    di tipo Poissoniano e verificare le caratteristiche della loro distribuzione,
+    attraverso lo **studio dei momenti dei campioni generati**,
+    disegnati con ```TGraph``` di ```ROOT```:
+
+![grafici](immagini/grafici.png)
 
 ![linea](../immagini/linea.png)
 
