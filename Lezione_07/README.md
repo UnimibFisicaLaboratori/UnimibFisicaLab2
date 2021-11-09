@@ -150,7 +150,7 @@
     perché se ne conosce la primitiva e si può invertire:
 ![funzione_inversa_exp](immagini/funzione_inversa_exp.png)
     * in questo caso, la variabile *y* è un numero pseudo-casuale 
-      che segue una distribuzione di densità di probabilità uniforme fra 0 ed 1
+      che segue una **distribuzione di densità di probabilità uniforme fra 0 ed 1**
       (l'intervallo di valori che può assumere un esponenziale descrecente definito sull'asse positivo)
 
 ![linea](../immagini/linea.png)
