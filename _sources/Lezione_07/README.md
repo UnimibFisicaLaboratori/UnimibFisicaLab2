@@ -97,7 +97,7 @@
         il numero di eventi osservati in un intervallo di tempo *&tau;* 
         segue la distribuzione di probabilità di Poisson:
         ![pois_exp](immagini/poisson.png)
-      * le differenze di tempo fra due eventi successivi seguono una distribuzione
+      * le differenze di tempo *&delta;<sub>i</sub>* fra due eventi successivi seguono una distribuzione
         di densità di probabilità esponenziale
         ![pois_exp](immagini/pois_exp.png)
 
@@ -105,11 +105,11 @@
 
 ## 7.2.1 la generazione di eventi secondo una distribuzione di Poisson
 
-  * per ottenere eventi pseudo-casuali distribuiti secondo una distribuzione di probabilità Poisson
+  * per ottenere eventi pseudo-casuali distribuiti secondo una **distribuzione di probabilità Poisson**
     si può:
-    * generare eventi secondo una distribuzione di densità di probabilità esponenziale
+    * generare eventi secondo una **distribuzione di densità di probabilità esponenziale**
       con tempo caratteristico *t<sub>0</sub>* unitario
-    * contare quanti eventi caschino in un determinato intervallo *&tau;* 
+    * **contare quanti eventi caschino in un determinato intervallo *&tau;* **
       scelto con lunghezza *&lambda;*, 
       se *&lambda;* è la media di eventi attesa dalla distribuzione di Poisson
 
@@ -146,7 +146,8 @@
 
 ## 7.3.2 il caso esponenziale
 
-  * nel caso della distribuzione esponenziale, le condizioni sono soddisfatte:
+  * nel caso della distribuzione esponenziale, le **richieste necessarie per l'applicazione del metodo** sono soddisfatte,
+    perché se ne conosce la primitiva e si può invertire:
 
 ![funzione_inversa_exp](immagini/funzione_inversa_exp.png)
 
