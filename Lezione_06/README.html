@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -403,8 +405,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esempi">
+   6.4 ESEMPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   6.4 ESERCIZI
+   6.5 ESERCIZI
   </a>
  </li>
 </ul>
@@ -423,21 +430,22 @@
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#61-aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione">6.1 alla ricerca degli zeri di una funzione</a></p>
+<li><p><a class="reference external" href="#alla-ricerca-degli-zeri-di-una-funzione">6.1 alla ricerca degli zeri di una funzione</a></p>
 <ul>
-<li><p><a class="reference external" href="#611-il-metodo-della-bisezione">6.1.1 il metodo della bisezione</a></p></li>
-<li><p><a class="reference external" href="#612-una-implementazione-dellalgoritmo-di-bisezione">6.1.2 una implementazione dell’algoritmo di bisezione</a></p></li>
-<li><p><a class="reference external" href="#613-una-implementazione-dellalgoritmo-di-bisezione-in-modo-ricorsivo">6.1.3 una implementazione dell’algoritmo di bisezione in modo ricorsivo</a></p></li>
+<li><p><a class="reference external" href="#il-metodo-della-bisezione">6.1.1 il metodo della bisezione</a></p></li>
+<li><p><a class="reference external" href="#una-implementazione-dell-algoritmo-di-bisezione">6.1.2 una implementazione dell’algoritmo di bisezione</a></p></li>
+<li><p><a class="reference external" href="#una-implementazione-dell-algoritmo-di-bisezione-in-modo-ricorsivo">6.1.3 una implementazione dell’algoritmo di bisezione in modo ricorsivo</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#62-la-ricerca-di-estremanti-il-metodo-della-sezione-aurea">6.2 la ricerca di estremanti: il metodo della sezione aurea</a></p>
+<li><p><a class="reference external" href="#la-ricerca-di-estremanti-il-metodo-della-sezione-aurea">6.2 la ricerca di estremanti: il metodo della sezione aurea</a></p>
 <ul>
-<li><p><a class="reference external" href="#622-il-criterio-di-restringimento">6.2.1 il criterio di restringimento</a></p></li>
-<li><p><a class="reference external" href="#623-lottimizzazione-della-scelta-dei-punti">6.2.2 l’ottimizzazione della scelta dei punti</a></p></li>
+<li><p><a class="reference external" href="#il-criterio-di-restringimento">6.2.1 il criterio di restringimento</a></p></li>
+<li><p><a class="reference external" href="#l-ottimizzazione-della-scelta-dei-punti">6.2.2 l’ottimizzazione della scelta dei punti</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#63-mettere-tutto-insieme">6.3 mettere tutto insieme</a></p></li>
-<li><p><a class="reference external" href="#65-esercizi">6.4 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#mettere-tutto-insieme">6.3 mettere tutto insieme</a></p></li>
+<li><p><a class="reference external" href="#esempi">6.4 ESEMPI</a></p></li>
+<li><p><a class="reference external" href="#esercizi">6.5 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -445,15 +453,21 @@
 <h2>6.1 alla ricerca degli zeri di una funzione<a class="headerlink" href="#alla-ricerca-degli-zeri-di-una-funzione" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Esistono tecniche numeriche per <strong>trovare gli zeri</strong> di una funzione</p></li>
-<li><p>Ipotesi sempici:</p>
-<ul>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Ipotesi semplici</p>
+<ul class="simple">
 <li><p>Funzione <em>g(x)</em> <strong>continua definita su un intervallo compatto e connesso</strong> <em>[x<sub>0</sub>, x<sub>1</sub>]</em></p></li>
+<li><p>Agli estremi dell’intervallo, i valori della funzione <strong>hanno segno opposto</strong></p></li>
 <li><p>La funzione ha <strong>un solo zero</strong> nell’intervallo</p></li>
-<li><p>Agli estremi dell’intervallo, i valori della funzione <strong>hanno segno opposto</strong>
-<img alt="funzione_con_zero" src="../_images/funzione_con_zero.png" /></p></li>
 </ul>
-</li>
-</ul>
+</div>
+  <!--
+  * Ipotesi sempici:
+    * Funzione *g(x)* **continua definita su un intervallo compatto e connesso** *[x<sub>0</sub>, x<sub>1</sub>]*
+    * Agli estremi dell'intervallo, i valori della funzione **hanno segno opposto**
+    * La funzione ha **un solo zero** nell'intervallo -->
+<p><img alt="funzione_con_zero" src="../_images/funzione_con_zero.png" /></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="il-metodo-della-bisezione">
 <h3>6.1.1 il metodo della bisezione<a class="headerlink" href="#il-metodo-della-bisezione" title="Permalink to this headline">¶</a></h3>
@@ -494,6 +508,7 @@ e si decide se lo zero stia alla sua destra o alla sua sinistra</p>
 <span class="p">}</span><span class="w">  </span>
 </pre></div>
 </div>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-ricerca-di-zeri">6.0</a>) </div>
 </li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
@@ -522,34 +537,33 @@ cioè che invoca se stessa:</p>
 </div>
 </li>
 </ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>attenzione</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+  <!-- | attenzione |
+  | -------- | -->
+<div class="warning admonition">
+<p class="admonition-title">Attenzione</p>
+<p>In ogni funzione ricorsiva, devono essere presenti <strong>due elementi</strong>:</p>
 <ul class="simple">
-<li><p>In ogni funzione ricorsiva, devono essere presenti <strong>due elementi</strong>:</p>
-<ul>
 <li><p>L’<strong>invocazione della funzione</strong> stessa</p></li>
 <li><p>La <strong>condizione di uscita</strong> dalla sequenza di auto-invocazioni</p></li>
 </ul>
-</li>
-</ul>
+</div>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-bisezione-ricorsiva">6.1</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-ricerca-di-estremanti-il-metodo-della-sezione-aurea">
 <h3>6.2 la ricerca di estremanti: il metodo della sezione aurea<a class="headerlink" href="#la-ricerca-di-estremanti-il-metodo-della-sezione-aurea" title="Permalink to this headline">¶</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Ipotesi semplici</p>
 <ul class="simple">
-<li><p>Ipotesi sempici:</p>
-<ul>
-<li><p>funzione <em>g(x)</em> <strong>continua definita su un intervallo compatto e connesso</strong> <em>[x<sub>0</sub>, x<sub>1</sub>]</em></p></li>
-<li><p>la funzione ha <strong>un solo estremante</strong> nell’intervallo
-<img alt="funzione_con_minimo" src="../_images/funzione_con_minimo.png" /></p></li>
+<li><p>Funzione <em>g(x)</em> <strong>continua definita su un intervallo compatto e connesso</strong> <em>[x<sub>0</sub>, x<sub>1</sub>]</em></p></li>
+<li><p>la funzione ha <strong>un solo estremante</strong> nell’intervallo</p></li>
 </ul>
-</li>
+</div>
+  <!-- * Ipotesi sempici:
+    * funzione *g(x)* **continua definita su un intervallo compatto e connesso** *[x<sub>0</sub>, x<sub>1</sub>]*
+    * la funzione ha **un solo estremante** nell'intervallo -->
+<p><img alt="funzione_con_minimo" src="../_images/funzione_con_minimo.png" /></p>
+<ul class="simple">
 <li><p>Anche in questo caso si procede per passi,
 <strong>restringendo ad ogni iterazione l’intervallo</strong> che contiene l’estremante
 fino a che diventa più piccolo di una precisione prefissata</p></li>
@@ -564,9 +578,8 @@ in diverse regioni dell’intervallo,
 quindi se ne cercano quattro, che determinano tre intervalli</p></li>
 <li><p>L’intervallo si stringe <strong>eliminando il tratto dove il minimo di sicuro non c’è</strong>.
 <img alt="sezione_aurea_pendenza" src="../_images/sezione_aurea_pendenza.png" /></p></li>
-<li><p>L’iterazione successiva si restringe a
-<em>[x<sub>3</sub>, x<sub>1</sub>]</em> se <em>g(x<sub>3</sub>) &gt; g(x<sub>2</sub>)</em>,
-altrimenti si restringe a <em>[x<sub>o</sub>, x<sub>2</sub>]</em></p></li>
+<li><p>L’iterazione successiva si restringe a <span class="math notranslate nohighlight">\([x_3,x_1]\)</span> se <span class="math notranslate nohighlight">\(g(x_3) &gt; g(x_2)\)</span>,
+altrimenti si restringe a <span class="math notranslate nohighlight">\([x_0, x_2]\)</span></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -574,9 +587,9 @@ altrimenti si restringe a <em>[x<sub>o</sub>, x<sub>2</sub>]</em></p></li>
 <h3>6.2.2 l’ottimizzazione della scelta dei punti<a class="headerlink" href="#l-ottimizzazione-della-scelta-dei-punti" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Per ottimizzare il calcolo,
-i punti <em>x<sub>2</sub>, x<sub>3</sub></em> vengono scelti in modo
-che uno dei due possa essere <strong>utilizzato anche nell’iterazione seguente</strong>,
-garantendo la stessa proporzione di suddivisione dell’intervallo
+i punti <span class="math notranslate nohighlight">\(x_2, x_3\)</span> vengono scelti in modo che uno dei due possa essere
+<strong>utilizzato anche nell’iterazione seguente</strong>, garantendo la stessa proporzione
+di suddivisione dell’intervallo
 <img alt="sezione_aurea_r" src="../_images/sezione_aurea_r.png" /></p></li>
 <li><p>Perché questo sia possibile deve valere:
 <img alt="sezione_aurea_r" src="../_images/sezione_aurea_formula.png" /></p></li>
@@ -606,8 +619,15 @@ dello spazio di definizione</strong> delle funzioni</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
+<div class="section" id="esempi">
+<h2>6.4 ESEMPI<a class="headerlink" href="#esempi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esempi relativi alla lezione si trovano <a class="reference internal" href="ESEMPI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
 <div class="section" id="esercizi">
-<h2>6.4 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>6.5 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
