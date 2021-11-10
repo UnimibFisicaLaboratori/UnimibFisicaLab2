@@ -26,5 +26,6 @@
   * [Lezione 1](Lezione_01/README.md) : strutturazione di un programma ed introduzione al ```C++```
   * [Lezione 2](Lezione_02/README.md) : programmazione ad oggetti: le classi
   * [Lezione 3](Lezione_03/README.md) : visualizzazione dei dati con ROOT
-  * [Lezione 4](Lezione_04/README.md) : generazione di numeri pseudo-casuali
+  * [Lezione 4](Lezione_04/README.md) : la generazione di numeri pseudo-casuali
   * [Lezione 5](Lezione_05/README.md) : programmazione ```template``` e Standard Template Library
+  * [Lezione 6](Lezione_06/README.md) : zeri ed estremanti di funzioni
