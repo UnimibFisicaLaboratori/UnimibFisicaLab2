@@ -2,34 +2,43 @@
 
 ## Indice
 
-  * [6.1 alla ricerca degli zeri di una funzione](#61-alla-ricerca-degli-zeri-di-una-funzione)
-    * [6.1.1 il metodo della bisezione](#611-il-metodo-della-bisezione)
-    * [6.1.2 una implementazione dell'algoritmo di bisezione](#612-una-implementazione-dellalgoritmo-di-bisezione)
-    * [6.1.3 una implementazione dell'algoritmo di bisezione in modo ricorsivo](#613-una-implementazione-dellalgoritmo-di-bisezione-in-modo-ricorsivo)
-    * [6.2 la ricerca di estremanti: il metodo della sezione aurea](#62-la-ricerca-di-estremanti-il-metodo-della-sezione-aurea)
-    * [6.2.1 il criterio di restringimento](#621-il-criterio-di-restringimento)
-    * [6.2.2 l'ottimizzazione della scelta dei punti](#622-lottimizzazione-della-scelta-dei-punti)
-  * [6.3 mettere tutto insieme](#63-mettere-tutto-insieme)
-  * [6.4 il disegno di funzioni e punti in ```ROOT```](#64-il-disegno-di-funzioni-e-punti-in-root)
-  * [6.5 ESERCIZI](#65-esercizi)
+  * [6.1 alla ricerca degli zeri di una funzione](#alla-ricerca-degli-zeri-di-una-funzione)
+    * [6.1.1 il metodo della bisezione](#il-metodo-della-bisezione)
+    * [6.1.2 una implementazione dell'algoritmo di bisezione](#una-implementazione-dell-algoritmo-di-bisezione)
+    * [6.1.3 una implementazione dell'algoritmo di bisezione in modo ricorsivo](#una-implementazione-dell-algoritmo-di-bisezione-in-modo-ricorsivo)
+  * [6.2 la ricerca di estremanti: il metodo della sezione aurea](#la-ricerca-di-estremanti-il-metodo-della-sezione-aurea)
+    * [6.2.1 il criterio di restringimento](#il-criterio-di-restringimento)
+    * [6.2.2 l'ottimizzazione della scelta dei punti](#l-ottimizzazione-della-scelta-dei-punti)
+  * [6.3 mettere tutto insieme](#mettere-tutto-insieme)
+  * [6.4 il disegno di funzioni e punti in ```ROOT```](#il-disegno-di-funzioni-e-punti-in-root)
+  * [6.5 ESEMPI](#esempi)
+  * [6.6 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
 ## 6.1 alla ricerca degli zeri di una funzione
 
-  * Esistono tecniche numeriche per **trovare gli zeri** di una funzione  
+  * Esistono tecniche numeriche per **trovare gli zeri** di una funzione
+  ```{admonition} Ipotesi semplici
+  :class: important
+  * Funzione *g(x)* **continua definita su un intervallo compatto e connesso** *[x<sub>0</sub>, x<sub>1</sub>]*
+  * Agli estremi dell'intervallo, i valori della funzione **hanno segno opposto**
+  * La funzione ha **un solo zero** nell'intervallo
+  ```
+  <!--
   * Ipotesi sempici:
     * Funzione *g(x)* **continua definita su un intervallo compatto e connesso** *[x<sub>0</sub>, x<sub>1</sub>]*
-    * La funzione ha **un solo zero** nell'intervallo
     * Agli estremi dell'intervallo, i valori della funzione **hanno segno opposto**
-    ![funzione_con_zero](immagini/funzione_con_zero.png)
+    * La funzione ha **un solo zero** nell'intervallo -->
+
+  ![funzione_con_zero](immagini/funzione_con_zero.png)
 
 ![linea](../immagini/linea.png)
 
 ### 6.1.1 il metodo della bisezione
 
   * Il programma non vede la funzione nella sua interezza,
-    quindi l'unico modo che ha per determinare dove sia lo zero 
+    quindi l'unico modo che ha per determinare dove sia lo zero
     è **stimare la funzione in singoli punti**
   * Date le ipotesi iniziali,
     lo zero della funzione si trova sicuramente fra due punti tali per cui
@@ -64,13 +73,16 @@
     }  
     ```
 
+
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-ricerca-di-zeri">6.0</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ### 6.1.3 una implementazione dell'algoritmo di bisezione in modo ricorsivo
 
   * L'algoritmo di bisezione effettua ripetutamente la **stessa operazione**
     in maniera ricorsiva
-  * Questo comportamento si può anche implementare in ```C++```, 
+  * Questo comportamento si può anche implementare in ```C++```,
     scrivendo una **funzione ricorsiva**,
     cioè che invoca se stessa:  
     ```cpp
@@ -88,21 +100,32 @@
     }  
     ```
 
-  | attenzione |
-  | -------- |
+  <!-- | attenzione |
+  | -------- | -->
+  ```{admonition} Attenzione
+  :class: warning
+  In ogni funzione ricorsiva, devono essere presenti **due elementi**:
+  * L'**invocazione della funzione** stessa
+  * La **condizione di uscita** dalla sequenza di auto-invocazioni
+  ```
 
-  * In ogni funzione ricorsiva, devono essere presenti **due elementi**:
-    * L'**invocazione della funzione** stessa
-    * La **condizione di uscita** dalla sequenza di auto-invocazioni
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-bisezione-ricorsiva">6.1</a>) </div>
 
 ![linea](../immagini/linea.png)
 
 ### 6.2 la ricerca di estremanti: il metodo della sezione aurea
-  
-  * Ipotesi sempici:
+
+  ```{admonition} Ipotesi semplici
+  :class: important
+  * Funzione *g(x)* **continua definita su un intervallo compatto e connesso** *[x<sub>0</sub>, x<sub>1</sub>]*
+  * la funzione ha **un solo estremante** nell'intervallo
+  ```
+  <!-- * Ipotesi sempici:
     * funzione *g(x)* **continua definita su un intervallo compatto e connesso** *[x<sub>0</sub>, x<sub>1</sub>]*
-    * la funzione ha **un solo estremante** nell'intervallo
-    ![funzione_con_minimo](immagini/funzione_con_minimo.png)
+    * la funzione ha **un solo estremante** nell'intervallo -->
+
+  ![funzione_con_minimo](immagini/funzione_con_minimo.png)
+
   * Anche in questo caso si procede per passi,
     **restringendo ad ogni iterazione l'intervallo** che contiene l'estremante
     fino a che diventa più piccolo di una precisione prefissata
@@ -110,24 +133,23 @@
 ![linea](../immagini/linea.png)
 
 ### 6.2.1 il criterio di restringimento
-  
-  * Per trovare il minimo di una funzione servono abbastanza punti da **capirne la pendenza** 
-    in diverse regioni dell'intervallo, 
+
+  * Per trovare il minimo di una funzione servono abbastanza punti da **capirne la pendenza**
+    in diverse regioni dell'intervallo,
     quindi se ne cercano quattro, che determinano tre intervalli
   * L'intervallo si stringe **eliminando il tratto dove il minimo di sicuro non c'è**.
     ![sezione_aurea_pendenza](immagini/sezione_aurea_pendenza.png)
-  * L'iterazione successiva si restringe a
-    *[x<sub>3</sub>, x<sub>1</sub>]* se *g(x<sub>3</sub>) > g(x<sub>2</sub>)*,
-    altrimenti si restringe a *[x<sub>o</sub>, x<sub>2</sub>]*
+  * L'iterazione successiva si restringe a $[x_3,x_1]$ se $g(x_3) > g(x_2)$,
+    altrimenti si restringe a $[x_0, x_2]$
 
 ![linea](../immagini/linea.png)
 
 ### 6.2.2 l'ottimizzazione della scelta dei punti
-  
+
   * Per ottimizzare il calcolo,
-    i punti *x<sub>2</sub>, x<sub>3</sub>* vengono scelti in modo
-    che uno dei due possa essere **utilizzato anche nell'iterazione seguente**,
-    garantendo la stessa proporzione di suddivisione dell'intervallo
+    i punti $x_2, x_3$ vengono scelti in modo che uno dei due possa essere
+    **utilizzato anche nell'iterazione seguente**, garantendo la stessa proporzione
+    di suddivisione dell'intervallo
     ![sezione_aurea_r](immagini/sezione_aurea_r.png)
   * Perché questo sia possibile deve valere:
     ![sezione_aurea_r](immagini/sezione_aurea_formula.png)
@@ -144,7 +166,7 @@
   * Oltre al problema locale di compiere operazioni in condizioni di buona regolarità,
     algoritmi generici devono anche trovare il modo di
     **ricondurre un problema generale a casi semplici**
-    * Ad esempio, nel caso della ricerca di minimi 
+    * Ad esempio, nel caso della ricerca di minimi
       bisogna evitare che gli algoritmi trovino minimi locali
       e non identifichino il **minimo globale** di una funzione
   * La funzionalità di un algoritmo dipende criticamente dalla **dimensione
@@ -171,8 +193,12 @@
 
 ![linea](../immagini/linea.png)
 
-## 6.5 ESERCIZI
+## 6.5 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+![linea](../immagini/linea.png)
+
+## 6.6 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
-
-
