@@ -632,26 +632,26 @@ dello spazio di definizione</strong> delle funzioni</p></li>
 </div>
 <div class="section" id="il-disegno-di-funzioni-e-punti-in-root">
 <h2>6.4 il disegno di funzioni e punti in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#il-disegno-di-funzioni-e-punti-in-root" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>una <strong>funzione matematica in ROOT</strong> si implementa con la classe <code class="docutils literal notranslate"><span class="pre">TF1</span></code></p></li>
-</ul>
+<ul>
+<li><p>una <strong>funzione matematica in ROOT</strong> si implementa con la classe <code class="docutils literal notranslate"><span class="pre">TF1</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span> <span class="n">fa1</span> <span class="p">(</span><span class="s2">&quot;fa1&quot;</span><span class="p">,</span> <span class="s2">&quot;sin(x)/x&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="p">;</span>
 <span class="n">TCanvas</span> <span class="n">c1</span> <span class="p">;</span>
 <span class="n">fa1</span><span class="o">.</span><span class="n">Draw</span> <span class="p">()</span> <span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* esistono **molti modi di definire un oggetto di tipo ```TF1```**, 
-  sia a partire dalla forma analitica delle funzioni
-  che da una funzione scritta in ```C++```,
-  descritti nelle [pagine di documentazione](https://root.cern.ch/root/html600/TF1.html) di ```ROOT```
-</pre></div>
-</div>
 <ul class="simple">
-<li><p>un <strong>punto</strong> si disegna con la classe <code class="docutils literal notranslate"><span class="pre">TMarker</span></code>:</p></li>
+<li><p>esistono <strong>molti modi di definire un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code></strong>,
+sia a partire dalla forma analitica delle funzioni
+che da una funzione scritta in <code class="docutils literal notranslate"><span class="pre">C++</span></code>,
+descritti nelle <a class="reference external" href="https://root.cern.ch/root/html600/TF1.html">pagine di documentazione</a> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></p></li>
 </ul>
+</li>
+<li><p>un <strong>punto</strong> si disegna con la classe <code class="docutils literal notranslate"><span class="pre">TMarker</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TMarker</span> <span class="n">punto</span> <span class="p">(</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="p">;</span>
 </pre></div>
 </div>
+</li>
+</ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esempi">
