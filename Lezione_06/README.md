@@ -177,19 +177,19 @@
 ## 6.4 il disegno di funzioni e punti in ```ROOT```
 
   * una **funzione matematica in ROOT** si implementa con la classe ```TF1```
-  ```
-  TF1 fa1 ("fa1", "sin(x)/x", 0, 10) ;
-  TCanvas c1 ;
-  fa1.Draw () ;
+```
+TF1 fa1 ("fa1", "sin(x)/x", 0, 10) ;
+TCanvas c1 ;
+fa1.Draw () ;
   ```
     * esistono **molti modi di definire un oggetto di tipo ```TF1```**, 
       sia a partire dalla forma analitica delle funzioni
       che da una funzione scritta in ```C++```,
       descritti nelle [pagine di documentazione](https://root.cern.ch/root/html600/TF1.html) di ```ROOT```
   * un **punto** si disegna con la classe ```TMarker```:
-  ```
-  TMarker punto (5., 0.5, 20) ;
-  ```  
+```
+TMarker punto (5., 0.5, 20) ;
+```  
 
 ![linea](../immagini/linea.png)
 
