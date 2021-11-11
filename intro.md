@@ -29,3 +29,4 @@
   * [Lezione 4](Lezione_04/README.md) : la generazione di numeri pseudo-casuali
   * [Lezione 5](Lezione_05/README.md) : programmazione ```template``` e Standard Template Library
   * [Lezione 6](Lezione_06/README.md) : zeri ed estremanti di funzioni
+  * [Lezione 7](Lezione_07/README.md) : la distribuzione di Poisson
