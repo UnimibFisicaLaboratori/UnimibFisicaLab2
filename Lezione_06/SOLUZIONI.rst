@@ -1,10 +1,10 @@
-Soluzioni: Lezione 7
+Soluzioni: Lezione 6
 ====================
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-7.1 generazione di numeri pseudo-casuali distribuiti esponenzialmente
+3.1 generazione di numeri pseudo-casuali distribuiti esponenzialmente
 ------------------------------------------------------------------
 * `esercizio01.cpp`
 .. literalinclude:: Esercizi/esercizio01.cpp
@@ -13,7 +13,7 @@ Soluzioni: Lezione 7
 .. image:: ../immagini/linea.png
   :width: 1100
 
-7.2 generazione di numeri pseudo-casuali distribuiti Poissonianamente
+3.2 generazione di numeri pseudo-casuali distribuiti Poissonianamente
 ------------------------------------------------------------------
 * `esercizio02.cpp`
 .. literalinclude:: Esercizi/esercizio02.cpp
@@ -22,7 +22,7 @@ Soluzioni: Lezione 7
 .. image:: ../immagini/linea.png
   :width: 1100
 
-7.3 creazione di una libreria per la generazione dei numeri casuali
+3.3 creazione di una libreria per la generazione dei numeri casuali
 ------------------------------------------------------------------
 * `esercizio03.cpp`
 .. literalinclude:: Esercizi/esercizio03.cpp
@@ -39,7 +39,7 @@ Soluzioni: Lezione 7
 .. image:: ../immagini/linea.png
   :width: 1100
 
-7.4 creazione di un campione di numeri pseudo-casuali e studio delle sue statistiche
+3.4 creazione di un campione di numeri pseudo-casuali e studio delle sue statistiche
 ------------------------------------------------------------------
 * `esercizio04.cpp`
 .. literalinclude:: Esercizi/esercizio04.cpp
@@ -52,7 +52,7 @@ Soluzioni: Lezione 7
 .. image:: ../immagini/linea.png
   :width: 1100
 
-7.5 studio delle caratteristiche della distribuzione di Poisson
+3.5 studio delle caratteristiche della distribuzione di Poisson
 ------------------------------------------------------------------
 * `esercizio05.cpp`
 .. literalinclude:: Esercizi/esercizio05.cpp
