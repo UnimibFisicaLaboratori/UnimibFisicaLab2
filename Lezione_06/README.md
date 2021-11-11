@@ -2,15 +2,16 @@
 
 ## Indice
 
-  * [6.1 alla ricerca degli zeri di una funzione](#61-aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione)
+  * [6.1 alla ricerca degli zeri di una funzione](#61-alla-ricerca-degli-zeri-di-una-funzione)
     * [6.1.1 il metodo della bisezione](#611-il-metodo-della-bisezione)
     * [6.1.2 una implementazione dell'algoritmo di bisezione](#612-una-implementazione-dellalgoritmo-di-bisezione)
     * [6.1.3 una implementazione dell'algoritmo di bisezione in modo ricorsivo](#613-una-implementazione-dellalgoritmo-di-bisezione-in-modo-ricorsivo)
-  * [6.2 la ricerca di estremanti: il metodo della sezione aurea](#62-la-ricerca-di-estremanti-il-metodo-della-sezione-aurea)
-    * [6.2.1 il criterio di restringimento](#622-il-criterio-di-restringimento)
-    * [6.2.2 l'ottimizzazione della scelta dei punti](#623-lottimizzazione-della-scelta-dei-punti)
+    * [6.2 la ricerca di estremanti: il metodo della sezione aurea](#62-la-ricerca-di-estremanti-il-metodo-della-sezione-aurea)
+    * [6.2.1 il criterio di restringimento](#621-il-criterio-di-restringimento)
+    * [6.2.2 l'ottimizzazione della scelta dei punti](#622-lottimizzazione-della-scelta-dei-punti)
   * [6.3 mettere tutto insieme](#63-mettere-tutto-insieme)
-  * [6.4 ESERCIZI](#65-esercizi)
+  * [6.4 il disegno di funzioni e punti in ```ROOT```](#64-il-disegno-di-funzioni-e-punti-in-root)
+  * [6.5 ESERCIZI](#65-esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -151,7 +152,26 @@
 
 ![linea](../immagini/linea.png)
 
-## 6.4 ESERCIZI
+## 6.4 il disegno di funzioni e punti in ```ROOT```
+
+  * una **funzione matematica in ROOT** si implementa con la classe ```TF1```
+  ```
+  TF1 fa1 ("fa1", "sin(x)/x", 0, 10) ;
+  TCanvas c1 ;
+  fa1.Draw () ;
+  ```
+    * esistono **molti modi di definire un oggetto di tipo ```TF1```**, 
+      sia a partire dalla forma analitica delle funzioni
+      che da una funzione scritta in ```C++```,
+      descritti nelle [pagine di documentazione](https://root.cern.ch/root/html600/TF1.html) di ```ROOT```
+  * un **punto** si disegna con la classe ```TMarker```:
+  ```
+  TMarker punto (5., 0.5, 20) ;
+  ```  
+
+![linea](../immagini/linea.png)
+
+## 6.5 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
 
