@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Esercizi per la lezione 7" href="ESERCIZI.html" />
+    <link rel="prev" title="Soluzioni: Lezione 6" href="../Lezione_06/SOLUZIONI.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -91,7 +93,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Prerequisiti/README.html">
    I prerequisiti del corso
@@ -107,16 +109,16 @@
    </code>
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../content.html">
    Indice delle Lezioni
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Lezione_01/README.html">
      Lezione 1: strutturazione di un programma ed introduzione al
@@ -271,6 +273,28 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
        Esercizi per la lezione 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/SOLUZIONI.html">
+       Soluzioni: Lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Lezione 7: La distribuzione di Poisson
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESERCIZI.html">
+       Esercizi per la lezione 7
       </a>
      </li>
     </ul>
@@ -445,8 +469,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#x-esercizi">
-   7.X ESERCIZI
+  <a class="reference internal nav-link" href="#esercizi">
+   7.5 ESERCIZI
   </a>
  </li>
 </ul>
@@ -462,6 +486,27 @@
                 
   <div class="section" id="lezione-7-la-distribuzione-di-poisson">
 <h1>Lezione 7: La distribuzione di Poisson<a class="headerlink" href="#lezione-7-la-distribuzione-di-poisson" title="Permalink to this headline">¶</a></h1>
+<p>##Indice</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#71-rappresentazione-di-andamenti-y-vs-x-i-tgraph">7.1 Rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p>
+<ul>
+<li><p><a class="reference external" href="#711-definizione-di-un-tgraph">7.1.1 Definizione di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#712-riempimento-di-un-tgraph">7.1.2 Riempimento di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#713-disegno-di-un-tgraph">7.1.3 Disegno di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#714-qualche-opzione-grafica">7.1.4 Qualche opzione grafica</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#72-i-processi-poissoniani">7.2 I processi poissoniani</a></p></li>
+<li><p><a class="reference external" href="#721-la-generazione-di-eventi-secondo-una-distribuzione-di-poisson">7.2.1 La generazione di eventi secondo una distribuzione di Poisson</a></p></li>
+<li><p><a class="reference external" href="#73-ripasso-la-generazione-di-eventi-secondo-un-distribuzione-fx-con-la-tecnica-della-funzione-inversa">7.3 Ripasso: la generazione di eventi secondo un distribuzione <em>f(x)</em> con la tecnica della funzione inversa</a></p>
+<ul>
+<li><p><a class="reference external" href="#731-lalgoritmo-della-funzione-inversa">7.3.1 L’algoritmo della funzione inversa</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#732-il-caso-esponenziale">7.3.2 Il caso esponenziale</a></p></li>
+<li><p><a class="reference external" href="#74-le-caratteristiche-della-distribuzione-di-poisson">7.4 Le caratteristiche della distribuzione di Poisson</a></p></li>
+<li><p><a class="reference external" href="#75-esercizi">7.5 ESERCIZI</a></p></li>
+</ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="rappresentazione-di-andamenti-y-vs-x-i-tgraph">
 <h2>7.1 Rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph" title="Permalink to this headline">¶</a></h2>
@@ -667,11 +712,13 @@ disegnati con <code class="docutils literal notranslate"><span class="pre">TGrap
 <p><img alt="grafici" src="../_images/grafici.png" /></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="x-esercizi">
-<h2>7.X ESERCIZI<a class="headerlink" href="#x-esercizi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="esercizi">
+<h2>7.5 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -704,6 +751,24 @@ disegnati con <code class="docutils literal notranslate"><span class="pre">TGrap
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="../Lezione_06/SOLUZIONI.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Soluzioni: Lezione 6</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ESERCIZI.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Esercizi per la lezione 7</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

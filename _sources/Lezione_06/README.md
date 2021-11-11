@@ -191,6 +191,8 @@
     TMarker punto (5., 0.5, 20) ;
     ```  
 
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#esempio-di-disegno-di-un-punto-ed-una-funzione">6.2</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ## 6.5 ESEMPI

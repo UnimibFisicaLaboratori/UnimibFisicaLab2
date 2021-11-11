@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluzioni: Lezione 7 &#8212; Laboratorio 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Prerequisiti/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ripasso/README.html">
+   Ripasso di
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     C
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: strutturazione di un programma ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESEMPI.html">
+       Esempi: Lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/SOLUZIONI.html">
+       Soluzioni: Lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESEMPI.html">
+       Esempi: Lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/SOLUZIONI.html">
+       Soluzioni: Lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESEMPI.html">
+       Esempi: Lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/SOLUZIONI.html">
+       Soluzioni: Lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri pseudo-casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESEMPI.html">
+       Esempi: Lezione 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESEMPI.html">
+       Esempi: Lezione 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_06/README.html">
+     Lezione 6: zeri ed estremanti di funzioni
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESEMPI.html">
+       Esempi: Lezione 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/SOLUZIONI.html">
+       Soluzioni: Lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="README.html">
+     Lezione 7: La distribuzione di Poisson
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_07/SOLUZIONI.rst"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generazione-di-numeri-pseudo-casuali-distribuiti-esponenzialmente">
+   7.1 generazione di numeri pseudo-casuali distribuiti esponenzialmente
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generazione-di-numeri-pseudo-casuali-distribuiti-poissonianamente">
+   7.2 generazione di numeri pseudo-casuali distribuiti Poissonianamente
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creazione-di-una-libreria-per-la-generazione-dei-numeri-casuali">
+   7.3 creazione di una libreria per la generazione dei numeri casuali
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creazione-di-un-campione-di-numeri-pseudo-casuali-e-studio-delle-sue-statistiche">
+   7.4 creazione di un campione di numeri pseudo-casuali e studio delle sue statistiche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#studio-delle-caratteristiche-della-distribuzione-di-poisson">
+   7.5 studio delle caratteristiche della distribuzione di Poisson
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="soluzioni-lezione-7">
+<h1>Soluzioni: Lezione 7<a class="headerlink" href="#soluzioni-lezione-7" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
+<div class="section" id="generazione-di-numeri-pseudo-casuali-distribuiti-esponenzialmente">
+<h2>7.1 generazione di numeri pseudo-casuali distribuiti esponenzialmente<a class="headerlink" href="#generazione-di-numeri-pseudo-casuali-distribuiti-esponenzialmente" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>esercizio01.cpp</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">c++ -o esercizio01 `root-config --glibs --cflags` esercizio01.cpp casual.cc</span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;casual.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TH1F.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TCanvas.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">t_zero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">TH1F</span><span class="w"> </span><span class="n">h_expo</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_expo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;h_expo&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mf">30.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t_zero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">h_expo</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="n">rand_exp</span><span class="w"> </span><span class="p">(</span><span class="n">t_zero</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">TCanvas</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">h_expo</span><span class="p">.</span><span class="n">SetFillColor</span><span class="w"> </span><span class="p">(</span><span class="n">kOrange</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">h_expo</span><span class="p">.</span><span class="n">Fit</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;expo&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">h_expo</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;hist&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;esercizio01.gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gif&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
+</div>
+<div class="section" id="generazione-di-numeri-pseudo-casuali-distribuiti-poissonianamente">
+<h2>7.2 generazione di numeri pseudo-casuali distribuiti Poissonianamente<a class="headerlink" href="#generazione-di-numeri-pseudo-casuali-distribuiti-poissonianamente" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>esercizio02.cpp</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">c++ -o esercizio02 `root-config --glibs --cflags` esercizio02.cpp casual.cc</span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;casual.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TH1F.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TCanvas.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;uso del programma: &quot;</span><span class="w"> </span>
+<span class="w">           </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
+<span class="w">           </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; t_zero tempo_di_misura</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">t_zero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atoi</span><span class="w"> </span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">;</span><span class="w">           </span><span class="c1">// tempo caratteristico dell&#39;esponenziale</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">tempo_di_misura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atoi</span><span class="w"> </span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1">// tempo di misura</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tempo_di_misura</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">t_zero</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">TH1F</span><span class="w"> </span><span class="n">h_pois</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_pois&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;h_pois&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// ciclo su tanti pseudo-esperimenti</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">t_tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_exp</span><span class="w"> </span><span class="p">(</span><span class="n">t_zero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">N_evt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">t_tot</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tempo_di_misura</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="o">++</span><span class="n">N_evt</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">          </span><span class="n">t_tot</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">rand_exp</span><span class="w"> </span><span class="p">(</span><span class="n">t_zero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="n">h_pois</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="n">N_evt</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// ciclo su tanti pseudo-esperimenti</span>
+
+<span class="w">  </span><span class="n">TCanvas</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">h_pois</span><span class="p">.</span><span class="n">SetFillColor</span><span class="w"> </span><span class="p">(</span><span class="n">kAzure</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">h_pois</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;hist&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;esercizio02.gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gif&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
+</div>
+<div class="section" id="creazione-di-una-libreria-per-la-generazione-dei-numeri-casuali">
+<h2>7.3 creazione di una libreria per la generazione dei numeri casuali<a class="headerlink" href="#creazione-di-una-libreria-per-la-generazione-dei-numeri-casuali" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>esercizio03.cpp</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">c++ -o esercizio03 `root-config --glibs --cflags` esercizio03.cpp casual.cc</span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;casual.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TH1F.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TCanvas.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;uso del programma: &quot;</span><span class="w"> </span>
+<span class="w">           </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
+<span class="w">           </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; media_attesa</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atoi</span><span class="w"> </span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// media della distribuzione di Poisson</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">TH1F</span><span class="w"> </span><span class="n">h_pois</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_pois&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;h_pois&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// ciclo su tanti pseudo-esperimenti</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">h_pois</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="n">rand_pois</span><span class="w"> </span><span class="p">(</span><span class="n">media</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// ciclo su tanti pseudo-esperimenti</span>
+
+<span class="w">  </span><span class="n">TCanvas</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">h_pois</span><span class="p">.</span><span class="n">SetFillColor</span><span class="w"> </span><span class="p">(</span><span class="n">kAzure</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">h_pois</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;hist&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;esercizio03.gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gif&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">h_pois</span><span class="p">.</span><span class="n">DrawNormalized</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;hist&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;esercizio03_pdf.gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gif&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>casual.h</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef casual_h</span>
+<span class="cp">#define casual_h</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="nf">rand_range</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">rand_exp</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">t_zero</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">rand_pois</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>casual.cc</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;casual.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+
+<span class="kt">double</span><span class="w"> </span><span class="nf">rand_range</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">RAND_MAX</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">rand_exp</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">t_zero</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mf">-1.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t_zero</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">rand_pois</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">t_tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_exp</span><span class="w"> </span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">N_evt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">t_tot</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">media</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="o">++</span><span class="n">N_evt</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">t_tot</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">rand_exp</span><span class="w"> </span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">N_evt</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/* si puo&#39; risparimare il logarimo facendo il prodotto di numeri generati </span>
+<span class="cm">   uniformemente, invece che la somma dei logaritmi, prova</span>
+<span class="cm">https://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables</span>
+<span class="cm">    */</span><span class="w"></span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
+</div>
+<div class="section" id="creazione-di-un-campione-di-numeri-pseudo-casuali-e-studio-delle-sue-statistiche">
+<h2>7.4 creazione di un campione di numeri pseudo-casuali e studio delle sue statistiche<a class="headerlink" href="#creazione-di-un-campione-di-numeri-pseudo-casuali-e-studio-delle-sue-statistiche" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>esercizio04.cpp</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">c++ -o esercizio04 esercizio04.cpp casual.cc</span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;casual.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;statistiche.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;uso del programma: &quot;</span><span class="w"> </span>
+<span class="w">           </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
+<span class="w">           </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; media_attesa</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">mediaP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atoi</span><span class="w"> </span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// media della distribuzione di Poisson</span>
+
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">campione</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// ciclo su tanti pseudo-esperimenti</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">campione</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">rand_pois</span><span class="w"> </span><span class="p">(</span><span class="n">mediaP</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// ciclo su tanti pseudo-esperimenti</span>
+<span class="w">    </span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;media del campione:      &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;varianza del campione:   &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sigma del campione:      &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;asimmetria del campione: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">asimmetria</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;curtosi del campione:     &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">curtosi</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>statistiche.h</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef statistiche_h</span>
+<span class="cp">#define statistiche_h</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">inputV</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">inputV</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sumSq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">sumSq</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sumSq</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sum</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">inputV</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="w"> </span><span class="p">(</span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">asimmetria</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">inputV</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mediaV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">asimmV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">asimmV</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">pow</span><span class="w"> </span><span class="p">((</span><span class="n">inputV</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mediaV</span><span class="p">),</span><span class="w"> </span><span class="mf">3.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">asimmV</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pow</span><span class="w"> </span><span class="p">(</span><span class="n">sigma</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">),</span><span class="mf">3.</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">curtosi</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">inputV</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mediaV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">curtosiV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">curtosiV</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">pow</span><span class="w"> </span><span class="p">((</span><span class="n">inputV</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mediaV</span><span class="p">),</span><span class="w"> </span><span class="mf">4.</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">curtosiV</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">varianza</span><span class="w"> </span><span class="p">(</span><span class="n">inputV</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">3.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
+</div>
+<div class="section" id="studio-delle-caratteristiche-della-distribuzione-di-poisson">
+<h2>7.5 studio delle caratteristiche della distribuzione di Poisson<a class="headerlink" href="#studio-delle-caratteristiche-della-distribuzione-di-poisson" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>esercizio05.cpp</cite></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">c++ -o esercizio05 `root-config --glibs --cflags` esercizio05.cpp casual.cc</span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;casual.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;statistiche.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TH1F.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TGraph.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TCanvas.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">TGraph</span><span class="w"> </span><span class="n">g_media</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">TGraph</span><span class="w"> </span><span class="n">g_sigma</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">TGraph</span><span class="w"> </span><span class="n">g_asimmetria</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">TGraph</span><span class="w"> </span><span class="n">g_curtosi</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// ciclo sulla media della distribuzione di Poisson</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mediaP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">mediaP</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">101</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">mediaP</span><span class="o">+=</span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;generazioni con media &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mediaP</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">campione</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">      </span><span class="c1">// ciclo su tanti pseudo-esperimenti</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="n">campione</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">rand_pois</span><span class="w"> </span><span class="p">(</span><span class="n">mediaP</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w">    </span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="c1">// ciclo su tanti pseudo-esperimenti</span>
+<span class="w">        </span>
+<span class="w">      </span><span class="n">g_media</span><span class="p">.</span><span class="n">SetPoint</span><span class="w"> </span><span class="p">(</span><span class="n">g_media</span><span class="p">.</span><span class="n">GetN</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">mediaP</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">g_sigma</span><span class="p">.</span><span class="n">SetPoint</span><span class="w"> </span><span class="p">(</span><span class="n">g_sigma</span><span class="p">.</span><span class="n">GetN</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">mediaP</span><span class="p">,</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">SetPoint</span><span class="w"> </span><span class="p">(</span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">GetN</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">mediaP</span><span class="p">,</span><span class="w"> </span><span class="n">asimmetria</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">SetPoint</span><span class="w"> </span><span class="p">(</span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">GetN</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="n">mediaP</span><span class="p">,</span><span class="w"> </span><span class="n">curtosi</span><span class="w"> </span><span class="p">(</span><span class="n">campione</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// ciclo sulla media della distribuzione di Poisson</span>
+
+<span class="w">  </span><span class="n">TCanvas</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">g_media</span><span class="p">.</span><span class="n">SetMarkerStyle</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_media</span><span class="p">.</span><span class="n">SetMarkerColor</span><span class="w"> </span><span class="p">(</span><span class="n">kAzure</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_media</span><span class="p">.</span><span class="n">SetLineColor</span><span class="w"> </span><span class="p">(</span><span class="n">kGray</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_media</span><span class="p">.</span><span class="n">SetMarkerSize</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_media</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;media della distribuzione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_media</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetYaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;media del campione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_media</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ALP&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;es5_media.gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gif&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">g_sigma</span><span class="p">.</span><span class="n">SetMarkerStyle</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_sigma</span><span class="p">.</span><span class="n">SetMarkerColor</span><span class="w"> </span><span class="p">(</span><span class="n">kAzure</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_sigma</span><span class="p">.</span><span class="n">SetLineColor</span><span class="w"> </span><span class="p">(</span><span class="n">kGray</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_sigma</span><span class="p">.</span><span class="n">SetMarkerSize</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_sigma</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;media della distribuzione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_sigma</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetYaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;deviazione standard del campione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_sigma</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ALP&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;es5_sigma.gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gif&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">SetMarkerStyle</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">SetMarkerColor</span><span class="w"> </span><span class="p">(</span><span class="n">kAzure</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">SetLineColor</span><span class="w"> </span><span class="p">(</span><span class="n">kGray</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">SetMarkerSize</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;media della distribuzione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetYaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;asimmetria del campione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_asimmetria</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ALP&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;es5_asimmetria.gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gif&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">SetMarkerStyle</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">SetMarkerColor</span><span class="w"> </span><span class="p">(</span><span class="n">kAzure</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">SetLineColor</span><span class="w"> </span><span class="p">(</span><span class="n">kGray</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">SetMarkerSize</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;media della distribuzione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">GetHistogram</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetYaxis</span><span class="w"> </span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;curtosi del campione&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">g_curtosi</span><span class="p">.</span><span class="n">Draw</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ALP&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;es5_curtosi.gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gif&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_07"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Docenti del Corso di Laboratorio 2<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
