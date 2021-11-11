@@ -1,5 +1,19 @@
 # Lezione 7: La distribuzione di Poisson 
 
+##Indice
+
+  * [7.1 Rappresentazione di andamenti *y* vs *x*: i ```TGraph```](#71-rappresentazione-di-andamenti-y-vs-x-i-tgraph)
+    * [7.1.1 Definizione di un ```TGraph```](#711-definizione-di-un-tgraph)
+    * [7.1.2 Riempimento di un ```TGraph```](#712-riempimento-di-un-tgraph)
+    * [7.1.3 Disegno di un ```TGraph```](#713-disegno-di-un-tgraph)
+    * [7.1.4 Qualche opzione grafica](#714-qualche-opzione-grafica)
+  * [7.2 I processi poissoniani](#72-i-processi-poissoniani)
+  * [7.2.1 La generazione di eventi secondo una distribuzione di Poisson](#721-la-generazione-di-eventi-secondo-una-distribuzione-di-poisson)
+  * [7.3 Ripasso: la generazione di eventi secondo un distribuzione *f(x)* con la tecnica della funzione inversa](#73-ripasso-la-generazione-di-eventi-secondo-un-distribuzione-fx-con-la-tecnica-della-funzione-inversa)
+    * [7.3.1 L'algoritmo della funzione inversa](#731-lalgoritmo-della-funzione-inversa)
+  * [7.3.2 Il caso esponenziale](#732-il-caso-esponenziale)
+  * [7.4 Le caratteristiche della distribuzione di Poisson](#74-le-caratteristiche-della-distribuzione-di-poisson)
+  * [7.5 ESERCIZI](#75-esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -166,7 +180,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 7.X ESERCIZI
+## 7.5 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
 
