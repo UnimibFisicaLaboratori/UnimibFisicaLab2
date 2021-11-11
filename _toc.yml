@@ -34,10 +34,10 @@ sections:
     sections:
     - file: Lezione_06/ESEMPI.rst
     - file: Lezione_06/ESERCIZI.md
-    #- file: Lezione_06/SOLUZIONI.rst
-  - file: Lezione_06/README.md
+    - file: Lezione_06/SOLUZIONI.rst
+  - file: Lezione_07/README.md
     sections:
-    #- file: Lezione_06/ESEMPI.rst
-    - file: Lezione_06/ESERCIZI.md
-    #- file: Lezione_06/SOLUZIONI.rst
+    #- file: Lezione_07/ESEMPI.rst
+    - file: Lezione_07/ESERCIZI.md
+    #- file: Lezione_07/SOLUZIONI.rst
 - file: appendix
