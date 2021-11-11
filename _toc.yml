@@ -29,7 +29,7 @@ sections:
     sections:
     - file: Lezione_05/ESEMPI.rst
     - file: Lezione_05/ESERCIZI.md
-    #- file: Lezione_05/SOLUZIONI.rst
+    - file: Lezione_05/SOLUZIONI.rst
   - file: Lezione_06/README.md
     sections:
     - file: Lezione_06/ESEMPI.rst
