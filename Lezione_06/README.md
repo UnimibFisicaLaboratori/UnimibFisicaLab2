@@ -181,7 +181,7 @@
 TF1 fa1 ("fa1", "sin(x)/x", 0, 10) ;
 TCanvas c1 ;
 fa1.Draw () ;
-  ```
+```
     * esistono **molti modi di definire un oggetto di tipo ```TF1```**, 
       sia a partire dalla forma analitica delle funzioni
       che da una funzione scritta in ```C++```,
