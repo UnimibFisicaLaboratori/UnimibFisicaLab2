@@ -1,7 +1,9 @@
-// c++ -o es5 esercizio05.cpp
+// c++ -o es5 `root-config --glibs --cflags` esercizio05.cpp
 #include <iostream> 
 #include <cmath>
 #include <iomanip>
+#include "TH1F.h"
+#include "TCanvas.h"
 
 static const int A =  214013;
 static const int C =  2531011;
@@ -100,29 +102,55 @@ int main(){
     float x_min = -3;
     float x_max = 3;
 
+    TH1F hist_gauss ("hist_gauss", "GAUSS", 5, x_min, x_max) ;
+
     for(int i=0; i < dim; ++i){
         vals[i] = rand_TAC(fgaus, x_min, x_max, 10);
+	hist_gauss.Fill (vals[i]);
     }
+
+    TCanvas c1 ;
+    hist_gauss.Draw () ;
+    c1.Print ("hist_gauss.png", "png") ;
 
     //Rough visualization of gaussian
     std::cout << "\n\nGAUSSIAN\n\n" << std::endl;
     visualize(vals, dim, 10, x_min, x_max);
-
+    
     x_min = 0;
     x_max = 10;
+   
+    TH1F hist_poisson ("hist_poisson", "POISSON", 5, x_min, x_max) ;
+    
     for(int i=0; i < dim; ++i){
         vals[i] = rand_TAC(fpois, x_min, x_max, 10);
+	hist_poisson.Fill (vals[i]);
     }
+    
+    TCanvas c2 ;
+    hist_poisson.Draw () ;
+    c2.Print ("hist_poisson.png", "png") ;
+    
     //Rough visualization of poisson
     std::cout << "\n\nPOISSONIAN\n\n" << std::endl;
     visualize(vals, dim, 10, x_min, x_max);
 
     x_min = -2;
     x_max = 2;
+ 
+    TH1F hist_uniform ("hist_uniform", "UNIFORM", 5, x_min, x_max) ;
+ 
     for(int i=0; i < dim; ++i){
         vals[i] = rand_TAC(funif, x_min, x_max, float(1)/4);
+	hist_uniform.Fill (vals[i]);
     }
-    //Rough visualization of poisson
+    
+    TCanvas c3 ;
+    hist_uniform.Draw () ;
+    c3.Print ("hist_uniform.png", "png") ;
+
+    
+    //Rough visualization of uniform
     std::cout << "\n\nUNIFORM\n\n" << std::endl;
     visualize(vals, dim, 10, x_min, x_max);
 

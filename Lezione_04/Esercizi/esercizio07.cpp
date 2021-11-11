@@ -1,8 +1,11 @@
-//c++ -o es6 esercizio06.cpp
+//c++ -o es7 `root-config --glibs --cflags` esercizio07.cpp
 #include <cstdlib>
 #include <iostream> 
 #include <cmath>
 #include <iomanip>
+#include <string>
+#include "TH1F.h"
+#include "TCanvas.h"
 
 static const int seed = 1234567;
 
@@ -77,7 +80,8 @@ int main(){
 
     // Same thing but with standardization of the variables to obtain 
     // values distributed normally ~ N(0,1)
-
+    
+      
     for(auto N : Ns){
         float sum = 0;
         float sum_q = 0;
@@ -93,10 +97,13 @@ int main(){
         //standardizing
         // Z = (\hat{X} - \mu)/(\sigma) -> distributed normally ~ N(0,1) 
         
+	TH1F histo ("histo", "GAUSSIAN STANDARD, 10, -3,3) ;
+	
         sum = 0;
         sum_q = 0;
         for(int i = 0; i < dim; ++i){
             vals[i] = (vals[i] - mean)/sqrt(var);
+	    histo.Fill(vals[i]);
             sum += vals[i];
             sum_q += pow(vals[i],2);
         }
@@ -104,6 +111,11 @@ int main(){
         mean = sum/dim;
         var = (sum_q + dim*pow(mean, 2) - 2*mean*sum)/(dim-1);
         
+        TCanvas c1 ;
+        histo.Draw () ;
+        c1.Print ("GAUSSIAN.png", "png") ;
+
+	
         std::cout << "\n\nGAUSSIAN STANDARD N,mean,var: " << N << " " << mean << " " << var << "\n\n" << std::endl;
         visualize(vals, dim, 10, -3, 3);
 

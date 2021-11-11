@@ -1,7 +1,9 @@
-//c++ -o es6 esercizio06.cpp
+//c++ -o es6 `root-config --glibs --cflags` esercizio06.cpp
 #include <iostream> 
 #include <cmath>
 #include <iomanip>
+#include "TH1F.h"
+#include "TCanvas.h"
 
 static const int A =  214013;
 static const int C =  2531011;
@@ -70,14 +72,22 @@ int main(){
 
     float y_min = 0;
     float y_max = 1;
+    
+    TH1F histo ("histo", "EXPONENTIAL", 10, 0, 5) ;
 
     for(int i=0; i < dim; ++i){
         vals[i] = inv_exp(rand_range(y_min, y_max));
+	histo.Fill(vals[i]);
     }
 
     //Rough visualization of gaussian
     std::cout << "\n\nEXPONENTIAL\n\n" << std::endl;
     visualize(vals, dim, 10, 0, 5);
+    
+    TCanvas c1 ;
+    histo.Draw () ;
+    c1.Print ("EXPONENTIAL.png", "png") ;
+
 
 
 }
