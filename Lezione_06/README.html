@@ -405,13 +405,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#il-disegno-di-funzioni-e-punti-in-root">
+   6.4 il disegno di funzioni e punti in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ROOT
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esempi">
-   6.4 ESEMPI
+   6.5 ESEMPI
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   6.5 ESERCIZI
+   6.6 ESERCIZI
   </a>
  </li>
 </ul>
@@ -444,8 +454,9 @@
 </ul>
 </li>
 <li><p><a class="reference external" href="#mettere-tutto-insieme">6.3 mettere tutto insieme</a></p></li>
-<li><p><a class="reference external" href="#esempi">6.4 ESEMPI</a></p></li>
-<li><p><a class="reference external" href="#esercizi">6.5 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#il-disegno-di-funzioni-e-punti-in-root">6.4 il disegno di funzioni e punti in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a></p></li>
+<li><p><a class="reference external" href="#esempi">6.5 ESEMPI</a></p></li>
+<li><p><a class="reference external" href="#esercizi">6.6 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -619,15 +630,39 @@ dello spazio di definizione</strong> delle funzioni</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
+<div class="section" id="il-disegno-di-funzioni-e-punti-in-root">
+<h2>6.4 il disegno di funzioni e punti in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#il-disegno-di-funzioni-e-punti-in-root" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>una <strong>funzione matematica in ROOT</strong> si implementa con la classe <code class="docutils literal notranslate"><span class="pre">TF1</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span> <span class="n">fa1</span> <span class="p">(</span><span class="s2">&quot;fa1&quot;</span><span class="p">,</span> <span class="s2">&quot;sin(x)/x&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">TCanvas</span> <span class="n">c1</span> <span class="p">;</span>
+<span class="n">fa1</span><span class="o">.</span><span class="n">Draw</span> <span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* esistono **molti modi di definire un oggetto di tipo ```TF1```**, 
+  sia a partire dalla forma analitica delle funzioni
+  che da una funzione scritta in ```C++```,
+  descritti nelle [pagine di documentazione](https://root.cern.ch/root/html600/TF1.html) di ```ROOT```
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>un <strong>punto</strong> si disegna con la classe <code class="docutils literal notranslate"><span class="pre">TMarker</span></code>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TMarker</span> <span class="n">punto</span> <span class="p">(</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
 <div class="section" id="esempi">
-<h2>6.4 ESEMPI<a class="headerlink" href="#esempi" title="Permalink to this headline">¶</a></h2>
+<h2>6.5 ESEMPI<a class="headerlink" href="#esempi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esempi relativi alla lezione si trovano <a class="reference internal" href="ESEMPI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizi">
-<h2>6.5 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>6.6 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>

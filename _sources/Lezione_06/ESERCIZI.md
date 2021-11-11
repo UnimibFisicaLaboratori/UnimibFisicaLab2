@@ -43,4 +43,12 @@ Si svolga l'esercizio precedente utilizzando una funzione ricorsiva.
 
 Si svolgano i due esercizi precedenti cercando il massimo di una funzione a scelta.
 
+![linea](../immagini/linea.png)
+
+## Esercizio 6.7
+
+Modificando i programmi sviluppati precedentemente,
+si utilizzino le classi ```TF1``` e ```TMarker``` di ```ROOT``` per disegnare su un ```TCanvas```
+le funzioni studiate ed i punti trovati con i metodi della bisezione e della sezione aurea.
+
 
