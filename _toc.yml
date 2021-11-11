@@ -41,6 +41,7 @@ sections:
     - file: Lezione_07/ESERCIZI.md
     - file: Lezione_07/SOLUZIONI.rst
 - file: appendix
+  sections:
   - file: Appendice_01/README.md
     sections:
     - file: Appendice_01/ESERCIZI.md
