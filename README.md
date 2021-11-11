@@ -30,3 +30,4 @@
   * [Lezione 5](Lezione_05/README.md) : programmazione ```template``` e Standard Template Library
   * [Lezione 6](Lezione_06/README.md) : zeri ed estremanti di funzioni
   * [Lezione 7](Lezione_07/README.md) : la distribuzione di Poisson
+  * [Lezione 8](Lezione_08/README.md) : toy experiment ed integrazione con tecniche Montecarlo
