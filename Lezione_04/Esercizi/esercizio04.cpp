@@ -1,5 +1,7 @@
-//c++ -o es4 esercizio04.cpp
+//c++ -o es4 `root-config --glibs --cflags` esercizio04.cpp
 #include <iostream> 
+#include "TH1F.h"
+#include "TCanvas.h"
 
 static const int A =  214013;
 static const int C =  2531011;
@@ -27,8 +29,19 @@ int main(){
     seed_ = 0; //setting global seed of the sequence
     float min = -3;
     float max = 3;
+    
+    TH1F histo ("histo", "prova", 5, min, max) ;
+    
+    for(int i =0; i < 10; ++i){
+       float rand = rand_range(min, max);
+       std::cout << rand << std::endl;
+       histo.Fill (rand);
+    }   
+    
+    TCanvas c1 ;
+    histo.Draw () ;
+    c1.Print ("histo.png", "png") ;
 
-    for(int i =0; i < 10; ++i) std::cout << rand_range(min, max) << std::endl;
 
     return 0;
 }
