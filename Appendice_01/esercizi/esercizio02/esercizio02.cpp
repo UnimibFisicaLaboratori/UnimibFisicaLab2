@@ -1,8 +1,6 @@
-// g++ -o Esercizio06 esercizio06.cpp ordinamento.cc
+// g++ -o Esercizio02 esercizio02.cpp ordinamento.cc
 
 /*
- *  Lezione 8 - esercizio 06
- *
  *  Si costruisca un vector che contenga cento numeri interi casuali generati fra -10 e 10.
  *      - Si ordini il contenitore utilizzando l'algoritmo std::sort.
  *      - Si ordini il contenitore mettendo prima tutti i numeri positivi, ordinati fra di loro in ordine 
