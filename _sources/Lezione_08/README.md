@@ -49,7 +49,7 @@
   * Per determinare la precisione sulla media di una campione,
     quindi,
     è necessario effettuare la generazione del campione molte volte,
-    per vedere la distribuzione dei valori della media:
+    per osservare la distribuzione dei valori della media:
     ```cpp
     // loop sui toy experiment
     statistiche s_singleToy ;
