@@ -1,4 +1,4 @@
-# Esercizi per l'appendice 1
+# Esercizi per l'appendice A1
 
 ## Esercizio A1.1
 
