@@ -1,5 +1,5 @@
 /*
-c++ -o testCentrale testCentrale.cpp `root-config --cflags --glibs`
+c++ -o es7_v2 esercizio07_v2.cpp `root-config --cflags --glibs`
 */
 
 #include <iostream>

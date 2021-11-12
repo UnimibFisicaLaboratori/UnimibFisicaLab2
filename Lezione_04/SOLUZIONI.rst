@@ -75,7 +75,7 @@ Soluzioni: Lezione 4
 ------------------------
 
 * `esercizio08_09.cpp`
-.. literalinclude:: Esercizi/esercizio07.cpp
+.. literalinclude:: Esercizi/esercizio08_09.cpp
   :language: cpp
 
 * `statistiche.h`

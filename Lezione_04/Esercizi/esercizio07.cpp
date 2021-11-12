@@ -3,9 +3,10 @@
 #include <iostream> 
 #include <cmath>
 #include <iomanip>
-#include <string>
+#include "TString.h"
 #include "TH1F.h"
 #include "TCanvas.h"
+#include "TApplication.h"
 
 static const int seed = 1234567;
 
@@ -56,7 +57,8 @@ int main(){
     srand(seed); //initializing seed for reproducibility of results
     int Ns[4] = {1, 2, 10, 50};
     
-    int dim = 100;
+    int dim = 10000;
+    int nBins = 50;
     float vals[dim];
 
     // Computing the distributions 
@@ -74,18 +76,34 @@ int main(){
         float var = (sum_q + dim*pow(mean, 2) - 2*mean*sum)/(dim-1);
 
         std::cout << "\n\nGAUSSIAN N,mean,var: " << N << " " << mean << " " << var << "\n\n" << std::endl;
-        visualize(vals, dim, 10, -2, 2);
+        //visualize(vals, dim, 10, -2, 2);
 
     }
 
     // Same thing but with standardization of the variables to obtain 
     // values distributed normally ~ N(0,1)
     
-      
-    for(auto N : Ns){
-        float sum = 0;
-        float sum_q = 0;
+    TApplication myApp("myApp", NULL, NULL);
 
+    TCanvas c0("c0","c0", 10, 10, 700, 500);
+    c0.Divide(2,2);
+
+    TH1F arrHisto[4];
+    for (unsigned int i = 0; i < 4; i++)
+    {
+      TString myStr = "GAUSSIAN STANDARD ";
+      myStr += Ns[i];
+      //std::cout << "Histo name : " << myStr << std::endl;
+      arrHisto[i] = TH1F(myStr, myStr, nBins, -3, 3);
+    }
+
+      
+    for (unsigned int k = 0; k < 4; k++){
+        
+	float sum = 0;
+        float sum_q = 0;
+        int N = Ns[k];
+	
         for(int i = 0; i < dim; ++i){
             vals[i] = normal(N, -3, 3);
             sum += vals[i];
@@ -97,13 +115,11 @@ int main(){
         //standardizing
         // Z = (\hat{X} - \mu)/(\sigma) -> distributed normally ~ N(0,1) 
         
-	TH1F histo ("histo", "GAUSSIAN STANDARD, 10, -3,3) ;
-	
         sum = 0;
         sum_q = 0;
         for(int i = 0; i < dim; ++i){
             vals[i] = (vals[i] - mean)/sqrt(var);
-	    histo.Fill(vals[i]);
+	    arrHisto[k].Fill(vals[i]);
             sum += vals[i];
             sum_q += pow(vals[i],2);
         }
@@ -111,16 +127,21 @@ int main(){
         mean = sum/dim;
         var = (sum_q + dim*pow(mean, 2) - 2*mean*sum)/(dim-1);
         
-        TCanvas c1 ;
-        histo.Draw () ;
-        c1.Print ("GAUSSIAN.png", "png") ;
-
-	
         std::cout << "\n\nGAUSSIAN STANDARD N,mean,var: " << N << " " << mean << " " << var << "\n\n" << std::endl;
-        visualize(vals, dim, 10, -3, 3);
+        //visualize(vals, dim, 10, -3, 3);
 
     }
 
+    for (unsigned int i = 0; i < 4; i++)
+    {
+      c0.cd(i+1);
+      arrHisto[i].Draw();
+    }
+
+    c0.Modified();
+    c0.Update();
+
+    myApp.Run();
 
     
 
