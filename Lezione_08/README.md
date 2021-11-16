@@ -1,4 +1,4 @@
-# Lezione 6: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+# Lezione 8: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
 
 ## Indice
 
