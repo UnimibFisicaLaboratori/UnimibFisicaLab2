@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -423,6 +425,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph">
    7.1 Rappresentazione di andamenti
    <em>
@@ -531,28 +538,30 @@
                 
   <div class="section" id="lezione-7-la-distribuzione-di-poisson">
 <h1>Lezione 7: La distribuzione di Poisson<a class="headerlink" href="#lezione-7-la-distribuzione-di-poisson" title="Permalink to this headline">¶</a></h1>
-<p>##Indice</p>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#71-rappresentazione-di-andamenti-y-vs-x-i-tgraph">7.1 Rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p>
+<li><p><a class="reference external" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph">7.1 Rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p>
 <ul>
-<li><p><a class="reference external" href="#711-definizione-di-un-tgraph">7.1.1 Definizione di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
-<li><p><a class="reference external" href="#712-riempimento-di-un-tgraph">7.1.2 Riempimento di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
-<li><p><a class="reference external" href="#713-disegno-di-un-tgraph">7.1.3 Disegno di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
-<li><p><a class="reference external" href="#714-qualche-opzione-grafica">7.1.4 Qualche opzione grafica</a></p></li>
+<li><p><a class="reference external" href="#definizione-di-un-tgraph">7.1.1 Definizione di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#riempimento-di-un-tgraph">7.1.2 Riempimento di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#disegno-di-un-tgraph">7.1.3 Disegno di un <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></a></p></li>
+<li><p><a class="reference external" href="#qualche-opzione-grafica">7.1.4 Qualche opzione grafica</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#72-i-processi-poissoniani">7.2 I processi poissoniani</a></p></li>
-<li><p><a class="reference external" href="#721-la-generazione-di-eventi-secondo-una-distribuzione-di-poisson">7.2.1 La generazione di eventi secondo una distribuzione di Poisson</a></p></li>
-<li><p><a class="reference external" href="#73-ripasso-la-generazione-di-eventi-secondo-un-distribuzione-fx-con-la-tecnica-della-funzione-inversa">7.3 Ripasso: la generazione di eventi secondo un distribuzione <em>f(x)</em> con la tecnica della funzione inversa</a></p>
+<li><p><a class="reference external" href="#i-processi-poissoniani">7.2 I processi poissoniani</a></p></li>
+<li><p><a class="reference external" href="#la-generazione-di-eventi-secondo-una-distribuzione-di-poisson">7.2.1 La generazione di eventi secondo una distribuzione di Poisson</a></p></li>
+<li><p><a class="reference external" href="#ripasso-la-generazione-di-eventi-secondo-un-distribuzione-fx-con-la-tecnica-della-funzione-inversa">7.3 Ripasso: la generazione di eventi secondo un distribuzione <em>f(x)</em> con la tecnica della funzione inversa</a></p>
 <ul>
-<li><p><a class="reference external" href="#731-lalgoritmo-della-funzione-inversa">7.3.1 L’algoritmo della funzione inversa</a></p></li>
+<li><p><a class="reference external" href="#l-algoritmo-della-funzione-inversa">7.3.1 L’algoritmo della funzione inversa</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#732-il-caso-esponenziale">7.3.2 Il caso esponenziale</a></p></li>
-<li><p><a class="reference external" href="#74-le-caratteristiche-della-distribuzione-di-poisson">7.4 Le caratteristiche della distribuzione di Poisson</a></p></li>
-<li><p><a class="reference external" href="#75-esercizi">7.5 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#il-caso-esponenziale">7.3.2 Il caso esponenziale</a></p></li>
+<li><p><a class="reference external" href="#le-caratteristiche-della-distribuzione-di-poisson">7.4 Le caratteristiche della distribuzione di Poisson</a></p></li>
+<li><p><a class="reference external" href="#esercizi">7.5 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
 <div class="section" id="rappresentazione-di-andamenti-y-vs-x-i-tgraph">
 <h2>7.1 Rappresentazione di andamenti <em>y</em> vs <em>x</em>: i <code class="docutils literal notranslate"><span class="pre">TGraph</span></code><a class="headerlink" href="#rappresentazione-di-andamenti-y-vs-x-i-tgraph" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -692,9 +701,9 @@ si può:</p>
 <ul>
 <li><p>generare eventi secondo una <strong>distribuzione di densità di probabilità esponenziale</strong>
 con tempo caratteristico <em>t<sub>0</sub></em> unitario</p></li>
-<li><p>**contare quanti eventi caschino in un determinato intervallo <em>τ</em> **
-scelto con lunghezza <em>λ</em>,
-se <em>λ</em> è la media di eventi attesa dalla distribuzione di Poisson</p></li>
+<li><p><strong>contare quanti eventi caschino in un determinato intervallo <span class="math notranslate nohighlight">\(\tau\)</span></strong>
+scelto con lunghezza <span class="math notranslate nohighlight">\(\lambda\)</span>,
+se <span class="math notranslate nohighlight">\(\lambda\)</span> è la media di eventi attesa dalla distribuzione di Poisson</p></li>
 </ul>
 </li>
 </ul>

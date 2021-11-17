@@ -1,19 +1,19 @@
-# Lezione 7: La distribuzione di Poisson 
+# Lezione 7: La distribuzione di Poisson
 
-##Indice
+## Indice
 
-  * [7.1 Rappresentazione di andamenti *y* vs *x*: i ```TGraph```](#71-rappresentazione-di-andamenti-y-vs-x-i-tgraph)
-    * [7.1.1 Definizione di un ```TGraph```](#711-definizione-di-un-tgraph)
-    * [7.1.2 Riempimento di un ```TGraph```](#712-riempimento-di-un-tgraph)
-    * [7.1.3 Disegno di un ```TGraph```](#713-disegno-di-un-tgraph)
-    * [7.1.4 Qualche opzione grafica](#714-qualche-opzione-grafica)
-  * [7.2 I processi poissoniani](#72-i-processi-poissoniani)
-  * [7.2.1 La generazione di eventi secondo una distribuzione di Poisson](#721-la-generazione-di-eventi-secondo-una-distribuzione-di-poisson)
-  * [7.3 Ripasso: la generazione di eventi secondo un distribuzione *f(x)* con la tecnica della funzione inversa](#73-ripasso-la-generazione-di-eventi-secondo-un-distribuzione-fx-con-la-tecnica-della-funzione-inversa)
-    * [7.3.1 L'algoritmo della funzione inversa](#731-lalgoritmo-della-funzione-inversa)
-  * [7.3.2 Il caso esponenziale](#732-il-caso-esponenziale)
-  * [7.4 Le caratteristiche della distribuzione di Poisson](#74-le-caratteristiche-della-distribuzione-di-poisson)
-  * [7.5 ESERCIZI](#75-esercizi)
+  * [7.1 Rappresentazione di andamenti *y* vs *x*: i ```TGraph```](#rappresentazione-di-andamenti-y-vs-x-i-tgraph)
+    * [7.1.1 Definizione di un ```TGraph```](#definizione-di-un-tgraph)
+    * [7.1.2 Riempimento di un ```TGraph```](#riempimento-di-un-tgraph)
+    * [7.1.3 Disegno di un ```TGraph```](#disegno-di-un-tgraph)
+    * [7.1.4 Qualche opzione grafica](#qualche-opzione-grafica)
+  * [7.2 I processi poissoniani](#i-processi-poissoniani)
+  * [7.2.1 La generazione di eventi secondo una distribuzione di Poisson](#la-generazione-di-eventi-secondo-una-distribuzione-di-poisson)
+  * [7.3 Ripasso: la generazione di eventi secondo un distribuzione *f(x)* con la tecnica della funzione inversa](#ripasso-la-generazione-di-eventi-secondo-un-distribuzione-fx-con-la-tecnica-della-funzione-inversa)
+    * [7.3.1 L'algoritmo della funzione inversa](#l-algoritmo-della-funzione-inversa)
+  * [7.3.2 Il caso esponenziale](#il-caso-esponenziale)
+  * [7.4 Le caratteristiche della distribuzione di Poisson](#le-caratteristiche-della-distribuzione-di-poisson)
+  * [7.5 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -101,14 +101,14 @@
 
 ## 7.2 I processi poissoniani
 
-  * Un evento fisico che produce eventi casuali distribuiti nel tempo 
+  * Un evento fisico che produce eventi casuali distribuiti nel tempo
     è di carattere Poissoniano se:
       * gli eventi sono indipendenti uno dall'altro
       * la probabilità che un evento accada non dipende dall'istante di misura
   * Se una sequenza di numeri casuali corrisponde ai tempi di un processo Poissoniano,
     allora è vero che:
-      * se la probabilità che l'evento accada dell'unità di tempo è *p*, 
-        il numero di eventi osservati in un intervallo di tempo *&tau;* 
+      * se la probabilità che l'evento accada dell'unità di tempo è *p*,
+        il numero di eventi osservati in un intervallo di tempo *&tau;*
         segue la distribuzione di probabilità di Poisson:
         ![pois_exp](immagini/poisson.png)
       * le differenze di tempo *&delta;<sub>i</sub>* fra due eventi successivi seguono una distribuzione
@@ -119,13 +119,13 @@
 
 ## 7.2.1 La generazione di eventi secondo una distribuzione di Poisson
 
-  * per ottenere eventi pseudo-casuali distribuiti secondo una **distribuzione di probabilità Poisson**
+  - per ottenere eventi pseudo-casuali distribuiti secondo una **distribuzione di probabilità Poisson**
     si può:
-    * generare eventi secondo una **distribuzione di densità di probabilità esponenziale**
+    - generare eventi secondo una **distribuzione di densità di probabilità esponenziale**
       con tempo caratteristico *t<sub>0</sub>* unitario
-    * **contare quanti eventi caschino in un determinato intervallo *&tau;* **
-      scelto con lunghezza *&lambda;*, 
-      se *&lambda;* è la media di eventi attesa dalla distribuzione di Poisson
+    - **contare quanti eventi caschino in un determinato intervallo $\tau$**
+      scelto con lunghezza $\lambda$,
+      se $\lambda$ è la media di eventi attesa dalla distribuzione di Poisson
 
 ![linea](../immagini/linea.png)
 
@@ -163,7 +163,7 @@
   * nel caso della distribuzione esponenziale, le **richieste necessarie per l'applicazione del metodo** sono soddisfatte,
     perché se ne conosce la primitiva e si può invertire:
 ![funzione_inversa_exp](immagini/funzione_inversa_exp.png)
-    * in questo caso, la variabile *y* è un numero pseudo-casuale 
+    * in questo caso, la variabile *y* è un numero pseudo-casuale
       che segue una **distribuzione di densità di probabilità uniforme fra 0 ed 1**
       (l'intervallo di valori che può assumere un esponenziale descrecente definito sull'asse positivo)
 
@@ -171,7 +171,7 @@
 
 ## 7.4 Le caratteristiche della distribuzione di Poisson
 
-  * con gli strumenti descritti, si possono **generare campioni di numeri pseudo-casuali** 
+  * con gli strumenti descritti, si possono **generare campioni di numeri pseudo-casuali**
     di tipo Poissoniano e verificare le caratteristiche della loro distribuzione,
     attraverso lo **studio dei momenti dei campioni generati**,
     disegnati con ```TGraph``` di ```ROOT```:
@@ -183,5 +183,3 @@
 ## 7.5 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
-
-
