@@ -1,15 +1,15 @@
-# Esercizi per la lezione 6
+# Esercizi per la lezione 8
 
 ## Esercizio 8.1
 
 Si scriva un programma che, fissato un numero *NMAX*,
-generi *NToys* toy experiment, 
+generi *NToys* toy experiment,
 ciascuno contenente un campione di *NMAX* eventi che seguano una distribuzione a scelta
 e ne calcoli la media.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 8.2 
+## Esercizio 8.2
 
 Si aggiunga al programma precedente un oggetto di tipo ```TH1F```
 che visualizzi la distribuzione delle medie al variare dei toy experiment.
@@ -21,12 +21,12 @@ che visualizzi la distribuzione delle medie al variare dei toy experiment.
 Si utilizzi la classe ```statistiche``` sviluppata durante la Lezione 4
 per confrontare la deviazione standard della media calcolata per ogni singolo toy
 con la deviazione standard del campione delle medie.
-    
+
 ![linea](../immagini/linea.png)
 
 ## Esercizio 8.4
 
-Si utilizzino due ```TGraph``` per confrontare l'evoluzione 
+Si utilizzino due ```TGraph``` per confrontare l'evoluzione
 della deviazione standard della media calcolata per ogni singolo toy
 con la deviazione standard del campione delle medie
 al variare del numero di eventi generati in un singolo toy experiment.
@@ -85,14 +85,14 @@ e della sua incertezza.
 ## Esercizio 8.9
 
 Si disegnino in due ```TGraph``` gli andamenti della precisione del calcolo dell'integrale,
-per i due algoritmi di hit-or-miss e crude-MC, in funzione del tempo di calcolo 
+per i due algoritmi di hit-or-miss e crude-MC, in funzione del tempo di calcolo
 corrispondente alle varie scelte del numero totale *N* di eventi pseudo-casuali generati.
 
 ![linea](../immagini/linea.png)
 
 ## Esercizio 8.10
 
-Si utilizzi il metodo hit-or-miss per stimare l’integrale sotteso 
+Si utilizzi il metodo hit-or-miss per stimare l’integrale sotteso
 ad una disrtibuzione di probabilita' Gaussiana con *&mu;=0* e *&sigma;=1
 in un generico intervallo *[a,b]*.
   * Si calcoli l'integrale contenuto entro gli intervalli *[-k&sigma;,k&sigma;]*

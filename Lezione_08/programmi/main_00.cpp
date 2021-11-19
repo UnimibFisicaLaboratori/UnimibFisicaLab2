@@ -4,12 +4,12 @@ c++ -o main_00 main_00.cpp
 
 #include <cstdlib>
 #include <iostream>
-#include "../../Lezione_05/programmi/statistiche.h"
+#include "../../Lezione_03/programmi/statistiche.h"
 
 float rand_range (float min, float max)
   {
     return min + (max - min) * rand () / static_cast<float> (RAND_MAX) ;
-  } 
+  }
 
 
 int main (int argc, char ** argv)
