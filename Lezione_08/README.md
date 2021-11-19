@@ -2,27 +2,28 @@
 
 ## Indice
 
-  * [8.1 la riproduzione simulata di un esperimento: i *toy experiment*](#61-la-riproduzione-simulata-di-un-esperimento-i-toy-experiment)
-    * [8.1.1 la precisione sulla media di una misura](#611-la-precisione-sulla-media-di-una-misura)
-    * [8.1.2 la visualizzazione della distribuzione delle medie](#612-la-visualizzazione-della-distribuzione-delle-medie)
-    * [8.1.3 il confronto con la deviazione standard della media](#613-il-confronto-con-la-deviazione-standard-della-media)
-  * [8.2 integrazione con numeri pseudo-casuali](#62-integrazione-con-numeri-pseudo-casuali)
-    * [8.2.1 prerequisiti](#621-prerequisiti)
-    * [8.2.2 il metodo hit-or-miss](#622-il-metodo-hit-or-miss)
-    * [8.2.3 la precisione del metodo](#623-la-precisione-del-metodo)
-    * [8.2.4 l'incertezza numerica del metodo hit-or-miss](#624-lincertezza-numerica-del-metodo-hit-or-miss)
-    * [8.2.5 l'implementazione del metodo hit-or-miss](#625-limplementazione-del-metodo-hit-or-miss)
-    * [8.2.6 il metodo del *crude Monte Carlo*](#626-il-metodo-del-crude-monte-carlo)
-  * [8.3 aree positive o negative: alla ricerca degli zeri di una funzione](#63-aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione)
-    * [8.3.1 il metodo della bisezione](#631-il-metodo-della-bisezione)
-    * [8.3.2 una implementazione dell'algoritmo di bisezione](#632-una-implementazione-dellalgoritmo-di-bisezione)
-    * [8.3.3 una implementazione dell'algoritmo di bisezione in modo ricorsivo](#633-una-implementazione-dellalgoritmo-di-bisezione-in-modo-ricorsivo)
-  * [8.4 informazioni necessarie: gli estremi di una funzione](#64-informazioni-necessarie-gli-estremi-di-una-funzione)
-    * [8.4.1 la ricerca di estremanti: il metodo della sezione aurea](#641-la-ricerca-di-estremanti-il-metodo-della-sezione-aurea)
-    * [8.4.2 il criterio di restringimento](#642-il-criterio-di-restringimento)
-    * [8.4.3 l'ottimizzazione della scelta dei punti](#643-lottimizzazione-della-scelta-dei-punti)
-  * [8.5 mettere tutto insieme](#65-mettere-tutto-insieme)
-  * [8.6 ESERCIZI](#66-esercizi)
+  * [8.1 la riproduzione simulata di un esperimento: i *toy experiment*](#la-riproduzione-simulata-di-un-esperimento-i-toy-experiment)
+    * [8.1.1 la precisione sulla media di una misura](#la-precisione-sulla-media-di-una-misura)
+    * [8.1.2 la visualizzazione della distribuzione delle medie](#la-visualizzazione-della-distribuzione-delle-medie)
+    * [8.1.3 il confronto con la deviazione standard della media](#il-confronto-con-la-deviazione-standard-della-media)
+  * [8.2 integrazione con numeri pseudo-casuali](#integrazione-con-numeri-pseudo-casuali)
+    * [8.2.1 prerequisiti](#prerequisiti)
+    * [8.2.2 il metodo hit-or-miss](#il-metodo-hit-or-miss)
+    * [8.2.3 la precisione del metodo](#la-precisione-del-metodo)
+    * [8.2.4 l'incertezza numerica del metodo hit-or-miss](#lincertezza-numerica-del-metodo-hit-or-miss)
+    * [8.2.5 l'implementazione del metodo hit-or-miss](#limplementazione-del-metodo-hit-or-miss)
+    * [8.2.6 il metodo del *crude Monte Carlo*](#il-metodo-del-crude-monte-carlo)
+  * [8.3 aree positive o negative: alla ricerca degli zeri di una funzione](#aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione)
+    * [8.3.1 il metodo della bisezione](#il-metodo-della-bisezione)
+    * [8.3.2 una implementazione dell'algoritmo di bisezione](#una-implementazione-dellalgoritmo-di-bisezione)
+    * [8.3.3 una implementazione dell'algoritmo di bisezione in modo ricorsivo](#una-implementazione-dellalgoritmo-di-bisezione-in-modo-ricorsivo)
+  * [8.4 informazioni necessarie: gli estremi di una funzione](#informazioni-necessarie-gli-estremi-di-una-funzione)
+    * [8.4.1 la ricerca di estremanti: il metodo della sezione aurea](#la-ricerca-di-estremanti-il-metodo-della-sezione-aurea)
+    * [8.4.2 il criterio di restringimento](#il-criterio-di-restringimento)
+    * [8.4.3 l'ottimizzazione della scelta dei punti](#l-ottimizzazione-della-scelta-dei-punti)
+  * [8.5 mettere tutto insieme](#mettere-tutto-insieme)
+  * [8.6 ESEMPI](#esempi)
+  * [8.7 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -36,10 +37,10 @@
     le incertezze di una misura si ricavano dalla sua distribuzione di densità di probabilità,
     assumendo che l'esperimento utilizzato per compiere quella misura
     sia **ripetuto un grande numero di volte**
-  * Operativamente, 
+  * Operativamente,
     l'esperimento che porta al risultato finale di una misura è unico,
     dunque alcuni comportamenti statistici
-    si possono **solamente simulare** 
+    si possono **solamente simulare**
   * La simulazione di un esperimento di misura è detta **toy experiment**
 
 ![linea](../immagini/linea.png)
@@ -66,8 +67,10 @@
     * **NOTA BENE**: l'oggetto ```s_singleToy``` viene vuotato al termine di ogni toy experiment
   * Mentre l'oggetto ```s_singleToy``` raccoglie le **statistiche di ogni singolo toy experiment**
     e viene utilizzato per calcolarne la media,
-    l'oggetto ```s_tot``` raccoglie il campione dei valori delle medie 
+    l'oggetto ```s_tot``` raccoglie il campione dei valori delle medie
     per tutti i toy experiment
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-tanti-toy-experiment">8.0</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -90,6 +93,8 @@
       } // loop sui toy experiment
     ```
   ![medie](immagini/medie_toys.png)
+
+  <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-tanti-toy-experiment-e-visualizzazione-della-media">8.1</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -118,9 +123,10 @@
     ```
     che produce come risultato:
     ```
-    media delle deviazioni standard della media per i singoli toy: 0.0773579 
-    deviazione standard della distribuzione delle medie dei singoli toy: 0.0774481 
+    media delle deviazioni standard della media per i singoli toy: 0.0773579
+    deviazione standard della distribuzione delle medie dei singoli toy: 0.0774481
     ```
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#confronto-fra-la-larghezza-della-distribuzione-e-l-errore-sulla-media">8.2</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -134,12 +140,12 @@
   * L'utilizzo di queste tecniche in fisica è **molto vasto**,
     ad esempio nel calcolo di integrali in meccanica quantistica e teoria quantistica dei campi,
     per la simulazione di apparati di misura, et cetera
-    
+
 ![linea](../immagini/linea.png)
 
 ### 8.2.1 prerequisiti
 
-  * Studiamo il caso di integrazione di **funzioni mono-dimensionali positive, continue 
+  * Studiamo il caso di integrazione di **funzioni mono-dimensionali positive, continue
     e definite su un intervallo compatto e connesso**
     (quindi finite su tutto l'insieme di definizione)
   * Sia data come esempio la funzione *g(x) = sin(x) + 1* definita sull'intevallo *(0, &pi;)*
@@ -155,9 +161,9 @@
   * L'**algoritmo hit-or-miss** si comporta in modo simile alla generazione di numeri pseudo-casuali
     con la tecnica try-and-catch
   * Si generano *N* coppie numeri pseudo-casuali nel piano che contiene il disegno della funzione
-    e si conta il **numero di eventi** *n<sub>hit</sub>* che cascano nell'area sottesa dalla funzione 
+    e si conta il **numero di eventi** *n<sub>hit</sub>* che cascano nell'area sottesa dalla funzione
   ![integrale_RP](immagini/integrale_random_points.png)
-  * Di conseguenza, se *A* è l'area del rettangolo dove sono stati generati gli eventi 
+  * Di conseguenza, se *A* è l'area del rettangolo dove sono stati generati gli eventi
     ed *m* ed *M* gli estremi di integrazione:
   ![integrale_HOM](immagini/integrale_HOM_2.png)
 
@@ -165,7 +171,7 @@
 
 ### 8.2.3 la precisione del metodo
 
-  * Non si possono generare infiniti numeri pseudo-casuali, 
+  * Non si possono generare infiniti numeri pseudo-casuali,
     dunque il **risultato sarà approssimato**:
   ![integrale_HOM](immagini/integrale_HOM_real_3.png)
   * La quantità *I* è il *risultato dell'integrale* per il metodo hit-or-miss
@@ -181,11 +187,11 @@
 
 ### 8.2.4 l'incertezza numerica del metodo hit-or-miss
 
-  * **Valore di aspettazione e varianza** di *I* quindi, 
+  * **Valore di aspettazione e varianza** di *I* quindi,
     dati *N* numeri pseudo-casuali geneati,
     sono quindi:
   ![integrale_HOM](immagini/integrale_HOM_exp_var.png)
-  * Di conseguenza, 
+  * Di conseguenza,
     l'incertezza numerica sul calcolo dell'integrale
     è data dalla **radice della varianza**
 
@@ -193,7 +199,7 @@
 
 ### 8.2.5 l'implementazione del metodo hit-or-miss
 
-  * Anche in questo caso, 
+  * Anche in questo caso,
     si tratta di **generare numeri pseudo-casuali** sul piano
     entro *(0, 2&pi;)* sull'asse *x* e *(0, 2)* sull'asse *y*
     e contare quante coppie di punti stiano sotto la funzione da integrare:
@@ -201,13 +207,13 @@
     int N = 10000 ;
     int nHit = 0 ;
     double xMin = 0. ;
-    double xMax = 2*M_PI ; 
-    double yMin = 0. ; 
+    double xMax = 2*M_PI ;
+    double yMin = 0. ;
     double yMax = 2. ;
 
-    for (int i = 0 ; i < N ; ++i) 
+    for (int i = 0 ; i < N ; ++i)
       {
-        if (isBelow (fsin, xMin, xMax, yMin, yMax) == true) ++nHit ; 
+        if (isBelow (fsin, xMin, xMax, yMin, yMax) == true) ++nHit ;
       }
     ```
     dove:
@@ -216,28 +222,30 @@
                   double yMin, double yMax)
       {
         double x = rand_range (xMin, xMax) ;
-        double y = rand_range (yMin, yMax) ; 
-        if (y < g (x)) return true ; 
+        double y = rand_range (yMin, yMax) ;
+        if (y < g (x)) return true ;
         return false ;
       }
     ```
-  * A partire da n<sub>hit</sub>, quindi, si possono calcolare il valore dell'integrale 
+  * A partire da n<sub>hit</sub>, quindi, si possono calcolare il valore dell'integrale
     e la sua incertezza.
+
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#implementazione-di-hit-or-miss">8.3</a>) </div>
 
 ![linea](../immagini/linea.png)
 
 ### 8.2.6 il metodo del *crude Monte Carlo*
 
-  * L'agoritmo *crude Monte Carlo* 
+  * L'agoritmo *crude Monte Carlo*
     sfrutta le proprietà del **valore di aspettazione** di una funzione
-  * Dato un insieme di numeri pseudo-casuali *x<sub>i</sub>* 
-    generati secondo una distribuzione di probabilità uniforme *f(x)* definita fra *m* ed *M*, 
+  * Dato un insieme di numeri pseudo-casuali *x<sub>i</sub>*
+    generati secondo una distribuzione di probabilità uniforme *f(x)* definita fra *m* ed *M*,
     il **valore di aspettazione della funzione *g(x)***
     risulta essere:
     ![integrale_crude](immagini/integrale_crude.png)
     per definizione della distribuzione di probabilità uniforme
   * *E[g(x)]* è stimabile con la **media dei valori *g(x<sub>i</sub>)***
-    e la varianza di *g(x)* è stimabile con la 
+    e la varianza di *g(x)* è stimabile con la
     **deviazione standard della media dei valori *g(x<sub>i</sub>)***,
     che si calcola a partire dalla varianza *V[g(x)]*
   * Dunque si può calcolare una stima dell'integrale di *g(x)* e della sua incertezza:
@@ -245,8 +253,10 @@
 
 ![linea](../immagini/linea.png)
 
-## 8.6 ESERCIZI
+## 8.6 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+## 8.7 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
-
-
