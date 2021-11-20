@@ -36,7 +36,7 @@ per un campione di eventi pseudo-casuali generati secondo le istruzioni dell'Ese
 Si scriva la funzione in modo che possa essere utilizzata per costruire una ```TF1```
 di ```ROOT``` che ne disegni l'andamento in funzione di *t<sub>0</sub>*.
 Si utilizzi il seguente prototipo:
-```
+```cpp
 Double_t loglikelihood (Double_t * x, Double_t * par)
 {
   // implementazione della funzione
