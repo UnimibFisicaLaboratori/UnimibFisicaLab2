@@ -132,7 +132,7 @@
 
   * Per la creazione di un oggetto di tipo ```TF1``` che disegni una funzione di ```C++```
     esiste un **costruttore dedicato** della classe:
-    ```
+    ```cpp
     TF1::TF1 (const char * name, 
               Double_t(*)(Double_t *, Double_t *) fcn,
               Double_t xmin = 0,
@@ -156,14 +156,13 @@
   * la **chiamata al costruttore**, 
     nel caso di una funzione esponenziale,
     ha quindi il seguente formato:
-    ```
+    ```cpp
     TF1 f_exp ("f_exp", exp_R, 0, 5 * t_zero, 1) ;
     ```
   * il numero di parametri è 1, perché corrisponde a *t<sub>0</sub>*
   * per **attribuire un determinato valore al parametro** si usa il metodo ```TF1::SetParameter```
-    ```
+    ```cpp
     f_exp.SetParameter (0, t_zero) ;
-
     ```
     * il primo argomento è l'indice del parametro
     * il secondo argomento è il valore da impostare
