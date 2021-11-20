@@ -50,3 +50,11 @@ Si trovi il modo di passare alla funzione il campione di eventi e la sua lunghez
 tramite l'argomento ```par```.
 Si ricordi che il logaritmo della verosimiglianza è definito
 solamente per il caso in cui la *likelihood* sia strettamente positiva.
+
+![linea](../immagini/linea.png)
+
+## Esercizio 9.5
+
+Si studi l'andamento della forma della log-likelihood in funzione del numero di eventi
+che compongono il campione generato.
+
