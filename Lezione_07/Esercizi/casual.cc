@@ -23,8 +23,3 @@ float rand_pois (double media)
     }
   return N_evt ;
 }
-
-/* si puo' risparimare il logarimo facendo il prodotto di numeri generati 
-   uniformemente, invece che la somma dei logaritmi, prova
-https://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables
-    */
