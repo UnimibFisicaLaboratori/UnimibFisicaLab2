@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 9: la verosimiglianza &#8212; Laboratorio 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Prerequisiti/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ripasso/README.html">
+   Ripasso di
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     C
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: strutturazione di un programma ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESEMPI.html">
+       Esempi: Lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/SOLUZIONI.html">
+       Soluzioni: Lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESEMPI.html">
+       Esempi: Lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/SOLUZIONI.html">
+       Soluzioni: Lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESEMPI.html">
+       Esempi: Lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/SOLUZIONI.html">
+       Soluzioni: Lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri pseudo-casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESEMPI.html">
+       Esempi: Lezione 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/SOLUZIONI.html">
+       Soluzioni: Lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESEMPI.html">
+       Esempi: Lezione 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/SOLUZIONI.html">
+       Soluzioni: Lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_06/README.html">
+     Lezione 6: zeri ed estremanti di funzioni
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESEMPI.html">
+       Esempi: Lezione 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/SOLUZIONI.html">
+       Soluzioni: Lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_07/README.html">
+     Lezione 7: La distribuzione di Poisson
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/SOLUZIONI.html">
+       Soluzioni: Lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_08/README.html">
+     Lezione 8: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESEMPI.html">
+       Esempi: Lezione 8
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Appendice_01/README.html">
+     Appendice A1: algoritmi predefiniti nelle
+     <em>
+      Standard Template Library
+     </em>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Appendice_01/ESERCIZI.html">
+       Esercizi per l’appendice A1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Appendice_01/SOLUZIONI.html">
+       Soluzioni: Appendice A1
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_09/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-verosimiglianza">
+   9.1 La verosimiglianza
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-modello-che-descrive-i-dati">
+     9.1.1 Un modello che descrive i dati
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribuzioni-di-probabilita">
+     9.1.2 Distribuzioni di probabilità
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#il-logaritmo-della-massima-verosimiglianza">
+   9.2 Il logaritmo della massima verosimiglianza
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-costruzione-di-una-likelihood">
+   9.3 La costruzione di una
+   <em>
+    likelihood
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-distribuzione-di-probabilita-e-la-funzione-di-likelihood">
+     9.3.1 La distribuzione di probabilità e la funzione di
+     <em>
+      likelihood
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#il-disegno-di-una-funzione-di-c-con-root">
+   9.4 Il disegno di una funzione di
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     C++
+    </span>
+   </code>
+   con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ROOT
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-creazione-di-un-oggetto-di-tipo-tf1">
+     9.4.1 La creazione di un oggetto di tipo
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TF1
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-preparazione-della-funzione-tf1">
+     9.4.2 La preparazione della funzione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TF1
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizi">
+   9.5 ESERCIZI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lezione-9-la-verosimiglianza">
+<h1>Lezione 9: la verosimiglianza<a class="headerlink" href="#lezione-9-la-verosimiglianza" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#91-la-verosimiglianza">9.1 La verosimiglianza</a></p>
+<ul>
+<li><p><a class="reference external" href="#911-un-modello-che-descrive-i-dati">9.1.1 Un modello che descrive i dati</a></p></li>
+<li><p><a class="reference external" href="#912-distribuzioni-di-probabilit%C3%A0">9.1.2 Distribuzioni di probabilità</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#92-il-logaritmo-della-massima-verosimiglianza">9.2 Il logaritmo della massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#93-la-costruzione-di-una-likelihood">9.3 La costruzione di una <em>likelihood</em></a></p>
+<ul>
+<li><p><a class="reference external" href="#931-la-distribuzione-di-probabilit%C3%A0-e-la-funzione-di-likelihood">9.3.1 La distribuzione di probabilità e la funzione di <em>likelihood</em></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#94-il-disegno-di-una-funzione-di-c-con-root">9.4 Il disegno di una funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code> con <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a></p>
+<ul>
+<li><p><a class="reference external" href="#941-la-creazione-di-un-oggetto-di-tipo-tf1">9.4.1 La creazione di un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code></a></p></li>
+<li><p><a class="reference external" href="#942-la-preparazione-della-funzione-tf1">9.4.2 La preparazione della funzione <code class="docutils literal notranslate"><span class="pre">TF1</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#95-esercizi">9.5 ESERCIZI</a></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-verosimiglianza">
+<h2>9.1 La verosimiglianza<a class="headerlink" href="#la-verosimiglianza" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Tutta l’informazione che caratterizza un esperimento,
+che riassume sia le assunzioni teoriche che le misure effettuate,
+è inscritta nella <strong>verosimiglianza o <em>likelihood</em></strong>,
+definita come
+il prodotto del valore della distribuzione di densità di probabilità
+calcolata per ogni misura effettuata:
+<img alt="likelihood" src="../_images/likelihood.png" /></p></li>
+<li><p>La <em>likelihood</em> è funzione sia delle misure che dei parametri,
+tuttavia si <strong>evidenzia la dipendenza dai parametri</strong> perché
+a misure finite i dati sono immutabili.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="un-modello-che-descrive-i-dati">
+<h3>9.1.1 Un modello che descrive i dati<a class="headerlink" href="#un-modello-che-descrive-i-dati" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Un <strong>modello</strong> è una distribuzione di probabilità <em>f</em>
+o una legge <em>g</em> alla quale ci si aspetta che le misure obbediscano.</p></li>
+<li><p>I <strong>risultati delle misure</strong> sono variabili
+rispetto alle quali il modello dipende</p></li>
+<li><p>Eventuali parametri da cui dipende il modello,
+che non sono misurati,
+sono detti <strong>parametri</strong>.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="distribuzioni-di-probabilita">
+<h3>9.1.2 Distribuzioni di probabilità<a class="headerlink" href="#distribuzioni-di-probabilita" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Dato un insieme di misure reali <em>x<sub>i</sub></em> definite su un insieme Ω
+indipendenti identicamente distribuiite,
+sappiamo che seguono una <strong>data distribuzione di densità probabilità</strong>,
+indicata genericamente come <em>f(x, θ)</em></p></li>
+<li><p>Questo significa che <em>f(x<sub>i</sub>, θ)</em> è <strong>la densità di probabilità</strong>
+che la misura avvenga nel punto <em>x<sub>i</sub></em> dell’insieme di definizione Ω.</p></li>
+<li><p>Il <strong>simbolo θ</strong> indica che la funzione di densità di probabilità <em>f</em>
+dipende da altri parametri oltre che <em>x</em></p>
+<ul>
+<li><p>θ può anche essere un vettore di parametri</p></li>
+<li><p>Ad esempio, una <strong>distribuzione Gaussiana</strong> ha due parametri aggiuntivi, μ e σ:
+<img alt="gaussian" src="../_images/gaussian.png" /></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="il-logaritmo-della-massima-verosimiglianza">
+<h2>9.2 Il logaritmo della massima verosimiglianza<a class="headerlink" href="#il-logaritmo-della-massima-verosimiglianza" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Spesso si utilizza per fare conti e nelle rappresentazioni grafiche
+il <strong>logaritmo della funzione di <em>likelihood</em></strong>,
+indicato con in lettera corsiva minuscola:.
+<img alt="loglikelihood" src="../_images/loglikelihood.png" /></p></li>
+<li><p>Infatti, siccome il logaritmo è una <strong>funzione monotona crescente</strong>,
+il comportamento della <em>likelihood</em> ed il suo logartimo sono simili</p></li>
+<li><p>Il logaritmo di un prodotto di termini
+è uguale alla somma dei logaritmi dei singoli termini</p></li>
+<li><p>Il logaritmo di un numero è più piccolo del numero stesso
+e varia su un intervallo minore rispetto alla variabilità del numero stesso,
+quindi <strong>operazioni con i logaritmi possono essere stabili numericamente</strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-costruzione-di-una-likelihood">
+<h2>9.3 La costruzione di una <em>likelihood</em><a class="headerlink" href="#la-costruzione-di-una-likelihood" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Si utilizzerà l’esempio della distribuzione esponenziale,
+con l’unico parametro τ come argomento aggiuntivo della verosimiglianza:
+<img alt="esponenziale" src="../_images/esponenziale.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-distribuzione-di-probabilita-e-la-funzione-di-likelihood">
+<h3>9.3.1 La distribuzione di probabilità e la funzione di <em>likelihood</em><a class="headerlink" href="#la-distribuzione-di-probabilita-e-la-funzione-di-likelihood" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Sia la distribuzione di densità di probabilità
+che il calcolo della <em>likelihood</em> vanno scritte in codice sorgente:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">esponenziale</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tau</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tau</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">1.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">exp</span><span class="w"> </span><span class="p">(</span><span class="mf">-1.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">tau</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">tau</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>il primo <code class="docutils literal notranslate"><span class="pre">if</span></code> serve a <strong>proteggere il programma</strong> da risultati infiniti</p></li>
+</ul>
+</li>
+<li><p>il calcolo della <em>likelihood</em> avrà in ingresso
+sia i dati, che il parametro di interesse:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">loglikelihood</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">param</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="p">(</span><span class="n">esponenziale</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">param</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">;</span><span class="w">   </span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>in questo caso,
+si calcola il logaritmo del valore della densità di probabilità in ogni punto</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="il-disegno-di-una-funzione-di-c-con-root">
+<h2>9.4 Il disegno di una funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code> con <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#il-disegno-di-una-funzione-di-c-con-root" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Le <strong>funzioni di <code class="docutils literal notranslate"><span class="pre">C++</span></code> si disegnano</strong> in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> con la classe <code class="docutils literal notranslate"><span class="pre">TF1</span></code></p></li>
+<li><p>Perché un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code> possa essere costruito con una qualunque
+implementazione in formato di codice sorgente,
+tutte le funzioni utilizzate devono <strong>avere lo stesso prototipo</strong>,
+in modo che la classe <code class="docutils literal notranslate"><span class="pre">TF1</span></code> sappia riconoscerne il comportamento:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Double_t</span> <span class="n">exp_R</span> <span class="p">(</span><span class="n">Double_t</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">Double_t</span> <span class="o">*</span> <span class="n">par</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>il primo argomento è un vettore che rappresenta il <strong>dominio della funzione</strong>:
+per una funzione mono-dimensionale la <em>x</em> quindi è <code class="docutils literal notranslate"><span class="pre">x[0]</span></code></p></li>
+<li><p>il secondo argomento è l’insieme dei <strong>parametri della funzione</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-creazione-di-un-oggetto-di-tipo-tf1">
+<h3>9.4.1 La creazione di un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code><a class="headerlink" href="#la-creazione-di-un-oggetto-di-tipo-tf1" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Per la creazione di un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code> che disegni una funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code>
+esiste un <strong>costruttore dedicato</strong> della classe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span><span class="p">::</span><span class="n">TF1</span> <span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span> <span class="n">name</span><span class="p">,</span> 
+          <span class="n">Double_t</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="n">Double_t</span> <span class="o">*</span><span class="p">,</span> <span class="n">Double_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">fcn</span><span class="p">,</span>
+          <span class="n">Double_t</span> <span class="n">xmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="n">Double_t</span> <span class="n">xmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="n">Int_t</span> <span class="n">npar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="n">Int_t</span> <span class="n">ndim</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="n">EAddToList</span> <span class="n">addToGlobList</span> <span class="o">=</span> <span class="n">EAddToList</span><span class="p">::</span><span class="n">kDefault</span> 
+         <span class="p">)</span> 
+</pre></div>
+</div>
+</li>
+<li><p>I <strong>parametri di interesse</strong> per noi sono i primi 5:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*</span> <span class="pre">name</span></code> è l’identificativo interno a <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> dell’oggetto</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Double_t(*)(Double_t</span> <span class="pre">*,</span> <span class="pre">Double_t</span> <span class="pre">*)</span> <span class="pre">fcn</span></code> è la funzione scritta in codice sorgente</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xmin</span></code> è il minimo del dominio dove viene disegnata la funzione</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xmax</span></code> è il massimo del dominio dove viene disegnata la funzione</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">npar</span></code> è il numero di parametri della funzione</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-preparazione-della-funzione-tf1">
+<h3>9.4.2 La preparazione della funzione <code class="docutils literal notranslate"><span class="pre">TF1</span></code><a class="headerlink" href="#la-preparazione-della-funzione-tf1" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>la <strong>chiamata al costruttore</strong>,
+nel caso di una funzione esponenziale,
+ha quindi il seguente formato:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span> <span class="n">f_exp</span> <span class="p">(</span><span class="s2">&quot;f_exp&quot;</span><span class="p">,</span> <span class="n">exp_R</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">t_zero</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>il numero di parametri è 1, perché corrisponde a <em>t<sub>0</sub></em></p></li>
+<li><p>per <strong>attribuire un determinato valore al parametro</strong> si usa il metodo <code class="docutils literal notranslate"><span class="pre">TF1::SetParameter</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f_exp</span><span class="o">.</span><span class="n">SetParameter</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_zero</span><span class="p">)</span> <span class="p">;</span>
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>il primo argomento è l’indice del parametro</p></li>
+<li><p>il secondo argomento è il valore da impostare</p></li>
+</ul>
+</li>
+<li><p>nel caso la funzione abbia più di un parametro,
+si può utilizzare il metodo <code class="docutils literal notranslate"><span class="pre">TF1::SetParameters</span></code>,
+che prende in ingresso un array di valori lungo quanto il numero di parametri della funzione</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="esercizi">
+<h2>9.5 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_09"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Docenti del Corso di Laboratorio 2<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
