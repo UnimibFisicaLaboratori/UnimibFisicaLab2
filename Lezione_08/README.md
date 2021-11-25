@@ -13,17 +13,8 @@
     * [8.2.4 l'incertezza numerica del metodo hit-or-miss](#lincertezza-numerica-del-metodo-hit-or-miss)
     * [8.2.5 l'implementazione del metodo hit-or-miss](#limplementazione-del-metodo-hit-or-miss)
     * [8.2.6 il metodo del *crude Monte Carlo*](#il-metodo-del-crude-monte-carlo)
-  * [8.3 aree positive o negative: alla ricerca degli zeri di una funzione](#aree-positive-o-negative-alla-ricerca-degli-zeri-di-una-funzione)
-    * [8.3.1 il metodo della bisezione](#il-metodo-della-bisezione)
-    * [8.3.2 una implementazione dell'algoritmo di bisezione](#una-implementazione-dellalgoritmo-di-bisezione)
-    * [8.3.3 una implementazione dell'algoritmo di bisezione in modo ricorsivo](#una-implementazione-dellalgoritmo-di-bisezione-in-modo-ricorsivo)
-  * [8.4 informazioni necessarie: gli estremi di una funzione](#informazioni-necessarie-gli-estremi-di-una-funzione)
-    * [8.4.1 la ricerca di estremanti: il metodo della sezione aurea](#la-ricerca-di-estremanti-il-metodo-della-sezione-aurea)
-    * [8.4.2 il criterio di restringimento](#il-criterio-di-restringimento)
-    * [8.4.3 l'ottimizzazione della scelta dei punti](#l-ottimizzazione-della-scelta-dei-punti)
-  * [8.5 mettere tutto insieme](#mettere-tutto-insieme)
-  * [8.6 ESEMPI](#esempi)
-  * [8.7 ESERCIZI](#esercizi)
+  * [8.3 ESEMPI](#esempi)
+  * [8.4 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -253,10 +244,10 @@
 
 ![linea](../immagini/linea.png)
 
-## 8.6 ESEMPI
+## 8.3 ESEMPI
 
   * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
 
-## 8.7 ESERCIZI
+## 8.4 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
