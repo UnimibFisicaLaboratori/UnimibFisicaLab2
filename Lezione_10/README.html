@@ -607,6 +607,42 @@
 <h1>Lezione 9: stima di parametri con il metodo della massima verosimiglianza<a class="headerlink" href="#lezione-9-stima-di-parametri-con-il-metodo-della-massima-verosimiglianza" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#91-la-determinazione-dei-parametri">9.1 La determinazione dei parametri</a></p>
+<ul>
+<li><p><a class="reference external" href="#911-la-massima-verosimiglianza">9.1.1 La massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#912-il-massimo-del-logaritmo-della-verosimiglianza">9.1.2 Il massimo del logaritmo della verosimiglianza</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#92-la-sigma-della-distribuzione-dei-parametri-stimati">9.2 La sigma della distribuzione dei parametri stimati</a></p></li>
+<li><p><a class="reference external" href="#93-le-propriet%C3%A0-degli-stimatori-di-massima-verosimiglianza">9.3 Le proprietà degli stimatori di massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#94-la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro">9.4 La costruzione di una <em>likelihood</em> e la determinazione di un parametro</a></p>
+<ul>
+<li><p><a class="reference external" href="#941-la-determinazione-del-massimo-del-logaritmo-della-likelihood">9.4.1 La determinazione del massimo del logaritmo della <em>likelihood</em></a></p></li>
+<li><p><a class="reference external" href="#942-un-esempio-di-applicazione">9.4.2 Un esempio di applicazione</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#95-la-sigma-associata-allo-stimatore-di-tau">9.5 La sigma associata allo stimatore di τ</a></p>
+<ul>
+<li><p><a class="reference external" href="#951-lequivalente-grafico">9.5.1 L’equivalente grafico</a></p></li>
+<li><p><a class="reference external" href="#952-limplementazione-della-funzione-htau">9.5.2 L’implementazione della funzione <em>h(τ)</em></a></p></li>
+<li><p><a class="reference external" href="#953-il-calcolo-numerico-dei-punti-di-intersezione">9.5.3 Il calcolo numerico dei punti di intersezione</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#96-lutilizzo-nel-programma-principale">9.6 L’utilizzo nel programma principale</a></p>
+<ul>
+<li><p><a class="reference external" href="#961-il-confronto-con-una-stima-analitica">9.6.1 Il confronto con una stima analitica</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#97-la-distribuzione-di-probabilit%C3%A0-degli-stimatori">9.7 La distribuzione di probabilità degli stimatori</a></p>
+<ul>
+<li><p><a class="reference external" href="#971-la-generazione-di-un-toy-experiment">9.7.1 La generazione di un <em>toy experiment</em></a></p></li>
+<li><p><a class="reference external" href="#972-il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza">9.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#973-il-risultato-dello-studio">9.7.3 Il risultato dello studio</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#98-esercizi">9.8 ESERCIZI</a></p></li>
+</ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-determinazione-dei-parametri">

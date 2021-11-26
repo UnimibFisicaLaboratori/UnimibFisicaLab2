@@ -2,6 +2,26 @@
 
 ## Indice
 
+  * [9.1 La determinazione dei parametri](#91-la-determinazione-dei-parametri)
+    * [9.1.1 La massima verosimiglianza](#911-la-massima-verosimiglianza)
+    * [9.1.2 Il massimo del logaritmo della verosimiglianza](#912-il-massimo-del-logaritmo-della-verosimiglianza)
+  * [9.2 La sigma della distribuzione dei parametri stimati](#92-la-sigma-della-distribuzione-dei-parametri-stimati)
+  * [9.3 Le proprietà degli stimatori di massima verosimiglianza](#93-le-proprietà-degli-stimatori-di-massima-verosimiglianza)
+  * [9.4 La costruzione di una *likelihood* e la determinazione di un parametro](#94-la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro)
+    * [9.4.1 La determinazione del massimo del logaritmo della *likelihood*](#941-la-determinazione-del-massimo-del-logaritmo-della-likelihood)
+    * [9.4.2 Un esempio di applicazione](#942-un-esempio-di-applicazione)
+  * [9.5 La sigma associata allo stimatore di &tau;](#95-la-sigma-associata-allo-stimatore-di-tau)
+    * [9.5.1 L'equivalente grafico](#951-lequivalente-grafico)
+    * [9.5.2 L'implementazione della funzione *h(&tau;)*](#952-limplementazione-della-funzione-htau)
+    * [9.5.3 Il calcolo numerico dei punti di intersezione](#953-il-calcolo-numerico-dei-punti-di-intersezione)
+  * [9.6 L'utilizzo nel programma principale](#96-lutilizzo-nel-programma-principale)
+    * [9.6.1 Il confronto con una stima analitica](#961-il-confronto-con-una-stima-analitica)
+  * [9.7 La distribuzione di probabilità degli stimatori](#97-la-distribuzione-di-probabilità-degli-stimatori)
+    * [9.7.1 La generazione di un *toy experiment*](#971-la-generazione-di-un-toy-experiment)
+    * [9.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza](#972-il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza)
+    * [9.7.3 Il risultato dello studio](#973-il-risultato-dello-studio)
+  * [9.8 ESERCIZI](#98-esercizi)
+
 ![linea](../immagini/linea.png)
 
 ## 9.1 La determinazione dei parametri
