@@ -51,7 +51,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lezione 9: la verosimiglianza" href="../Lezione_09/README.html" />
     <link rel="prev" title="Esercizi per la lezione 8" href="ESERCIZI.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -112,16 +111,16 @@
    </code>
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../content.html">
    Indice delle Lezioni
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Lezione_01/README.html">
      Lezione 1: strutturazione di un programma ed introduzione al
@@ -317,28 +316,28 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="README.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_08/README.html">
      Lezione 8: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
     <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="ESEMPI.html">
+      <a class="reference internal" href="../Lezione_08/ESEMPI.html">
        Esempi: Lezione 8
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="ESERCIZI.html">
+      <a class="reference internal" href="../Lezione_08/ESERCIZI.html">
        Esercizi per la lezione 8
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/SOLUZIONI.html">
        Soluzioni: Lezione 8
       </a>
      </li>
@@ -363,16 +362,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../appendix.html">
    Appendice
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Appendice_01/README.html">
      Appendice A1: algoritmi predefiniti nelle
@@ -398,8 +397,8 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../Appendice_02/README.html">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="README.html">
      Appendice A2: programmazione ad oggetti: l’ereditarietà
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -407,19 +406,19 @@
       </span>
      </code>
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
     <label for="toctree-checkbox-13">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="../Appendice_02/ESERCIZI.html">
+      <a class="reference internal" href="ESERCIZI.html">
        Esercizi per la lezione 8
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../Appendice_02/SOLUZIONI.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Soluzioni: Lezione 8
       </a>
      </li>
@@ -468,7 +467,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Lezione_08/SOLUZIONI.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Appendice_02/SOLUZIONI.rst"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -778,72 +777,75 @@
 <ul class="simple">
 <li><p><cite>esercizio05.cpp</cite></p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
-<span class="cm">Esercizio 05: Si implementi il metodo di integrazione hit-or-miss con la funzione di esempio f(x) = sin (x).</span>
-<span class="cm">Si scriva l&#39;algoritmo che calcola l&#39;integrale come una funzione esterna al programma main, facendo in modo che prenda come parametri di ingresso, oltre agli estremi lungo l&#39;asse x e l&#39;asse y, anche il numero di punti pseudo-casuali da generare.</span>
-<span class="cm">Si faccia in modo che l&#39;algoritmo ritorni un contenitore contenente due elementi: il primo elemento sia il valore dell&#39;integrale, il secondo sia la sua incertezza.</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// g++ -o Esercizio05 esercizio05.cpp</span>
 
-<span class="cm">c++ -o esercizio05 esercizio05.cpp ../../Lezione_03/Esercizi/esercizio04/myarray.cc</span>
-<span class="cm">*/</span><span class="w"></span>
+<span class="cm">/*</span>
+<span class="cm"> *  Lezione 8 - Esercizio 05</span>
+<span class="cm"> *</span>
+<span class="cm"> *  Si costruisca un vector di numeri interi contenente il doppio dei primi dieci numeri interi.</span>
+<span class="cm"> *      - Si mostri che l&#39;algoritmo std::find non trova alcuno dei primi dieci numeri dispari al suo interno.</span>
+<span class="cm"> *      - Si trovi l&#39;iteratore all&#39;elemento che contiene il numero 6.</span>
+<span class="cm"> *      - Si mostri che ognuno dei primi dieci numeri pari compare una volta sola all&#39;interno del vector.</span>
+<span class="cm"> */</span><span class="w"></span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="c1"> // std::find</span><span class="cp"></span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../Lezione_03/Esercizi/esercizio04/myarray.h&quot;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Vector contenente il doppio dei primi dieci interi</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">doppio_interi</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     *  Equivalentemente (più lento per vector di grandi dimensioni): </span>
+<span class="cm">     *</span>
+<span class="cm">     *  std::vector&lt;int&gt; doppio_interi;</span>
+<span class="cm">     *  for(int i = 1; i &lt;= 10; i++)</span>
+<span class="cm">     *      doppio_interi.push_back( 2*i );</span>
+<span class="cm">     */</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// std::find non trova nessun numero dispari </span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">19</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Trovato il numero dispari &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Iteratore che contiene il numero 6</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Ognuno dei numeri pari in doppio_interi compare una volta sola</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="n">it2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Valore dell&#39;intero nella posizione corrente</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Ciclo sugli elementi successivi del vector</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">it2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">it</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">it2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">it2</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Controllo che il valore originale non si ripeta</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="w"> </span><span class="n">it2</span><span class="p">,</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Il valore &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">valore</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; si ripete!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// In alternativa, è possibile usare std::count, sempre dalla libreria algorithm</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nRip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">count</span><span class="p">(</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Ripetizioni del valore &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">doppio_interi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nRip</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 
-<span class="kt">float</span><span class="w"> </span><span class="nf">rand_range</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">RAND_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span>
-
-
-<span class="kt">double</span><span class="w"> </span><span class="nf">fsin</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span>
-<span class="w">  </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sin</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span>
-<span class="n">mioArray</span><span class="w"> </span><span class="nf">HitOrMiss</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">Nrand</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="p">(</span><span class="kt">double</span><span class="p">),</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">xMax</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="kt">double</span><span class="w"> </span><span class="n">yMin</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">yMax</span><span class="p">)</span><span class="w"></span>
-<span class="w">   </span><span class="p">{</span><span class="w"></span>
-<span class="w">     </span><span class="kt">int</span><span class="w"> </span><span class="n">nHit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">     </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xMax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">xMin</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">yMax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">yMin</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">     </span>
-<span class="w">     </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Nrand</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="n">xMin</span><span class="p">,</span><span class="w"> </span><span class="n">xMax</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="n">yMin</span><span class="p">,</span><span class="w"> </span><span class="n">yMax</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="o">++</span><span class="n">nHit</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">      </span><span class="p">}</span><span class="w">   </span>
-<span class="w">      </span>
-<span class="w">     </span><span class="kt">double</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nHit</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">Nrand</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">     </span><span class="kt">double</span><span class="w"> </span><span class="n">varianza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">Nrand</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">1.</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">           </span>
-<span class="w">     </span><span class="n">mioArray</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">      </span>
-<span class="w">     </span><span class="n">risultato</span><span class="p">.</span><span class="n">fill</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">nHit</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">Nrand</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">     </span><span class="n">risultato</span><span class="p">.</span><span class="n">fill</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">sqrt</span><span class="w"> </span><span class="p">(</span><span class="n">varianza</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="p">;</span><span class="w">       </span>
-<span class="w">   </span><span class="p">}</span><span class="w">           </span>
-
-<span class="c1">//----------------- MAIN ----------------- </span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"> </span>
-<span class="w">  </span><span class="n">srand</span><span class="w"> </span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="p">(</span><span class="nb">NULL</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">x_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">x_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">y_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">y_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">   </span>
-<span class="w">  </span><span class="n">mioArray</span><span class="w"> </span><span class="n">risultato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HitOrMiss</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">fsin</span><span class="p">,</span><span class="n">x_min</span><span class="p">,</span><span class="n">x_max</span><span class="p">,</span><span class="n">y_min</span><span class="p">,</span><span class="n">y_max</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Integrale = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">risultato</span><span class="p">.</span><span class="n">get1</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; +/- &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">risultato</span><span class="p">.</span><span class="n">get1</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1433,7 +1435,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Lezione_08"
+            path: "./Appendice_02"
         },
         predefinedOutput: true
     }
@@ -1451,13 +1453,6 @@
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Esercizi per la lezione 8</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../Lezione_09/README.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lezione 9: la verosimiglianza</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
