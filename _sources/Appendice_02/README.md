@@ -30,9 +30,9 @@
     * [A2.6.6 un esempio di utilizzo](#A266-un-esempio-di-utilizzo)
   * [A2.7 Ereditarietà e ```template```](#A27-ereditarietà-e-template)
   * [A2.8 Un utile strumento: la lettura di un *file* di testo](#A28-un-utile-strumento-la-lettura-di-un-file-di-testo)
-    * [A2.A2.1 L'implementazione della lettura](#A281-limplementazione-della-lettura)
-    * [A2.A2.2 L'implementazione della scrittura](#A282-limplementazione-della-scrittura)
-    * [A2.A2.3 Il controllo dell'apertura di un file](#A283-il-controllo-dell-apertura-di-un-file)
+    * [A2.8.1 L'implementazione della lettura](#A281-limplementazione-della-lettura)
+    * [A2.8.2 L'implementazione della scrittura](#A282-limplementazione-della-scrittura)
+    * [A2.8.3 Il controllo dell'apertura di un file](#A283-il-controllo-dell-apertura-di-un-file)
   * [A2.8 ESERCIZI](#A28-esercizi)
 
 ![linea](../immagini/linea.png)
@@ -545,7 +545,7 @@
 
 ![linea](../immagini/linea.png)
 
-### A2.A2.1 L'implementazione della lettura
+### A2.8.1 L'implementazione della lettura
 
   * L'oggetto che rappresenta un file è di tipo ```fstream```: 
     ```ifstream``` per lettura (**input file stream**) ed
@@ -579,7 +579,7 @@
 
 ![linea](../immagini/linea.png)
 
-### A2.A2.2 L'implementazione della scrittura
+### A2.8.2 L'implementazione della scrittura
 
   * In questo caso,
     si utilizza la classe ```ofstream``` per produrre un file che contiene numeri:
@@ -610,7 +610,7 @@
 
 ![linea](../immagini/linea.png)
 
-### A2.A2.3 Il controllo dell'apertura di un file
+### A2.8.3 Il controllo dell'apertura di un file
 
   * Per controllare se un file sia effettivamente stato aperto,
     si può utilizzare il metodo ```is_open```:
