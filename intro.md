@@ -32,3 +32,11 @@
   * [Lezione 7](Lezione_07/README.md) : la distribuzione di Poisson
   * [Lezione 8](Lezione_08/README.md) : toy experiment ed integrazione con tecniche Montecarlo
   * [Lezione 9](Lezione_09/README.md) : disegno della funzione di verosimiglianza
+
+![linea](immagini/linea.png)
+
+## Argomenti di approfondimento
+
+  * [Approfondimento 1](Appendice_01_08/README.md) : algoritmi predefiniti nelle *Standard Template Library*
+  * [Approfondimento 2](Appendice_01_08/README.md) : programmazione ad oggetti: l'ereditarietà ```public```
+
