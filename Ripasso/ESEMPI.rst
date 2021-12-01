@@ -5,7 +5,7 @@ Esempi: Ripasso di `C`
   :width: 1100
 
 0. `main` con argomenti
---------------------
+-----------------------
 .. literalinclude:: programmi/main_00.cpp
   :language: cpp
 
@@ -13,7 +13,7 @@ Esempi: Ripasso di `C`
   :width: 1100
 
 1. Scrivere a schermo
-------------------
+---------------------
 .. literalinclude:: programmi/main_01.cpp
   :language: cpp
 
@@ -21,7 +21,7 @@ Esempi: Ripasso di `C`
   :width: 1100
 
 2. Parametri passati da linea di comando
--------------------------------------
+----------------------------------------
 .. literalinclude:: programmi/main_02.cpp
   :language: cpp
 
@@ -29,7 +29,7 @@ Esempi: Ripasso di `C`
   :width: 1100
 
 3. Parametri chiesti all'utente
-----------------------------
+-------------------------------
 .. literalinclude:: programmi/main_03.cpp
   :language: cpp
 
@@ -37,7 +37,7 @@ Esempi: Ripasso di `C`
   :width: 1100
 
 4. Inizializzazione di Variabili
--------------------------------
+--------------------------------
 .. literalinclude:: programmi/main_04.cpp
   :language: cpp
 

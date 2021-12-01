@@ -2,16 +2,17 @@
 
 ## Indice
 
-  * [9.1 La verosimiglianza](#91-la-verosimiglianza)
-    * [9.1.1 Un modello che descrive i dati](#911-un-modello-che-descrive-i-dati)
-    * [9.1.2 Distribuzioni di probabilità](#912-distribuzioni-di-probabilità)
-  * [9.2 Il logaritmo della massima verosimiglianza](#92-il-logaritmo-della-massima-verosimiglianza)
-  * [9.3 La costruzione di una *likelihood*](#93-la-costruzione-di-una-likelihood)
-    * [9.3.1 La distribuzione di probabilità e la funzione di *likelihood*](#931-la-distribuzione-di-probabilità-e-la-funzione-di-likelihood)
-  * [9.4 Il disegno di una funzione di ```C++``` con ```ROOT```](#94-il-disegno-di-una-funzione-di-c-con-root)
-    * [9.4.1 La creazione di un oggetto di tipo ```TF1```](#941-la-creazione-di-un-oggetto-di-tipo-tf1)
-    * [9.4.2 La preparazione della funzione ```TF1```](#942-la-preparazione-della-funzione-tf1)
-  * [9.5 ESERCIZI](#95-esercizi)
+  * [9.1 La verosimiglianza](#la-verosimiglianza)
+    * [9.1.1 Un modello che descrive i dati](#un-modello-che-descrive-i-dati)
+    * [9.1.2 Distribuzioni di probabilità](#distribuzioni-di-probabilità)
+  * [9.2 Il logaritmo della massima verosimiglianza](#il-logaritmo-della-massima-verosimiglianza)
+  * [9.3 La costruzione di una *likelihood*](#la-costruzione-di-una-likelihood)
+    * [9.3.1 La distribuzione di probabilità e la funzione di *likelihood*](#la-distribuzione-di-probabilità-e-la-funzione-di-likelihood)
+  * [9.4 Il disegno di una funzione di ```C++``` con ```ROOT```](#il-disegno-di-una-funzione-di-c-con-root)
+    * [9.4.1 La creazione di un oggetto di tipo ```TF1```](#la-creazione-di-un-oggetto-di-tipo-tf1)
+    * [9.4.2 La preparazione della funzione ```TF1```](#la-preparazione-della-funzione-tf1)
+  * [9.5 ESEMPI](#esempi)
+  * [9.6 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
@@ -23,8 +24,12 @@
     definita come
     il prodotto del valore della distribuzione di densità di probabilità
     calcolata per ogni misura effettuata:
-![likelihood](immagini/likelihood.png)
-  * La *likelihood* è funzione sia delle misure che dei parametri, 
+<!--
+    $$
+    \mathcal{L} = \mathcal{L}(\theta;\vec{x}) = f(x_1,\theta)\times ... \times f(x_N,\theta) = \prod_{i=1}^N f(x_i,\theta)
+    $$ -->
+  ![likelihood](immagini/likelihood.png)
+  * La *likelihood* è funzione sia delle misure che dei parametri,
     tuttavia si **evidenzia la dipendenza dai parametri** perché
     a misure finite i dati sono immutabili.
 
@@ -34,7 +39,7 @@
 
   * Un **modello** è una distribuzione di probabilità *f*
     o una legge *g* alla quale ci si aspetta che le misure obbediscano.
-  * I **risultati delle misure** sono variabili 
+  * I **risultati delle misure** sono variabili
     rispetto alle quali il modello dipende
   * Eventuali parametri da cui dipende il modello,
     che non sono misurati,
@@ -44,9 +49,9 @@
 
 ### 9.1.2 Distribuzioni di probabilità
 
-  * Dato un insieme di misure reali *x<sub>i</sub>* definite su un insieme &Omega; 
+  * Dato un insieme di misure reali *x<sub>i</sub>* definite su un insieme &Omega;
     indipendenti identicamente distribuiite,
-    sappiamo che seguono una **data distribuzione di densità probabilità**, 
+    sappiamo che seguono una **data distribuzione di densità probabilità**,
     indicata genericamente come *f(x, &theta;)*
   * Questo significa che *f(x<sub>i</sub>, &theta;)* è **la densità di probabilità**
     che la misura avvenga nel punto *x<sub>i</sub>* dell'insieme di definizione &Omega;.
@@ -60,14 +65,17 @@
 
 ## 9.2 Il logaritmo della massima verosimiglianza
 
-  * Spesso si utilizza per fare conti e nelle rappresentazioni grafiche 
-    il **logaritmo della funzione di *likelihood***, 
+  * Spesso si utilizza per fare conti e nelle rappresentazioni grafiche
+    il **logaritmo della funzione di *likelihood***,
     indicato con in lettera corsiva minuscola:.
 ![loglikelihood](immagini/loglikelihood.png)
   * Infatti, siccome il logaritmo è una **funzione monotona crescente**,
-    il comportamento della *likelihood* ed il suo logartimo sono simili
+    il comportamento della *likelihood* ed il suo logaritmo sono simili
   * Il logaritmo di un prodotto di termini
     è uguale alla somma dei logaritmi dei singoli termini
+
+    $$\log(\mathcal{L}(\theta;\vec{x})) = \log\left(\prod_{i=1}^N f(x_i,\theta)\right) = \sum_{i=1}^N \log\left(f(x_i,\theta)\right)$$
+
   * Il logaritmo di un numero è più piccolo del numero stesso
     e varia su un intervallo minore rispetto alla variabilità del numero stesso,
     quindi **operazioni con i logaritmi possono essere stabili numericamente**
@@ -98,17 +106,19 @@
     sia i dati, che il parametro di interesse:
     ```cpp
     double loglikelihood (
-      const vector<double> & data, 
+      const vector<double> & data,
       double param
     )
     {
-      double result = 0. ; 
+      double result = 0. ;
       for (int i = 0 ; i < data.size () ; ++i) result += log (esponenziale (data.at (i), param)) ;
       return result ;   
     }
     ```
-    * in questo caso, 
+    * in questo caso,
       si calcola il logaritmo del valore della densità di probabilità in ogni punto
+
+      <div style="text-align: right"> (esempio <a href="ESEMPI.html#log-likelihood">9.0</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -117,7 +127,7 @@
   * Le **funzioni di ```C++``` si disegnano** in ```ROOT``` con la classe ```TF1```
   * Perché un oggetto di tipo ```TF1``` possa essere costruito con una qualunque
     implementazione in formato di codice sorgente,
-    tutte le funzioni utilizzate devono **avere lo stesso prototipo**, 
+    tutte le funzioni utilizzate devono **avere lo stesso prototipo**,
     in modo che la classe ```TF1``` sappia riconoscerne il comportamento:
     ```
     Double_t exp_R (Double_t * x, Double_t * par) ;
@@ -130,17 +140,17 @@
 
 ### 9.4.1 La creazione di un oggetto di tipo ```TF1```
 
-  * Per la creazione di un oggetto di tipo ```TF1``` che disegni una funzione di ```C++```
+  * Per la creazione di un oggetto di tipo [```TF1```](https://root.cern.ch/doc/master/classTF1.html) che disegni una funzione di ```C++```
     esiste un **costruttore dedicato** della classe:
     ```cpp
-    TF1::TF1 (const char * name, 
+    TF1::TF1 (const char * name,
               Double_t(*)(Double_t *, Double_t *) fcn,
               Double_t xmin = 0,
               Double_t xmax = 1,
               Int_t npar = 0,
               Int_t ndim = 1,
-              EAddToList addToGlobList = EAddToList::kDefault 
-             ) 
+              EAddToList addToGlobList = EAddToList::kDefault
+             )
     ```
   * I **parametri di interesse** per noi sono i primi 5:
     * ```const char * name``` è l'identificativo interno a ```ROOT``` dell'oggetto
@@ -153,7 +163,7 @@
 
 ### 9.4.2 La preparazione della funzione ```TF1```
 
-  * la **chiamata al costruttore**, 
+  * la **chiamata al costruttore**,
     nel caso di una funzione esponenziale,
     ha quindi il seguente formato:
     ```cpp
@@ -172,8 +182,12 @@
 
 ![linea](../immagini/linea.png)
 
-## 9.5 ESERCIZI
+## 9.5 ESEMPI
+
+  * Gli esempi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+![linea](../immagini/linea.png)
+
+## 9.6 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
-
-
