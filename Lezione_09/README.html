@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Esercizi per la lezione 9" href="ESERCIZI.html" />
+    <link rel="next" title="Esempi: Lezione 9" href="ESEMPI.html" />
     <link rel="prev" title="Soluzioni: Lezione 8" href="../Lezione_08/SOLUZIONI.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -355,6 +357,11 @@
     </label>
     <ul>
      <li class="toctree-l3">
+      <a class="reference internal" href="ESEMPI.html">
+       Esempi: Lezione 9
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="ESERCIZI.html">
        Esercizi per la lezione 9
       </a>
@@ -582,8 +589,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esempi">
+   9.5 ESEMPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   9.5 ESERCIZI
+   9.6 ESERCIZI
   </a>
  </li>
 </ul>
@@ -602,25 +614,26 @@
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#91-la-verosimiglianza">9.1 La verosimiglianza</a></p>
+<li><p><a class="reference external" href="#la-verosimiglianza">9.1 La verosimiglianza</a></p>
 <ul>
-<li><p><a class="reference external" href="#911-un-modello-che-descrive-i-dati">9.1.1 Un modello che descrive i dati</a></p></li>
-<li><p><a class="reference external" href="#912-distribuzioni-di-probabilit%C3%A0">9.1.2 Distribuzioni di probabilità</a></p></li>
+<li><p><a class="reference external" href="#un-modello-che-descrive-i-dati">9.1.1 Un modello che descrive i dati</a></p></li>
+<li><p><a class="reference external" href="#distribuzioni-di-probabilit%C3%A0">9.1.2 Distribuzioni di probabilità</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#92-il-logaritmo-della-massima-verosimiglianza">9.2 Il logaritmo della massima verosimiglianza</a></p></li>
-<li><p><a class="reference external" href="#93-la-costruzione-di-una-likelihood">9.3 La costruzione di una <em>likelihood</em></a></p>
+<li><p><a class="reference external" href="#il-logaritmo-della-massima-verosimiglianza">9.2 Il logaritmo della massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#la-costruzione-di-una-likelihood">9.3 La costruzione di una <em>likelihood</em></a></p>
 <ul>
-<li><p><a class="reference external" href="#931-la-distribuzione-di-probabilit%C3%A0-e-la-funzione-di-likelihood">9.3.1 La distribuzione di probabilità e la funzione di <em>likelihood</em></a></p></li>
+<li><p><a class="reference external" href="#la-distribuzione-di-probabilit%C3%A0-e-la-funzione-di-likelihood">9.3.1 La distribuzione di probabilità e la funzione di <em>likelihood</em></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#94-il-disegno-di-una-funzione-di-c-con-root">9.4 Il disegno di una funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code> con <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a></p>
+<li><p><a class="reference external" href="#il-disegno-di-una-funzione-di-c-con-root">9.4 Il disegno di una funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code> con <code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a></p>
 <ul>
-<li><p><a class="reference external" href="#941-la-creazione-di-un-oggetto-di-tipo-tf1">9.4.1 La creazione di un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code></a></p></li>
-<li><p><a class="reference external" href="#942-la-preparazione-della-funzione-tf1">9.4.2 La preparazione della funzione <code class="docutils literal notranslate"><span class="pre">TF1</span></code></a></p></li>
+<li><p><a class="reference external" href="#la-creazione-di-un-oggetto-di-tipo-tf1">9.4.1 La creazione di un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code></a></p></li>
+<li><p><a class="reference external" href="#la-preparazione-della-funzione-tf1">9.4.2 La preparazione della funzione <code class="docutils literal notranslate"><span class="pre">TF1</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#95-esercizi">9.5 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#esempi">9.5 ESEMPI</a></p></li>
+<li><p><a class="reference external" href="#esercizi">9.6 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -632,8 +645,14 @@ che riassume sia le assunzioni teoriche che le misure effettuate,
 è inscritta nella <strong>verosimiglianza o <em>likelihood</em></strong>,
 definita come
 il prodotto del valore della distribuzione di densità di probabilità
-calcolata per ogni misura effettuata:
-<img alt="likelihood" src="../_images/likelihood.png" /></p></li>
+calcolata per ogni misura effettuata:</p></li>
+</ul>
+<!--
+    $$
+    \mathcal{L} = \mathcal{L}(\theta;\vec{x}) = f(x_1,\theta)\times ... \times f(x_N,\theta) = \prod_{i=1}^N f(x_i,\theta)
+    $$ -->
+<p><img alt="likelihood" src="../_images/likelihood.png" /></p>
+<ul class="simple">
 <li><p>La <em>likelihood</em> è funzione sia delle misure che dei parametri,
 tuttavia si <strong>evidenzia la dipendenza dai parametri</strong> perché
 a misure finite i dati sono immutabili.</p></li>
@@ -675,15 +694,18 @@ dipende da altri parametri oltre che <em>x</em></p>
 </div>
 <div class="section" id="il-logaritmo-della-massima-verosimiglianza">
 <h2>9.2 Il logaritmo della massima verosimiglianza<a class="headerlink" href="#il-logaritmo-della-massima-verosimiglianza" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<ul>
 <li><p>Spesso si utilizza per fare conti e nelle rappresentazioni grafiche
 il <strong>logaritmo della funzione di <em>likelihood</em></strong>,
 indicato con in lettera corsiva minuscola:.
 <img alt="loglikelihood" src="../_images/loglikelihood.png" /></p></li>
 <li><p>Infatti, siccome il logaritmo è una <strong>funzione monotona crescente</strong>,
-il comportamento della <em>likelihood</em> ed il suo logartimo sono simili</p></li>
+il comportamento della <em>likelihood</em> ed il suo logaritmo sono simili</p></li>
 <li><p>Il logaritmo di un prodotto di termini
-è uguale alla somma dei logaritmi dei singoli termini</p></li>
+è uguale alla somma dei logaritmi dei singoli termini</p>
+<div class="math notranslate nohighlight">
+\[\log(\mathcal{L}(\theta;\vec{x})) = \log\left(\prod_{i=1}^N f(x_i,\theta)\right) = \sum_{i=1}^N \log\left(f(x_i,\theta)\right)\]</div>
+</li>
 <li><p>Il logaritmo di un numero è più piccolo del numero stesso
 e varia su un intervallo minore rispetto alla variabilità del numero stesso,
 quindi <strong>operazioni con i logaritmi possono essere stabili numericamente</strong></p></li>
@@ -717,19 +739,21 @@ che il calcolo della <em>likelihood</em> vanno scritte in codice sorgente:</p>
 <li><p>il calcolo della <em>likelihood</em> avrà in ingresso
 sia i dati, che il parametro di interesse:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">loglikelihood</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">param</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="p">(</span><span class="n">esponenziale</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">param</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">;</span><span class="w">   </span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<ul class="simple">
+<ul>
 <li><p>in questo caso,
-si calcola il logaritmo del valore della densità di probabilità in ogni punto</p></li>
+si calcola il logaritmo del valore della densità di probabilità in ogni punto</p>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#log-likelihood">9.0</a>) </div>
+</li>
 </ul>
 </li>
 </ul>
@@ -758,16 +782,16 @@ per una funzione mono-dimensionale la <em>x</em> quindi è <code class="docutils
 <div class="section" id="la-creazione-di-un-oggetto-di-tipo-tf1">
 <h3>9.4.1 La creazione di un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code><a class="headerlink" href="#la-creazione-di-un-oggetto-di-tipo-tf1" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Per la creazione di un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TF1</span></code> che disegni una funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code>
+<li><p>Per la creazione di un oggetto di tipo <a class="reference external" href="https://root.cern.ch/doc/master/classTF1.html"><code class="docutils literal notranslate"><span class="pre">TF1</span></code></a> che disegni una funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code>
 esiste un <strong>costruttore dedicato</strong> della classe:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span><span class="o">::</span><span class="n">TF1</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span><span class="o">::</span><span class="n">TF1</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"></span>
 <span class="w">          </span><span class="n">Double_t</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="n">Double_t</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">Double_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">fcn</span><span class="p">,</span><span class="w"></span>
 <span class="w">          </span><span class="n">Double_t</span><span class="w"> </span><span class="n">xmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
 <span class="w">          </span><span class="n">Double_t</span><span class="w"> </span><span class="n">xmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
 <span class="w">          </span><span class="n">Int_t</span><span class="w"> </span><span class="n">npar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
 <span class="w">          </span><span class="n">Int_t</span><span class="w"> </span><span class="n">ndim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="n">EAddToList</span><span class="w"> </span><span class="n">addToGlobList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EAddToList</span><span class="o">::</span><span class="n">kDefault</span><span class="w"> </span>
-<span class="w">         </span><span class="p">)</span><span class="w"> </span>
+<span class="w">          </span><span class="n">EAddToList</span><span class="w"> </span><span class="n">addToGlobList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EAddToList</span><span class="o">::</span><span class="n">kDefault</span><span class="w"></span>
+<span class="w">         </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
@@ -810,8 +834,15 @@ che prende in ingresso un array di valori lungo quanto il numero di parametri de
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
+<div class="section" id="esempi">
+<h2>9.5 ESEMPI<a class="headerlink" href="#esempi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esempi relativi alla lezione si trovano <a class="reference internal" href="ESEMPI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
 <div class="section" id="esercizi">
-<h2>9.5 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>9.6 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
@@ -852,10 +883,10 @@ che prende in ingresso un array di valori lungo quanto il numero di parametri de
             <p class="prev-next-title">Soluzioni: Lezione 8</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ESERCIZI.html" title="next page">
+    <a class='right-next' id="next-link" href="ESEMPI.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Esercizi per la lezione 9</p>
+        <p class="prev-next-title">Esempi: Lezione 9</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
