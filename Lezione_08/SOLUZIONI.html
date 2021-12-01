@@ -598,15 +598,147 @@
 <div class="section" id="generazione-di-toy-experiment">
 <h2>8.1 generazione di <em>toy experiment</em><a class="headerlink" href="#generazione-di-toy-experiment" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><cite>esercizio01_02.cpp</cite></p></li>
+<li><p><cite>esercizi01_02.cpp</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">Esercizio 01: Si scriva un programma che, fissato NMAX numero di eventi di un campione, generi NToys toy experiment di quel campione e ne calcoli la media.</span>
+<span class="cm">Esercizio 02: Si Aggiunge al programma precedente un oggetto di tipo TH1F che visualizzi la distribuzione delle medie al variare dei toy experiment.</span>
+
+<span class="cm">c++ -o esercizi01_02 esercizi01_02.cpp ../../Lezione_04/Esercizi/statistiche.cc `root-config --glibs --cflags` </span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TH1F.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TCanvas.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../Lezione_04/Esercizi/statistiche.h&quot;</span><span class="c1">  </span><span class="cp"></span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">rand_range</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">RAND_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span>
+<span class="c1">//----------------- MAIN -----------------  </span>
+<span class="w">  </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// numero di eventi generati per un singolo toy experiment</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">NMAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// numero di toy experiment per construire la pdf della media per campionamento</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">NToys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span>
+<span class="w">    </span><span class="c1">//definisco due oggetti della classe statistiche</span>
+<span class="w">    </span><span class="n">statistiche</span><span class="o">*</span><span class="w"> </span><span class="n">s_singleToy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">statistiche</span><span class="p">(</span><span class="n">NMAX</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">statistiche</span><span class="o">*</span><span class="w"> </span><span class="n">s_media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">statistiche</span><span class="p">(</span><span class="n">NToys</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="n">h_medie</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Distribuzione delle medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// loop su tutti i toy experiment</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NToys</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iToy</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//loop sul singolo esperimento</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NMAX</span><span class="p">)</span><span class="w"> </span><span class="n">s_singleToy</span><span class="o">-&gt;</span><span class="n">aggiungiNumero</span><span class="w"> </span><span class="p">(</span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="mf">-3.</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">                       </span>
+<span class="w">        </span><span class="n">h_medie</span><span class="p">.</span><span class="n">Fill</span><span class="p">(</span><span class="n">s_singleToy</span><span class="o">-&gt;</span><span class="n">media</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">s_media</span><span class="o">-&gt;</span><span class="n">aggiungiNumero</span><span class="w"> </span><span class="p">(</span><span class="n">s_singleToy</span><span class="o">-&gt;</span><span class="n">media</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w">        </span>
+<span class="w">        </span><span class="n">s_singleToy</span><span class="o">-&gt;</span><span class="n">reset</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">     </span><span class="n">TCanvas</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="n">h_medie</span><span class="p">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&quot;media del campione&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="n">h_medie</span><span class="p">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&quot;numero di eventi&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="n">h_medie</span><span class="p">.</span><span class="n">Draw</span><span class="p">();</span><span class="w"></span>
+<span class="w">     </span>
+<span class="w">     </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s">&quot;esercizio2.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;png&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">s_singleToy</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">s_media</span><span class="p">;</span><span class="w"></span>
+
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 <a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
 </div>
 <div class="section" id="disegno-di-toy-experiment">
 <h2>8.2 disegno di <em>toy experiment</em><a class="headerlink" href="#disegno-di-toy-experiment" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><cite>esercizio01_02.cpp</cite></p></li>
+<li><p><cite>esercizi01_02.cpp</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">Esercizio 01: Si scriva un programma che, fissato NMAX numero di eventi di un campione, generi NToys toy experiment di quel campione e ne calcoli la media.</span>
+<span class="cm">Esercizio 02: Si Aggiunge al programma precedente un oggetto di tipo TH1F che visualizzi la distribuzione delle medie al variare dei toy experiment.</span>
+
+<span class="cm">c++ -o esercizi01_02 esercizi01_02.cpp ../../Lezione_04/Esercizi/statistiche.cc `root-config --glibs --cflags` </span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TH1F.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TCanvas.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../Lezione_04/Esercizi/statistiche.h&quot;</span><span class="c1">  </span><span class="cp"></span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">rand_range</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rand</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">RAND_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span>
+<span class="c1">//----------------- MAIN -----------------  </span>
+<span class="w">  </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// numero di eventi generati per un singolo toy experiment</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">NMAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// numero di toy experiment per construire la pdf della media per campionamento</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">NToys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span>
+<span class="w">    </span><span class="c1">//definisco due oggetti della classe statistiche</span>
+<span class="w">    </span><span class="n">statistiche</span><span class="o">*</span><span class="w"> </span><span class="n">s_singleToy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">statistiche</span><span class="p">(</span><span class="n">NMAX</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">statistiche</span><span class="o">*</span><span class="w"> </span><span class="n">s_media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">statistiche</span><span class="p">(</span><span class="n">NToys</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="n">h_medie</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Distribuzione delle medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// loop su tutti i toy experiment</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NToys</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iToy</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//loop sul singolo esperimento</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NMAX</span><span class="p">)</span><span class="w"> </span><span class="n">s_singleToy</span><span class="o">-&gt;</span><span class="n">aggiungiNumero</span><span class="w"> </span><span class="p">(</span><span class="n">rand_range</span><span class="w"> </span><span class="p">(</span><span class="mf">-3.</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">                       </span>
+<span class="w">        </span><span class="n">h_medie</span><span class="p">.</span><span class="n">Fill</span><span class="p">(</span><span class="n">s_singleToy</span><span class="o">-&gt;</span><span class="n">media</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">s_media</span><span class="o">-&gt;</span><span class="n">aggiungiNumero</span><span class="w"> </span><span class="p">(</span><span class="n">s_singleToy</span><span class="o">-&gt;</span><span class="n">media</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w">        </span>
+<span class="w">        </span><span class="n">s_singleToy</span><span class="o">-&gt;</span><span class="n">reset</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">     </span><span class="n">TCanvas</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="n">h_medie</span><span class="p">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&quot;media del campione&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="n">h_medie</span><span class="p">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s">&quot;numero di eventi&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="n">h_medie</span><span class="p">.</span><span class="n">Draw</span><span class="p">();</span><span class="w"></span>
+<span class="w">     </span>
+<span class="w">     </span><span class="n">c1</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s">&quot;esercizio2.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;png&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">s_singleToy</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">s_media</span><span class="p">;</span><span class="w"></span>
+
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 <a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
 </div>
 <div class="section" id="calcolo-delle-statistiche-di-un-campione-di-toy-experiment">

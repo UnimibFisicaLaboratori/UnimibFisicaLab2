@@ -6,8 +6,8 @@ Soluzioni: Lezione 8
 
 8.1 generazione di *toy experiment*
 ------------------------------------------------------------------
-* `esercizio01_02.cpp`
-.. literalinclude:: Esercizi/esercizio01_02.cpp
+* `esercizi01_02.cpp`
+.. literalinclude:: Esercizi/esercizi01_02.cpp
   :language: cpp
 
 .. image:: ../immagini/linea.png
@@ -15,8 +15,8 @@ Soluzioni: Lezione 8
 
 8.2 disegno di *toy experiment*
 ------------------------------------------------------------------
-* `esercizio01_02.cpp`
-.. literalinclude:: Esercizi/esercizio01_02.cpp
+* `esercizi01_02.cpp`
+.. literalinclude:: Esercizi/esercizi01_02.cpp
   :language: cpp
 
 .. image:: ../immagini/linea.png
