@@ -47,9 +47,14 @@ sections:
     - file: Lezione_08/SOLUZIONI.rst
   - file: Lezione_09/README.md
     sections:
-    - file: Lezione_09/ESEMPI.rst
+#    - file: Lezione_09/ESEMPI.rst
     - file: Lezione_09/ESERCIZI.md
-    #- file: Lezione_09/SOLUZIONI.rst
+    - file: Lezione_09/SOLUZIONI.rst
+  - file: Lezione_10/README.md
+    sections:
+#    - file: Lezione_10/ESEMPI.rst
+    - file: Lezione_10/ESERCIZI.md
+    #- file: Lezione_10/SOLUZIONI.rst
 - file: appendix
   sections:
   - file: Appendice_01/README.md
