@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lezione 9: stima di parametri con il metodo della massima verosimiglianza &#8212; Laboratorio 2</title>
+    <title>Lezione 10: stima di parametri con il metodo della massima verosimiglianza &#8212; Laboratorio 2</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -368,7 +368,7 @@
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="current reference internal" href="#">
-     Lezione 9: stima di parametri con il metodo della massima verosimiglianza
+     Lezione 10: stima di parametri con il metodo della massima verosimiglianza
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
     <label for="toctree-checkbox-11">
@@ -527,34 +527,34 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#la-determinazione-dei-parametri">
-   9.1 La determinazione dei parametri
+   10.1 La determinazione dei parametri
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#la-massima-verosimiglianza">
-     9.1.1 La massima verosimiglianza
+     10.1.1 La massima verosimiglianza
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#il-massimo-del-logaritmo-della-verosimiglianza">
-     9.1.2 Il massimo del logaritmo della verosimiglianza
+     10.1.2 Il massimo del logaritmo della verosimiglianza
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#la-sigma-della-distribuzione-dei-parametri-stimati">
-   9.2 La sigma della distribuzione dei parametri stimati
+   10.2 La sigma della distribuzione dei parametri stimati
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#le-proprieta-degli-stimatori-di-massima-verosimiglianza">
-   9.3 Le proprietà degli stimatori di massima verosimiglianza
+   10.3 Le proprietà degli stimatori di massima verosimiglianza
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro">
-   9.4 La costruzione di una
+   10.4 La costruzione di una
    <em>
     likelihood
    </em>
@@ -563,7 +563,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#la-determinazione-del-massimo-del-logaritmo-della-likelihood">
-     9.4.1 La determinazione del massimo del logaritmo della
+     10.4.1 La determinazione del massimo del logaritmo della
      <em>
       likelihood
      </em>
@@ -571,24 +571,24 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#un-esempio-di-applicazione">
-     9.4.2 Un esempio di applicazione
+     10.4.2 Un esempio di applicazione
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#la-sigma-associata-allo-stimatore-di">
-   9.5 La sigma associata allo stimatore di τ
+   10.5 La sigma associata allo stimatore di τ
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#l-equivalente-grafico">
-     9.5.1 L’equivalente grafico
+     10.5.1 L’equivalente grafico
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#l-implementazione-della-funzione-h">
-     9.5.2 L’implementazione della funzione
+     10.5.2 L’implementazione della funzione
      <em>
       h(τ)
      </em>
@@ -596,31 +596,31 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#il-calcolo-numerico-dei-punti-di-intersezione">
-     9.5.3 Il calcolo numerico dei punti di intersezione
+     10.5.3 Il calcolo numerico dei punti di intersezione
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#l-utilizzo-nel-programma-principale">
-   9.6 L’utilizzo nel programma principale
+   10.6 L’utilizzo nel programma principale
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#il-confronto-con-una-stima-analitica">
-     9.6.1 Il confronto con una stima analitica
+     10.6.1 Il confronto con una stima analitica
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#la-distribuzione-di-probabilita-degli-stimatori">
-   9.7 La distribuzione di probabilità degli stimatori
+   10.7 La distribuzione di probabilità degli stimatori
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#la-generazione-di-un-toy-experiment">
-     9.7.1 La generazione di un
+     10.7.1 La generazione di un
      <em>
       toy experiment
      </em>
@@ -628,19 +628,19 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza">
-     9.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza
+     10.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#il-risultato-dello-studio">
-     9.7.3 Il risultato dello studio
+     10.7.3 Il risultato dello studio
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   9.8 ESERCIZI
+   10.8 ESERCIZI
   </a>
  </li>
 </ul>
@@ -654,50 +654,50 @@
         
               <div>
                 
-  <div class="section" id="lezione-9-stima-di-parametri-con-il-metodo-della-massima-verosimiglianza">
-<h1>Lezione 9: stima di parametri con il metodo della massima verosimiglianza<a class="headerlink" href="#lezione-9-stima-di-parametri-con-il-metodo-della-massima-verosimiglianza" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lezione-10-stima-di-parametri-con-il-metodo-della-massima-verosimiglianza">
+<h1>Lezione 10: stima di parametri con il metodo della massima verosimiglianza<a class="headerlink" href="#lezione-10-stima-di-parametri-con-il-metodo-della-massima-verosimiglianza" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#91-la-determinazione-dei-parametri">9.1 La determinazione dei parametri</a></p>
+<li><p><a class="reference external" href="#91-la-determinazione-dei-parametri">10.1 La determinazione dei parametri</a></p>
 <ul>
-<li><p><a class="reference external" href="#911-la-massima-verosimiglianza">9.1.1 La massima verosimiglianza</a></p></li>
-<li><p><a class="reference external" href="#912-il-massimo-del-logaritmo-della-verosimiglianza">9.1.2 Il massimo del logaritmo della verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#911-la-massima-verosimiglianza">10.1.1 La massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#912-il-massimo-del-logaritmo-della-verosimiglianza">10.1.2 Il massimo del logaritmo della verosimiglianza</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#92-la-sigma-della-distribuzione-dei-parametri-stimati">9.2 La sigma della distribuzione dei parametri stimati</a></p></li>
-<li><p><a class="reference external" href="#93-le-propriet%C3%A0-degli-stimatori-di-massima-verosimiglianza">9.3 Le proprietà degli stimatori di massima verosimiglianza</a></p></li>
-<li><p><a class="reference external" href="#94-la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro">9.4 La costruzione di una <em>likelihood</em> e la determinazione di un parametro</a></p>
+<li><p><a class="reference external" href="#92-la-sigma-della-distribuzione-dei-parametri-stimati">10.2 La sigma della distribuzione dei parametri stimati</a></p></li>
+<li><p><a class="reference external" href="#93-le-propriet%C3%A0-degli-stimatori-di-massima-verosimiglianza">10.3 Le proprietà degli stimatori di massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#94-la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro">10.4 La costruzione di una <em>likelihood</em> e la determinazione di un parametro</a></p>
 <ul>
-<li><p><a class="reference external" href="#941-la-determinazione-del-massimo-del-logaritmo-della-likelihood">9.4.1 La determinazione del massimo del logaritmo della <em>likelihood</em></a></p></li>
-<li><p><a class="reference external" href="#942-un-esempio-di-applicazione">9.4.2 Un esempio di applicazione</a></p></li>
+<li><p><a class="reference external" href="#941-la-determinazione-del-massimo-del-logaritmo-della-likelihood">10.4.1 La determinazione del massimo del logaritmo della <em>likelihood</em></a></p></li>
+<li><p><a class="reference external" href="#942-un-esempio-di-applicazione">10.4.2 Un esempio di applicazione</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#95-la-sigma-associata-allo-stimatore-di-tau">9.5 La sigma associata allo stimatore di τ</a></p>
+<li><p><a class="reference external" href="#95-la-sigma-associata-allo-stimatore-di-tau">10.5 La sigma associata allo stimatore di τ</a></p>
 <ul>
-<li><p><a class="reference external" href="#951-lequivalente-grafico">9.5.1 L’equivalente grafico</a></p></li>
-<li><p><a class="reference external" href="#952-limplementazione-della-funzione-htau">9.5.2 L’implementazione della funzione <em>h(τ)</em></a></p></li>
-<li><p><a class="reference external" href="#953-il-calcolo-numerico-dei-punti-di-intersezione">9.5.3 Il calcolo numerico dei punti di intersezione</a></p></li>
+<li><p><a class="reference external" href="#951-lequivalente-grafico">10.5.1 L’equivalente grafico</a></p></li>
+<li><p><a class="reference external" href="#952-limplementazione-della-funzione-htau">10.5.2 L’implementazione della funzione <em>h(τ)</em></a></p></li>
+<li><p><a class="reference external" href="#953-il-calcolo-numerico-dei-punti-di-intersezione">10.5.3 Il calcolo numerico dei punti di intersezione</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#96-lutilizzo-nel-programma-principale">9.6 L’utilizzo nel programma principale</a></p>
+<li><p><a class="reference external" href="#96-lutilizzo-nel-programma-principale">10.6 L’utilizzo nel programma principale</a></p>
 <ul>
-<li><p><a class="reference external" href="#961-il-confronto-con-una-stima-analitica">9.6.1 Il confronto con una stima analitica</a></p></li>
+<li><p><a class="reference external" href="#961-il-confronto-con-una-stima-analitica">10.6.1 Il confronto con una stima analitica</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#97-la-distribuzione-di-probabilit%C3%A0-degli-stimatori">9.7 La distribuzione di probabilità degli stimatori</a></p>
+<li><p><a class="reference external" href="#97-la-distribuzione-di-probabilit%C3%A0-degli-stimatori">10.7 La distribuzione di probabilità degli stimatori</a></p>
 <ul>
-<li><p><a class="reference external" href="#971-la-generazione-di-un-toy-experiment">9.7.1 La generazione di un <em>toy experiment</em></a></p></li>
-<li><p><a class="reference external" href="#972-il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza">9.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza</a></p></li>
-<li><p><a class="reference external" href="#973-il-risultato-dello-studio">9.7.3 Il risultato dello studio</a></p></li>
+<li><p><a class="reference external" href="#971-la-generazione-di-un-toy-experiment">10.7.1 La generazione di un <em>toy experiment</em></a></p></li>
+<li><p><a class="reference external" href="#972-il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza">10.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#973-il-risultato-dello-studio">10.7.3 Il risultato dello studio</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#98-esercizi">9.8 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#98-esercizi">10.8 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-determinazione-dei-parametri">
-<h2>9.1 La determinazione dei parametri<a class="headerlink" href="#la-determinazione-dei-parametri" title="Permalink to this headline">¶</a></h2>
+<h2>10.1 La determinazione dei parametri<a class="headerlink" href="#la-determinazione-dei-parametri" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Spesso l’obiettivo di un esperimento è la <strong>stima dei parametri</strong> di un modello</p></li>
 <li><p>Per ottenere questo risultato,
@@ -717,7 +717,7 @@ cioè adatattamento.</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="la-massima-verosimiglianza">
-<h3>9.1.1 La massima verosimiglianza<a class="headerlink" href="#la-massima-verosimiglianza" title="Permalink to this headline">¶</a></h3>
+<h3>10.1.1 La massima verosimiglianza<a class="headerlink" href="#la-massima-verosimiglianza" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>La tecnica della massima verosimiglianza
 si basa sull’assunto che la stima dei parametri ricercati
@@ -736,7 +736,7 @@ a misure finite i dati sono immutabili.</p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="il-massimo-del-logaritmo-della-verosimiglianza">
-<h3>9.1.2 Il massimo del logaritmo della verosimiglianza<a class="headerlink" href="#il-massimo-del-logaritmo-della-verosimiglianza" title="Permalink to this headline">¶</a></h3>
+<h3>10.1.2 Il massimo del logaritmo della verosimiglianza<a class="headerlink" href="#il-massimo-del-logaritmo-della-verosimiglianza" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Solitamente si utilizza il <strong>logaritmo della funzione di <em>likelihood</em></strong>,
 indicato con in lettera corsiva minuscola:.
@@ -757,7 +757,7 @@ quindi <strong>operazioni con i logaritmi sono più stabili numericamente</stron
 </div>
 </div>
 <div class="section" id="la-sigma-della-distribuzione-dei-parametri-stimati">
-<h2>9.2 La sigma della distribuzione dei parametri stimati<a class="headerlink" href="#la-sigma-della-distribuzione-dei-parametri-stimati" title="Permalink to this headline">¶</a></h2>
+<h2>10.2 La sigma della distribuzione dei parametri stimati<a class="headerlink" href="#la-sigma-della-distribuzione-dei-parametri-stimati" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Sappiamo che esiste un <strong>metodo grafico</strong>
 per la determinazione della sigma associata ai parametri stimati con
@@ -770,7 +770,7 @@ e calcolarne la mezza distanza</p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="le-proprieta-degli-stimatori-di-massima-verosimiglianza">
-<h2>9.3 Le proprietà degli stimatori di massima verosimiglianza<a class="headerlink" href="#le-proprieta-degli-stimatori-di-massima-verosimiglianza" title="Permalink to this headline">¶</a></h2>
+<h2>10.3 Le proprietà degli stimatori di massima verosimiglianza<a class="headerlink" href="#le-proprieta-degli-stimatori-di-massima-verosimiglianza" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Sono <strong>consistenti</strong></p></li>
 <li><p>Sono <strong>asintoticamente non distorti</strong>,
@@ -782,7 +782,7 @@ per il numero di misure <em>N</em> che tende all’infinito</p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro">
-<h2>9.4 La costruzione di una <em>likelihood</em> e la determinazione di un parametro<a class="headerlink" href="#la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro" title="Permalink to this headline">¶</a></h2>
+<h2>10.4 La costruzione di una <em>likelihood</em> e la determinazione di un parametro<a class="headerlink" href="#la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Si utilizzerà l’esempio della distribuzione esponenziale
 per determinarne l’unico parametro τ tramite il metodo della massima verosimiglianza:
@@ -795,7 +795,7 @@ come esempio di un caso generale in cui il calcolo analitico non sia possibile.<
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="la-determinazione-del-massimo-del-logaritmo-della-likelihood">
-<h3>9.4.1 La determinazione del massimo del logaritmo della <em>likelihood</em><a class="headerlink" href="#la-determinazione-del-massimo-del-logaritmo-della-likelihood" title="Permalink to this headline">¶</a></h3>
+<h3>10.4.1 La determinazione del massimo del logaritmo della <em>likelihood</em><a class="headerlink" href="#la-determinazione-del-massimo-del-logaritmo-della-likelihood" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Si può utilizzare l’<strong>algoritmo della sezione aurea</strong> sviluppato durante la Lezione 6
 per trovare il massimo della log-likelihood:</p>
@@ -822,7 +822,7 @@ per la quale c’è un valore di default.</p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="un-esempio-di-applicazione">
-<h3>9.4.2 Un esempio di applicazione<a class="headerlink" href="#un-esempio-di-applicazione" title="Permalink to this headline">¶</a></h3>
+<h3>10.4.2 Un esempio di applicazione<a class="headerlink" href="#un-esempio-di-applicazione" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Dopo aver generato numeri pseudo-casuali distribuiti secondo una densità di probabilità esponenziale,
 che si può visualizzare con un <code class="docutils literal notranslate"><span class="pre">TH1F</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>:
@@ -848,7 +848,7 @@ dei numeri, che per questa particolare distribuzione di probabilità
 </div>
 </div>
 <div class="section" id="la-sigma-associata-allo-stimatore-di">
-<h2>9.5 La sigma associata allo stimatore di τ<a class="headerlink" href="#la-sigma-associata-allo-stimatore-di" title="Permalink to this headline">¶</a></h2>
+<h2>10.5 La sigma associata allo stimatore di τ<a class="headerlink" href="#la-sigma-associata-allo-stimatore-di" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Lo stimatore di τ è una variabile casuale,
 cioè ha una <strong>proria distribuzione di probabilità</strong></p></li>
@@ -864,7 +864,7 @@ annullando la seguente funzione:
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="l-equivalente-grafico">
-<h3>9.5.1 L’equivalente grafico<a class="headerlink" href="#l-equivalente-grafico" title="Permalink to this headline">¶</a></h3>
+<h3>10.5.1 L’equivalente grafico<a class="headerlink" href="#l-equivalente-grafico" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Disegnando la funzione <em>h(τ)</em></strong> si ottiene,
 al variare del numero di eventi utilizzati per calcolare la funzione <em>log-likelihood</em>:
@@ -879,7 +879,7 @@ cioè <strong>assume comportamento asintotico</strong></p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="l-implementazione-della-funzione-h">
-<h3>9.5.2 L’implementazione della funzione <em>h(τ)</em><a class="headerlink" href="#l-implementazione-della-funzione-h" title="Permalink to this headline">¶</a></h3>
+<h3>10.5.2 L’implementazione della funzione <em>h(τ)</em><a class="headerlink" href="#l-implementazione-della-funzione-h" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Si può implementare la funzione <em>h(τ)</em>
 <strong>a partire dalla funzione <code class="docutils literal notranslate"><span class="pre">loglikelihood</span></code></strong>:</p>
@@ -898,7 +898,7 @@ cioè <strong>assume comportamento asintotico</strong></p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="il-calcolo-numerico-dei-punti-di-intersezione">
-<h3>9.5.3 Il calcolo numerico dei punti di intersezione<a class="headerlink" href="#il-calcolo-numerico-dei-punti-di-intersezione" title="Permalink to this headline">¶</a></h3>
+<h3>10.5.3 Il calcolo numerico dei punti di intersezione<a class="headerlink" href="#il-calcolo-numerico-dei-punti-di-intersezione" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Si può <strong>utilizzare il metodo della bisezione</strong> per trovare
 <em>τ - σ<sub>τ</sub></em> e <em>τ + σ<sub>τ</sub></em></p>
@@ -928,7 +928,7 @@ cioè <strong>assume comportamento asintotico</strong></p></li>
 </div>
 </div>
 <div class="section" id="l-utilizzo-nel-programma-principale">
-<h2>9.6 L’utilizzo nel programma principale<a class="headerlink" href="#l-utilizzo-nel-programma-principale" title="Permalink to this headline">¶</a></h2>
+<h2>10.6 L’utilizzo nel programma principale<a class="headerlink" href="#l-utilizzo-nel-programma-principale" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Su un intervallo relativamente ristretto intorno al massimo
 della funzione <em>log-likelihood</em> sappiamo che
@@ -950,7 +950,7 @@ dunque, si possono calcolare i due punti desiderati:</p>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="il-confronto-con-una-stima-analitica">
-<h3>9.6.1 Il confronto con una stima analitica<a class="headerlink" href="#il-confronto-con-una-stima-analitica" title="Permalink to this headline">¶</a></h3>
+<h3>10.6.1 Il confronto con una stima analitica<a class="headerlink" href="#il-confronto-con-una-stima-analitica" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Si sa che nel caso della distribuzione esponenziale
 la <strong>varianza è pari al quadrato della media</strong></p></li>
@@ -968,7 +968,7 @@ con quello calcolato a partire dalla media aritmetica.</p></li>
 </div>
 </div>
 <div class="section" id="la-distribuzione-di-probabilita-degli-stimatori">
-<h2>9.7 La distribuzione di probabilità degli stimatori<a class="headerlink" href="#la-distribuzione-di-probabilita-degli-stimatori" title="Permalink to this headline">¶</a></h2>
+<h2>10.7 La distribuzione di probabilità degli stimatori<a class="headerlink" href="#la-distribuzione-di-probabilita-degli-stimatori" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>La distribuzione di probabilità degli stimatori può essere <strong>ricostruita in modo frequentista</strong>,
 simulando l’esperimento di raccolta degli eventi un gran numero di volte,
@@ -987,7 +987,7 @@ bisogna ripetere <strong>due procedure</strong> un gran numero di volte (<code c
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="la-generazione-di-un-toy-experiment">
-<h3>9.7.1 La generazione di un <em>toy experiment</em><a class="headerlink" href="#la-generazione-di-un-toy-experiment" title="Permalink to this headline">¶</a></h3>
+<h3>10.7.1 La generazione di un <em>toy experiment</em><a class="headerlink" href="#la-generazione-di-un-toy-experiment" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Per generare un <em>toy experiment</em> si ricorre solitamente a <strong>numeri pseudo-casuali</strong>,
 utilizzando algoritmi esistenti adattati al caso in esame</p></li>
@@ -1016,7 +1016,7 @@ si può riempire un <code class="docutils literal notranslate"><span class="pre"
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza">
-<h3>9.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza<a class="headerlink" href="#il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza" title="Permalink to this headline">¶</a></h3>
+<h3>10.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza<a class="headerlink" href="#il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>A partire dal <code class="docutils literal notranslate"><span class="pre">vector</span></code> <code class="docutils literal notranslate"><span class="pre">data_loc</span></code> si può applicare il metodo della massima verosimiglianza
 sviluppato precedentemente, ottenendo un risultato per ogni <em>toy experiment</em></p>
@@ -1030,7 +1030,7 @@ sviluppato precedentemente, ottenendo un risultato per ogni <em>toy experiment</
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="il-risultato-dello-studio">
-<h3>9.7.3 Il risultato dello studio<a class="headerlink" href="#il-risultato-dello-studio" title="Permalink to this headline">¶</a></h3>
+<h3>10.7.3 Il risultato dello studio<a class="headerlink" href="#il-risultato-dello-studio" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Entrambi i passaggi sono <strong>inseriti in un ciclo generale</strong>,
 dove si può riempire un istogramma (o altri strumenti statistici)</p>
@@ -1053,7 +1053,7 @@ dello stimatore al crescere del numero di misure a disposizione:
 </div>
 </div>
 <div class="section" id="esercizi">
-<h2>9.8 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>10.8 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
