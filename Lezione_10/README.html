@@ -972,7 +972,7 @@ con quello calcolato a partire dalla media aritmetica.</p></li>
 <ul class="simple">
 <li><p>La distribuzione di probabilità degli stimatori può essere <strong>ricostruita in modo frequentista</strong>,
 simulando l’esperimento di raccolta degli eventi un gran numero di volte,
-con la tecnica dei <em>toy experiment</em> descritta nella Lezione 6</p></li>
+con la tecnica dei <em>toy experiment</em> descritta nella Lezione 8</p></li>
 <li><p>Per la generazione di un <em>toy experiment</em> bisogna ipotizzare
 il <strong>valore vero del parametro</strong> (<code class="docutils literal notranslate"><span class="pre">mu_true</span></code> nel caso trattato finora)
 ed il <strong>numero di eventi raccolto</strong> (<code class="docutils literal notranslate"><span class="pre">numero_eventi</span></code>)</p></li>
@@ -1021,7 +1021,6 @@ si può riempire un <code class="docutils literal notranslate"><span class="pre"
 <li><p>A partire dal <code class="docutils literal notranslate"><span class="pre">vector</span></code> <code class="docutils literal notranslate"><span class="pre">data_loc</span></code> si può applicare il metodo della massima verosimiglianza
 sviluppato precedentemente, ottenendo un risultato per ogni <em>toy experiment</em></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">media_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="p">(</span><span class="n">data_loc</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="kt">double</span><span class="w"> </span><span class="n">sigma_subsample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media_v</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">sqrt</span><span class="w"> </span><span class="p">(</span><span class="n">data_loc</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">())</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="kt">double</span><span class="w"> </span><span class="n">massimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sezione_aurea_max</span><span class="w"> </span><span class="p">(</span><span class="n">loglikelihood</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">media_v</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">media_v</span><span class="p">,</span><span class="w"> </span><span class="n">data_loc</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>

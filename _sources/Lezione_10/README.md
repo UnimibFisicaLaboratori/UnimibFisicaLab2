@@ -274,7 +274,7 @@
 
   * La distribuzione di probabilità degli stimatori può essere **ricostruita in modo frequentista**,
     simulando l'esperimento di raccolta degli eventi un gran numero di volte,
-    con la tecnica dei *toy experiment* descritta nella Lezione 6
+    con la tecnica dei *toy experiment* descritta nella Lezione 8
   * Per la generazione di un *toy experiment* bisogna ipotizzare
     il **valore vero del parametro** (```mu_true``` nel caso trattato finora)
     ed il **numero di eventi raccolto** (```numero_eventi```)
@@ -316,7 +316,6 @@
     sviluppato precedentemente, ottenendo un risultato per ogni *toy experiment*
     ```cpp
     double media_v = media (data_loc) ;
-    double sigma_subsample = media_v / sqrt (data_loc.size ()) ;
     double massimo = sezione_aurea_max (loglikelihood, 0.5 * media_v, 1.5 * media_v, data_loc) ;
     ```
 
