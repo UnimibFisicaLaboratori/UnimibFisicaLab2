@@ -24,8 +24,8 @@ Soluzioni: Lezione 6
 
 6.3 calcolo ricorsivo del fattoriale di un numero
 ------------------------------------------------------------------
-* `esercizio06.cpp`
-.. literalinclude:: Esercizi/esercizio06.cpp
+* `esercizio03.cpp`
+.. literalinclude:: Esercizi/esercizio03.cpp
   :language: cpp
 
 .. image:: ../immagini/linea.png
@@ -51,8 +51,8 @@ Soluzioni: Lezione 6
 
 6.6 determinazione del massimo di una funzione con il metodo della sezione aurea
 ------------------------------------------------------------------
-* `esercizio05.cpp`
-.. literalinclude:: Esercizi/esercizio05.cpp
+* `esercizio06.cpp`
+.. literalinclude:: Esercizi/esercizio06.cpp
   :language: cpp
 
 .. image:: ../immagini/linea.png
