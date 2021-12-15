@@ -7,6 +7,7 @@ Esempi: Lezione 9
 9.0 Log-likelihood
 ------------------
 * `main_00.cpp`
+
 .. literalinclude:: programmi/main_00.cpp
   :language: cpp
 

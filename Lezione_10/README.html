@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -355,6 +357,11 @@
     </label>
     <ul>
      <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESEMPI.html">
+       Esempi: Lezione 9
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../Lezione_09/ESERCIZI.html">
        Esercizi per la lezione 9
       </a>
@@ -659,40 +666,40 @@
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="#91-la-determinazione-dei-parametri">10.1 La determinazione dei parametri</a></p>
+<li><p><a class="reference external" href="#la-determinazione-dei-parametri">10.1 La determinazione dei parametri</a></p>
 <ul>
-<li><p><a class="reference external" href="#911-la-massima-verosimiglianza">10.1.1 La massima verosimiglianza</a></p></li>
-<li><p><a class="reference external" href="#912-il-massimo-del-logaritmo-della-verosimiglianza">10.1.2 Il massimo del logaritmo della verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#la-massima-verosimiglianza">10.1.1 La massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#il-massimo-del-logaritmo-della-verosimiglianza">10.1.2 Il massimo del logaritmo della verosimiglianza</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#92-la-sigma-della-distribuzione-dei-parametri-stimati">10.2 La sigma della distribuzione dei parametri stimati</a></p></li>
-<li><p><a class="reference external" href="#93-le-propriet%C3%A0-degli-stimatori-di-massima-verosimiglianza">10.3 Le proprietà degli stimatori di massima verosimiglianza</a></p></li>
-<li><p><a class="reference external" href="#94-la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro">10.4 La costruzione di una <em>likelihood</em> e la determinazione di un parametro</a></p>
+<li><p><a class="reference external" href="#la-sigma-della-distribuzione-dei-parametri-stimati">10.2 La sigma della distribuzione dei parametri stimati</a></p></li>
+<li><p><a class="reference external" href="#le-proprieta-degli-stimatori-di-massima-verosimiglianza">10.3 Le proprietà degli stimatori di massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#la-costruzione-di-una-likelihood-e-la-determinazione-di-un-parametro">10.4 La costruzione di una <em>likelihood</em> e la determinazione di un parametro</a></p>
 <ul>
-<li><p><a class="reference external" href="#941-la-determinazione-del-massimo-del-logaritmo-della-likelihood">10.4.1 La determinazione del massimo del logaritmo della <em>likelihood</em></a></p></li>
-<li><p><a class="reference external" href="#942-un-esempio-di-applicazione">10.4.2 Un esempio di applicazione</a></p></li>
+<li><p><a class="reference external" href="#la-determinazione-del-massimo-del-logaritmo-della-likelihood">10.4.1 La determinazione del massimo del logaritmo della <em>likelihood</em></a></p></li>
+<li><p><a class="reference external" href="#un-esempio-di-applicazione">10.4.2 Un esempio di applicazione</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#95-la-sigma-associata-allo-stimatore-di-tau">10.5 La sigma associata allo stimatore di τ</a></p>
+<li><p><a class="reference external" href="#la-sigma-associata-allo-stimatore-di-tau">10.5 La sigma associata allo stimatore di τ</a></p>
 <ul>
-<li><p><a class="reference external" href="#951-lequivalente-grafico">10.5.1 L’equivalente grafico</a></p></li>
-<li><p><a class="reference external" href="#952-limplementazione-della-funzione-htau">10.5.2 L’implementazione della funzione <em>h(τ)</em></a></p></li>
-<li><p><a class="reference external" href="#953-il-calcolo-numerico-dei-punti-di-intersezione">10.5.3 Il calcolo numerico dei punti di intersezione</a></p></li>
+<li><p><a class="reference external" href="#l-equivalente-grafico">10.5.1 L’equivalente grafico</a></p></li>
+<li><p><a class="reference external" href="#l-implementazione-della-funzione-htau">10.5.2 L’implementazione della funzione <em>h(τ)</em></a></p></li>
+<li><p><a class="reference external" href="#il-calcolo-numerico-dei-punti-di-intersezione">10.5.3 Il calcolo numerico dei punti di intersezione</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#96-lutilizzo-nel-programma-principale">10.6 L’utilizzo nel programma principale</a></p>
+<li><p><a class="reference external" href="#l-utilizzo-nel-programma-principale">10.6 L’utilizzo nel programma principale</a></p>
 <ul>
-<li><p><a class="reference external" href="#961-il-confronto-con-una-stima-analitica">10.6.1 Il confronto con una stima analitica</a></p></li>
+<li><p><a class="reference external" href="#il-confronto-con-una-stima-analitica">10.6.1 Il confronto con una stima analitica</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#97-la-distribuzione-di-probabilit%C3%A0-degli-stimatori">10.7 La distribuzione di probabilità degli stimatori</a></p>
+<li><p><a class="reference external" href="#la-distribuzione-di-probabilita-degli-stimatori">10.7 La distribuzione di probabilità degli stimatori</a></p>
 <ul>
-<li><p><a class="reference external" href="#971-la-generazione-di-un-toy-experiment">10.7.1 La generazione di un <em>toy experiment</em></a></p></li>
-<li><p><a class="reference external" href="#972-il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza">10.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza</a></p></li>
-<li><p><a class="reference external" href="#973-il-risultato-dello-studio">10.7.3 Il risultato dello studio</a></p></li>
+<li><p><a class="reference external" href="#la-generazione-di-un-toy-experiment">10.7.1 La generazione di un <em>toy experiment</em></a></p></li>
+<li><p><a class="reference external" href="#il-calcolo-del-parametro-con-il-metodo-della-massima-verosimiglianza">10.7.2 Il calcolo del parametro con il metodo della massima verosimiglianza</a></p></li>
+<li><p><a class="reference external" href="#il-risultato-dello-studio">10.7.3 Il risultato dello studio</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#98-esercizi">10.8 ESERCIZI</a></p></li>
+<li><p><a class="reference external" href="#esercizi">10.8 ESERCIZI</a></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -701,7 +708,7 @@
 <ul class="simple">
 <li><p>Spesso l’obiettivo di un esperimento è la <strong>stima dei parametri</strong> di un modello</p></li>
 <li><p>Per ottenere questo risultato,
-si <strong>raccolgono molti dati</strong> <em>x<sub>i</sub></em> e si utilizzano come input
+si <strong>raccolgono molti dati</strong> <span class="math notranslate nohighlight">\(x_i\)</span> e si utilizzano come input
 ad algoritmi, detti <strong>stimatori</strong>, che stimino i parametri di interesse</p></li>
 <li><p>Le <strong>stime</strong> prodotte da uno stimatore <strong>sono variabili casuali</strong>,
 perché tramite gli stimatori sono funzioni di numeri casuali (i dati)</p>
@@ -737,7 +744,7 @@ a misure finite i dati sono immutabili.</p></li>
 </div>
 <div class="section" id="il-massimo-del-logaritmo-della-verosimiglianza">
 <h3>10.1.2 Il massimo del logaritmo della verosimiglianza<a class="headerlink" href="#il-massimo-del-logaritmo-della-verosimiglianza" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
+<ul>
 <li><p>Solitamente si utilizza il <strong>logaritmo della funzione di <em>likelihood</em></strong>,
 indicato con in lettera corsiva minuscola:.
 <img alt="loglikelihood" src="../_images/loglikelihood1.png" /></p></li>
@@ -747,8 +754,13 @@ gli estremanti di una funzione e del suo logaritmo si trovano al medesimo posto<
 è uguale alla somma dei logaritmi dei singoli termini,
 quindi l’operazione di derivata del logaritmo della funzione di <em>likelihood</em>
 è <strong>più semplice</strong> rispetto alla
-derivata della funzione di <em>likelihood</em>:
-<img alt="maxLoglikelihood" src="../_images/maxLoglikelihood.png" /></p></li>
+derivata della funzione di <em>likelihood</em>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial l(\theta)}{\partial\theta} = \frac{\partial\log(\mathcal{L}(\theta))}{\partial\theta} = \frac{\partial\log\left(\prod_{i=1}^N f(x_i,\theta)\right)}{\partial\theta} = \sum_{i=1}^N \frac{\partial\log\left(f(x_i,\theta)\right)}{\partial\theta}\]</div>
+</li>
+</ul>
+<!-- ![maxLoglikelihood](immagini/maxLoglikelihood.png) -->
+<ul class="simple">
 <li><p>Il logaritmo di un numero è più piccolo del numero stesso
 e varia su un intervallo minore rispetto alla variabilità del numero stesso,
 quindi <strong>operazioni con i logaritmi sono più stabili numericamente</strong></p></li>
@@ -758,14 +770,19 @@ quindi <strong>operazioni con i logaritmi sono più stabili numericamente</stron
 </div>
 <div class="section" id="la-sigma-della-distribuzione-dei-parametri-stimati">
 <h2>10.2 La sigma della distribuzione dei parametri stimati<a class="headerlink" href="#la-sigma-della-distribuzione-dei-parametri-stimati" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<ul>
 <li><p>Sappiamo che esiste un <strong>metodo grafico</strong>
 per la determinazione della sigma associata ai parametri stimati con
 il metodo della massima verosimiglianza</p></li>
-<li><p>consiste nel deteminare i punti di intersezione
+<li><p>consiste nel determinare i punti di intersezione
 fra la funzione di log-<em>likelihood</em>
-e la retta orizziontale con coordinata pari al <strong>massimo di log-<em>likelihood</em> - 0.5</strong>
-e calcolarne la mezza distanza</p></li>
+e la retta orizzontale con coordinata pari al <strong>massimo di log-<em>likelihood</em> - 0.5</strong>
+e calcolarne la mezza distanza</p>
+<div class="tip admonition">
+<p class="admonition-title">Perché <span class="math notranslate nohighlight">\(-1/2\)</span>?</p>
+<p>Per dimostrare che i punti corrispondenti a <span class="math notranslate nohighlight">\(x\pm\sigma\)</span> si possano ottenere alla condizione <span class="math notranslate nohighlight">\(l(\theta) = l(\theta)^{\text{max}} - 0.5\)</span> si sviluppa in serie di Taylor <span class="math notranslate nohighlight">\(l(\theta)\)</span> intorno allo stimatore del valore atteso <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> e si approssima il valore di aspettazione della derivata seconda di <span class="math notranslate nohighlight">\(l(\theta)\)</span> con il suo valore al massimo e lo si sostituisce con la varianza dello stimatore, applicando il teorema di Rao-Cramér (dimostrazione nel modulo di Statistica).</p>
+</div>
+</li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -814,7 +831,7 @@ per trovare il massimo della log-likelihood:</p>
 la funzione di cui trovare l’estremante (<code class="docutils literal notranslate"><span class="pre">logl</span></code>),
 l’intervallo sul quale cercare il valore massimo <strong>per il parametro τ</strong>,
 il <code class="docutils literal notranslate"><span class="pre">vector</span></code> contenente i dati
-e la precisone alla quale arrestare il calcolo,
+e la precisione alla quale arrestare il calcolo,
 per la quale c’è un valore di default.</p></li>
 </ul>
 </li>
@@ -884,7 +901,7 @@ cioè <strong>assume comportamento asintotico</strong></p></li>
 <li><p>Si può implementare la funzione <em>h(τ)</em>
 <strong>a partire dalla funzione <code class="docutils literal notranslate"><span class="pre">loglikelihood</span></code></strong>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">h</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">param</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
@@ -1008,7 +1025,7 @@ si può riempire un <code class="docutils literal notranslate"><span class="pre"
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i_sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i_sample</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numero_eventi</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i_sample</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">data_loc</span><span class="p">.</span><span class="n">push_back</span><span class="w"> </span><span class="p">(</span><span class="n">rand_IFC_Exp</span><span class="w"> </span><span class="p">(</span><span class="n">mu_true</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
@@ -1047,7 +1064,6 @@ dove si può riempire un istogramma (o altri strumenti statistici)</p>
 dello stimatore al crescere del numero di misure a disposizione:
 <img alt="pdf_stimatore_2.png" src="../_images/pdf_stimatore_2.png" /></p></li>
 </ul>
-<p><img alt="linea" src="../_images/linea.png" /></p>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 </div>
