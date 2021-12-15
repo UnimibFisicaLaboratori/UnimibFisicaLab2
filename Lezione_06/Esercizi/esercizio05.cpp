@@ -22,8 +22,8 @@ double sezioneAurea_ricorsiva (double g (double),double x0, double x1, double pr
   double larghezza = fabs(x1-x0);
   
   if (larghezza < precision)   return (x0+x1)/2. ;    
-  if (funz (x3) > funz (x2) )  return sezioneAurea_ricorsiva(g,x3,x1,precision);
-  else                         return sezioneAurea_ricorsiva(g,x0,x2,precision);   
+  if (g (x3) > g (x2) )  return sezioneAurea_ricorsiva(g,x3,x1,precision);
+  else                   return sezioneAurea_ricorsiva(g,x0,x2,precision);   
 }
 
 //----------------- MAIN -----------------
