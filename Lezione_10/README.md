@@ -86,10 +86,15 @@
   * Sappiamo che esiste un **metodo grafico**
     per la determinazione della sigma associata ai parametri stimati con
     il metodo della massima verosimiglianza
-  * consiste nel deteminare i punti di intersezione
+  * consiste nel determinare i punti di intersezione
     fra la funzione di log-*likelihood*
-    e la retta orizziontale con coordinata pari al **massimo di log-*likelihood* - 0.5**
+    e la retta orizzontale con coordinata pari al **massimo di log-*likelihood* - 0.5**
     e calcolarne la mezza distanza
+
+    ```{admonition} Perché $-1/2$?
+    :class: tip
+    Per dimostrare che i punti corrispondenti a $x\pm\sigma$ si possano ottenere alla condizione $l(\theta) = l(\theta)^{\text{max}} - 0.5$ si sviluppa in serie di Taylor $l(\theta)$ intorno allo stimatore del valore atteso $\hat{\theta}$ e si approssima il valore di aspettazione della derivata seconda di $l(\theta)$ con il suo valore al massimo e lo si sostituisce con la varianza dello stimatore, applicando il teorema di Rao-Cramér (dimostrazione nel modulo di Statistica).
+    ```
 
 ![linea](../immagini/linea.png)
 
