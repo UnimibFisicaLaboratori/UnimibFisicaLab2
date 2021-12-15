@@ -47,7 +47,7 @@ sections:
     - file: Lezione_08/SOLUZIONI.rst
   - file: Lezione_09/README.md
     sections:
-#    - file: Lezione_09/ESEMPI.rst
+    - file: Lezione_09/ESEMPI.rst
     - file: Lezione_09/ESERCIZI.md
     - file: Lezione_09/SOLUZIONI.rst
   - file: Lezione_10/README.md
