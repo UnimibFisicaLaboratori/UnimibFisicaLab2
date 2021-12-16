@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 11: fit di distribuzioni binnate con ROOT &#8212; Laboratorio 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_unimib.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Laboratorio 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Laboratorio 2 - I Modulo
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Prerequisiti/README.html">
+   I prerequisiti del corso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ripasso/README.html">
+   Ripasso di
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     C
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../content.html">
+   Indice delle Lezioni
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_01/README.html">
+     Lezione 1: strutturazione di un programma ed introduzione al
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       C++
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESEMPI.html">
+       Esempi: Lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/ESERCIZI.html">
+       Esercizi per la lezione 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_01/SOLUZIONI.html">
+       Soluzioni: Lezione 1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_02/README.html">
+     Lezione 2: programmazione ad oggetti, le classi
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESEMPI.html">
+       Esempi: Lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/ESERCIZI.html">
+       Esercizi per la lezione 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_02/SOLUZIONI.html">
+       Soluzioni: Lezione 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_03/README.html">
+     Lezione 3: visualizzazione di dati con ROOT
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESEMPI.html">
+       Esempi: Lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/ESERCIZI.html">
+       Esercizi per la lezione 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_03/SOLUZIONI.html">
+       Soluzioni: Lezione 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_04/README.html">
+     Lezione 4: la generazione di numeri pseudo-casuali
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESEMPI.html">
+       Esempi: Lezione 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/ESERCIZI.html">
+       Esercizi per la lezione 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_04/SOLUZIONI.html">
+       Soluzioni: Lezione 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_05/README.html">
+     Lezione 5: programmazione
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       template
+      </span>
+     </code>
+     e Standard Template Library
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESEMPI.html">
+       Esempi: Lezione 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/ESERCIZI.html">
+       Esercizi per la lezione 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_05/SOLUZIONI.html">
+       Soluzioni: Lezione 5
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_06/README.html">
+     Lezione 6: zeri ed estremanti di funzioni
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESEMPI.html">
+       Esempi: Lezione 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/ESERCIZI.html">
+       Esercizi per la lezione 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_06/SOLUZIONI.html">
+       Soluzioni: Lezione 6
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_07/README.html">
+     Lezione 7: La distribuzione di Poisson
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/ESERCIZI.html">
+       Esercizi per la lezione 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_07/SOLUZIONI.html">
+       Soluzioni: Lezione 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_08/README.html">
+     Lezione 8: esempi di applicazione di sequenze pseudo-casuali ed esempi di calcolo numerico
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESEMPI.html">
+       Esempi: Lezione 8
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_08/SOLUZIONI.html">
+       Soluzioni: Lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_09/README.html">
+     Lezione 9: la verosimiglianza
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESEMPI.html">
+       Esempi: Lezione 9
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/ESERCIZI.html">
+       Esercizi per la lezione 9
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_09/SOLUZIONI.html">
+       Soluzioni: Lezione 9
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_10/README.html">
+     Lezione 10: stima di parametri con il metodo della massima verosimiglianza
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_10/ESERCIZI.html">
+       Esercizi per la lezione 10
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_10/SOLUZIONI.html">
+       Soluzioni: Lezione 10
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../appendix.html">
+   Appendice
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Appendice_01/README.html">
+     Appendice A1: algoritmi predefiniti nelle
+     <em>
+      Standard Template Library
+     </em>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Appendice_01/ESERCIZI.html">
+       Esercizi per l’appendice A1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Appendice_01/SOLUZIONI.html">
+       Soluzioni: Appendice A1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Appendice_02/README.html">
+     Appendice A2: programmazione ad oggetti: l’ereditarietà
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       public
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Appendice_02/ESERCIZI.html">
+       Esercizi per la lezione 8
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Appendice_02/SOLUZIONI.html">
+       Soluzioni: Lezione 8
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lezione_12/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice">
+   Indice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduzione">
+   11.1 Introduzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-ipotesi-del-teorema-di-gauss-markov">
+     11.1.1 Le ipotesi del teorema di Gauss-Markov
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-esercizio-di-regressione">
+   11.2 Un esercizio di regressione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#come-rappresentare-in-root-i-dati">
+     11.2.1 Come rappresentare in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+     i dati
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-rappresentazione-della-funzione-modello">
+     11.2.2 La rappresentazione della funzione modello
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-determinazione-dei-parametri">
+     11.2.3 La determinazione dei parametri
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l-analisi-del-risultato-della-regressione">
+   11.3 L’analisi del risultato della regressione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-stampa-a-schermo-del-risultato">
+     11.3.1 La stampa a schermo del risultato
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-convergenza-del-fit">
+     11.3.2 La convergenza del fit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-valore-dei-parametri-e-la-loro-incertezza">
+     11.3.3 Il valore dei parametri e la loro incertezza
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-matrice-di-covarianza-dei-parametri-risultanti">
+     11.3.4 La matrice di covarianza dei parametri risultanti
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-sigma-delle-misure-ed-il-metodo-dei-minimi-quadrati">
+   11.4 la sigma delle misure ed il metodo dei minimi quadrati
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizi">
+   11.6 ESERCIZI
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lezione-11-fit-di-distribuzioni-binnate-con-root">
+<h1>Lezione 11: fit di distribuzioni binnate con <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#lezione-11-fit-di-distribuzioni-binnate-con-root" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="introduzione">
+<h2>11.1 Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Il <strong>metodo dei minimi quadrati</strong> viene spesso utilizzato
+per determinare i parametri ottimali θ che descrivano un andamento <em>y=φ(x, θ)</em>
+seguito da coppie di misure indipendenti <em>(x<sub>i</sub>, y<sub>i</sub>)</em></p></li>
+<li><p>Una notevole categoria di problemi è quella del <strong>caso lineare</strong>,
+in cui cioè la funzione φ sia lineaere nei parametri</p></li>
+<li><p>In queste circostanze, sotto ipotesi molto generali,
+che corrispondono a quelle del teorema di Gauss-Markov,
+gli stimatori dei parametri così ottenuti sono non distorti
+ed i più efficienti fra tutti gli stimatori lineari che si possono scrivere</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="le-ipotesi-del-teorema-di-gauss-markov">
+<h3>11.1.1 Le ipotesi del teorema di Gauss-Markov<a class="headerlink" href="#le-ipotesi-del-teorema-di-gauss-markov" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Se y<sub>i</sub> = φ(x<sub>i</sub>, θ) + ε<sub>i</sub>, si richiede che:</p></li>
+<li><p>Il valore di aspettazione E(ε<sub>i</sub>) = 0 per tutti i punti</p></li>
+<li><p>La matrice di covarianza varianza V(ε<sub>i</sub>) sia finita
+ed indipendente da <em>x</em> e <em>θ</em></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="un-esercizio-di-regressione">
+<h2>11.2 Un esercizio di regressione<a class="headerlink" href="#un-esercizio-di-regressione" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Utilizzando la generazione di numeri pseudo-casuali,
+si può <strong>simulare la raccolta di N misure indipendenti <em>(x<sub>i</sub>, y<sub>i</sub>)</em></strong>
+a partire da un modello iniziale <em>y=φ(x, θ)</em>,
+ad esempio:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">retta</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">par</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">par</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">par</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>La generazione di numeri pseudo-casuali
+sarà utilizzata per <strong>distribuire in modo casuale i punti lungo l’asse <em>x</em></strong>
+e per <strong>trovare i valori dei termini ε<sub>i</sub></strong></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="come-rappresentare-in-root-i-dati">
+<h3>11.2.1 Come rappresentare in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> i dati<a class="headerlink" href="#come-rappresentare-in-root-i-dati" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ROOT</span></code> fornisce strumenti che <strong>applichino automaticamente
+il metodo dei minimi quadrati</strong> per trovare i paremetri
+(in gergo tecnico, <em>fare un fit</em>)</p></li>
+<li><p>Coppie di misure come quelle generate sono solitamente rappresentate
+sotto forma di <a class="reference external" href="https://root.cern.ch/doc/master/classTGraphErrors.html"><code class="docutils literal notranslate"><span class="pre">TGraphErrors</span></code></a> in ROOT:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_x</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1">// coordinate x</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_y</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1">// coordinate y</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_ex</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// errore sulle coordinate x</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_ey</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// errore sulle coordinate y</span>
+<span class="c1">//...</span>
+<span class="n">TGraphErrors</span><span class="w"> </span><span class="nf">g_retta</span><span class="w"> </span><span class="p">(</span><span class="n">v_x</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v_x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v_y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v_ex</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v_ey</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-rappresentazione-della-funzione-modello">
+<h3>11.2.2 La rappresentazione della funzione modello<a class="headerlink" href="#la-rappresentazione-della-funzione-modello" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Per rappresentare la funzione modello,
+si utilizza un <strong>oggetto della classe <code class="docutils literal notranslate"><span class="pre">TF1</span></code></strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span><span class="w"> </span><span class="nf">f_fit</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;f_fit&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">retta</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mf">20.</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>La <code class="docutils literal notranslate"><span class="pre">TF1</span></code> è definita a partire dalla funzione di <code class="docutils literal notranslate"><span class="pre">C++</span></code> chiamata <code class="docutils literal notranslate"><span class="pre">retta</span></code>;</p></li>
+<li><p>è definita sull’intervallo <code class="docutils literal notranslate"><span class="pre">(0.,</span> <span class="pre">20.)</span></code></p></li>
+<li><p>ed ha 2 parametri liberi</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-determinazione-dei-parametri">
+<h3>11.2.3 La determinazione dei parametri<a class="headerlink" href="#la-determinazione-dei-parametri" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>L’<strong>operazione di fit</strong> viene effettuata con il seguente comando,
+che invoca il metodo dei <strong>minimi quadrati</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TFitResultPtr</span><span class="w"> </span><span class="n">fit_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g_retta</span><span class="p">.</span><span class="n">Fit</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">f_fit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;S&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Dopo il fit,
+la funzione con nome <code class="docutils literal notranslate"><span class="pre">&quot;f_fit&quot;</span></code> ha i propri <strong>parametri adattati all’istogramma</strong></p></li>
+<li><p>L’opzione <code class="docutils literal notranslate"><span class="pre">&quot;S&quot;</span></code> garantisce che il <strong>risultato del fit venga salvato</strong>
+e sia accessibile tramite l’oggetto <code class="docutils literal notranslate"><span class="pre">fit_result</span></code> di tipo <code class="docutils literal notranslate"><span class="pre">TFitResultPtr</span></code></p></li>
+<li><p>La funzione <code class="docutils literal notranslate"><span class="pre">TF1</span></code> viene <strong>automaticamente associata al <code class="docutils literal notranslate"><span class="pre">TGraph</span></code></strong>
+e disegnata insieme su un <code class="docutils literal notranslate"><span class="pre">TCanvas</span></code>,
+se il metodo <code class="docutils literal notranslate"><span class="pre">TGraph::Draw</span></code> viene chiamato dopo il fit</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+</div>
+<div class="section" id="l-analisi-del-risultato-della-regressione">
+<h2>11.3 L’analisi del risultato della regressione<a class="headerlink" href="#l-analisi-del-risultato-della-regressione" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>La funzione di fit viene automaticamente aggiunta alla proprietà del <code class="docutils literal notranslate"><span class="pre">TGraph</span></code>
+e visualizzata quando viene invocato il metodo <code class="docutils literal notranslate"><span class="pre">TGraph::Draw</span></code>:
+<img alt="fit_result" src="../_images/fit_result_2.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+<div class="section" id="la-stampa-a-schermo-del-risultato">
+<h3>11.3.1 La stampa a schermo del risultato<a class="headerlink" href="#la-stampa-a-schermo-del-risultato" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>L’<strong>output a schermo</strong> del fit ha la forma seguente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FCN</span><span class="o">=</span><span class="mf">10.2772</span> <span class="n">FROM</span> <span class="n">MIGRAD</span>    <span class="n">STATUS</span><span class="o">=</span><span class="n">CONVERGED</span>      <span class="mi">31</span> <span class="n">CALLS</span>          <span class="mi">32</span> <span class="n">TOTAL</span>
+                    <span class="n">EDM</span><span class="o">=</span><span class="mf">2.82836e-21</span>    <span class="n">STRATEGY</span><span class="o">=</span> <span class="mi">1</span>      <span class="n">ERROR</span> <span class="n">MATRIX</span> <span class="n">ACCURATE</span> 
+ <span class="n">EXT</span> <span class="n">PARAMETER</span>                                   <span class="n">STEP</span>         <span class="n">FIRST</span>   
+ <span class="n">NO</span><span class="o">.</span>   <span class="n">NAME</span>      <span class="n">VALUE</span>            <span class="n">ERROR</span>          <span class="n">SIZE</span>      <span class="n">DERIVATIVE</span> 
+  <span class="mi">1</span>  <span class="n">p0</span>           <span class="mf">4.44872e-01</span>   <span class="mf">9.13398e-02</span>   <span class="mf">7.77790e-05</span>  <span class="o">-</span><span class="mf">5.70963e-10</span>
+  <span class="mi">2</span>  <span class="n">p1</span>           <span class="mf">1.49520e+00</span>   <span class="mf">4.31502e-02</span>   <span class="mf">3.67439e-05</span>  <span class="o">-</span><span class="mf">2.65893e-09</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In questo caso, l’algoritmo di minimizzazione utilizzato è <code class="docutils literal notranslate"><span class="pre">MIGRAD</span></code></p></li>
+<li><p>L’algoritmo ha avuto successo: <code class="docutils literal notranslate"><span class="pre">STATUS=CONVERGED</span></code></p></li>
+<li><p>I <strong>valori dei singoli parametri</strong> e della loro incertezza sono riportati a schermo</p></li>
+</ul>
+</li>
+<li><p>Le <strong>singole informazioni</strong> si possono recuperare anche dentro il codice sorgente</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-convergenza-del-fit">
+<h3>11.3.2 La convergenza del fit<a class="headerlink" href="#la-convergenza-del-fit" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Per conoscere il <strong>successo dell’algoritmo numerico</strong>,
+si utilizza il metodo <code class="docutils literal notranslate"><span class="pre">TFitResult::IsValid</span> <span class="pre">()</span></code>, che deve essere <code class="docutils literal notranslate"><span class="pre">true</span></code> in caso di successo,
+oppure il metodo <code class="docutils literal notranslate"><span class="pre">TFitResult::Status</span> <span class="pre">()</span></code>, che deve essere <code class="docutils literal notranslate"><span class="pre">0</span></code> in caso di successo</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;primo feedback sul risultato del fit: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">IsValid</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;primo feedback sul risultato del fit: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">Status</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>La classe <code class="docutils literal notranslate"><span class="pre">TFitResultPtr</span></code> si comporta come un puntatore ad oggetti di tipo <code class="docutils literal notranslate"><span class="pre">TFitResult</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-valore-dei-parametri-e-la-loro-incertezza">
+<h3>11.3.3 Il valore dei parametri e la loro incertezza<a class="headerlink" href="#il-valore-dei-parametri-e-la-loro-incertezza" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Il valore dei parametri e della loro incertezza possono essere <strong>ottenuti dalla funzione di fit</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;termine noto : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f_fit</span><span class="p">.</span><span class="n">GetParameter</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s">+- &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f_fit</span><span class="p">.</span><span class="n">GetParError</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pendenza     : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f_fit</span><span class="p">.</span><span class="n">GetParameter</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s">+- &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f_fit</span><span class="p">.</span><span class="n">GetParError</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-matrice-di-covarianza-dei-parametri-risultanti">
+<h3>11.3.4 La matrice di covarianza dei parametri risultanti<a class="headerlink" href="#la-matrice-di-covarianza-dei-parametri-risultanti" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>La matrice di covarianza e di correlazione dei parametri risultati <strong>può essere stampata a schermo</strong>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">PrintCovMatrix</span><span class="w"> </span><span class="p">(</span><span class="n">cout</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>I <strong>singoli valori</strong> sono accessibili tramite un oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TMatrixDSym</span></code> (una matrice simmetrica),
+che si ottiene sempre dall’oggetto <code class="docutils literal notranslate"><span class="pre">fit_result</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TMatrixDSym</span><span class="w"> </span><span class="n">cov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">GetCovarianceMatrix</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="c1">// or TMatrixDSym cov = r-&gt;GetCorrelationMatrix();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cov</span><span class="p">.</span><span class="n">GetNrows</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cov</span><span class="p">.</span><span class="n">GetNcols</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cov</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>In alternativa,
+si può <strong>accedere direttamente ai singoli elementi</strong> della matrice di covarianza
+con il metodo <code class="docutils literal notranslate"><span class="pre">TFitResult::CovMatrix</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">matrice di covarianza del risultato</span><span class="se">\n\n</span><span class="s">:&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s"> &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">CovMatrix</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s"> &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">CovMatrix</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s"> &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">CovMatrix</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s"> &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">CovMatrix</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="la-sigma-delle-misure-ed-il-metodo-dei-minimi-quadrati">
+<h2>11.4 la sigma delle misure ed il metodo dei minimi quadrati<a class="headerlink" href="#la-sigma-delle-misure-ed-il-metodo-dei-minimi-quadrati" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Nel caso in cui le variabili casuali ε<sub>i</sub> abbiano distribuzione
+di densità di probabilità Gaussiana,
+<strong>il valore del Q<sup>2</sup> associato al fit
+è distribuito secondo una distribuzione del χ<sup>2</sup></strong>
+con un numero di gradi di libertà pari
+al numero di gradi di libertà del fit</p>
+<ul>
+<li><p>il numero di gradi di libertà del fit è uguale al <strong>numero di punti meno il numero di parametri stimati</strong></p></li>
+</ul>
+</li>
+<li><p>Questa proprietà del metodo dei minimi quadrati permette,
+assumendo che le variabili casuali ε<sub>i</sub> siano gaussiane,
+di stimare le incertezze sui valori <em>y<sub>i</sub></em></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizi">
+<h2>11.6 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lezione_12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Docenti del Corso di Laboratorio 2<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
