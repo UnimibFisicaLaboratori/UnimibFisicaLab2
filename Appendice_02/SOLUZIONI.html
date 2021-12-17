@@ -1037,30 +1037,478 @@
 <ul class="simple">
 <li><p><cite>esercizio03_04.cpp</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// g++ -o Esercizio03_04 esercizio03_04.cpp generatore.cc generatore_TC.cc generatore_IF.cc generatore_LC.cc</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore_TC.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore_IF.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore_LC.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;map&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Lezione 8 - Esercizio 03</span>
+<span class="cm"> *</span>
+<span class="cm"> *  Si implementino i generatori di numeri casuali scritti durante la Lezione 4 </span>
+<span class="cm"> *  come oggetti derivati della seguente classe puramente virtuale e si verifichi </span>
+<span class="cm"> *  il dynamic binding.</span>
+<span class="cm"> *</span>
+<span class="cm"> *      class generatore {</span>
+<span class="cm"> *          ...</span>
+<span class="cm"> *      };</span>
+<span class="cm"> *</span>
+<span class="cm"> *</span>
+<span class="cm"> *  Lezione 8 - Esercizio 04</span>
+<span class="cm"> *</span>
+<span class="cm"> *  Si inseriscano i generatori precedenti in una std::map e si utilizzi un </span>
+<span class="cm"> *  loop sugli elementi della mappa per verificare quanto tempo impieghi </span>
+<span class="cm"> *  ciascun generatore, in media, a generare un evento pseudo-casuale.</span>
+<span class="cm"> */</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Chiave: nome del generatore</span>
+<span class="w">    </span><span class="c1">// Valore: puntatore a un oggetto derivante da generatore</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">generatore</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">mappa_generatori</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">14741</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nPoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Aggiungo i generatori alla mappa, associandoli al proprio nome</span>
+<span class="w">    </span><span class="n">mappa_generatori</span><span class="p">[</span><span class="s">&quot;lineare congruenziale&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">generatore</span><span class="p">(</span><span class="n">seed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">mappa_generatori</span><span class="p">[</span><span class="s">&quot;try and catch - gaus&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">generatore_TC</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="n">kGAUS</span><span class="p">,</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">mappa_generatori</span><span class="p">[</span><span class="s">&quot;try and catch - exp&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">generatore_TC</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="n">kEXP</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">mappa_generatori</span><span class="p">[</span><span class="s">&quot;funzione inversa - exp&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">generatore_IF</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">mappa_generatori</span><span class="p">[</span><span class="s">&quot;teorema limite centrale - 100 iterazioni&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">generatore_LC</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">-5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Itero sulla mappa di generatori</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Tempo richiesto per generare &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nPoints</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; numeri casuali&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">nome</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">generatore</span><span class="o">*</span><span class="w"> </span><span class="n">gen</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">generatore</span><span class="o">*&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">gen_it</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">gen_it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mappa_generatori</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">gen_it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">mappa_generatori</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">gen_it</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gen_it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">gen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gen_it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="kt">clock_t</span><span class="w"> </span><span class="n">startTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nPoints</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gen</span><span class="o">-&gt;</span><span class="n">generate</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="kt">clock_t</span><span class="w"> </span><span class="n">endTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">endTime</span><span class="o">-</span><span class="n">startTime</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="n">CLOCKS_PER_SEC</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Pulizia del contenuto della mappa</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">gen_it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mappa_generatori</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">gen_it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">mappa_generatori</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">gen_it</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">delete</span><span class="w"> </span><span class="n">gen_it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">mappa_generatori</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><cite>generatore.h</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef generatore_h</span>
+<span class="cp">#define generatore_h</span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Generatore lineare congruenziale</span>
+<span class="cm"> */</span><span class="w"></span>
+
+<span class="k">class</span> <span class="nc">generatore</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Costruttore</span>
+<span class="w">        </span><span class="n">generatore</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Distruttore</span>
+<span class="w">        </span><span class="o">~</span><span class="n">generatore</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Imposta il seed</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">set_seed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Genera un numero casuale</span>
+<span class="w">        </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">generate</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Seed</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m_seed</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Costanti per la generazione di numeri casuali</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">214013</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2531011</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Genera un numero casuale nel range tra m_min e m_max</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">rand_range</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><cite>generatore.cc</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Costruttore</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">generatore</span><span class="o">::</span><span class="n">generatore</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">m_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Chiamato il costruttore del generatore lineare congruenziale&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Distruttore</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">generatore</span><span class="o">::~</span><span class="n">generatore</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Chiamato il distruttore del generatore lineare congruenziale&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Imposta il seed  </span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">generatore</span><span class="o">::</span><span class="n">set_seed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">m_seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seed</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Chiamato il metodo set_seed del generatore lineare congruenziale&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Restituisce il prossimo numero casuale</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">generatore</span><span class="o">::</span><span class="n">generate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">m_seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">m_seed</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">M</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m_seed</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Genera un numero casuale in un range [m_min, m_max]</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">generatore</span><span class="o">::</span><span class="n">rand_range</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Genero un numero casuale dal generatore congruenziale</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">rnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generatore</span><span class="o">::</span><span class="n">generate</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rnd</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">M</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><cite>generatore_IF.h</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef generatore_IF_h</span>
+<span class="cp">#define generatore_IF_h</span>
+
+
+<span class="cm">/*</span>
+<span class="cm"> *  Generatore con funzione inversa - esponenziale</span>
+<span class="cm"> */</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore.h&quot;</span><span class="cp"></span>
+
+<span class="k">class</span> <span class="nc">generatore_IF</span><span class="o">:</span><span class="k">public</span><span class="w"> </span><span class="n">generatore</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Costruttore</span>
+<span class="w">        </span><span class="n">generatore_IF</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Distruttore</span>
+<span class="w">        </span><span class="o">~</span><span class="n">generatore_IF</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Genera un numero casuale</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">generate</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Minimo valore di X su cui generare</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">m_min</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Massimo valore di X su cui generare</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">m_max</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Genera un numero casuale da distribuzione esponenziale</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">rand_IF</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><cite>generatore_IF.cc</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore_IF.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="c1"> // log</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Costruttore</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">generatore_IF</span><span class="o">::</span><span class="n">generatore_IF</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">m_min</span><span class="p">(</span><span class="n">min</span><span class="p">),</span><span class="w"> </span><span class="n">m_max</span><span class="p">(</span><span class="n">max</span><span class="p">),</span><span class="w"> </span><span class="n">generatore</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Chiamato il costruttore del generatore con funzione inversa&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Distruttore</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">generatore_IF</span><span class="o">::~</span><span class="n">generatore_IF</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Chiamato il distruttore del generatore con funzione inversa&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Genera un numero casuale</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">generatore_IF</span><span class="o">::</span><span class="n">generate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">rand_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand_range</span><span class="p">(</span><span class="n">m_min</span><span class="p">,</span><span class="w"> </span><span class="n">m_max</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rand_IF</span><span class="p">(</span><span class="n">rand_val</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Genera un numero casuale da e^(-0.1*x)</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">generatore_IF</span><span class="o">::</span><span class="n">rand_IF</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">lambda</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><cite>generatore_LC.h</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef generatore_LC_h</span>
+<span class="cp">#define generatore_LC_h</span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Generatore con teorema del limite centrale</span>
+<span class="cm"> */</span><span class="w"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore.h&quot;</span><span class="cp"></span>
+
+<span class="k">class</span> <span class="nc">generatore_LC</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">generatore</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Costruttore</span>
+<span class="w">        </span><span class="n">generatore_LC</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Distruttore</span>
+<span class="w">        </span><span class="o">~</span><span class="n">generatore_LC</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Genera numeri casuali</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">generate</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Numero di estrazioni </span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m_N</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Valore minimo</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">m_min</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Valore massimo</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">m_max</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><cite>generatore_LC.cc</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore_LC.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Costruttore</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">generatore_LC</span><span class="o">::</span><span class="n">generatore_LC</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">m_N</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="w"> </span><span class="n">m_min</span><span class="p">(</span><span class="n">min</span><span class="p">),</span><span class="w"> </span><span class="n">m_max</span><span class="p">(</span><span class="n">max</span><span class="p">),</span><span class="w"> </span><span class="n">generatore</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Chiamato il costruttore del generatore con teorema del limite centrale&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Distruttore</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">generatore_LC</span><span class="o">::~</span><span class="n">generatore_LC</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Chiamato il distruttore del generatore con teorema del limite centrale&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Genera numeri casuali</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">generatore_LC</span><span class="o">::</span><span class="n">generate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">mean</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">rand_range</span><span class="p">(</span><span class="n">m_min</span><span class="p">,</span><span class="w"> </span><span class="n">m_max</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mean</span><span class="o">/</span><span class="n">m_N</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><cite>generatore_TC.h</cite></p></li>
 </ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef generatoreTC</span>
+<span class="cp">#define generatoreTC</span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Generatore Try-And-Catch</span>
+<span class="cm"> */</span><span class="w"> </span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;generatore.h&quot;</span><span class="cp"></span>
+
+<span class="k">enum</span> <span class="nc">funzioni</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">kGAUS</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">kEXP</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span> <span class="nc">generatore_TC</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">generatore</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Costruttore - parametri</span>
+<span class="w">        </span><span class="n">generatore_TC</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kGAUS</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Distruttore</span>
+<span class="w">        </span><span class="o">~</span><span class="n">generatore_TC</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Genera un numero casuale dalla distribuzione richiesta</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">generate</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Seleziona il tipo di funzione da utilizzare</span>
+<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m_function</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Minimo valore X per l&#39;estrazione</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">m_min</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Massimo valore X per l&#39;estrazione</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">m_max</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Genera un numero casuale con try and catch</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">rand_TAC</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">double</span><span class="p">),</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y_max</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Calcola il valore della gaussiana (centro=0, sigma=5)</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">eval_gaus</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Calcola il valore dell&#39;esponenziale e^(-0.1*x)</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">eval_exp</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+
+<span class="p">};</span><span class="w"></span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><cite>generatore_TC.cc</cite></p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;generatore_TC.h&quot;</span>
+
+<span class="c1">#include &lt;iostream&gt;</span>
+<span class="c1">#include &lt;cmath&gt;</span>
+
+<span class="n">using</span> <span class="n">std</span><span class="p">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">std</span><span class="p">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="o">/*</span>
+ <span class="o">*</span>  <span class="n">Costruttore</span>
+ <span class="o">*/</span>
+<span class="n">generatore_TC</span><span class="p">::</span><span class="n">generatore_TC</span><span class="p">(</span><span class="nb">int</span> <span class="n">seed</span><span class="p">,</span> <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">function</span><span class="p">,</span> <span class="n">double</span> <span class="nb">min</span><span class="p">,</span> <span class="n">double</span> <span class="nb">max</span><span class="p">)</span> <span class="p">:</span> <span class="n">m_function</span><span class="p">(</span><span class="n">function</span><span class="p">),</span> <span class="n">m_min</span><span class="p">(</span><span class="nb">min</span><span class="p">),</span> <span class="n">m_max</span><span class="p">(</span><span class="nb">max</span><span class="p">),</span> <span class="n">generatore</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Chiamato il costruttore del generatore try and catch&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span> <span class="n">m_function</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Funzione non valida!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+ <span class="o">*</span>  <span class="n">Distruttore</span>
+ <span class="o">*/</span>
+<span class="n">generatore_TC</span><span class="p">::</span><span class="o">~</span><span class="n">generatore_TC</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Chiamato il distruttore del generatore try and catch&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+ <span class="o">*</span>  <span class="n">Genera</span> <span class="n">un</span> <span class="n">numero</span> <span class="n">casuale</span> <span class="n">dalla</span> <span class="n">distribuzione</span> <span class="n">richiesta</span>
+ <span class="o">*/</span>
+<span class="n">double</span> <span class="n">generatore_TC</span><span class="p">::</span><span class="n">generate</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">double</span> <span class="n">y_max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">double</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">double</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        
+    <span class="n">switch</span><span class="p">(</span> <span class="n">m_function</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">case</span> <span class="n">kGAUS</span><span class="p">:</span>
+            <span class="o">//</span> <span class="n">Valuto</span> <span class="n">y_max</span> <span class="n">a</span> <span class="n">seconda</span> <span class="n">di</span> <span class="n">m_min</span> <span class="n">e</span> <span class="n">m_max</span>
+            <span class="k">if</span><span class="p">(</span> <span class="n">m_min</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">m_max</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="o">//</span> <span class="n">La</span> <span class="n">gaussiana</span> <span class="n">passa</span> <span class="n">da</span> <span class="mi">0</span><span class="p">,</span> <span class="n">il</span> <span class="n">massimo</span> <span class="n">è</span> <span class="n">quello</span> <span class="n">della</span> <span class="n">gaussiana</span>
+                <span class="n">y_max</span> <span class="o">=</span> <span class="n">eval_gaus</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> 
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="o">//</span> <span class="n">La</span> <span class="n">gaussiana</span> <span class="n">non</span> <span class="n">passa</span> <span class="n">da</span> <span class="mi">0</span><span class="p">,</span> <span class="n">è</span> <span class="n">monotona</span>
+                <span class="n">y_max</span> <span class="o">=</span> <span class="n">eval_gaus</span><span class="p">(</span><span class="n">m_min</span><span class="p">);</span>
+                <span class="n">double</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">eval_gaus</span><span class="p">(</span><span class="n">m_max</span><span class="p">);</span>
+                <span class="k">if</span><span class="p">(</span> <span class="n">y2</span> <span class="o">&gt;</span> <span class="n">y_max</span> <span class="p">)</span>
+                    <span class="n">y_max</span> <span class="o">=</span> <span class="n">y2</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">rand_TAC</span><span class="p">(</span><span class="n">eval_gaus</span><span class="p">,</span> <span class="n">y_max</span><span class="p">);</span>
+
+            <span class="k">break</span><span class="p">;</span>
+        <span class="n">case</span> <span class="n">kEXP</span><span class="p">:</span>
+            <span class="o">//</span> <span class="n">Calcolo</span> <span class="n">di</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">esponenziale</span> <span class="n">monotono</span> <span class="n">decrescente</span>
+            <span class="n">y_max</span> <span class="o">=</span> <span class="n">eval_exp</span><span class="p">(</span><span class="n">m_min</span><span class="p">);</span> 
+
+            <span class="n">val</span> <span class="o">=</span> <span class="n">rand_TAC</span><span class="p">(</span><span class="n">eval_exp</span><span class="p">,</span> <span class="n">y_max</span><span class="p">);</span>
+
+            <span class="k">break</span><span class="p">;</span>
+        <span class="n">default</span><span class="p">:</span>
+            <span class="o">//</span> <span class="n">Solo</span> <span class="n">Gaus</span> <span class="n">e</span> <span class="n">Exp</span> <span class="n">sono</span> <span class="n">implementate</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+ <span class="o">*</span>  <span class="n">Genera</span> <span class="n">un</span> <span class="n">numero</span> <span class="n">casuale</span> <span class="n">con</span> <span class="k">try</span> <span class="ow">and</span> <span class="n">catch</span>
+ <span class="o">*/</span>
+<span class="n">double</span> <span class="n">generatore_TC</span><span class="p">::</span><span class="n">rand_TAC</span><span class="p">(</span><span class="n">double</span> <span class="n">f</span><span class="p">(</span><span class="n">double</span><span class="p">),</span> <span class="n">double</span> <span class="n">y_max</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">double</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">do</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">rand_range</span><span class="p">(</span><span class="n">m_min</span><span class="p">,</span> <span class="n">m_max</span><span class="p">);</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">rand_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y_max</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">while</span><span class="p">(</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+ <span class="o">*</span>  <span class="n">Calcola</span> <span class="n">il</span> <span class="n">valore</span> <span class="n">della</span> <span class="n">gaussiana</span> <span class="p">(</span><span class="n">centro</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+ <span class="o">*/</span> 
+<span class="n">double</span> <span class="n">generatore_TC</span><span class="p">::</span><span class="n">eval_gaus</span><span class="p">(</span><span class="n">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mf">1.</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">M_PI</span><span class="o">*</span><span class="mf">5.</span><span class="o">*</span><span class="mf">5.</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span> <span class="n">x</span><span class="o">/</span><span class="mf">5.</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="o">/*</span>
+ <span class="o">*</span>  <span class="n">Calcola</span> <span class="n">il</span> <span class="n">valore</span> <span class="n">dell</span><span class="s1">&#39;esponenziale e^(-0.1*x)</span>
+ <span class="o">*/</span>
+<span class="n">double</span> <span class="n">generatore_TC</span><span class="p">::</span><span class="n">eval_exp</span><span class="p">(</span><span class="n">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <a class="reference internal image-reference" href="../_images/linea.png"><img alt="../_images/linea.png" src="../_images/linea.png" style="width: 1100px;" /></a>
 </div>
 </div>
