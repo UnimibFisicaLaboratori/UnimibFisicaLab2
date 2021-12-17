@@ -69,3 +69,8 @@ sections:
     - file: Appendice_02/ESEMPI.md
     - file: Appendice_02/ESERCIZI.md
     - file: Appendice_02/SOLUZIONI.rst
+  - file: Appendice_03/README.md
+    sections:
+    - file: Appendice_03/ESEMPI.md
+    - file: Appendice_03/ESERCIZI.md
+    - file: Appendice_03/SOLUZIONI.rst

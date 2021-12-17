@@ -14,7 +14,7 @@ A3.1 la funzone ```find```
 .. image:: ../immagini/linea.png
   :width: 1100
 
-A3.2-A3.3 la funzone ```sort```
+A3.2 la funzone ```sort```
 -----------------------------------
 * `esercizio02.cpp`
 
