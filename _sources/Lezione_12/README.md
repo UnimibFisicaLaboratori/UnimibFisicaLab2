@@ -12,17 +12,19 @@
     seguito da coppie di misure indipendenti *(x<sub>i</sub>, y<sub>i</sub>)*
   * Una notevole categoria di problemi è quella del **caso lineare**,
     in cui cioè la funzione &phi; sia lineaere nei parametri
-  * In queste circostanze, sotto ipotesi molto generali, 
-    che corrispondono a quelle del teorema di Gauss-Markov,
-    gli stimatori dei parametri così ottenuti sono non distorti
-    ed i più efficienti fra tutti gli stimatori lineari che si possono scrivere
+  * In queste circostanze, sotto ipotesi molto generali 
+    (che corrispondono a quelle del teorema di Gauss-Markov),
+    gli stimatori dei parametri così ottenuti sono **non distorti
+    ed i più efficienti fra tutti gli stimatori lineari** che si possono scrivere
 
 ![linea](../immagini/linea.png)
 
 ### 11.1.1 Le ipotesi del teorema di Gauss-Markov
-  * Se y<sub>i</sub> = &phi;(x<sub>i</sub>, &theta;) + &epsilon;<sub>i</sub>, si richiede che:
+
+  * Se y<sub>i</sub> = &phi;(x<sub>i</sub>, &theta;) + &epsilon;<sub>i</sub>, 
+    essendo &epsilon;<sub>i</sub> variabili casuali, si richiede che:
   * Il valore di aspettazione E(&epsilon;<sub>i</sub>) = 0 per tutti i punti 
-  * La matrice di covarianza varianza V(&epsilon;<sub>i</sub>) sia finita
+  * La matrice di covarianza V(&epsilon;<sub>i</sub>) sia finita
     ed indipendente da *x* e *&theta;*
 
 ![linea](../immagini/linea.png)
@@ -155,7 +157,6 @@
     che si ottiene sempre dall'oggetto ```fit_result```:
     ```cpp
     TMatrixDSym cov = fit_result->GetCovarianceMatrix () ;
-    // or TMatrixDSym cov = r->GetCorrelationMatrix();
     for (int i = 0; i < cov.GetNrows () ; ++i)
       {
         for (int j = 0; j < cov.GetNcols () ; ++j)
