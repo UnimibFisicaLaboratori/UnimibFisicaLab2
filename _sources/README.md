@@ -41,3 +41,4 @@
 
   * [Approfondimento 1](Appendice_01/README.md) : algoritmi predefiniti nelle *Standard Template Library*
   * [Approfondimento 2](Appendice_02/README.md) : programmazione ad oggetti: l'ereditarietà ```public```
+  * [Approfondimento 3](Appendice_02/README.md) : approfondimenti sulle ```STL```
