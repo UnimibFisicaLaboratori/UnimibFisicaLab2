@@ -553,6 +553,21 @@
    Esercizio 11.4
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-11-5">
+   Esercizio 11.5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-11-6">
+   Esercizio 11.6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esercizio-11-7">
+   Esercizio 11.7
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -568,47 +583,71 @@
 <h1>Esercizi per la lezione 11<a class="headerlink" href="#esercizi-per-la-lezione-11" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="esercizio-11-1">
 <h2>Esercizio 11.1<a class="headerlink" href="#esercizio-11-1" title="Permalink to this headline">¶</a></h2>
-<p>Si scriva un programma che effettui il fit degli eventi salvati nel file <span class="xref myst">dati.txt</span>,
-utilizzando gli algoritmi di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> ed il modello descritto nella Lezione.</p>
 <ul class="simple">
-<li><p>Si abbia cura di determinare l’intervallo di definizione ed il binning dell’istogramma utilizzato per il fit
-a partire dagli eventi medesimi,
-scrivendo algoritmi appropriati che determinino il minimo ed il massimo fra i dati
-ed una stima ragionevole del numero di bin da utilizzare.</p></li>
-<li><p>Si determinino i valori iniziali dei parametri del fit
-con le tecniche descritte a lezione.</p></li>
-<li><p>Si stampi a schermo il risultato del fit,
-includendo un test di bontà del fit.</p></li>
-<li><p>Si disegni l’istogramma con il modello fittato sovrapposto.</p></li>
+<li><p>Dopo aver definito, in un’apposita libreria,
+una funzione <em>φ(x, θ)</em> lineare in due parametri θ,</p></li>
+<li><p>Si scriva un programma che generi un insieme di <em>10</em> coppie <em>(x<sub>i</sub>, y<sub>i</sub>)</em>
+tali per cui i punti x<sub>i</sub> siano disposti casualmente sull’asse orizzontale
+fra 0 e 10 ed i punti y<sub>i</sub> siano costruiti a partire dalla formula y<sub>i</sub> = φ(x<sub>i</sub>, θ) + ε<sub>i</sub>.</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-11-2">
 <h2>Esercizio 11.2<a class="headerlink" href="#esercizio-11-2" title="Permalink to this headline">¶</a></h2>
-<p>Utilizzando il programma <span class="xref myst">main_03.cpp</span>,
-si generi un file <code class="docutils literal notranslate"><span class="pre">dati_2.txt</span></code> contenente 10,000 eventi
-distribuiti secondo una distribuzione di probabilità Gaussiana.</p>
+<ul class="simple">
+<li><p>Si aggiunga al programma precedente la trasposizione dei punti generati in un <code class="docutils literal notranslate"><span class="pre">TGraphErrors</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>.</p></li>
+</ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-11-3">
 <h2>Esercizio 11.3<a class="headerlink" href="#esercizio-11-3" title="Permalink to this headline">¶</a></h2>
-<p>Si scriva un programma che effettui il fit degli eventi salvati nel file <code class="docutils literal notranslate"><span class="pre">dati_2.txt</span></code>
-con il metodo della massima verosimiglianza e con il metodo dei minimi quadrati
-e si confronti il risultato delle due tecniche,
-comparando i valori studiati nell’esercizio 11.1 per i parametri
-e per la bontà del fit.</p>
+<ul class="simple">
+<li><p>Si aggiunga al programma precendente la costruzione di una <code class="docutils literal notranslate"><span class="pre">TF1</span></code> di <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>
+che contenga il medesimo modello <em>φ(x, θ)</em> utilizzato per la generazione pseudo-casuale
+delle coppie di punti
+e si utilizzi questa <code class="docutils literal notranslate"><span class="pre">TF1</span></code> per fare un fit del <code class="docutils literal notranslate"><span class="pre">TGraphErrors</span></code>.</p></li>
+<li><p>Si controlli che il fit abbia avuto successo e</p></li>
+<li><p>si stampi a schermo il valore dei parametri determinati e la loro sigma.</p></li>
+</ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizio-11-4">
 <h2>Esercizio 11.4<a class="headerlink" href="#esercizio-11-4" title="Permalink to this headline">¶</a></h2>
-<p>Si inserisca il codice sorgente dell’esercizio precedente in un ciclo
-che effettui il confronto al variare del numero di eventi considerato per il fit,
-da <code class="docutils literal notranslate"><span class="pre">20</span></code> a <code class="docutils literal notranslate"><span class="pre">10000</span></code>, con andamento regolare in scala logaritmica.</p>
 <ul class="simple">
-<li><p>Si utilizzino diversi <code class="docutils literal notranslate"><span class="pre">TGraphErrors</span></code>
-per disegnare l’andamento dei parametri e delle loro incertezze
-al variare del numero di eventi, per i due tipi di stimatore.</p></li>
-<li><p>Quale stimatore risulta meno distorto, a bassa statistica?</p></li>
+<li><p>Si calcoli il valore di Q<sup>2</sup> a partire dai punti e dalla funzione di fit
+ottenuta nell’esercizio precedente.
+(si ricordi che si può calcolare <em>φ(x, θ)</em> utilizzando il metodo <code class="docutils literal notranslate"><span class="pre">TF1::Eval</span> <span class="pre">(Double_t)</span></code>)</p></li>
+<li><p>Si confronti il numero così ottenuto con quello calcolato da <code class="docutils literal notranslate"><span class="pre">ROOT</span></code>,
+che si può ottenere dal risultato del fit utilizzando il metodo <code class="docutils literal notranslate"><span class="pre">FitResult::Chi2</span> <span class="pre">()</span></code>.</p></li>
+<li><p>Si stampi a schermo il valore del numero di gradi di libertà del fit,
+utilizzando il metodo <code class="docutils literal notranslate"><span class="pre">FitResult::Ndf</span> <span class="pre">()</span></code>.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-11-5">
+<h2>Esercizio 11.5<a class="headerlink" href="#esercizio-11-5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Utilizzando la tecnica dei toy experiment,
+si generino 10,000 esperimenti di fit con il modello studiato negli esercizi precedenti
+e si riempia un istogramma dei valori di Q<sup>2</sup> ottenuti.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-11-6">
+<h2>Esercizio 11.6<a class="headerlink" href="#esercizio-11-6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Si modifichi il programma precedente alterando volutamente l’incertezza sperimentale
+associata ai punti y<sub>i</sub> nei <code class="docutils literal notranslate"><span class="pre">TGraphErrors</span></code>
+e si verifichi che si possa risalire alla incertezza utilizzata nella generazione dei punti
+tramite il valore di aspettazione della variabile Q<sup>2</sup>.</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="esercizio-11-7">
+<h2>Esercizio 11.7<a class="headerlink" href="#esercizio-11-7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Si aggiunga all’esercizio 11.3 la scrittura a schermo dell’intera matrice di covarianza
+dei parametri del fit.</p></li>
 </ul>
 </div>
 </div>
