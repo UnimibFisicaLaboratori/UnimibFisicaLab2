@@ -539,8 +539,31 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#le-ipotesi-del-teorema-di-gauss-markov">
-     11.1.1 Le ipotesi del teorema di Gauss-Markov
+    <a class="reference internal nav-link" href="#un-esempio-immediato">
+     11.1.1 Un esempio immediato
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-caso-y-x">
+     11.1.2 Il caso
+     <em>
+      y=φ(x)
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-determinazione-dei-parametri">
+     11.1.3 La determinazione dei parametri θ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-proprieta-del-metodo">
+     11.1.4 Le proprietà del metodo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#il-caso-lineare">
+     11.1.5 Il caso lineare
     </a>
    </li>
   </ul>
@@ -567,7 +590,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-determinazione-dei-parametri">
+    <a class="reference internal nav-link" href="#id1">
      11.2.3 La determinazione dei parametri
     </a>
    </li>
@@ -607,7 +630,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   11.6 ESERCIZI
+   11.5 ESERCIZI
   </a>
  </li>
 </ul>
@@ -625,30 +648,128 @@
 <h1>Lezione 11: fit di distribuzioni binnate con <code class="docutils literal notranslate"><span class="pre">ROOT</span></code><a class="headerlink" href="#lezione-11-fit-di-distribuzioni-binnate-con-root" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="indice">
 <h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
-<p><img alt="linea" src="../_images/linea.png" /></p>
+<ul class="simple">
+<li><p><a class="reference external" href="#111-introduzione">11.1 Introduzione</a></p>
+<ul>
+<li><p><a class="reference external" href="#1111-un-esempio-immediato">11.1.1 Un esempio immediato</a></p></li>
+<li><p><a class="reference external" href="#1112-il-caso-yphix">11.1.2 Il caso <em>y=φ(x)</em></a></p></li>
+<li><p><a class="reference external" href="#1113-la-determinazione-dei-parametri-theta">11.1.3 La determinazione dei parametri θ</a></p></li>
+<li><p><a class="reference external" href="#1114-le-propriet%C3%A0-del-metodo">11.1.4 Le proprietà del metodo</a></p></li>
+<li><p><a class="reference external" href="#1115-il-caso-lineare">11.1.5 Il caso lineare</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#112-un-esercizio-di-regressione">11.2 Un esercizio di regressione</a></p>
+<ul>
+<li><p><a class="reference external" href="#1121-come-rappresentare-in-root-i-dati">11.2.1 Come rappresentare in <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> i dati</a></p></li>
+<li><p><a class="reference external" href="#1122-la-rappresentazione-della-funzione-modello">11.2.2 La rappresentazione della funzione modello</a></p></li>
+<li><p><a class="reference external" href="#1123-la-determinazione-dei-parametri">11.2.3 La determinazione dei parametri</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#113-lanalisi-del-risultato-della-regressione">11.3 L’analisi del risultato della regressione</a></p>
+<ul>
+<li><p><a class="reference external" href="#1131-la-stampa-a-schermo-del-risultato">11.3.1 La stampa a schermo del risultato</a></p></li>
+<li><p><a class="reference external" href="#1132-la-convergenza-del-fit">11.3.2 La convergenza del fit</a></p></li>
+<li><p><a class="reference external" href="#1133-il-valore-dei-parametri-e-la-loro-incertezza">11.3.3 Il valore dei parametri e la loro incertezza</a></p></li>
+<li><p><a class="reference external" href="#1134-la-matrice-di-covarianza-dei-parametri-risultanti">11.3.4 La matrice di covarianza dei parametri risultanti</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#114-la-sigma-delle-misure-ed-il-metodo-dei-minimi-quadrati">11.4 la sigma delle misure ed il metodo dei minimi quadrati</a></p></li>
+<li><p><a class="reference external" href="#116-esercizi">11.5 ESERCIZI</a></p></li>
+</ul>
 </div>
 <div class="section" id="introduzione">
 <h2>11.1 Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Il <strong>metodo dei minimi quadrati</strong> viene spesso utilizzato
-per determinare i parametri ottimali θ che descrivano un andamento <em>y=φ(x, θ)</em>
-seguito da coppie di misure indipendenti <em>(x<sub>i</sub>, y<sub>i</sub>)</em></p></li>
-<li><p>Una notevole categoria di problemi è quella del <strong>caso lineare</strong>,
-in cui cioè la funzione φ sia lineaere nei parametri</p></li>
-<li><p>In queste circostanze, sotto ipotesi molto generali
-(che corrispondono a quelle del teorema di Gauss-Markov),
-gli stimatori dei parametri così ottenuti sono <strong>non distorti
-ed i più efficienti fra tutti gli stimatori lineari</strong> che si possono scrivere</p></li>
+<li><p>Il metodo dei <strong>minimi quadrati</strong> si basa su un principio indipendente
+rispetto a quello della massima verosimiglianza</p></li>
+<li><p>Si scelgono i parametri θ che rendono <strong>minima la distanza</strong>
+fra il modello ed i dati,
+secondo una metrica definita dagli scarti quadratici medi</p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
-<div class="section" id="le-ipotesi-del-teorema-di-gauss-markov">
-<h3>11.1.1 Le ipotesi del teorema di Gauss-Markov<a class="headerlink" href="#le-ipotesi-del-teorema-di-gauss-markov" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="un-esempio-immediato">
+<h3>11.1.1 Un esempio immediato<a class="headerlink" href="#un-esempio-immediato" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Se y<sub>i</sub> = φ(x<sub>i</sub>, θ) + ε<sub>i</sub>,
-essendo ε<sub>i</sub> variabili casuali, si richiede che:</p></li>
-<li><p>Il valore di aspettazione E(ε<sub>i</sub>) = 0 per tutti i punti</p></li>
-<li><p>La matrice di covarianza V(ε<sub>i</sub>) sia finita
-ed indipendente da <em>x</em> e <em>θ</em></p></li>
+<li><p>Per determinare la media μ di un insieme di misure <em>x<sub>i</sub></em>
+si può minimizzare la funzione:
+<img alt="Q_media" src="../_images/Q_media_2.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-caso-y-x">
+<h3>11.1.2 Il caso <em>y=φ(x)</em><a class="headerlink" href="#il-caso-y-x" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>La stessa metrica viene spesso utilizzata
+per fare <strong>regressioni sui dati</strong>, chiamata anche <em>fit</em></p></li>
+<li><p>Siano date <em>N</em> coppie di misure indipendenti del tipo <em>(x<sub>i</sub>, y<sub>i</sub> )</em>,
+per le quali:</p>
+<ul>
+<li><p>l’incertezza sul valore <em>x<sub>i</sub></em> sia <strong>nulla o trascuarbile</strong></p></li>
+<li><p><strong>l’incertezza sul valore <em>y<sub>i</sub></em></strong> sia σ<sub>i</sub></p></li>
+</ul>
+</li>
+<li><p>Sia data l’ipotesi che le due variabili <em>x<sub>i</sub></em> e <em>y<sub>i</sub></em>
+siano in <strong>relazione fra loro secondo una funzione <em>φ</em></strong> tale per cui <em>y=φ(x,θ)</em></p></li>
+<li><p>Si definisce la <strong>funzione <em>Q<sup>2</sup>(θ)</em></strong> come:
+<img alt="Q_funzione_2" src="../_images/Q_funzione.png" /></p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="la-determinazione-dei-parametri">
+<h3>11.1.3 La determinazione dei parametri θ<a class="headerlink" href="#la-determinazione-dei-parametri" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In questo caso, i parametri θ (θ può essere un vettore)
+si determinano <strong>trovando il minimo della funzione <em>Q(θ)</em></strong>:
+<img alt="Q_funzione" src="../_images/Q_derivata.png" /></p></li>
+<li><p>esistono diverse tecniche numeriche per trovare il minimo della funzione</p></li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="le-proprieta-del-metodo">
+<h3>11.1.4 Le proprietà del metodo<a class="headerlink" href="#le-proprieta-del-metodo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Se gli scarti <em>ε<sub>i</sub></em> di <em>y<sub>i</sub></em> rispetto a <em>φ(x<sub>i</sub>,θ)</em>
+hanno <strong>valore di aspettazione nullo e varianza finita e fissa</strong>,
+cioè non dipendente da <em>y</em>, allora</p>
+<ul>
+<li><p>il metodo dei minimi quadrati è uno <strong>stimatore non distorto</strong> dei parametri θ</p></li>
+<li><p>ed ha la <strong>varianza minima</strong> fra tutti gli stimatori non distorti lineari (in <em>y</em>),
+indipendentemente dalla distribuzione di probabilità degli scarti</p></li>
+</ul>
+</li>
+<li><p>Se gli scarti <em>ε<sub>i</sub></em> sono distribuiti secondo una distribuzione di probabilità Gaussiana,
+il minimo della funzione <em>Q<sup>2</sup>(θ)</em>
+è distribuito secondo una <strong>distribuzione di probabilià Χ<sup>2</sup></strong>
+con <em>N-k</em> gradi di libertà,</p>
+<ul>
+<li><p>dove <em>N</em> è il <strong>numero di coppie</strong> <em>(x<sub>i</sub>, y<sub>i</sub> )</em>
+e <em>k</em> il <strong>numero di parametri stimati</strong> con i minimi quadrati</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="linea" src="../_images/linea.png" /></p>
+</div>
+<div class="section" id="il-caso-lineare">
+<h3>11.1.5 Il caso lineare<a class="headerlink" href="#il-caso-lineare" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Nel caso in cui la funzione <em>g(x)</em> sia <strong>lineare nei parametri θ</strong>,
+le equazioni di minimizzazione possono essere risolte analiticamente
+<img alt="g_lineare" src="../_images/phi_lineare.png" /></p></li>
+<li><p>Un esempio di funzione lineare è <strong>la retta
+<em>φ(x,θ) = θ<sub>1</sub> + θ<sub>2</sub> x</em></strong>:</p>
+<ul>
+<li><p><em>h<sub>1</sub>(x) = 1</em></p></li>
+<li><p><em>h<sub>2</sub>(x) = x</em></p></li>
+</ul>
+</li>
+<li><p>Un altro esempio di funzione lineare è <strong>una parabola
+<em>φ(x,θ) = θ<sub>1</sub> + θ<sub>2</sub> x + θ<sub>3</sub> x<sup>2</sup></em></strong>:</p>
+<ul>
+<li><p><em>h<sub>1</sub>(x) = 1</em></p></li>
+<li><p><em>h<sub>2</sub>(x) = x</em></p></li>
+<li><p><em>h<sub>3</sub>(x) = x<sup>2</sup></em></p></li>
+</ul>
+</li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -708,8 +829,8 @@ si utilizza un <strong>oggetto della classe <code class="docutils literal notran
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
-<div class="section" id="la-determinazione-dei-parametri">
-<h3>11.2.3 La determinazione dei parametri<a class="headerlink" href="#la-determinazione-dei-parametri" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>11.2.3 La determinazione dei parametri<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>L’<strong>operazione di fit</strong> viene effettuata con il seguente comando,
 che invoca il metodo dei <strong>minimi quadrati</strong>:</p>
@@ -843,7 +964,7 @@ di stimare le incertezze sui valori <em>y<sub>i</sub></em></p></li>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="esercizi">
-<h2>11.6 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>11.5 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>
