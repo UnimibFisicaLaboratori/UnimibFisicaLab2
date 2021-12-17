@@ -2,30 +2,97 @@
 
 ## Indice
 
-
-![linea](../immagini/linea.png)
+  * [11.1 Introduzione](#111-introduzione)
+    * [11.1.1 Un esempio immediato](#1111-un-esempio-immediato)
+    * [11.1.2 Il caso *y=&phi;(x)*](#1112-il-caso-yphix)
+    * [11.1.3 La determinazione dei parametri &theta;](#1113-la-determinazione-dei-parametri-theta)
+    * [11.1.4 Le proprietà del metodo](#1114-le-proprietà-del-metodo)
+    * [11.1.5 Il caso lineare](#1115-il-caso-lineare)
+  * [11.2 Un esercizio di regressione](#112-un-esercizio-di-regressione)
+    * [11.2.1 Come rappresentare in ```ROOT``` i dati](#1121-come-rappresentare-in-root-i-dati)
+    * [11.2.2 La rappresentazione della funzione modello](#1122-la-rappresentazione-della-funzione-modello)
+    * [11.2.3 La determinazione dei parametri](#1123-la-determinazione-dei-parametri)
+  * [11.3 L'analisi del risultato della regressione](#113-lanalisi-del-risultato-della-regressione)
+    * [11.3.1 La stampa a schermo del risultato](#1131-la-stampa-a-schermo-del-risultato)
+    * [11.3.2 La convergenza del fit](#1132-la-convergenza-del-fit)
+    * [11.3.3 Il valore dei parametri e la loro incertezza](#1133-il-valore-dei-parametri-e-la-loro-incertezza)
+    * [11.3.4 La matrice di covarianza dei parametri risultanti](#1134-la-matrice-di-covarianza-dei-parametri-risultanti)
+  * [11.4 la sigma delle misure ed il metodo dei minimi quadrati](#114-la-sigma-delle-misure-ed-il-metodo-dei-minimi-quadrati)
+  * [11.5 ESERCIZI](#116-esercizi)
 
 ## 11.1 Introduzione
 
-  * Il **metodo dei minimi quadrati** viene spesso utilizzato 
-    per determinare i parametri ottimali &theta; che descrivano un andamento *y=&phi;(x, &theta;)*
-    seguito da coppie di misure indipendenti *(x<sub>i</sub>, y<sub>i</sub>)*
-  * Una notevole categoria di problemi è quella del **caso lineare**,
-    in cui cioè la funzione &phi; sia lineaere nei parametri
-  * In queste circostanze, sotto ipotesi molto generali 
-    (che corrispondono a quelle del teorema di Gauss-Markov),
-    gli stimatori dei parametri così ottenuti sono **non distorti
-    ed i più efficienti fra tutti gli stimatori lineari** che si possono scrivere
+  * Il metodo dei **minimi quadrati** si basa su un principio indipendente
+    rispetto a quello della massima verosimiglianza
+  * Si scelgono i parametri &theta; che rendono **minima la distanza** 
+    fra il modello ed i dati, 
+    secondo una metrica definita dagli scarti quadratici medi
 
 ![linea](../immagini/linea.png)
 
-### 11.1.1 Le ipotesi del teorema di Gauss-Markov
+### 11.1.1 Un esempio immediato
 
-  * Se y<sub>i</sub> = &phi;(x<sub>i</sub>, &theta;) + &epsilon;<sub>i</sub>, 
-    essendo &epsilon;<sub>i</sub> variabili casuali, si richiede che:
-  * Il valore di aspettazione E(&epsilon;<sub>i</sub>) = 0 per tutti i punti 
-  * La matrice di covarianza V(&epsilon;<sub>i</sub>) sia finita
-    ed indipendente da *x* e *&theta;*
+  * Per determinare la media &mu; di un insieme di misure *x<sub>i</sub>*
+    si può minimizzare la funzione:
+![Q_media](immagini/Q_media_2.png)
+
+![linea](../immagini/linea.png)
+
+### 11.1.2 Il caso *y=&phi;(x)*
+
+  * La stessa metrica viene spesso utilizzata
+    per fare **regressioni sui dati**, chiamata anche *fit*
+  * Siano date *N* coppie di misure indipendenti del tipo *(x<sub>i</sub>, y<sub>i</sub> )*,
+    per le quali:
+    * l'incertezza sul valore *x<sub>i</sub>* sia **nulla o trascuarbile**
+    * **l'incertezza sul valore *y<sub>i</sub>*** sia &sigma;<sub>i</sub>
+  * Sia data l'ipotesi che le due variabili *x<sub>i</sub>* e *y<sub>i</sub>*
+    siano in **relazione fra loro secondo una funzione *&phi;*** tale per cui *y=&phi;(x,&theta;)*
+  * Si definisce la **funzione *Q<sup>2</sup>(&theta;)*** come:
+![Q_funzione_2](immagini/Q_funzione.png)
+
+![linea](../immagini/linea.png)
+
+### 11.1.3 La determinazione dei parametri &theta;
+
+  * In questo caso, i parametri &theta; (&theta; può essere un vettore)
+    si determinano **trovando il minimo della funzione *Q(&theta;)***:
+![Q_funzione](immagini/Q_derivata.png)
+  * esistono diverse tecniche numeriche per trovare il minimo della funzione
+
+![linea](../immagini/linea.png)
+
+### 11.1.4 Le proprietà del metodo
+
+  * Se gli scarti *&epsilon;<sub>i</sub>* di *y<sub>i</sub>* rispetto a *&phi;(x<sub>i</sub>,&theta;)*
+    hanno **valore di aspettazione nullo e varianza finita e fissa**,
+    cioè non dipendente da *y*, allora 
+    * il metodo dei minimi quadrati è uno **stimatore non distorto** dei parametri &theta;
+    * ed ha la **varianza minima** fra tutti gli stimatori non distorti lineari (in *y*), 
+      indipendentemente dalla distribuzione di probabilità degli scarti
+  * Se gli scarti *&epsilon;<sub>i</sub>* sono distribuiti secondo una distribuzione di probabilità Gaussiana,
+    il minimo della funzione *Q<sup>2</sup>(&theta;)*
+    è distribuito secondo una **distribuzione di probabilià &Chi;<sup>2</sup>**
+    con *N-k* gradi di libertà,
+    * dove *N* è il **numero di coppie** *(x<sub>i</sub>, y<sub>i</sub> )*
+      e *k* il **numero di parametri stimati** con i minimi quadrati
+
+![linea](../immagini/linea.png)
+
+### 11.1.5 Il caso lineare
+
+  * Nel caso in cui la funzione *g(x)* sia **lineare nei parametri &theta;**,
+    le equazioni di minimizzazione possono essere risolte analiticamente
+![g_lineare](immagini/phi_lineare.png)
+  * Un esempio di funzione lineare è **la retta 
+    *&phi;(x,&theta;) = &theta;<sub>1</sub> + &theta;<sub>2</sub> x***:
+    * *h<sub>1</sub>(x) = 1*
+    * *h<sub>2</sub>(x) = x*
+  * Un altro esempio di funzione lineare è **una parabola 
+    *&phi;(x,&theta;) = &theta;<sub>1</sub> + &theta;<sub>2</sub> x + &theta;<sub>3</sub> x<sup>2</sup>***:
+    * *h<sub>1</sub>(x) = 1*
+    * *h<sub>2</sub>(x) = x*
+    * *h<sub>3</sub>(x) = x<sup>2</sup>*
 
 ![linea](../immagini/linea.png)
 
@@ -192,6 +259,6 @@
 
 ![linea](../immagini/linea.png)
 
-## 11.6 ESERCIZI
+## 11.5 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
