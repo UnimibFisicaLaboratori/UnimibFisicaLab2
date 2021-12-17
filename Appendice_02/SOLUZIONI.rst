@@ -49,47 +49,47 @@ A2.3-A2.4 struttura di ereditarietà e generazione di numeri casuali
 
 * `esercizio03_04.cpp`
 
-.. literalinclude:: /Esercizi/esercizio03_04/esercizio03_04.cpp
+.. literalinclude:: Esercizi/esercizio03_04/esercizio03_04.cpp
   :language: cpp
 
 * `generatore.h`
 
-.. literalinclude:: /Esercizi/esercizio03_04/generatore.h
+.. literalinclude:: Esercizi/esercizio03_04/generatore.h
   :language: cpp
 
 * `generatore.cc`
 
-.. literalinclude:: /Esercizi/esercizio03_04/generatore.cc
+.. literalinclude:: Esercizi/esercizio03_04/generatore.cc
   :language: cpp
 
 * `generatore_IF.h`
 
-.. literalinclude:: /Esercizi/esercizio03_04/generatore_IF.h
+.. literalinclude:: Esercizi/esercizio03_04/generatore_IF.h
   :language: cpp
 
 * `generatore_IF.cc`
 
-.. literalinclude:: /Esercizi/esercizio03_04/generatore_IF.cc
+.. literalinclude:: Esercizi/esercizio03_04/generatore_IF.cc
   :language: cpp
 
 * `generatore_LC.h`
 
-.. literalinclude:: /Esercizi/esercizio03_04/generatore_LC.h
+.. literalinclude:: Esercizi/esercizio03_04/generatore_LC.h
   :language: cpp
 
 * `generatore_LC.cc`
 
-.. literalinclude:: /Esercizi/esercizio03_04/generatore_LC.cc
+.. literalinclude:: Esercizi/esercizio03_04/generatore_LC.cc
   :language: cpp
 
 * `generatore_TC.h`
 
-.. literalinclude:: /Esercizi/esercizio03_04/generatore_TC.h
+.. literalinclude:: Esercizi/esercizio03_04/generatore_TC.h
   :language: cpp
 
 * `generatore_TC.cc`
 
-.. literalinclude:: /Esercizi/esercizio03_04/generatore_TC.cc
+.. literalinclude:: Esercizi/esercizio03_04/generatore_TC.cc
 
 .. image:: ../immagini/linea.png
   :width: 1100
