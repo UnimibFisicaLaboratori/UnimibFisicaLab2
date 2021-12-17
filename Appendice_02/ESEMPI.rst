@@ -1,25 +1,24 @@
-Esempi: Lezione 8
+Esempi: Appendice 2
 =================
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-8.0 Generazione di tanti toy experiment
+A2.0 Classificazione di forme geometriche
 ---------------------------------------
-* `statistiche.h`
-.. literalinclude:: ../Lezione_03/programmi/statistiche.h
+* `main_00.h`
+.. literalinclude:: programmi/main_00.cpp
   :language: cpp
 
-
-* `main_00.cpp`
-.. literalinclude:: programmi/main_00.cpp
+* `forme.h`
+.. literalinclude:: programmi/forme.h
   :language: cpp
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-8.1 Generazione di tanti toy experiment e visualizzazione della media
----------------------------------------------------------------------
+A2.1 ompatibilità fra tipi in una catena ereditaria
+---------------------------------------
 * `main_01.cpp`
 .. literalinclude:: programmi/main_01.cpp
   :language: cpp
@@ -27,16 +26,21 @@ Esempi: Lezione 8
 .. image:: ../immagini/linea.png
   :width: 1100
 
-8.2 Confronto fra la larghezza della distribuzione e l'errore sulla media
--------------------------------------------------------------------------
+A2.2 ereditarietà e polimorfismo con forme geometriche
+---------------------------------------
+* `main_02.cpp`
 .. literalinclude:: programmi/main_02.cpp
   :language: cpp
+
+* `forme_polim.cpp`
+.. literalinclude:: programmi/forme_polim.h
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-8.3 Implementazione di hit-or-miss
-----------------------------------
+A2.3 ereditarietà polimorfica e contenitori STL
+---------------------------------------
+* `main_03.cpp`
 .. literalinclude:: programmi/main_03.cpp
   :language: cpp
 
