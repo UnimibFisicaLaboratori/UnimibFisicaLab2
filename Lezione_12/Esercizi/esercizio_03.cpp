@@ -58,7 +58,7 @@ int main (int argc, char ** argv)
   cout << "termine noto : " << f_fit.GetParameter (0) << "\t+- " << f_fit.GetParError (0) << endl ;
   cout << "pendenza     : " << f_fit.GetParameter (1) << "\t+- " << f_fit.GetParError (1) << endl ;
 
-  TCanvas c1 ;
+  TCanvas c1 ("c1", "", 800, 800) ;
   g_retta.Draw ("AP") ;
   c1.Print ("retta.png", "png") ; 
 

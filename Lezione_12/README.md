@@ -43,6 +43,8 @@
     sarà utilizzata per **distribuire in modo casuale i punti lungo l'asse *x***
     e per **trovare i valori dei termini &epsilon;<sub>i</sub>**
 
+![linea](../immagini/punti.png)
+
 ![linea](../immagini/linea.png)
 
 ### 11.2.1 Come rappresentare in ```ROOT``` i dati
@@ -97,7 +99,8 @@
 
   * La funzione di fit viene automaticamente aggiunta alla proprietà del ```TGraph```
     e visualizzata quando viene invocato il metodo ```TGraph::Draw```:
-![fit_result](immagini/fit_result_2.png)
+
+![fit_result](immagini/fit_result.png)
 
 ![linea](../immagini/linea.png)
 
