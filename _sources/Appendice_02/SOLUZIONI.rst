@@ -1,103 +1,96 @@
-Soluzioni: Lezione 8
+Soluzioni: Appendice 2
 ====================
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-8.1 generazione di *toy experiment*
+A2.1-A2.2 struttura di ereditarietà delle forme geometriche
 -----------------------------------
 * `esercizio01_02.cpp`
 
-.. literalinclude:: Esercizi/esercizi01_02.cpp
+.. literalinclude:: Esercizi/esercizio01_02/esercizio01_02.cpp
+  :language: cpp
+
+* `forma.h`
+
+.. literalinclude:: Esercizi/esercizio01_02/forma.h
+  :language: cpp
+
+* `forma.cc`
+
+.. literalinclude:: Esercizi/esercizio01_02/forma.cc
+  :language: cpp
+
+* `quadrato.h`
+
+.. literalinclude:: Esercizi/esercizio01_02/quadrato.h
+  :language: cpp
+
+* `quadrato.cc`
+
+.. literalinclude:: Esercizi/esercizio01_02/quadrato.cc
+  :language: cpp
+
+* `rettangolo.h`
+
+.. literalinclude:: Esercizi/esercizio01_02/rettangolo.h
+  :language: cpp
+
+* `rettangolo.cc`
+
+.. literalinclude:: Esercizi/esercizio01_02/rettangolo.cc
   :language: cpp
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-8.2 disegno di *toy experiment*
--------------------------------
-* `esercizio01_02.cpp`
+A2.3-A2.4 struttura di ereditarietà e generazione di numeri casuali
+-----------------------------------
 
-.. literalinclude:: Esercizi/esercizi01_02.cpp
+* `esercizio03_04.cpp`
+
+.. literalinclude:: /Esercizi/esercizio03_04/esercizio03_04.cpp
   :language: cpp
+
+* `generatore.h`
+
+.. literalinclude:: /Esercizi/esercizio03_04/generatore.h
+  :language: cpp
+
+* `generatore.cc`
+
+.. literalinclude:: /Esercizi/esercizio03_04/generatore.cc
+  :language: cpp
+
+* `generatore_IF.h`
+
+.. literalinclude:: /Esercizi/esercizio03_04/generatore_IF.h
+  :language: cpp
+
+* `generatore_IF.cc`
+
+.. literalinclude:: /Esercizi/esercizio03_04/generatore_IF.cc
+  :language: cpp
+
+* `generatore_LC.h`
+
+.. literalinclude:: /Esercizi/esercizio03_04/generatore_LC.h
+  :language: cpp
+
+* `generatore_LC.cc`
+
+.. literalinclude:: /Esercizi/esercizio03_04/generatore_LC.cc
+  :language: cpp
+
+* `generatore_TC.h`
+
+.. literalinclude:: /Esercizi/esercizio03_04/generatore_TC.h
+  :language: cpp
+
+* `generatore_TC.cc`
+
+.. literalinclude:: /Esercizi/esercizio03_04/generatore_TC.cc
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-8.3 calcolo delle statistiche di un campione di *toy experiment*
-----------------------------------------------------------------
-* `esercizio03.cpp`
-
-.. literalinclude:: Esercizi/esercizio03.cpp
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100
-
-8.4 studio dell'evoluzione delle statistiche con il numero di eventi
---------------------------------------------------------------------
-* `esercizio04.cpp`
-
-.. literalinclude:: Esercizi/esercizio04.cpp
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100
-
-8.5 metodo di integrazione *hit-or-miss*
-------------------------------------------------------------------
-* `esercizio05.cpp`
-
-.. literalinclude:: Esercizi/esercizio05.cpp
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100
-
-8.6 incetezza del metodo di integrazione *hit-or-miss*
-------------------------------------------------------------------
-* `esercizio06.cpp`
-
-.. literalinclude:: Esercizi/esercizio06.cpp
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100
-
-8.7 metodo di integrazone *crude Montecarlo*
-------------------------------------------------------------------
-* `esercizio07.cpp`
-
-.. literalinclude:: Esercizi/esercizio07.cpp
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100
-
-8.8 incetezza del metodo di integrazione *crude Montecarlo*
-------------------------------------------------------------------
-* `esercizio08.cpp`
-
-.. literalinclude:: Esercizi/esercizio08.cpp
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100
-
-8.9 confronto fra *crude Montecarlo* e *hit-or-miss*
-------------------------------------------------------------------
-* `esercizio09.cpp`
-.. literalinclude:: Esercizi/esercizio09.cpp
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100
-
-8.10 integrale della Gaussiana
-------------------------------------------------------------------
-* `esercizio10.cpp`
-.. literalinclude:: Esercizi/esercizio10.cpp
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100

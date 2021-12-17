@@ -1,6 +1,6 @@
-# Esercizi per la lezione 8
+# Esercizi per l'appendice 2
 
-## Esercizio 8.1
+## Esercizio A2.1
 
 Si definisca una semplice struttura di ereditarieta' delle forme geometriche,
 seguendo l'esempio presentato ad inizio lezione.
@@ -13,7 +13,7 @@ seguendo l'esempio presentato ad inizio lezione.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 8.2 
+## Esercizio A2.2 
 
 Si modifichi la struttura precedente aggiungendo la funzione ```calcola_area``` 
 in tutta la catena di ereditarieta'.
@@ -27,7 +27,7 @@ in tutta la catena di ereditarieta'.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 8.3
+## Esercizio A2.3
 
 Si implementino i generatori di numeri casuali scritti durante la Lezione 4
 come oggetti derivati della seguente classe puramente virtuale
@@ -51,7 +51,7 @@ class generatore
  
 ![linea](../immagini/linea.png)
 
-## Esercizio 8.4
+## Esercizio A2.4
 
 Si inseriscano i generatori precedenti in una ```std::map``` 
 e si utilizzi un loop sugli elementi della mappa
@@ -59,21 +59,3 @@ per verificare quanto tempo impieghi ciascun generatore,
 in media,
 a generare un evento pseudo-casuale.
 
-![linea](../immagini/linea.png)
-
-## Esercizio 8.5
-
-Si costruisca un ```vector``` di numeri interi contenente il doppio dei primi dieci numeri interi.
-  * Si mostri che l'algoritmo ```std::find``` non trova alcuno dei primi dieci numeri dispari al suo interno.
-  * Si trovi l'iteratore all'elemento che contiene il numero *6*.
-  * Si mostri che ognuno dei primi dieci numeri pari compare una volta sola all'interno del ```vector```.
-
-![linea](../immagini/linea.png)
-
-## Esercizio 8.6
-
-Si costruisca un ```vector``` che contenga cento numeri interi casuali generati fra -10 e 10.
-  * Si ordini il contenitore utilizzando l'algoritmo ```std::sort```.
-  * Si ordini il contenitore mettendo prima tutti i numeri positivi, ordinati fra di loro in ordine crescente, 
-    quindi tutti quelli negativi, ordinati in ordine decrescente,
-    utilizzando un oggetto come algoritmo di ordinamento.

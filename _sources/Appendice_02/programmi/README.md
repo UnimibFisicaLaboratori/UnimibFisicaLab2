@@ -8,6 +8,3 @@
    | forme_polim.h | esempio di ereditarieta' e polimorfismo con forme geometriche |
    | main_02.cpp   | esempio di ereditarieta' e polimorfismo con forme geometriche |
    | main_03.cpp   | esempio di ereditarieta' polimorfica e contenitori STL |
-   | main_04.cpp   | esempio di utilizzo di ```std::find``` |
-   | main_05.cpp   | esempio di utilizzo di ```std::sort``` |
-   | main_06.cpp   | esempio di utilizzo di ```std::sort``` con un algoritmo di ordinamento fornito dall'utente |
