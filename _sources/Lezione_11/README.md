@@ -1,4 +1,4 @@
-# Lezione 11: fit di distribuzioni binnate con ```ROOT```
+# Lezione 11: il metodo dei minimi quadrati in ```ROOT```
 
 ## Indice
 
