@@ -6,9 +6,9 @@ Soluzioni: Appendice 3
 
 A3.1 la funzone ```find```
 -----------------------------------
-* `esercizio01.cpp`
+* `esercizio_01.cpp`
 
-.. literalinclude:: Esercizi/esercizio01.cpp
+.. literalinclude:: Esercizi/esercizio_01.cpp
   :language: cpp
 
 .. image:: ../immagini/linea.png
