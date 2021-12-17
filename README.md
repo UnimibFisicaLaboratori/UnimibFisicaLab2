@@ -33,6 +33,7 @@
   * [Lezione 8](Lezione_08/README.md) : toy experiment ed integrazione con tecniche Montecarlo
   * [Lezione 9](Lezione_09/README.md) : disegno della funzione di verosimiglianza
   * [Lezione 10](Lezione_09/README.md) : stime di parametri: il massimo della verosimiglianza
+  * [Lezione 11](Lezione_09/README.md) : stime di parametri: i minimi quadrati
 
 ![linea](immagini/linea.png)
 
