@@ -1,38 +1,38 @@
-# Lezione 11: fit di distribuzioni binnate con ```ROOT```
+# Lezione 12: fit di distribuzioni binnate con ```ROOT```
 
 ## Indice
 
-  * [11.1 Introduzione](#introduzione)
-    * [11.1.1 L'applicazione del metodo dei minimi quadrati](#l-applicazione-del-metodo-dei-minimi-quadrati)
-    * [11.1.2 L'applicazione del metodo della massima verosimiglianza](#l-applicazione-del-metodo-della-massima-verosimiglianza)
-    * [11.1.3 La scelta fra le due tecniche](#la-scelta-fra-le-due-tecniche)
-  * [11.2 Un esercizio di regressione](#un-esercizio-di-regressione)
-    * [11.2.1 La lettura dei dati](#la-lettura-dei-dati)
-    * [11.2.2 La determinazione dei parametri](#la-determinazione-dei-parametri)
-    * [11.2.3 Il fit di un istogramma in ```ROOT```](#il-fit-di-un-istogramma-in-root)
-    * [11.2.4 Il fondo ed il modello completo](#il-fondo-ed-il-modello-completo)
-    * [11.2.5 Il fit del modello ai dati](#il-fit-del-modello-ai-dati)
-    * [11.2.6 Come aiutare ```ROOT``` a trovare il minimo giusto](#come-aiutare-root-a-trovare-il-minimo-giusto)
-    * [11.2.7 Come maneggiare meno parametri alla volta](#come-maneggiare-meno-parametri-alla-volta)
-    * [11.2.8 I parametri dell'esponenziale dalla regione esponenziale](#i-parametri-dell-esponenziale-dalla-regione-esponenziale)
-    * [11.2.9 Il fit finale](#il-fit-finale)
-  * [11.3 L'analisi del risultato della regressione](#l-analisi-del-risultato-della-regressione)
-    * [11.3.1 La stampa a schermo del risultato](#la-stampa-a-schermo-del-risultato)
-    * [11.3.2 La convergenza del fit](#la-convergenza-del-fit)
-    * [11.3.3 Il valore dei parametri e la loro incertezza](#il-valore-dei-parametri-e-la-loro-incertezza)
-    * [11.3.4 La bontà del fit](#la-bontà-del-fit)
-    * [11.3.5 La matrice di covarianza dei parametri risultanti](#la-matrice-di-covarianza-dei-parametri-risultanti)
-  * [11.4 Minimi quadrati (MQ) e massima verosimiglianza (ML)](#minimi-quadrati-mq-e-massima-verosimiglianza-ml)
-    * [11.4.1 Il fit di massima verosimiglianza in ```ROOT```](#il-fit-di-massima-verosimiglianza-in-root)
-    * [11.4.2 Il confronto fra due risultati](#il-confronto-fra-due-risultati)
-    * [11.4.3 Il disegno del risultato](#il-disegno-del-risultato)
-  * [11.5 Sulla scelta del binning](#sulla-scelta-del-binning)
-  * [11.6 ESEMPI](#esempi)
-  * [11.7 ESERCIZI](#esercizi)
+  * [12.1 Introduzione](#introduzione)
+    * [12.1.1 L'applicazione del metodo dei minimi quadrati](#l-applicazione-del-metodo-dei-minimi-quadrati)
+    * [12.1.2 L'applicazione del metodo della massima verosimiglianza](#l-applicazione-del-metodo-della-massima-verosimiglianza)
+    * [12.1.3 La scelta fra le due tecniche](#la-scelta-fra-le-due-tecniche)
+  * [12.2 Un esercizio di regressione](#un-esercizio-di-regressione)
+    * [12.2.1 La lettura dei dati](#la-lettura-dei-dati)
+    * [12.2.2 La determinazione dei parametri](#la-determinazione-dei-parametri)
+    * [12.2.3 Il fit di un istogramma in ```ROOT```](#il-fit-di-un-istogramma-in-root)
+    * [12.2.4 Il fondo ed il modello completo](#il-fondo-ed-il-modello-completo)
+    * [12.2.5 Il fit del modello ai dati](#il-fit-del-modello-ai-dati)
+    * [12.2.6 Come aiutare ```ROOT``` a trovare il minimo giusto](#come-aiutare-root-a-trovare-il-minimo-giusto)
+    * [12.2.7 Come maneggiare meno parametri alla volta](#come-maneggiare-meno-parametri-alla-volta)
+    * [12.2.8 I parametri dell'esponenziale dalla regione esponenziale](#i-parametri-dell-esponenziale-dalla-regione-esponenziale)
+    * [12.2.9 Il fit finale](#il-fit-finale)
+  * [12.3 L'analisi del risultato della regressione](#l-analisi-del-risultato-della-regressione)
+    * [12.3.1 La stampa a schermo del risultato](#la-stampa-a-schermo-del-risultato)
+    * [12.3.2 La convergenza del fit](#la-convergenza-del-fit)
+    * [12.3.3 Il valore dei parametri e la loro incertezza](#il-valore-dei-parametri-e-la-loro-incertezza)
+    * [12.3.4 La bontà del fit](#la-bontà-del-fit)
+    * [12.3.5 La matrice di covarianza dei parametri risultanti](#la-matrice-di-covarianza-dei-parametri-risultanti)
+  * [12.4 Minimi quadrati (MQ) e massima verosimiglianza (ML)](#minimi-quadrati-mq-e-massima-verosimiglianza-ml)
+    * [12.4.1 Il fit di massima verosimiglianza in ```ROOT```](#il-fit-di-massima-verosimiglianza-in-root)
+    * [12.4.2 Il confronto fra due risultati](#il-confronto-fra-due-risultati)
+    * [12.4.3 Il disegno del risultato](#il-disegno-del-risultato)
+  * [12.5 Sulla scelta del binning](#sulla-scelta-del-binning)
+  * [12.6 ESEMPI](#esempi)
+  * [12.7 ESERCIZI](#esercizi)
 
 ![linea](../immagini/linea.png)
 
-## 11.1 Introduzione
+## 12.1 Introduzione
 
   * I metodi dei minimi quadrati e della massima verosimiglianza
     possono essere **applicati anche al caso di istrogrammi**,
@@ -47,7 +47,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.1.1 L'applicazione del metodo dei minimi quadrati
+### 12.1.1 L'applicazione del metodo dei minimi quadrati
 
   * Nel caso dei minimi quadrati,
     la funzione ***Q<sup>2</sup>(&theta;)*** è solitamente la seguente (formulazione di Neyman):
@@ -60,7 +60,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.1.2 L'applicazione del metodo della massima verosimiglianza
+### 12.1.2 L'applicazione del metodo della massima verosimiglianza
 
   * Nel caso della massima verosimiglianza,
     si assume che in ogni bin i conteggi seguano una **distribuzione di probabilità Poissoniana**
@@ -69,7 +69,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.1.3 La scelta fra le due tecniche
+### 12.1.3 La scelta fra le due tecniche
 
   * Nel caso di **pochi conteggi** presenti nei bin,
     * bin senza conteggi non contribuiscono al fit nel caso dei minimi quadrati,
@@ -81,7 +81,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 11.2 Un esercizio di regressione
+## 12.2 Un esercizio di regressione
 
   * Supponiamo di **raccogliere eventi** lungo una variabile *x*
     e di voler determinare i parametri della distribuzione di probabilità della variabile
@@ -100,7 +100,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.1 La lettura dei dati
+### 12.2.1 La lettura dei dati
 
   * Supponiamo di aver **raccolto 10,000 eventi**,
     che si trovano salvati nel file [dati.txt](programmi/dati.txt)
@@ -114,7 +114,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.2 La determinazione dei parametri
+### 12.2.2 La determinazione dei parametri
 
   * Per **determinare i parametri &theta;** si utilizza tipicamente
     il metodo dei minimi quadrati o della massima verosimiglianza
@@ -126,7 +126,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.3 Il fit di un istogramma in ```ROOT```
+### 12.2.3 Il fit di un istogramma in ```ROOT```
 
   * Per poter effettuare il fit,
     è necessario definire il modello funzionale nel linguaggio di ```ROOT```
@@ -146,7 +146,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.4 Il fondo ed il modello completo
+### 12.2.4 Il fondo ed il modello completo
 
    * Analogamente,
      la distribuzione di probabilità del rumore di fondo è:
@@ -162,7 +162,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.5 Il fit del modello ai dati
+### 12.2.5 Il fit del modello ai dati
 
   * L'**operazione di fit** viene effettuata con il seguente comando,
     che invoca il metodo dei **minimi quadrati**:
@@ -179,7 +179,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.6 Come aiutare ```ROOT``` a trovare il minimo giusto
+### 12.2.6 Come aiutare ```ROOT``` a trovare il minimo giusto
 
   * Per facilitare il fit,
     è molto efficace dare a ```ROOT``` un **punto di partenza non distante dal risultato finale**,
@@ -209,7 +209,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.7 Come maneggiare meno parametri alla volta
+### 12.2.7 Come maneggiare meno parametri alla volta
 
   * Talvolta anche partendo da valori ragionevoli dei parametri
     **il fit non converge** all'estremante cercato
@@ -220,7 +220,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.8 I parametri dell'esponenziale dalla regione esponenziale
+### 12.2.8 I parametri dell'esponenziale dalla regione esponenziale
 
   * Un **fit parziale** soltanto sull'intervallo ```0., 4.```
     con la dsitribuzione di probabilità del solo fondo
@@ -245,7 +245,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.2.9 Il fit finale
+### 12.2.9 Il fit finale
 
   * Dopo aver **impostato i parametri** iniziali della funzione ```"model"```
     con i valori ricavati in precedenza,
@@ -264,7 +264,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 11.3 L'analisi del risultato della regressione
+## 12.3 L'analisi del risultato della regressione
 
   * La funzione di fit viene automaticamente aggiunta alla proprietà del ```TH1F```
     e visualizzata quando viene invocato il metodo ```TH1F::Draw```:
@@ -272,7 +272,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.3.1 La stampa a schermo del risultato
+### 12.3.1 La stampa a schermo del risultato
 
   * L'**output a schermo** del fit ha la forma seguente:
     ```
@@ -293,7 +293,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.3.2 La convergenza del fit
+### 12.3.2 La convergenza del fit
 
   * Per conoscere il **successo dell'algoritmo numerico**,
     si utilizza il metodo ```TFitResult::IsValid ()```, che deve essere ```true``` in caso di successo,
@@ -306,7 +306,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.3.3 Il valore dei parametri e la loro incertezza
+### 12.3.3 Il valore dei parametri e la loro incertezza
 
   * Il valore dei parametri e della loro incertezza possono essere **ottenuti dalla funzione di fit**:
     ```cpp
@@ -322,7 +322,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.3.4 La bontà del fit
+### 12.3.4 La bontà del fit
 
   * Nel caso in cui la distribuzione di densità di probabilità dei singoli *n<sub>i</sub>* sia Gaussiana,
     ***Q<sup>2</sup><sub>min</sub>* segue la distribuzione del *&Chi;<sup>2</sup>*** con *N-k* gradi di libertà,
@@ -347,7 +347,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.3.5 La matrice di covarianza dei parametri risultanti
+### 12.3.5 La matrice di covarianza dei parametri risultanti
 
   * La matrice di covarianza e di correlazione dei parametri risultati **può essere stampata a schermo**:
     ```cpp
@@ -370,7 +370,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 11.4 Minimi quadrati (MQ) e massima verosimiglianza (ML)
+## 12.4 Minimi quadrati (MQ) e massima verosimiglianza (ML)
 
   * Il metodo dei minimi quadrati (MQ) e quello della massima verosimiglianza
     (ML, da maximum likelihood) sono **stimatori dei parametri di un modello**,
@@ -380,7 +380,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.4.1 Il fit di massima verosimiglianza in ```ROOT```
+### 12.4.1 Il fit di massima verosimiglianza in ```ROOT```
 
   * Per svolgere un fit con il metodo della massima verosimiglianza,
     è sufficiente aggiungere l'opzione ```"L"``` all'istruzione di fit:
@@ -398,7 +398,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.4.2 Il confronto fra due risultati
+### 12.4.2 Il confronto fra due risultati
 
   * Per un **grande numero di eventi**,
     i due stimatori si equivalgono
@@ -410,7 +410,7 @@
 
 ![linea](../immagini/linea.png)
 
-### 11.4.3 Il disegno del risultato
+### 12.4.3 Il disegno del risultato
 
   * L'opzione ```"+"``` nell'istruzione di fit
     impone a ```ROOT``` di salvare nell'oggetto ```TH1F``` una copia della funzione
@@ -428,7 +428,7 @@
 
 ![linea](../immagini/linea.png)
 
-## 11.5 Sulla scelta del binning
+## 12.5 Sulla scelta del binning
 
   * Siccome la scelta del binning determina il numero ed il valore dei punti *n<sub>i</sub>*,
     essa **ha impatto sul risultato del fit**
@@ -444,6 +444,6 @@
 
 ![linea](../immagini/linea.png)
 
-## 11.6 ESERCIZI
+## 12.6 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)

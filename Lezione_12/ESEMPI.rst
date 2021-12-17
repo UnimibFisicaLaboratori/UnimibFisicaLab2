@@ -1,10 +1,10 @@
-Esempi: Lezione 9
+Esempi: Lezione 12
 =================
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-11.0 Creazione e disegno di un modello funzionale con la classe TF1 di ROOT
+12.0 Creazione e disegno di un modello funzionale con la classe TF1 di ROOT
 ---------------------------------------------------------------------------
 * `main_00.cpp`
 
@@ -14,7 +14,7 @@ Esempi: Lezione 9
 .. image:: ../immagini/linea.png
   :width: 1100
 
-11.1 Generazione di numeri pseudo-casuali secondo una distribuzione data tramite ROOT
+12.1 Generazione di numeri pseudo-casuali secondo una distribuzione data tramite ROOT
 -------------------------------------------------------------------------------------
 * `main_01.cpp`
 
@@ -24,7 +24,7 @@ Esempi: Lezione 9
 .. image:: ../immagini/linea.png
   :width: 1100
 
-11.2 Fit di un istogramma costruito con gli eventi generati nell'esercizio precedente
+12.2 Fit di un istogramma costruito con gli eventi generati nell'esercizio precedente
 -------------------------------------------------------------------------------------
 * `main_02.cpp`
 
@@ -34,7 +34,7 @@ Esempi: Lezione 9
 .. image:: ../immagini/linea.png
   :width: 1100
 
-11.3 Generazione di numeri pseudo-casuali secondo una distribuzione Gaussiana tramite ROOT
+12.3 Generazione di numeri pseudo-casuali secondo una distribuzione Gaussiana tramite ROOT
 ------------------------------------------------------------------------------------------
 * `main_03.cpp`
 
@@ -44,7 +44,7 @@ Esempi: Lezione 9
 .. image:: ../immagini/linea.png
   :width: 1100
 
-11.4 Confronto fra un fit effettuato con i minimi quadrati e con la massima verosimiglianza
+12.4 Confronto fra un fit effettuato con i minimi quadrati e con la massima verosimiglianza
 -------------------------------------------------------------------------------------------
 * `main_04.cpp`
 
@@ -54,7 +54,7 @@ Esempi: Lezione 9
 .. image:: ../immagini/linea.png
   :width: 1100
 
-11.5 Studio del confronto in funzione del numero di eventi
+12.5 Studio del confronto in funzione del numero di eventi
 ----------------------------------------------------------
 * `main_05.cpp`
 

@@ -1,6 +1,6 @@
-# Esercizi per la lezione 11
+# Esercizi per la lezione 12
 
-## Esercizio 11.1
+## Esercizio 12.1
 
 Si scriva un programma che effettui il fit degli eventi salvati nel file [dati.txt](programmi/dati.txt),
 utilizzando gli algoritmi di ```ROOT``` ed il modello descritto nella Lezione.
@@ -16,7 +16,7 @@ utilizzando gli algoritmi di ```ROOT``` ed il modello descritto nella Lezione.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 11.2 
+## Esercizio 12.2 
 
 Utilizzando il programma [main_03.cpp](programmi/main_03.cpp),
 si generi un file ```dati_2.txt``` contenente 10,000 eventi
@@ -24,17 +24,17 @@ distribuiti secondo una distribuzione di probabilità Gaussiana.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 11.3
+## Esercizio 12.3
 
 Si scriva un programma che effettui il fit degli eventi salvati nel file ```dati_2.txt```
 con il metodo della massima verosimiglianza e con il metodo dei minimi quadrati
 e si confronti il risultato delle due tecniche,
-comparando i valori studiati nell'esercizio 11.1 per i parametri 
+comparando i valori studiati nell'esercizio 12.1 per i parametri 
 e per la bontà del fit.
 
 ![linea](../immagini/linea.png)
 
-## Esercizio 11.4
+## Esercizio 12.4
 
 Si inserisca il codice sorgente dell'esercizio precedente in un ciclo
 che effettui il confronto al variare del numero di eventi considerato per il fit,
