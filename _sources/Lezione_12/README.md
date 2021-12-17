@@ -43,7 +43,7 @@
     sarà utilizzata per **distribuire in modo casuale i punti lungo l'asse *x***
     e per **trovare i valori dei termini &epsilon;<sub>i</sub>**
 
-![linea](../immagini/punti.png)
+![linea](immagini/punti.png)
 
 ![linea](../immagini/linea.png)
 
