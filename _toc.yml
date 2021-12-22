@@ -52,9 +52,12 @@ sections:
     - file: Lezione_09/SOLUZIONI.rst
   - file: Lezione_10/README.md
     sections:
-#    - file: Lezione_10/ESEMPI.rst
     - file: Lezione_10/ESERCIZI.md
-    #- file: Lezione_10/SOLUZIONI.rst
+    - file: Lezione_10/SOLUZIONI.rst
+  - file: Lezione_11/README.md
+    sections:
+    - file: Lezione_11/ESERCIZI.md
+#    - file: Lezione_11/SOLUZIONI.rst
 - file: appendix
   sections:
   - file: Appendice_01/README.md
@@ -63,5 +66,16 @@ sections:
     - file: Appendice_01/SOLUZIONI.rst
   - file: Appendice_02/README.md
     sections:
+    - file: Appendice_02/ESEMPI.md
     - file: Appendice_02/ESERCIZI.md
     - file: Appendice_02/SOLUZIONI.rst
+  - file: Appendice_03/README.md
+    sections:
+    - file: Appendice_03/ESEMPI.md
+    - file: Appendice_03/ESERCIZI.md
+    - file: Appendice_03/SOLUZIONI.rst
+  - file: Appendice_04/README.md
+    sections:
+    - file: Appendice_04/ESEMPI.md
+    - file: Appendice_04/ESERCIZI.md
+#    - file: Appendice_04/SOLUZIONI.rst

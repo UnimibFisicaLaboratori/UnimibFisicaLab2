@@ -1,23 +1,10 @@
-Esempi: Appendice 2
+Esempi: Appendice 3
 =================
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
-A2.0 Classificazione di forme geometriche
----------------------------------------
-* `main_00.h`
-.. literalinclude:: programmi/main_00.cpp
-  :language: cpp
-
-* `forme.h`
-.. literalinclude:: programmi/forme.h
-  :language: cpp
-
-.. image:: ../immagini/linea.png
-  :width: 1100
-
-A2.1 ompatibilità fra tipi in una catena ereditaria
+A3.1 esempio di utilizzo di ```std::find```
 ---------------------------------------
 * `main_01.cpp`
 .. literalinclude:: programmi/main_01.cpp
@@ -26,19 +13,16 @@ A2.1 ompatibilità fra tipi in una catena ereditaria
 .. image:: ../immagini/linea.png
   :width: 1100
 
-A2.2 ereditarietà e polimorfismo con forme geometriche
+A3.2 esempio di utilizzo di ```std::sort```
 ---------------------------------------
 * `main_02.cpp`
 .. literalinclude:: programmi/main_02.cpp
   :language: cpp
 
-* `forme_polim.cpp`
-.. literalinclude:: programmi/forme_polim.h
-
 .. image:: ../immagini/linea.png
   :width: 1100
 
-A2.3 ereditarietà polimorfica e contenitori STL
+A3.1 esempio di utilizzo di ```std::sort``` con un algoritmo di ordinamento fornito dall'utente
 ---------------------------------------
 * `main_03.cpp`
 .. literalinclude:: programmi/main_03.cpp

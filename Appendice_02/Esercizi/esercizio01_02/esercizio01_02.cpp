@@ -11,7 +11,6 @@ using std::endl;
 using std::cin;
 
 /*
- *  Lezione 8 - Esercizio 01 
  *
  *  Si definisca una semplice struttura di ereditarieta' delle forme geometriche, seguendo l'esempio presentato ad inizio lezione.
  *    - Si aggiunga alla classe forma un membro private (ad esempio un'etichetta) e si verifichi che e' accessibile 
@@ -21,7 +20,6 @@ using std::cin;
  *        distruttore un messaggio a schemo.
  *
  *
- *  Lezione 8 - Esercizio 02
  *  Si modifichi la struttura precedente aggiungendo la funzione calcola_area in tutta la catena di ereditarieta'.
  *
  *    - Si verifichi il comportamento polimorfico introdotto dal dynamic binding.
