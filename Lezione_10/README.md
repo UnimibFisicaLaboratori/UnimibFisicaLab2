@@ -170,7 +170,7 @@
 ## 10.5 La sigma associata allo stimatore di &tau;
 
   * Lo stimatore di &tau; è una variabile casuale,
-    cioè ha una **proria distribuzione di probabilità**
+    cioè ha una **propria distribuzione di probabilità**
   * Dunque oltre al avere associata una stima puntuale ricavata massimizzando
     il logaritmo della verosimiglianza
     **possiede anche una sigma**
