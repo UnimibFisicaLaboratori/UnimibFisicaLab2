@@ -37,7 +37,6 @@ int main (int argc, char ** argv)
         t_zero = atof (argv[2]) ;
       }
 
-
     vector<double> data ;
     for (int i = 0 ; i < atoi (argv[1]) ; ++i)
       {
