@@ -1,5 +1,5 @@
 /*
-c++ -o esercizio_01 funzioni.cc esercizio_01.cpp
+c++ -o esercizio_01 funzioni.cc casual.cc esercizio_01.cpp
 
 Testo:
   Si scriva una libreria di funzioni per determinare il parametro τ della distribuzione 
@@ -18,6 +18,7 @@ Testo:
 
 #include "statistiche_vector.h"
 #include "funzioni.h"
+#include "casual.h"
 
 using namespace std ;
 
@@ -26,28 +27,24 @@ int main (int argc, char ** argv)
 
     if (argc < 2)
       {
-        cerr << "uso: " << argv[0] << " nomeFile [numero_di_eventi]" << endl ;
+        cerr << "uso: " << argv[0] << " numero_di_eventi [t_zero]" << endl ;
         exit (1) ;
       }
 
-    ifstream input_file ; 
-    input_file.open (argv[1], ios::in) ;
+    double t_zero = 5. ;
+    if (argc == 3) 
+      {
+        t_zero = atof (argv[2]) ;
+      }
 
-    int numeroMax = -1 ;
-    if (argc > 2) numeroMax = atoi (argv[2]) ;
 
     vector<double> data ;
-    double input_val ;
-    while (true) 
+    for (int i = 0 ; i < atoi (argv[1]) ; ++i)
       {
-        input_file >> input_val ;
-        if (input_file.eof () == true) break ;
-        data.push_back (input_val) ;
-        if (numeroMax > 0 && data.size () == numeroMax) break ;
-      } 
-    input_file.close () ;
+        data.push_back (rand_exp (t_zero)) ;
+      }
 
-    cout << "letti " << data.size () << " eventi" << endl ;
+    cout << "generati " << data.size () << " eventi" << endl ;
 
     double media_v = media (data) ;
     cout << "media = " << media_v << endl ; 

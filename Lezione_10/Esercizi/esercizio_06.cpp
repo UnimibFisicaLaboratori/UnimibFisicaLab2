@@ -1,5 +1,5 @@
 /*
-c++ -o esercizio_06 `root-config --glibs --cflags` funzioni.cc esercizio_06.cpp
+c++ -o esercizio_06 `root-config --glibs --cflags` funzioni.cc casual.cc esercizio_06.cpp
 
 Testo:
     In regime asintotico, la distribuzione degli scarti (τ - τvero) / στ ha forma Normale.
@@ -22,6 +22,7 @@ Testo:
 
 #include "statistiche_vector.h"
 #include "funzioni.h"
+#include "casual.h"
 
 using namespace std ;
 

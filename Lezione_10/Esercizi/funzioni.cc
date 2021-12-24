@@ -34,7 +34,7 @@ double loglikelihoodprod (
 {
   double result = 1. ; 
   for (int i = 0 ; i < data.size () ; ++i) result *= esponenziale (data.at (i), param) ;
-  return log(result) ;   
+  return log (result) ;   
 }
 
 
@@ -58,6 +58,8 @@ double sezione_aurea_max (
 
       if (logl (data, x_3) < logl (data, x_2)) xMin = x_3 ;
       else                                     xMax = x_2 ;
+//      cout << "estremi " << xMin << "\t" << xMax << "\t" << xMax - xMin << "\n" ;
+
     }
   return 0.5 * (xMax + xMin) ;
 }
@@ -99,22 +101,3 @@ double bisezione (
 }
 
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-  
-
-double rand_range (double min, double max)
-{
-  return min + (max - min) * rand () / RAND_MAX ;
-}
-
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-  
-
-// generazione numeri casuali con il metodo dell'inversa della funzione cumulativa
-double rand_IFC_Exp (double mu)
-{
-  double y = rand_range (0., 1.) ;
-  double x = -mu * log (1 - y) ;
-  return x ;
-}
