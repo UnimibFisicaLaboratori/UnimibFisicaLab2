@@ -58,6 +58,10 @@ sections:
     sections:
     - file: Lezione_11/ESERCIZI.md
     - file: Lezione_11/SOLUZIONI.rst
+  - file: Lezione_12/README.md
+    sections:
+    - file: Lezione_12/ESEMPI.rst
+    - file: Lezione_12/ESERCIZI.md
 - file: appendix
   sections:
   - file: Appendice_01/README.md
