@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -420,14 +420,41 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Lezione_12/README.html">
+     Lezione 12: fit di distribuzioni binnate con
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ROOT
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_12/ESEMPI.html">
+       Esempi: Lezione 12
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Lezione_12/ESERCIZI.html">
+       Esercizi per la lezione 12
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../appendix.html">
    Appendice
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -439,8 +466,8 @@
       Standard Template Library
      </em>
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-    <label for="toctree-checkbox-14">
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -466,8 +493,8 @@
       </span>
      </code>
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -498,8 +525,8 @@
       </span>
      </code>
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -525,8 +552,8 @@
     <a class="reference internal" href="../Appendice_04/README.html">
      Appendice 4: i minimi quadrati ed il caso lineare: soluzione algebrica
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-    <label for="toctree-checkbox-17">
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -591,7 +618,7 @@
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -609,7 +636,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -673,7 +700,74 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Soluzioni: Lezione 4</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#il-generatore-lineare-congruenziale">
+   4.1 il generatore lineare congruenziale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#il-generatore-lineare-congruenziale-implementato-sotto-forma-di-classe">
+   4.2 il generatore lineare congruenziale implementato sotto forma di classe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inizializzazione-del-seed-di-un-generatore">
+   4.3 inizializzazione del
+   <em>
+    seed
+   </em>
+   di un generatore
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generazione-di-numeri-pseudo-casuali-uniformemente-distribuiti">
+   4.4 generazione di numeri pseudo-casuali uniformemente distribuiti
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generazione-di-numeri-pseudo-casuali-con-il-metodo-try-and-catch">
+   4.5 generazione di numeri pseudo-casuali con il metodo try-and-catch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generazione-di-numeri-pseudo-casuali-con-il-metodo-della-funzione-inversa">
+   4.6 generazione di numeri pseudo-casuali con il metodo della funzione inversa
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generazione-di-numeri-pseudo-casuali-con-il-metodo-del-teorema-centrale-del-limite">
+   4.7 generazione di numeri pseudo-casuali con il metodo del teorema centrale del limite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementazione-e-test-di-una-classe-statistiche">
+   4.8 implementazione e test di una classe
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     `statistiche`
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="section" id="soluzioni-lezione-4">
@@ -718,7 +812,7 @@
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//c++ -o es2 esercizio02.cpp</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1"> </span><span class="cp"></span>
 
-<span class="k">class</span> <span class="nc">LCG</span><span class="p">{</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LCG</span><span class="p">{</span><span class="w"></span>
 
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 
@@ -726,7 +820,7 @@
 <span class="w">        </span><span class="n">LCG</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">seed_</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="w">        </span><span class="o">~</span><span class="n">LCG</span><span class="p">()</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">set_seed</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">seed_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">rnd</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="nf">rnd</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">seed_</span><span class="p">;</span><span class="w"> </span><span class="c1">// unsigned long int if M  &gt; 2147483647</span>
@@ -736,12 +830,12 @@
 
 <span class="p">};</span><span class="w"></span>
 
-<span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">LCG</span><span class="o">::</span><span class="n">rnd</span><span class="p">(){</span><span class="w"></span>
+<span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="nf">LCG::rnd</span><span class="p">(){</span><span class="w"></span>
 <span class="w">    </span><span class="n">seed_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">seed_</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="o">%</span><span class="n">M</span><span class="p">;</span><span class="w"> </span><span class="c1">//updating the seed x_{n+1} = (A*x_{n}  + C)%M</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="n">seed_</span><span class="p">;</span><span class="w"> </span><span class="c1">//return reference to class member</span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(){</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">LCG</span><span class="w"> </span><span class="n">rand</span><span class="p">;</span><span class="w"> </span><span class="c1">// initialize with seed = 0</span>
 
@@ -1207,7 +1301,7 @@
 
 <span class="w">    </span><span class="c1">// Computing the distributions </span>
 
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">N</span> <span class="p">:</span><span class="w"> </span><span class="n">Ns</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Ns</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">sum_q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 
@@ -1483,7 +1577,7 @@
 
 <span class="c1">//----------------- Statistic class -----------------</span>
 
-<span class="k">class</span> <span class="nc">statistiche</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">statistiche</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 
@@ -1666,8 +1760,8 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="ESERCIZI.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1684,19 +1778,17 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Docenti del Corso di Laboratorio 2<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Docenti del Corso di Laboratorio 2<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

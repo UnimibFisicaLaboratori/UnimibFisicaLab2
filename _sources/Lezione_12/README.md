@@ -223,7 +223,7 @@
 ### 12.2.8 I parametri dell'esponenziale dalla regione esponenziale
 
   * Un **fit parziale** soltanto sull'intervallo ```0., 4.```
-    con la dsitribuzione di probabilità del solo fondo
+    con la distribuzione di probabilità del solo fondo
     permette di calcolare una stima preliminare di &theta;<sub>0</sub> e &theta;<sub>1</sub>
     ```cpp
     TF1 fondo ("fondo", "expo(0)", 0., 20.) ;
@@ -233,7 +233,7 @@
     ```
     * L'**opzione ```"Q"```** fa in modo che nulla venga scritto a schermo
   * Un **fit parziale** soltanto sull'intervallo ```7., 14.```
-    con la dsitribuzione di probabilità del solo segnale
+    con la distribuzione di probabilità del solo segnale
     permette di calcolare una stima preliminare di &theta;<sub>0</sub> e &theta;<sub>1</sub>
     ```cpp
     TF1 segnale ("segnale", "gaus(0)", 0., 20.) ;
