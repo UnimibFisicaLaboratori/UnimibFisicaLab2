@@ -1,5 +1,5 @@
 Esempi: Lezione 12
-=================
+==================
 
 .. image:: ../immagini/linea.png
   :width: 1100
