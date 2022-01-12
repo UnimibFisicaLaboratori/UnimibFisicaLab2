@@ -1,11 +1,11 @@
 Soluzioni: Appendice 2
-====================
+======================
 
 .. image:: ../immagini/linea.png
   :width: 1100
 
 A2.1-A2.2 struttura di ereditarietà delle forme geometriche
------------------------------------
+-----------------------------------------------------------
 * `esercizio01_02.cpp`
 
 .. literalinclude:: Esercizi/esercizio01_02/esercizio01_02.cpp
@@ -45,7 +45,7 @@ A2.1-A2.2 struttura di ereditarietà delle forme geometriche
   :width: 1100
 
 A2.3-A2.4 struttura di ereditarietà e generazione di numeri casuali
------------------------------------
+-------------------------------------------------------------------
 
 * `esercizio03_04.cpp`
 
@@ -93,4 +93,3 @@ A2.3-A2.4 struttura di ereditarietà e generazione di numeri casuali
 
 .. image:: ../immagini/linea.png
   :width: 1100
-
