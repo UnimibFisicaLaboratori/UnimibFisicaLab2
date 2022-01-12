@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -798,8 +800,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esempi">
+   12.6 ESEMPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   12.6 ESERCIZI
+   12.7 ESERCIZI
   </a>
  </li>
 </ul>
@@ -977,8 +984,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#esempi">
+   12.6 ESEMPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#esercizi">
-   12.6 ESERCIZI
+   12.7 ESERCIZI
   </a>
  </li>
 </ul>
@@ -1039,41 +1051,58 @@
 </div>
 <div class="section" id="introduzione">
 <h2>12.1 Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<ul>
 <li><p>I metodi dei minimi quadrati e della massima verosimiglianza
-possono essere <strong>applicati anche al caso di istrogrammi</strong>,
+possono essere <strong>applicati anche al caso di istogrammi</strong>,
 cioè di distribuzioni binnate,
 dove si voglia fittare una funzione alla distribuzione dei conteggi nei bin:
 <img alt="histo" src="../_images/histo.png" /></p></li>
-<li><p>In questo caso, il contenuto di ogni bin è un numero di eventi <em>n<sub>i</sub></em></p></li>
+<li><p>In questo caso, il contenuto di ogni bin è un numero di eventi <span class="math notranslate nohighlight">\(n_i\)</span></p></li>
 <li><p>Se il numero di bin e il numero medio di eventi in ciascuno di essi non è piccolo,
-si può assumere che la variabile casuale <em>n<sub>i</sub></em> segua
-una <strong>statistica di Poisson</strong>
-<img alt="poisson" src="../_images/poisson1.png" /></p></li>
+si può assumere che la variabile casuale <span class="math notranslate nohighlight">\(n_i\)</span> segua
+una <strong>statistica di Poisson</strong></p>
+<div class="math notranslate nohighlight">
+\[
+    \mathcal{P}(n,\mu)=\frac{e^{-\mu}\mu^n}{n!}
+    \]</div>
+</li>
 </ul>
+<!-- ![poisson](immagini/poisson.png) -->
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="l-applicazione-del-metodo-dei-minimi-quadrati">
 <h3>12.1.1 L’applicazione del metodo dei minimi quadrati<a class="headerlink" href="#l-applicazione-del-metodo-dei-minimi-quadrati" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
+<ul>
 <li><p>Nel caso dei minimi quadrati,
-la funzione <em><strong>Q<sup>2</sup>(θ)</strong></em> è solitamente la seguente (formulazione di Neyman):
-<img alt="mq" src="../_images/mq.png" /></p></li>
-<li><p>Il valore di <em>y<sub>i</sub></em> della lezione scorsa è <strong>costituito da <em>n<sub>i</sub></em></strong></p></li>
-<li><p>L’<strong>incertezza su <em>n<sub>i</sub></em></strong> è data dalla sua radice quadrata,
+la funzione <em><strong>Q<sup>2</sup>(θ)</strong></em> è solitamente la seguente (formulazione di Neyman):</p>
+<div class="math notranslate nohighlight">
+\[
+    Q^2(\theta) = \sum_{i=1}^N\left(\frac{n_i-f(x_i,\theta)}{\sqrt{n_i}}\right)^2
+    \]</div>
+</li>
+</ul>
+<!-- ![mq](immagini/mq.png) -->
+<ul class="simple">
+<li><p>Il valore di <span class="math notranslate nohighlight">\(y_i\)</span> della lezione scorsa è <strong>costituito da <span class="math notranslate nohighlight">\(\mathbf{n_i}\)</span></strong></p></li>
+<li><p>L’<strong>incertezza su <span class="math notranslate nohighlight">\(\mathbf{n_i}\)</span></strong> è data dalla sua radice quadrata,
 secondo la statistica di Poisson</p></li>
-<li><p>Il valore di <em>x<sub>i</sub></em> è il <strong>centro del bin corrispondente</strong></p></li>
-<li><p>Il numero di bin dell’istogramma è <em>N</em></p></li>
+<li><p>Il valore di <span class="math notranslate nohighlight">\(x_i\)</span> è il <strong>centro del bin corrispondente</strong></p></li>
+<li><p>Il numero di bin dell’istogramma è <span class="math notranslate nohighlight">\(N\)</span></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="l-applicazione-del-metodo-della-massima-verosimiglianza">
 <h3>12.1.2 L’applicazione del metodo della massima verosimiglianza<a class="headerlink" href="#l-applicazione-del-metodo-della-massima-verosimiglianza" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
+<ul>
 <li><p>Nel caso della massima verosimiglianza,
 si assume che in ogni bin i conteggi seguano una <strong>distribuzione di probabilità Poissoniana</strong>
-con valore atteso <em>μ = f(x<sub>i</sub>, θ)</em>:
-<img alt="mq" src="../_images/ml.png" /></p></li>
+con valore atteso <span class="math notranslate nohighlight">\(\mu = f(x_i, \theta)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+    \mathcal{L}(\theta) = \prod_{i=1}^N \frac{e^{-f(x_i,\theta)}f(x_i,\theta)^{n_i}}{n_i!}
+    \]</div>
+</li>
 </ul>
+<!-- ![mq](immagini/ml.png) -->
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="la-scelta-fra-le-due-tecniche">
@@ -1095,12 +1124,22 @@ e spesso il metodo dei <strong>minimi quadrati</strong> è computazionalmente pi
 </div>
 <div class="section" id="un-esercizio-di-regressione">
 <h2>12.2 Un esercizio di regressione<a class="headerlink" href="#un-esercizio-di-regressione" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<ul>
 <li><p>Supponiamo di <strong>raccogliere eventi</strong> lungo una variabile <em>x</em>
 e di voler determinare i parametri della distribuzione di probabilità della variabile</p></li>
 <li><p>Assumiamo che questo modello abbia una forma data
-da una <strong>distribuzione di fondo esponenziale sommata ad una di segnale gaussiana</strong>:
-<img alt="modello_formula" src="../_images/modello_formula_2.png" /></p></li>
+da una <strong>distribuzione di fondo esponenziale sommata ad una di segnale gaussiana</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{align}
+    f(x) &amp;= \exp(x;\theta_0,\theta_1) + \mathcal{G}(x;\theta_2,\theta_3,\theta_4)\\
+         &amp;= e^{(\theta_0+\theta_1 x)} + \theta_2\cdot e^{-\frac{1}{2}\left(\frac{x-\theta_3}{\theta_4}\right)^2}
+    \end{align}
+    \end{split}\]</div>
+</li>
+</ul>
+  <!-- ![modello_formula](immagini/modello_formula_2.png) -->
+<ul>
 <li><p><strong>Graficamente</strong>,
 il modello ha un andamento decrescente che risale quando il termine Gaussiano diventa importante,
 come mostrato in figura:
@@ -1110,25 +1149,28 @@ come mostrato in figura:
 <li><p>mentre le <strong>due linee tratteggiate</strong> mostrano i
 due termini della somma,
 che si possono pensare come un <strong>picco di segnale
-sovrapposto ad un fondo lentamente decrescente</strong></p></li>
+sovrapposto ad un fondo lentamente decrescente</strong></p>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#creazione-e-disegno-di-un-modello-funzionale-con-la-classe-tf1-di-root">12.0</a>) </div>
+</li>
 </ul>
 </li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 <div class="section" id="la-lettura-dei-dati">
 <h3>12.2.1 La lettura dei dati<a class="headerlink" href="#la-lettura-dei-dati" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
+<ul>
 <li><p>Supponiamo di aver <strong>raccolto 10,000 eventi</strong>,
-che si trovano salvati nel file <span class="xref myst">dati.txt</span></p></li>
+che si trovano salvati nel file <a class="reference external" href="https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_12/programmi/dati.txt"><code class="docutils literal notranslate"><span class="pre">dati.txt</span></code></a></p></li>
 <li><p>Quando si visualizzano gli eventi in un istogramma,
 siccome si tratta di un esperimento di conteggio
 il <strong>contenuto di ogni bin fluttua</strong> in maniera stocastica:
 <img alt="distribuzioni" src="../_images/distribuzioni.png" /></p>
-<ul>
+<ul class="simple">
 <li><p>Nel caso di 10,000 eventi le fluttuazioni relative
 sono molto più accentuate del caso con 10,000,000 di eventi,
 come ci si aspetta</p></li>
 </ul>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-numeri-pseudo-casuali-secondo-una-distribuzione-data-tramite-root">12.1</a>) </div>
 </li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
@@ -1209,7 +1251,7 @@ la funzione con nome <code class="docutils literal notranslate"><span class="pre
 <li><p><strong>Difficilmente il fit ha successo autonomamente</strong>,
 perché a causa del gran numero di parametri θ e delle fluttuazioni
 stocastiche del contenuto dei bin
-il programma non riesce a trovare il minimo giusto della funzione <em>Q<sup>2</sup></em></p></li>
+il programma non riesce a trovare il minimo giusto della funzione <span class="math notranslate nohighlight">\(Q^2\)</span></p></li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
@@ -1220,7 +1262,7 @@ il programma non riesce a trovare il minimo giusto della funzione <em>Q<sup>2</s
 è molto efficace dare a <code class="docutils literal notranslate"><span class="pre">ROOT</span></code> un <strong>punto di partenza non distante dal risultato finale</strong>,
 basandosi sulla conoscenza del problema:</p>
 <ul>
-<li><p>I parametri θ<sub>0</sub> e θ<sub>2</sub>
+<li><p>I parametri <span class="math notranslate nohighlight">\(\theta_0\)</span> e <span class="math notranslate nohighlight">\(\theta_2\)</span>
 sono l’integrale delle due funzioni di segale e fondo,
 quindi sono <strong>legati all’integrale dell’istogramma</strong>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">N_bkg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v_eventi</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1268,7 +1310,7 @@ dove soltanto <strong>un sottoinsieme dei parametri è rilevante</strong>
 <ul>
 <li><p>Un <strong>fit parziale</strong> soltanto sull’intervallo <code class="docutils literal notranslate"><span class="pre">0.,</span> <span class="pre">4.</span></code>
 con la distribuzione di probabilità del solo fondo
-permette di calcolare una stima preliminare di θ<sub>0</sub> e θ<sub>1</sub></p>
+permette di calcolare una stima preliminare di <span class="math notranslate nohighlight">\(\theta_0\)</span> e <span class="math notranslate nohighlight">\(\theta_1\)</span></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span><span class="w"> </span><span class="nf">fondo</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;fondo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;expo(0)&quot;, 0., 20.) </span><span class="p">;</span><span class="w"></span>
 <span class="n">fondo</span><span class="p">.</span><span class="n">SetParameter</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">p0</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">fondo</span><span class="p">.</span><span class="n">SetParameter</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1281,7 +1323,7 @@ permette di calcolare una stima preliminare di θ<sub>0</sub> e θ<sub>1</sub></
 </li>
 <li><p>Un <strong>fit parziale</strong> soltanto sull’intervallo <code class="docutils literal notranslate"><span class="pre">7.,</span> <span class="pre">14.</span></code>
 con la distribuzione di probabilità del solo segnale
-permette di calcolare una stima preliminare di θ<sub>0</sub> e θ<sub>1</sub></p>
+permette di calcolare una stima preliminare di <span class="math notranslate nohighlight">\(\theta_3\)</span> e <span class="math notranslate nohighlight">\(\theta_4\)</span></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TF1</span><span class="w"> </span><span class="nf">segnale</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;segnale&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gaus(0)&quot;, 0., 20.) </span><span class="p">;</span><span class="w"></span>
 <span class="n">segnale</span><span class="p">.</span><span class="n">SetParameter</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">segnale</span><span class="p">.</span><span class="n">SetParameter</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">p3</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1387,14 +1429,14 @@ oppure il metodo <code class="docutils literal notranslate"><span class="pre">TF
 <div class="section" id="la-bonta-del-fit">
 <h3>12.3.4 La bontà del fit<a class="headerlink" href="#la-bonta-del-fit" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Nel caso in cui la distribuzione di densità di probabilità dei singoli <em>n<sub>i</sub></em> sia Gaussiana,
-<strong><em>Q<sup>2</sup><sub>min</sub></em> segue la distribuzione del <em>Χ<sup>2</sup></em></strong> con <em>N-k</em> gradi di libertà,
-con <em>N</em> il numero di bin fittati e <em>k</em> il numero di parametri determinati</p></li>
-<li><p>E’ necessario che <strong>per ogni bin ci siano abbastanza eventi</strong>,
+<li><p>Nel caso in cui la distribuzione di densità di probabilità dei singoli <span class="math notranslate nohighlight">\(n_i\)</span> sia Gaussiana,
+<strong><span class="math notranslate nohighlight">\(Q^2_{\text{min}}\)</span>  segue la distribuzione del <span class="math notranslate nohighlight">\(\chi^2\)</span></strong> con <span class="math notranslate nohighlight">\(N-k\)</span> gradi di libertà,
+con <span class="math notranslate nohighlight">\(N\)</span> il numero di bin fittati e <span class="math notranslate nohighlight">\(k\)</span> il numero di parametri determinati</p></li>
+<li><p>È necessario che <strong>per ogni bin ci siano abbastanza eventi</strong>,
 per cui la distribuzione di Poisson sia simile ad una Gaussiana</p></li>
-<li><p>In queste condizioni si può utilizzare il <strong>test del <em>Χ<sup>2</sup></em></strong> per determinare la bontà del fit
+<li><p>In queste condizioni si può utilizzare il <strong>test del <span class="math notranslate nohighlight">\(\chi^2\)</span></strong> per determinare la bontà del fit
 calcolando la probabilità che il risultato possa essere peggiore di quello ottenuto,
-integrando la distribuzione di <em>Χ<sup>2</sup>(N-k)</em> da <em>Q<sup>2</sup><sub>min</sub></em> all’infinito.
+integrando la distribuzione di <span class="math notranslate nohighlight">\(\chi^2(N-k)\)</span> da <span class="math notranslate nohighlight">\(Q^2_{\text{min}}\)</span> all’infinito.
 L’integrale si può ottenere in due modi:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;probabilità associata a Q2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="n">GetProb</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;probabilità associata a Q2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">Prob</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1404,7 +1446,7 @@ L’integrale si può ottenere in due modi:</p>
 <li><p>Più alto è l’integrale, più si è fiduciosi del fit</p></li>
 </ul>
 </li>
-<li><p>Si possono anche ottenere il valore di <em>Q<sup>2</sup><sub>min</sub></em> e del numero di gradi di libertà
+<li><p>Si possono anche ottenere il valore di <span class="math notranslate nohighlight">\(Q^2_{\text{min}}\)</span> e del numero di gradi di libertà
 <strong>dalla variabile <code class="docutils literal notranslate"><span class="pre">fit_result</span></code></strong></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Valore di Q2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">Chi2</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Numero di gradi di libertà: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fit_result</span><span class="o">-&gt;</span><span class="n">Ndf</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -1436,6 +1478,7 @@ che si ottiene sempre dall’oggetto <code class="docutils literal notranslate">
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#fit-di-un-istogramma-costruito-con-gli-eventi-generati-nell-esercizio-precedente">12.2</a>) </div>
 </li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
@@ -1465,10 +1508,12 @@ pur utilizzando gli stessi dati, possono <strong>produrre risultati differenti</
 </li>
 <li><p>L’oggetto di tipo <code class="docutils literal notranslate"><span class="pre">TFitResultPtr</span></code> prodotto nei due casi
 contiene <strong>le stesse variabili</strong></p>
-<ul class="simple">
+<ul>
 <li><p>Anche nel caso della massima verosimiglianza viene calcolato
 il <strong>valore di <em>Q<sup>2</sup><sub>min</sub></em></strong>,
-per poter effettuare il test del <em>Χ<sup>2</sup></em></p></li>
+per poter effettuare il test del <span class="math notranslate nohighlight">\(\chi^2\)</span></p>
+<div style="text-align: right"> (esempio <a href="ESEMPI.html#confronto-fra-un-fit-effettuato-con-i-minimi-quadrati-e-con-la-massima-verosimiglianza">12.4</a>) </div>
+</li>
 </ul>
 </li>
 </ul>
@@ -1485,6 +1530,7 @@ lo stimatore di massima verosimiglianza
 e attribuisce più importanza alle code</strong> delle distribuzioni<br />
 <img alt="ML_vs_MQ" src="../_images/ML_vs_MQ.png" /></p></li>
 </ul>
+  <div style="text-align: right"> (esempio <a href="ESEMPI.html#studio-del-confronto-in-funzione-del-numero-di-eventi">12.5</a>) </div>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
 <div class="section" id="il-disegno-del-risultato">
@@ -1513,13 +1559,13 @@ anche con il <strong>metodo <code class="docutils literal notranslate"><span cla
 <div class="section" id="sulla-scelta-del-binning">
 <h2>12.5 Sulla scelta del binning<a class="headerlink" href="#sulla-scelta-del-binning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Siccome la scelta del binning determina il numero ed il valore dei punti <em>n<sub>i</sub></em>,
+<li><p>Siccome la scelta del binning determina il numero ed il valore dei punti <span class="math notranslate nohighlight">\(n_i\)</span>,
 essa <strong>ha impatto sul risultato del fit</strong></p></li>
 <li><p>Scegliere <strong>bin con dimensioni molto piccole</strong> (e quindi un gran numero di bin)</p>
 <ul>
 <li><p>rende distorto il metodo dei minimi quadrati,
 per via della possibile <strong>presenza di bin vuoti</strong></p></li>
-<li><p>rende <strong>inaffidabile il test del <em>Χ<sup>2</sup></em></strong> per la bontà del fit</p></li>
+<li><p>rende <strong>inaffidabile il test del <span class="math notranslate nohighlight">\(\chi^2\)</span></strong> per la bontà del fit</p></li>
 </ul>
 </li>
 <li><p>Scegliere <strong>bin con dimensioni molto grandi</strong>
@@ -1527,14 +1573,20 @@ riduce la sensibilità degli stimatori,
 perché peggiora la risoluzione con la quale gli stimatori
 hanno accesso ai dati</p>
 <ul>
-<li><p>Si può utilizzare il test del <em>Χ<sup>2</sup></em> per deteminare la scelta del binning ottimale</p></li>
+<li><p>Si può utilizzare il test del <span class="math notranslate nohighlight">\(\chi^2\)</span> per determinare la scelta del binning ottimale</p></li>
 </ul>
 </li>
 </ul>
 <p><img alt="linea" src="../_images/linea.png" /></p>
 </div>
+<div class="section" id="esempi">
+<h2>12.6 ESEMPI<a class="headerlink" href="#esempi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESEMPI.html"><span class="doc std std-doc">qui</span></a></p></li>
+</ul>
+</div>
 <div class="section" id="esercizi">
-<h2>12.6 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<h2>12.7 ESERCIZI<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gli esercizi relativi alla lezione si trovano <a class="reference internal" href="ESERCIZI.html"><span class="doc std std-doc">qui</span></a></p></li>
 </ul>

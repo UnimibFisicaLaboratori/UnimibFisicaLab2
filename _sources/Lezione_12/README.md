@@ -35,15 +35,19 @@
 ## 12.1 Introduzione
 
   * I metodi dei minimi quadrati e della massima verosimiglianza
-    possono essere **applicati anche al caso di istrogrammi**,
+    possono essere **applicati anche al caso di istogrammi**,
     cioè di distribuzioni binnate,
     dove si voglia fittare una funzione alla distribuzione dei conteggi nei bin:
 ![histo](immagini/histo.png)
-  * In questo caso, il contenuto di ogni bin è un numero di eventi *n<sub>i</sub>*
+  * In questo caso, il contenuto di ogni bin è un numero di eventi $n_i$
   * Se il numero di bin e il numero medio di eventi in ciascuno di essi non è piccolo,
-    si può assumere che la variabile casuale *n<sub>i</sub>* segua
+    si può assumere che la variabile casuale $n_i$ segua
     una **statistica di Poisson**
-![poisson](immagini/poisson.png)
+
+    $$
+    \mathcal{P}(n,\mu)=\frac{e^{-\mu}\mu^n}{n!}
+    $$
+<!-- ![poisson](immagini/poisson.png) -->
 
 ![linea](../immagini/linea.png)
 
@@ -51,12 +55,16 @@
 
   * Nel caso dei minimi quadrati,
     la funzione ***Q<sup>2</sup>(&theta;)*** è solitamente la seguente (formulazione di Neyman):
-![mq](immagini/mq.png)
-  * Il valore di *y<sub>i</sub>* della lezione scorsa è **costituito da *n<sub>i</sub>***
-  * L'**incertezza su *n<sub>i</sub>*** è data dalla sua radice quadrata,
+
+    $$
+    Q^2(\theta) = \sum_{i=1}^N\left(\frac{n_i-f(x_i,\theta)}{\sqrt{n_i}}\right)^2
+    $$
+<!-- ![mq](immagini/mq.png) -->
+  * Il valore di $y_i$ della lezione scorsa è **costituito da $\mathbf{n_i}$**
+  * L'**incertezza su $\mathbf{n_i}$** è data dalla sua radice quadrata,
     secondo la statistica di Poisson
-  * Il valore di *x<sub>i</sub>* è il **centro del bin corrispondente**
-  * Il numero di bin dell'istogramma è *N*
+  * Il valore di $x_i$ è il **centro del bin corrispondente**
+  * Il numero di bin dell'istogramma è $N$
 
 ![linea](../immagini/linea.png)
 
@@ -64,8 +72,12 @@
 
   * Nel caso della massima verosimiglianza,
     si assume che in ogni bin i conteggi seguano una **distribuzione di probabilità Poissoniana**
-    con valore atteso *&mu; = f(x<sub>i</sub>, &theta;)*:
-![mq](immagini/ml.png)
+    con valore atteso $\mu = f(x_i, \theta)$:
+
+    $$
+    \mathcal{L}(\theta) = \prod_{i=1}^N \frac{e^{-f(x_i,\theta)}f(x_i,\theta)^{n_i}}{n_i!}
+    $$
+<!-- ![mq](immagini/ml.png) -->
 
 ![linea](../immagini/linea.png)
 
@@ -87,7 +99,14 @@
     e di voler determinare i parametri della distribuzione di probabilità della variabile
   * Assumiamo che questo modello abbia una forma data
     da una **distribuzione di fondo esponenziale sommata ad una di segnale gaussiana**:
-![modello_formula](immagini/modello_formula_2.png)
+
+    $$
+    \begin{align}
+    f(x) &= \exp(x;\theta_0,\theta_1) + \mathcal{G}(x;\theta_2,\theta_3,\theta_4)\\
+         &= e^{(\theta_0+\theta_1 x)} + \theta_2\cdot e^{-\frac{1}{2}\left(\frac{x-\theta_3}{\theta_4}\right)^2}
+    \end{align}
+    $$
+  <!-- ![modello_formula](immagini/modello_formula_2.png) -->
   * **Graficamente**,
     il modello ha un andamento decrescente che risale quando il termine Gaussiano diventa importante,
     come mostrato in figura:
@@ -98,12 +117,14 @@
       che si possono pensare come un **picco di segnale
       sovrapposto ad un fondo lentamente decrescente**
 
+      <div style="text-align: right"> (esempio <a href="ESEMPI.html#creazione-e-disegno-di-un-modello-funzionale-con-la-classe-tf1-di-root">12.0</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ### 12.2.1 La lettura dei dati
 
   * Supponiamo di aver **raccolto 10,000 eventi**,
-    che si trovano salvati nel file [dati.txt](programmi/dati.txt)
+    che si trovano salvati nel file [```dati.txt```](https://raw.githubusercontent.com/UnimibFisicaLaboratori/UnimibFisicaLab2/master/Lezione_12/programmi/dati.txt)
   * Quando si visualizzano gli eventi in un istogramma,
     siccome si tratta di un esperimento di conteggio
     il **contenuto di ogni bin fluttua** in maniera stocastica:
@@ -111,6 +132,8 @@
     * Nel caso di 10,000 eventi le fluttuazioni relative
       sono molto più accentuate del caso con 10,000,000 di eventi,
       come ci si aspetta
+
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#generazione-di-numeri-pseudo-casuali-secondo-una-distribuzione-data-tramite-root">12.1</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -175,7 +198,7 @@
   * **Difficilmente il fit ha successo autonomamente**,
     perché a causa del gran numero di parametri &theta; e delle fluttuazioni
     stocastiche del contenuto dei bin
-    il programma non riesce a trovare il minimo giusto della funzione *Q<sup>2</sup>*
+    il programma non riesce a trovare il minimo giusto della funzione $Q^2$
 
 ![linea](../immagini/linea.png)
 
@@ -184,7 +207,7 @@
   * Per facilitare il fit,
     è molto efficace dare a ```ROOT``` un **punto di partenza non distante dal risultato finale**,
     basandosi sulla conoscenza del problema:
-    * I parametri &theta;<sub>0</sub> e &theta;<sub>2</sub>
+    * I parametri $\theta_0$ e $\theta_2$
       sono l'integrale delle due funzioni di segale e fondo,
       quindi sono **legati all'integrale dell'istogramma**:
       ```cpp
@@ -224,7 +247,7 @@
 
   * Un **fit parziale** soltanto sull'intervallo ```0., 4.```
     con la distribuzione di probabilità del solo fondo
-    permette di calcolare una stima preliminare di &theta;<sub>0</sub> e &theta;<sub>1</sub>
+    permette di calcolare una stima preliminare di $\theta_0$ e $\theta_1$
     ```cpp
     TF1 fondo ("fondo", "expo(0)", 0., 20.) ;
     fondo.SetParameter (0, p0) ;
@@ -234,7 +257,7 @@
     * L'**opzione ```"Q"```** fa in modo che nulla venga scritto a schermo
   * Un **fit parziale** soltanto sull'intervallo ```7., 14.```
     con la distribuzione di probabilità del solo segnale
-    permette di calcolare una stima preliminare di &theta;<sub>0</sub> e &theta;<sub>1</sub>
+    permette di calcolare una stima preliminare di $\theta_3$ e $\theta_4$
     ```cpp
     TF1 segnale ("segnale", "gaus(0)", 0., 20.) ;
     segnale.SetParameter (0, p2) ;
@@ -324,21 +347,21 @@
 
 ### 12.3.4 La bontà del fit
 
-  * Nel caso in cui la distribuzione di densità di probabilità dei singoli *n<sub>i</sub>* sia Gaussiana,
-    ***Q<sup>2</sup><sub>min</sub>* segue la distribuzione del *&Chi;<sup>2</sup>*** con *N-k* gradi di libertà,
-    con *N* il numero di bin fittati e *k* il numero di parametri determinati
-  * E' necessario che **per ogni bin ci siano abbastanza eventi**,
+  * Nel caso in cui la distribuzione di densità di probabilità dei singoli $n_i$ sia Gaussiana,
+    **$Q^2_{\text{min}}$  segue la distribuzione del $\chi^2$** con $N-k$ gradi di libertà,
+    con $N$ il numero di bin fittati e $k$ il numero di parametri determinati
+  * È necessario che **per ogni bin ci siano abbastanza eventi**,
     per cui la distribuzione di Poisson sia simile ad una Gaussiana
-  * In queste condizioni si può utilizzare il **test del *&Chi;<sup>2</sup>*** per determinare la bontà del fit
+  * In queste condizioni si può utilizzare il **test del $\chi^2$** per determinare la bontà del fit
     calcolando la probabilità che il risultato possa essere peggiore di quello ottenuto,
-    integrando la distribuzione di *&Chi;<sup>2</sup>(N-k)* da *Q<sup>2</sup><sub>min</sub>* all'infinito.
+    integrando la distribuzione di $\chi^2(N-k)$ da $Q^2_{\text{min}}$ all'infinito.
     L'integrale si può ottenere in due modi:
     ```cpp
     cout << "probabilità associata a Q2: " << model.GetProb () << endl ;
     cout << "probabilità associata a Q2: " << fit_result->Prob () << endl ;
     ```
     * Più alto è l'integrale, più si è fiduciosi del fit
-  * Si possono anche ottenere il valore di *Q<sup>2</sup><sub>min</sub>* e del numero di gradi di libertà
+  * Si possono anche ottenere il valore di $Q^2_{\text{min}}$ e del numero di gradi di libertà
     **dalla variabile ```fit_result```**
     ```cpp
     cout << "Valore di Q2: " << fit_result->Chi2 () << endl ;
@@ -368,6 +391,8 @@
       }
     ```
 
+    <div style="text-align: right"> (esempio <a href="ESEMPI.html#fit-di-un-istogramma-costruito-con-gli-eventi-generati-nell-esercizio-precedente">12.2</a>) </div>
+
 ![linea](../immagini/linea.png)
 
 ## 12.4 Minimi quadrati (MQ) e massima verosimiglianza (ML)
@@ -394,7 +419,9 @@
     contiene **le stesse variabili**
     * Anche nel caso della massima verosimiglianza viene calcolato
       il **valore di *Q<sup>2</sup><sub>min</sub>***,
-      per poter effettuare il test del *&Chi;<sup>2</sup>*
+      per poter effettuare il test del $\chi^2$
+
+      <div style="text-align: right"> (esempio <a href="ESEMPI.html#confronto-fra-un-fit-effettuato-con-i-minimi-quadrati-e-con-la-massima-verosimiglianza">12.4</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -407,6 +434,8 @@
     **considera propriamente anche i bin vuoti
     e attribuisce più importanza alle code** delle distribuzioni  
 ![ML_vs_MQ](immagini/ML_vs_MQ.png)
+
+  <div style="text-align: right"> (esempio <a href="ESEMPI.html#studio-del-confronto-in-funzione-del-numero-di-eventi">12.5</a>) </div>
 
 ![linea](../immagini/linea.png)
 
@@ -430,20 +459,24 @@
 
 ## 12.5 Sulla scelta del binning
 
-  * Siccome la scelta del binning determina il numero ed il valore dei punti *n<sub>i</sub>*,
+  * Siccome la scelta del binning determina il numero ed il valore dei punti $n_i$,
     essa **ha impatto sul risultato del fit**
   * Scegliere **bin con dimensioni molto piccole** (e quindi un gran numero di bin)
     * rende distorto il metodo dei minimi quadrati,
       per via della possibile **presenza di bin vuoti**  
-    * rende **inaffidabile il test del *&Chi;<sup>2</sup>*** per la bontà del fit
+    * rende **inaffidabile il test del $\chi^2$** per la bontà del fit
   * Scegliere **bin con dimensioni molto grandi**
     riduce la sensibilità degli stimatori,
     perché peggiora la risoluzione con la quale gli stimatori
     hanno accesso ai dati
-    * Si può utilizzare il test del *&Chi;<sup>2</sup>* per deteminare la scelta del binning ottimale
+    * Si può utilizzare il test del $\chi^2$ per determinare la scelta del binning ottimale
 
 ![linea](../immagini/linea.png)
 
-## 12.6 ESERCIZI
+## 12.6 ESEMPI
+
+  * Gli esercizi relativi alla lezione si trovano [qui](ESEMPI.rst)
+
+## 12.7 ESERCIZI
 
   * Gli esercizi relativi alla lezione si trovano [qui](ESERCIZI.md)
