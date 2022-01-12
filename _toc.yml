@@ -84,7 +84,7 @@ sections:
     - file: Appendice_04/ESERCIZI.md
 #    - file: Appendice_04/SOLUZIONI.rst
   - file: Appendice_05/README.md
-    sections:
+    #sections:
     # - file: Appendice_05/ESEMPI.md
     # - file: Appendice_05/ESERCIZI.md
 #    - file: Appendice_05/SOLUZIONI.rst
