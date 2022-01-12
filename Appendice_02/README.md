@@ -1,4 +1,4 @@
-# Appendice A2: programmazione ad oggetti: l'ereditarietà ```public```
+# Approfondimento A2: programmazione ad oggetti: l'ereditarietà ```public```
 
 ## Indice
 

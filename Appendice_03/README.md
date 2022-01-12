@@ -1,4 +1,4 @@
-# Appendice A3: approfondimenti su ```STL```
+# Approfondimento A3: approfondimenti su ```STL```
 
 ## Indice
 
