@@ -37,50 +37,50 @@ int main (int argc, char ** argv)
 
     if (argc < 2)
       {
-        cout << "usage: " << argv[0] << " outputfile.txt" << endl ;
+        cout << "usage: " << argv[0] << " inputfile.txt" << endl ;
         exit (1) ;
       }
 
     // lettura del file di eventi
-    // --------------------------  
+    // --------------------------
 
     ifstream f_campione ;
     f_campione.open (argv[1]) ;
 
     vector<double> v_eventi ;
-    while (true) 
+    while (true)
       {
-        double evento ; 
+        double evento ;
         f_campione >> evento ;
         if (f_campione.eof () == true) break ;
         v_eventi.push_back (evento) ;
-      } 
+      }
     f_campione.close () ;
 
     cout << "letti " << v_eventi.size () << " eventi" << endl ;
     cout << "minimo degli eventi: " << minimo (v_eventi) << endl ;
     cout << "massimo degli eventi: " << massimo (v_eventi) << endl ;
 
-    // preparazione e riempimento dell'istogramma 
-    // --------------------------  
+    // preparazione e riempimento dell'istogramma
+    // --------------------------
 
     double min = floor (minimo (v_eventi)) ;
     double max = ceil (massimo (v_eventi)) ;
-    int N_bin  = round (sqrt (v_eventi.size ()) / 2.) ; 
+    int N_bin  = round (sqrt (v_eventi.size ()) / 2.) ;
 
     TH1F h_eventi ("h_eventi", "", N_bin, min, max) ;
     for (int i = 0 ; i < v_eventi.size () ; ++i) h_eventi.Fill (v_eventi.at (i)) ;
 
     // preparazione del modello per il fit
-    // --------------------------  
+    // --------------------------
 
     TF1 model ("model", "expo(0) + gaus(2)", 0., 20.) ;
     model.SetLineColor (kBlue + 2) ;
     model.SetLineWidth (4) ;
     model.SetLineStyle (1) ;
-    
+
     // determinazione dei parametri iniziali del fit
-    // --------------------------  
+    // --------------------------
 
     // prima stima dei parametri
     double N_bkg = v_eventi.size () / 2. ;
@@ -102,7 +102,7 @@ int main (int argc, char ** argv)
     segnale.SetParameter (1, p3) ;
     segnale.SetParameter (2, p4) ;
     h_eventi.Fit ("segnale", "Q", "", 7., 14.) ;
-  
+
     model.SetParameter (0, fondo.GetParameter (0)) ;
     model.SetParameter (1, fondo.GetParameter (1)) ;
     model.SetParameter (2, segnale.GetParameter (0)) ;
@@ -112,8 +112,8 @@ int main (int argc, char ** argv)
     TFitResultPtr fit_result = h_eventi.Fit ("model", "S") ;
 
     // bonta' del fit
-    // --------------------------  
-   
+    // --------------------------
+
     int result = fit_result ;
     cout << "convergenza del fit        : " << fit_result->IsValid () << endl ;
     cout << "convergenza del fit (bis)  : " << fit_result->Status () << endl ;
@@ -126,11 +126,11 @@ int main (int argc, char ** argv)
     cout << "Numero di gradi di libertà : " << fit_result->Ndf () << endl ;
 
     // output dei risultati
-    // --------------------------  
-    
+    // --------------------------
+
     cout << endl ;
     cout.precision (3) ;
-    cout << "normalizzazione del fondo  : " << exp (model.GetParameter (0)) << "\t+- " 
+    cout << "normalizzazione del fondo  : " << exp (model.GetParameter (0)) << "\t+- "
                                             << model.GetParError (0) * exp (model.GetParameter (0)) << endl ;
     cout << "pendenza del fondo         : " << model.GetParameter (1) << "\t+- " << model.GetParError (1) << endl ;
     cout << "normalizzazione del segnale: " << model.GetParameter (2) << "\t+- " << model.GetParError (2) << endl ;
@@ -138,15 +138,15 @@ int main (int argc, char ** argv)
     cout << "sigma del segnale          : " << model.GetParameter (4) << "\t+- " << model.GetParError (4) << endl ;
 
     // matrice di covarianza dei parametri
-    // --------------------------  
+    // --------------------------
 
     cout << endl ;
     TMatrixDSym cov = fit_result->GetCovarianceMatrix () ;
     // or TMatrixDSym cov = r->GetCorrelationMatrix();
-    for (int i = 0; i < cov.GetNrows () ; ++i) 
+    for (int i = 0; i < cov.GetNrows () ; ++i)
       {
-        for (int j = 0; j < cov.GetNcols () ; ++j) 
-          { 
+        for (int j = 0; j < cov.GetNcols () ; ++j)
+          {
             cout << cov(i,j) << "\t" ;
           }
         cout << "\n";

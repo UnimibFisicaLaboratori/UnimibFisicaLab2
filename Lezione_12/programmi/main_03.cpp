@@ -40,7 +40,7 @@ int main (int argc, char ** argv)
 
     for (int i = 0 ; i < N_eventi ; ++i)
       {
-        double event = model->GetRandom () ; 
+        double event = model->GetRandom () ;
         f_campione << event << "\n" ;
         h_campione.Fill (event) ;
       }
