@@ -1,5 +1,5 @@
 /*
-c++ -o esercizio_05 `root-config --glibs --cflags` funzioni.cc esercizio_05.cpp
+c++ -o esercizio_05 `root-config --glibs --cflags` funzioni.cc casual.cc esercizio_05.cpp
 
 Testo:
   Utilizzando il generatore di numeri pseudo-casuali secondo una pdf esponenziale sviluppato nella 
@@ -18,6 +18,7 @@ Testo:
 
 #include "statistiche_vector.h"
 #include "funzioni.h"
+#include "casual.h"
 
 using namespace std ;
 
