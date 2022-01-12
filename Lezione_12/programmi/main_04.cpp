@@ -43,36 +43,36 @@ int main (int argc, char ** argv)
 
     if (argc < 2)
       {
-        cout << "usage: " << argv[0] << " outputfile.txt" << endl ;
+        cout << "usage: " << argv[0] << " inputfile.txt" << endl ;
         exit (1) ;
       }
 
     // lettura del file di eventi
-    // --------------------------  
+    // --------------------------
 
     ifstream f_campione ;
     f_campione.open (argv[1]) ;
 
     vector<double> v_eventi ;
-    while (true) 
+    while (true)
       {
-        double evento ; 
+        double evento ;
         f_campione >> evento ;
         if (f_campione.eof () == true) break ;
         v_eventi.push_back (evento) ;
-      } 
+      }
     f_campione.close () ;
 
     cout << "letti " << v_eventi.size () << " eventi" << endl ;
     cout << "minimo degli eventi: " << minimo (v_eventi) << endl ;
     cout << "massimo degli eventi: " << massimo (v_eventi) << endl ;
 
-    // preparazione e riempimento dell'istogramma 
-    // --------------------------  
+    // preparazione e riempimento dell'istogramma
+    // --------------------------
 
     double min = floor (minimo (v_eventi)) ;
     double max = ceil (massimo (v_eventi)) ;
-//    int N_bin  = round (sqrt (v_eventi.size ()) / 2.) ; 
+//    int N_bin  = round (sqrt (v_eventi.size ()) / 2.) ;
     int N_bin  = round (sqrt (v_eventi.size ())) ;
     N_bin = maxval (N_bin, 10) ;
 
@@ -98,7 +98,7 @@ int main (int argc, char ** argv)
     cout << endl ;
     cout.precision (3) ;
     cout << "probabilità associata a Q2: " << model->GetProb () << endl ;
-    cout << "integrale                 : " << model->GetParameter (0) << "\t+- " << model->GetParError (0) << endl ;                                           
+    cout << "integrale                 : " << model->GetParameter (0) << "\t+- " << model->GetParError (0) << endl ;
     cout << "media                     : " << model->GetParameter (1) << "\t+- " << model->GetParError (1) << endl ;
     cout << "sigma                     : " << model->GetParameter (2) << "\t+- " << model->GetParError (2) << endl ;
 
@@ -106,7 +106,7 @@ int main (int argc, char ** argv)
 
     cout << endl ;
     cout << "probabilità associata a Q2: " << model->GetProb () << endl ;
-    cout << "integrale                 : " << model->GetParameter (0) << "\t+- " << model->GetParError (0) << endl ;                                           
+    cout << "integrale                 : " << model->GetParameter (0) << "\t+- " << model->GetParError (0) << endl ;
     cout << "media                     : " << model->GetParameter (1) << "\t+- " << model->GetParError (1) << endl ;
     cout << "sigma                     : " << model->GetParameter (2) << "\t+- " << model->GetParError (2) << endl ;
 
