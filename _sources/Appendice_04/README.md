@@ -1,4 +1,4 @@
-# Appendice 4: i minimi quadrati ed il caso lineare: soluzione algebrica
+# Approfondimento 4: i minimi quadrati ed il caso lineare: soluzione algebrica
 
 ## Indice
 

@@ -1,4 +1,4 @@
-# Appendice A1: algoritmi predefiniti nelle *Standard Template Library*
+# Approfondimento A1: algoritmi predefiniti nelle *Standard Template Library*
 
 ## Indice
 

@@ -44,3 +44,4 @@
   * [Approfondimento 2](Appendice_02/README.md) : programmazione ad oggetti: l'ereditarietà ```public```
   * [Approfondimento 3](Appendice_03/README.md) : approfondimenti sulle ```STL```
   * [Approfondimento 4](Appendice_04/README.md) : il caso lineare dei minimi quadrati: una soluzione esplicita
+  * [Approfondimento 5](Appendice_04/README.md) : il salvataggio su file di classi di ROOT
