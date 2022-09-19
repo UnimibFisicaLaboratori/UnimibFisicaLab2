@@ -181,7 +181,7 @@
   * **Valore di aspettazione e varianza** di *I* quindi,
     dati *N* numeri pseudo-casuali geneati,
     sono quindi:
-  ![integrale_HOM](immagini/integrale_HOM_exp_var.png)
+  ![integrale_HOM](immagini/integrale_HOM_exp_var_1.png)
   * Di conseguenza,
     l'incertezza numerica sul calcolo dell'integrale
     è data dalla **radice della varianza**

@@ -921,7 +921,7 @@ per tutti i toy experiment</p></li>
 quindi è una <strong>variabile casuale</strong> a sua volta</p></li>
 <li><p>La sua distribuzione di probabilità si ottiene <strong>per campionamento</strong> con i toy experiment,
 ad esempio riempiendo un istogramma all’interno del ciclo sui toy:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TH1F</span><span class="w"> </span><span class="nf">h_medie</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;distribuzione delle medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">TH1F</span><span class="w"> </span><span class="n">h_medie</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;distribuzione delle medie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="c1">// loop sui toy experiment</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">iToy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NToys</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">iToy</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
@@ -1042,7 +1042,7 @@ con <strong>probabilità <em>p = n<sub>hit</sub> / N</em></strong></p></li>
 <li><p><strong>Valore di aspettazione e varianza</strong> di <em>I</em> quindi,
 dati <em>N</em> numeri pseudo-casuali geneati,
 sono quindi:
-<img alt="integrale_HOM" src="../_images/integrale_HOM_exp_var.png" /></p></li>
+<img alt="integrale_HOM" src="../_images/integrale_HOM_exp_var_1.png" /></p></li>
 <li><p>Di conseguenza,
 l’incertezza numerica sul calcolo dell’integrale
 è data dalla <strong>radice della varianza</strong></p></li>

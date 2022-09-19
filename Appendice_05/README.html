@@ -775,7 +775,7 @@ si utilizza una <strong>classe dedicata alla gestione del file</strong>:
 in questo caso, <code class="docutils literal notranslate"><span class="pre">TFile</span></code>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TFile.h&quot;</span><span class="cp"></span>
 <span class="c1">//...</span>
-<span class="n">TFile</span><span class="w"> </span><span class="nf">f_out</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;salvataggio.root&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;recreate&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">TFile</span><span class="w"> </span><span class="n">f_out</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;salvataggio.root&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;recreate&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -795,10 +795,10 @@ si possono <strong>scrivere al suo interno</strong> altri oggetti,
 utilizzando il metodo <code class="docutils literal notranslate"><span class="pre">Write</span></code> degli oggetti stessi:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TFile.h&quot;</span><span class="cp"></span>
 <span class="c1">//...</span>
-<span class="n">TH1F</span><span class="w"> </span><span class="nf">h_test</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_test&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;istogramma di test&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">TH1F</span><span class="w"> </span><span class="n">h_test</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;h_test&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;istogramma di test&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">h_test</span><span class="p">.</span><span class="n">Fill</span><span class="w"> </span><span class="p">(</span><span class="mf">5.3</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 
-<span class="n">TFile</span><span class="w"> </span><span class="nf">f_out</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;salvataggio.root&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;recreate&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="n">TFile</span><span class="w"> </span><span class="n">f_out</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;salvataggio.root&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;recreate&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">h_test</span><span class="p">.</span><span class="n">Write</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="n">f_out</span><span class="p">.</span><span class="n">Close</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 </pre></div>
