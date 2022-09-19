@@ -1,5 +1,5 @@
 jupyter-book==0.11.3
-matplotlib
-numpy
-ghp-import
+matplotlib==3.6.0
+numpy==1.23.3
+ghp-import==2.1.0
 Jinja2<3.1
