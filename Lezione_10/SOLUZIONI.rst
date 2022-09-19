@@ -11,6 +11,16 @@ Soluzioni: Lezione 10
 .. literalinclude:: Esercizi/esercizio_01.cpp
   :language: cpp
 
+* `casual.h`
+
+.. literalinclude:: Esercizi/casual.h
+  :language: cpp
+
+* `casual.cc`
+
+.. literalinclude:: Esercizi/casual.cc
+  :language: cpp
+
 * `funzioni.h`
 
 .. literalinclude:: Esercizi/funzioni.h
@@ -30,6 +40,11 @@ Soluzioni: Lezione 10
 
 .. literalinclude:: Esercizi/esercizio_04.cpp
   :language: cpp
+
+* `statistiche_vector.h`
+
+.. literalinclude:: Esercizi/statistiche_vector.h
+  :language: cpp 
 
 .. image:: ../immagini/linea.png
   :width: 1100

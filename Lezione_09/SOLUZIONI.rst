@@ -10,6 +10,14 @@ Soluzioni: Lezione 9
 .. literalinclude:: Esercizi/esercizio_01.cpp
   :language: cpp
 
+* `casual.h`
+.. literalinclude:: Esercizi/casual.h
+  :language: cpp
+
+* `casual.cc`
+.. literalinclude:: Esercizi/casual.cc
+  :language: cpp
+
 .. image:: ../immagini/linea.png
   :width: 1100
 
@@ -19,6 +27,18 @@ Soluzioni: Lezione 9
 .. literalinclude:: Esercizi/esercizio_02.cpp
   :language: cpp
 
+* `statistiche.h`
+.. literalinclude:: Esercizi/statistiche.h
+  :language: cpp
+
+* `utils.h`
+.. literalinclude:: Esercizi/utils.h
+  :language: cpp
+
+* `utils.cc`
+.. literalinclude:: Esercizi/utils.cc
+  :language: cpp
+
 .. image:: ../immagini/linea.png
   :width: 1100
 
@@ -26,6 +46,10 @@ Soluzioni: Lezione 9
 ------------------------------------------------------------------
 * `esercizio_03.cpp`
 .. literalinclude:: Esercizi/esercizio_03.cpp
+  :language: cpp
+
+* `funzioni.h`
+.. literalinclude:: Esercizi/funzioni.h
   :language: cpp
 
 .. image:: ../immagini/linea.png
