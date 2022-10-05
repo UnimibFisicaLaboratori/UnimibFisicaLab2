@@ -54,7 +54,7 @@
 ### 1.0.1 ```C``` e ```C++```
 
   * ```C``` è un linguaggio di programmazione:
-    * **imperativo**, cioè che impartisce sequenze di istruzioni al calolatore
+    * **imperativo**, cioè che impartisce sequenze di istruzioni al calcolatore
     * **procedurale**, cioè che permette di raggruppare istruzioni in procedure
   * ```C++``` è un linguaggio di programmazione:
     * che **estende il ```C```**:
@@ -668,7 +668,7 @@ Si veda l'[esempio 1.8](ESEMPI.html#variabili-in-output-da-una-funzione) per un'
     ```cpp
     delete numero ;
     ```
-  * utilizzare la stack è detto anche **allocazione dinamica della memoria**
+  * utilizzare la heap è detto anche **allocazione dinamica della memoria**
 
   | **vantaggi** |
   | --------- |
