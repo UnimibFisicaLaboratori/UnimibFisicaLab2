@@ -21,7 +21,10 @@ int main (int argc, char ** argv)
   TCanvas * c1 = new TCanvas () ;
   histo->Draw () ;
   c1->Print ("histo.png", "png") ;
-  theApp->Run () ;
+
+  // Importante: bisogna passare `true` per evitare che l'applicazione esca
+  // subito senza eseguire il codice successivo a TApplication::Run()
+  theApp->Run (true) ;
 
   delete histo ;
   delete theApp ;
