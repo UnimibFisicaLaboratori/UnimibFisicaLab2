@@ -24,8 +24,8 @@ Soluzioni: Lezione 4
 
 4.3 inizializzazione del *seed* di un generatore
 -------------------------------
-* `esercizio04.cpp`
-.. literalinclude:: Esercizi/esercizio04.cpp
+* `esercizio03.cpp`
+.. literalinclude:: Esercizi/esercizio03.cpp
   :language: cpp
 
 .. image:: ../immagini/linea.png
